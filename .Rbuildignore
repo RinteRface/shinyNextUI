@@ -1,9 +1,3 @@
 ^shinyNextUI\.Rproj$
 ^\.Rproj\.user$
-^srcjs$
-^node_modules$
-^package\.json$
-^package-lock\.json$
-^webpack\.dev\.js$
-^webpack\.prod\.js$
-^webpack\.common\.js$
+^js$

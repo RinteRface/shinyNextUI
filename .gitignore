@@ -1,6 +1,2 @@
 .Rproj.user
-.Rhistory
-.Rdata
-.httr-oauth
-.DS_Store
-node_modules
+js/node_modules

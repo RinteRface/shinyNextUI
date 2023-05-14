@@ -1,1 +1,0 @@
-(()=>{"use strict";Shiny,Shiny.addCustomMessageHandler("packer-alert",(e=>{alert(e)}))})();

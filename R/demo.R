@@ -29,20 +29,22 @@ run_app <- function() {
     ),
     server = function(input, output) {
       modalVisible <- reactiveVal(FALSE)
-
-      observeEvent({
-        req(input$clicked)
-      }, {
+      observeEvent(input$clicked, {
         modalVisible(TRUE)
       })
 
       observeEvent(input$modal_closed, {
         modalVisible(FALSE)
       })
+
       output$modal <- renderReact({
         Modal(
           open = modalVisible(),
-          "Lalala",
+          Text(
+            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros."
+          ),
           onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
         )
       })

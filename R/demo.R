@@ -3,11 +3,49 @@
 #' @export
 #'
 #' @import shiny
+#' @import shiny.react
 run_app <- function() {
   shinyApp(
     ui = tagList(
-      Button(color = "primary", "Test Button")
+      enableReactDebugMode(),
+      Card(
+        isPressable = TRUE,
+        isHoverable = TRUE,
+        variant = "bordered",
+        card_header("Card title"),
+        card_divider(),
+        card_body(
+          Text("A pressable card."),
+          Button(
+            color = "primary",
+            "Test Button",
+            onPress = JS("(event) => Shiny.setInputValue('clicked', true, {priority: 'event'})")
+          )
+        ),
+        card_divider(),
+        card_footer("Card footer")
+      ),
+      reactOutput("modal")
     ),
-    server = function(input, output) {}
+    server = function(input, output) {
+      modalVisible <- reactiveVal(FALSE)
+
+      observeEvent({
+        req(input$clicked)
+      }, {
+        modalVisible(TRUE)
+      })
+
+      observeEvent(input$modal_closed, {
+        modalVisible(FALSE)
+      })
+      output$modal <- renderReact({
+        Modal(
+          open = modalVisible(),
+          "Lalala",
+          onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
+        )
+      })
+    }
   )
 }

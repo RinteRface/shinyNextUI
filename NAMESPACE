@@ -2,7 +2,11 @@
 
 export(Button)
 export(Card)
+export(Container)
+export(Grid)
 export(Modal)
+export(Spacer)
+export(Switch.shinyInput)
 export(Text)
 export(run_app)
 import(shiny)

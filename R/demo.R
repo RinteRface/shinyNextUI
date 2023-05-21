@@ -21,18 +21,22 @@ run_app <- function() {
             card_divider(),
             card_body(
               Text(
+                h1 = TRUE,
+                color = "primary",
                 "Lets's",
-                css = "{{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}",
+                css = JS("{textGradient: '45deg, $blue600 -20%, $pink600 50%'}"),
                 weight = "bold"
               ),
               Text(
+                h1 = TRUE,
                 "Make the Web",
-                css = "{{ textGradient: '45deg, $purple600 -20%, $pink600 100%' }}",
+                css = JS("{textGradient: '45deg, $purple600 -20%, $pink600 100%'}"),
                 weight = "bold"
               ),
               Text(
+                h1 = TRUE,
                 "Prettier",
-                css = "{{ textGradient: '45deg, $yellow600 -20%, $red600 100%' }}",
+                css = JS("{textGradient: '45deg, $yellow600 -20%, $red600 100%'}"),
                 weight = "bold"
               ),
               Button(

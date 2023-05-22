@@ -47,9 +47,6 @@ card_footer <- customComponent("Card.Footer", "
 ")
 
 #' @export
-Button <- component("Button")
-
-#' @export
 Card <- component("Card")
 
 #' @export
@@ -57,5 +54,3 @@ Text <- component("Text")
 
 #' @export
 Modal <- component("Modal")
-
-

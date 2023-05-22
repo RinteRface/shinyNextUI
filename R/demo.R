@@ -22,6 +22,7 @@ run_app <- function() {
             card_body(
               Text(
                 h1 = TRUE,
+                size = 60,
                 color = "primary",
                 "Lets's",
                 css = JS("{textGradient: '45deg, $blue600 -20%, $pink600 50%'}"),
@@ -29,21 +30,25 @@ run_app <- function() {
               ),
               Text(
                 h1 = TRUE,
+                size = 60,
                 "Make the Web",
                 css = JS("{textGradient: '45deg, $purple600 -20%, $pink600 100%'}"),
                 weight = "bold"
               ),
               Text(
                 h1 = TRUE,
+                size = 60,
                 "Prettier",
                 css = JS("{textGradient: '45deg, $yellow600 -20%, $red600 100%'}"),
                 weight = "bold"
               ),
-              Button(
-                color = "primary",
-                shadow = TRUE,
-                "Test Button",
-                onPress = JS("(event) => Shiny.setInputValue('clicked', true, {priority: 'event'})")
+              grid_container(
+                Button.shinyInput(
+                  inputId = "clicked",
+                  color = "primary",
+                  shadow = TRUE,
+                  "Test Button"
+                )
               )
             ),
             card_divider(),
@@ -53,7 +58,8 @@ run_app <- function() {
         Grid(xs = 6, Card(card_body(Text("Card 2"))))
       ),
       reactOutput("modal"),
-      Switch.shinyInput(inputId = "switch", checked = TRUE, size = "xs", shadow = TRUE)
+      Switch.shinyInput(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
+      Text.shinyInput(inputId = "text", value = "Plop", placeholder = "Next UI", label = "Text input")
     ),
     server = function(input, output) {
       modalVisible <- reactiveVal(FALSE)
@@ -78,7 +84,9 @@ run_app <- function() {
       })
 
       observe({
+        print(input$text)
         print(input$switch)
+        print(input$clicked)
       })
     }
   )

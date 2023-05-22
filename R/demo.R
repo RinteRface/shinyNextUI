@@ -59,7 +59,17 @@ run_app <- function() {
       ),
       reactOutput("modal"),
       Switch.shinyInput(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
-      Text.shinyInput(inputId = "text", value = "Plop", placeholder = "Next UI", label = "Text input")
+      Text.shinyInput(
+        inputId = "text",
+        value = "Plop",
+        placeholder = "Next UI",
+        label = "Text input"
+      ),
+      Numeric.shinyInput(
+        inputId = "numeric",
+        value = 10,
+        label = "Numeric input"
+      )
     ),
     server = function(input, output) {
       modalVisible <- reactiveVal(FALSE)
@@ -87,6 +97,7 @@ run_app <- function() {
         print(input$text)
         print(input$switch)
         print(input$clicked)
+        print(input$numeric)
       })
     }
   )

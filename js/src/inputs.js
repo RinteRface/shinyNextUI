@@ -13,6 +13,11 @@ export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
 export const Input = InputAdapter(NextUI.Input, (value, setValue) => ({
   value,
   onChange: (event) => {
-    setValue(event.target.value);
+    let val = event.target.value;
+    // For numeric input
+    if (event.target.type === "number") {
+      val = Number(val);
+    }
+    setValue(val);
   },
 }), { policy: debounce, delay: 250 });

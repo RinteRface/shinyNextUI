@@ -22,3 +22,6 @@ Switch.shinyInput <- input("Switch", FALSE)
 
 #' @export
 Text.shinyInput <- input("Input", "", type = "text")
+
+#' @export
+Numeric.shinyInput <- input("Input", "", type = "number")

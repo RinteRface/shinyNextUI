@@ -14,14 +14,31 @@ input <- function(name, defaultValue = NULL, type = NULL) {
   }
 }
 
+#' @rdname button
+#' @inherit shinyInput params return
 #' @export
-Button.shinyInput <- input("Button")
+actionButton <- input("Button")
 
+#' @rdname button
 #' @export
-Switch.shinyInput <- input("Switch", FALSE)
+updateActionButton <- shiny.react::updateReactInput
 
+#' @rdname switch
+#' @inherit shinyInput params return
 #' @export
-Text.shinyInput <- input("Input", "", type = "text")
+switchInput <- input("Switch", FALSE)
 
+#' @rdname text-input
+#' @inherit shinyInput params return
 #' @export
-Numeric.shinyInput <- input("Input", "", type = "number")
+textInput <- input("Input", "", type = "text")
+
+#' @rdname numeric
+#' @inherit shinyInput params return
+#' @export
+numericInput <- input("Input", "", type = "number")
+
+#' @rdname date
+#' @inherit shinyInput params return
+#' @export
+dateInput <- input("Input", "", type = "date")

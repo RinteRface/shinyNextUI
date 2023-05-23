@@ -1,13 +1,16 @@
+#' @inherit component params return
 #' @export
-Container <- component("Container")
+container <- component("Container")
 
+#' @inherit component params return
 #' @export
-Grid <- component("Grid")
+grid <- component("Grid")
 
 grid_container <- customComponent("Grid.Container", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Grid.Container;
 ")
 
+#' @inherit component params return
 #' @export
-Spacer <- component("Spacer")
+spacer <- component("Spacer")

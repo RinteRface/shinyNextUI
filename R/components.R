@@ -46,11 +46,20 @@ card_footer <- customComponent("Card.Footer", "
   return NextUI.Card.Footer;
 ")
 
-#' @export
-Card <- component("Card")
+card_image <- customComponent("Card.Image", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Image;
+")
 
+#' @rdname card
+#' @inherit component params return
 #' @export
-Text <- component("Text")
+card <- component("Card")
 
+#' @inherit component params return
 #' @export
-Modal <- component("Modal")
+text <- component("Text")
+
+#' @inherit component params return
+#' @export
+modal <- component("Modal")

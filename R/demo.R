@@ -11,16 +11,16 @@ run_app <- function() {
       grid_container(
         gap = 2,
         justify = "center",
-        Grid(
+        grid(
           xs = 6,
-          Card(
+          card(
             isPressable = TRUE,
             isHoverable = TRUE,
             variant = "bordered",
             card_header("Card title"),
             card_divider(),
             card_body(
-              Text(
+              text(
                 h1 = TRUE,
                 size = 60,
                 color = "primary",
@@ -28,14 +28,14 @@ run_app <- function() {
                 css = JS("{textGradient: '45deg, $blue600 -20%, $pink600 50%'}"),
                 weight = "bold"
               ),
-              Text(
+              text(
                 h1 = TRUE,
                 size = 60,
                 "Make the Web",
                 css = JS("{textGradient: '45deg, $purple600 -20%, $pink600 100%'}"),
                 weight = "bold"
               ),
-              Text(
+              text(
                 h1 = TRUE,
                 size = 60,
                 "Prettier",
@@ -43,7 +43,7 @@ run_app <- function() {
                 weight = "bold"
               ),
               grid_container(
-                Button.shinyInput(
+                actionButton(
                   inputId = "clicked",
                   color = "primary",
                   shadow = TRUE,
@@ -55,20 +55,25 @@ run_app <- function() {
             card_footer("Card footer")
           )
         ),
-        Grid(xs = 6, Card(card_body(Text("Card 2"))))
+        grid(xs = 6, card(card_body(text("Card 2"))))
       ),
       reactOutput("modal"),
-      Switch.shinyInput(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
-      Text.shinyInput(
+      switchInput(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
+      textInput(
         inputId = "text",
         value = "Plop",
         placeholder = "Next UI",
         label = "Text input"
       ),
-      Numeric.shinyInput(
+      numericInput(
         inputId = "numeric",
         value = 10,
         label = "Numeric input"
+      ),
+      dateInput(
+        inputId = "date",
+        value = "2023-12-11",
+        label = "Date input"
       )
     ),
     server = function(input, output) {
@@ -82,9 +87,9 @@ run_app <- function() {
       })
 
       output$modal <- renderReact({
-        Modal(
+        modal(
           open = modalVisible(),
-          Text(
+          text(
             "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
             dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
             ac consectetur ac, vestibulum at eros."
@@ -98,6 +103,7 @@ run_app <- function() {
         print(input$switch)
         print(input$clicked)
         print(input$numeric)
+        print(class(input$date))
       })
     }
   )

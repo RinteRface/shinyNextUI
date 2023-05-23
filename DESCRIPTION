@@ -1,11 +1,11 @@
 Package: shinyNextUI
-Title: What the Package Does (One Line, Title Case)
+Title: NextUI Library for Shiny
 Version: 0.0.0.9000
 Authors@R: 
     person("David", "Granjon", , "dgranjon@ymail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: A set of UI components to create beautiful Shiny apps with
+    the power of React JS. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

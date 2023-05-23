@@ -10,8 +10,8 @@ export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
   },
 }));
 
-export const Input = InputAdapter(NextUI.Input, (value, setValue) => ({
-  value,
+export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
+  value: value,
   onChange: (event) => {
     let val = event.target.value;
     // For numeric input

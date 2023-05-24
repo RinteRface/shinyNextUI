@@ -80,7 +80,7 @@ Card is a container for text, photos, and actions in the context of a single sub
 library(shiny)
 library(shinyNextUI)
 
-ui <- fluidPage(
+ui <- nextui_page(
   card(
     variant = "bordered",
     card_header("Card title"),

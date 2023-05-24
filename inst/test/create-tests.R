@@ -1,6 +1,27 @@
-ns <- readLines("./NAMESPACE")
-tmp <- grep("run", plop, value = TRUE)
-res <- strsplit(
-  strsplit(tmp, "export\\(")[[1]][2],
-  "\\)"
-)[[1]][1]
+test_script <- "
+  library(shinytest2)
+  test_that(\"%s works as expected\", {
+    # Don't run these tests on the CRAN build servers
+    skip_on_cran()
+    # We use generalized wrapper to test component
+    # props. Unfortunately people will have to
+    # edit props and children manually since
+    # this is not possible to generalize.
+    shiny_app <- run_app_test(el = %s)
+    app <- AppDriver$new(shiny_app, name = \"%s-app\")
+    app$expect_values()
+  })
+"
+
+init_test_component <- function(el) {
+  if (!dir.exists("tests/testthat/")) usethis::use_testthat()
+  file.create(sprintf("tests/testthat/test-%s.R", el))
+  usethis::use_test(sprintf("%s", el))
+  test_script <- sprintf(test_script, el, el, el)
+
+  # Write to test file
+  rstudioapi::insertText(test_script)
+  ranges <- rstudioapi::document_range(c(1, 0), c(Inf, Inf))
+  rstudioapi::setSelectionRanges(ranges)
+  rstudioapi::executeCommand('reformatCode')
+}

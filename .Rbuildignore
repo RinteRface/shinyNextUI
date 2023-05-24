@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^js$
 ^LICENSE\.md$
+^inst/doc$

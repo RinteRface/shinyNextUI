@@ -1,7 +1,7 @@
 library(shiny)
 library(shinyNextUI)
 
-ui <- fluidPage(
+ui <- nextui_page(
   card(
     variant = "bordered",
     card_header("Card title"),

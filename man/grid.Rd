@@ -2,9 +2,12 @@
 % Please edit documentation in R/doc.R, R/layout.R
 \name{grid}
 \alias{grid}
+\alias{grid_container}
 \title{grid}
 \usage{
 grid(...)
+
+grid_container(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.

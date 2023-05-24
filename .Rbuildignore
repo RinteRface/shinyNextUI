@@ -3,3 +3,4 @@
 ^js$
 ^LICENSE\.md$
 ^inst/doc$
+^inst/test$

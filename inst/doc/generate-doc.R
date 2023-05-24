@@ -11,33 +11,33 @@ items <- list(
   ),
   # compo
   components = c(
-    "avatar",
+    #"avatar",
     "button",
-    "button-group",
+    #"button-group",
     "card",
-    "pagination",
-    "table",
-    "collapse",
-    "navbar",
-    "badge",
+    #"pagination",
+    #"table",
+    #"collapse",
+    #"navbar",
+    #"badge",
     "input",
     # "autocomplete",
-    "textarea",
-    "checkbox",
-    "checkbox-group",
-    "radio",
-    "popover",
-    "tooltip",
-    "dropdown",
-    "progress",
-    # "select",
+    #"textarea",
+    #"checkbox",
+    #"checkbox-group",
+    #"radio",
+    #"popover",
+    #"tooltip",
+    #"dropdown",
+    #"progress",
+    ## "select",
     "modal",
-    "loading",
+    #"loading",
     "switch",
-    "text",
-    "link",
-    "user",
-    "image"
+    "text"#,
+    #"link",
+    #"user",
+    #"image"
   )
 )
 
@@ -49,10 +49,11 @@ get_element_api <- function(el, context) {
     # that would be located before the API tables.
     html_elements(css = "#apis ~ * table") |>
     html_table()
+
   names(params) <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#apis ~ h4[id$='props'] a") |>
+    html_elements(css = "#apis ~ h4[id$='props'] a, #apis ~ h4[id$='events'] a") |>
     html_text2()
 
   # TO DO: it is hard to give name to sub-tables
@@ -87,29 +88,9 @@ names(component_apis) <- items$components
 
 apis <- c(layout_apis, component_apis)
 
-generate_element_doc <- function(el) {
-  tmp_doc <- apis[[el]]
-  el_doc <- sprintf("
-    #' %s
-    #'
-    #' @description
-    #' %s
-    #'
-    #' @details
-    %s
-    #' @md
-    #' @name %s
-    #' @seealso See \\url{%s}.
-    #' @export
-    NULL
-  ",
-    tmp_doc$title,
-    tmp_doc$description,
-    generate_details(tmp_doc$params),
-    tmp_doc$title,
-    tmp_doc$url
-  )
-  write(gsub("  ", "", el_doc), file = "./R/doc.R", append = TRUE)
-}
 
-lapply(names(apis), generate_element_doc)
+pkgload::load_all()
+lapply(names(apis), function(name) {
+  print(name)
+  generate_element_doc(name)
+})

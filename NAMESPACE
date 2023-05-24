@@ -2,6 +2,11 @@
 
 export(actionButton)
 export(card)
+export(card_body)
+export(card_divider)
+export(card_footer)
+export(card_header)
+export(card_image)
 export(container)
 export(dateInput)
 export(grid)

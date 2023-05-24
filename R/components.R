@@ -26,40 +26,57 @@ customComponent <- function(name, js) {
   )
 }
 
-card_body <- customComponent("Card.Body", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Body;
-")
-
-card_header <- customComponent("Card.Header", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Header;
-")
-
-card_divider <- customComponent("Card.Divider", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Divider;
-")
-
-card_footer <- customComponent("Card.Footer", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Footer;
-")
-
-card_image <- customComponent("Card.Image", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Image;
-")
-
 #' @rdname card
 #' @inherit component params return
 #' @export
 card <- component("Card")
 
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_body <- customComponent("Card.Body", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Body;
+")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_header <- customComponent("Card.Header", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Header;
+")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_divider <- customComponent("Card.Divider", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Divider;
+")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_footer <- customComponent("Card.Footer", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Footer;
+")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_image <- customComponent("Card.Image", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Card.Image;
+")
+
+#' @rdname text
 #' @inherit component params return
 #' @export
 text <- component("Text")
 
+#' @rdname modal
 #' @inherit component params return
 #' @export
 modal <- component("Modal")

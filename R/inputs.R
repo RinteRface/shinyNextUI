@@ -28,17 +28,17 @@ updateActionButton <- shiny.react::updateReactInput
 #' @export
 switchInput <- input("Switch", FALSE)
 
-#' @rdname text-input
+#' @rdname input
 #' @inherit shinyInput params return
 #' @export
 textInput <- input("Input", "", type = "text")
 
-#' @rdname numeric
+#' @rdname input
 #' @inherit shinyInput params return
 #' @export
 numericInput <- input("Input", "", type = "number")
 
-#' @rdname date
+#' @rdname input
 #' @inherit shinyInput params return
 #' @export
 dateInput <- input("Input", "", type = "date")

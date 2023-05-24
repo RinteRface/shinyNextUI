@@ -19,7 +19,7 @@ generate_details <- function(x) {
       )
     }, FUN.VALUE = character(1))
     paste0(
-      sprintf("#' %s\n", names(x)[[i]]),
+      sprintf("#' %s. %s\n", i, names(x)[[i]]),
       "#' \\itemize{\n",
       paste(tmp, collapse = "\n"),
       "\n#' }"
@@ -40,13 +40,12 @@ generate_element_doc <- function(el) {
     #' %s
     #'
     #' @details
+    #'
     %s
     #' @md
     #' @name %s
     #' @seealso See \\url{%s}.
-    #' @export
-    NULL
-  ",
+    NULL",
   tmp_doc$title,
   tmp_doc$description,
   generate_details(tmp_doc$params),

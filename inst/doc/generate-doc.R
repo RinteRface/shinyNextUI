@@ -94,3 +94,4 @@ lapply(names(apis), function(name) {
   print(name)
   generate_element_doc(name)
 })
+devtools::document()

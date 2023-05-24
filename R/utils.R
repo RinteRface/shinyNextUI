@@ -44,11 +44,13 @@ generate_element_doc <- function(el) {
     %s
     #' @md
     #' @name %s
+    #' @example inst/examples/%s/app.R
     #' @seealso See \\url{%s}.
     NULL",
   tmp_doc$title,
   tmp_doc$description,
   generate_details(tmp_doc$params),
+  tmp_doc$title,
   tmp_doc$title,
   tmp_doc$url
   )

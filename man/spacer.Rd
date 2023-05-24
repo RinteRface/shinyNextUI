@@ -29,6 +29,9 @@ Provide empty space.
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/layout/spacer}.
 }

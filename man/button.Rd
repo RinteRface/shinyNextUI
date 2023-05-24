@@ -79,6 +79,9 @@ Buttons allow users to perform actions and choose with a single tap.
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/components/button}.
 }

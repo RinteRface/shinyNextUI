@@ -61,6 +61,9 @@ Displays a dialog with a custom content that requires attention or provides addi
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/components/modal}.
 }

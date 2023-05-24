@@ -83,6 +83,9 @@ Inputs fields are used to get the user input in a text field.
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/components/input}.
 }

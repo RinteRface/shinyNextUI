@@ -74,6 +74,7 @@ NULL
 #' }
 #' @md
 #' @name container
+#' @example inst/examples/container/app.R
 #' @seealso See \url{https://nextui.org/docs/layout/container}.
 NULL
 
@@ -109,6 +110,7 @@ NULL
 #' }
 #' @md
 #' @name grid
+#' @example inst/examples/grid/app.R
 #' @seealso See \url{https://nextui.org/docs/layout/grid}.
 NULL
 
@@ -130,6 +132,7 @@ NULL
 #' }
 #' @md
 #' @name spacer
+#' @example inst/examples/spacer/app.R
 #' @seealso See \url{https://nextui.org/docs/layout/spacer}.
 NULL
 
@@ -190,6 +193,7 @@ NULL
 #' }
 #' @md
 #' @name button
+#' @example inst/examples/button/app.R
 #' @seealso See \url{https://nextui.org/docs/components/button}.
 NULL
 
@@ -243,6 +247,7 @@ NULL
 #' }
 #' @md
 #' @name card
+#' @example inst/examples/card/app.R
 #' @seealso See \url{https://nextui.org/docs/components/card}.
 NULL
 
@@ -306,6 +311,7 @@ NULL
 #' }
 #' @md
 #' @name input
+#' @example inst/examples/input/app.R
 #' @seealso See \url{https://nextui.org/docs/components/input}.
 NULL
 
@@ -359,6 +365,7 @@ NULL
 #' }
 #' @md
 #' @name modal
+#' @example inst/examples/modal/app.R
 #' @seealso See \url{https://nextui.org/docs/components/modal}.
 NULL
 
@@ -392,6 +399,7 @@ NULL
 #' }
 #' @md
 #' @name switch
+#' @example inst/examples/switch/app.R
 #' @seealso See \url{https://nextui.org/docs/components/switch}.
 NULL
 
@@ -423,5 +431,6 @@ NULL
 #' }
 #' @md
 #' @name text
+#' @example inst/examples/text/app.R
 #' @seealso See \url{https://nextui.org/docs/components/text}.
 NULL

@@ -39,6 +39,9 @@ Text component is the used to render text and paragraphs within an interface usi
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/components/text}.
 }

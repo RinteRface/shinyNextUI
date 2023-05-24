@@ -43,6 +43,9 @@ The layout Grid adapts to screen size and orientation, ensuring consistency acro
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/layout/grid}.
 }

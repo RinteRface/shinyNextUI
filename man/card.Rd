@@ -76,6 +76,25 @@ Card is a container for text, photos, and actions in the context of a single sub
 }
 }
 }
+\examples{
+library(shiny)
+library(shinyNextUI)
+
+ui <- fluidPage(
+  card(
+    variant = "bordered",
+    card_header("Card title"),
+    card_divider(),
+    card_body(h1("Card body")),
+    card_divider(),
+    card_footer("Card Footer")
+  )
+)
+
+server <- function(input, output, session) {}
+
+shinyApp(ui, server)
+}
 \seealso{
 See \url{https://nextui.org/docs/components/card}.
 }

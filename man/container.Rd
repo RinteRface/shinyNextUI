@@ -59,6 +59,9 @@ A component for fixing an element's width to the current breakpoint.
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/layout/container}.
 }

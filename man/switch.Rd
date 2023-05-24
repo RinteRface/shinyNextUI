@@ -47,6 +47,9 @@ The Switch component is used as an alternative for the Checkbox component. You c
 }
 }
 }
+\examples{
+
+}
 \seealso{
 See \url{https://nextui.org/docs/components/switch}.
 }

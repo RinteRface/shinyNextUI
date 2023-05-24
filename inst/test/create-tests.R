@@ -7,8 +7,8 @@ test_script <- "
     # props. Unfortunately people will have to
     # edit props and children manually since
     # this is not possible to generalize.
-    shiny_app <- run_app_test(el = %s)
-    app <- AppDriver$new(shiny_app, name = \"%s-app\")
+    shiny_app_path <- system.file(\"examples/%s/app.R\", package = \"shinyNextUI\")
+    app <- AppDriver$new(shiny_app_path, name = \"%s-app\")
     app$expect_values()
   })
 "

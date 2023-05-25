@@ -2,9 +2,15 @@
 % Please edit documentation in R/doc.R, R/layout.R
 \name{container}
 \alias{container}
+\alias{row}
+\alias{col}
 \title{container}
 \usage{
 container(...)
+
+row(...)
+
+col(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
@@ -60,7 +66,29 @@ A component for fixing an element's width to the current breakpoint.
 }
 }
 \examples{
+library(shiny)
+library(shinyNextUI)
 
+ui <- nextui_page(
+  container(
+    gap = 0,
+    row(
+      gap = 4,
+      col(card(card_body(h1("Card 1")))),
+      col(card(card_body(h1("Card 2"))))
+    ),
+    spacer(y = 2),
+    row(
+      gap = 2,
+      col(span = 4, card(card_body(h1("Card 1")))),
+      col(span = 8, card(card_body(h1("Card 2"))))
+    )
+  )
+)
+
+server <- function(input, output, session) {}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
 See \url{https://nextui.org/docs/layout/container}.

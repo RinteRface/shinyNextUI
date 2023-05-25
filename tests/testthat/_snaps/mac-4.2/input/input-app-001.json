@@ -1,0 +1,799 @@
+{
+  "input": {
+    "date": "2023-12-11",
+    "numeric": 10,
+    "text": "Plop",
+    "theme": {
+      "colors": {
+        "background": {
+          "token": "background",
+          "value": "var(--nextui-colors-black)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "backgroundAlpha": {
+          "token": "backgroundAlpha",
+          "value": "rgba(0, 0, 0, 0.6)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "foreground": {
+          "token": "foreground",
+          "value": "var(--nextui-colors-white)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "backgroundContrast": {
+          "token": "backgroundContrast",
+          "value": "var(--nextui-colors-accents0)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue50": {
+          "token": "blue50",
+          "value": "#10253E",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue100": {
+          "token": "blue100",
+          "value": "#102C4C",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue200": {
+          "token": "blue200",
+          "value": "#0F3158",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue300": {
+          "token": "blue300",
+          "value": "#0D3868",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue400": {
+          "token": "blue400",
+          "value": "#0A4281",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue500": {
+          "token": "blue500",
+          "value": "#0952A5",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue600": {
+          "token": "blue600",
+          "value": "#0072F5",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue700": {
+          "token": "blue700",
+          "value": "#3694FF",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue800": {
+          "token": "blue800",
+          "value": "#3694FF",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "blue900": {
+          "token": "blue900",
+          "value": "#EAF4FF",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple50": {
+          "token": "purple50",
+          "value": "#1F0A33",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple100": {
+          "token": "purple100",
+          "value": "#240C3C",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple200": {
+          "token": "purple200",
+          "value": "#2E0F4D",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple300": {
+          "token": "purple300",
+          "value": "#3B1362",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple400": {
+          "token": "purple400",
+          "value": "#451773",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple500": {
+          "token": "purple500",
+          "value": "#571D91",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple600": {
+          "token": "purple600",
+          "value": "#7828C8",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple700": {
+          "token": "purple700",
+          "value": "#9750DD",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple800": {
+          "token": "purple800",
+          "value": "#B583E7",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "purple900": {
+          "token": "purple900",
+          "value": "#F7ECFC",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green50": {
+          "token": "green50",
+          "value": "#042F14",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green100": {
+          "token": "green100",
+          "value": "#06381B",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green200": {
+          "token": "green200",
+          "value": "#074A24",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green300": {
+          "token": "green300",
+          "value": "#0A6130",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green400": {
+          "token": "green400",
+          "value": "#0B7439",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green500": {
+          "token": "green500",
+          "value": "#0F9549",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green600": {
+          "token": "green600",
+          "value": "#17C964",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green700": {
+          "token": "green700",
+          "value": "#41EC8B",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green800": {
+          "token": "green800",
+          "value": "#78F2AD",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "green900": {
+          "token": "green900",
+          "value": "#ECFDF4",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow50": {
+          "token": "yellow50",
+          "value": "#3A2503",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow100": {
+          "token": "yellow100",
+          "value": "#442B03",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow200": {
+          "token": "yellow200",
+          "value": "#583804",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow300": {
+          "token": "yellow300",
+          "value": "#704705",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow400": {
+          "token": "yellow400",
+          "value": "#845306",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow500": {
+          "token": "yellow500",
+          "value": "#A66908",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow600": {
+          "token": "yellow600",
+          "value": "#F5A524",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow700": {
+          "token": "yellow700",
+          "value": "#F6AD37",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow800": {
+          "token": "yellow800",
+          "value": "#F8C572",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "yellow900": {
+          "token": "yellow900",
+          "value": "#FEF7EC",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red50": {
+          "token": "red50",
+          "value": "#300313",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red100": {
+          "token": "red100",
+          "value": "#300313",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red200": {
+          "token": "red200",
+          "value": "#44041A",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red300": {
+          "token": "red300",
+          "value": "#5C0523",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red400": {
+          "token": "red400",
+          "value": "#6F062B",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red500": {
+          "token": "red500",
+          "value": "#910838",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red600": {
+          "token": "red600",
+          "value": "#F31260",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red700": {
+          "token": "red700",
+          "value": "#F4256D",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red800": {
+          "token": "red800",
+          "value": "#F75F94",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "red900": {
+          "token": "red900",
+          "value": "#FDD8E5",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan50": {
+          "token": "cyan50",
+          "value": "#012A32",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan100": {
+          "token": "cyan100",
+          "value": "#023A46",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan200": {
+          "token": "cyan200",
+          "value": "#024B5A",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan300": {
+          "token": "cyan300",
+          "value": "#036072",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan400": {
+          "token": "cyan400",
+          "value": "#037086",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan500": {
+          "token": "cyan500",
+          "value": "#048EA9",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan600": {
+          "token": "cyan600",
+          "value": "#06B7DB",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan700": {
+          "token": "cyan700",
+          "value": "#33D9FA",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan800": {
+          "token": "cyan800",
+          "value": "#6FE4FB",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "cyan900": {
+          "token": "cyan900",
+          "value": "#EBFBFE",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink50": {
+          "token": "pink50",
+          "value": "#330025",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink100": {
+          "token": "pink100",
+          "value": "#470033",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink200": {
+          "token": "pink200",
+          "value": "#5C0042",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink300": {
+          "token": "pink300",
+          "value": "#750054",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink400": {
+          "token": "pink400",
+          "value": "#8A0063",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink500": {
+          "token": "pink500",
+          "value": "#AD007C",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink600": {
+          "token": "pink600",
+          "value": "#FF4ECD",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink700": {
+          "token": "pink700",
+          "value": "#FF2EC4",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink800": {
+          "token": "pink800",
+          "value": "#FF6BD5",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "pink900": {
+          "token": "pink900",
+          "value": "#FFEBF9",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray50": {
+          "token": "gray50",
+          "value": "#16181A",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray100": {
+          "token": "gray100",
+          "value": "#26292B",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray200": {
+          "token": "gray200",
+          "value": "#2B2F31",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray300": {
+          "token": "gray300",
+          "value": "#313538",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray400": {
+          "token": "gray400",
+          "value": "#3A3F42",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray500": {
+          "token": "gray500",
+          "value": "#4C5155",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray600": {
+          "token": "gray600",
+          "value": "#697177",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray700": {
+          "token": "gray700",
+          "value": "#787F85",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray800": {
+          "token": "gray800",
+          "value": "#9BA1A6",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "gray900": {
+          "token": "gray900",
+          "value": "#ECEDEE",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "primaryLight": {
+          "token": "primaryLight",
+          "value": "var(--nextui-colors-blue50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "primaryLightHover": {
+          "token": "primaryLightHover",
+          "value": "var(--nextui-colors-blue100)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "primaryLightActive": {
+          "token": "primaryLightActive",
+          "value": "var(--nextui-colors-blue200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "primaryLightContrast": {
+          "token": "primaryLightContrast",
+          "value": "var(--nextui-colors-blue600)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryLight": {
+          "token": "secondaryLight",
+          "value": "var(--nextui-colors-purple50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryLightHover": {
+          "token": "secondaryLightHover",
+          "value": "var(--nextui-colors-purple100)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryLightActive": {
+          "token": "secondaryLightActive",
+          "value": "var(--nextui-colors-purple200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryLightContrast": {
+          "token": "secondaryLightContrast",
+          "value": "var(--nextui-colors-purple800)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondary": {
+          "token": "secondary",
+          "value": "var(--nextui-colors-purple700)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryBorder": {
+          "token": "secondaryBorder",
+          "value": "var(--nextui-colors-purple500)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryBorderHover": {
+          "token": "secondaryBorderHover",
+          "value": "var(--nextui-colors-purple600)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondarySolidHover": {
+          "token": "secondarySolidHover",
+          "value": "var(--nextui-colors-purple700)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "secondaryShadow": {
+          "token": "secondaryShadow",
+          "value": "var(--nextui-colors-purple500)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "successLight": {
+          "token": "successLight",
+          "value": "var(--nextui-colors-green50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "successLightHover": {
+          "token": "successLightHover",
+          "value": "var(--nextui-colors-green100)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "successLightActive": {
+          "token": "successLightActive",
+          "value": "var(--nextui-colors-green200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "warningLight": {
+          "token": "warningLight",
+          "value": "var(--nextui-colors-yellow50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "warningLightHover": {
+          "token": "warningLightHover",
+          "value": "var(--nextui-colors-yellow100)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "warningLightActive": {
+          "token": "warningLightActive",
+          "value": "var(--nextui-colors-yellow200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "errorLight": {
+          "token": "errorLight",
+          "value": "var(--nextui-colors-red50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "errorLightHover": {
+          "token": "errorLightHover",
+          "value": "var(--nextui-colors-red100)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "errorLightActive": {
+          "token": "errorLightActive",
+          "value": "var(--nextui-colors-red200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "errorLightContrast": {
+          "token": "errorLightContrast",
+          "value": "var(--nextui-colors-red700)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "neutralLight": {
+          "token": "neutralLight",
+          "value": "var(--nextui-colors-gray200)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "neutralLightHover": {
+          "token": "neutralLightHover",
+          "value": "var(--nextui-colors-gray300)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "neutralLightActive": {
+          "token": "neutralLightActive",
+          "value": "var(--nextui-colors-gray400)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "neutralSolidContrast": {
+          "token": "neutralSolidContrast",
+          "value": "var(--nextui-colors-white)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "textLight": {
+          "token": "textLight",
+          "value": "rgba(236,237,238,0.2)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "text": {
+          "token": "text",
+          "value": "var(--nextui-colors-gray900)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "linkLight": {
+          "token": "linkLight",
+          "value": "rgba(0,114,245,0.2)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "link": {
+          "token": "link",
+          "value": "var(--nextui-colors-blue700)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "codeLight": {
+          "token": "codeLight",
+          "value": "var(--nextui-colors-cyan50)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "code": {
+          "token": "code",
+          "value": "var(--nextui-colors-cyan600)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "selection": {
+          "token": "selection",
+          "value": "var(--nextui-colors-pink800)",
+          "scale": "colors",
+          "prefix": "nextui"
+        },
+        "border": {
+          "token": "border",
+          "value": "rgba(255, 255, 255, 0.15)",
+          "scale": "colors",
+          "prefix": "nextui"
+        }
+      },
+      "shadows": {
+        "xs": {
+          "token": "xs",
+          "value": "0 2px 8px 1px rgb(0 0 0 / 0.07), 0 1px 1px -1px rgb(0 0 0 / 0.04)",
+          "scale": "shadows",
+          "prefix": "nextui"
+        },
+        "sm": {
+          "token": "sm",
+          "value": "0 2px 8px 2px rgb(0 0 0 / 0.07), 0 2px 4px -1px rgb(0 0 0 / 0.04)",
+          "scale": "shadows",
+          "prefix": "nextui"
+        },
+        "md": {
+          "token": "md",
+          "value": "0 12px 20px 6px rgb(0 0 0 / 0.08)",
+          "scale": "shadows",
+          "prefix": "nextui"
+        },
+        "lg": {
+          "token": "lg",
+          "value": "0 12px 34px 6px rgb(0 0 0 / 0.18)",
+          "scale": "shadows",
+          "prefix": "nextui"
+        },
+        "xl": {
+          "token": "xl",
+          "value": "0 25px 65px 0px rgb(0 0 0 / 0.35)",
+          "scale": "shadows",
+          "prefix": "nextui"
+        }
+      },
+      "dropShadows": {
+        "xs": {
+          "token": "xs",
+          "value": "drop-shadow(0 2px 4px rgb(0 0 0 / 0.07)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.04))",
+          "scale": "dropShadows",
+          "prefix": "nextui"
+        },
+        "sm": {
+          "token": "sm",
+          "value": "drop-shadow(0 2px 8px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 4px rgb(0 0 0 / 0.04))",
+          "scale": "dropShadows",
+          "prefix": "nextui"
+        },
+        "md": {
+          "token": "md",
+          "value": "drop-shadow(0 4px 12px rgb(0 0 0 / 0.08)) drop-shadow(0 20px 8px rgb(0 0 0 / 0.04))",
+          "scale": "dropShadows",
+          "prefix": "nextui"
+        },
+        "lg": {
+          "token": "lg",
+          "value": "drop-shadow(0 12px 24px rgb(0 0 0 / 0.15)) drop-shadow(0 12px 14px rgb(0 0 0 / 0.1))",
+          "scale": "dropShadows",
+          "prefix": "nextui"
+        },
+        "xl": {
+          "token": "xl",
+          "value": "drop-shadow(0 25px 34px rgb(0 0 0 / 0.35))",
+          "scale": "dropShadows",
+          "prefix": "nextui"
+        }
+      },
+      "selector": ".dark-theme",
+      "className": "dark-theme"
+    }
+  },
+  "output": {
+    "date_val": "2023-12-11",
+    "numeric_val": "10",
+    "text_val": "Plop"
+  },
+  "export": {
+
+  }
+}

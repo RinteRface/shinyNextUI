@@ -75,8 +75,3 @@ card_image <- customComponent("Card.Image", "
 #' @inherit component params return
 #' @export
 text <- component("Text")
-
-#' @rdname modal
-#' @inherit component params return
-#' @export
-modal <- component("Modal")

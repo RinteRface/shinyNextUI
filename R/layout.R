@@ -22,6 +22,16 @@ nextui_page <- function(..., debug_react = FALSE) {
 #' @export
 container <- component("Container")
 
+#' @rdname container
+#' @inherit component params return
+#' @export
+row <- component("Row")
+
+#' @rdname container
+#' @inherit component params return
+#' @export
+col <- component("Col")
+
 #' @rdname grid
 #' @inherit component params return
 #' @export

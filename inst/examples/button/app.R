@@ -27,4 +27,4 @@ server <- function(input, output, session) {
   exportTestValues(n_click = n_click())
 }
 
-shinyApp(ui, server)
+if (interactive() || is_testing()) shinyApp(ui, server)

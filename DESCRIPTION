@@ -14,5 +14,6 @@ Imports:
   shiny,
   shiny.react
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    shinytest2
 Config/testthat/edition: 3

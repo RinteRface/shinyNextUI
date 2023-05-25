@@ -5,3 +5,6 @@
 ^inst/doc$
 ^inst/test$
 ^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

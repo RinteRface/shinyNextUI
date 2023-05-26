@@ -12,6 +12,8 @@ test_that("button works as expected", {
     variant = platform_variant()
   )
 
+  # Give time for the UI to appear (for CICD)
+  Sys.sleep(3)
   # Because shiny.react
   # does not use input bindings to create
   # shiny input but Shiny.setInputValue,

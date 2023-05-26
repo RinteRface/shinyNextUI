@@ -434,3 +434,43 @@ NULL
 #' @example inst/examples/text/app.R
 #' @seealso See \url{https://nextui.org/docs/components/text}.
 NULL
+
+#' avatar
+#'
+#' @description
+#' The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
+#'
+#' @details
+#'
+#' 1. Avatar Props
+#' \itemize{
+#'\item \bold{color}. Change avatar color. Type: NormalColors string. Default: default.
+#'\item \bold{textColor}. Change avatar text color. Type: SimpleColors string. Default: default.
+#'\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
+#'\item \bold{text}. Display text when image is missing. Type: string. Default: NA.
+#'\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
+#'\item \bold{size}. Avatar size. Type: NormalSizes number. Default: medium.
+#'\item \bold{bordered}. Bordered avatar. Type: boolean. Default: false.
+#'\item \bold{borderWeight}. Border weight for bordered avatar. Type: NormalWeights. Default: normal.
+#'\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
+#'\item \bold{stacked}. Stacked display group. Type: boolean. Default: false.
+#'\item \bold{zoomed}. Zoomed avatar. Type: boolean. Default: false.
+#'\item \bold{squared}. Squared avatar. Type: boolean. Default: false.
+#'\item \bold{icon}. Show icon in avatar. Type: ReactNode. Default: NA.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
+#'\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
+#' }
+#' 2. Avatar Group Props
+#' \itemize{
+#'\item \bold{count}. Total count of avatars. Type: number. Default: NA.
+#'\item \bold{animated}. Display translations animation on hover. Type: boolean. Default: true.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name avatar
+#' @example inst/examples/avatar/app.R
+#' @seealso See \url{https://nextui.org/docs/components/avatar}.
+NULL

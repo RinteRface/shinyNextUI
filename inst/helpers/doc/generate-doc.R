@@ -34,8 +34,7 @@ generate_details <- function(x) {
 # Generate roxygen like template.
 # el must be a list containing all the necessary metadata.
 #' @keywords internal
-generate_element_doc <- function(el) {
-  tmp_doc <- apis[[el]]
+generate_element_doc <- function(doc) {
   el_doc <- sprintf("
     #' %s
     #'
@@ -50,12 +49,12 @@ generate_element_doc <- function(el) {
     #' @example inst/examples/%s/app.R
     #' @seealso See \\url{%s}.
     NULL",
-    tmp_doc$title,
-    tmp_doc$description,
-    generate_details(tmp_doc$params),
-    tmp_doc$title,
-    tmp_doc$title,
-    tmp_doc$url
+    doc$title,
+    doc$description,
+    generate_details(doc$params),
+    doc$title,
+    doc$title,
+    doc$url
   )
   write(gsub("  ", "", el_doc), file = "./R/doc.R", append = TRUE)
 }
@@ -159,6 +158,6 @@ apis <- c(layout_apis, component_apis)
 pkgload::load_all()
 lapply(names(apis), function(name) {
   print(name)
-  generate_element_doc(name)
+  generate_element_doc(apis[[name]])
 })
 devtools::document()

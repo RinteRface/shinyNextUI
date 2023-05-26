@@ -2,8 +2,6 @@
 ^\.Rproj\.user$
 ^js$
 ^LICENSE\.md$
-^inst/doc$
-^inst/test$
 ^\.github$
 ^_pkgdown\.yml$
 ^docs$

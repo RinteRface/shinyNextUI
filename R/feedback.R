@@ -47,3 +47,8 @@ popover_content <- customComponent("Popover.Content", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Popover.Content;
 ")
+
+#' @rdname tooltip
+#' @inherit component params return
+#' @export
+tooltip <- component("Tooltip")

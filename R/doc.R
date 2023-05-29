@@ -556,3 +556,40 @@ NULL
 #' @example inst/examples/popover/app.R
 #' @seealso See \url{https://nextui.org/docs/components/popover}.
 NULL
+
+#' tooltip
+#'
+#' @description
+#' Tooltips displays informative text when users hover, focus, or click an element.
+#'
+#' @details
+#'
+#' 1. Tooltip Props
+#' \itemize{
+#'\item \bold{content}. Tooltip content. Type: React.ReactNode string. Default: NA.
+#'\item \bold{color}. Change tooltip background color. Type: TooltipTypes string. Default: default.
+#'\item \bold{contentColor}. Checkbox tooltip text color. Type: SimpleColors string. Default: default.
+#'\item \bold{placement}. Tooltip placement relative to the target. Type: Placement. Default: top.
+#'\item \bold{initialVisible}. Determine if the tooltip is visible on initial. Type: boolean. Default: false.
+#'\item \bold{animated}. Display tooltip animations. Type: boolean. Default: true.
+#'\item \bold{visible}. Force if the tooltip is visible or not. Type: boolean. Default: NA.
+#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
+#'\item \bold{rounded}. Rounded tooltip. Type: boolean. Default: false.
+#'\item \bold{hideArrow}. Hide tooltip arrow icon. Type: boolean. Default: NA.
+#'\item \bold{keepMounted}. Keep tooltip mounted on the DOM. Type: boolean. Default: false.
+#'\item \bold{*isDisabled}. Whether the tooltip content should be displayed or not. Type: boolean. Default: false.
+#'\item \bold{trigger}. Tooltip trigger mode. Type: TriggerTypes. Default: hover.
+#'\item \bold{enterDelay(ms)}. Delay before tooltip is shown. Type: number. Default: 0.
+#'\item \bold{leaveDelay(ms)}. Delay before tooltip is hidden (only works in 'hover' mode). Type: number. Default: 0.
+#'\item \bold{offset(px)}. Distance between tooltip and target. Type: number. Default: 12.
+#'\item \bold{portalClassName}. Tooltip box content className. Type: string. Default: NA.
+#'\item \bold{onVisibleChange}. Callback when tooltip visibility has changed. Type: number. Default: NA.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{...}. Native div props. Type: DivHTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name tooltip
+#' @example inst/examples/tooltip/app.R
+#' @seealso See \url{https://nextui.org/docs/components/tooltip}.
+NULL

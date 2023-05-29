@@ -93,7 +93,7 @@ items <- list(
     #"checkbox-group",
     #"radio",
     "popover",
-    #"tooltip",
+    "tooltip",
     #"dropdown",
     #"progress",
     ## "select",

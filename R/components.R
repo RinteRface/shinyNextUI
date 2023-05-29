@@ -88,3 +88,8 @@ avatar_group <- customComponent("Avatar.Group", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Avatar.Group;
 ")
+
+#' @rdname badge
+#' @inherit component params return
+#' @export
+badge <- component("Badge")

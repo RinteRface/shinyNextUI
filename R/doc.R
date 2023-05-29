@@ -474,3 +474,36 @@ NULL
 #' @example inst/examples/avatar/app.R
 #' @seealso See \url{https://nextui.org/docs/components/avatar}.
 NULL
+
+#' badge
+#'
+#' @description
+#' Badges are used as a small numerical value or status descriptor for UI elements.
+#'
+#' @details
+#'
+#' 1. Badge Props
+#' \itemize{
+#'\item \bold{children}. The wrapped component.. Type: ReactNode. Default: NA.
+#'\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string number ReactNode. Default: NA.
+#'\item \bold{color}. The badge color.. Type: SimpleColors. Default: default.
+#'\item \bold{size}. The badge size.. Type: NormalSizes. Default: md.
+#'\item \bold{variant}. The badge variation.. Type: BadgeVariant. Default: default.
+#'\item \bold{placement}. The placement of the badge content.. Type: BadgePlacements. Default: top-right.
+#'\item \bold{borderWeight}. The border weight for bordered badge variation.. Type: NormalWeights. Default: normal.
+#'\item \bold{shape}. The wrapped shape the badge should overlap.. Type: circle rectangle. Default: rectangle.
+#'\item \bold{horizontalOffset}. The horizontal offset of the badge content.. Type: string number. Default: NA.
+#'\item \bold{verticalOffset}. The vertical offset of the badge content.. Type: string number. Default: NA.
+#'\item \bold{isInvisible}. Whether the badge is invisible.. Type: boolean. Default: false.
+#'\item \bold{enableShadow}. Whether the badge shadow should be enabled.. Type: boolean. Default: false.
+#'\item \bold{isSquared}. Whether the badge corners should be squared.. Type: boolean. Default: false.
+#'\item \bold{disableOutline}. Whether the badge outline should be disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the badge content animation should be disabled.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: span.
+#' }
+#' @md
+#' @name badge
+#' @example inst/examples/badge/app.R
+#' @seealso See \url{https://nextui.org/docs/components/badge}.
+NULL

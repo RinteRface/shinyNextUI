@@ -3,6 +3,7 @@
 export(actionButton)
 export(avatar)
 export(avatar_group)
+export(badge)
 export(card)
 export(card_body)
 export(card_divider)

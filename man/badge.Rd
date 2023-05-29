@@ -44,6 +44,8 @@ Badges are used as a small numerical value or status descriptor for UI elements.
 library(shiny)
 library(shinyNextUI)
 
+badge <- shinyNextUI:::component("Badge")
+
 badge_config <- data.frame(
   size = c("xs", "sm", rep("md", 2), "lg", "xl"),
   color = c(

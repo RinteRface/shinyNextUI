@@ -507,3 +507,52 @@ NULL
 #' @example inst/examples/badge/app.R
 #' @seealso See \url{https://nextui.org/docs/components/badge}.
 NULL
+
+#' popover
+#'
+#' @description
+#' Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something. Popover implementation is based on @react-aria/overlays.
+#'
+#' @details
+#'
+#' 1. Popover Props
+#' \itemize{
+#'\item \bold{children*}. The content of the popover. It's usually the Popover.Trigger and Popover.Content.. Type: ReactNode[]. Default: NA.
+#'\item \bold{placement}. The placement of the popover relative to its trigger reference.. Type: PopoverPlacement. Default: bottom.
+#'\item \bold{triggerType}. Type of overlay that is opened by the trigger.. Type: TriggerType. Default: dialog.
+#'\item \bold{shouldFlip}. Whether the popover should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
+#'\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 12.
+#'\item \bold{isOpen}. Whether the overlay is open by default (controlled).. Type: boolean. Default: NA.
+#'\item \bold{isBordered}. Whether the overlay should have a border.. Type: boolean. Default: false.
+#'\item \bold{borderWeight}. The border weight of the bordered overlay.. Type: NormalWeights. Default: light.
+#'\item \bold{defaultOpen}. Whether the overlay is open by default (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{isDismissable}. Whether to close the overlay when the user interacts outside it.. Type: boolean. Default: true.
+#'\item \bold{disableShadow}. Whether to disable the shadow.. Type: boolean. Default: false.
+#'\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the overlay should be disabled.. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnBlur}. Whether the overlay should close when focus is lost or moves outside it.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the popover is animated.. Type: boolean. Default: false.
+#'\item \bold{triggerRef}. The ref for the element which the overlay positions itself with respect to.. Type: RefObject<HTMLElement>. Default: NA.
+#'\item \bold{scrollRef}. A ref for the scrollable region within the overlay.. Type: RefObject<HTMLElement>. Default: overlayRef.
+#' }
+#' 2. Popover Events
+#' \itemize{
+#'\item \bold{onOpenChange}. Handler that is called when the overlay's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the overlay should close.. Type: () => void. Default: NA.
+#'\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the overlay ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the overlay. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
+#' }
+#' 3. Popover.Trigger Props
+#' \itemize{
+#'\item \bold{children*}. The popover trigger component, ensure the children passed is focusable. Users can tab to it using their keyboard, and it can take a ref. It is critical for accessiblity.. Type: ReactNode. Default: NA.
+#' }
+#' 4. Popover.Content Props
+#' \itemize{
+#'\item \bold{children}. The content that is displayed when the trigger is clicked.. Type: ReactNode. Default: NA.
+#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{...}. Native element props.. Type: HTMLDivElement. Default: NA.
+#' }
+#' @md
+#' @name popover
+#' @example inst/examples/popover/app.R
+#' @seealso See \url{https://nextui.org/docs/components/popover}.
+NULL

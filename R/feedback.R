@@ -26,3 +26,24 @@ modal_footer <- customComponent("Modal.Footer", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Modal.Footer;
 ")
+
+#' @rdname popover
+#' @inherit component params return
+#' @export
+popover <- component("Popover")
+
+#' @rdname popover
+#' @inherit component params return
+#' @export
+popover_trigger <- customComponent("Popover.Trigger", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Popover.Trigger;
+")
+
+#' @rdname popover
+#' @inherit component params return
+#' @export
+popover_content <- customComponent("Popover.Content", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Popover.Content;
+")

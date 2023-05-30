@@ -796,3 +796,28 @@ NULL
 #' @example inst/examples/progress/app.R
 #' @seealso See \url{https://nextui.org/docs/components/progress}.
 NULL
+
+#' link
+#'
+#' @description
+#' Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an <a>
+#'
+#' @details
+#'
+#' 1. Link Props
+#' \itemize{
+#'\item \bold{color}. Change link color. Type: LinkColors boolean string. Default: false.
+#'\item \bold{href}. Link url. Type: string. Default: NA.
+#'\item \bold{isExternal updated}. Show link icon. Type: boolean. Default: false.
+#'\item \bold{underline}. Display underline. Type: boolean. Default: false.
+#'\item \bold{block}. Display as a separate block. Type: boolean. Default: false.
+#'\item \bold{ref}. forwardRef. Type: Ref<HTMLAnchorElement | null>. Default: NA.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: a.
+#'\item \bold{...}. Native props. Type: AnchorHTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name link
+#' @example inst/examples/link/app.R
+#' @seealso See \url{https://nextui.org/docs/components/link}.
+NULL

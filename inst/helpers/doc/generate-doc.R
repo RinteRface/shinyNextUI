@@ -100,8 +100,8 @@ items <- list(
     "modal",
     #"loading",
     "switch",
-    "text"#,
-    #"link",
+    "text",
+    "link",
     #"user",
     #"image"
   )

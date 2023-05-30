@@ -98,3 +98,8 @@ badge <- component("Badge")
 #' @inherit component params return
 #' @export
 progress <- component("Progress")
+
+#' @rdname link
+#' @inherit component params return
+#' @export
+progress <- component("Link")

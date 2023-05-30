@@ -53,6 +53,11 @@ ui <- nextui_page(
   container(
     tooltip(
       content = "A tooltip...",
+      rounded = TRUE,
+      color = "primary",
+      trigger = "click",
+      placement = "rightEnd",
+      hideArrow = FALSE,
       badge("Click me!")
     )
   )

@@ -72,7 +72,7 @@ ui <- nextui_page(
     popover(
       isBordered = TRUE,
       disableShadow = TRUE,
-      placement = "bottom-right",
+      placement = "right",
       popover_trigger(badge("Click me!")),
       popover_content(
         css = JS("{textGradient: '45deg, $purple600 -20\%, $pink600 100\%'}"),

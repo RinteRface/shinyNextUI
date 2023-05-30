@@ -593,3 +593,59 @@ NULL
 #' @example inst/examples/tooltip/app.R
 #' @seealso See \url{https://nextui.org/docs/components/tooltip}.
 NULL
+
+#' checkbox
+#'
+#' @description
+#' Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected. Checkbox implementation is based on @react-aria/checkbox
+#'
+#' @details
+#'
+#' 1. Checkbox Props
+#' \itemize{
+#'\item \bold{children}. The label for the element. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The value of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
+#'\item \bold{label}. The label for the element. Type: string. Default: NA.
+#'\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
+#'\item \bold{color}. The color of the component. Type: NormalColors. Default: default.
+#'\item \bold{labelColor}. The color of the label. Type: SimpleColors. Default: default.
+#'\item \bold{size}. The size of the component. Type: NormalSizes. Default: md.
+#'\item \bold{isSelected}. Whether the element should be selected (controlled). Type: boolean. Default: false.
+#'\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled). Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the checkbox has animations. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the input is disabled. Type: boolean. Default: false.
+#'\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: false.
+#'\item \bold{isRounded}. Whether the checkbox is rounded. Type: boolean. Default: false.
+#'\item \bold{lineThrough}. Line in the middle of the label when the Checkbox is checked. Type: boolean. Default: NA.
+#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
+#'\item \bold{autoFocus}. Whether the element should receive focus on render. Type: boolean. Default: .
+#'\item \bold{containerCss new}. Override Default CSS Container style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: label.
+#' }
+#' 2. Checkbox Events
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the element's selection state changes. Type: (checked: boolean) => void. Default: NA.
+#'\item \bold{onFocus}. Handler that is called when the element receives focus. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onBlur}. Handler that is called when the element loses focus. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onFocusChange}. Handler that is called when the element's focus status changes. Type: (focused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler that is called when a key is pressed. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler that is called when a key is released. Type: (e: KeyboardEvent) => void. Default: NA.
+#' }
+#' 3. Checkbox Accessibility Props
+#' \itemize{
+#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
+#'\item \bold{excludeFromTabOrder}. Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.. Type: boolean. Default: NA.
+#'\item \bold{aria-controls}. Identifies the element (or elements) whose contents or presence are controlled by the current element.. Type: string. Default: NA.
+#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
+#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
+#' }
+#' @md
+#' @name checkbox
+#' @example inst/examples/checkbox/app.R
+#' @seealso See \url{https://nextui.org/docs/components/checkbox}.
+NULL

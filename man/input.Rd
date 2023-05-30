@@ -3,15 +3,24 @@
 \name{input}
 \alias{input}
 \alias{textInput}
+\alias{updateTextInput}
 \alias{numericInput}
+\alias{updateNumericInput}
 \alias{dateInput}
+\alias{updateDateInput}
 \title{input}
 \usage{
 textInput(inputId, ..., value = defaultValue)
 
+updateTextInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+
 numericInput(inputId, ..., value = defaultValue)
 
+updateNumericInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+
 dateInput(inputId, ..., value = defaultValue)
+
+updateDateInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
 \item{inputId}{ID of the component.}
@@ -20,6 +29,8 @@ dateInput(inputId, ..., value = defaultValue)
 The allowed props are listed below in the \bold{Details} section.}
 
 \item{value}{Starting value.}
+
+\item{session}{Object passed as the \code{session} argument to Shiny server.}
 }
 \value{
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.

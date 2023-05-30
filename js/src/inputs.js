@@ -21,3 +21,10 @@ export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
     setValue(val);
   },
 }), { policy: debounce, delay: 250 });
+
+export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) => ({
+  defaultSelected: value,
+  onChange: (event) => {
+    setValue(event.target.checked);
+  },
+}));

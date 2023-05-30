@@ -89,7 +89,7 @@ items <- list(
     "input",
     # "autocomplete",
     #"textarea",
-    #"checkbox",
+    "checkbox",
     #"checkbox-group",
     #"radio",
     "popover",

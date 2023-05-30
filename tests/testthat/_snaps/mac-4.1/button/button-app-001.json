@@ -1,0 +1,43 @@
+{
+  "input": {
+    "clicked": 1
+  },
+  "output": {
+    "button": {
+      "data": {
+        "type": "element",
+        "module": "@/NextUI",
+        "name": "Button",
+        "props": {
+          "type": "raw",
+          "value": {
+            "inputId": "clicked",
+            "color": "primary",
+            "shadow": true,
+            "value": null,
+            "type": null,
+            "children": "Test Button. You clicked: 1 times."
+          }
+        }
+      },
+      "deps": [
+        {
+          "name": "nextui",
+          "version": "1.0.0",
+          "src": {
+            "href": "nextui-1.0.0"
+          },
+          "meta": null,
+          "script": "nextui.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    }
+  },
+  "export": {
+    "n_click": 1
+  }
+}

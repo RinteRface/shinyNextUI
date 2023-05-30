@@ -90,7 +90,7 @@ items <- list(
     # "autocomplete",
     #"textarea",
     "checkbox",
-    #"checkbox-group",
+    "checkbox-group",
     #"radio",
     "popover",
     "tooltip",

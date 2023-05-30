@@ -724,3 +724,45 @@ NULL
 #' @example inst/examples/radio/app.R
 #' @seealso See \url{https://nextui.org/docs/components/radio}.
 NULL
+
+#' checkbox-group
+#'
+#' @description
+#' A CheckboxGroup allows users to select one or more items from a list of choices. CheckboxGrup implementation is based on @react-aria/checkbox
+#'
+#' @details
+#'
+#' 1. Checkbox Group Props
+#' \itemize{
+#'\item \bold{children*}. The Checkboxes contained within the checkbox group.. Type: CheckboxGroupChildren. Default: NA.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The current value (controlled).. Type: string[]. Default: NA.
+#'\item \bold{defaultValue}. The current value (uncontrolled).. Type: string[]. Default: NA.
+#'\item \bold{name}. The name of the checkbox group, used when submitting an HTML form.. Type: string. Default: NA.
+#'\item \bold{orientation}. The axis the checkbox group items should align with.. Type: horizontal vertical. Default: vertical.
+#'\item \bold{size}. The size of the component. Type: NormalSizes. Default: medium.
+#'\item \bold{color}. The color of the component. Type: NormalColors. Default: default.
+#'\item \bold{labelColor}. The color of the label. Type: SimpleColors. Default: default.
+#'\item \bold{isDisabled}. Whether the checkbox group is disabled. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#' }
+#' 2. Checkbox Group Events
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the value changes. Type: (value: T) => void. Default: NA.
+#' }
+#' 3. Checkbox Group Accessibility Props
+#' \itemize{
+#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
+#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
+#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
+#' }
+#' @md
+#' @name checkbox-group
+#' @example inst/examples/checkbox-group/app.R
+#' @seealso See \url{https://nextui.org/docs/components/checkbox-group}.
+NULL

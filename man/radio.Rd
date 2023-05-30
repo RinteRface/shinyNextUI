@@ -2,14 +2,14 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{radio}
 \alias{radio}
-\alias{radioOptions}
+\alias{radioOption}
 \alias{radioButtons}
 \alias{updateRadioButtons}
 \title{radio}
 \usage{
-radioOptions(...)
+radioOption(...)
 
-radioButtons(inputId, ..., value = selected, choices = choices)
+radioButtons(inputId, ..., choices = choices, selected = NULL)
 
 updateRadioButtons(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
@@ -18,8 +18,6 @@ updateRadioButtons(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 The allowed props are listed below in the \bold{Details} section.}
 
 \item{inputId}{ID of the component.}
-
-\item{value}{Starting value.}
 
 \item{session}{Object passed as the \code{session} argument to Shiny server.}
 }

@@ -102,4 +102,4 @@ progress <- component("Progress")
 #' @rdname link
 #' @inherit component params return
 #' @export
-progress <- component("Link")
+link <- component("Link")

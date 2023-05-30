@@ -95,7 +95,7 @@ items <- list(
     "popover",
     "tooltip",
     #"dropdown",
-    #"progress",
+    "progress",
     ## "select",
     "modal",
     #"loading",

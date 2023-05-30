@@ -766,3 +766,33 @@ NULL
 #' @example inst/examples/checkbox-group/app.R
 #' @seealso See \url{https://nextui.org/docs/components/checkbox-group}.
 NULL
+
+#' progress
+#'
+#' @description
+#' The Progress component allows you to view the progress of any activity.
+#'
+#' @details
+#'
+#' 1. Progress Props
+#' \itemize{
+#'\item \bold{value}. Current value. Type: number. Default: NA.
+#'\item \bold{min}. Progress min value. Type: number. Default: 0.
+#'\item \bold{max}. Progress max value. Type: number. Default: 100.
+#'\item \bold{color}. Change filler bar color. Type: NormalColors. Default: default.
+#'\item \bold{status}. Change filler bar background color. Type: NormalColors. Default: default.
+#'\item \bold{size}. Change progress size. Type: NormalSizes. Default: medium.
+#'\item \bold{striped}. Stripe over the progress bar's background color. Type: boolean. Default: false.
+#'\item \bold{indeterminated}. Indeterminated progress. Type: boolean. Default: false.
+#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
+#'\item \bold{squared}. Squared progress. Type: boolean. Default: false.
+#'\item \bold{animated}. Enable or disable the progress animation. Type: boolean. Default: true.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{...}. Progress native props. Type: ProgressHTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name progress
+#' @example inst/examples/progress/app.R
+#' @seealso See \url{https://nextui.org/docs/components/progress}.
+NULL

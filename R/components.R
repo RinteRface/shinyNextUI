@@ -93,3 +93,8 @@ avatar_group <- customComponent("Avatar.Group", "
 #' @inherit component params return
 #' @export
 badge <- component("Badge")
+
+#' @rdname progress
+#' @inherit component params return
+#' @export
+progress <- component("Progress")

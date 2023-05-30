@@ -102,7 +102,7 @@ items <- list(
     "switch",
     "text",
     "link",
-    #"user",
+    "user",
     #"image"
   )
 )

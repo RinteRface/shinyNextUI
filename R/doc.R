@@ -821,3 +821,32 @@ NULL
 #' @example inst/examples/link/app.R
 #' @seealso See \url{https://nextui.org/docs/components/link}.
 NULL
+
+#' user
+#'
+#' @description
+#' Flexible User Profile Component.
+#'
+#' @details
+#'
+#' 1. User Props
+#' \itemize{
+#'\item \bold{color}. Change User Profile border color. Type: NormalColors string. Default: default.
+#'\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
+#'\item \bold{name}. Display Text Next to Image. Type: string. Default: NA.
+#'\item \bold{text}. Display Text when image is missing. Type: string. Default: NA.
+#'\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
+#'\item \bold{size}. User Profile size. Type: NormalSizes number. Default: medium.
+#'\item \bold{bordered}. Bordered User Profile. Type: boolean. Default: false.
+#'\item \bold{zoomed}. Zoomed User Profile. Type: boolean. Default: false.
+#'\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
+#'\item \bold{squared}. Squared User Profile. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
+#'\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name user
+#' @example inst/examples/user/app.R
+#' @seealso See \url{https://nextui.org/docs/components/user}.
+NULL

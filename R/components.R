@@ -103,3 +103,16 @@ progress <- component("Progress")
 #' @inherit component params return
 #' @export
 link <- component("Link")
+
+#' @rdname user
+#' @inherit component params return
+#' @export
+user <- component("User")
+
+#' @rdname user
+#' @inherit component params return
+#' @export
+user_link <- customComponent("User.Link", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.User.Link;
+")

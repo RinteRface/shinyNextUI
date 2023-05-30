@@ -14,6 +14,33 @@ input <- function(name, defaultValue = NULL, type = NULL) {
   }
 }
 
+# Usefull for radioButtons, checkBoxGroup
+groupInput <- function(name) {
+  function(inputId, ..., choices = choices, selected = NULL) {
+
+    # choices must be
+    # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
+    choices <- lapply(seq_along(choices), function(i) {
+      radioOptions(
+        value = names(choices)[[i]],
+        choices[[i]]
+      )
+    })
+
+    shiny.react::reactElement(
+      module = "@/NextUI",
+      name = name,
+      props = shiny.react::asProps(
+        inputId = inputId,
+        ...,
+        value = selected,
+        choices # expect radio component
+      ),
+      deps = nextui_deps()
+    )
+  }
+}
+
 #' @rdname button
 #' @inherit shinyInput params return
 #' @export
@@ -67,3 +94,19 @@ checkboxInput <- input("Checkbox", FALSE)
 #' @rdname checkbox
 #' @export
 updateCheckboxInput <- shiny.react::updateReactInput
+
+#' @rdname radio
+#' @note Required by \link{radioButtons} to create options.
+#' Don't use standalone.
+#' @inherit component params return
+#' @keywords internal
+radioOptions <- component("Radio")
+
+#' @rdname radio
+#' @inherit shinyInput params return
+#' @export
+radioButtons <- groupInput("Radio")
+
+#' @rdname radio
+#' @export
+updateRadioButtons <- shiny.react::updateReactInput

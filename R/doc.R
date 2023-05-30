@@ -649,3 +649,78 @@ NULL
 #' @example inst/examples/checkbox/app.R
 #' @seealso See \url{https://nextui.org/docs/components/checkbox}.
 NULL
+
+#' radio
+#'
+#' @description
+#' Radios allow users to select a single option from a list of mutually exclusive options. All possible options are exposed up front for users to compare. Radio implementation is based on @react-aria/radio
+#'
+#' @details
+#'
+#' 1. Radio.Group Props
+#' \itemize{
+#'\item \bold{children*}. The content of the radio group. It must be a list of radio items.. Type: ReactNode[]. Default: NA.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The current value (controlled).. Type: string. Default: NA.
+#'\item \bold{defaultValue}. The default value (uncontrolled).. Type: string. Default: NA.
+#'\item \bold{color}. Change radio group color. Type: SimpleColors string. Default: primary.
+#'\item \bold{labelColor}. Change radio group label color. Type: SimpleColors string. Default: default.
+#'\item \bold{size}. Size of all radios in the group. Type: NormalSizes. Default: md.
+#'\item \bold{name}. The name of the RadioGroup, used when submitting an HTML form. See MDN. Type: string. Default: NA.
+#'\item \bold{orientation}. The axis the radio group items should align with.. Type: horizontal vertical. Default: vertical.
+#'\item \bold{validationState}. Whether the input should display its "valid" or "invalid" visual styling.. Type: valid invalid. Default: NA.
+#'\item \bold{isDisabled}. Whether the radio group items are disabled.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Whether user input is required on the input before form submission. Often paired with the necessityIndicator prop to add a visual indicator to the input.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#' }
+#' 2. Radio.Group Events
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the value changes.. Type: (value: T) => void. Default: NA.
+#' }
+#' 3. Radio.Group Accessibility Props
+#' \itemize{
+#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
+#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
+#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
+#' }
+#' 4. Radio Props
+#' \itemize{
+#'\item \bold{value*}. The value of the radio button, used when submitting an HTML form. See MDN. Type: string. Default: NA.
+#'\item \bold{children}. The label for the Radio. Accepts any renderable node.. Type: ReactNode. Default: NA.
+#'\item \bold{color}. The radio color. Type: SimpleColors string. Default: primary.
+#'\item \bold{labelColor}. The radio label color. Type: SimpleColors string. Default: default.
+#'\item \bold{description}. The radio description text. Type: string ReactNode. Default: NA.
+#'\item \bold{size}. The radio size. Type: NormalSizes. Default: md.
+#'\item \bold{isSquared}. Whether the radio button has squared corners. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the radio button is disabled or not. Shows that a selection exists, but is not available in that circumstance.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the checkbox has animations. Type: boolean. Default: false.
+#'\item \bold{autoFocus}. Whether the element should receive focus on render.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: label.
+#' }
+#' 5. Radio Events
+#' \itemize{
+#'\item \bold{onFocus}. Handler that is called when the element receives focus.. Type: (e: FocusEvent) => any. Default: NA.
+#'\item \bold{onBlur}. Handler that is called when the element loses focus.. Type: (e: FocusEvent) => any. Default: NA.
+#'\item \bold{onFocusChange}. Handler that is called when the element's focus status changes.. Type: (isFocused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => any. Default: NA.
+#'\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => any. Default: NA.
+#' }
+#' 6. Radio Accessibility Props
+#' \itemize{
+#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
+#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
+#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#' }
+#' @md
+#' @name radio
+#' @example inst/examples/radio/app.R
+#' @seealso See \url{https://nextui.org/docs/components/radio}.
+NULL

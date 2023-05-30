@@ -85,8 +85,10 @@ ui <- nextui_page(
       checkboxInput(
         inputId = "checkbox",
         value = TRUE,
-        size = "xs",
-        shadow = TRUE
+        "My checkbox",
+        isRounded = TRUE,
+        color = "warning",
+        lineThrough = TRUE
       )
     ),
     grid(textOutput("check_val"))

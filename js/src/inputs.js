@@ -28,3 +28,10 @@ export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) =
     setValue(event.target.checked);
   },
 }));
+
+export const Radio = InputAdapter(NextUI.Radio.Group, (value, setValue, props) => ({
+  value: value,
+  onChange: (event) => {
+    setValue(event);
+  },
+}));

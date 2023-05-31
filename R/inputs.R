@@ -154,7 +154,7 @@ collapse_panel <- input("Collapse", FALSE)
 update_collapse_panel <- shiny.react::updateReactInput
 
 #' @rdname collapse
-#' @inherit shinyInput params return
+#' @inherit component params return
 #' @export
 collapse_option <- component("Collapse")
 

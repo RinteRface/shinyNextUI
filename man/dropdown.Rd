@@ -135,7 +135,7 @@ library(shiny)
 library(shinyNextUI)
 library(shiny.react)
 
-items <- lapply(1:4, function(i) {
+items <- lapply(1:8, function(i) {
   dropdown_item(
     key = i,
     description = sprintf("Description \%s", i),
@@ -152,28 +152,25 @@ ui <- nextui_page(
       dropdown(
         dropdown_button("Trigger", flat = TRUE, color = color),
         dropdow_menu(
+          isVirtualized = TRUE,
           color = color,
           inputId = "dropdown",
           disabledKeys = JS("['3', '4']"),
-          disallowEmptySelection = TRUE,
-          selectionMode = "single",
+          selectionMode = "multiple",
           items,
           dropdown_section(
-            dropdown_item(key = 5, "Item 5")
+            dropdown_item(key = 9, "Item 9")
           )
         )
       )
     ),
-    grid(textOutput("dropdown_val"))
+    grid(verbatimTextOutput("dropdown_val"))
   )
 )
 
 server <- function(input, output, session) {
-  observeEvent(input$dropdown, {
-    update_dropdown(
-      "dropdown",
-      selectedKeys = input$dropdown
-    )
+  observe({
+    print(input$dropdown)
   })
   output$dropdown_val <- renderText(input$dropdown)
 }

@@ -88,7 +88,7 @@ items <- list(
     "badge",
     "input",
     # "autocomplete",
-    #"textarea",
+    "textarea",
     "checkbox",
     "checkbox-group",
     "radio",

@@ -10,6 +10,13 @@ export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
   },
 }));
 
+export const Textarea = InputAdapter(NextUI.Textarea, (value, setValue, props) => ({
+  value: value,
+  onChange: (event) => {
+    setValue(event.target.value);
+  },
+}));
+
 export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
   value: value,
   onChange: (event) => {

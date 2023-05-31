@@ -898,3 +898,52 @@ NULL
 #' @example inst/examples/collapse/app.R
 #' @seealso See \url{https://nextui.org/docs/components/collapse}.
 NULL
+
+#' textarea
+#'
+#' @description
+#' Textarea component is a multi-line Input which allows you to write large texts.
+#'
+#' @details
+#'
+#' 1. Textarea Props
+#' \itemize{
+#'\item \bold{value}. Textarea value. Type: string. Default: NA.
+#'\item \bold{initialValue}. Textarea default value. Type: string. Default: NA.
+#'\item \bold{placeholder}. The short hint displayed in the textarea. Type: string. Default: NA.
+#'\item \bold{size}. Change textarea size. Type: NormalSizes. Default: medium.
+#'\item \bold{color}. Change textarea text, border and label color. Type: SimpleColors. Default: default.
+#'\item \bold{status}. Change textarea status color. Type: SimpleColors. Default: default.
+#'\item \bold{rows}. Textarea rows count. Type: number. Default: NA.
+#'\item \bold{minRows}. Minimum number of rows to show for textarea. Type: number. Default: 3.
+#'\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow. Type: number. Default: 6.
+#'\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: true.
+#'\item \bold{helperColor}. Change helper text color. Type: SimpleColors. Default: default.
+#'\item \bold{required}. Required textarea prop. Type: boolean. Default: false.
+#'\item \bold{readOnly}. It prevents the user from changing the value of the field. Type: boolean. Default: false.
+#'\item \bold{disabled}. Disable textarea. Type: boolean. Default: false.
+#'\item \bold{bordered}. Bordered textarea. Type: boolean. Default: false.
+#'\item \bold{underlined}. Underlined textarea. Type: boolean. Default: false.
+#'\item \bold{shadow}. Enable or disable the textarea shadow. Type: boolean. Default: true.
+#'\item \bold{animated}. Enable or disable the textarea animation. Type: boolean. Default: true.
+#'\item \bold{autoComplete}. HTML textarea autocomplete attribute. Type: string. Default: off.
+#'\item \bold{borderWeight}. Border weight for bordered textarea. Type: NormalWeights. Default: normal.
+#'\item \bold{fullWidth}. If true, the textarea will take up the full width of its container.. Type: boolean. Default: false.
+#'\item \bold{width}. Textarea width. Type: string. Default: initial.
+#'\item \bold{label}. Text label for textarea. Type: string. Default: NA.
+#'\item \bold{labelPlaceholder}. The placeholder becomes a label. Type: string. Default: NA.
+#'\item \bold{helperText}. Add a helper text to textarea. Type: string. Default: NA.
+#'\item \bold{onHeightChange}. Callback fired whenthe textarea height change. Type: (height: number, meta: {rowHeight: number}) => void. Default: NA.
+#'\item \bold{onChange}. Callback fired when the value is changed. Type: (e: React.ChangeEvent<HTMLTextAreaElement>) => void. Default: NA.
+#'\item \bold{onFocus}. Callback fired when the textarea is focused.. Type: (e: React.FocusEvent<HTMLTextAreaElement>) => void. Default: NA.
+#'\item \bold{onBlur}. Callback fired when the textarea is blurred.. Type: (e: React.FocusEvent<HTMLTextAreaElement>) => void. Default: NA.
+#'\item \bold{ref}. forwardRef. Type: Ref<HTMLTextAreaElement | null>. Default: NA.
+#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: input.
+#'\item \bold{...}. Textarea native props. Type: TextareaHTMLAttributes. Default: NA.
+#' }
+#' @md
+#' @name textarea
+#' @example inst/examples/textarea/app.R
+#' @seealso See \url{https://nextui.org/docs/components/textarea}.
+NULL

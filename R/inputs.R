@@ -66,6 +66,15 @@ switchInput <- input("Switch", FALSE)
 #' @export
 updateSwitchInput <- shiny.react::updateReactInput
 
+#' @rdname textarea
+#' @inherit shinyInput params return
+#' @export
+textAreaInput <- input("Textarea", "")
+
+#' @rdname textarea
+#' @export
+updateTextAreaInput <- shiny.react::updateReactInput
+
 #' @rdname input
 #' @inherit shinyInput params return
 #' @export

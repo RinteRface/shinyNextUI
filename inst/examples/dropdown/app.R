@@ -39,13 +39,6 @@ server <- function(input, output, session) {
   observe({
     print(input$dropdown)
   })
-
-  observeEvent(input$dropdown, {
-    update_dropdown(
-      inputId = "dropdown",
-      selectedKeys = input$dropdown
-    )
-  })
   output$dropdown_val <- renderText(input$dropdown)
 }
 

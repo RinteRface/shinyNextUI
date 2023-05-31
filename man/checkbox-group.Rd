@@ -2,16 +2,16 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{checkbox-group}
 \alias{checkbox-group}
-\alias{checkboxGroupInput}
-\alias{checkboxOption}
-\alias{updateCheckboxGroupInput}
+\alias{checkbox_group_input}
+\alias{checkbox_option}
+\alias{update_checkbox_group_input}
 \title{checkbox-group}
 \usage{
-checkboxGroupInput(inputId, ..., choices = choices, selected = NULL)
+checkbox_group_input(inputId, ..., choices = choices, selected = NULL)
 
-checkboxOption(...)
+checkbox_option(...)
 
-updateCheckboxGroupInput(
+update_checkbox_group_input(
   session = shiny::getDefaultReactiveDomain(),
   inputId,
   ...
@@ -66,7 +66,7 @@ A CheckboxGroup allows users to select one or more items from a list of choices.
 }
 }
 \note{
-Required by \link{checkboxGroupInput} to create options.
+Required by \link{checkboxgroup_input} to create options.
 Don't use standalone.
 }
 \examples{
@@ -77,7 +77,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      checkboxGroupInput(
+      checkbox_group_input(
         inputId = "checkbox_group",
         label = "Checkbox Group",
         choices = c(

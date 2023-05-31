@@ -31,15 +31,17 @@ export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
 
 export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) => ({
   defaultSelected: value,
-  onChange: (event) => {
-    setValue(event.target.checked);
+  onChange: (e) => {
+    setValue(e);
   },
 }));
 
 export const CheckboxGroup = InputAdapter(NextUI.Checkbox.Group, (value, setValue, props) => ({
   value: value,
-  onChange: (event) => {
-    setValue(event);
+  onChange: (v) => {
+    console.log(props);
+    props.value = v;
+    setValue(v);
   },
 }));
 
@@ -53,7 +55,6 @@ export const Radio = InputAdapter(NextUI.Radio.Group, (value, setValue, props) =
 export const Collapse = InputAdapter(NextUI.Collapse, (value, setValue, props) => ({
   expanded: value,
   onChange: (e, i, v) => {
-    console.log(props);
     setValue(v);
   },
 }));

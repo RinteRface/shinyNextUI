@@ -2,13 +2,17 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{checkbox}
 \alias{checkbox}
-\alias{checkboxInput}
-\alias{updateCheckboxInput}
+\alias{checkbox_input}
+\alias{update_checkbox_input}
 \title{checkbox}
 \usage{
-checkboxInput(inputId, ..., value = defaultValue)
+checkbox_input(inputId, ..., value = default_value)
 
-updateCheckboxInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_checkbox_input(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...
+)
 }
 \arguments{
 \item{inputId}{ID of the component.}
@@ -82,7 +86,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      checkboxInput(
+      checkbox_input(
         inputId = "checkbox",
         value = TRUE,
         "My checkbox",

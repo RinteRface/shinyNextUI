@@ -1,5 +1,5 @@
-input <- function(name, defaultValue = NULL, type = NULL) {
-  function(inputId, ..., value = defaultValue) {
+input <- function(name, default_value = NULL, type = NULL) {
+  function(inputId, ..., value = default_value) {
     shiny.react::reactElement(
       module = "@/NextUI",
       name = name,
@@ -15,13 +15,13 @@ input <- function(name, defaultValue = NULL, type = NULL) {
 }
 
 # Usefull for radioButtons, checkBoxGroup
-groupInput <- function(name, type) {
+group_input <- function(name, type) {
   function(inputId, ..., choices = choices, selected = NULL) {
 
     choices_fun <- switch(
       type,
-      "checkbox" = checkboxOption,
-      "radio" = radioOption
+      "checkbox" = checkbox_option,
+      "radio" = radio_option
     )
     # choices must be
     # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
@@ -51,97 +51,97 @@ groupInput <- function(name, type) {
 #' @rdname button
 #' @inherit shinyInput params return
 #' @export
-actionButton <- input("Button")
+action_button <- input("Button")
 
 #' @rdname button
 #' @export
-updateActionButton <- shiny.react::updateReactInput
+update_action_button <- shiny.react::updateReactInput
 
 #' @rdname switch
 #' @inherit shinyInput params return
 #' @export
-switchInput <- input("Switch", FALSE)
+switch_input <- input("Switch", FALSE)
 
 #' @rdname switch
 #' @export
-updateSwitchInput <- shiny.react::updateReactInput
+update_switch_input <- shiny.react::updateReactInput
 
 #' @rdname textarea
 #' @inherit shinyInput params return
 #' @export
-textAreaInput <- input("Textarea", "")
+text_area_input <- input("Textarea", "")
 
 #' @rdname textarea
 #' @export
-updateTextAreaInput <- shiny.react::updateReactInput
+update_text_area_input <- shiny.react::updateReactInput
 
 #' @rdname input
 #' @inherit shinyInput params return
 #' @export
-textInput <- input("Input", "", type = "text")
+text_input <- input("Input", "", type = "text")
 
 #' @rdname input
 #' @export
-updateTextInput <- shiny.react::updateReactInput
-
-#' @rdname input
-#' @inherit shinyInput params return
-#' @export
-numericInput <- input("Input", "", type = "number")
-
-#' @rdname input
-#' @export
-updateNumericInput <- shiny.react::updateReactInput
+update_text_input <- shiny.react::updateReactInput
 
 #' @rdname input
 #' @inherit shinyInput params return
 #' @export
-dateInput <- input("Input", "", type = "date")
+numeric_input <- input("Input", "", type = "number")
 
 #' @rdname input
 #' @export
-updateDateInput <- shiny.react::updateReactInput
+update_numeric_input <- shiny.react::updateReactInput
+
+#' @rdname input
+#' @inherit shinyInput params return
+#' @export
+date_input <- input("Input", "", type = "date")
+
+#' @rdname input
+#' @export
+update_date_input <- shiny.react::updateReactInput
 
 #' @rdname checkbox
 #' @inherit shinyInput params return
 #' @export
-checkboxInput <- input("Checkbox", FALSE)
+checkbox_input <- input("Checkbox", FALSE)
 
 #' @rdname checkbox
 #' @export
-updateCheckboxInput <- shiny.react::updateReactInput
+update_checkbox_input <- shiny.react::updateReactInput
 
 #' @rdname checkbox-group
 #' @inherit shinyInput params return
 #' @export
-checkboxGroupInput <- groupInput("CheckboxGroup", type = "checkbox")
+checkbox_group_input <- group_input("CheckboxGroup", type = "checkbox")
 
 #' @rdname checkbox-group
-#' @note Required by \link{checkboxGroupInput} to create options.
+#' @note Required by \link{checkboxgroup_input} to create options.
 #' Don't use standalone.
 #' @inherit component params return
 #' @keywords internal
-checkboxOption <- component("Checkbox")
+checkbox_option <- component("Checkbox")
 
 #' @rdname checkbox-group
 #' @export
-updateCheckboxGroupInput <- shiny.react::updateReactInput
+update_checkbox_group_input <- shiny.react::updateReactInput
 
 #' @rdname radio
 #' @note Required by \link{radioButtons} to create options.
 #' Don't use standalone.
 #' @inherit component params return
 #' @keywords internal
-radioOption <- component("Radio")
+radio_option <- component("Radio")
 
 #' @rdname radio
 #' @inherit shinyInput params return
 #' @export
-radioButtons <- groupInput("Radio", type = "radio")
+radio_input <- group_input("Radio", type = "radio")
 
 #' @rdname radio
 #' @export
-updateRadioButtons <- shiny.react::updateReactInput
+update_radio_input <- shiny.react::updateReactInput
 
 #' @rdname collapse
 #' @inherit shinyInput params return
@@ -165,7 +165,7 @@ collapse_option <- component("Collapse")
 #' uncollapsed.
 #' @inherit shinyInput params return
 #' @export
-collapse_group <- groupInput("CollapseGroup", type = "collapse")
+collapse_group <- group_input("CollapseGroup", type = "collapse")
 
 #' @rdname dropdown
 #' @inherit component params return
@@ -180,7 +180,7 @@ dropdow_menu <- input("Dropdown")
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_button <- customComponent("Dropdown.Button", "
+dropdown_button <- custom_component("Dropdown.Button", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Dropdown.Button;
 ")
@@ -188,7 +188,7 @@ dropdown_button <- customComponent("Dropdown.Button", "
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_item <- customComponent("Dropdown.Item", "
+dropdown_item <- custom_component("Dropdown.Item", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Dropdown.Item;
 ")
@@ -197,7 +197,7 @@ dropdown_item <- customComponent("Dropdown.Item", "
 #' @note Container for related \link{dropdown_item}.
 #' @inherit component params return
 #' @export
-dropdown_section <- customComponent("Dropdown.Section", "
+dropdown_section <- custom_component("Dropdown.Section", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Dropdown.Section;
 ")
@@ -205,7 +205,7 @@ dropdown_section <- customComponent("Dropdown.Section", "
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_trigger <- customComponent("Dropdown.Trigger", "
+dropdown_trigger <- custom_component("Dropdown.Trigger", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Dropdown.Trigger;
 ")

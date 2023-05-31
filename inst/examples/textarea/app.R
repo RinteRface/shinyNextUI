@@ -5,8 +5,8 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      actionButton("update_text", "Update text"),
-      textAreaInput(
+      action_button("update_text", "Update text"),
+      text_area_input(
         inputId = "textarea",
         placeholder = "Enter your amazing ideas.",
         label = "Text area input",
@@ -25,7 +25,7 @@ server <- function(input, output, session) {
   output$textarea_val <- renderText(input$textarea)
 
   observeEvent(input$update_text, {
-    updateTextAreaInput(
+    update_text_area_input(
       inputId = "textarea",
       value = "Updated value"
     )

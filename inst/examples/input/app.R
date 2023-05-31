@@ -5,7 +5,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      textInput(
+      text_input(
         inputId = "text",
         value = "Plop",
         placeholder = "Next UI",
@@ -17,7 +17,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      numericInput(
+      numeric_input(
         inputId = "numeric",
         value = 10,
         label = "Numeric input"
@@ -28,7 +28,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      dateInput(
+      date_input(
         inputId = "date",
         value = "2023-12-11",
         label = "Date input"

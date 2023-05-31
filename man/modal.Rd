@@ -76,7 +76,7 @@ library(shinyNextUI)
 library(shiny.react)
 
 ui <- nextui_page(
-  actionButton(
+  action_button(
     inputId = "show_modal",
     color = "primary",
     shadow = TRUE,

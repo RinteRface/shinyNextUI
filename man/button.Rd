@@ -2,13 +2,13 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{button}
 \alias{button}
-\alias{actionButton}
-\alias{updateActionButton}
+\alias{action_button}
+\alias{update_action_button}
 \title{button}
 \usage{
-actionButton(inputId, ..., value = defaultValue)
+action_button(inputId, ..., value = default_value)
 
-updateActionButton(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_action_button(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
 \item{inputId}{ID of the component.}
@@ -95,7 +95,7 @@ server <- function(input, output, session) {
   })
 
   output$button <- renderReact({
-    actionButton(
+    action_button(
       inputId = "clicked",
       color = "primary",
       shadow = TRUE,

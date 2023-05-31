@@ -2,13 +2,13 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{switch}
 \alias{switch}
-\alias{switchInput}
-\alias{updateSwitchInput}
+\alias{switch_input}
+\alias{update_switch_input}
 \title{switch}
 \usage{
-switchInput(inputId, ..., value = defaultValue)
+switch_input(inputId, ..., value = default_value)
 
-updateSwitchInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_switch_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
 \item{inputId}{ID of the component.}
@@ -60,7 +60,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      switchInput(
+      switch_input(
         inputId = "switch",
         value = TRUE,
         size = "xs",

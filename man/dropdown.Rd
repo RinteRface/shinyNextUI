@@ -12,7 +12,7 @@
 \usage{
 dropdown(...)
 
-dropdow_menu(inputId, ..., value = defaultValue)
+dropdow_menu(inputId, ..., value = default_value)
 
 dropdown_button(...)
 

@@ -5,7 +5,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      switchInput(
+      switch_input(
         inputId = "switch",
         value = TRUE,
         size = "xs",

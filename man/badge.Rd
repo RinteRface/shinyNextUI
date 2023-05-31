@@ -83,7 +83,6 @@ ui <- nextui_page(
   text("Badges"),
   grid_container(
     gap = 1,
-    justify = "center",
     badges
   ),
   spacer(y = 2),

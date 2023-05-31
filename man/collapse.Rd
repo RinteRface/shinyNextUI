@@ -8,7 +8,7 @@
 \alias{collapse_group}
 \title{collapse}
 \usage{
-collapse_panel(inputId, ..., value = defaultValue)
+collapse_panel(inputId, ..., value = default_value)
 
 update_collapse_panel(
   session = shiny::getDefaultReactiveDomain(),
@@ -93,7 +93,7 @@ ui <- nextui_page(
     gap = 2,
     xs = 12,
     grid(
-      actionButton("toggle_panel1", "Toggle panel 1"),
+      action_button("toggle_panel1", "Toggle panel 1"),
       spacer(y = 1),
       collapse_panel(
         inputId = "collapse_panel1",

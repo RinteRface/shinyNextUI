@@ -40,7 +40,7 @@ grid <- component("Grid")
 #' @rdname grid
 #' @inherit component params return
 #' @export
-grid_container <- customComponent("Grid.Container", "
+grid_container <- custom_component("Grid.Container", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Grid.Container;
 ")

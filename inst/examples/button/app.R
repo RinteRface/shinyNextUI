@@ -13,7 +13,7 @@ server <- function(input, output, session) {
   })
 
   output$button <- renderReact({
-    actionButton(
+    action_button(
       inputId = "clicked",
       color = "primary",
       shadow = TRUE,

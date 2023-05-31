@@ -7,19 +7,19 @@ component <- function(name) {
   )
 }
 
-customComponent <- function(name, js) {
+custom_component <- function(name, js) {
   dependency <- htmltools::htmlDependency(
     name = name,
     version = "0", # Not used.
     src = c(href = ""), # Not used.
     head = paste0("
       <script>
-        (jsmodule.CustomComponents ??= {})['", name, "'] = (() => {", js, "})();
+        (jsmodule.custom_components ??= {})['", name, "'] = (() => {", js, "})();
       </script>
     ")
   )
   function(...) shiny.react::reactElement(
-    module = "CustomComponents",
+    module = "custom_components",
     name = name,
     props = shiny.react::asProps(...),
     deps = list(nextui_deps(), dependency)
@@ -34,7 +34,7 @@ card <- component("Card")
 #' @rdname card
 #' @inherit component params return
 #' @export
-card_body <- customComponent("Card.Body", "
+card_body <- custom_component("Card.Body", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Card.Body;
 ")
@@ -42,7 +42,7 @@ card_body <- customComponent("Card.Body", "
 #' @rdname card
 #' @inherit component params return
 #' @export
-card_header <- customComponent("Card.Header", "
+card_header <- custom_component("Card.Header", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Card.Header;
 ")
@@ -50,7 +50,7 @@ card_header <- customComponent("Card.Header", "
 #' @rdname card
 #' @inherit component params return
 #' @export
-card_divider <- customComponent("Card.Divider", "
+card_divider <- custom_component("Card.Divider", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Card.Divider;
 ")
@@ -58,7 +58,7 @@ card_divider <- customComponent("Card.Divider", "
 #' @rdname card
 #' @inherit component params return
 #' @export
-card_footer <- customComponent("Card.Footer", "
+card_footer <- custom_component("Card.Footer", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Card.Footer;
 ")
@@ -66,7 +66,7 @@ card_footer <- customComponent("Card.Footer", "
 #' @rdname card
 #' @inherit component params return
 #' @export
-card_image <- customComponent("Card.Image", "
+card_image <- custom_component("Card.Image", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Card.Image;
 ")
@@ -84,7 +84,7 @@ avatar <- component("Avatar")
 #' @rdname avatar
 #' @inherit component params return
 #' @export
-avatar_group <- customComponent("Avatar.Group", "
+avatar_group <- custom_component("Avatar.Group", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.Avatar.Group;
 ")
@@ -112,7 +112,7 @@ user <- component("User")
 #' @rdname user
 #' @inherit component params return
 #' @export
-user_link <- customComponent("User.Link", "
+user_link <- custom_component("User.Link", "
   const NextUI = jsmodule['@nextui-org/react'];
   return NextUI.User.Link;
 ")

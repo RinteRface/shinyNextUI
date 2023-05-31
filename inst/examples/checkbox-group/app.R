@@ -5,7 +5,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      checkboxGroupInput(
+      checkbox_group_input(
         inputId = "checkbox_group",
         label = "Checkbox Group",
         choices = c(

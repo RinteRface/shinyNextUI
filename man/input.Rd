@@ -2,25 +2,25 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{input}
 \alias{input}
-\alias{textInput}
-\alias{updateTextInput}
-\alias{numericInput}
-\alias{updateNumericInput}
-\alias{dateInput}
-\alias{updateDateInput}
+\alias{text_input}
+\alias{update_text_input}
+\alias{numeric_input}
+\alias{update_numeric_input}
+\alias{date_input}
+\alias{update_date_input}
 \title{input}
 \usage{
-textInput(inputId, ..., value = defaultValue)
+text_input(inputId, ..., value = default_value)
 
-updateTextInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_text_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 
-numericInput(inputId, ..., value = defaultValue)
+numeric_input(inputId, ..., value = default_value)
 
-updateNumericInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_numeric_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 
-dateInput(inputId, ..., value = defaultValue)
+date_input(inputId, ..., value = default_value)
 
-updateDateInput(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_date_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
 \item{inputId}{ID of the component.}
@@ -102,7 +102,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      textInput(
+      text_input(
         inputId = "text",
         value = "Plop",
         placeholder = "Next UI",
@@ -114,7 +114,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      numericInput(
+      numeric_input(
         inputId = "numeric",
         value = 10,
         label = "Numeric input"
@@ -125,7 +125,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      dateInput(
+      date_input(
         inputId = "date",
         value = "2023-12-11",
         label = "Date input"

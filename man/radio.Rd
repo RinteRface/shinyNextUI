@@ -2,16 +2,16 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{radio}
 \alias{radio}
-\alias{radioOption}
-\alias{radioButtons}
-\alias{updateRadioButtons}
+\alias{radio_option}
+\alias{radio_input}
+\alias{update_radio_input}
 \title{radio}
 \usage{
-radioOption(...)
+radio_option(...)
 
-radioButtons(inputId, ..., choices = choices, selected = NULL)
+radio_input(inputId, ..., choices = choices, selected = NULL)
 
-updateRadioButtons(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_radio_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
@@ -105,7 +105,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      radioButtons(
+      radio_input(
         inputId = "radio",
         label = "Radios",
         choices = c(

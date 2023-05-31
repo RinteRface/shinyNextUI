@@ -5,7 +5,7 @@ ui <- nextui_page(
   grid_container(
     gap = 2,
     grid(
-      radioButtons(
+      radio_input(
         inputId = "radio",
         label = "Radios",
         choices = c(

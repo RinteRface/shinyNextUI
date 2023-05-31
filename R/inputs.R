@@ -166,3 +166,50 @@ collapse_option <- component("Collapse")
 #' @inherit shinyInput params return
 #' @export
 collapse_group <- groupInput("CollapseGroup", type = "collapse")
+
+#' @rdname dropdown
+#' @inherit component params return
+#' @export
+dropdown <- component("Dropdown")
+
+#' @rdname dropdown
+#' @inherit shinyInput params return
+#' @export
+dropdow_menu <- input("Dropdown")
+
+#' @rdname dropdown
+#' @inherit component params return
+#' @export
+dropdown_button <- customComponent("Dropdown.Button", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Dropdown.Button;
+")
+
+#' @rdname dropdown
+#' @inherit component params return
+#' @export
+dropdown_item <- customComponent("Dropdown.Item", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Dropdown.Item;
+")
+
+#' @rdname dropdown
+#' @note Container for related \link{dropdown_item}.
+#' @inherit component params return
+#' @export
+dropdown_section <- customComponent("Dropdown.Section", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Dropdown.Section;
+")
+
+#' @rdname dropdown
+#' @inherit component params return
+#' @export
+dropdown_trigger <- customComponent("Dropdown.Trigger", "
+  const NextUI = jsmodule['@nextui-org/react'];
+  return NextUI.Dropdown.Trigger;
+")
+
+#' @rdname dropdown
+#' @export
+update_dropdown <- shiny.react::updateReactInput

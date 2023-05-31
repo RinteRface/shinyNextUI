@@ -65,3 +65,15 @@ export const CollapseGroup = InputAdapter(NextUI.Collapse.Group, (value, setValu
     setValue(i);
   },
 }));
+
+export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, props) => ({
+  onSelectionChange: (keys) => {
+    let vals = [];
+    keys.forEach(key => {
+      vals.push(key);
+    });
+    // So values appear in the right order
+    // regardless of selection
+    setValue(vals.sort());
+  }
+}));

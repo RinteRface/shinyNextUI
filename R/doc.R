@@ -947,3 +947,99 @@ NULL
 #' @example inst/examples/textarea/app.R
 #' @seealso See \url{https://nextui.org/docs/components/textarea}.
 NULL
+
+#' dropdown
+#'
+#' @description
+#' Displays a list of actions or options that a user can choose. Dropdown implementation is based on
+#' \code{react-aria/menu}
+#'
+#' @details
+#'
+#' 1. Dropdown Props
+#' \itemize{
+#'\item \bold{children*}. The content of the dropdown. It's usually the Dropdown.Trigger, Dropdown.Button and Dropdown.Menu.. Type: ReactNode[]. Default: NA.
+#'\item \bold{type}. The type of dropdown menu that the dropdown trigger opens.. Type: TriggerType. Default: menu.
+#'\item \bold{trigger}. How the dropdown menu is triggered.. Type: MenuTriggerType. Default: press.
+#'\item \bold{closeOnSelect}. Whether the dropdown menu closes when a selection is made.. Type: boolean. Default: true.
+#'\item \bold{isDisabled}. Whether dropdown trigger is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableTriggerPressedAnimation new}. Whether the trigger should show a pressed animation when the menu is open.. Type: boolean. Default: false.
+#'\item \bold{PopoverProps}. Since dropdown is based on the Popover you can use any of the Popover props.. Type: PopoverProps. Default: NA.
+#' }
+#' 2. Dropdown Events
+#' \itemize{
+#'\item \bold{PopoverEvents}. Since dropdown is based on the Popover you can use any of the Popover events.. Type: PopoverEvents. Default: NA.
+#' }
+#' 3. Dropdown.Trigger Props
+#' \itemize{
+#'\item \bold{children*}. The dropdown trigger component, ensure the children passed is focusable. Users can tab to it using their keyboard, and it can take a ref. It is critical for accessiblity.. Type: ReactNode. Default: NA.
+#' }
+#' 4. Dropdown.Button Props
+#' \itemize{
+#'\item \bold{ButtonProps}. Since dropdown button is based on the Button you can use any of the Button props.. Type: ButtonProps. Default: NA.
+#' }
+#' 5. Dropdown.Menu Props
+#' \itemize{
+#'\item \bold{children*}. The contents of the collection. It's usually the Dropdown.Item or Dropdown.Section.. Type: CollectionChildrentype. Default: NA.
+#'\item \bold{items}. Item objects in the collection.. Type: Iterable<T>. Default: NA.
+#'\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all Iterable<T>. Default: NA.
+#'\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all Iterable<T>. Default: NA.
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: Iterable<T>. Default: NA.
+#'\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: SelectionModeType. Default: NA.
+#'\item \bold{keyboardDelegate}. An optional keyboard delegate implementation for type to select, to override the default.. Type: KeyboardDelegateType. Default: NA.
+#'\item \bold{color}. The dropdown menu items color. Type: SimpleColors. Default: default.
+#'\item \bold{textColor}. The dropdown menu items text color. Type: SimpleColors. Default: default.
+#'\item \bold{variant}. The dropdown menu items variantion. Type: DropdownVariant. Default: flat.
+#'\item \bold{isVirtualized}. Whether the dropdown menu uses virtual scrolling.. Type: boolean. Default: false.
+#'\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
+#'\item \bold{autoFocus}. Where the focus should be set.. Type: boolean FocusStrategyType. Default: false.
+#'\item \bold{shouldFocusWrap}. Whether keyboard navigation is circular.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
+#'\item \bold{containerCss new}. Override the dropdown mmenu container (Popover.Content) CSS style.. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
+#' }
+#' 6. Dropdown.Menu Events
+#' \itemize{
+#'\item \bold{onAction}. Handler that is called when an item is selected.. Type: (key: Key) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys:SelectionType) => any. Default: NA.
+#' }
+#' 7. Dropdown.Menu Accessibility Props
+#' \itemize{
+#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
+#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
+#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
+#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#' }
+#' 8. Dropdown.Item Props
+#' \itemize{
+#'\item \bold{key}. The unique key for the menu item.. Type: Key. Default: false.
+#'\item \bold{description}. Description text element inside the dropdown menu item.. Type: string. Default: NA.
+#'\item \bold{command}. Right-aligned label text content, useful for displaying hotkeys.. Type: string. Default: NA.
+#'\item \bold{icon}. The icon to render before the dropdown menu item's label.. Type: ReactNode. Default: NA.
+#'\item \bold{dividerWeight}. The dropdown item divider height. Type: NormalWeights. Default: light.
+#'\item \bold{color}. The dropdown item color. Type: SimpleColors. Default: default.
+#'\item \bold{textColor}. The dropdown item text color. Type: SimpleColors. Default: default.
+#'\item \bold{variant}. The dropdown item variation. Type: DropdownVariant. Default: flat.
+#'\item \bold{withDivider}. Whether the dropdown item should have a border on top. Type: boolean. Default: false.
+#'\item \bold{showFullDescription new}. Whether the item description should be truncated or not.. Type: boolean. Default: false.
+#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
+#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
+#' }
+#' 9. Dropdown.Item Accessibility Props
+#' \itemize{
+#'\item \bold{aria-label}. A screen reader only label for the dropdown menu item.. Type: string. Default: NA.
+#' }
+#' 10. Dropdown.Section Props
+#' \itemize{
+#'\item \bold{heading}. The heading for the section.. Type: ReactNode. Default: NA.
+#' }
+#' 11. Dropdown.Section Accessibility Props
+#' \itemize{
+#'\item \bold{aria-label}. An accessibility label for the section. Required if heading is not present.. Type: string. Default: NA.
+#' }
+#' @md
+#' @name dropdown
+#' @example inst/examples/dropdown/app.R
+#' @seealso See \url{https://nextui.org/docs/components/dropdown}.
+NULL

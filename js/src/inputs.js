@@ -42,3 +42,11 @@ export const Radio = InputAdapter(NextUI.Radio.Group, (value, setValue, props) =
     setValue(event);
   },
 }));
+
+export const Collapse = InputAdapter(NextUI.Collapse, (value, setValue, props) => ({
+  expanded: value,
+  onChange: (e, i, v) => {
+    console.log(props);
+    setValue(v);
+  },
+}));

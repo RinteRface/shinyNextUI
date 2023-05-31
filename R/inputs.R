@@ -131,3 +131,12 @@ radioButtons <- groupInput("Radio", type = "radio")
 #' @rdname radio
 #' @export
 updateRadioButtons <- shiny.react::updateReactInput
+
+#' @rdname collapse
+#' @inherit shinyInput params return
+#' @export
+collapse_panel <- input("Collapse", FALSE)
+
+#' @rdname collapse
+#' @export
+update_collapse_panel <- shiny.react::updateReactInput

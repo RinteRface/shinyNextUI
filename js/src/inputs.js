@@ -50,3 +50,11 @@ export const Collapse = InputAdapter(NextUI.Collapse, (value, setValue, props) =
     setValue(v);
   },
 }));
+
+export const CollapseGroup = InputAdapter(NextUI.Collapse.Group, (value, setValue, props) => ({
+  expanded: value,
+  onChange: (i, v) => {
+    // Returns index of opened element
+    setValue(i);
+  },
+}));

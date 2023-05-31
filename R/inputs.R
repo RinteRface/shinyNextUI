@@ -25,12 +25,14 @@ groupInput <- function(name, type) {
     )
     # choices must be
     # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
-    choices <- lapply(seq_along(choices), function(i) {
-      choices_fun(
-        value = names(choices)[[i]],
-        choices[[i]]
-      )
-    })
+    if (type != "collapse") {
+      choices <-  lapply(seq_along(choices), function(i) {
+        choices_fun(
+          value = names(choices)[[i]],
+          choices[[i]]
+        )
+      })
+    }
 
     shiny.react::reactElement(
       module = "@/NextUI",
@@ -138,5 +140,20 @@ updateRadioButtons <- shiny.react::updateReactInput
 collapse_panel <- input("Collapse", FALSE)
 
 #' @rdname collapse
+#' @note \link{update_collapse_panel} currently does not work.
 #' @export
 update_collapse_panel <- shiny.react::updateReactInput
+
+#' @rdname collapse
+#' @inherit shinyInput params return
+#' @export
+collapse_option <- component("Collapse")
+
+#' @rdname collapse
+#' @note For \link{collapse_group}, the inputId gives the index
+#' of the currently opened item. For \link{collapse} inputId,
+#' indicates FALSE when closed and TRUE when the item is
+#' uncollapsed.
+#' @inherit shinyInput params return
+#' @export
+collapse_group <- groupInput("CollapseGroup", type = "collapse")

@@ -50,6 +50,25 @@ ui <- nextui_page(
           nisi ut aliquip ex ea commodo consequat."
         )
       )
+    ),
+    spacer(y = 1),
+    text("Accordion"),
+    grid(
+      collapse_group(
+        inputId = "collapse_group",
+        accordion = TRUE,
+        bordered = TRUE,
+        shadow = TRUE,
+        diver = TRUE,
+        choices = tagList(
+          collapse_option(
+            title = "Title 1",
+            subtitle = "Subtitle",
+            "Blabla"
+          ),
+          collapse_option(title = "2", "Test 2")
+        )
+      )
     )
   )
 )
@@ -57,6 +76,7 @@ ui <- nextui_page(
 server <- function(input, output, session) {
   observe({
     print(input$collapse_panel1)
+    print(input$collapse_group)
   })
   observeEvent(input$toggle_panel1, {
     # Issue: this does not trigger onChange on the JS side ...

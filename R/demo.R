@@ -43,7 +43,7 @@ run_app <- function() {
                 weight = "bold"
               ),
               grid_container(
-                actionButton(
+                action_button(
                   inputId = "clicked",
                   color = "primary",
                   shadow = TRUE,
@@ -58,19 +58,19 @@ run_app <- function() {
         grid(xs = 6, card(card_body(text("Card 2"))))
       ),
       reactOutput("modal"),
-      switchInput(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
-      textInput(
+      switch_input(inputId = "switch", value = TRUE, size = "xs", shadow = TRUE),
+      text_input(
         inputId = "text",
         value = "Plop",
         placeholder = "Next UI",
         label = "Text input"
       ),
-      numericInput(
+      numeric_input(
         inputId = "numeric",
         value = 10,
         label = "Numeric input"
       ),
-      dateInput(
+      date_input(
         inputId = "date",
         value = "2023-12-11",
         label = "Date input"

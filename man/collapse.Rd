@@ -29,6 +29,11 @@ The allowed props are listed below in the \bold{Details} section.}
 \item{value}{Starting value.}
 
 \item{session}{Object passed as the \code{session} argument to Shiny server.}
+
+\item{choices}{Slot for \link{collapse_option}. Wrap inside
+tagList.}
+
+\item{selected}{Default selected choice.}
 }
 \value{
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.

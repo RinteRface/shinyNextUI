@@ -164,6 +164,9 @@ collapse_option <- component("Collapse")
 #' indicates FALSE when closed and TRUE when the item is
 #' uncollapsed.
 #' @inherit shinyInput params return
+#' @param choices Slot for \link{collapse_option}. Wrap inside
+#' tagList.
+#' @param selected Default selected choice.
 #' @export
 collapse_group <- group_input("CollapseGroup", type = "collapse")
 

@@ -117,7 +117,7 @@ update_checkbox_input <- shiny.react::updateReactInput
 checkbox_group_input <- group_input("CheckboxGroup", type = "checkbox")
 
 #' @rdname checkbox-group
-#' @note Required by \link{checkboxgroup_input} to create options.
+#' @note Required by \link{checkbox_group_input} to create options.
 #' Don't use standalone.
 #' @inherit component params return
 #' @keywords internal

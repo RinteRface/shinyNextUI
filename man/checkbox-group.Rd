@@ -66,7 +66,7 @@ A CheckboxGroup allows users to select one or more items from a list of choices.
 }
 }
 \note{
-Required by \link{checkboxgroup_input} to create options.
+Required by \link{checkbox_group_input} to create options.
 Don't use standalone.
 }
 \examples{

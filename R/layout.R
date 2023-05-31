@@ -10,10 +10,13 @@
 #' @return Object which can be passed as the UI of a Shiny app.
 #' @export
 nextui_page <- function(..., debug_react = FALSE) {
-  fluidPage(
-    htmltools::suppressDependencies("bootstrap"),
-    if (debug_react) enableReactDebugMode(),
-    ...
+  tagList(
+    create_react_deps(),
+    fluidPage(
+      htmltools::suppressDependencies("bootstrap", "react"),
+      if (debug_react) enableReactDebugMode(),
+      ...
+    )
   )
 }
 

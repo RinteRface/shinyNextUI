@@ -78,3 +78,15 @@ export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, pro
     setValue(vals.sort());
   }
 }));
+
+export const Navbar = InputAdapter(NextUI.Navbar, (value, setValue, props) => ({
+  onClick: (e) => {
+    // Get active item value
+    let val = $(e.currentTarget)
+      .find('li[class*="isActive"] a')[0]
+      .innerHTML;
+    // TO DO.
+    // when click on li item, toggle the old active ...
+    setValue(val);
+  }
+}));

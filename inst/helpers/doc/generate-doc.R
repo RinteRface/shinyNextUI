@@ -84,7 +84,7 @@ items <- list(
     #"pagination",
     #"table",
     "collapse",
-    #"navbar",
+    "navbar",
     "badge",
     "input",
     # "autocomplete",

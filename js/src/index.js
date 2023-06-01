@@ -1,16 +1,14 @@
-import {createTheme, changeTheme} from '@nextui-org/react';
-
-const darkTheme = createTheme({
-  type: 'dark',
-  theme: {
-    //colors: {...},
-  }
-});
-
-changeTheme('dark');
-
+// Set default theme as light
 $(document).on('shiny:connected', function() {
-  Shiny.setInputValue('theme', darkTheme);
+  Shiny.setInputValue('theme', 'light', {priority: 'event'});
+
+  // People can use input$theme to conditionaly style
+  // there components with renderReact and reactOutput
+  $('#theme_switcher').on('change', function(e) {
+    const nextTheme = e.target.checked ? 'light' : 'dark';
+    window.jsmodule['@nextui-org/react'].changeTheme(nextTheme);
+    Shiny.setInputValue('theme', nextTheme, {priority: 'event'});
+  });
 });
 
 window.jsmodule = {

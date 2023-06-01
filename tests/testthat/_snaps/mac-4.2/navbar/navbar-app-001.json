@@ -1,5 +1,7 @@
 {
   "input": {
+    "navbar": null,
+    "navbar_button": null,
     "theme": "light"
   },
   "output": {

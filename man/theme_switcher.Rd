@@ -12,37 +12,37 @@ Change between light and dark mode
 \examples{
 if (interactive()) {
   library(shiny)
- library(shinyNextUI)
- library(shiny.react)
+  library(shinyNextUI)
+  library(shiny.react)
 
- ui <- nextui_page(
-   theme_switcher(),
-   reactOutput("card")
- )
+  ui <- nextui_page(
+    theme_switcher(),
+    reactOutput("card")
+  )
 
- server <- function(input, output, session) {
-   observe({
-     print(input$theme)
-   })
-   output$card <- renderReact({
-     card(
-       variant = "bordered",
-       card_header("Card title"),
-       card_divider(),
-       card_body(h1("Card body")),
-       card_divider(),
-       card_footer("Card Footer"),
-       className = JS(
-         sprintf("window.jsmodule['@nextui-org/react'].createTheme({
-         type: '\%s',
-         theme: {}
-       })", input$theme)
-       )
-     )
-   })
- }
+  server <- function(input, output, session) {
+    observe({
+      print(input$theme)
+    })
+    output$card <- renderReact({
+      card(
+        variant = "bordered",
+        card_header("Card title"),
+        card_divider(),
+        card_body(h1("Card body")),
+        card_divider(),
+        card_footer("Card Footer"),
+        className = JS(
+          sprintf("window.jsmodule['@nextui-org/react'].createTheme({
+          type: '\%s',
+          theme: {}
+        })", input$theme)
+        )
+      )
+    })
+  }
 
- shinyApp(ui, server)
+  shinyApp(ui, server)
 
 }
 

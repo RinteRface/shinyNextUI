@@ -79,14 +79,10 @@ export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, pro
   }
 }));
 
-export const Navbar = InputAdapter(NextUI.Navbar, (value, setValue, props) => ({
-  onClick: (e) => {
-    // Get active item value
-    let val = $(e.currentTarget)
-      .find('li[class*="isActive"] a')[0]
-      .innerHTML;
-    // TO DO.
-    // when click on li item, toggle the old active ...
-    setValue(val);
+export const NavbarLink = InputAdapter(NextUI.Navbar.Link, (value, setValue, props) => ({
+  value: value,
+  onPress: (e) => {
+    const navId = $(e.target).attr('parent');
+    Shiny.setInputValue(navId, $(e.target).attr('value'), {priority: 'event'});
   }
 }));

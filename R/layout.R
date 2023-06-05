@@ -10,14 +10,14 @@
 #' @return Object which can be passed as the UI of a Shiny app.
 #' @export
 nextui_page <- function(..., debug_react = FALSE) {
-  tagList(
+  #tagList(
     #create_react_deps(),
-    fluidPage(
+    htmltools::tags$body(
       htmltools::suppressDependencies("bootstrap"),
       if (debug_react) enableReactDebugMode(),
       ...
     )
-  )
+  #)
 }
 
 #' @rdname container
@@ -54,9 +54,9 @@ grid_container <- custom_component("Grid.Container", "
 spacer <- component("Spacer")
 
 #' @rdname navbar
-#' @inherit shinyInput params return
+#' @inherit component params return
 #' @export
-navbar <- input("Navbar")
+navbar <- component("Navbar")
 
 #' @rdname navbar
 #' @inherit component params return
@@ -85,10 +85,12 @@ navbar_item <- custom_component("Navbar.Item", "
 #' @rdname navbar
 #' @inherit component params return
 #' @export
-navbar_link <- custom_component("Navbar.Link", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Link;
-")
+navbar_link <- input("NavbarLink")
+
+#custom_component("Navbar.Link", "
+#  const NextUI = jsmodule['@nextui-org/react'];
+#  return NextUI.Navbar.Link;
+#")
 
 #' @rdname navbar
 #' @inherit component params return

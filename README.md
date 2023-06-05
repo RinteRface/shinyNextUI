@@ -8,6 +8,8 @@
 The goal of `{shinyNextUI}` is to provide a wrapper around the
 NextUI React [library](https://nextui.org/).
 
+![](./man/figures/navbar.png)
+
 ## Installation
 
 You can install the development version of `{shinyNextUI}` from [GitHub](https://github.com/) with:

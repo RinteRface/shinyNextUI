@@ -10,43 +10,51 @@
 #' @return Object which can be passed as the UI of a Shiny app.
 #' @export
 nextui_page <- function(..., debug_react = FALSE) {
-  #tagList(
-    #create_react_deps(),
+  tagList(
+    create_react_deps(),
     htmltools::tags$body(
-      htmltools::suppressDependencies("bootstrap"),
+      class = "container my-auto mx-auto px-4",
+      htmltools::suppressDependencies("bootstrap", "react"),
       if (debug_react) enableReactDebugMode(),
       ...
     )
-  #)
+  )
 }
 
-#' @rdname container
-#' @inherit component params return
-#' @export
-container <- component("Container")
+flex <- function(...) {
+  div(
+    class = "flex flex-wrap",
+    ...
+  )
+}
 
-#' @rdname container
-#' @inherit component params return
-#' @export
-row <- component("Row")
-
-#' @rdname container
-#' @inherit component params return
-#' @export
-col <- component("Col")
-
-#' @rdname grid
-#' @inherit component params return
-#' @export
-grid <- component("Grid")
-
-#' @rdname grid
-#' @inherit component params return
-#' @export
-grid_container <- custom_component("Grid.Container", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Grid.Container;
-")
+# #' @rdname container
+# #' @inherit component params return
+# #' @export
+# container <- component("Container")
+#
+# #' @rdname container
+# #' @inherit component params return
+# #' @export
+# row <- component("Row")
+#
+# #' @rdname container
+# #' @inherit component params return
+# #' @export
+# col <- component("Col")
+#
+# #' @rdname grid
+# #' @inherit component params return
+# #' @export
+# grid <- component("Grid")
+#
+# #' @rdname grid
+# #' @inherit component params return
+# #' @export
+# grid_container <- custom_component("Grid.Container", "
+#   const NextUI = jsmodule['@nextui-org/react'];
+#   return NextUI.Grid.Container;
+# ")
 
 #' @rdname spacer
 #' @inherit component params return

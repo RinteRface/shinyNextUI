@@ -1,9 +1,9 @@
 nextui_deps <- function() {
   htmltools::htmlDependency(
     name = "nextui",
-    version = "1.0.0",
+    version = "2.0.0",
     package = "shinyNextUI",
-    src = c(file = "nextui-1.0.0"),
+    src = c(file = "nextui-2.0.0"),
     script = "nextui.js"
   )
 }
@@ -26,7 +26,7 @@ build_dep <- function(name, version = 18, mode = c("prod", "dev")) {
   )
   htmltools::htmlDependency(
     name = sprintf("%s-v%s", name, version),
-    version = "1.0.0",
+    version = "2.0.0",
     src = c(href = cdn),
     script = sprintf("%s.%s.js", name, mode)
   )

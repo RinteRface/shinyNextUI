@@ -52,19 +52,32 @@ export const Radio = InputAdapter(NextUI.Radio.Group, (value, setValue, props) =
   },
 }));
 
-export const Collapse = InputAdapter(NextUI.Collapse, (value, setValue, props) => ({
-  expanded: value,
-  onChange: (e, i, v) => {
-    setValue(v);
-  },
-}));
+//export const Collapse = InputAdapter(NextUI.Collapse, (value, //setValue, props) => ({
+//  expanded: value,
+//  onChange: (e, i, v) => {
+//    setValue(v);
+//  },
+//}));
+//
+//export const CollapseGroup = InputAdapter(NextUI.Collapse.Group, //(value, setValue, props) => ({
+//  expanded: value,
+//  onChange: (i, v) => {
+//    // Returns index of opened element
+//    setValue(i);
+//  },
+//}));
 
-export const CollapseGroup = InputAdapter(NextUI.Collapse.Group, (value, setValue, props) => ({
-  expanded: value,
-  onChange: (i, v) => {
-    // Returns index of opened element
-    setValue(i);
-  },
+export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props) => ({
+  defaultSelectedKeys: value,
+  onSelectionChange: (keys) => {
+    let vals = [];
+    keys.forEach(key => {
+      vals.push(key);
+    });
+    // So values appear in the right order
+    // regardless of selection
+    setValue(vals.sort());
+  }
 }));
 
 export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, props) => ({

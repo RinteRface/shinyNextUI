@@ -11,6 +11,13 @@ $(document).on('shiny:connected', function() {
   });
 });
 
+import "./output.css";
+
+// Dark mode
+$(function(){
+  $('html').addClass('dark text-foreground bg-background');
+});
+
 window.jsmodule = {
   ...window.jsmodule,
   '@nextui-org/react': require('@nextui-org/react'),

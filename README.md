@@ -31,3 +31,12 @@ get_examples()
 run_example("card")
 ```
 
+## Developer
+
+```shell
+# Update CSS
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+# Change JS files
+yarn webpack
+```

@@ -71,19 +71,19 @@ value_not_available <- function(v) {
 items <- list(
   # layout,
   layout = c(
-    "container",
-    "grid",
+    #"container",
+    #"grid",
     "spacer"
   ),
   # compo
   components = c(
     "avatar",
+    "accordion",
     "button",
     #"button-group",
     "card",
     #"pagination",
     #"table",
-    "collapse",
     "navbar",
     "badge",
     "input",
@@ -100,7 +100,7 @@ items <- list(
     "modal",
     #"loading",
     "switch",
-    "text",
+    #"text",
     "link",
     "user",
     #"image"

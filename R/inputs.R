@@ -143,32 +143,42 @@ radio_input <- group_input("Radio", type = "radio")
 #' @export
 update_radio_input <- shiny.react::updateReactInput
 
-#' @rdname collapse
-#' @inherit shinyInput params return
-#' @export
-collapse_panel <- input("Collapse", FALSE)
+# #' @rdname collapse
+# #' @inherit shinyInput params return
+# #' @export
+# collapse_panel <- input("Collapse", FALSE)
+#
+# #' @rdname collapse
+# #' @note \link{update_collapse_panel} currently does not work.
+# #' @export
+# update_collapse_panel <- shiny.react::updateReactInput
+#
+# #' @rdname collapse
+# #' @inherit component params return
+# #' @export
+# collapse_option <- component("Collapse")
+#
+# #' @rdname collapse
+# #' @note For \link{collapse_group}, the inputId gives the index
+# #' of the currently opened item. For \link{collapse} inputId,
+# #' indicates FALSE when closed and TRUE when the item is
+# #' uncollapsed.
+# #' @inherit shinyInput params return
+# #' @param choices Slot for \link{collapse_option}. Wrap inside
+# #' tagList.
+# #' @param selected Default selected choice.
+# #' @export
+# collapse_group <- group_input("CollapseGroup", type = "collapse")
 
-#' @rdname collapse
-#' @note \link{update_collapse_panel} currently does not work.
-#' @export
-update_collapse_panel <- shiny.react::updateReactInput
-
-#' @rdname collapse
+#' @rdname accordion
 #' @inherit component params return
 #' @export
-collapse_option <- component("Collapse")
+accordion <- input("Accordion")
 
-#' @rdname collapse
-#' @note For \link{collapse_group}, the inputId gives the index
-#' of the currently opened item. For \link{collapse} inputId,
-#' indicates FALSE when closed and TRUE when the item is
-#' uncollapsed.
-#' @inherit shinyInput params return
-#' @param choices Slot for \link{collapse_option}. Wrap inside
-#' tagList.
-#' @param selected Default selected choice.
+#' @rdname accordion
+#' @inherit component params return
 #' @export
-collapse_group <- group_input("CollapseGroup", type = "collapse")
+accordion_item <- component("AccordionItem")
 
 #' @rdname dropdown
 #' @inherit component params return

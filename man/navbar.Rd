@@ -163,17 +163,7 @@ library(shinyNextUI)
 library(shiny.react)
 library(shiny.router)
 
-# $(e.target).closest('li').attr('isActive', '')
-sections <- c("/", "other")
-links <- lapply(seq_along(sections), function(i) {
-  navbar_link(
-    href = route_link(sections[[i]]),
-    key = i,
-    sprintf("Link to \%s", sections[[i]]),
-    onPress = JS("(e) => console.log(e)"),
-  )
-})
-
+sections <- c("main", "other")
 
 layout <- function(..., content) {
   tags$div(
@@ -199,59 +189,156 @@ layout <- function(..., content) {
   )
 }
 
-page <- function(content) {
-  layout(
-    navbar(
-      #inputId = "navbar",
-      maxWidth = "lg",
-      variant = "floating",
-      isBordered = TRUE,
-      navbar_brand(text(b = TRUE, "Brand", color = "inherit", hideIn = "xs")),
-      navbar_content(
-        variant = "highlight",
-        activeColor = "primary",
-        hideIn = "xs",
-        links,
-        navbar_item(
-          action_button(
-            inputId = "navbar_button",
-            "Click me",
-            auto = TRUE,
-            flat = TRUE
-          )
+# TO DO: create wrapper for enduser to simplify all this mess.
+create_navbar <- function(id) {
+
+  input <- get("input", envir = parent.frame())
+
+  nav_links <- lapply(seq_along(sections), function(i) {
+    # Li elements
+    navbar_link(
+      inputId = sprintf("link_\%s", i),
+      href = route_link(sections[[i]]),
+      key = i,
+      value = i,
+      parent = sprintf("navbar_\%s", sections[[i]]),
+      isActive = if (is.null(input[[sprintf("navbar_\%s", id)]])) {
+        if (i == 1) TRUE else FALSE
+      } else {
+        if (input[[sprintf("navbar_\%s", id)]] == i) TRUE else FALSE
+      },
+      sprintf("Link to \%s", sections[[i]])
+    )
+  })
+
+  nav <- navbar(
+    id = sprintf("navbar_\%s", id),
+    maxWidth = "lg",
+    variant = "floating",
+    isBordered = TRUE,
+    navbar_brand(text(b = TRUE, "Brand", color = "inherit", hideIn = "xs")),
+    # Ul element
+    navbar_content(
+      variant = "highlight",
+      activeColor = "success",
+      nav_links,
+      navbar_item(
+        action_button(
+          inputId = sprintf("navbar_button-\%s", id),
+          "Click me",
+          auto = TRUE,
+          flat = TRUE
         )
       )
-    ),
+    )
+  )
+
+  if (is.null(input[[sprintf("navbar_\%s", id)]])) {
+    tagList(
+      tags$script(
+        sprintf("Shiny.setInputValue('navbar_\%s', 0)", id)
+      ),
+      nav
+    )
+  } else {
+    nav
+  }
+}
+
+page <- function(id, content) {
+  layout(
+    reactOutput(sprintf("nav_\%s", id)),
     content = content
   )
 }
 
 home <- page(
+  id = "main",
   grid_container(
     gap = 2,
-    lapply(1:20, function(i) {
-      grid(
-        xs = 12,
-        card(
-          card_header("My card"),
-          card_body("body")
+    grid(
+      xs = 12,
+      card(
+        variant = "bordered",
+        card_header(text("Amazing plot", as = "h3")),
+        card_divider(),
+        card_body(
+          row(
+            justify = "center",
+            align = "center",
+            gap = 1,
+            col(
+              span = 2,
+              collapse_panel(
+                shadow = TRUE,
+                bordered = TRUE,
+                css = JS("{
+                  background: 'gainsboro'
+                }"),
+                title = "Plot options",
+                subtitle = "A panel containing options",
+                inputId = "options",
+                value = TRUE,
+                numeric_input(
+                  inputId = "obs",
+                  label = "Number of observations:",
+                  value = 500
+                )
+              )
+            ),
+            col(
+              span = 10,
+              plotOutput("distPlot")
+            )
+          )
         )
       )
-    })
+    )
   )
 )
-other <- page("Other")
+other <- page(
+  id = "other",
+  grid_container(
+    gap = 2,
+    grid(
+      xs = 12,
+      card(
+        css = JS(
+          "{
+           maxHeight: '400px',
+          overflowY: 'scroll'
+          }"
+        ),
+        variant = "bordered",
+        tableOutput('table')
+      )
+    )
+  )
+)
 
 ui <- nextui_page(
   router_ui(
-    route("/", home),
+    route("main", home),
     route("other", other)
   )
 )
 
 server <- function(input, output, session) {
   observe(print(input$navbar))
-  router_server()
+  output$nav_main <- renderReact({
+    create_navbar("main")
+  })
+
+  output$nav_other <- renderReact({
+    create_navbar("other")
+  })
+
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$obs))
+  })
+  output$table <- renderTable(iris)
+
+  router_server("main")
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)

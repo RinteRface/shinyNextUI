@@ -71,10 +71,10 @@ card_image <- custom_component("Card.Image", "
   return NextUI.Card.Image;
 ")
 
-#' @rdname text
-#' @inherit component params return
-#' @export
-text <- component("Text")
+# #' @rdname text
+# #' @inherit component params return
+# #' @export
+# text <- component("Text")
 
 #' @rdname avatar
 #' @inherit component params return
@@ -84,10 +84,7 @@ avatar <- component("Avatar")
 #' @rdname avatar
 #' @inherit component params return
 #' @export
-avatar_group <- custom_component("Avatar.Group", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Avatar.Group;
-")
+avatar_group <- component("AvatarGroup")
 
 #' @rdname badge
 #' @inherit component params return

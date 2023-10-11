@@ -48,7 +48,7 @@ user_factory <- function(src, name, size, color, bordered, zoomed, pointer, squa
       pointer = pointer,
       squared = squared,
       description = description,
-      user_link(href = "https://nextui.org/", "Link")
+      avatarProps = JS('src = "https://nextui.org/"')
     )
   )
 }

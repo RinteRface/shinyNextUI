@@ -2,12 +2,9 @@
 % Please edit documentation in R/components.R, R/doc.R
 \name{user}
 \alias{user}
-\alias{user_link}
 \title{user}
 \usage{
 user(...)
-
-user_link(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
@@ -90,7 +87,7 @@ user_factory <- function(src, name, size, color, bordered, zoomed, pointer, squa
       pointer = pointer,
       squared = squared,
       description = description,
-      user_link(href = "https://nextui.org/", "Link")
+      avatarProps = JS('src = "https://nextui.org/"')
     )
   )
 }

@@ -4,9 +4,7 @@
 \alias{card}
 \alias{card_body}
 \alias{card_header}
-\alias{card_divider}
 \alias{card_footer}
-\alias{card_image}
 \title{card}
 \usage{
 card(...)
@@ -15,11 +13,7 @@ card_body(...)
 
 card_header(...)
 
-card_divider(...)
-
 card_footer(...)
-
-card_image(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.

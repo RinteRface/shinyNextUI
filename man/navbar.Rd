@@ -7,8 +7,6 @@
 \alias{navbar_item}
 \alias{navbar_link}
 \alias{navbar_toggle}
-\alias{navbar_collapse}
-\alias{navbar_collapse_item}
 \title{navbar}
 \usage{
 navbar(...)
@@ -22,10 +20,6 @@ navbar_item(...)
 navbar_link(inputId, ..., value = default_value)
 
 navbar_toggle(...)
-
-navbar_collapse(...)
-
-navbar_collapse_item(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.

@@ -69,57 +69,24 @@ navbar <- component("Navbar")
 #' @rdname navbar
 #' @inherit component params return
 #' @export
-navbar_brand <- custom_component("Navbar.Brand", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Brand;
-")
+navbar_brand <- component("NavbarBrand")
 
 #' @rdname navbar
 #' @inherit component params return
 #' @export
-navbar_content <- custom_component("Navbar.Content", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Content;
-")
+navbar_content <- component("NavbarContent")
 
 #' @rdname navbar
 #' @inherit component params return
 #' @export
-navbar_item <- custom_component("Navbar.Item", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Item;
-")
+navbar_item <- component("NavbarItem")
 
 #' @rdname navbar
 #' @inherit component params return
 #' @export
 navbar_link <- input("NavbarLink")
 
-#custom_component("Navbar.Link", "
-#  const NextUI = jsmodule['@nextui-org/react'];
-#  return NextUI.Navbar.Link;
-#")
-
 #' @rdname navbar
 #' @inherit component params return
 #' @export
-navbar_toggle <- custom_component("Navbar.Toggle", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Toggle;
-")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_collapse <- custom_component("Navbar.Collapse", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Collapse;
-")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_collapse_item <- custom_component("Navbar.CollapseItem", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.CollapseItem;
-")
+navbar_toggle <- component("NavbarToggle")

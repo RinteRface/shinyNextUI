@@ -26,51 +26,6 @@ custom_component <- function(name, js) {
   )
 }
 
-#' @rdname card
-#' @inherit component params return
-#' @export
-card <- component("Card")
-
-#' @rdname card
-#' @inherit component params return
-#' @export
-card_body <- custom_component("Card.Body", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Body;
-")
-
-#' @rdname card
-#' @inherit component params return
-#' @export
-card_header <- custom_component("Card.Header", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Header;
-")
-
-#' @rdname card
-#' @inherit component params return
-#' @export
-card_divider <- custom_component("Card.Divider", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Divider;
-")
-
-#' @rdname card
-#' @inherit component params return
-#' @export
-card_footer <- custom_component("Card.Footer", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Footer;
-")
-
-#' @rdname card
-#' @inherit component params return
-#' @export
-card_image <- custom_component("Card.Image", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Card.Image;
-")
-
 # #' @rdname text
 # #' @inherit component params return
 # #' @export
@@ -91,25 +46,47 @@ avatar_group <- component("AvatarGroup")
 #' @export
 badge <- component("Badge")
 
-#' @rdname progress
+#' @rdname card
 #' @inherit component params return
 #' @export
-progress <- component("Progress")
+card <- component("Card")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_body <- component("CardBody")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_header <- component("CardHeader")
+
+#' @rdname card
+#' @inherit component params return
+#' @export
+card_footer <- component("CardFooter")
+
+#' @rdname divider
+#' @inherit component params return
+#' @export
+divider <- component("Divider")
+
+#' @rdname image
+#' @inherit component params return
+#' @export
+image <- component("Image")
 
 #' @rdname link
 #' @inherit component params return
 #' @export
 link <- component("Link")
 
-#' @rdname user
+#' @rdname progress
 #' @inherit component params return
 #' @export
-user <- component("User")
+progress <- component("Progress")
 
 #' @rdname user
 #' @inherit component params return
 #' @export
-user_link <- custom_component("User.Link", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.User.Link;
-")
+user <- component("User")

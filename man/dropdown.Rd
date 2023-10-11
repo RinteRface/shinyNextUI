@@ -6,7 +6,6 @@
 \alias{dropdown_button}
 \alias{dropdown_item}
 \alias{dropdown_section}
-\alias{dropdown_trigger}
 \alias{update_dropdown}
 \title{dropdown}
 \usage{
@@ -19,8 +18,6 @@ dropdown_button(...)
 dropdown_item(...)
 
 dropdown_section(...)
-
-dropdown_trigger(...)
 
 update_dropdown(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }

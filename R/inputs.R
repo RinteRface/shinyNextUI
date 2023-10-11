@@ -193,35 +193,18 @@ dropdow_menu <- input("Dropdown")
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_button <- custom_component("Dropdown.Button", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Button;
-")
+dropdown_button <- component("DropdownTrigger")
 
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_item <- custom_component("Dropdown.Item", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Item;
-")
+dropdown_item <- component("DropdownItem")
 
 #' @rdname dropdown
 #' @note Container for related \link{dropdown_item}.
 #' @inherit component params return
 #' @export
-dropdown_section <- custom_component("Dropdown.Section", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Section;
-")
-
-#' @rdname dropdown
-#' @inherit component params return
-#' @export
-dropdown_trigger <- custom_component("Dropdown.Trigger", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Trigger;
-")
+dropdown_section <- component("DropdownSection")
 
 #' @rdname dropdown
 #' @export

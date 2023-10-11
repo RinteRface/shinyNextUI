@@ -82,6 +82,7 @@ items <- list(
     "button",
     #"button-group",
     "card",
+    "divider",
     #"pagination",
     #"table",
     "navbar",
@@ -103,7 +104,7 @@ items <- list(
     #"text",
     "link",
     "user",
-    #"image"
+    "image"
   )
 )
 

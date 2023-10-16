@@ -32,7 +32,7 @@ export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
 export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) => ({
   defaultSelected: value,
   onChange: (e) => {
-    setValue(e);
+    setValue(e.target.checked);
   },
 }));
 

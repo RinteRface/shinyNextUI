@@ -6,7 +6,8 @@ module.exports = {
       files: [
         // ...
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-        "../inst/examples/accordion/*.R",
+        //"../inst/examples/accordion/*.R",
+        "../inst/examples/**/*.R",
         "../R/*.R"
       ],
       extract: {

@@ -774,6 +774,10 @@ video {
   margin: 0px;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-0 {
   margin-left: 0px;
   margin-right: 0px;
@@ -782,6 +786,11 @@ video {
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .mx-auto {
@@ -864,6 +873,10 @@ video {
 
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .inline-grid {
@@ -1188,6 +1201,10 @@ video {
   max-width: 1536px;
 }
 
+.max-w-\[610px\] {
+  max-width: 610px;
+}
+
 .max-w-\[640px\] {
   max-width: 640px;
 }
@@ -1447,8 +1464,16 @@ video {
           appearance: none;
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -1863,6 +1888,10 @@ video {
 
 .bg-background\/10 {
   background-color: hsl(var(--nextui-background) / 0.1);
+}
+
+.bg-background\/60 {
+  background-color: hsl(var(--nextui-background) / 0.6);
 }
 
 .bg-background\/70 {
@@ -5699,6 +5728,10 @@ video {
 :is(.dark .dark\:bg-default) {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--nextui-default) / var(--nextui-default-opacity, var(--tw-bg-opacity)));
+}
+
+:is(.dark .dark\:bg-default-100\/50) {
+  background-color: hsl(var(--nextui-default-100) / 0.5);
 }
 
 :is(.dark .dark\:bg-transparent) {

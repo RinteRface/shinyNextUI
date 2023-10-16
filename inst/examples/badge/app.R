@@ -1,79 +1,71 @@
 library(shiny)
 library(shinyNextUI)
 
-badge <- shinyNextUI:::component("Badge")
-
 badge_config <- data.frame(
-  size = c("xs", "sm", rep("md", 2), "lg", "xl"),
+  size = c(rep("sm", 2), rep("md", 2), rep("lg", 2)),
   color = c(
+    "default",
     "primary",
     "secondary",
-    "neutral",
     "success",
     "warning",
-    "error"
+    "danger"
   ),
-  enable_shadow = c(rep(FALSE, 3), rep(TRUE, 3)),
-  variant = c(
-    rep("bordered", 3),
-    rep("flat", 3)
-  ),
-  is_squared = c(rep(TRUE, 3), FALSE, rep(FALSE, 2))
+  disable_outline = c(rep(FALSE, 3), rep(TRUE, 3))
 )
 
-badge_factory <- function(size, color, enable_shadow, variant, is_squared) {
-  grid(
-    badge(
-      size = size,
-      color = color,
-      enableShadow = enable_shadow,
-      variant = variant,
-      isSquared = is_squared,
-      "Badge"
-    )
+variants <- c("solid", "flat", "faded", "shadow")
+placement <- c("top-right", "bottom-right", "top-left", "bottom-left")
+shape <- c("rectangle", "circle")
+
+badge_factory <- function(size, color, disable_outline) {
+  badge(
+    class = "mx-5",
+    size = size,
+    color = color,
+    disableOutline = disable_outline,
+    content = 1,
+    avatar()
   )
 }
 
 badges <- purrr::pmap(badge_config, badge_factory)
 
 ui <- nextui_page(
-  text("Badges"),
-  grid_container(
-    gap = 1,
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Badges"),
+  div(
+    class = "flex flex-row",
     badges
   ),
   spacer(y = 2),
-  text("Badge content"),
-  grid_container(
-    grid(
-      badge(
-        color = "error",
-        content = 5,
-        placement = "top-left",
-        avatar(
-          bordered = TRUE,
-          squared = TRUE,
-          color = "secondary",
-          size = "lg",
-          src = "https://i.pravatar.cc/300?u=a042581f4e29026707d"
-        )
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Badge content"),
+  div(
+    class = "flex flex-row",
+    badge(
+      color = "danger",
+      content = "New",
+      placement = "top-left",
+      avatar(
+        bordered = TRUE,
+        squared = TRUE,
+        color = "secondary",
+        size = "lg",
+        src = "https://i.pravatar.cc/300?u=a042581f4e29026707d"
       )
     )
   ),
   spacer(y = 2),
-  text("Dot variant"),
-  grid_container(
-    grid(
-      badge(variant = "dot", color = "success", size = "lg"),
-    )
-  ),
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Solid variant"),
+  div(class = "flex flex-row", badge(variant = "solid", color = "success", size = "lg", content = 5, avatar())),
   spacer(y = 2),
-  text("Points variant"),
-  grid_container(
-    grid(
-      badge(variant = "points", color = "success", size = "lg"),
-    )
-  )
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Flat variant"),
+  div(class = "flex flex-row", badge(variant = "flat", color = "success", size = "lg", content = 5, avatar())),
+  spacer(y = 2),
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Faded variant"),
+  div(class = "flex flex-row", badge(variant = "faded", color = "success", size = "lg", content = 5, avatar())),
+  spacer(y = 2),
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Shadow variant"),
+  div(class = "flex flex-row", badge(variant = "shadow", color = "success", size = "lg", content = 5, avatar()))
 )
 
 server <- function(input, output, session) {}

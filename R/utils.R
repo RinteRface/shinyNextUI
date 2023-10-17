@@ -88,3 +88,45 @@ theme_switcher <- function() {
     iconOff = moon_icon()
   )
 }
+
+#' Available sizes
+#'
+#' @export
+#' @rdname nextui-defaults
+sizes <- c("sm", "md", "lg")
+
+#' Available colors
+#'
+#' @export
+#' @rdname nextui-defaults
+colors <- c(
+  "default",
+  "primary",
+  "secondary",
+  "success",
+  "warning",
+  "danger"
+)
+
+#' Available radiuses
+#'
+#' @export
+#' @rdname nextui-defaults
+radiuses <- c(
+  "none",
+  "sm",
+  "md",
+  "lg",
+  "full"
+)
+
+#' Available tabs variants
+#'
+#' @export
+#' @rdname nextui-defaults
+tabs_variants <- c(
+  "solid",
+  "underlined",
+  "bordered",
+  "light"
+)

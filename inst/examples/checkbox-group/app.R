@@ -2,6 +2,7 @@ library(shiny)
 library(shinyNextUI)
 
 ui <- nextui_page(
+  debug_react = TRUE,
   div(
     class = "flex gap-1",
     checkbox_group_input(

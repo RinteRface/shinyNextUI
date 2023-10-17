@@ -7,30 +7,6 @@ component <- function(name) {
   )
 }
 
-custom_component <- function(name, js) {
-  dependency <- htmltools::htmlDependency(
-    name = name,
-    version = "0", # Not used.
-    src = c(href = ""), # Not used.
-    head = paste0("
-      <script>
-        (jsmodule.custom_components ??= {})['", name, "'] = (() => {", js, "})();
-      </script>
-    ")
-  )
-  function(...) shiny.react::reactElement(
-    module = "custom_components",
-    name = name,
-    props = shiny.react::asProps(...),
-    deps = list(nextui_deps(), dependency)
-  )
-}
-
-# #' @rdname text
-# #' @inherit component params return
-# #' @export
-# text <- component("Text")
-
 #' @rdname avatar
 #' @inherit component params return
 #' @export
@@ -45,6 +21,11 @@ avatar_group <- component("AvatarGroup")
 #' @inherit component params return
 #' @export
 badge <- component("Badge")
+
+#' @rdname button
+#' @inherit component params return
+#' @export
+button <- component("Button")
 
 #' @rdname card
 #' @inherit component params return
@@ -70,6 +51,11 @@ card_footer <- component("CardFooter")
 #' @inherit component params return
 #' @export
 chip <- component("Chip")
+
+#' @rdname code
+#' @inherit component params return
+#' @export
+code_block <- component("Code")
 
 #' @rdname divider
 #' @inherit component params return

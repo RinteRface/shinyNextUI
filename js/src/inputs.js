@@ -4,7 +4,7 @@ import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 export const Button = ButtonAdapter(NextUI.Button);
 
 export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
-  checked: value,
+  isSelected: value,
   onChange: (event) => {
     setValue(event.target.checked);
   },
@@ -52,21 +52,6 @@ export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) =>
   },
 }));
 
-//export const Collapse = InputAdapter(NextUI.Collapse, (value, //setValue, props) => ({
-//  expanded: value,
-//  onChange: (e, i, v) => {
-//    setValue(v);
-//  },
-//}));
-//
-//export const CollapseGroup = InputAdapter(NextUI.Collapse.Group, //(value, setValue, props) => ({
-//  expanded: value,
-//  onChange: (i, v) => {
-//    // Returns index of opened element
-//    setValue(i);
-//  },
-//}));
-
 export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props) => ({
   defaultSelectedKeys: value,
   onSelectionChange: (keys) => {
@@ -80,7 +65,7 @@ export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props)
   }
 }));
 
-export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, props) => ({
+export const Dropdown = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => ({
   onSelectionChange: (keys) => {
     let vals = [];
     keys.forEach(key => {
@@ -92,10 +77,21 @@ export const Dropdown = InputAdapter(NextUI.Dropdown.Menu, (value, setValue, pro
   }
 }));
 
-export const NavbarLink = InputAdapter(NextUI.Navbar.Link, (value, setValue, props) => ({
-  value: value,
-  onPress: (e) => {
-    const navId = $(e.target).attr('parent');
-    Shiny.setInputValue(navId, $(e.target).attr('value'), {priority: 'event'});
+export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => ({
+  defaultSelectedKeys: value,
+  onSelectionChange: (keys) => {
+    let vals = [];
+    keys.forEach(key => {
+      vals.push(key);
+    });
+    // So values appear in the right order
+    // regardless of selection
+    setValue(vals.sort());
+  }
+}));
+
+export const Tabs = InputAdapter(NextUI.Tabs, (value, setValue, props) => ({
+  onSelectionChange: (key) => {
+    setValue(key);
   }
 }));

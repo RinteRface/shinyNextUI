@@ -36,47 +36,41 @@ Links allow users to click their way from page to page. This component is styled
 library(shiny)
 library(shinyNextUI)
 
-link <- shinyNextUI:::component("Link")
 colors <- c(
-  "text",
   "default",
   "primary",
   "secondary",
   "success",
   "warning",
-  "error",
-  "gradient"
+  "error"
 )
 
 link_config <- data.frame(
   color = colors,
-  underline = c(rep(FALSE, 4), rep(TRUE, 4)),
-  block = c(rep(TRUE, 4), rep(FALSE, 4)),
-  href = c(rep("#", 4), rep("https://google.com", 4)),
-  isExternal = c(rep(FALSE, 4), rep(TRUE, 4))
+  underline = c(rep("none", 2), "hover", "always", "active", "focus"),
+  block = c(rep(TRUE, 3), rep(FALSE, 3)),
+  href = c(rep("#", 3), rep("https://google.com", 3)),
+  isExternal = c(rep(FALSE, 3), rep(TRUE, 3)),
+  size = rep(c("sm", "md", "lg"), 2)
 )
 
-link_factory <- function(color, underline, block, href, isExternal) {
-  grid(
-    link(
-      "A super link!",
-      color = color,
-      underline = underline,
-      block = block,
-      href = href,
-      isExternal = isExternal
-    )
+link_factory <- function(color, underline, block, href, isExternal, size) {
+  link(
+    "A super link!",
+    color = color,
+    underline = underline,
+    isBlock = block,
+    href = href,
+    isExternal = isExternal,
+    size = size
   )
 }
 
 links <- purrr::pmap(link_config, link_factory)
 
 ui <- nextui_page(
-  text("Link"),
-  grid_container(
-    gap = 2,
-    xs = 12,
-    sm = 6,
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-2 m-5",
     links
   )
 )

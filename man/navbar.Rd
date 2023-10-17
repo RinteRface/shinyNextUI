@@ -5,7 +5,6 @@
 \alias{navbar_brand}
 \alias{navbar_content}
 \alias{navbar_item}
-\alias{navbar_link}
 \alias{navbar_toggle}
 \title{navbar}
 \usage{
@@ -16,8 +15,6 @@ navbar_brand(...)
 navbar_content(...)
 
 navbar_item(...)
-
-navbar_link(inputId, ..., value = default_value)
 
 navbar_toggle(...)
 }

@@ -28,34 +28,6 @@ flex <- function(...) {
   )
 }
 
-# #' @rdname container
-# #' @inherit component params return
-# #' @export
-# container <- component("Container")
-#
-# #' @rdname container
-# #' @inherit component params return
-# #' @export
-# row <- component("Row")
-#
-# #' @rdname container
-# #' @inherit component params return
-# #' @export
-# col <- component("Col")
-#
-# #' @rdname grid
-# #' @inherit component params return
-# #' @export
-# grid <- component("Grid")
-#
-# #' @rdname grid
-# #' @inherit component params return
-# #' @export
-# grid_container <- custom_component("Grid.Container", "
-#   const NextUI = jsmodule['@nextui-org/react'];
-#   return NextUI.Grid.Container;
-# ")
-
 #' @rdname spacer
 #' @inherit component params return
 #' @export
@@ -80,11 +52,6 @@ navbar_content <- component("NavbarContent")
 #' @inherit component params return
 #' @export
 navbar_item <- component("NavbarItem")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_link <- input("NavbarLink")
 
 #' @rdname navbar
 #' @inherit component params return

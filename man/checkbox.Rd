@@ -83,19 +83,17 @@ library(shiny)
 library(shinyNextUI)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      checkbox_input(
-        inputId = "checkbox",
-        value = TRUE,
-        "My checkbox",
-        isRounded = TRUE,
-        color = "warning",
-        lineThrough = TRUE
-      )
+  div(
+    class = "flex gap-1",
+    checkbox_input(
+      inputId = "checkbox",
+      value = TRUE,
+      "My checkbox",
+      isRounded = TRUE,
+      color = "warning",
+      lineThrough = TRUE
     ),
-    grid(textOutput("check_val"))
+    textOutput("check_val")
   )
 )
 

@@ -13,26 +13,28 @@ items <- lapply(1:8, function(i) {
 color <- "success"
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      dropdown(
-        dropdown_button("Trigger", flat = TRUE, color = color),
-        dropdow_menu(
-          isVirtualized = TRUE,
-          color = color,
-          inputId = "dropdown",
-          disabledKeys = JS("['3', '4']"),
-          selectionMode = "multiple",
-          items,
-          dropdown_section(
-            dropdown_item(key = 9, "Item 9")
-          )
+  div(
+    class = "flex gap-2 my-2",
+    dropdown(
+      dropdown_trigger(
+        button(
+          "Trigger",
+          color = color
+        )
+      ),
+      dropdow_menu(
+        color = color,
+        inputId = "dropdown",
+        disabledKeys = JS("['3', '4']"),
+        selectionMode = "multiple",
+        items,
+        dropdown_section(
+          dropdown_item(key = 9, "Item 9")
         )
       )
-    ),
-    grid(verbatimTextOutput("dropdown_val"))
-  )
+    )
+  ),
+  verbatimTextOutput("dropdown_val")
 )
 
 server <- function(input, output, session) {

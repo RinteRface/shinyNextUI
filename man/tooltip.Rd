@@ -50,16 +50,14 @@ library(shinyNextUI)
 library(shiny.react)
 
 ui <- nextui_page(
-  container(
-    tooltip(
-      content = "A tooltip...",
-      rounded = TRUE,
-      color = "primary",
-      trigger = "click",
-      placement = "rightEnd",
-      hideArrow = FALSE,
-      badge("Click me!")
-    )
+  tooltip(
+    content = "A tooltip...",
+    color = "primary",
+    triggerType = "dialog",
+    placement = "right-end",
+    showArrow = TRUE,
+    offset = 15,
+    badge("Click me!")
   )
 )
 

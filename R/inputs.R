@@ -25,14 +25,12 @@ group_input <- function(name, type) {
     )
     # choices must be
     # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
-    if (type != "collapse") {
-      choices <-  lapply(seq_along(choices), function(i) {
-        choices_fun(
-          value = names(choices)[[i]],
-          choices[[i]]
-        )
-      })
-    }
+    choices <-  lapply(seq_along(choices), function(i) {
+      choices_fun(
+        value = names(choices)[[i]],
+        choices[[i]]
+      )
+    })
 
     shiny.react::reactElement(
       module = "@/NextUI",
@@ -143,33 +141,6 @@ radio_input <- group_input("Radio", type = "radio")
 #' @export
 update_radio_input <- shiny.react::updateReactInput
 
-# #' @rdname collapse
-# #' @inherit shinyInput params return
-# #' @export
-# collapse_panel <- input("Collapse", FALSE)
-#
-# #' @rdname collapse
-# #' @note \link{update_collapse_panel} currently does not work.
-# #' @export
-# update_collapse_panel <- shiny.react::updateReactInput
-#
-# #' @rdname collapse
-# #' @inherit component params return
-# #' @export
-# collapse_option <- component("Collapse")
-#
-# #' @rdname collapse
-# #' @note For \link{collapse_group}, the inputId gives the index
-# #' of the currently opened item. For \link{collapse} inputId,
-# #' indicates FALSE when closed and TRUE when the item is
-# #' uncollapsed.
-# #' @inherit shinyInput params return
-# #' @param choices Slot for \link{collapse_option}. Wrap inside
-# #' tagList.
-# #' @param selected Default selected choice.
-# #' @export
-# collapse_group <- group_input("CollapseGroup", type = "collapse")
-
 #' @rdname accordion
 #' @inherit component params return
 #' @export
@@ -193,7 +164,7 @@ dropdow_menu <- input("Dropdown")
 #' @rdname dropdown
 #' @inherit component params return
 #' @export
-dropdown_button <- component("DropdownTrigger")
+dropdown_trigger <- component("DropdownTrigger")
 
 #' @rdname dropdown
 #' @inherit component params return
@@ -209,3 +180,27 @@ dropdown_section <- component("DropdownSection")
 #' @rdname dropdown
 #' @export
 update_dropdown <- shiny.react::updateReactInput
+
+#' @rdname select
+#' @export
+select <- input("Select", "")
+
+#' @rdname select
+#' @export
+select_section <- component("SelectSection")
+
+#' @rdname select
+#' @export
+select_item <- component("SelectItem")
+
+#' @rdname tabs
+#' @export
+tabs <- input("Tabs", "")
+
+#' @rdname tabs
+#' @export
+update_tabs <- shiny.react::updateReactInput
+
+#' @rdname tabs
+#' @export
+tab <- component("Tab")

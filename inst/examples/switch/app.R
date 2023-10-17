@@ -2,17 +2,15 @@ library(shiny)
 library(shinyNextUI)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      switch_input(
-        inputId = "switch",
-        value = TRUE,
-        size = "xs",
-        shadow = TRUE
-      )
+  div(
+    class = "flex",
+    switch_input(
+      inputId = "switch",
+      value = TRUE,
+      size = "xs",
+      shadow = TRUE
     ),
-    grid(textOutput("switch_val"))
+    textOutput("switch_val")
   )
 )
 

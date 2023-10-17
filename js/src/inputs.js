@@ -36,8 +36,8 @@ export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) =
   },
 }));
 
-export const CheckboxGroup = InputAdapter(NextUI.Checkbox.Group, (value, setValue, props) => ({
-  value: value,
+export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => ({
+  defaultSelected: value,
   onChange: (v) => {
     console.log(props);
     props.value = v;
@@ -45,10 +45,10 @@ export const CheckboxGroup = InputAdapter(NextUI.Checkbox.Group, (value, setValu
   },
 }));
 
-export const Radio = InputAdapter(NextUI.Radio.Group, (value, setValue, props) => ({
+export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => ({
   value: value,
-  onChange: (event) => {
-    setValue(event);
+  onChange: (e) => {
+    setValue(e.target.value);
   },
 }));
 

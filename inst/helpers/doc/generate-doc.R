@@ -82,6 +82,7 @@ items <- list(
     "button",
     #"button-group",
     "card",
+    "chip",
     "divider",
     #"pagination",
     #"table",

@@ -2,20 +2,18 @@ library(shiny)
 library(shinyNextUI)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      radio_input(
-        inputId = "radio",
-        label = "Radios",
-        choices = c(
-          "choice 1" = "My first choice",
-          "choice 2" = "My second choice"
-        ),
-        selected = "choice 2"
-      )
+  div(
+    class = "flex gap-1",
+    radio_input(
+      inputId = "radio",
+      label = "Radios",
+      choices = c(
+        "choice 1" = "My first choice",
+        "choice 2" = "My second choice"
+      ),
+      selected = "choice 2"
     ),
-    grid(textOutput("radio_val"))
+    textOutput("radio_val")
   )
 )
 

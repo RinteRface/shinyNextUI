@@ -66,6 +66,11 @@ card_header <- component("CardHeader")
 #' @export
 card_footer <- component("CardFooter")
 
+#' @rdname chip
+#' @inherit component params return
+#' @export
+chip <- component("Chip")
+
 #' @rdname divider
 #' @inherit component params return
 #' @export

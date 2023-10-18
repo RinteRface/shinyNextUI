@@ -130,3 +130,14 @@ tabs_variants <- c(
   "bordered",
   "light"
 )
+
+#' Available select variants
+#'
+#' @export
+#' @rdname nextui-defaults
+select_variants <- c(
+  "flat",
+  "bordered",
+  "underlined",
+  "faded"
+)

@@ -6,6 +6,7 @@
 \alias{colors}
 \alias{radiuses}
 \alias{tabs_variants}
+\alias{select_variants}
 \title{Available sizes}
 \format{
 An object of class \code{character} of length 3.
@@ -13,6 +14,8 @@ An object of class \code{character} of length 3.
 An object of class \code{character} of length 6.
 
 An object of class \code{character} of length 5.
+
+An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 4.
 }
@@ -24,6 +27,8 @@ colors
 radiuses
 
 tabs_variants
+
+select_variants
 }
 \description{
 Available sizes
@@ -33,5 +38,7 @@ Available colors
 Available radiuses
 
 Available tabs variants
+
+Available select variants
 }
 \keyword{datasets}

@@ -58,7 +58,7 @@ ui <- nextui_page(
     tagList(
       p(class = "", sprintf("Size: %s", size)),
       tabs(
-        inputId = "tabs2",
+        inputId = sprintf("tabs-%s", size),
         size = size,
         items
       )
@@ -71,7 +71,7 @@ ui <- nextui_page(
     tagList(
       p(sprintf("Variant: %s", variant)),
       tabs(
-        inputId = "tabs3",
+        inputId = sprintf("tabs-%s", variant),
         variant = variant,
         items
       )
@@ -84,7 +84,7 @@ ui <- nextui_page(
     tagList(
       p(class = "", sprintf("Color: %s", color)),
       tabs(
-        inputId = "tabs4",
+        inputId = sprintf("tabs-%s", color),
         variant = "bordered",
         color = color,
         items

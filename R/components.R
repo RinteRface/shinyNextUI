@@ -77,6 +77,11 @@ link <- component("Link")
 #' @export
 progress <- component("Progress")
 
+#' @rdname skeleton
+#' @inherit component params return
+#' @export
+skeleton <- component("Skeleton")
+
 #' @rdname user
 #' @inherit component params return
 #' @export

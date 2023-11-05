@@ -224,7 +224,7 @@ update_slider <- shiny.react::updateReactInput
 
 #' @rdname tabs
 #' @export
-tabs <- input("Tabs", "")
+tabs <- input("Tabs", "1")
 
 #' @rdname tabs
 #' @export

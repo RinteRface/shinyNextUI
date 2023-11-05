@@ -46,10 +46,17 @@ ui <- nextui_page(
   p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Simple tabs"),
   tabs(
     inputId = "tabs1",
-    disabledKeys = JS("['2']"),
+    disabledKeys = "2",
     items
   ),
-  action_button("update_tabs", "Update tabs"),
+  spacer(y = 2),
+  select(
+    "select",
+    label = "Tab to select:",
+    value = "1",
+    select_item(key = 1, value = "1", "1"),
+    select_item(key = 3, value = "3", "3")
+  ),
   p("Selected tab is:", textOutput("active_tab", inline = TRUE)),
   spacer(y = 5),
   divider(),
@@ -95,8 +102,8 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   output$active_tab <- renderText(input$tabs1)
-  observeEvent(input$update_tabs, {
-    update_tabs(session, inputId = "tabs1", selectedKey = JS("['3']"))
+  observeEvent(input$select, {
+    update_tabs(session, inputId = "tabs1", value = input$select)
   })
 }
 

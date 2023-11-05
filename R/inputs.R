@@ -210,6 +210,10 @@ select_section <- component("SelectSection")
 #' @export
 select_item <- component("SelectItem")
 
+#' @rdname sselect
+#' @export
+update_select <- shiny.react::updateReactInput
+
 #' @rdname slider
 #' @export
 slider <- input("Slider", numeric())

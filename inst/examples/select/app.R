@@ -34,10 +34,12 @@ label_placements <- c(
 ui <- nextui_page(
   debug_react = TRUE,
   p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Basic select"),
+  action_button("update", "Update to bulbasaur?"),
+  spacer(y = 2),
   select(
     inputId = "select",
     label = "Select an pokemon",
-    defaultSelectedKeys = JS("['pikachu']"),
+    value = JS("['pikachu']"),
     selectionMode = "multiple",
     description = "This is a select input. You can select multiple values.",
     select_items
@@ -52,7 +54,7 @@ ui <- nextui_page(
         inputId = sprintf("select-%s", variant),
         label = "Select a pokemon",
         variant = variant,
-        defaultSelectedKeys = JS("['pikachu']"),
+        value = JS("['pikachu']"),
         description = sprintf("This is a select input with %s variant style", variant),
         select_items
       ),
@@ -61,14 +63,16 @@ ui <- nextui_page(
   }),
   spacer(y = 5),
   divider(),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Label placement"),
+  p(
+    class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2",
+    "Label placement and validation (no value specified)"
+  ),
   lapply(label_placements, function(placement) {
     tagList(
       select(
         inputId = sprintf("select-%s", placement),
         label = "Select a pokemon",
         labelPlacement = placement,
-        defaultSelectedKeys = JS("['pikachu']"),
         description = sprintf("This is a select input with %s label placement", placement),
         select_items
       ),
@@ -78,6 +82,9 @@ ui <- nextui_page(
 )
 
 server <- function(input, output, session) {
+  observeEvent(input$update, {
+    update_select(session, "select", value = JS("['bulbasaur']"))
+  })
   output$select_val <- renderText(input$select)
 }
 

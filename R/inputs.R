@@ -152,7 +152,7 @@ radio_option <- component("Radio")
 #' @rdname radio
 #' @inherit shinyInput params return
 #' @export
-radio_input <- group_input("Radio", type = "radio")
+radio_input <- group_input("RadioGroup", type = "radio")
 
 #' @rdname radio
 #' @export
@@ -179,21 +179,18 @@ dropdown <- component("Dropdown")
 #' @rdname dropdown
 #' @inherit shinyInput params return
 #' @export
-dropdow_menu <- input("Dropdown")
+dropdow_menu <- input("DropdownMenu")
 
 #' @rdname dropdown
-#' @inherit component params return
 #' @export
 dropdown_trigger <- component("DropdownTrigger")
 
 #' @rdname dropdown
-#' @inherit component params return
 #' @export
 dropdown_item <- component("DropdownItem")
 
 #' @rdname dropdown
 #' @note Container for related \link{dropdown_item}.
-#' @inherit component params return
 #' @export
 dropdown_section <- component("DropdownSection")
 

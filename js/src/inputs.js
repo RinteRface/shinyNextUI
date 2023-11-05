@@ -47,12 +47,12 @@ export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue
   });
 });
 
-export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => {
+export const RadioGroup = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => {
   console.log(props);
   return({
-    defaultValue: value,
-    onChange: (e) => {
-      setValue(e.target.value);
+    value: value,
+    onValueChange: (value) => {
+      setValue(value);
     }
   });
 });
@@ -85,7 +85,8 @@ export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, 
   });}
 );
 
-export const Dropdown = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => ({
+export const DropdownMenu = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => ({
+  selectedKeys: value,
   onSelectionChange: (keys) => {
     let vals = [];
     keys.forEach(key => {
@@ -142,7 +143,7 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
 });
 
 export const Slider = InputAdapter(NextUI.Slider, (value, setValue, props) => ({
-  defaultValue: Number(value),
+  value: Number(value),
   onChangeEnd: (value) => {
     setValue(value);
   }

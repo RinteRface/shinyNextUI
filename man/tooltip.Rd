@@ -57,7 +57,7 @@ ui <- nextui_page(
     placement = "right-end",
     showArrow = TRUE,
     offset = 15,
-    badge("Click me!")
+    button("Click me!", color = "warning")
   )
 )
 

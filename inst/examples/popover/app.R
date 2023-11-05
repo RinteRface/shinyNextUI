@@ -6,7 +6,7 @@ ui <- nextui_page(
   popover(
     showArrow = TRUE,
     placement = "right",
-    popover_trigger(badge("Click me!")),
+    popover_trigger(button("Click me!", color = "primary")),
     popover_content(
       "This is the content of the popover."
     )

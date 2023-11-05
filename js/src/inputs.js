@@ -100,7 +100,28 @@ export const Dropdown = InputAdapter(NextUI.DropdownMenu, (value, setValue, prop
 export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
   const [touched, setTouched] = React.useState(true);
 
-  const isValid = value !== '';
+  let renderValue;
+  if (props.items !== undefined) {
+    renderValue = (items) => {
+      let Avatar = NextUI.Avatar;
+      return items.map((item) => (
+        <div key={item.key} className="flex items-center gap-2">
+          <Avatar
+            alt={item.key}
+            className="flex-shrink-0"
+            size="sm"
+            src={item.props.startContent.props.src}
+          />
+          <div className="flex flex-col">
+            <span>{item.textValue}</span>
+            <span className="text-default-500 text-tiny">Description</span>
+          </div>
+        </div>
+      ));
+    }
+  }
+
+  let isValid = value !== '';
   return({
     isInvalid: isValid || !touched ? false : true,
     errorMessage: isValid || !touched ? "" : "You must select a value",
@@ -113,8 +134,10 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
       // So values appear in the right order
       // regardless of selection
       setValue(vals.sort());
+      if (vals.length === 0) isValid = false;
     },
-    onClose: () => setTouched(true)
+    onClose: () => setTouched(true),
+    renderValue: renderValue
   });
 });
 

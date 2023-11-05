@@ -36,6 +36,8 @@ ui <- nextui_page(
   p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Basic select"),
   action_button("update", "Update to bulbasaur?"),
   spacer(y = 2),
+  action_button("toggle", "Open select"),
+  spacer(y = 2),
   select(
     inputId = "select",
     label = "Select an pokemon",
@@ -78,12 +80,31 @@ ui <- nextui_page(
       ),
       spacer(y = 10)
     )
-  })
+  }),
+  spacer(y = 5),
+  divider(),
+  p(
+    class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2",
+    "Custom render value"
+  ),
+  select(
+    inputId = "customselect",
+    labelPlacement = "outside-left",
+    label = "Pokemon",
+    description = "This is a select input. You can select multiple values.",
+    items = jsonlite::toJSON(animals),
+    select_items
+  )
 )
 
 server <- function(input, output, session) {
+  opened <- reactiveVal(FALSE)
   observeEvent(input$update, {
     update_select(session, "select", value = JS("['bulbasaur']"))
+  })
+  observeEvent(input$toggle, {
+    opened(!opened())
+    update_select(session, "select", isOpen = opened())
   })
   output$select_val <- renderText(input$select)
 }

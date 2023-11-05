@@ -96,6 +96,7 @@ items <- list(
     "radio",
     "select",
     "skeleton",
+    "slider",
     "snippet",
     "switch",
     "tabs",

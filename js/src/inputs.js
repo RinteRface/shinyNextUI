@@ -90,6 +90,13 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => ({
   }
 }));
 
+export const Slider = InputAdapter(NextUI.Slider, (value, setValue, props) => ({
+  defaultValue: Number(value),
+  onChangeEnd: (value) => {
+    setValue(value);
+  }
+}));
+
 export const Tabs = InputAdapter(NextUI.Tabs, (value, setValue, props) => ({
   onSelectionChange: (key) => {
     setValue(key);

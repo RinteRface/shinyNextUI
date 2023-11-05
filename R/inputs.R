@@ -193,6 +193,14 @@ select_section <- component("SelectSection")
 #' @export
 select_item <- component("SelectItem")
 
+#' @rdname slider
+#' @export
+slider <- input("Slider", numeric())
+
+#' @rdname slider
+#' @export
+update_slider <- shiny.react::updateReactInput
+
 #' @rdname tabs
 #' @export
 tabs <- input("Tabs", "")

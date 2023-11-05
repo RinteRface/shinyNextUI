@@ -36,21 +36,26 @@ export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) =
   },
 }));
 
-export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => ({
-  defaultSelected: value,
-  onChange: (v) => {
-    console.log(props);
-    props.value = v;
-    setValue(v);
-  },
-}));
+export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => {
+  return({
+    defaultValue: value,
+    onChange: (v) => {
+      console.log(props);
+      props.value = v;
+      setValue(v);
+    },
+  });
+});
 
-export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => ({
-  value: value,
-  onChange: (e) => {
-    setValue(e.target.value);
-  },
-}));
+export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => {
+  console.log(props);
+  return({
+    defaultValue: value,
+    onChange: (e) => {
+      setValue(e.target.value);
+    }
+  });
+});
 
 export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props) => ({
   defaultSelectedKeys: value,
@@ -72,7 +77,7 @@ export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, 
   return({
     isInvalid: isValid || !touched ? false : true,
     errorMessage: isValid || !touched ? "" : "You must select a value",
-    defaultSelectedKey: value,
+    selectedKey: value,
     onSelectionChange: (key) => {
       setValue(key);
     },

@@ -33,6 +33,8 @@ ui <- nextui_page(
   autocomplete(
     "autocomplete",
     label = "Select a pokemon",
+    isRequired = TRUE,
+    value = "bulbasaur",
     autocomplete_section(
       title = "Default pokemons",
       items

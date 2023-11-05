@@ -82,6 +82,11 @@ progress <- component("Progress")
 #' @export
 skeleton <- component("Skeleton")
 
+#' @rdname snippet
+#' @inherit component params return
+#' @export
+snippet <- component("Snippet")
+
 #' @rdname user
 #' @inherit component params return
 #' @export

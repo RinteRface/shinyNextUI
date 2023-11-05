@@ -65,12 +65,20 @@ export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props)
   }
 }));
 
-export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, props) => ({
-  defaultInputValue: value,
-  onSelectionChange: (key) => {
-    setValue(key);
-  }
-}));
+export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, props) => {
+  const [touched, setTouched] = React.useState(true);
+
+  const isValid = value !== null;
+  return({
+    isInvalid: isValid || !touched ? false : true,
+    errorMessage: isValid || !touched ? "" : "You must select a value",
+    defaultSelectedKey: value,
+    onSelectionChange: (key) => {
+      setValue(key);
+    },
+    onClose: () => setTouched(true)
+  });}
+);
 
 export const Dropdown = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => ({
   onSelectionChange: (keys) => {

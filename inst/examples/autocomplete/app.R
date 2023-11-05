@@ -37,10 +37,12 @@ ui <- nextui_page(
       title = "Default pokemons",
       items
     )
-  )
+  ),
+  textOutput("res")
 )
 
 server <- function(input, output, session) {
+  output$res <- renderText(input$autocomplete)
   observeEvent(input$autocomplete, {
     print(input$autocomplete)
   })

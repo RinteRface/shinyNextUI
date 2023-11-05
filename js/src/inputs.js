@@ -58,7 +58,7 @@ export const Radio = InputAdapter(NextUI.RadioGroup, (value, setValue, props) =>
 });
 
 export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props) => ({
-  defaultSelectedKeys: value,
+  selectedKeys: value,
   onSelectionChange: (keys) => {
     let vals = [];
     keys.forEach(key => {

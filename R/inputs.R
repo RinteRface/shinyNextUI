@@ -164,9 +164,12 @@ update_radio_input <- shiny.react::updateReactInput
 accordion <- input("Accordion")
 
 #' @rdname accordion
-#' @inherit component params return
 #' @export
 accordion_item <- component("AccordionItem")
+
+#' @rdname accordion
+#' @export
+update_accordion <- shiny.react::updateReactInput
 
 #' @rdname dropdown
 #' @inherit component params return

@@ -85,13 +85,36 @@ ui <- nextui_page(
         },
       },
     }'),
-    defaultExpandedKeys = JS('["2"]'),
+    value = "2",
     accordion_item("plop", title = "Element 1", key = "1", subtitle = "subtitle"),
     accordion_item("plop", title = "Element 2", key = "2")
+  ),
+  spacer(y = 2),
+  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Update accordion"),
+  select(
+    "select",
+    label = "Accordion to open:",
+    select_item(key = 1, value = "1", "1"),
+    select_item(key = 2, value = "2", "2")
+  ),
+  spacer(y = 2),
+  accordion(
+    inputId = "accordion5",
+    isCompact = TRUE,
+    variant = "bordered",
+    accordion_item("plop1", title = "Element 1", key = "1", subtitle = "subtitle"),
+    accordion_item("plop2", title = "Element 2", key = "2")
   )
 )
 
 server <- function(input, output, session) {
+  observeEvent(input$select, {
+    update_accordion(
+      session,
+      "accordion5",
+      value = input$select
+    )
+  })
   observe(
     print(input$accordion1)
   )

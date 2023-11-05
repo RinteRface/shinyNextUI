@@ -55,6 +55,23 @@ action_button <- input("Button")
 #' @export
 update_action_button <- shiny.react::updateReactInput
 
+#' @rdname autocomplete
+#' @inherit shinyInput params return
+#' @export
+autocomplete <- input("Autocomplete")
+
+#' @rdname autocomplete
+#' @export
+autocomplete_section <- component("AutocompleteSection")
+
+#' @rdname autocomplete
+#' @export
+autocomplete_item <- component("AutocompleteItem")
+
+#' @rdname autocomplete
+#' @export
+update_autocomplete <- shiny.react::updateReactInput
+
 #' @rdname switch
 #' @inherit shinyInput params return
 #' @export

@@ -76,6 +76,7 @@ items <- list(
   # compo
   components = c(
     "accordion",
+    "autocomplete",
     "avatar",
     "badge",
     "button",

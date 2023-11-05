@@ -65,6 +65,13 @@ export const Accordion = InputAdapter(NextUI.Accordion, (value, setValue, props)
   }
 }));
 
+export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, props) => ({
+  defaultInputValue: value,
+  onSelectionChange: (key) => {
+    setValue(key);
+  }
+}));
+
 export const Dropdown = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => ({
   onSelectionChange: (keys) => {
     let vals = [];

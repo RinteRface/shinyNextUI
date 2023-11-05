@@ -198,6 +198,22 @@ dropdown_section <- component("DropdownSection")
 #' @export
 update_dropdown <- shiny.react::updateReactInput
 
+#' @rdname listbox
+#' @export
+listbox <- input("Listbox")
+
+#' @rdname listbox
+#' @export
+listbox_section <- component("ListboxSection")
+
+#' @rdname listbox
+#' @export
+listbox_item <- component("ListboxItem")
+
+#' @rdname listbox
+#' @export
+update_listbox <- shiny.react::updateReactInput
+
 #' @rdname select
 #' @export
 select <- input("Select", "")

@@ -1271,6 +1271,10 @@ video {
   max-width: 1536px;
 }
 
+.max-w-\[260px\] {
+  max-width: 260px;
+}
+
 .max-w-\[610px\] {
   max-width: 610px;
 }
@@ -6666,6 +6670,11 @@ video {
     content: var(--tw-content);
     transition-property: none;
   }
+}
+
+:is(.dark .dark\:border-default-100) {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--nextui-default-100) / var(--nextui-default-100-opacity, var(--tw-border-opacity)));
 }
 
 :is(.dark .dark\:bg-background\/20) {

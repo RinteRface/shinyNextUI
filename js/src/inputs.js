@@ -98,6 +98,19 @@ export const DropdownMenu = InputAdapter(NextUI.DropdownMenu, (value, setValue, 
   }
 }));
 
+export const Listbox = InputAdapter(NextUI.Listbox, (value, setValue, props) => ({
+  selectedKeys: value,
+  onSelectionChange: (keys) => {
+    let vals = [];
+    keys.forEach(key => {
+      vals.push(key);
+    });
+    // So values appear in the right order
+    // regardless of selection
+    setValue(vals.sort());
+  }
+}));
+
 export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
   const [touched, setTouched] = React.useState(true);
 

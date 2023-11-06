@@ -28,6 +28,8 @@ items <- lapply(animals, function(animal) {
 
 ui <- nextui_page(
   debug_react = TRUE,
+  theme_switcher(),
+  spacer(y = 4),
   action_button("update", "Update to Pikachu?"),
   spacer(y = 4),
   div(

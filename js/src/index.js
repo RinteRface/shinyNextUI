@@ -1,21 +1,13 @@
-// Set default theme as light
-$(document).on('shiny:connected', function() {
-  Shiny.setInputValue('theme', 'light', {priority: 'event'});
-
-  // People can use input$theme to conditionaly style
-  // there components with renderReact and reactOutput
-  $('#theme_switcher').on('change', function(e) {
-    const nextTheme = e.target.checked ? 'light' : 'dark';
-    window.jsmodule['@nextui-org/react'].changeTheme(nextTheme);
-    Shiny.setInputValue('theme', nextTheme, {priority: 'event'});
-  });
-});
-
 import "./output.css";
 
-// Dark mode
+// Dark mode by default
 $(function(){
-  $('html').addClass('dark text-foreground bg-background');
+  let initTheme = $('body').data('skin');
+  $('html').addClass(`${initTheme} text-foreground bg-background`);
+
+  $(document).on('shiny:connected', function() {
+    Shiny.setInputValue('theme', initTheme, {priority: 'event'});
+  });
 });
 
 window.jsmodule = {

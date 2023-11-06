@@ -1,11 +1,32 @@
 import * as NextUI from '@nextui-org/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 
+export const setTheme = () => {
+  let theme;
+  if ($('html').hasClass('dark')) {
+    theme = 'light';
+    $('html').removeClass('dark').addClass('light');
+  } else {
+    $('html').removeClass('light').addClass('dark');
+    theme = 'dark';
+  }
+  Shiny.setInputValue('theme', theme, {priority: 'event'});
+};
+
 export const Button = ButtonAdapter(NextUI.Button);
+
+export const ThemeSwitcher = InputAdapter(NextUI.Switch, (value, setValue) => ({
+  isSelected: $('html').hasClass('light') ? true: false,
+  onChange: (event) => {
+    setTheme();
+    setValue(event.target.checked);
+  },
+}));
 
 export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
   isSelected: value,
   onChange: (event) => {
+
     setValue(event.target.checked);
   },
 }));

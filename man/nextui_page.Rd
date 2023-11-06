@@ -4,10 +4,12 @@
 \alias{nextui_page}
 \title{NextUI page wrapper}
 \usage{
-nextui_page(..., debug_react = FALSE)
+nextui_page(..., theme = c("light", "dark"), debug_react = FALSE)
 }
 \arguments{
 \item{...}{UI elements.}
+
+\item{theme}{Global page theme.}
 
 \item{debug_react}{Whether to enable react debug mode.
 Default to FALSE.}

@@ -4,15 +4,20 @@
 #' needed.
 #'
 #' @param ... UI elements.
+#' @param theme Global page theme.
 #' @param debug_react Whether to enable react debug mode.
 #' Default to FALSE.
 #'
 #' @return Object which can be passed as the UI of a Shiny app.
 #' @export
-nextui_page <- function(..., debug_react = FALSE) {
+nextui_page <- function(..., theme = c("light", "dark"), debug_react = FALSE) {
+
+  theme <- match.arg(theme)
+
   tagList(
     create_react_deps(),
     htmltools::tags$body(
+      `data-skin` = theme,
       class = "container my-auto mx-auto px-4",
       htmltools::suppressDependencies("bootstrap", "react"),
       if (debug_react) enableReactDebugMode(),

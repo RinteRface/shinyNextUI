@@ -1,5 +1,6 @@
 import * as NextUI from '@nextui-org/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
+import React from "react";
 
 export const setTheme = () => {
   let theme;
@@ -58,13 +59,12 @@ export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) =
 }));
 
 export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => {
+
+  const [selected, setSelected] = React.useState(value);
+
   return({
-    defaultValue: value,
-    onChange: (v) => {
-      console.log(props);
-      props.value = v;
-      setValue(v);
-    },
+    value: selected,
+    onValueChange: setSelected
   });
 });
 
@@ -178,10 +178,10 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
 
 export const Slider = InputAdapter(NextUI.Slider, (value, setValue, props) => ({
   value: Number(value),
-  onChangeEnd: (value) => {
+  onChange: (value) => {
     setValue(value);
   }
-}));
+}), { policy: debounce, delay: 250 });
 
 export const Tabs = InputAdapter(NextUI.Tabs, (value, setValue, props) => ({
   selectedKey: value,

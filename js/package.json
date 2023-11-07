@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@nextui-org/react": "^2.2.2",
+    "@nextui-org/react": "^2.2.5",
     "css-loader": "^6.8.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",

@@ -30,6 +30,7 @@ createReactShinyInput <- function (
       type = "application/json",
       jsonlite::toJSON(configuration,  auto_unbox = TRUE, null = "null")
     ),
+    shinyReactDependency(),
     htmltools::htmlDependency(
       name = "nextui",
       version = "2.0.0",

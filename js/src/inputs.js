@@ -1,7 +1,6 @@
 import * as NextUI from '@nextui-org/react';
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 import React from "react";
-import * as ReactR from './utils.js';
 
 export const setTheme = () => {
   let theme;
@@ -59,15 +58,15 @@ export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) =
   },
 }));
 
-export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => {
-  console.log(props);
-  return({
-    value: value,
-    onValueChange: (value) => {
-      setValue(value)
-    }
-  });
-});
+//export const CheckboxGroup = InputAdapter(NextUI.CheckboxGroup, (value, setValue, props) => {
+//  console.log(props);
+//  return({
+//    value: value,
+//    onValueChange: (value) => {
+//      setValue(value)
+//    }
+//  });
+//});
 
 //export const RadioGroup = InputAdapter(NextUI.RadioGroup, (value, setValue, props) => {
 //  console.log(props);
@@ -190,35 +189,3 @@ export const Tabs = InputAdapter(NextUI.Tabs, (value, setValue, props) => ({
     setValue(key);
   }
 }));
-
-/* Radio does not work with shiny.react, have to use reactR ... */
-
-const RadioGroupBuilder = ({ configuration, value, setValue }) => {
-  let RadioGroup = NextUI.RadioGroup;
-  let Radio = NextUI.Radio;
-
-  let choices = configuration.children
-  let radios = Object.keys(choices).map(
-    (choice) => <Radio
-      key={choice}
-      value={choice}>
-        {choices[choice]}
-      </Radio>
-  )
-
-  return (
-    <RadioGroup
-      {...configuration}
-      value={value}
-      onValueChange={setValue}
-    >
-      {radios}
-    </RadioGroup>
-  );
-};
-
-// Note the first argument here should match the `class`
-// argument of the reactR::createReactShinyInput() from step 1
-export const RadioGroup = () => {
-  ReactR.reactShinyInput('.radiogroup', 'RadioGroup', RadioGroupBuilder);
-}

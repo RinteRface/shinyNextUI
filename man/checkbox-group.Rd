@@ -3,31 +3,32 @@
 \name{checkbox-group}
 \alias{checkbox-group}
 \alias{checkbox_group_input}
-\alias{checkbox_option}
 \alias{update_checkbox_group_input}
 \title{checkbox-group}
 \usage{
-checkbox_group_input(inputId, ..., choices = choices, selected = NULL)
-
-checkbox_option(...)
+checkbox_group_input(inputId, ..., choices, selected = NULL)
 
 update_checkbox_group_input(
   session = shiny::getDefaultReactiveDomain(),
   inputId,
-  ...
+  ...,
+  choices = NULL,
+  selected = NULL
 )
 }
 \arguments{
-\item{inputId}{ID of the component.}
+\item{inputId}{Unique input id.}
 
-\item{...}{Props to pass to the component.
-The allowed props are listed below in the \bold{Details} section.}
+\item{...}{Props.}
 
-\item{session}{Object passed as the \code{session} argument to Shiny server.}
+\item{choices}{Radio choices.}
+
+\item{selected}{Default selected value.}
+
+\item{session}{Shiny session.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
-The update functions return nothing (called for side effects).
+A radio input tag.
 }
 \description{
 A CheckboxGroup allows users to select one or more items from a list of choices. CheckboxGrup implementation is based on @react-aria/checkbox
@@ -65,10 +66,6 @@ A CheckboxGroup allows users to select one or more items from a list of choices.
 }
 }
 }
-\note{
-Required by \link{checkbox_group_input} to create options.
-Don't use standalone.
-}
 \examples{
 library(shiny)
 library(shinyNextUI)
@@ -81,12 +78,12 @@ ui <- nextui_page(
       inputId = "checkbox_group",
       label = "Checkbox Group",
       choices = c(
-        "choice 1" = "My first choice",
-        "choice 2" = "My second choice"
+        "choice1" = "My first choice",
+        "choice2" = "My second choice"
       ),
       orientation = "horizontal",
       color = "secondary",
-      selected = "choice 2"
+      selected = JS("['choice2']")
     ),
     textOutput("checkbox_group_val")
   )
@@ -101,4 +98,3 @@ if (interactive() || is_testing()) shinyApp(ui, server)
 \seealso{
 See \url{https://nextui.org/docs/components/checkbox-group}.
 }
-\keyword{internal}

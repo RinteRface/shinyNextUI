@@ -5,7 +5,6 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-1",
-    # This works but we don't have updateInput function
     select(
       "select",
       label = "Tab to select:",

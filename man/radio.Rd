@@ -111,9 +111,10 @@ ui <- nextui_page(
     select(
       "select",
       label = "Tab to select:",
-      value = "1",
-      select_item(key = 1, value = "1", "1"),
-      select_item(key = 3, value = "3", "3")
+      value = JS("['sydney']"),
+      disallowEmptySelection = TRUE,
+      select_item(key = "buenos-aires", value = "buenos-aires", "Buenos Aires"),
+      select_item(key = "sydney", value = "sydney", "Sydney")
     ),
     spacer(y = 2),
     radio_input(
@@ -122,10 +123,9 @@ ui <- nextui_page(
       description = "Radios are fun.",
       orientation = "horizontal",
       choices = c(
-        "choice1" = "My first choice",
-        "choice2" = "My second choice"
-      ),
-      selected = NULL
+        "buenos-aires" = "Buenos Aires",
+        "sydney" = "Sydney"
+      )
     ),
     textOutput("radio_val")
   )
@@ -133,7 +133,8 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$select, {
-    update_radio_input(session, "radio", value = input$select)
+    print(input$select)
+    update_radio_input(session, "radio", selected = input$select)
   })
   output$radio_val <- renderText(input$radio)
 }

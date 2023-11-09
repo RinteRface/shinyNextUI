@@ -27,5 +27,6 @@ createReactShinyInput(
 A list of tags.
 }
 \description{
-This is used to create custom react element for R.
+This is used to create custom react element for R. Specifically
+for radio and checkboxgroup which don't work with shiny.react.
 }

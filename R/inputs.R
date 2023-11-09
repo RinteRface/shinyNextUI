@@ -127,22 +127,6 @@ checkbox_input <- input("Checkbox", FALSE)
 #' @export
 update_checkbox_input <- shiny.react::updateReactInput
 
-#' @rdname checkbox-group
-#' @inherit shinyInput params return
-#' @export
-checkbox_group_input <- group_input("CheckboxGroup", type = "checkbox")
-
-#' @rdname checkbox-group
-#' @note Required by \link{checkbox_group_input} to create options.
-#' Don't use standalone.
-#' @inherit component params return
-#' @keywords internal
-checkbox_option <- component("Checkbox")
-
-#' @rdname checkbox-group
-#' @export
-update_checkbox_group_input <- shiny.react::updateReactInput
-
 #' Radio input
 #'
 #' @param inputId Unique input id.
@@ -157,9 +141,7 @@ radio_input <- function(inputId, ..., choices, selected = NULL) {
   tagList(
     # This seems a bit hacky but this can't be called from the main JS script
     # because we only need it when the radio is invoked ...
-    tags$head(
-      tags$script("jsmodule['@/NextUI']['RadioGroup']()")
-    ),
+    tags$script("jsmodule['@/ReactR']['RadioGroup']()"),
     createReactShinyInput(
       inputId = inputId,
       class = "radiogroup",
@@ -189,6 +171,26 @@ update_radio_input <- function(
   }
   session$sendInputMessage(inputId, message);
 }
+
+#' @rdname checkbox-group
+#' @inherit radio_input
+#' @export
+checkbox_group_input <- function(inputId, ..., choices, selected = NULL) {
+  tagList(
+    tags$script("jsmodule['@/ReactR']['CheckboxGroup']()"),
+    createReactShinyInput(
+      inputId = inputId,
+      class = "checkboxgroup",
+      default = as.list(selected),
+      configuration = list(children = as.list(choices), ...),
+      container = htmltools::tags$div
+    )
+  )
+}
+
+#' @rdname checkbox-group
+#' @export
+update_checkbox_group_input <- update_radio_input
 
 #' @rdname accordion
 #' @inherit component params return

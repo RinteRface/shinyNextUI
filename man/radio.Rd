@@ -2,27 +2,33 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{radio}
 \alias{radio}
-\alias{radio_option}
 \alias{radio_input}
 \alias{update_radio_input}
 \title{radio}
 \usage{
-radio_option(...)
+radio_input(inputId, ..., choices, selected = NULL)
 
-radio_input(inputId, ..., choices = choices, selected = NULL)
-
-update_radio_input(session = shiny::getDefaultReactiveDomain(), inputId, ...)
+update_radio_input(
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...,
+  choices = NULL,
+  selected = NULL
+)
 }
 \arguments{
-\item{...}{Props to pass to the component.
-The allowed props are listed below in the \bold{Details} section.}
+\item{inputId}{Unique input id.}
 
-\item{inputId}{ID of the component.}
+\item{...}{Props.}
 
-\item{session}{Object passed as the \code{session} argument to Shiny server.}
+\item{choices}{Radio choices.}
+
+\item{selected}{Default selected value.}
+
+\item{session}{Shiny session.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+A radio input tag.
 }
 \description{
 Radios allow users to select a single option from a list of mutually exclusive options. All possible options are exposed up front for users to compare. Radio implementation is based on @react-aria/radio
@@ -93,10 +99,6 @@ Radios allow users to select a single option from a list of mutually exclusive o
 }
 }
 }
-\note{
-Required by \link{radioButtons} to create options.
-Don't use standalone.
-}
 \examples{
 library(shiny)
 library(shinyNextUI)
@@ -105,20 +107,34 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-1",
+    # This works but we don't have updateInput function
+    select(
+      "select",
+      label = "Tab to select:",
+      value = "1",
+      select_item(key = 1, value = "1", "1"),
+      select_item(key = 3, value = "3", "3")
+    ),
+    spacer(y = 2),
     radio_input(
       inputId = "radio",
       label = "Radios",
+      description = "Radios are fun.",
+      orientation = "horizontal",
       choices = c(
-        "choice 1" = "My first choice",
-        "choice 2" = "My second choice"
+        "choice1" = "My first choice",
+        "choice2" = "My second choice"
       ),
-      selected = "choice 2"
+      selected = NULL
     ),
     textOutput("radio_val")
   )
 )
 
 server <- function(input, output, session) {
+  observeEvent(input$select, {
+    update_radio_input(session, "radio", value = input$select)
+  })
   output$radio_val <- renderText(input$radio)
 }
 
@@ -127,4 +143,3 @@ if (interactive() || is_testing()) shinyApp(ui, server)
 \seealso{
 See \url{https://nextui.org/docs/components/radio}.
 }
-\keyword{internal}

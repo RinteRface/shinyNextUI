@@ -14,7 +14,7 @@ input <- function(name, default_value = NULL, type = NULL) {
   }
 }
 
-# Usefull for radioButtons, checkBoxGroup
+# Useful for radioButtons, checkBoxGroup
 group_input <- function(name, type) {
   function(inputId, ..., choices = choices, selected = NULL) {
 
@@ -27,6 +27,7 @@ group_input <- function(name, type) {
     # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
     choices <-  lapply(seq_along(choices), function(i) {
       choices_fun(
+        key = names(choices)[[i]],
         value = names(choices)[[i]],
         choices[[i]]
       )
@@ -142,21 +143,52 @@ checkbox_option <- component("Checkbox")
 #' @export
 update_checkbox_group_input <- shiny.react::updateReactInput
 
-#' @rdname radio
-#' @note Required by \link{radioButtons} to create options.
-#' Don't use standalone.
-#' @inherit component params return
-#' @keywords internal
-radio_option <- component("Radio")
-
-#' @rdname radio
-#' @inherit shinyInput params return
-#' @export
-radio_input <- group_input("RadioGroup", type = "radio")
-
+#' Radio input
+#'
+#' @param inputId Unique input id.
+#' @param ... Props.
+#' @param choices Radio choices.
+#' @param selected Default selected value.
+#'
+#' @return A radio input tag.
 #' @rdname radio
 #' @export
-update_radio_input <- shiny.react::updateReactInput
+radio_input <- function(inputId, ..., choices, selected = NULL) {
+  tagList(
+    # This seems a bit hacky but this can't be called from the main JS script
+    # because we only need it when the radio is invoked ...
+    tags$head(
+      tags$script("jsmodule['@/NextUI']['RadioGroup']()")
+    ),
+    createReactShinyInput(
+      inputId = inputId,
+      class = "radiogroup",
+      default = selected,
+      configuration = list(children = as.list(choices), ...),
+      container = htmltools::tags$div
+    )
+  )
+}
+
+#' @rdname radio
+#' @param session Shiny session.
+#' @inheritParams radio_input
+#' @export
+update_radio_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL
+) {
+  message <- list()
+  message$value <- selected
+  configuration <- c(children = choices, list(...))
+  if (length(configuration) > 0) {
+    message$configuration <- configuration
+  }
+  session$sendInputMessage(inputId, message);
+}
 
 #' @rdname accordion
 #' @inherit component params return

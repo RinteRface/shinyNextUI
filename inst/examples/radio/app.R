@@ -5,20 +5,35 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-1",
+    # This works but we don't have updateInput function
+    select(
+      "select",
+      label = "Tab to select:",
+      value = JS("['sydney']"),
+      disallowEmptySelection = TRUE,
+      select_item(key = "buenos-aires", value = "buenos-aires", "Buenos Aires"),
+      select_item(key = "sydney", value = "sydney", "Sydney")
+    ),
+    spacer(y = 2),
     radio_input(
       inputId = "radio",
       label = "Radios",
+      description = "Radios are fun.",
+      orientation = "horizontal",
       choices = c(
-        "choice 1" = "My first choice",
-        "choice 2" = "My second choice"
-      ),
-      selected = "choice 2"
+        "buenos-aires" = "Buenos Aires",
+        "sydney" = "Sydney"
+      )
     ),
     textOutput("radio_val")
   )
 )
 
 server <- function(input, output, session) {
+  observeEvent(input$select, {
+    print(input$select)
+    update_radio_input(session, "radio", selected = input$select)
+  })
   output$radio_val <- renderText(input$radio)
 }
 

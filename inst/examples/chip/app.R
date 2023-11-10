@@ -26,13 +26,38 @@ ui <- nextui_page(
     chip(
       avatar = avatar(name = "JW", src = "https://i.pravatar.cc/300?u=a042581f4e29026709d"),
       "hello"
-    )
+    ),
+    reactOutput("modal")
   )
 )
 
 server <- function(input, output, session) {
-  observeEvent(req(isFALSE(input$plop)), {
-    showNotification("Chip closed ...")
+
+  modalVisible <- reactiveVal(FALSE)
+  observeEvent({
+    input$plop
+  }, {
+    if (!input$plop) modalVisible(TRUE)
+  })
+
+  observeEvent(input$modal_closed, {
+    modalVisible(FALSE)
+  })
+
+  output$modal <- renderReact({
+    modal(
+      scrollBehavior = input$scroll,
+      isOpen = modalVisible(),
+      size = "sm",
+      placement = "top",
+      modal_content(
+        modal_header("Congrats"),
+        modal_body(
+          p("You closed me!")
+        )
+      ),
+      onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
+    )
   })
 }
 

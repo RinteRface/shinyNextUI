@@ -2,13 +2,13 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{checkbox-group}
 \alias{checkbox-group}
-\alias{checkbox_group_input}
-\alias{update_checkbox_group_input}
+\alias{checkboxgroup_input}
+\alias{update_checkboxgroup_input}
 \title{checkbox-group}
 \usage{
-checkbox_group_input(inputId, ..., choices, selected = NULL)
+checkboxgroup_input(inputId, ..., choices, selected = NULL)
 
-update_checkbox_group_input(
+update_checkboxgroup_input(
   session = shiny::getDefaultReactiveDomain(),
   inputId,
   ...,
@@ -74,7 +74,7 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-1",
-    select(
+    select_input(
       "select",
       label = "Tab to select:",
       value = JS("['sydney']"),
@@ -83,7 +83,7 @@ ui <- nextui_page(
       select_item(key = "buenos-aires", value = "buenos-aires", "Buenos Aires"),
       select_item(key = "sydney", value = "sydney", "Sydney")
     ),
-    checkbox_group_input(
+    checkboxgroup_input(
       inputId = "checkbox_group",
       label = "Checkbox Group",
       choices = c(
@@ -99,8 +99,7 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$select, {
-    print(input$select)
-    update_checkbox_group_input(session, "checkbox_group", selected = input$select)
+    update_checkboxgroup_input(session, "checkbox_group", selected = input$select)
   })
   output$checkbox_group_val <- renderText(input$checkbox_group)
 }

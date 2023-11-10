@@ -91,7 +91,7 @@ ui <- nextui_page(
   ),
   spacer(y = 2),
   p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Update accordion"),
-  select(
+  select_input(
     "select",
     label = "Accordion to open:",
     select_item(key = 1, value = "1", "1"),

@@ -49,7 +49,6 @@ ui <- nextui_page(
     triggerType = "dialog",
     placement = "right-end",
     showArrow = TRUE,
-    offset = 15,
     button("Click me!", color = "warning")
   )
 )

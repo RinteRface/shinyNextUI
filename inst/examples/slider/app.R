@@ -5,7 +5,7 @@ library(shiny.react)
 ui <- nextui_page(
   debug_react = TRUE,
   action_button("update", "Update slider 1"),
-  slider(
+  slider_input(
     "slider",
     label = "My slider",
     showTooltip = TRUE,
@@ -36,7 +36,7 @@ ui <- nextui_page(
     ")
   ),
   spacer(y = 10),
-  slider(
+  slider_input(
     "slider2",
     radius = "lg",
     label = "Color offset",
@@ -50,7 +50,7 @@ ui <- nextui_page(
     formatOptions = JS("{signDisplay: 'always'}")
   ),
   spacer(y = 10),
-  slider(
+  slider_input(
     "slider3",
     label = "Outline",
     color = "foreground",
@@ -60,7 +60,7 @@ ui <- nextui_page(
     value = 5
   ),
   spacer(y = 10),
-  slider(
+  slider_input(
     "slider4",
     "With start and end content",
     minValue = 0,
@@ -70,7 +70,7 @@ ui <- nextui_page(
     endContent = icon("volume-high")
   ),
   spacer(y = 10),
-  slider(
+  slider_input(
     "slider5",
     color = "success",
     step = 0.1,
@@ -81,7 +81,7 @@ ui <- nextui_page(
     value = 5
   ),
   spacer(y = 10),
-  slider(
+  slider_input(
     "range",
     label = "Range",
     color = "danger",
@@ -92,7 +92,7 @@ ui <- nextui_page(
   spacer(y = 10),
   div(
     class = "flex flex-row  max-w-md h-[348px] gap-6 w-full",
-    slider(
+    slider_input(
       "slider4",
       label = "Vertical",
       size = "sm",
@@ -108,7 +108,7 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$update, {
-    update_slider(session, inputId = "slider", value = 10)
+    update_slider_input(session, inputId = "slider", value = 10)
   })
 
   observeEvent(input$slider, {

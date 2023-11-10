@@ -38,7 +38,7 @@ ui <- nextui_page(
   spacer(y = 2),
   action_button("toggle", "Open select"),
   spacer(y = 2),
-  select(
+  select_input(
     inputId = "select",
     label = "Select an pokemon",
     value = JS("['pikachu']"),
@@ -52,7 +52,7 @@ ui <- nextui_page(
   p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Variants"),
   lapply(select_variants, function(variant) {
     tagList(
-      select(
+      select_input(
         inputId = sprintf("select-%s", variant),
         label = "Select a pokemon",
         variant = variant,
@@ -71,7 +71,7 @@ ui <- nextui_page(
   ),
   lapply(label_placements, function(placement) {
     tagList(
-      select(
+      select_input(
         inputId = sprintf("select-%s", placement),
         label = "Select a pokemon",
         labelPlacement = placement,
@@ -87,7 +87,7 @@ ui <- nextui_page(
     class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2",
     "Custom render value"
   ),
-  select(
+  select_input(
     inputId = "customselect",
     labelPlacement = "outside-left",
     label = "Pokemon",
@@ -100,11 +100,11 @@ ui <- nextui_page(
 server <- function(input, output, session) {
   opened <- reactiveVal(FALSE)
   observeEvent(input$update, {
-    update_select(session, "select", value = JS("['bulbasaur']"))
+    update_select_input(session, "select", value = JS("['bulbasaur']"))
   })
   observeEvent(input$toggle, {
     opened(!opened())
-    update_select(session, "select", isOpen = opened())
+    update_select_input(session, "select", isOpen = opened())
   })
   output$select_val <- renderText(input$select)
 }

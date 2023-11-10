@@ -90,6 +90,7 @@ items <- list(
     "image",
     "input",
     "link",
+    "listbox",
     "modal",
     "navbar",
     "popover",

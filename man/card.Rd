@@ -93,7 +93,7 @@ ui <- nextui_page(
       onPress = JS("() => alert('You pressed me')"),
       shadow = "sm",
       className = "border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]",
-      card_body("Simple card without anything")
+      card_body("Press me!")
     )
   )
 )

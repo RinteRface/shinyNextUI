@@ -50,7 +50,7 @@ ui <- nextui_page(
     items
   ),
   spacer(y = 2),
-  select(
+  select_input(
     "select",
     label = "Tab to select:",
     value = "1",

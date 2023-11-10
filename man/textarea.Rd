@@ -2,13 +2,13 @@
 % Please edit documentation in R/doc.R, R/inputs.R
 \name{textarea}
 \alias{textarea}
-\alias{text_area_input}
-\alias{update_text_area_input}
+\alias{textarea_input}
+\alias{update_textarea_input}
 \title{textarea}
 \usage{
-text_area_input(inputId, ..., value = default_value)
+textarea_input(inputId, ..., value = default_value)
 
-update_text_area_input(
+update_textarea_input(
   session = shiny::getDefaultReactiveDomain(),
   inputId,
   ...
@@ -79,7 +79,7 @@ ui <- nextui_page(
   div(
     class = "flex gap-5",
     action_button("update_text", "Update text"),
-    text_area_input(
+    textarea_input(
       inputId = "textarea",
       placeholder = "Enter your amazing ideas.",
       label = "Text area input",
@@ -97,7 +97,7 @@ server <- function(input, output, session) {
   output$textarea_val <- renderText(input$textarea)
 
   observeEvent(input$update_text, {
-    update_text_area_input(
+    update_textarea_input(
       inputId = "textarea",
       value = "Updated value"
     )

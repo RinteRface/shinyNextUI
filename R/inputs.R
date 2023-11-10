@@ -85,11 +85,11 @@ update_switch_input <- shiny.react::updateReactInput
 #' @rdname textarea
 #' @inherit shinyInput params return
 #' @export
-text_area_input <- input("Textarea", "")
+textarea_input <- input("Textarea", "")
 
 #' @rdname textarea
 #' @export
-update_text_area_input <- shiny.react::updateReactInput
+update_textarea_input <- shiny.react::updateReactInput
 
 #' @rdname input
 #' @inherit shinyInput params return
@@ -175,7 +175,7 @@ update_radio_input <- function(
 #' @rdname checkbox-group
 #' @inherit radio_input
 #' @export
-checkbox_group_input <- function(inputId, ..., choices, selected = NULL) {
+checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
   tagList(
     tags$script("jsmodule['@/ReactR']['CheckboxGroup']()"),
     createReactShinyInput(
@@ -190,7 +190,7 @@ checkbox_group_input <- function(inputId, ..., choices, selected = NULL) {
 
 #' @rdname checkbox-group
 #' @export
-update_checkbox_group_input <- update_radio_input
+update_checkboxgroup_input <- update_radio_input
 
 #' @rdname accordion
 #' @inherit component params return
@@ -250,7 +250,7 @@ update_listbox <- shiny.react::updateReactInput
 
 #' @rdname select
 #' @export
-select <- input("Select", "")
+select_input <- input("Select", "")
 
 #' @rdname select
 #' @export
@@ -262,15 +262,15 @@ select_item <- component("SelectItem")
 
 #' @rdname sselect
 #' @export
-update_select <- shiny.react::updateReactInput
+update_select_input <- shiny.react::updateReactInput
 
 #' @rdname slider
 #' @export
-slider <- input("Slider", numeric())
+slider_input <- input("Slider", numeric())
 
 #' @rdname slider
 #' @export
-update_slider <- shiny.react::updateReactInput
+update_slider_input <- shiny.react::updateReactInput
 
 #' @rdname tabs
 #' @export

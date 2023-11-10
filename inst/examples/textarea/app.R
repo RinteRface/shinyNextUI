@@ -5,7 +5,7 @@ ui <- nextui_page(
   div(
     class = "flex gap-5",
     action_button("update_text", "Update text"),
-    text_area_input(
+    textarea_input(
       inputId = "textarea",
       placeholder = "Enter your amazing ideas.",
       label = "Text area input",
@@ -23,7 +23,7 @@ server <- function(input, output, session) {
   output$textarea_val <- renderText(input$textarea)
 
   observeEvent(input$update_text, {
-    update_text_area_input(
+    update_textarea_input(
       inputId = "textarea",
       value = "Updated value"
     )

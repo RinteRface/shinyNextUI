@@ -2,12 +2,15 @@
 % Please edit documentation in R/doc.R, R/feedback.R
 \name{modal}
 \alias{modal}
+\alias{modal_content}
 \alias{modal_header}
 \alias{modal_body}
 \alias{modal_footer}
 \title{modal}
 \usage{
 modal(...)
+
+modal_content(...)
 
 modal_header(...)
 

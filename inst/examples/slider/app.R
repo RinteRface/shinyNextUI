@@ -112,6 +112,7 @@ server <- function(input, output, session) {
   })
 
   observeEvent(input$slider, {
+    print(class(input$slider))
     print(sprintf("Slider is: %s", input$slider))
   })
   observeEvent(input$range, {

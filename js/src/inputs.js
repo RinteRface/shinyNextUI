@@ -177,7 +177,7 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
 });
 
 export const Slider = InputAdapter(NextUI.Slider, (value, setValue, props) => ({
-  value: Number(value),
+  value: value,
   onChange: (value) => {
     setValue(value);
   }

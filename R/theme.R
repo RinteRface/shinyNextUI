@@ -32,6 +32,7 @@ moon_icon <- function() {
 #'
 #' Change between light and dark mode
 #'
+#' @param value Switch status.
 #' @param label Input label.
 #' @param startContent Icon when selected.
 #' @param endContent Icon when not selected.
@@ -58,6 +59,7 @@ moon_icon <- function() {
 #'
 #' }
 theme_switcher <- function(
+    value = TRUE,
     label = "Change theme",
     startContent = sun_icon(),
     endContent = moon_icon()
@@ -66,6 +68,7 @@ theme_switcher <- function(
     "theme_switcher",
     label = label,
     startContent = startContent,
-    endContent = endContent
+    endContent = endContent,
+    value = value
   )
 }

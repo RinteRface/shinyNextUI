@@ -5,12 +5,15 @@
 \title{Theme switcher helper}
 \usage{
 theme_switcher(
+  value = TRUE,
   label = "Change theme",
   startContent = sun_icon(),
   endContent = moon_icon()
 )
 }
 \arguments{
+\item{value}{Switch status.}
+
 \item{label}{Input label.}
 
 \item{startContent}{Icon when selected.}

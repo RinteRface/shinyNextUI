@@ -24,13 +24,14 @@ export const ThemeSwitcher = InputAdapter(NextUI.Switch, (value, setValue) => ({
   },
 }));
 
-export const Switch = InputAdapter(NextUI.Switch, (value, setValue) => ({
-  isSelected: value,
-  onChange: (event) => {
-
-    setValue(event.target.checked);
-  },
-}));
+export const Switch = InputAdapter(NextUI.Switch, (value, setValue, props) => {
+  return({
+    isSelected: value,
+    onChange: (event) => {
+      setValue(event.target.checked);
+    }
+  })
+});
 
 export const Textarea = InputAdapter(NextUI.Textarea, (value, setValue, props) => ({
   value: value,

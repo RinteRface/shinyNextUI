@@ -13,6 +13,7 @@ items <- lapply(1:8, function(i) {
 color <- "success"
 
 ui <- nextui_page(
+  debug_react = TRUE,
   div(
     class = "flex gap-2 my-2",
     dropdown(
@@ -23,8 +24,8 @@ ui <- nextui_page(
         )
       ),
       dropdow_menu(
-        color = color,
         inputId = "dropdown",
+        color = color,
         disabledKeys = JS("['3', '4']"),
         selectionMode = "multiple",
         items,

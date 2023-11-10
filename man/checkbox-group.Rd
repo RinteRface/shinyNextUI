@@ -73,7 +73,8 @@ library(shinyNextUI)
 ui <- nextui_page(
   debug_react = TRUE,
   div(
-    class = "flex gap-1",
+    class = "flex flex-col gap-1",
+    spacer(y = 2),
     select_input(
       "select",
       label = "Tab to select:",
@@ -99,6 +100,7 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$select, {
+    print(input$select)
     update_checkboxgroup_input(session, "checkbox_group", selected = input$select)
   })
   output$checkbox_group_val <- renderText(input$checkbox_group)

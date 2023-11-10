@@ -10,6 +10,8 @@
 #' Default to FALSE.
 #'
 #' @return Object which can be passed as the UI of a Shiny app.
+#' @import shiny
+#' @import shiny.react
 #' @export
 nextui_page <- function(..., theme = c("light", "dark"), dark_mode = FALSE, debug_react = FALSE) {
 

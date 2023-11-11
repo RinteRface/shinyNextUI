@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 animals <- list(
   list(

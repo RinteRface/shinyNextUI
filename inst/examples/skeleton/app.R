@@ -11,6 +11,7 @@ server <- function(input, output, session) {
 
   is_loaded <- reactiveVal(FALSE)
   observeEvent(req(!is_loaded()), {
+    Sys.sleep(4)
     is_loaded(TRUE)
   })
 

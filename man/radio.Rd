@@ -6,7 +6,7 @@
 \alias{update_radio_input}
 \title{radio}
 \usage{
-radio_input(inputId, ..., choices, selected = NULL)
+radio_input(inputId, ..., choices, selected = choices[1])
 
 update_radio_input(
   session = shiny::getDefaultReactiveDomain(),

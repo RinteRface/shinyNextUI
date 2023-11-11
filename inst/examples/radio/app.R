@@ -4,7 +4,8 @@ library(shinyNextUI)
 ui <- nextui_page(
   debug_react = TRUE,
   div(
-    class = "flex gap-1",
+    class = "flex flex-col gap-1",
+    spacer(y = 2),
     select_input(
       "select",
       label = "Tab to select:",

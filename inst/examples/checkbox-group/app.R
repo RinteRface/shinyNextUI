@@ -31,7 +31,6 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$select, {
-    print(input$select)
     update_checkboxgroup_input(session, "checkbox_group", selected = input$select)
   })
   output$checkbox_group_val <- renderText(input$checkbox_group)

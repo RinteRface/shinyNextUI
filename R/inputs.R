@@ -127,6 +127,32 @@ checkbox_input <- input("Checkbox", FALSE)
 #' @export
 update_checkbox_input <- shiny.react::updateReactInput
 
+#' @keywords internal
+create_group_input <- function(inputId, ..., choices, selected, type = c("Checkbox", "Radio")) {
+
+  type <- match.arg(type)
+  module <- paste0(type, "Group")
+
+  process_val <- switch(
+    type,
+    "Checkbox" = as.list,
+    "Radio" = I
+  )
+
+  tagList(
+    # This seems a bit hacky but this can't be called from the main JS script
+    # because we only need it when the radio is invoked ...
+    tags$script(sprintf("jsmodule['@/ReactR']['%s']()", module)),
+    createReactShinyInput(
+      inputId = inputId,
+      class = tolower(module),
+      default = process_val(selected),
+      configuration = list(children = as.list(choices), ...),
+      container = htmltools::tags$div
+    )
+  )
+}
+
 #' Radio input
 #'
 #' @param inputId Unique input id.
@@ -137,19 +163,38 @@ update_checkbox_input <- shiny.react::updateReactInput
 #' @return A radio input tag.
 #' @rdname radio
 #' @export
-radio_input <- function(inputId, ..., choices, selected = NULL) {
-  tagList(
-    # This seems a bit hacky but this can't be called from the main JS script
-    # because we only need it when the radio is invoked ...
-    tags$script("jsmodule['@/ReactR']['RadioGroup']()"),
-    createReactShinyInput(
-      inputId = inputId,
-      class = "radiogroup",
-      default = selected,
-      configuration = list(children = as.list(choices), ...),
-      container = htmltools::tags$div
-    )
+radio_input <- function(inputId, ..., choices, selected = choices[1]) {
+  create_group_input(
+    inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "Radio"
   )
+}
+
+#' @param keywords internal
+update_group_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL,
+    type = c("Checkbox", "Radio")
+) {
+
+  type <- match.arg(type)
+
+  message <- list()
+  if (!is.null(selected)) {
+    if (type == "Checkbox") selected <- as.list(selected)
+  }
+  message$value <-  selected
+  configuration <- c(children = as.list(choices), list(...))
+  if (length(configuration) > 0) {
+    message$configuration <- configuration
+  }
+  session$sendInputMessage(inputId, message);
 }
 
 #' @rdname radio
@@ -163,34 +208,48 @@ update_radio_input <- function(
     choices = NULL,
     selected = NULL
 ) {
-  message <- list()
-  message$value <- selected
-  configuration <- c(children = choices, list(...))
-  if (length(configuration) > 0) {
-    message$configuration <- configuration
-  }
-  session$sendInputMessage(inputId, message);
+  update_group_input(
+    session,
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "Radio"
+  )
 }
 
 #' @rdname checkbox-group
 #' @inherit radio_input
 #' @export
 checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
-  tagList(
-    tags$script("jsmodule['@/ReactR']['CheckboxGroup']()"),
-    createReactShinyInput(
-      inputId = inputId,
-      class = "checkboxgroup",
-      default = as.list(selected),
-      configuration = list(children = as.list(choices), ...),
-      container = htmltools::tags$div
-    )
+  create_group_input(
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "Checkbox"
   )
 }
 
 #' @rdname checkbox-group
+#' @inheritParams update_radio_input
 #' @export
-update_checkboxgroup_input <- update_radio_input
+update_checkboxgroup_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL
+) {
+  update_group_input(
+    session,
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "Checkbox"
+  )
+}
 
 #' @rdname accordion
 #' @inherit component params return

@@ -102,6 +102,7 @@ Radios allow users to select a single option from a list of mutually exclusive o
 \examples{
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 ui <- nextui_page(
   debug_react = TRUE,

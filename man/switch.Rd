@@ -55,6 +55,7 @@ The Switch component is used as an alternative for the Checkbox component. You c
 \examples{
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 ui <- nextui_page(
   div(

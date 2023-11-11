@@ -69,6 +69,7 @@ A CheckboxGroup allows users to select one or more items from a list of choices.
 \examples{
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 ui <- nextui_page(
   debug_react = TRUE,

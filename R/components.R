@@ -13,7 +13,6 @@ component <- function(name) {
 avatar <- component("Avatar")
 
 #' @rdname avatar
-#' @inherit component params return
 #' @export
 avatar_group <- component("AvatarGroup")
 
@@ -33,17 +32,14 @@ button <- component("Button")
 card <- component("Card")
 
 #' @rdname card
-#' @inherit component params return
 #' @export
 card_body <- component("CardBody")
 
 #' @rdname card
-#' @inherit component params return
 #' @export
 card_header <- component("CardHeader")
 
 #' @rdname card
-#' @inherit component params return
 #' @export
 card_footer <- component("CardFooter")
 

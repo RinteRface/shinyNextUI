@@ -79,7 +79,6 @@ ui <- nextui_page(
       "select",
       label = "Tab to select:",
       value = JS("['sydney']"),
-      disallowEmptySelection = TRUE,
       selectionMode = "multiple",
       select_item(key = "buenos-aires", value = "buenos-aires", "Buenos Aires"),
       select_item(key = "sydney", value = "sydney", "Sydney")
@@ -100,9 +99,8 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {
   observeEvent(input$select, {
-    print(input$select)
     update_checkboxgroup_input(session, "checkbox_group", selected = input$select)
-  })
+  }, ignoreNULL = FALSE)
   output$checkbox_group_val <- renderText(input$checkbox_group)
 }
 

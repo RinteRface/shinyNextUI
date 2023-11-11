@@ -51,21 +51,17 @@ spacer <- component("Spacer")
 navbar <- component("Navbar")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
 navbar_brand <- component("NavbarBrand")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
 navbar_content <- component("NavbarContent")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
 navbar_item <- component("NavbarItem")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
 navbar_toggle <- component("NavbarToggle")

@@ -133,6 +133,13 @@ export const Listbox = InputAdapter(NextUI.Listbox, (value, setValue, props) => 
   }
 }));
 
+export const Pagination = InputAdapter(NextUI.Pagination, (value, setValue, props) => ({
+  page: value,
+  onChange: (page) => {
+    setValue(page);
+  },
+}));
+
 export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
   const [touched, setTouched] = React.useState(true);
 

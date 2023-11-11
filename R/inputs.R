@@ -250,11 +250,12 @@ update_checkboxgroup_input <- function(
 }
 
 #' @rdname accordion
-#' @inherit component params return
+#' @inherit shinyInput params return
 #' @export
 accordion <- input("Accordion")
 
 #' @rdname accordion
+#' @inherit component params return
 #' @export
 accordion_item <- component("AccordionItem")
 
@@ -290,10 +291,12 @@ dropdown_section <- component("DropdownSection")
 update_dropdown <- shiny.react::updateReactInput
 
 #' @rdname listbox
+#' @inherit shinyInput params return
 #' @export
 listbox <- input("Listbox")
 
 #' @rdname listbox
+#' @inherit component params return
 #' @export
 listbox_section <- component("ListboxSection")
 
@@ -305,11 +308,22 @@ listbox_item <- component("ListboxItem")
 #' @export
 update_listbox <- shiny.react::updateReactInput
 
+#' @rdname pagination
+#' @inherit shinyInput params return
+#' @export
+pagination <- input("Pagination", 1)
+
+#' @rdname pagination
+#' @export
+update_pagination <- shiny.react::updateReactInput
+
 #' @rdname select
+#' @inherit shinyInput params return
 #' @export
 select_input <- input("Select", "")
 
 #' @rdname select
+#' @inherit component params return
 #' @export
 select_section <- component("SelectSection")
 
@@ -317,11 +331,12 @@ select_section <- component("SelectSection")
 #' @export
 select_item <- component("SelectItem")
 
-#' @rdname sselect
+#' @rdname select
 #' @export
 update_select_input <- shiny.react::updateReactInput
 
 #' @rdname slider
+#' @inherit shinyInput params return
 #' @export
 slider_input <- input("Slider", numeric())
 
@@ -330,6 +345,7 @@ slider_input <- input("Slider", numeric())
 update_slider_input <- shiny.react::updateReactInput
 
 #' @rdname tabs
+#' @inherit shinyInput params return
 #' @export
 tabs <- input("Tabs", "1")
 
@@ -338,5 +354,6 @@ tabs <- input("Tabs", "1")
 update_tabs <- shiny.react::updateReactInput
 
 #' @rdname tabs
+#' @inherit component params return
 #' @export
 tab <- component("Tab")

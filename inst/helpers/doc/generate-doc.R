@@ -93,6 +93,7 @@ items <- list(
     "listbox",
     "modal",
     "navbar",
+    "pagination",
     "popover",
     "progress",
     "radio",

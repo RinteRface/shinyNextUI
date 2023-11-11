@@ -186,9 +186,7 @@ update_group_input <- function(
   type <- match.arg(type)
 
   message <- list()
-  if (!is.null(selected)) {
-    if (type == "Checkbox") selected <- as.list(selected)
-  }
+  if (type == "Checkbox") selected <- as.list(selected)
   message$value <-  selected
   configuration <- c(children = as.list(choices), list(...))
   if (length(configuration) > 0) {

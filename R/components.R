@@ -83,6 +83,65 @@ skeleton <- component("Skeleton")
 #' @export
 snippet <- component("Snippet")
 
+#' @rdname table
+#' @inherit component params return
+#' @keywords internal
+.table <- component("Table")
+
+#' @rdname table
+#' @export
+table_header <- component("TableHeader")
+
+#' @rdname table
+#' @export
+table_body <- component("TableBody")
+
+#' @rdname table
+#' @export
+table_col <- component("TableColumn")
+
+#' @rdname table
+#' @export
+table_row <- component("TableRow")
+
+#' @rdname table
+#' @export
+table_cell <-component("TableCell")
+
+#' Table widget
+#'
+#' @rdname table
+#' @param data Data to render.
+#' @export
+table <- function(data = NULL, ...) {
+  cols <- colnames(data)
+
+  if (is.null(data) || nrow(data) == 0) {
+    body <- table_body(
+      emptyContent = chip("No data :( ...", color = "danger"),
+      JS("[]")
+    )
+  } else {
+    body <- table_body(
+      lapply(seq_len(nrow(data)), function(i) {
+        table_row(
+          key = i,
+          lapply(seq_along(data[i, ]), function(j) {
+            table_cell(data[i, j])
+          })
+        )
+      })
+    )
+  }
+
+  .table(
+    ...,
+    label = "My Table",
+    table_header(lapply(cols, table_col)),
+    body
+  )
+}
+
 #' @rdname user
 #' @inherit component params return
 #' @export

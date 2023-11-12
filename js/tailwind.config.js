@@ -7,6 +7,7 @@ module.exports = {
         // ...
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
         "../inst/examples/**/*.R",
+        "../inst/showcase/modules/*.R",
         "../R/*.R"
       ],
       extract: {

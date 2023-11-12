@@ -8,10 +8,18 @@ generate_details <- function(x) {
   res <- vapply(seq_along(x), function(i) {
     tmp <- x[[i]]
     tmp <- vapply(seq_len(nrow(tmp)), function(r) {
-      attribute <- value_not_available(tmp[r, ]$Attribute)
+      attribute <- if (!("Attribute" %in% colnames(tmp[r, ]))) {
+        value_not_available(tmp[r, ]$Name)
+      } else {
+        value_not_available(tmp[r, ]$Attribute)
+      }
       description <- value_not_available(tmp[r, ]$Description)
       type <- value_not_available(tmp[r, ]$Type)
-      default <- value_not_available(tmp[r, ]$Default)
+      default <- if (!("Default" %in% colnames(tmp[r, ]))) {
+        "NA"
+      } else {
+        value_not_available(tmp[r, ]$Default)
+      }
 
       sprintf(
         "#'  \\item \\bold{%s}. %s. Type: %s. Default: %s.",
@@ -82,11 +90,10 @@ items <- list(
     "button",
     "card",
     "checkbox",
-    "checkbox-group",
+    #"checkbox-group",
     "chip",
     "code",
-    "divider",
-    "dropdown",
+    #"dropdown",
     "image",
     "input",
     "link",
@@ -96,7 +103,7 @@ items <- list(
     "pagination",
     "popover",
     "progress",
-    "radio",
+    #"radio",
     "select",
     "skeleton",
     "slider",
@@ -115,14 +122,18 @@ get_element_api <- function(el, context) {
   params <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#apis ~ * table") |>
+    html_elements(css = "#api ~ * table") |>
     html_table()
 
-  names(params) <- root |>
+  tmp <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#apis ~ h4[id$='props'] a, #apis ~ h4[id$='events'] a") |>
+    html_elements(css = "#api ~ h3[id$='props'] a, #api ~ h3[id$='events'] a") |>
     html_text2()
+
+  if (length(tmp) > length(params)) {
+    names(params) <- tmp[seq_along(params)]
+  }
 
   # TO DO: it is hard to give name to sub-tables
   # given that all elements don't have the same tables (

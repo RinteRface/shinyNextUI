@@ -1,0 +1,22 @@
+{
+  "input": {
+    "range": [
+      1,
+      4
+    ],
+    "slider": 5,
+    "slider2": 1,
+    "slider3": 5,
+    "slider4": 5,
+    "slider5": 5,
+    "theme": "light",
+    "theme_switcher": true,
+    "update": null
+  },
+  "output": {
+
+  },
+  "export": {
+
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "input": {
+    "select": "1",
+    "tabs-bordered": "1",
+    "tabs-danger": "1",
+    "tabs-default": "1",
+    "tabs-lg": "1",
+    "tabs-light": "1",
+    "tabs-md": "1",
+    "tabs-primary": "1",
+    "tabs-secondary": "1",
+    "tabs-sm": "1",
+    "tabs-solid": "1",
+    "tabs-success": "1",
+    "tabs-underlined": "1",
+    "tabs-warning": "1",
+    "tabs1": "1",
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "active_tab": "1"
+  },
+  "export": {
+
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "input": {
+    "radio": "sydney",
+    "select": "sydney",
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "radio_val": "sydney"
+  },
+  "export": {
+
+  }
+}

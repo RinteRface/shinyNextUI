@@ -29,53 +29,32 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 The update functions return nothing (called for side effects).
 }
 \description{
-Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected. Checkbox implementation is based on @react-aria/checkbox
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
 }
 \details{
-\enumerate{
-\item Checkbox Props
 \itemize{
-\item \bold{children}. The label for the element. Type: ReactNode. Default: NA.
-\item \bold{value}. The value of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-\item \bold{label}. The label for the element. Type: string. Default: NA.
-\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-\item \bold{color}. The color of the component. Type: NormalColors. Default: default.
-\item \bold{labelColor}. The color of the label. Type: SimpleColors. Default: default.
-\item \bold{size}. The size of the component. Type: NormalSizes. Default: md.
-\item \bold{isSelected}. Whether the element should be selected (controlled). Type: boolean. Default: false.
-\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled). Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the checkbox has animations. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the input is disabled. Type: boolean. Default: false.
-\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: false.
-\item \bold{isRounded}. Whether the checkbox is rounded. Type: boolean. Default: false.
-\item \bold{lineThrough}. Line in the middle of the label when the Checkbox is checked. Type: boolean. Default: NA.
-\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
-\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
-\item \bold{autoFocus}. Whether the element should receive focus on render. Type: boolean. Default: .
-\item \bold{containerCss new}. Override Default CSS Container style. Type: Stitches.CSS. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: label.
+\item \bold{children}. The label of the checkbox.. Type: ReactNode. Default: NA.
+\item \bold{icon}. The icon to be displayed when the checkbox is checked.. Type: CheckboxIconProps. Default: NA.
+\item \bold{value}. The value of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
+\item \bold{name}. The name of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
+\item \bold{size}. The size of the checkbox.. Type: sm | md | lg. Default: md.
+\item \bold{color}. The color of the checkbox.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+\item \bold{radius}. The radius of the checkbox.. Type: none | sm | md | lg | full. Default: NA.
+\item \bold{lineThrough}. Whether the label should be crossed out.. Type: boolean. Default: false.
+\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: .
+\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: .
+\item \bold{isRequired}. Whether user checkbox is required on the checkbox before form submission.. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Whether the checkbox can be selected but not changed by the user.. Type: boolean. Default: .
+\item \bold{isDisabled}. Whether the checkbox is disabled.. Type: boolean. Default: false.
+\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: .
+\item \bold{isInvalid}. Whether the checkbox is invalid.. Type: boolean. Default: false.
+\item \bold{validationState}. Whether the checkbox should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>. Default: NA.
 }
-\item Checkbox Events
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's selection state changes. Type: (checked: boolean) => void. Default: NA.
-\item \bold{onFocus}. Handler that is called when the element receives focus. Type: (e: FocusEvent) => void. Default: NA.
-\item \bold{onBlur}. Handler that is called when the element loses focus. Type: (e: FocusEvent) => void. Default: NA.
-\item \bold{onFocusChange}. Handler that is called when the element's focus status changes. Type: (focused: boolean) => void. Default: NA.
-\item \bold{onKeyDown}. Handler that is called when a key is pressed. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler that is called when a key is released. Type: (e: KeyboardEvent) => void. Default: NA.
-}
-\item Checkbox Accessibility Props
-\itemize{
-\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-\item \bold{excludeFromTabOrder}. Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.. Type: boolean. Default: NA.
-\item \bold{aria-controls}. Identifies the element (or elements) whose contents or presence are controlled by the current element.. Type: string. Default: NA.
-\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
-}
+\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
 }
 }
 \examples{

@@ -1,0 +1,14 @@
+{
+  "input": {
+    "checkbox": true,
+    "theme": "light",
+    "theme_switcher": true,
+    "update": null
+  },
+  "output": {
+    "check_val": "TRUE"
+  },
+  "export": {
+
+  }
+}

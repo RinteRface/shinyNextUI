@@ -5,6 +5,7 @@ test_that("pagination works as expected", {
   shiny_app_path <-
     system.file("examples/pagination/app.R", package = "shinyNextUI")
   app <- AppDriver$new(
+    seed = 4323,
     shiny_app_path,
     name = "pagination-app",
     variant = platform_variant()

@@ -1,0 +1,14 @@
+{
+  "input": {
+    "listbox": "bulbasaur",
+    "theme": "light",
+    "theme_switcher": true,
+    "update": null
+  },
+  "output": {
+    "res": "bulbasaur"
+  },
+  "export": {
+
+  }
+}

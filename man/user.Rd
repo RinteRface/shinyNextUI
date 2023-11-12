@@ -14,26 +14,15 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Flexible User Profile Component.
+Display user information with avatar and name.
 }
 \details{
-\enumerate{
-\item User Props
 \itemize{
-\item \bold{color}. Change User Profile border color. Type: NormalColors string. Default: default.
-\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
-\item \bold{name}. Display Text Next to Image. Type: string. Default: NA.
-\item \bold{text}. Display Text when image is missing. Type: string. Default: NA.
-\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
-\item \bold{size}. User Profile size. Type: NormalSizes number. Default: medium.
-\item \bold{bordered}. Bordered User Profile. Type: boolean. Default: false.
-\item \bold{zoomed}. Zoomed User Profile. Type: boolean. Default: false.
-\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
-\item \bold{squared}. Squared User Profile. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
-\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
-}
+\item \bold{name}. The name of the user.. Type: string. Default: NA.
+\item \bold{description}. The description component.. Type: ReactNode. Default: NA.
+\item \bold{isFocusable}. Whether the user is focusable. This is useful when using Dropdown or similar components.. Type: boolean. Default: false.
+\item \bold{avatarProps}. The avatar component props. The name is passed by default.. Type: AvatarProps. Default: NA.
+\item \bold{classNames}. Allows to set custom class names for the user slots.. Type: Record<"base"｜ "wrapper"｜ "name"｜ "description", string>. Default: NA.
 }
 }
 \examples{

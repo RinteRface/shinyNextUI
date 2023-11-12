@@ -22,6 +22,12 @@ items <- list(
         color = "success",
         description = "Item description",
         startContent = icon("home")
+      ),
+      dropdown_item(
+        title = "External link",
+        href = "https://nextui.org/",
+        target = "_blank",
+        description = "Go to nextui documentation"
       )
     )
   ),
@@ -60,8 +66,6 @@ items <- list(
 #  )
 #)
 
-color <- "success"
-
 ui <- nextui_page(
   debug_react = TRUE,
   div(
@@ -69,7 +73,6 @@ ui <- nextui_page(
     dropdow_menu(
       inputId = "dropdown",
       label = "Dropdown menu",
-      color = color,
       selected = "Item 2",
       variant = "bordered",
       disabledKeys = c("Item 3", "Item 4"),

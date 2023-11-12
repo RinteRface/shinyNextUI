@@ -1,0 +1,13 @@
+{
+  "input": {
+    "dropdown": "Item 2",
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "dropdown_val": "Item 2"
+  },
+  "export": {
+
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "input": {
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "skeleton_card": {
+      "data": {
+        "type": "element",
+        "module": "@nextui-org/react",
+        "name": "Card",
+        "props": {
+          "type": "object",
+          "value": {
+            "children": {
+              "type": "array",
+              "value": [
+                {
+                  "type": "element",
+                  "module": "@nextui-org/react",
+                  "name": "CardHeader",
+                  "props": {
+                    "type": "object",
+                    "value": {
+                      "children": {
+                        "type": "element",
+                        "module": "@nextui-org/react",
+                        "name": "Skeleton",
+                        "props": {
+                          "type": "object",
+                          "value": {
+                            "isLoaded": {
+                              "type": "raw",
+                              "value": true
+                            },
+                            "children": {
+                              "type": "element",
+                              "module": "@nextui-org/react",
+                              "name": "User",
+                              "props": {
+                                "type": "object",
+                                "value": {
+                                  "name": {
+                                    "type": "raw",
+                                    "value": "Jane Doe"
+                                  },
+                                  "description": {
+                                    "type": "raw",
+                                    "value": "Product Designer"
+                                  },
+                                  "avatarProps": {
+                                    "type": "expr",
+                                    "value": "{\n            src: 'https://i.pravatar.cc/150?u=a04258114e29026702d'\n          }"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "element",
+                  "module": "@nextui-org/react",
+                  "name": "CardBody",
+                  "props": {
+                    "type": "object",
+                    "value": {
+                      "children": {
+                        "type": "element",
+                        "module": "@nextui-org/react",
+                        "name": "Skeleton",
+                        "props": {
+                          "type": "raw",
+                          "value": {
+                            "isLoaded": true,
+                            "children": "Hello World"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "element",
+                  "module": "@nextui-org/react",
+                  "name": "CardFooter",
+                  "props": {
+                    "type": "object",
+                    "value": {
+                      "children": {
+                        "type": "element",
+                        "module": "@nextui-org/react",
+                        "name": "Skeleton",
+                        "props": {
+                          "type": "raw",
+                          "value": {
+                            "isLoaded": true,
+                            "children": "Footer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "deps": [
+        {
+          "name": "nextui",
+          "version": "2.0.0",
+          "src": {
+            "href": "nextui-2.0.0"
+          },
+          "meta": null,
+          "script": "nextui.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    }
+  },
+  "export": {
+
+  }
+}

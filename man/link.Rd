@@ -17,19 +17,32 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
 }
 \details{
-\enumerate{
-\item Link Props
 \itemize{
-\item \bold{color}. Change link color. Type: LinkColors boolean string. Default: false.
-\item \bold{href}. Link url. Type: string. Default: NA.
-\item \bold{isExternal updated}. Show link icon. Type: boolean. Default: false.
-\item \bold{underline}. Display underline. Type: boolean. Default: false.
-\item \bold{block}. Display as a separate block. Type: boolean. Default: false.
-\item \bold{ref}. forwardRef. Type: Ref<HTMLAnchorElement | null>. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: a.
-\item \bold{...}. Native props. Type: AnchorHTMLAttributes. Default: NA.
+\item \bold{size}. The size of the link.. Type: sm | md | lg. Default: md.
+\item \bold{color}. The color of the link.. Type: foreground | primary | secondary | success | warning | danger. Default: primary.
+\item \bold{underline}. The underline of the link.. Type: none | hover | always | active | focus. Default: none.
+\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
+\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
+\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
+\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
+\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
+\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
+\item \bold{isExternal}. Whether the link should open in a new tab.. Type: boolean. Default: false.
+\item \bold{showAnchorIcon}. Whether to show the anchor icon.. Type: boolean. Default: false.
+\item \bold{anchorIcon}. The anchor icon.. Type: ReactNode. Default: NA.
+\item \bold{isBlock}. Whether the link should be rendered as block with a hover effect.. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the link is disabled.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether to disable link and block animations.. Type: boolean. Default: false.
 }
+\itemize{
+\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClick}. The native link click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 }
 }
 \examples{

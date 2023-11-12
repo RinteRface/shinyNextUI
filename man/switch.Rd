@@ -25,31 +25,29 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 The update functions return nothing (called for side effects).
 }
 \description{
-The Switch component is used as an alternative for the Checkbox component. You can switch between enabled or disabled states.
+The Switch component is used as an alternative between checked and not checked states.
 }
 \details{
-\enumerate{
-\item Switch Props
 \itemize{
-\item \bold{color}. Change switch color. Type: NormalColors. Default: primary.
-\item \bold{size}. Switch size. Type: NormalSizes. Default: medium.
-\item \bold{checked}. Selected or not (in single). Type: boolean. Default: false.
-\item \bold{initialChecked}. Determine the initial value of the switch. Type: boolean. Default: false.
-\item \bold{animated}. Display checkbox animations. Type: boolean. Default: true.
-\item \bold{squared}. Squared switch. Type: boolean. Default: false.
-\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-\item \bold{disabled}. Disable switch. Type: boolean. Default: false.
-\item \bold{bordered}. Bordered switch. Type: boolean. Default: false.
-\item \bold{icon}. Add an icon for both status on/off. Type: ReactNode. Default: NA.
-\item \bold{iconOn}. Add an icon for on status. Type: ReactNode. Default: NA.
-\item \bold{iconOff}. Add an icon for off status. Type: ReactNode. Default: NA.
-\item \bold{preventDefault}. Prevent default event on when is selected through the Space, Enter keys. Type: boolean. Default: true.
-\item \bold{name}. Add a name to the input of the switch.. Type: string. Default: NA.
-\item \bold{onChange}. The callback invoked when the checked state of the switch changes.. Type: (e:SwitchEvent) => void. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native props. Type: LabelHTMLAttributes. Default: NA.
+\item \bold{children}. The label of the switch.. Type: ReactNode. Default: NA.
+\item \bold{value}. The value of the input element, used when submitting an HTML form.. Type: string. Default: NA.
+\item \bold{name}. The name of the input element, used when submitting an HTML form.. Type: string. Default: NA.
+\item \bold{size}. The size of the switch.. Type: sm | md | lg. Default: md.
+\item \bold{color}. The color of the switch.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+\item \bold{thumbIcon}. The icon to be displayed when the switch is checked.. Type: ThumbIconProps. Default: NA.
+\item \bold{startContent}. The icon to be displayed at the start of the switch.. Type: ReactNode. Default: NA.
+\item \bold{endContent}. The icon to be displayed at the end of the switch.. Type: ReactNode. Default: NA.
+\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: NA.
+\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: NA.
+\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: NA.
+\item \bold{isDisabled}. Whether the switch is disabled.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the switch slots.. Type: Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>. Default: NA.
 }
+\itemize{
+\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
 }
 }
 \examples{

@@ -13,7 +13,7 @@ test_that("tooltip works as expected", {
   )
 
   Sys.sleep(2)
-  app$click(selector = ".nextui-badge")
+  app$click(selector = "button")
   Sys.sleep(2)
   app$expect_values()
 })

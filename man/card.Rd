@@ -26,48 +26,27 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Card is a container for text, photos, and actions in the context of a single subject.
 }
 \details{
-\enumerate{
-\item Card Props
 \itemize{
-\item \bold{children*}. The content of the card. It's usually the header, body, and footer.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{variant}. The card variant style.. Type: CardVariants. Default: shadow.
-\item \bold{borderWeight}. The border weight of the bordered card.. Type: NormalWeights. Default: light.
-\item \bold{isHoverable}. Whether the card can be hovered by the user.. Type: boolean. Default: false.
-\item \bold{isPressable}. Whether the card should allow users to interact with the card.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the card is animated.. Type: boolean. Default: false.
-\item \bold{disableRipple}. Whether the card should show a ripple animation on press. Type: boolean. Default: false.
-\item \bold{allowTextSelectionOnPress}. Whether the card should allow text selection on press. (only for pressable cards). Type: boolean. Default: true.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: div.
+\item \bold{children}. Usually the Card parts, CardHeader, CardBody and CardFooter.. Type: ReactNode | ReactNode[]. Default: NA.
+\item \bold{shadow}. The card shadow.. Type: none | sm | md | lg. Default: md.
+\item \bold{radius}. The card border radius.. Type: none | sm | md | lg. Default: lg.
+\item \bold{fullWidth}. Whether the card should take the full width of its parent.. Type: boolean. Default: false.
+\item \bold{isHoverable}. Whether the card should change the background on hover.. Type: boolean. Default: false.
+\item \bold{isPressable}. Whether the card should allow to be pressed.. Type: boolean. Default: false.
+\item \bold{isBlurred}. Whether the card background should be blurred.. Type: boolean. Default: false.
+\item \bold{isFooterBlurred}. Whether the card footer background should be blurred.. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the card should be disabled. The press events will be ignored.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+\item \bold{disableRipple}. Whether to disable ripple effect. Only when isPressable is true.. Type: boolean. Default: false.
+\item \bold{allowTextSelectionOnPress}. Whether to allow text selection on pressing. Only when isPressable is true.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "header"｜ "body"｜ "footer", string>. Default: NA.
 }
-\item Card Events
 \itemize{
 \item \bold{onPress}. Handler that is called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
 \item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-}
-\item Card.Header Props
-\itemize{
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Body Props
-\itemize{
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Footer Props
-\itemize{
-\item \bold{isBlurred}. Whether the card footer background should be blurry.. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Image Props
-\itemize{
-\item \bold{ImageProps}. NA. Type: ImageProps. Default: NA.
-}
 }
 }
 \examples{

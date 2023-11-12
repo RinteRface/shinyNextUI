@@ -14,19 +14,12 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Provide empty space.
+Spacer is a component used to add space between components.
 }
 \details{
-\enumerate{
-\item Spacer Props
 \itemize{
-\item \bold{x}. x-axis spacing. Type: number / float. Default: 1.
-\item \bold{y}. y-axis spacing. Type: number / float. Default: 1.
-\item \bold{inline}. inline space. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. native props. Type: HTMLAttributes. Default: NA.
-}
+\item \bold{x}. The x axis space. Type: Space. Default: 1.
+\item \bold{y}. The y axis space. Type: Space. Default: 1.
 }
 }
 \examples{

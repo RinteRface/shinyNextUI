@@ -26,109 +26,16 @@ NULL
 #' @name component
 NULL
 
-#' container
-#'
-#' @description
-#' A component for fixing an element's width to the current breakpoint.
-#'
-#' @details
-#'
-#' 1. Container Props
-#' \itemize{
-#'\item \bold{fluid}. width: 100% at all breakpoints. Type: boolean. Default: false.
-#'\item \bold{responsive}. Sets a max-width at each responsive breakpoint. Type: boolean. Default: true.
-#'\item \bold{xs}. Extra small devices (<650px). Type: boolean. Default: false.
-#'\item \bold{sm}. Small devices (≥650px). Type: boolean. Default: false.
-#'\item \bold{md}. Medium devices (≥960px). Type: boolean. Default: false.
-#'\item \bold{lg}. Large devices (≥1280px). Type: boolean. Default: false.
-#'\item \bold{xl}. Extra large devices (≥1400px). Type: boolean. Default: false.
-#'\item \bold{gap}. Children's spacing. Type: number. Default: 2.
-#'\item \bold{wrap}. CSS "flex-wrap". Type: Wrap. Default: wrap.
-#'\item \bold{display}. CSS "display". Type: Display. Default: block.
-#'\item \bold{justify}. CSS "justify-content". Type: Justify. Default: NA.
-#'\item \bold{direction}. CSS "flex-direction". Type: Direction. Default: NA.
-#'\item \bold{alignItems}. CSS "align-items". Type: AlignItems. Default: NA.
-#'\item \bold{alignContent}. CSS "align-content". Type: AlignContent. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 2. Row Props
-#' \itemize{
-#'\item \bold{fluid}. width: 100%. Type: boolean. Default: true.
-#'\item \bold{gap}. Children's spacing. Type: number. Default: 0.
-#'\item \bold{wrap}. CSS "flex-wrap" property. Type: Wrap. Default: nowrap.
-#'\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: flex-start.
-#'\item \bold{align}. CSS "align-items" property. Type: AlignItems. Default: flex-start.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 3. Col Props
-#' \itemize{
-#'\item \bold{span}. Column's width. Type: number. Default: 12.
-#'\item \bold{offset}. Move columns to the right. Type: number. Default: 0.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props. Type: HTMLAttributes. Default: NA.
-#' }
-#' @md
-#' @name container
-#' @example inst/examples/container/app.R
-#' @seealso See \url{https://nextui.org/docs/layout/container}.
-NULL
-
-#' grid
-#'
-#' @description
-#' The layout Grid adapts to screen size and orientation, ensuring consistency across layouts.
-#'
-#' @details
-#'
-#' 1. Grid Props
-#' \itemize{
-#'\item \bold{xs}. extra small devices (<650px). Type: boolean. Default: false.
-#'\item \bold{sm}. small devices (≥650px). Type: boolean. Default: false.
-#'\item \bold{md}. medium devices (≥960px). Type: boolean. Default: false.
-#'\item \bold{lg}. large devices (≥1280px). Type: boolean. Default: false.
-#'\item \bold{xl}. extra large devices (≥1400px). Type: boolean. Default: false.
-#'\item \bold{direction}. CSS "flex-direction" property. Type: Direction. Default: NA.
-#'\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: NA.
-#'\item \bold{alignItems}. CSS "align-items" property. Type: AlignItems. Default: NA.
-#'\item \bold{alignContent}. CSS "align-content" property. Type: AlignContent. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 2. Grid.Container Props
-#' \itemize{
-#'\item \bold{gap}. spacing of children. Type: number. Default: 0.
-#'\item \bold{wrap}. CSS "flex-wrap" property. Type: Wrap. Default: wrap.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props. Type: HTMLAttributes. Default: NA.
-#' }
-#' @md
-#' @name grid
-#' @example inst/examples/grid/app.R
-#' @seealso See \url{https://nextui.org/docs/layout/grid}.
-NULL
-
 #' spacer
 #'
 #' @description
-#' Provide empty space.
+#' Spacer is a component used to add space between components.
 #'
 #' @details
 #'
-#' 1. Spacer Props
 #' \itemize{
-#'\item \bold{x}. x-axis spacing. Type: number / float. Default: 1.
-#'\item \bold{y}. y-axis spacing. Type: number / float. Default: 1.
-#'\item \bold{inline}. inline space. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. native props. Type: HTMLAttributes. Default: NA.
+#'\item \bold{x}. The x axis space. Type: Space. Default: 1.
+#'\item \bold{y}. The y axis space. Type: Space. Default: 1.
 #' }
 #' @md
 #' @name spacer
@@ -136,303 +43,145 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/layout/spacer}.
 NULL
 
-#' button
+#' accordion
 #'
 #' @description
-#' Buttons allow users to perform actions and choose with a single tap.
+#' Accordion display a list of high-level options that can expand/collapse to reveal more information.
 #'
 #' @details
 #'
-#' 1. Button Props
 #' \itemize{
-#'\item \bold{color}. Change button color. Type: NormalColors. Default: default.
-#'\item \bold{size}. Change button size. Type: NormalSizes. Default: md.
-#'\item \bold{disabled}. Disable button. Type: boolean. Default: false.
-#'\item \bold{bordered}. Bordered button. Type: boolean. Default: false.
-#'\item \bold{flat}. Flat button. Type: boolean. Default: false.
-#'\item \bold{rounded}. Rounded button. Type: boolean. Default: false.
-#'\item \bold{ghost}. The opposite color. Type: boolean. Default: false.
-#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-#'\item \bold{ripple}. Display drip animation. Type: boolean. Default: true.
-#'\item \bold{auto}. Autoscale button width. Type: boolean. Default: false.
-#'\item \bold{animated}. Display drip and scale animation. Type: boolean. Default: true.
-#'\item \bold{borderWeight}. Border weight for bordered button. Type: NormalWeights. Default: normal.
-#'\item \bold{autoFocus}. Automatically focus button. Type: boolean. Default: false.
-#'\item \bold{onClick}. Button click handler. Type: MouseEventHandler. Default: NA.
-#'\item \bold{icon}. Show icon in button. Type: ReactNode. Default: NA.
-#'\item \bold{iconRight}. Show icon on the other side of the button. Type: ReactNode. Default: NA.
-#'\item \bold{type}. Native type of button element. Type: button reset submit. Default: button.
-#'\item \bold{ref}. forwardRef. Type: Ref<HTMLButtonElement | null>. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{iconLeftCss}. Override icon CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{iconRightCss}. Override iconRight CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: button.
-#'\item \bold{...}. Button native props. Type: 'id', 'className', .... Default: NA.
+#'\item \bold{children}. The contents of the collection. Usually the array of AccordionItem. Type: ReactNode | ReactNode[]. Default: .
+#'\item \bold{variant}. The accordion appearance style.. Type: light | shadow | bordered | splitted. Default: light.
+#'\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: none | single | multiple. Default: .
+#'\item \bold{selectionBehavior}. The accordion selection behavior.. Type: toggle | replace. Default: toggle.
+#'\item \bold{isCompact}. Whether all Accordion items should be smaller.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the Accordion items are disabled.. Type: boolean. Default: .
+#'\item \bold{showDivider}. WWhether to display a divider at the bottom of the each accordion item.. Type: boolean. Default: true.
+#'\item \bold{DividerProps}. The divider component props.. Type: DividerProps. Default: NA.
+#'\item \bold{hideIndicator}. Whether the Accordion items indicator is hidden.. Type: boolean. Default: .
+#'\item \bold{disableAnimation}. Whether the Accordion items open/close animation is disabled.. Type: boolean. Default: .
+#'\item \bold{disableIndicatorAnimation}. Whether the Accordion items indicator animation is disabled.. Type: boolean. Default: .
+#'\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: .
+#'\item \bold{keepContentMounted}. Whether the Accordion items content should be always mounted.. Type: boolean. Default: false.
+#'\item \bold{fullWidth}. Whether the accordion should take up the full width of its parent container.. Type: boolean. Default: true.
+#'\item \bold{motionProps}. The motion properties of the Accordion.. Type: MotionProps. Default: .
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: .
+#'\item \bold{itemClasses}. The accordion items classNames.. Type: Classnames. Default: .
+#'\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all | React.Key[]. Default: .
+#'\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: .
+#'\item \bold{disabledKeys}. The currently disabled keys in the collection (controlled).. Type: React.Key[]. Default: .
 #' }
-#' 2. Button Events
 #' \itemize{
-#'\item \bold{onClick deprecated}. Button click handler. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPress}. Handler that is called when the press is released over the button.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressUp}. Handler that is called when a press is released over the button, regardless of whether it started on the button or not.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the button or when the pointer leaves the button.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys: "all" ｜ Set<React.Key>) => any. Default: NA.
 #' }
-#' 3. Button Accessibility Props
 #' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{excludeFromTabOrder}. Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.. Type: boolean. Default: NA.
-#'\item \bold{aria-expanded}. Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.. Type: boolean. Default: NA.
-#'\item \bold{aria-haspopup}. Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.. Type: boolean menu listbox tree grid dialog. Default: NA.
-#'\item \bold{aria-controls}. Identifies the element (or elements) whose contents or presence are controlled by the current element.. Type: string. Default: NA.
-#'\item \bold{aria-pressed}. Indicates the current "pressed" state of toggle buttons.. Type: boolean. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#'\item \bold{children}. The content of the component.. Type: ReactNode | string. Default: .
+#'\item \bold{title}. The accordion item title.. Type: ReactNode | string. Default: .
+#'\item \bold{subtitle}. The accordion item subtitle.. Type: ReactNode | string. Default: .
+#'\item \bold{indicator}. The accordion item expanded indicator, usually an arrow icon.. Type: IndicatorProps. Default: .
+#'\item \bold{startContent}. The accordion item start content, usually an icon or avatar.. Type: ReactNode. Default: .
+#'\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
+#'\item \bold{isCompact}. Whether the AccordionItem is compact.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. The current disabled status.. Type: boolean. Default: false.
+#'\item \bold{keepContentMounted}. Whether the AccordionItem content is kept mounted when closed.. Type: boolean. Default: false.
+#'\item \bold{hideIndicator}. Whether the AccordionItem indicator is hidden.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the AccordionItem animation is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableIndicatorAnimation}. Whether the AccordionItem indicator animation is disabled.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the accordion item slots.. Type: Classnames. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onFocus}. Handler that is called when the element receives focus.. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onBlur}. Handler that is called when the element loses focus.. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onFocusChange}. Handler that is called when the element's focus status changes.. Type: (isFocused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 #' }
 #' @md
-#' @name button
-#' @example inst/examples/button/app.R
-#' @seealso See \url{https://nextui.org/docs/components/button}.
+#' @name accordion
+#' @example inst/examples/accordion/app.R
+#' @seealso See \url{https://nextui.org/docs/components/accordion}.
 NULL
 
-#' card
+#' autocomplete
 #'
 #' @description
-#' Card is a container for text, photos, and actions in the context of a single subject.
+#' An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
 #'
 #' @details
 #'
-#' 1. Card Props
+#' 1. Autocomplete Props
 #' \itemize{
-#'\item \bold{children*}. The content of the card. It's usually the header, body, and footer.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{variant}. The card variant style.. Type: CardVariants. Default: shadow.
-#'\item \bold{borderWeight}. The border weight of the bordered card.. Type: NormalWeights. Default: light.
-#'\item \bold{isHoverable}. Whether the card can be hovered by the user.. Type: boolean. Default: false.
-#'\item \bold{isPressable}. Whether the card should allow users to interact with the card.. Type: boolean. Default: false.
-#'\item \bold{disableAnimation}. Whether the card is animated.. Type: boolean. Default: false.
-#'\item \bold{disableRipple}. Whether the card should show a ripple animation on press. Type: boolean. Default: false.
-#'\item \bold{allowTextSelectionOnPress}. Whether the card should allow text selection on press. (only for pressable cards). Type: boolean. Default: true.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{children*}. The children to render. Usually a list of AutocompleteItem and AutocompleteSection elements.. Type: ReactNode[]. Default: NA.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN.. Type: string. Default: NA.
+#'\item \bold{variant}. The variant of the Autocomplete.. Type: flat | bordered | faded | underlined. Default: flat.
+#'\item \bold{color}. The color of the Autocomplete.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the Autocomplete.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The radius of the Autocomplete.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{items}. The list of Autocomplete items. (controlled). Type: Iterable<T>. Default: NA.
+#'\item \bold{defaultItems}. The list of Autocomplete items (uncontrolled).. Type: Iterable<T>. Default: NA.
+#'\item \bold{inputValue}. The value of the Autocomplete input (controlled).. Type: string. Default: NA.
+#'\item \bold{defaultInputValue}. The value of the Autocomplete input (uncontrolled).. Type: string. Default: NA.
+#'\item \bold{allowsCustomValue}. Whether the Autocomplete allows a non-item matching input value to be set.. Type: boolean. Default: false.
+#'\item \bold{allowsEmptyCollection}. Whether the autocomplete allows the menu to be open when the collection is empty.. Type: boolean. Default: true.
+#'\item \bold{shouldCloseOnBlur}. Whether the Autocomplete should close when the input is blurred.. Type: boolean. Default: true.
+#'\item \bold{placeholder}. Temporary text that occupies the text input when it is empty.. Type: string. Default: NA.
+#'\item \bold{description}. A description for the field. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
+#'\item \bold{menuTrigger}. The action that causes the menu to open.. Type: focus | input | manual. Default: focus.
+#'\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
+#'\item \bold{selectedKey}. The currently selected key in the collection (controlled).. Type: React.Key. Default: NA.
+#'\item \bold{defaultSelectedKey}. The initial selected key in the collection (uncontrolled).. Type: React.Key. Default: NA.
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: all | React.Key[]. Default: NA.
+#'\item \bold{errorMessage}. An error message to display below the field.. Type: ReactNode. Default: NA.
+#'\item \bold{startContent}. Element to be rendered in the left side of the Autocomplete.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. Element to be rendered in the right side of the Autocomplete.. Type: ReactNode. Default: NA.
+#'\item \bold{autoFocus}. Whether the Autocomplete should be focused on render.. Type: boolean. Default: false.
+#'\item \bold{defaultFilter}. The filter function used to determine if a option should be included in the Autocomplete list.. Type: (textValue: string, inputValue: string) => boolean. Default: NA.
+#'\item \bold{filterOptions}. The options used to create the collator used for filtering.. Type: Intl.CollatorOptions. Default: { sensitivity: 'base'}.
+#'\item \bold{isReadOnly}. Whether the Autocomplete is read only.. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Whether the Autocomplete is required.. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Whether the Autocomplete is invalid.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the Autocomplete is disabled.. Type: boolean. Default: false.
+#'\item \bold{fullWidth}. Whether the input should take up the width of its parent.. Type: boolean. Default: true.
+#'\item \bold{selectorIcon}. The icon that represents the autocomplete open state. Usually a chevron icon.. Type: ReactNode. Default: NA.
+#'\item \bold{clearIcon}. The icon to be used in the clear button. Usually a cross icon.. Type: ReactNode. Default: NA.
+#'\item \bold{showScrollIndicators}. Whether the scroll indicators should be shown when the listbox is scrollable.. Type: boolean. Default: true.
+#'\item \bold{scrollRef}. A ref to the scrollable element.. Type: React.RefObject<HTMLElement>. Default: NA.
+#'\item \bold{inputProps}. Props to be passed to the Input component.. Type: InputProps. Default: NA.
+#'\item \bold{popoverProps}. Props to be passed to the Popover component.. Type: PopoverProps. Default: NA.
+#'\item \bold{listboxProps}. Props to be passed to the Listbox component.. Type: ListboxProps. Default: NA.
+#'\item \bold{scrollShadowProps}. Props to be passed to the ScrollShadow component.. Type: ScrollShadowProps. Default: NA.
+#'\item \bold{selectorButtonProps}. Props to be passed to the selector button.. Type: ButtonProps. Default: NA.
+#'\item \bold{clearButtonProps}. Props to be passed to the clear button.. Type: ButtonProps. Default: NA.
+#'\item \bold{isClearable}. Whether the clear button should be shown.. Type: boolean. Default: true.
+#'\item \bold{disableClearable}. Whether the clear button should be hidden. (Deprecated) Use isClearable instead.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the Autocomplete should be animated.. Type: boolean. Default: true.
+#'\item \bold{disableSelectorIconRotation}. Whether the select should disable the rotation of the selector icon.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the Autocomplete slots.. Type: Record<"base"｜ "listboxWrapper"｜ "listbox"｜ "popoverContent" ｜ "endContentWrapper"｜ "clearButton" ｜ "selectorButton", string>. Default: NA.
 #' }
-#' 2. Card Events
+#' 2. Autocomplete Events
 #' \itemize{
-#'\item \bold{onPress}. Handler that is called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-#'\item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-#'\item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-#' }
-#' 3. Card.Header Props
-#' \itemize{
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#' }
-#' 4. Card.Body Props
-#' \itemize{
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#' }
-#' 5. Card.Footer Props
-#' \itemize{
-#'\item \bold{isBlurred}. Whether the card footer background should be blurry.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#' }
-#' 6. Card.Image Props
-#' \itemize{
-#'\item \bold{ImageProps}. NA. Type: ImageProps. Default: NA.
-#' }
-#' @md
-#' @name card
-#' @example inst/examples/card/app.R
-#' @seealso See \url{https://nextui.org/docs/components/card}.
-NULL
-
-#' input
-#'
-#' @description
-#' Inputs fields are used to get the user input in a text field.
-#'
-#' @details
-#'
-#' 1. Input Props
-#' \itemize{
-#'\item \bold{value}. number. Type: string. Default: NA.
-#'\item \bold{initialValue}. Input default value. Type: string. Default: NA.
-#'\item \bold{placeholder}. The short hint displayed in the input. Type: string. Default: NA.
-#'\item \bold{size}. Change input size. Type: NormalSizes. Default: medium.
-#'\item \bold{color}. Change input text, border and label color. Type: SimpleColors. Default: default.
-#'\item \bold{status}. Change input status color. Type: SimpleColors. Default: default.
-#'\item \bold{helperColor}. Change helper text color. Type: SimpleColors. Default: default.
-#'\item \bold{required}. Required input prop. Type: boolean. Default: false.
-#'\item \bold{readOnly}. It prevents the user from changing the value of the field. Type: boolean. Default: false.
-#'\item \bold{disabled}. Disable input. Type: boolean. Default: false.
-#'\item \bold{clearable}. Show clear button. Type: boolean. Default: false.
-#'\item \bold{rounded}. Rounded input. Type: boolean. Default: false.
-#'\item \bold{bordered}. Bordered input. Type: boolean. Default: false.
-#'\item \bold{underlined}. Underlined input. Type: boolean. Default: false.
-#'\item \bold{shadow}. Enable or disable the input shadow. Type: boolean. Default: true.
-#'\item \bold{animated}. Enable or disable the input animation. Type: boolean. Default: true.
-#'\item \bold{autoComplete}. HTML input autocomplete attribute. Type: string. Default: off.
-#'\item \bold{borderWeight}. Border weight for bordered input. Type: NormalWeights. Default: normal.
-#'\item \bold{fullWidth}. If true, the input will take up the full width of its container.. Type: boolean. Default: false.
-#'\item \bold{width}. Input width. Type: string. Default: initial.
-#'\item \bold{label}. Text label for input. Type: string. Default: NA.
-#'\item \bold{labelPlaceholder}. The placeholder becomes a label. Type: string. Default: NA.
-#'\item \bold{labelLeft}. Text label at left of the input. Type: string. Default: NA.
-#'\item \bold{labelRight}. Text label at right of the input. Type: string. Default: NA.
-#'\item \bold{helperText}. Add a helper text to Input. Type: string. Default: NA.
-#'\item \bold{contentLeft}. Left content for input. Type: React.ReactNode. Default: NA.
-#'\item \bold{contentRight}. Right content for input. Type: React.ReactNode. Default: NA.
-#'\item \bold{contentClickable}. Left/right content are clickable (just applied when the styling prop is true, see the next props). Type: boolean. Default: false.
-#'\item \bold{contentLeftStyling}. Allows the Input component to wrap the contentLeft in a container. Type: boolean. Default: true.
-#'\item \bold{contentRightStyling}. Allows the Input component to wrap the contentRight in a container. Type: boolean. Default: true.
-#'\item \bold{onChange}. Callback fired when the value is changed. Type: (e: React.ChangeEvent<HTMLInputElement>) => void. Default: NA.
-#'\item \bold{onFocus}. Callback fired when the input is focused.. Type: (e: React.FocusEvent<HTMLInputElement>) => void. Default: NA.
-#'\item \bold{onBlur}. Callback fired when the input is blurred.. Type: (e: React.FocusEvent<HTMLInputElement>) => void. Default: NA.
-#'\item \bold{onContentClick}. click icon event. Type: (key: ContentPosition, e: React.MouseEvent) => void. Default: NA.
-#'\item \bold{onClearClick}. clear icon event. Type: (e: React.MouseEvent) => void. Default: NA.
-#'\item \bold{ref}. forwardRef. Type: Ref<HTMLInputElement | null>. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: input.
-#'\item \bold{...}. Input native props. Type: InputHTMLAttributes. Default: NA.
-#' }
-#' 2. NA
-#' \itemize{
-#'\item \bold{hideToggle}. Hide toggle icon. Type: boolean. Default: false.
-#'\item \bold{visibleIcon}. Custom visible password icon. Type: React.ReactNode. Default: NA.
-#'\item \bold{hiddenIcon}. Custom hidden password icon. Type: React.ReactNode. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: input.
-#'\item \bold{...}. Input props. Type: Input Props. Default: NA.
+#'\item \bold{onOpenChange}. Method that is called when the open state of the menu changes. Returns the new open state and the action that caused the opening of the menu.. Type: (isOpen: boolean, menuTrigger?: MenuTriggerAction) => void. Default: NA.
+#'\item \bold{onInputChange}. Handler that is called when the Autocomplete input value changes.. Type: (value: string) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Handler that is called when the Autocomplete selection changes.. Type: (key: React.Key) => void. Default: NA.
+#'\item \bold{onFocus}. Handler that is called when the Autocomplete input is focused.. Type: (e:FocusEvent<HTMLInputElement>) => void. Default: NA.
+#'\item \bold{onBlur}. Handler that is called when the Autocomplete input is blurred.. Type: (e:FocusEvent<HTMLInputElement>) => void. Default: NA.
+#'\item \bold{onFocusChange}. Handler that is called when the Autocomplete input focus changes.. Type: (isFocused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the Autocomplete's Popover is closed.. Type: () => void. Default: NA.
 #' }
 #' @md
-#' @name input
-#' @example inst/examples/input/app.R
-#' @seealso See \url{https://nextui.org/docs/components/input}.
-NULL
-
-#' modal
-#'
-#' @description
-#' Displays a dialog with a custom content that requires attention or provides additional information.
-#'
-#' @details
-#'
-#' 1. Modal Props
-#' \itemize{
-#'\item \bold{open}. Determine if the modal is visible or hidden. Type: boolean. Default: false.
-#'\item \bold{scroll}. Makes the content a maximum high and gives the possibility to overflow the content add scroll. Type: boolean. Default: false.
-#'\item \bold{blur}. Makes all elements blur when the modal opens. Type: boolean. Default: false.
-#'\item \bold{animated}. Display the modal with opening and close animation. Type: boolean. Default: true.
-#'\item \bold{noPadding}. Eliminates the padding of the base elements of the modal. Type: boolean. Default: false.
-#'\item \bold{closeButton}. Determine if the modal close button is visible or hidden. Type: boolean. Default: false.
-#'\item \bold{fullScreen}. Makes the modal the size of the window. Type: boolean. Default: false.
-#'\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: NA.
-#'\item \bold{preventClose}. Modal cannot be closed by clicking outside or by pressing the esc key. Type: boolean. Default: false.
-#'\item \bold{width}. Determine the width of the modal. Type: string number. Default: 400px.
-#'\item \bold{onClose}. Callback fired when the modal is closed. Type: () => void. Default: NA.
-#'\item \bold{onOpen}. Callback fired when the modal is open. Type: () => void. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: section.
-#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 2. Modal.Header Props
-#' \itemize{
-#'\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-#'\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: center.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 3. Modal.Body Props
-#' \itemize{
-#'\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-#' }
-#' 4. Modal.Footer Props
-#' \itemize{
-#'\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-#'\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: flex-end.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-#' }
-#' @md
-#' @name modal
-#' @example inst/examples/modal/app.R
-#' @seealso See \url{https://nextui.org/docs/components/modal}.
-NULL
-
-#' switch
-#'
-#' @description
-#' The Switch component is used as an alternative for the Checkbox component. You can switch between enabled or disabled states.
-#'
-#' @details
-#'
-#' 1. Switch Props
-#' \itemize{
-#'\item \bold{color}. Change switch color. Type: NormalColors. Default: primary.
-#'\item \bold{size}. Switch size. Type: NormalSizes. Default: medium.
-#'\item \bold{checked}. Selected or not (in single). Type: boolean. Default: false.
-#'\item \bold{initialChecked}. Determine the initial value of the switch. Type: boolean. Default: false.
-#'\item \bold{animated}. Display checkbox animations. Type: boolean. Default: true.
-#'\item \bold{squared}. Squared switch. Type: boolean. Default: false.
-#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-#'\item \bold{disabled}. Disable switch. Type: boolean. Default: false.
-#'\item \bold{bordered}. Bordered switch. Type: boolean. Default: false.
-#'\item \bold{icon}. Add an icon for both status on/off. Type: ReactNode. Default: NA.
-#'\item \bold{iconOn}. Add an icon for on status. Type: ReactNode. Default: NA.
-#'\item \bold{iconOff}. Add an icon for off status. Type: ReactNode. Default: NA.
-#'\item \bold{preventDefault}. Prevent default event on when is selected through the Space, Enter keys. Type: boolean. Default: true.
-#'\item \bold{name}. Add a name to the input of the switch.. Type: string. Default: NA.
-#'\item \bold{onChange}. The callback invoked when the checked state of the switch changes.. Type: (e:SwitchEvent) => void. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native props. Type: LabelHTMLAttributes. Default: NA.
-#' }
-#' @md
-#' @name switch
-#' @example inst/examples/switch/app.R
-#' @seealso See \url{https://nextui.org/docs/components/switch}.
-NULL
-
-#' text
-#'
-#' @description
-#' Text component is the used to render text and paragraphs within an interface using well-defined typographic styles. It renders a <p> tag by default.
-#'
-#' @details
-#'
-#' 1. Text Props
-#' \itemize{
-#'\item \bold{h1 - h6}. Component name. Type: boolean. Default: false.
-#'\item \bold{small}. Component name. Type: boolean. Default: false.
-#'\item \bold{span}. Component name. Type: boolean. Default: false.
-#'\item \bold{del}. Component name. Type: boolean. Default: false.
-#'\item \bold{i}. Component name. Type: boolean. Default: false.
-#'\item \bold{em}. Component name. Type: boolean. Default: false.
-#'\item \bold{b}. Component name. Type: boolean. Default: false.
-#'\item \bold{blockquote}. Component name. Type: boolean. Default: false.
-#'\item \bold{transform}. text-transform prop. Type: TextTransforms. Default: none.
-#'\item \bold{size}. Text size. Type: string number FontSize. Default: inherit.
-#'\item \bold{color}. Text color. Type: SimpleColors string. Default: default.
-#'\item \bold{weight}. Text weight. Type: TextWeights. Default: noset.
-#'\item \bold{hideIn new}. Whether the Text should be hidden from selected breakpoint.. Type: xs sm md lg xl. Default: NA.
-#'\item \bold{showIn new}. Whether the Text should be visible only from selected breakpoint.. Type: xs sm md lg xl. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: p.
-#' }
-#' @md
-#' @name text
-#' @example inst/examples/text/app.R
-#' @seealso See \url{https://nextui.org/docs/components/text}.
+#' @name autocomplete
+#' @example inst/examples/autocomplete/app.R
+#' @seealso See \url{https://nextui.org/docs/components/autocomplete}.
 NULL
 
 #' avatar
@@ -442,32 +191,32 @@ NULL
 #'
 #' @details
 #'
-#' 1. Avatar Props
 #' \itemize{
-#'\item \bold{color}. Change avatar color. Type: NormalColors string. Default: default.
-#'\item \bold{textColor}. Change avatar text color. Type: SimpleColors string. Default: default.
-#'\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
-#'\item \bold{text}. Display text when image is missing. Type: string. Default: NA.
-#'\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
-#'\item \bold{size}. Avatar size. Type: NormalSizes number. Default: medium.
-#'\item \bold{bordered}. Bordered avatar. Type: boolean. Default: false.
-#'\item \bold{borderWeight}. Border weight for bordered avatar. Type: NormalWeights. Default: normal.
-#'\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
-#'\item \bold{stacked}. Stacked display group. Type: boolean. Default: false.
-#'\item \bold{zoomed}. Zoomed avatar. Type: boolean. Default: false.
-#'\item \bold{squared}. Squared avatar. Type: boolean. Default: false.
-#'\item \bold{icon}. Show icon in avatar. Type: ReactNode. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
-#'\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
+#'\item \bold{src}. The source URL of the image to be displayed.. Type: string. Default: NA.
+#'\item \bold{color}. Sets the avatar background color.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{radius}. Sets the avatar border radius.. Type: none | sm | md | lg | full. Default: full.
+#'\item \bold{size}. Sets the avatar size.. Type: sm | md | lg. Default: md.
+#'\item \bold{name}. Displays the initials if the image is not provided or fails to load.. Type: string. Default: NA.
+#'\item \bold{icon}. Displays a custom icon inside the avatar.. Type: ReactNode. Default: NA.
+#'\item \bold{fallback}. A custom fallback component to display when the image fails to load.. Type: ReactNode. Default: NA.
+#'\item \bold{isBordered}. If true, adds a border around the avatar.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. If true, disables the avatar and applies a disabled styling.. Type: boolean. Default: false.
+#'\item \bold{isFocusable}. If true, makes the avatar focusable for keyboard navigation.. Type: boolean. Default: false.
+#'\item \bold{showFallback}. If true, shows the fallback icon or initials when the image fails to load.. Type: boolean. Default: false.
+#'\item \bold{ImgComponent}. The component to be used as the image element.. Type: React.ElementType. Default: img.
+#'\item \bold{imgProps}. Props to be passed to the image element.. Type: ImgComponentProps. Default: NA.
+#'\item \bold{classNames}. Allows to set custom class names for the avatar slots.. Type: Record<"base"｜ "img"｜ "fallback"｜ "name"｜ "icon", string>. Default: NA.
 #' }
-#' 2. Avatar Group Props
 #' \itemize{
-#'\item \bold{count}. Total count of avatars. Type: number. Default: NA.
-#'\item \bold{animated}. Display translations animation on hover. Type: boolean. Default: true.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
+#'\item \bold{max}. The maximum number of visible avatars. Type: number. Default: 5.
+#'\item \bold{total}. Control the number of avatar not visible. Type: number. Default: NA.
+#'\item \bold{size}. Size of the avatars. Type: AvatarProps['size']. Default: NA.
+#'\item \bold{color}. Color of the avatars. Type: AvatarProps['color']. Default: NA.
+#'\item \bold{radius}. Radius of the avatars. Type: AvatarProps['radius']. Default: NA.
+#'\item \bold{isGrid}. Whether the avatars should be displayed in a grid. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the avatars are disabled. Type: boolean. Default: NA.
+#'\item \bold{isBordered}. Whether the avatars have a border. Type: boolean. Default: NA.
+#'\item \bold{renderCount}. This allows you to render a custom count component.. Type: (count: number) => ReactNode. Default: NA.
 #' }
 #' @md
 #' @name avatar
@@ -482,25 +231,21 @@ NULL
 #'
 #' @details
 #'
-#' 1. Badge Props
 #' \itemize{
-#'\item \bold{children}. The wrapped component.. Type: ReactNode. Default: NA.
-#'\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string number ReactNode. Default: NA.
-#'\item \bold{color}. The badge color.. Type: SimpleColors. Default: default.
-#'\item \bold{size}. The badge size.. Type: NormalSizes. Default: md.
-#'\item \bold{variant}. The badge variation.. Type: BadgeVariant. Default: default.
-#'\item \bold{placement}. The placement of the badge content.. Type: BadgePlacements. Default: top-right.
-#'\item \bold{borderWeight}. The border weight for bordered badge variation.. Type: NormalWeights. Default: normal.
-#'\item \bold{shape}. The wrapped shape the badge should overlap.. Type: circle rectangle. Default: rectangle.
-#'\item \bold{horizontalOffset}. The horizontal offset of the badge content.. Type: string number. Default: NA.
-#'\item \bold{verticalOffset}. The vertical offset of the badge content.. Type: string number. Default: NA.
-#'\item \bold{isInvisible}. Whether the badge is invisible.. Type: boolean. Default: false.
-#'\item \bold{enableShadow}. Whether the badge shadow should be enabled.. Type: boolean. Default: false.
-#'\item \bold{isSquared}. Whether the badge corners should be squared.. Type: boolean. Default: false.
-#'\item \bold{disableOutline}. Whether the badge outline should be disabled.. Type: boolean. Default: false.
-#'\item \bold{disableAnimation}. Whether the badge content animation should be disabled.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: span.
+#'\item \bold{children *}. The wrapped component.. Type: ReactNode. Default: NA.
+#'\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string | number | ReactNode. Default: NA.
+#'\item \bold{variant}. The variant style of the badge.. Type: solid | flat | faded | shadow. Default: solid.
+#'\item \bold{color}. The color of the badge.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the badge.. Type: sm | md | lg. Default: md.
+#'\item \bold{shape}. The shape of the badge.. Type: circle | rectangle. Default: rectangle.
+#'\item \bold{placement}. The placement of the badge.. Type: top-right | top-left | bottom-right | bottom-left. Default: top-right.
+#'\item \bold{showOutline}. If true, the badge will have an outline.. Type: boolean. Default: true.
+#'\item \bold{disableOutline}. If true, the badge will not have an outline. Deprecated use showOutline instead.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. If true, the badge will not have an animation.. Type: boolean. Default: false.
+#'\item \bold{isInvisible}. If true, the badge will be invisible.. Type: boolean. Default: false.
+#'\item \bold{isOneChar}. If true, the badge will have the same width and height.. Type: boolean. Default: false.
+#'\item \bold{isDot}. If true, the badge will have smaller dimensions.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the badge slots.. Type: Record<"base"｜"badge", string>. Default: NA.
 #' }
 #' @md
 #' @name badge
@@ -508,141 +253,120 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/badge}.
 NULL
 
-#' popover
+#' button
 #'
 #' @description
-#' Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something. Popover implementation is based on @react-aria/overlays.
+#' Buttons allow users to perform actions and choose with a single tap.
 #'
 #' @details
 #'
-#' 1. Popover Props
 #' \itemize{
-#'\item \bold{children*}. The content of the popover. It's usually the Popover.Trigger and Popover.Content.. Type: ReactNode[]. Default: NA.
-#'\item \bold{placement}. The placement of the popover relative to its trigger reference.. Type: PopoverPlacement. Default: bottom.
-#'\item \bold{triggerType}. Type of overlay that is opened by the trigger.. Type: TriggerType. Default: dialog.
-#'\item \bold{shouldFlip}. Whether the popover should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
-#'\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 12.
-#'\item \bold{isOpen}. Whether the overlay is open by default (controlled).. Type: boolean. Default: NA.
-#'\item \bold{isBordered}. Whether the overlay should have a border.. Type: boolean. Default: false.
-#'\item \bold{borderWeight}. The border weight of the bordered overlay.. Type: NormalWeights. Default: light.
-#'\item \bold{defaultOpen}. Whether the overlay is open by default (uncontrolled).. Type: boolean. Default: NA.
-#'\item \bold{isDismissable}. Whether to close the overlay when the user interacts outside it.. Type: boolean. Default: true.
-#'\item \bold{disableShadow}. Whether to disable the shadow.. Type: boolean. Default: false.
-#'\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the overlay should be disabled.. Type: boolean. Default: false.
-#'\item \bold{shouldCloseOnBlur}. Whether the overlay should close when focus is lost or moves outside it.. Type: boolean. Default: false.
-#'\item \bold{disableAnimation}. Whether the popover is animated.. Type: boolean. Default: false.
-#'\item \bold{triggerRef}. The ref for the element which the overlay positions itself with respect to.. Type: RefObject<HTMLElement>. Default: NA.
-#'\item \bold{scrollRef}. A ref for the scrollable region within the overlay.. Type: RefObject<HTMLElement>. Default: overlayRef.
+#'\item \bold{children}. The content to display in the button.. Type: ReactNode. Default: NA.
+#'\item \bold{variant}. The button appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
+#'\item \bold{color}. The button color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The button size.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The button border radius.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{startContent}. The button start content.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. The button end content.. Type: ReactNode. Default: NA.
+#'\item \bold{spinner}. Spinner to display when loading.. Type: ReactNode. Default: NA.
+#'\item \bold{spinnerPlacement}. The spinner placement.. Type: start | end. Default: start.
+#'\item \bold{fullWidth}. Whether the button should take the full width of its parent.. Type: boolean. Default: false.
+#'\item \bold{isIconOnly}. Whether the button should have the same width and height.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the button is disabled.. Type: boolean. Default: false.
+#'\item \bold{isLoading}. Whether the button is loading.. Type: boolean. Default: false.
+#'\item \bold{disableRipple}. Whether the button should display a ripple effect on press.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the button should display animations.. Type: boolean. Default: false.
 #' }
-#' 2. Popover Events
 #' \itemize{
-#'\item \bold{onOpenChange}. Handler that is called when the overlay's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
-#'\item \bold{onClose}. Handler that is called when the overlay should close.. Type: () => void. Default: NA.
-#'\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the overlay ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the overlay. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
+#'\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 #' }
-#' 3. Popover.Trigger Props
 #' \itemize{
-#'\item \bold{children*}. The popover trigger component, ensure the children passed is focusable. Users can tab to it using their keyboard, and it can take a ref. It is critical for accessiblity.. Type: ReactNode. Default: NA.
-#' }
-#' 4. Popover.Content Props
-#' \itemize{
-#'\item \bold{children}. The content that is displayed when the trigger is clicked.. Type: ReactNode. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native element props.. Type: HTMLDivElement. Default: NA.
+#'\item \bold{children}. The buttons to display.. Type: ReactNode | ReactNode[]. Default: NA.
+#'\item \bold{variant}. The buttons appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
+#'\item \bold{color}. The buttons color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The buttons size.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The buttons border radius.. Type: none | sm | md | lg | full. Default: xl.
+#'\item \bold{fullWidth}. Whether the buttons should take the full width.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the buttons are disabled.. Type: boolean. Default: false.
 #' }
 #' @md
-#' @name popover
-#' @example inst/examples/popover/app.R
-#' @seealso See \url{https://nextui.org/docs/components/popover}.
+#' @name button
+#' @example inst/examples/button/app.R
+#' @seealso See \url{https://nextui.org/docs/components/button}.
 NULL
 
-#' tooltip
+#' card
 #'
 #' @description
-#' Tooltips displays informative text when users hover, focus, or click an element.
+#' Card is a container for text, photos, and actions in the context of a single subject.
 #'
 #' @details
 #'
-#' 1. Tooltip Props
 #' \itemize{
-#'\item \bold{content}. Tooltip content. Type: React.ReactNode string. Default: NA.
-#'\item \bold{color}. Change tooltip background color. Type: TooltipTypes string. Default: default.
-#'\item \bold{contentColor}. Checkbox tooltip text color. Type: SimpleColors string. Default: default.
-#'\item \bold{placement}. Tooltip placement relative to the target. Type: Placement. Default: top.
-#'\item \bold{initialVisible}. Determine if the tooltip is visible on initial. Type: boolean. Default: false.
-#'\item \bold{animated}. Display tooltip animations. Type: boolean. Default: true.
-#'\item \bold{visible}. Force if the tooltip is visible or not. Type: boolean. Default: NA.
-#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-#'\item \bold{rounded}. Rounded tooltip. Type: boolean. Default: false.
-#'\item \bold{hideArrow}. Hide tooltip arrow icon. Type: boolean. Default: NA.
-#'\item \bold{keepMounted}. Keep tooltip mounted on the DOM. Type: boolean. Default: false.
-#'\item \bold{*isDisabled}. Whether the tooltip content should be displayed or not. Type: boolean. Default: false.
-#'\item \bold{trigger}. Tooltip trigger mode. Type: TriggerTypes. Default: hover.
-#'\item \bold{enterDelay(ms)}. Delay before tooltip is shown. Type: number. Default: 0.
-#'\item \bold{leaveDelay(ms)}. Delay before tooltip is hidden (only works in 'hover' mode). Type: number. Default: 0.
-#'\item \bold{offset(px)}. Distance between tooltip and target. Type: number. Default: 12.
-#'\item \bold{portalClassName}. Tooltip box content className. Type: string. Default: NA.
-#'\item \bold{onVisibleChange}. Callback when tooltip visibility has changed. Type: number. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Native div props. Type: DivHTMLAttributes. Default: NA.
+#'\item \bold{children}. Usually the Card parts, CardHeader, CardBody and CardFooter.. Type: ReactNode | ReactNode[]. Default: NA.
+#'\item \bold{shadow}. The card shadow.. Type: none | sm | md | lg. Default: md.
+#'\item \bold{radius}. The card border radius.. Type: none | sm | md | lg. Default: lg.
+#'\item \bold{fullWidth}. Whether the card should take the full width of its parent.. Type: boolean. Default: false.
+#'\item \bold{isHoverable}. Whether the card should change the background on hover.. Type: boolean. Default: false.
+#'\item \bold{isPressable}. Whether the card should allow to be pressed.. Type: boolean. Default: false.
+#'\item \bold{isBlurred}. Whether the card background should be blurred.. Type: boolean. Default: false.
+#'\item \bold{isFooterBlurred}. Whether the card footer background should be blurred.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the card should be disabled. The press events will be ignored.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+#'\item \bold{disableRipple}. Whether to disable ripple effect. Only when isPressable is true.. Type: boolean. Default: false.
+#'\item \bold{allowTextSelectionOnPress}. Whether to allow text selection on pressing. Only when isPressable is true.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "header"｜ "body"｜ "footer", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onPress}. Handler that is called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
 #' }
 #' @md
-#' @name tooltip
-#' @example inst/examples/tooltip/app.R
-#' @seealso See \url{https://nextui.org/docs/components/tooltip}.
+#' @name card
+#' @example inst/examples/card/app.R
+#' @seealso See \url{https://nextui.org/docs/components/card}.
 NULL
 
 #' checkbox
 #'
 #' @description
-#' Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected. Checkbox implementation is based on @react-aria/checkbox
+#' Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
 #'
 #' @details
 #'
-#' 1. Checkbox Props
 #' \itemize{
-#'\item \bold{children}. The label for the element. Type: ReactNode. Default: NA.
-#'\item \bold{value}. The value of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-#'\item \bold{label}. The label for the element. Type: string. Default: NA.
-#'\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-#'\item \bold{color}. The color of the component. Type: NormalColors. Default: default.
-#'\item \bold{labelColor}. The color of the label. Type: SimpleColors. Default: default.
-#'\item \bold{size}. The size of the component. Type: NormalSizes. Default: md.
-#'\item \bold{isSelected}. Whether the element should be selected (controlled). Type: boolean. Default: false.
-#'\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled). Type: boolean. Default: false.
-#'\item \bold{disableAnimation}. Whether the checkbox has animations. Type: boolean. Default: false.
-#'\item \bold{isDisabled}. Whether the input is disabled. Type: boolean. Default: false.
-#'\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: false.
-#'\item \bold{isRounded}. Whether the checkbox is rounded. Type: boolean. Default: false.
-#'\item \bold{lineThrough}. Line in the middle of the label when the Checkbox is checked. Type: boolean. Default: NA.
-#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
-#'\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
-#'\item \bold{autoFocus}. Whether the element should receive focus on render. Type: boolean. Default: .
-#'\item \bold{containerCss new}. Override Default CSS Container style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: label.
+#'\item \bold{children}. The label of the checkbox.. Type: ReactNode. Default: NA.
+#'\item \bold{icon}. The icon to be displayed when the checkbox is checked.. Type: CheckboxIconProps. Default: NA.
+#'\item \bold{value}. The value of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
+#'\item \bold{name}. The name of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
+#'\item \bold{size}. The size of the checkbox.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the checkbox.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{radius}. The radius of the checkbox.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{lineThrough}. Whether the label should be crossed out.. Type: boolean. Default: false.
+#'\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: .
+#'\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: .
+#'\item \bold{isRequired}. Whether user checkbox is required on the checkbox before form submission.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the checkbox can be selected but not changed by the user.. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Whether the checkbox is disabled.. Type: boolean. Default: false.
+#'\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: .
+#'\item \bold{isInvalid}. Whether the checkbox is invalid.. Type: boolean. Default: false.
+#'\item \bold{validationState}. Whether the checkbox should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+#'\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>. Default: NA.
 #' }
-#' 2. Checkbox Events
 #' \itemize{
-#'\item \bold{onChange}. Handler that is called when the element's selection state changes. Type: (checked: boolean) => void. Default: NA.
-#'\item \bold{onFocus}. Handler that is called when the element receives focus. Type: (e: FocusEvent) => void. Default: NA.
-#'\item \bold{onBlur}. Handler that is called when the element loses focus. Type: (e: FocusEvent) => void. Default: NA.
-#'\item \bold{onFocusChange}. Handler that is called when the element's focus status changes. Type: (focused: boolean) => void. Default: NA.
-#'\item \bold{onKeyDown}. Handler that is called when a key is pressed. Type: (e: KeyboardEvent) => void. Default: NA.
-#'\item \bold{onKeyUp}. Handler that is called when a key is released. Type: (e: KeyboardEvent) => void. Default: NA.
-#' }
-#' 3. Checkbox Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{excludeFromTabOrder}. Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.. Type: boolean. Default: NA.
-#'\item \bold{aria-controls}. Identifies the element (or elements) whose contents or presence are controlled by the current element.. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
+#'\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
 #' }
 #' @md
 #' @name checkbox
@@ -650,151 +374,129 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/checkbox}.
 NULL
 
-#' radio
+#' chip
 #'
 #' @description
-#' Radios allow users to select a single option from a list of mutually exclusive options. All possible options are exposed up front for users to compare. Radio implementation is based on @react-aria/radio
+#' A Chip is a small block of essential information that represent an input, attribute, or action.
 #'
 #' @details
 #'
-#' 1. Radio.Group Props
 #' \itemize{
-#'\item \bold{children*}. The content of the radio group. It must be a list of radio items.. Type: ReactNode[]. Default: NA.
-#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-#'\item \bold{value}. The current value (controlled).. Type: string. Default: NA.
-#'\item \bold{defaultValue}. The default value (uncontrolled).. Type: string. Default: NA.
-#'\item \bold{color}. Change radio group color. Type: SimpleColors string. Default: primary.
-#'\item \bold{labelColor}. Change radio group label color. Type: SimpleColors string. Default: default.
-#'\item \bold{size}. Size of all radios in the group. Type: NormalSizes. Default: md.
-#'\item \bold{name}. The name of the RadioGroup, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-#'\item \bold{orientation}. The axis the radio group items should align with.. Type: horizontal vertical. Default: vertical.
-#'\item \bold{validationState}. Whether the input should display its "valid" or "invalid" visual styling.. Type: valid invalid. Default: NA.
-#'\item \bold{isDisabled}. Whether the radio group items are disabled.. Type: boolean. Default: false.
-#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
-#'\item \bold{isRequired}. Whether user input is required on the input before form submission. Often paired with the necessityIndicator prop to add a visual indicator to the input.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
+#'\item \bold{children}. The content of the chip.. Type: ReactNode. Default: NA.
+#'\item \bold{variant}. The chip appearance style.. Type: solid | bordered | light | flat | faded | shadow | dot. Default: solid.
+#'\item \bold{color}. The color of the chip.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the chip.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The radius of the chip.. Type: none | sm | md | lg | full. Default: full.
+#'\item \bold{avatar}. Avatar to be rendered in the left side of the chip.. Type: ReactNode. Default: NA.
+#'\item \bold{startContent}. Element to be rendered in the left side of the chip. This prop overrides the avatar prop.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. Element to be rendered in the right side of the chip. This prop overrides the default close button when onClose is passed.. Type: ReactNode. Default: NA.
+#'\item \bold{isDisabled}. Whether the chip is disabled.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the chip slots.. Type: Record<"base"｜ "content"｜ "dot"｜ "avatar"｜ "closeButton", string>. Default: NA.
 #' }
-#' 2. Radio.Group Events
 #' \itemize{
-#'\item \bold{onChange}. Handler that is called when the value changes.. Type: (value: T) => void. Default: NA.
-#' }
-#' 3. Radio.Group Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
-#' }
-#' 4. Radio Props
-#' \itemize{
-#'\item \bold{value*}. The value of the radio button, used when submitting an HTML form. See MDN. Type: string. Default: NA.
-#'\item \bold{children}. The label for the Radio. Accepts any renderable node.. Type: ReactNode. Default: NA.
-#'\item \bold{color}. The radio color. Type: SimpleColors string. Default: primary.
-#'\item \bold{labelColor}. The radio label color. Type: SimpleColors string. Default: default.
-#'\item \bold{description}. The radio description text. Type: string ReactNode. Default: NA.
-#'\item \bold{size}. The radio size. Type: NormalSizes. Default: md.
-#'\item \bold{isSquared}. Whether the radio button has squared corners. Type: boolean. Default: false.
-#'\item \bold{isDisabled}. Whether the radio button is disabled or not. Shows that a selection exists, but is not available in that circumstance.. Type: boolean. Default: false.
-#'\item \bold{disableAnimation}. Whether the checkbox has animations. Type: boolean. Default: false.
-#'\item \bold{autoFocus}. Whether the element should receive focus on render.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: label.
-#' }
-#' 5. Radio Events
-#' \itemize{
-#'\item \bold{onFocus}. Handler that is called when the element receives focus.. Type: (e: FocusEvent) => any. Default: NA.
-#'\item \bold{onBlur}. Handler that is called when the element loses focus.. Type: (e: FocusEvent) => any. Default: NA.
-#'\item \bold{onFocusChange}. Handler that is called when the element's focus status changes.. Type: (isFocused: boolean) => void. Default: NA.
-#'\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => any. Default: NA.
-#'\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => any. Default: NA.
-#' }
-#' 6. Radio Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the close button is pressed. If you pass this prop, the chip will display a close button (endContent).. Type: (e: PressEvent) => void. Default: NA.
 #' }
 #' @md
-#' @name radio
-#' @example inst/examples/radio/app.R
-#' @seealso See \url{https://nextui.org/docs/components/radio}.
+#' @name chip
+#' @example inst/examples/chip/app.R
+#' @seealso See \url{https://nextui.org/docs/components/chip}.
 NULL
 
-#' checkbox-group
+#' code
 #'
 #' @description
-#' A CheckboxGroup allows users to select one or more items from a list of choices. CheckboxGrup implementation is based on @react-aria/checkbox
+#' Code is a component used to display inline code.
 #'
 #' @details
 #'
-#' 1. Checkbox Group Props
 #' \itemize{
-#'\item \bold{children*}. The Checkboxes contained within the checkbox group.. Type: CheckboxGroupChildren. Default: NA.
-#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-#'\item \bold{value}. The current value (controlled).. Type: string[]. Default: NA.
-#'\item \bold{defaultValue}. The current value (uncontrolled).. Type: string[]. Default: NA.
-#'\item \bold{name}. The name of the checkbox group, used when submitting an HTML form.. Type: string. Default: NA.
-#'\item \bold{orientation}. The axis the checkbox group items should align with.. Type: horizontal vertical. Default: vertical.
-#'\item \bold{size}. The size of the component. Type: NormalSizes. Default: medium.
-#'\item \bold{color}. The color of the component. Type: NormalColors. Default: default.
-#'\item \bold{labelColor}. The color of the label. Type: SimpleColors. Default: default.
-#'\item \bold{isDisabled}. Whether the checkbox group is disabled. Type: boolean. Default: false.
-#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#' }
-#' 2. Checkbox Group Events
-#' \itemize{
-#'\item \bold{onChange}. Handler that is called when the value changes. Type: (value: T) => void. Default: NA.
-#' }
-#' 3. Checkbox Group Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-#'\item \bold{aria-errormessage}. Identifies the element that provides an error message for the object.. Type: string. Default: NA.
+#'\item \bold{children}. The content of the code.. Type: ReactNode. Default: NA.
+#'\item \bold{size}. The size of the code.. Type: sm | md | lg. Default: sm.
+#'\item \bold{color}. The color of the code.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{radius}. The radius of the code.. Type: none | sm | md | lg | full. Default: sm.
 #' }
 #' @md
-#' @name checkbox-group
-#' @example inst/examples/checkbox-group/app.R
-#' @seealso See \url{https://nextui.org/docs/components/checkbox-group}.
+#' @name code
+#' @example inst/examples/code/app.R
+#' @seealso See \url{https://nextui.org/docs/components/code}.
 NULL
 
-#' progress
+#' image
 #'
 #' @description
-#' The Progress component allows you to view the progress of any activity.
+#' The Image component is used to display images with support for fallback.
 #'
 #' @details
 #'
-#' 1. Progress Props
 #' \itemize{
-#'\item \bold{value}. Current value. Type: number. Default: NA.
-#'\item \bold{min}. Progress min value. Type: number. Default: 0.
-#'\item \bold{max}. Progress max value. Type: number. Default: 100.
-#'\item \bold{color}. Change filler bar color. Type: NormalColors. Default: default.
-#'\item \bold{status}. Change filler bar background color. Type: NormalColors. Default: default.
-#'\item \bold{size}. Change progress size. Type: NormalSizes. Default: medium.
-#'\item \bold{striped}. Stripe over the progress bar's background color. Type: boolean. Default: false.
-#'\item \bold{indeterminated}. Indeterminated progress. Type: boolean. Default: false.
-#'\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-#'\item \bold{squared}. Squared progress. Type: boolean. Default: false.
-#'\item \bold{animated}. Enable or disable the progress animation. Type: boolean. Default: true.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Progress native props. Type: ProgressHTMLAttributes. Default: NA.
+#'\item \bold{src}. The image source.. Type: string. Default: NA.
+#'\item \bold{srcSet}. The image srcSet.. Type: string. Default: NA.
+#'\item \bold{sizes}. The image sizes.. Type: string. Default: NA.
+#'\item \bold{alt}. The image alt.. Type: string. Default: NA.
+#'\item \bold{width}. The image width.. Type: number. Default: NA.
+#'\item \bold{height}. The image height.. Type: number. Default: NA.
+#'\item \bold{radius}. The image border radius.. Type: none | sm | md | lg | full. Default: xl.
+#'\item \bold{shadow}. The image shadow.. Type: none | sm | md | lg. Default: none.
+#'\item \bold{loading}. A loading strategy to use for the image.. Type: eager | lazy. Default: NA.
+#'\item \bold{fallbackSrc}. The fallback image source.. Type: string. Default: NA.
+#'\item \bold{isBlurred}. Whether the image should have a duplicated blurred image at the background.. Type: boolean. Default: false.
+#'\item \bold{isZoomed}. Whether the image should be zoomed when hovered.. Type: boolean. Default: false.
+#'\item \bold{removeWrapper}. Whether to remove the wrapper element. This will cause the image to be rendered as a direct child of the parent element. If you set this prop as true neither the skeleton nor the zoom effect will work.. Type: boolean. Default: false.
+#'\item \bold{disableSkeleton}. Whether the image should disable the skeleton animation while loading.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the image slots.. Type: Record<"img"｜ "wrapper"｜ "zoomedWrapper"｜ "blurredImg", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onLoad}. Handler that is called when the image load.. Type: ReactEventHandler<HTMLImageElement>. Default: NA.
+#'\item \bold{onError}. Handler that is called when the image fails to load.. Type: () => void. Default: NA.
 #' }
 #' @md
-#' @name progress
-#' @example inst/examples/progress/app.R
-#' @seealso See \url{https://nextui.org/docs/components/progress}.
+#' @name image
+#' @example inst/examples/image/app.R
+#' @seealso See \url{https://nextui.org/docs/components/image}.
+NULL
+
+#' input
+#'
+#' @description
+#' Input is a component that allows users to enter text. It can be used to get user inputs in forms, search fields, and more.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. The content of the input.. Type: ReactNode. Default: NA.
+#'\item \bold{variant}. The variant of the input.. Type: flat | bordered | faded | underlined. Default: flat.
+#'\item \bold{color}. The color of the input.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the input.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The radius of the input.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The current value of the input (controlled).. Type: string. Default: NA.
+#'\item \bold{defaultValue}. The default value of the input (uncontrolled).. Type: string. Default: NA.
+#'\item \bold{placeholder}. The placeholder of the input.. Type: string. Default: NA.
+#'\item \bold{description}. A description for the input. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
+#'\item \bold{errorMessage}. An error message for the input.. Type: ReactNode. Default: NA.
+#'\item \bold{startContent}. Element to be rendered in the left side of the input.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. Element to be rendered in the right side of the input.. Type: ReactNode. Default: NA.
+#'\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
+#'\item \bold{fullWidth}. Whether the input should take up the width of its parent.. Type: boolean. Default: true.
+#'\item \bold{isClearable}. Whether the input should have a clear button.. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Whether the input is disabled.. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Whether the input is invalid.. Type: boolean. Default: false.
+#'\item \bold{baseRef}. The ref to the base element.. Type: RefObject<HTMLDivElement>. Default: NA.
+#'\item \bold{validationState}. Whether the input should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+#'\item \bold{disableAnimation}. Whether the input should be animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper"｜ "mainWrapper" ｜ "input" ｜ "clearButton" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the element's value changes. You can pull out the new value by accessing event.target.value (string).. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Handler that is called when the element's value changes.. Type: (value: string) => void. Default: NA.
+#'\item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name input
+#' @example inst/examples/input/app.R
+#' @seealso See \url{https://nextui.org/docs/components/input}.
 NULL
 
 #' link
@@ -804,17 +506,32 @@ NULL
 #'
 #' @details
 #'
-#' 1. Link Props
 #' \itemize{
-#'\item \bold{color}. Change link color. Type: LinkColors boolean string. Default: false.
-#'\item \bold{href}. Link url. Type: string. Default: NA.
-#'\item \bold{isExternal updated}. Show link icon. Type: boolean. Default: false.
-#'\item \bold{underline}. Display underline. Type: boolean. Default: false.
-#'\item \bold{block}. Display as a separate block. Type: boolean. Default: false.
-#'\item \bold{ref}. forwardRef. Type: Ref<HTMLAnchorElement | null>. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: a.
-#'\item \bold{...}. Native props. Type: AnchorHTMLAttributes. Default: NA.
+#'\item \bold{size}. The size of the link.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the link.. Type: foreground | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{underline}. The underline of the link.. Type: none | hover | always | active | focus. Default: none.
+#'\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
+#'\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
+#'\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
+#'\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
+#'\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
+#'\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
+#'\item \bold{isExternal}. Whether the link should open in a new tab.. Type: boolean. Default: false.
+#'\item \bold{showAnchorIcon}. Whether to show the anchor icon.. Type: boolean. Default: false.
+#'\item \bold{anchorIcon}. The anchor icon.. Type: ReactNode. Default: NA.
+#'\item \bold{isBlock}. Whether the link should be rendered as block with a hover effect.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the link is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable link and block animations.. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. The native link click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 #' }
 #' @md
 #' @name link
@@ -822,81 +539,552 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/link}.
 NULL
 
-#' user
+#' listbox
 #'
 #' @description
-#' Flexible User Profile Component.
+#' A listbox displays a list of options and allows a user to select one or more of them.
 #'
 #' @details
 #'
-#' 1. User Props
 #' \itemize{
-#'\item \bold{color}. Change User Profile border color. Type: NormalColors string. Default: default.
-#'\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
-#'\item \bold{name}. Display Text Next to Image. Type: string. Default: NA.
-#'\item \bold{text}. Display Text when image is missing. Type: string. Default: NA.
-#'\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
-#'\item \bold{size}. User Profile size. Type: NormalSizes number. Default: medium.
-#'\item \bold{bordered}. Bordered User Profile. Type: boolean. Default: false.
-#'\item \bold{zoomed}. Zoomed User Profile. Type: boolean. Default: false.
-#'\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
-#'\item \bold{squared}. Squared User Profile. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
-#'\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
+#'\item \bold{children*}. The children to render. Usually a list of ListboxItem or ListboxSection. Type: ReactNode[]. Default: NA.
+#'\item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable<T>. Default: NA.
+#'\item \bold{variant}. The listbox items appearance style.. Type: solid | bordered | light | flat | faded | shadow. Default: solid.
+#'\item \bold{color}. The listbox items color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: none | single | multiple. Default: NA.
+#'\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: React.Key[]. Default: NA.
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: NA.
+#'\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: NA.
+#'\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
+#'\item \bold{shouldHighlightOnFocus}. Whether the focused item should be highlighted. It applies the same styles to the items as when hovered.. Type: boolean. Default: false.
+#'\item \bold{autoFocus}. Where the focus should be set.. Type: boolean | first | last. Default: false.
+#'\item \bold{topContent}. The content to display above the listbox items.. Type: ReactNode. Default: NA.
+#'\item \bold{bottomContent}. The content to display below the listbox items.. Type: ReactNode. Default: NA.
+#'\item \bold{emptyContent}. The content to display when the collection is empty.. Type: ReactNode. Default: No items..
+#'\item \bold{shouldFocusWrap}. Whether keyboard navigation is circular.. Type: boolean. Default: false.
+#'\item \bold{hideEmptyContent}. Whether to not display the empty content when the collection is empty.. Type: boolean. Default: false.
+#'\item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the animation of the listbox items.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the listbox slots.. Type: Record<"base"｜ "list"｜ "emptyContent", string>. Default: NA.
+#'\item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "selectedIcon", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onAction}. Handler that is called when an item is selected.. Type: (key: React.Key) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys: React.Key[]) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The contents of the listbox section. Usually a list of ListboxItem components. (static). Type: ReactNode. Default: NA.
+#'\item \bold{title}. The title of the listbox section.. Type: string. Default: NA.
+#'\item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable<T>. Default: NA.
+#'\item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
+#'\item \bold{showDivider}. Whether to show the divider between the groups.. Type: boolean. Default: false.
+#'\item \bold{DividerProps}. The divider component props.. Type: DividerProps. Default: NA.
+#'\item \bold{classNames}. Allows to set custom class names for the listbox section slots.. Type: Record<"base"｜ "heading"｜ "group"｜ "divider", string>. Default: NA.
+#'\item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The contents of the listbox item.. Type: ReactNode. Default: NA.
+#'\item \bold{key}. The unique key for the listbox item.. Type: React.Key. Default: NA.
+#'\item \bold{title}. The title of the listbox item.. Type: string | ReactNode. Default: NA.
+#'\item \bold{textValue}. A string representation of the item's contents, used for features like typeahead.. Type: string. Default: NA.
+#'\item \bold{description}. The description of the listbox item.. Type: string | ReactNode. Default: NA.
+#'\item \bold{shortcut}. The listbox item keyboard shortcut.. Type: string | ReactNode. Default: NA.
+#'\item \bold{startContent}. The start content of the listbox item.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. The end content of the listbox item. This is positioned after the shortcut and the selected icon.. Type: ReactNode. Default: NA.
+#'\item \bold{selectedIcon}. Custom icon to render when the item is selected.. Type: SelectedIconProps. Default: NA.
+#'\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
+#'\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
+#'\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
+#'\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
+#'\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
+#'\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
+#'\item \bold{shouldHighlightOnFocus}. Whether the focused item should be highlighted. It applies the same styles to the item as when hovered.. Type: boolean. Default: false.
+#'\item \bold{hideSelectedIcon}. Whether to hide the check icon when the item is selected.. Type: boolean. Default: false.
+#'\item \bold{showDivider}. Whether to show a divider below the item.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the listbox item should be disabled. (Deprecated) pass disabledKeys to Listbox instead.. Type: boolean. Default: false.
+#'\item \bold{isSelected}. Whether the listbox item should be selected. (Deprecated) pass selectedKeys to Listbox instead.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the listbox item press events should be ignored.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onAction}. Handler that is called when the listbox item is selected. (Deprecated) pass to Listbox instead.. Type: () => void. Default: NA.
+#'\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 #' }
 #' @md
-#' @name user
-#' @example inst/examples/user/app.R
-#' @seealso See \url{https://nextui.org/docs/components/user}.
+#' @name listbox
+#' @example inst/examples/listbox/app.R
+#' @seealso See \url{https://nextui.org/docs/components/listbox}.
 NULL
 
-#' collapse
+#' modal
 #'
 #' @description
-#' Collapse display a list of high-level options that can expand/collapse to reveal more information.
+#' Displays a dialog with a custom content that requires attention or provides additional information.
 #'
 #' @details
 #'
-#' 1. Collapse Props
 #' \itemize{
-#'\item \bold{expanded}. Manage the expand behaivor by prop. Type: boolean. Default: false.
-#'\item \bold{title}. Collapse title content. Type: string React.ReactNode. Default: NA.
-#'\item \bold{subtitle}. Collapse description content. Type: string React.ReactNode. Default: NA.
-#'\item \bold{divider}. Show or hide the collapse divider. Type: boolean. Default: true.
-#'\item \bold{disabled}. Disable collapse. Type: boolean. Default: false.
-#'\item \bold{bordered}. Bordered collapse. Type: boolean. Default: false.
-#'\item \bold{shadow}. Enable or disable the collapse shadow. Type: boolean. Default: false.
-#'\item \bold{animated}. Enable or disable the collapse animation. Type: boolean. Default: true.
-#'\item \bold{showArrow}. Show or hide the collapse right arrow. Type: boolean. Default: true.
-#'\item \bold{arrowIcon}. Collapse arrow icon. Type: React.ReactNode. Default: NA.
-#'\item \bold{contentLeft}. Left content for the collapse. Type: React.ReactNode. Default: NA.
-#'\item \bold{borderWeight}. Border weight for bordered collapse. Type: NormalWeights. Default: light.
-#'\item \bold{index}. Collapse's index, this value it's autogenerated by default. Type: number. Default: NA.
-#'\item \bold{preventDefault}. Prevent default event on when is selected through the Space, Enter keys. Type: boolean. Default: true.
-#'\item \bold{onChange}. Callback fired when the value is changed. Type: (e: React.ChangeEvent, index:number, value: boolean) => void. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Div native props. Type: HTMLAttributes. Default: NA.
+#'\item \bold{children*}. The content of the modal. It's usually the ModalContent.. Type: ReactNode. Default: NA.
+#'\item \bold{size}. The modal size. This changes the modal max-width and height (full).. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: md.
+#'\item \bold{radius}. The modal border radius.. Type: none | sm | md | lg. Default: lg.
+#'\item \bold{shadow}. The modal shadow.. Type: none | sm | md | lg. Default: lg.
+#'\item \bold{backdrop}. The modal backdrop type.. Type: transparent | opaque | blur. Default: opaque.
+#'\item \bold{scrollBehavior}. The modal scroll behavior.. Type: normal | inside | outside. Default: normal.
+#'\item \bold{placement}. The modal position.. Type: auto | top | center | bottom. Default: auto.
+#'\item \bold{isOpen}. Whether the modal is open by default (controlled).. Type: boolean. Default: NA.
+#'\item \bold{defaultOpen}. Whether the modal is open by default (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{isDismissable}. Whether the modal can be closed by clicking on the overlay or pressing the Esc key.. Type: boolean. Default: true.
+#'\item \bold{isKeyboardDismissDisabled}. Whether pressing the Esc key to close the modal should be disabled.. Type: boolean. Default: false.
+#'\item \bold{shouldBlockScroll}. Whether the modal should block the scroll of the page on open.. Type: boolean. Default: true.
+#'\item \bold{hideCloseButton}. Whether to hide the modal close button.. Type: boolean. Default: false.
+#'\item \bold{closeButton}. Custom close button to display on top right corner.. Type: ReactNode. Default: NA.
+#'\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+#'\item \bold{disableAnimation}. Whether the modal should not have animations.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the modal slots.. Type: Record<"wrapper"｜ "base"｜ "backdrop"｜ "header" ｜ "body" ｜ "footer" ｜ "closeButton", string>. Default: NA.
 #' }
-#' 2. Collapse Group Props
 #' \itemize{
-#'\item \bold{accordion}. Expand children collapse like an accordion. Type: boolean. Default: true.
-#'\item \bold{animated}. Enable or disable the collapse group animation. Type: boolean. Default: true.
-#'\item \bold{bordered}. Bordered collapse group. Type: boolean. Default: false.
-#'\item \bold{splitted}. Separated collapse group. Type: boolean. Default: false.
-#'\item \bold{shadow}. Enable or disable the collapse group shadow. Type: boolean. Default: false.
-#'\item \bold{divider}. Show or hide the collapse group children divider. Type: boolean. Default: NA.
-#'\item \bold{borderWeight}. Border weight for bordered collapse group. Type: NormalWeights. Default: light.
-#'\item \bold{onChange}. Callback fired when a collapse children value is changed. Type: (index:number, value: boolean) => void. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-#'\item \bold{...}. Div native props. Type: HTMLAttributes. Default: NA.
+#'\item \bold{onOpenChange}. Handler that is called when the modal's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the modal is closed.. Type: () => void. Default: NA.
 #' }
 #' @md
-#' @name collapse
-#' @example inst/examples/collapse/app.R
-#' @seealso See \url{https://nextui.org/docs/components/collapse}.
+#' @name modal
+#' @example inst/examples/modal/app.R
+#' @seealso See \url{https://nextui.org/docs/components/modal}.
+NULL
+
+#' navbar
+#'
+#' @description
+#' A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse menu and more.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. The children to render. Usually navbar elements such as NavbarBrand, NavbarContent and NavbarItem. Type: ReactNode[]. Default: NA.
+#'\item \bold{height}. The height of the navbar.. Type: string | number. Default: 4rem (64px).
+#'\item \bold{position}. The position of the navbar.. Type: static | sticky. Default: sticky.
+#'\item \bold{maxWidth}. The max width of the navbar wrapper.. Type: sm | md | lg | xl | 2xl | full. Default: lg.
+#'\item \bold{parentRef}. The parent element where the navbar is placed within. This is used to determine the scroll position and whether the navbar should be hidden or not.. Type: React.RefObject<HTMLElement>. Default: window.
+#'\item \bold{isBordered}. Whether the navbar should have a bottom border or not.. Type: boolean. Default: false.
+#'\item \bold{isBlurred}. Whether the navbar should have a blur effect or not.. Type: boolean. Default: true.
+#'\item \bold{isMenuOpen}. Indicates if the navbar menu is open. (controlled). Type: boolean. Default: false.
+#'\item \bold{isMenuDefaultOpen}. Indicates if the navbar menu is open by default. (uncontrolled). Type: boolean. Default: false.
+#'\item \bold{shouldHideOnScroll}. Indicates if the navbar should hide on scroll.. Type: boolean. Default: false.
+#'\item \bold{motionProps}. The motion props to controle the visible / hidden animation. This motion is only available if the shouldHideOnScroll prop is set to true.. Type: MotionProps. Default: NA.
+#'\item \bold{disableScrollHandler}. Whether the navbar parent scroll event should be listened to or not.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the navbar menu animation should be disabled or not.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the navbar slots.. Type: Record<"base"｜ "wrapper"｜ "brand"｜ "content"｜ "item"｜ "toggle"｜ "toggleIcon"｜ "menu"｜ "menuItem", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onMenuOpenChange}. Handler that is called when the navbar menu open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onScrollPositionChange}. Handler that is called when the navbar parent element is scrolled. This event is only dispatched if disableScrollHandler is set to false or shouldHideOnScroll is set to true.. Type: (position: number) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The children to render. Usually navbar elements such as NavbarBrand, NavbarContent and NavbarItem. Type: ReactNode[]. Default: NA.
+#'\item \bold{justify}. The justify content of the navbar content. It takes into account the correct space distribution.. Type: start | center | end. Default: start.
+#' }
+#' \itemize{
+#'\item \bold{children}. The children to render as the navbar item.. Type: ReactNode. Default: NA.
+#'\item \bold{isActive}. Whether the navbar item is active or not.. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{icon}. The icon to render as the navbar menu toggle.. Type: ReactNode | (isOpen: boolean | undefined) => ReactNode | null;. Default: NA.
+#'\item \bold{isSelected}. Whether the navbar menu toggle is selected. (controlled). Type: boolean. Default: false.
+#'\item \bold{defaultSelected}. Whether the navbar menu toggle is selected by default. (uncontrolled). Type: boolean. Default: false.
+#'\item \bold{srOnlyText}. The text to be used by screen readers.. Type: string. Default: open/close navigation menu.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the navbar menu toggle is pressed.. Type: (isOpen: boolean) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The children to render as the navbar menu. Usually a list of NavbarMenuItem components.. Type: ReactNode[]. Default: NA.
+#'\item \bold{portalContainer}. The container element in which the navbar menu overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+#'\item \bold{motionProps}. The motion props to controle the open / close animation. This motion is only available if the disableAnimation prop is set to false.. Type: MotionProps. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children}. The children to render as the menu item.. Type: ReactNode. Default: NA.
+#'\item \bold{isActive}. Whether the menu item is active or not.. Type: boolean. Default: false.
+#' }
+#' @md
+#' @name navbar
+#' @example inst/examples/navbar/app.R
+#' @seealso See \url{https://nextui.org/docs/components/navbar}.
+NULL
+
+#' pagination
+#'
+#' @description
+#' The Pagination component allows you to display active page and navigate between multiple pages.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{variant}. The pagination variant.. Type: flat | bordered | light | faded. Default: flat.
+#'\item \bold{color}. The pagination color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The pagination size.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The pagination border radius.. Type: none | sm | md | lg | full. Default: xl.
+#'\item \bold{total}. The total number of pages.. Type: number. Default: 1.
+#'\item \bold{dotsJump}. The number of pages that are added or subtracted on the '...' button.. Type: number. Default: 5.
+#'\item \bold{initialPage}. The initial page. (uncontrolled). Type: number. Default: 1.
+#'\item \bold{page}. The current page. (controlled). Type: number. Default: NA.
+#'\item \bold{siblings}. The number of pages to show before and after the current page.. Type: number. Default: 1.
+#'\item \bold{boundaries}. The number of pages to show at the beginning and end of the pagination.. Type: number. Default: 1.
+#'\item \bold{loop}. Whether the pagination should be looped.. Type: boolean. Default: false.
+#'\item \bold{isCompact}. Whether the pagination should have a compact style.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the pagination is disabled.. Type: boolean. Default: false.
+#'\item \bold{showShadow}. Whether the pagination cursor should have a shadow.. Type: boolean. Default: false.
+#'\item \bold{showControls}. Whether the pagination should have controls.. Type: boolean. Default: false.
+#'\item \bold{disableCursorAnimation}. Whether the pagination cursor should be hidden.. Type: boolean. Default: false.
+#'\item \bold{renderItem}. The pagination item render function.. Type: PaginationItemProps. Default: NA.
+#'\item \bold{getItemAriaLabel}. A function that allows you to customize the pagination items aria-label.. Type: (page: string) => string. Default: NA.
+#'\item \bold{disableAnimation}. Whether the pagination cursor should be animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the pagination slots.. Type: Record<"base"｜ "wrapper" ｜ "prev"｜ "next" ｜ "item" ｜ "cursor" ｜ "forwardIcon" ｜ "ellipsis" ｜ "chevronNext", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the pagination acitve page changes.. Type: (page: number) => void. Default: NA.
+#' }
+#' @md
+#' @name pagination
+#' @example inst/examples/pagination/app.R
+#' @seealso See \url{https://nextui.org/docs/components/pagination}.
+NULL
+
+#' popover
+#'
+#' @description
+#' Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. The content of the popover. It's usually the PopoverTrigger and PopoverContent.. Type: ReactNode[]. Default: NA.
+#'\item \bold{size}. The popover content font size.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The popover color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{radius}. The popover border radius.. Type: none | sm | md | lg | full. Default: lg.
+#'\item \bold{shadow}. The popover shadow.. Type: none | sm | md | lg. Default: lg.
+#'\item \bold{backdrop}. The popover backdrop type.. Type: transparent | opaque | blur. Default: transparent.
+#'\item \bold{placement}. The placement of the popover relative to its trigger reference.. Type: PopoverPlacement. Default: bottom.
+#'\item \bold{state}. The controlled state of the popover. See Overlay States. Type: OverlayTriggerState. Default: NA.
+#'\item \bold{isOpen}. Whether the popover is open by default (controlled).. Type: boolean. Default: NA.
+#'\item \bold{defaultOpen}. Whether the popover is open by default (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 7.
+#'\item \bold{containerPadding(px)}. The placement padding that should be applied between the element and its surrounding container.. Type: number. Default: 12.
+#'\item \bold{crossOffset(px)}. The additional offset applied along the cross axis between the element and its anchor element.. Type: number. Default: 0.
+#'\item \bold{triggerType}. Type of popover that is opened by the trigger.. Type: dialog | menu | listbox | tree | grid;. Default: dialog.
+#'\item \bold{showArrow}. Whether the popover should have an arrow.. Type: boolean. Default: false.
+#'\item \bold{shouldFlip}. Whether the popover should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
+#'\item \bold{triggerScaleOnOpen}. Whether the trigger should scale down when the popover is open.. Type: boolean. Default: true.
+#'\item \bold{shouldBlockScroll}. Whether to block scrolling outside the popover.. Type: boolean. Default: false.
+#'\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the popover should be disabled.. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnBlur}. Whether the popover should close when focus is lost or moves outside it.. Type: boolean. Default: false.
+#'\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+#'\item \bold{triggerRef}. The ref for the element which the popover positions itself with respect to.. Type: RefObject<HTMLElement>. Default: NA.
+#'\item \bold{scrollRef}. A ref for the scrollable region within the popover.. Type: RefObject<HTMLElement>. Default: overlayRef.
+#'\item \bold{disableAnimation}. Whether the popover is animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the popover slots.. Type: Record<"base"｜ "trigger"｜ "backdrop"｜ "content", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onOpenChange}. Handler that is called when the popover's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the popover ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the popover. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the popover should close.. Type: () => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The popover trigger component, ensure the children passed is focusable. Users can tab to it using their keyboard, and it can take a ref. It is critical for accessiblity.. Type: ReactNode. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children}. The content that is displayed when the trigger is pressed.. Type: ReactNode. Default: NA.
+#' }
+#' @md
+#' @name popover
+#' @example inst/examples/popover/app.R
+#' @seealso See \url{https://nextui.org/docs/components/popover}.
+NULL
+
+#' progress
+#'
+#' @description
+#' The Progress component allows you to view the progress of any activity.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{size}. The size of the indicator.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the indicator.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{radius}. The progress border radius.. Type: none | sm | md | lg | full. Default: full.
+#'\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
+#'\item \bold{valueLabel}. The content to display as the value's label (e.g. 1 of 4).. Type: ReactNode. Default: NA.
+#'\item \bold{minValue}. The smallest value allowed for the input.. Type: number. Default: 0.
+#'\item \bold{maxValue}. The largest value allowed for the input.. Type: number. Default: 100.
+#'\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: {style: 'percent'}.
+#'\item \bold{isIndeterminate}. Whether the progress is indeterminate.. Type: boolean. Default: false.
+#'\item \bold{isStriped}. Whether the progress is striped.. Type: boolean. Default: false.
+#'\item \bold{showValueLabel}. Whether to show the value label.. Type: boolean. Default: true.
+#'\item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the progress slots.. Type: Record<"base"｜"labelWrapper"｜"label"｜"track"｜"value"｜"track"｜"indicator", string>. Default: NA.
+#' }
+#' @md
+#' @name progress
+#' @example inst/examples/progress/app.R
+#' @seealso See \url{https://nextui.org/docs/components/progress}.
+NULL
+
+#' select
+#'
+#' @description
+#' A select displays a collapsible list of options and allows a user to select one or more of them.
+#'
+#' @details
+#'
+#' 1. Select Props
+#' \itemize{
+#'\item \bold{children*}. The children to render. Usually a list of SelectItem and SelectSection elements.. Type: ReactNode[]. Default: NA.
+#'\item \bold{items}. Item objects in the select. (dynamic). Type: Iterable<T>. Default: NA.
+#'\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: single | multiple. Default: NA.
+#'\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all | React.Key[]. Default: NA.
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: all | React.Key[]. Default: NA.
+#'\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: NA.
+#'\item \bold{variant}. The variant of the select.. Type: flat | bordered | faded | underlined. Default: flat.
+#'\item \bold{color}. The color of the select.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the select.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The radius of the select.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{placeholder}. The placeholder of the select.. Type: string. Default: Select an option.
+#'\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{description}. A description for the select. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
+#'\item \bold{errorMessage}. An error message for the select.. Type: ReactNode. Default: NA.
+#'\item \bold{startContent}. Element to be rendered in the left side of the select.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. Element to be rendered in the right side of the select.. Type: ReactNode. Default: NA.
+#'\item \bold{selectorIcon}. Element to be rendered as the selector icon.. Type: ReactNode. Default: NA.
+#'\item \bold{scrollRef}. A ref to the scrollable element.. Type: React.RefObject<HTMLElement>. Default: NA.
+#'\item \bold{spinnerRef}. A ref to the spinner element.. Type: React.RefObject<HTMLElement>. Default: NA.
+#'\item \bold{fullWidth}. Whether the select should take up the width of its parent.. Type: boolean. Default: true.
+#'\item \bold{isOpen}. Whether the select is open by default (controlled).. Type: boolean. Default: NA.
+#'\item \bold{defaultOpen}. Whether the select is open by default (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{isRequired}. Whether user select is required on the select before form submission.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the select is disabled.. Type: boolean. Default: false.
+#'\item \bold{isMultiline}. Whether the select should allow multiple lines of text.. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Whether the select is invalid.. Type: boolean. Default: false.
+#'\item \bold{validationState}. Whether the select should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+#'\item \bold{showScrollIndicators}. Whether the select should show scroll indicators when the listbox is scrollable.. Type: boolean. Default: true.
+#'\item \bold{autoFocus}. Whether the select should be focused on the first mount.. Type: boolean. Default: false.
+#'\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the select should be animated.. Type: boolean. Default: true.
+#'\item \bold{disableSelectorIconRotation}. Whether the select should disable the rotation of the selector icon.. Type: boolean. Default: false.
+#'\item \bold{popoverProps}. Props to be passed to the popover component.. Type: PopoverProps. Default: NA.
+#'\item \bold{listboxProps}. Props to be passed to the listbox component.. Type: ListboxProps. Default: NA.
+#'\item \bold{scrollShadowProps}. Props to be passed to the scroll shadow component.. Type: ScrollShadowProps. Default: NA.
+#'\item \bold{classNames}. Allows to set custom class names for the Select slots.. Type: Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+#' }
+#' 2. Select Events
+#' \itemize{
+#'\item \bold{onClose}. Callback fired when the select popover is closed.. Type: () => void. Default: NA.
+#'\item \bold{onOpenChange}. Callback fired when the select popover is opened or closed.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Callback fired when the selected keys change.. Type: (keys: React.Key[]) => void. Default: NA.
+#'\item \bold{onChange}. Native select change event, fired when the selected value changes.. Type: React.ChangeEvent<HTMLSelectElement>. Default: NA.
+#'\item \bold{renderValue}. Function to render the value of the select. It renders the selected item by default.. Type: RenderValueFunction. Default: NA.
+#' }
+#' @md
+#' @name select
+#' @example inst/examples/select/app.R
+#' @seealso See \url{https://nextui.org/docs/components/select}.
+NULL
+
+#' skeleton
+#'
+#' @description
+#' Skeleton is a placeholder to show a loading state and the expected shape of a component.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. The content of the skeleton.. Type: ReactNode. Default: NA.
+#'\item \bold{isLoaded}. Whether the skeleton is loaded.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the animations.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the skeleton slots.. Type: Record<"base"｜"content", string>. Default: NA.
+#' }
+#' @md
+#' @name skeleton
+#' @example inst/examples/skeleton/app.R
+#' @seealso See \url{https://nextui.org/docs/components/skeleton}.
+NULL
+
+#' slider
+#'
+#' @description
+#' A slider allows a user to select one or more values within a range.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN.. Type: string. Default: NA.
+#'\item \bold{size}. The size of the Slider filler and thumb.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the filler and thumb.. Type: foreground | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{radius}. The Slider's thumbs border radius.. Type: none | sm | md | lg | full. Default: full.
+#'\item \bold{step}. The Slider's step value.. Type: number. Default: 1.
+#'\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
+#'\item \bold{defaultValue}. The default value (uncontrolled).. Type: number. Default: NA.
+#'\item \bold{minValue}. The slider's minimum value.. Type: number. Default: 0.
+#'\item \bold{maxValue}. The slider's maximum value.. Type: number. Default: 100.
+#'\item \bold{orientation}. The orientation of the Slider.. Type: horizontal | vertical. Default: horizontal.
+#'\item \bold{fillOffset}. The offset from which to start the fill.. Type: number. Default: NA.
+#'\item \bold{showSteps}. Whether to show the steps indicators.. Type: boolean. Default: false.
+#'\item \bold{showTooltip}. Whether to show a tooltip with the current thumb value when the user hovers or drags the thumb.. Type: boolean. Default: false.
+#'\item \bold{marks}. The marks to display on the Slider's steps.. Type: SliderStepMarks. Default: NA.
+#'\item \bold{startContent}. The content to display at the beginning of the Slider.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. The content to display at the end of the Slider.. Type: ReactNode. Default: NA.
+#'\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: NA.
+#'\item \bold{tooltipValueFormatOptions}. The options to format the tooltip value. By default, it uses the same options as formatOptions.. Type: Intl.NumberFormat. Default: NA.
+#'\item \bold{tooltipProps}. The props to pass to the thumbs's tooltip.. Type: TooltipProps. Default: NA.
+#'\item \bold{showOutline}. Whether to show a small outline around the thumbs.. Type: boolean. Default: false.
+#'\item \bold{hideValue}. Whether to hide the Slider value.. Type: boolean. Default: false.
+#'\item \bold{hideThumb}. Whether to hide all the Slider thumbs.. Type: boolean. Default: false.
+#'\item \bold{disableThumbScale}. Whether to disable the thumb scale animation.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the whole Slider is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the Slider animations.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the Slider slots.. Type: Record<"base"｜"labelWrapper"｜"label"｜ "value" ｜ "step" ｜ "mark" ｜ "trackWrapper" ｜ "track"｜ "output" ｜ "filler" ｜ "thumb" ｜ "startContent" ｜ "endContent", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{getValue}. A function to format the value. Overrides default formatted number.. Type: (value: SliderValue) => string. Default: NA.
+#'\item \bold{renderLabel}. A function to render the label.. Type: (props: DOMAttributes<HTMLLabelElement>) => ReactNode. Default: NA.
+#'\item \bold{renderValue}. A function to render the value.. Type: (props: DOMAttributes<HTMLOutputElement>) => ReactNode. Default: NA.
+#'\item \bold{renderThumb}. A function to render the thumbs. The index prop will tell you which thumb is being rendered.. Type: (props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Callback fired when the value changes.. Type: (value: SliderValue) => void. Default: NA.
+#'\item \bold{onChangeEnd}. Callback fired when the value changes and the user stops dragging the thumb.. Type: (value: SliderValue) => void. Default: NA.
+#' }
+#' @md
+#' @name slider
+#' @example inst/examples/slider/app.R
+#' @seealso See \url{https://nextui.org/docs/components/slider}.
+NULL
+
+#' snippet
+#'
+#' @description
+#' Snippet is a component that can be used to display inline or multiline code snippets.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. The content of the snippet.. Type: ReactNode | ReactNode[]. Default: NA.
+#'\item \bold{size}. The size of the snippet.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The radius of the snippet.. Type: none | sm | md | lg. Default: lg.
+#'\item \bold{symbol}. The symbol to show before the snippet.. Type: string | ReactNode. Default: $.
+#'\item \bold{timeout}. he time in milliseconds to wait before resetting the clipboard.. Type: number. Default: 2000.
+#'\item \bold{codeString}. The code string to copy. if codeString is passed, it will be copied instead of the children.. Type: string. Default: NA.
+#'\item \bold{tooltipProps}. The props of the tooltip.. Type: TooltipProps. Default: NA.
+#'\item \bold{copyIcon}. The copy icon.. Type: ReactNode. Default: NA.
+#'\item \bold{checkIcon}. The check icon.. Type: ReactNode. Default: NA.
+#'\item \bold{disableTooltip}. Whether to disable the tooltip.. Type: boolean. Default: false.
+#'\item \bold{disableCopy}. Whether to disable the copy button.. Type: boolean. Default: false.
+#'\item \bold{hideCopyButton}. Whether to hide the copy button.. Type: boolean. Default: false.
+#'\item \bold{hideSymbol}. Whether to hide the symbol.. Type: boolean. Default: false.
+#'\item \bold{copyButtonProps}. The props of the copy button.. Type: ButtonProps. Default: NA.
+#'\item \bold{disableAnimation}. Whether to disable the animations.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the snippet slots.. Type: Record<"base"｜"content"｜"pre"｜"symbol"｜"copyButton"｜"checkIcon", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onCopy}. Handler that is called when the code is copied.. Type: (value: string ｜ string[]) => void;. Default: NA.
+#' }
+#' @md
+#' @name snippet
+#' @example inst/examples/snippet/app.R
+#' @seealso See \url{https://nextui.org/docs/components/snippet}.
+NULL
+
+#' switch
+#'
+#' @description
+#' The Switch component is used as an alternative between checked and not checked states.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. The label of the switch.. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The value of the input element, used when submitting an HTML form.. Type: string. Default: NA.
+#'\item \bold{name}. The name of the input element, used when submitting an HTML form.. Type: string. Default: NA.
+#'\item \bold{size}. The size of the switch.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the switch.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{thumbIcon}. The icon to be displayed when the switch is checked.. Type: ThumbIconProps. Default: NA.
+#'\item \bold{startContent}. The icon to be displayed at the start of the switch.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. The icon to be displayed at the end of the switch.. Type: ReactNode. Default: NA.
+#'\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: NA.
+#'\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: NA.
+#'\item \bold{isDisabled}. Whether the switch is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the switch slots.. Type: Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
+#' }
+#' @md
+#' @name switch
+#' @example inst/examples/switch/app.R
+#' @seealso See \url{https://nextui.org/docs/components/switch}.
+NULL
+
+#' tabs
+#'
+#' @description
+#' Tabs organize content into multiple sections and allow users to navigate between them.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. The list of tabs.. Type: ReactNode | ((item: T) => ReactElement). Default: NA.
+#'\item \bold{variant}. The tabs appearance style.. Type: solid | bordered | light | underlined. Default: solid.
+#'\item \bold{color}. The tabs color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The tabs size.. Type: sm | md | lg. Default: md.
+#'\item \bold{radius}. The tabs border radius.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{fullWidth}. Whether the tabs should take the full width of its parent.. Type: boolean. Default: false.
+#'\item \bold{items}. The list of tabs (dynamic).. Type: Iterable<T>. Default: NA.
+#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: NA.
+#'\item \bold{selectedKey}. The key for the currently selected item.. Type: React.Key. Default: NA.
+#'\item \bold{defaultSelectedKey}. The key for the initially selected item.. Type: React.Key. Default: NA.
+#'\item \bold{disallowEmptySelection}. Whether the tabs should allow empty selection.. Type: boolean. Default: false.
+#'\item \bold{shouldSelectOnPressUp}. Whether the tabs selection should occur on press up instead of press down.. Type: boolean. Default: true.
+#'\item \bold{keyboardActivation}. Whether tabs are activated automatically on focus or manually.. Type: automatic | manual. Default: automatic.
+#'\item \bold{motionProps}. The props to modify the cursor framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: NA.
+#'\item \bold{disableCursorAnimation}. Whether the cursor should be hidden.. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Whether the tab list should be disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the tab list should be animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (key: React.Key) => any. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. The content of the tab.. Type: ReactNode. Default: NA.
+#'\item \bold{title}. The title of the tab.. Type: ReactNode. Default: NA.
+#'\item \bold{titleValue}. A string representation of the item's contents. Use this when the title is not readable.. Type: string. Default: NA.
+#'\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
+#'\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
+#'\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
+#'\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
+#'\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
+#'\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
+#'\item \bold{shouldSelectOnPressUp}. Whether the tab selection should occur on press up instead of press down.. Type: boolean. Default: NA.
+#' }
+#' @md
+#' @name tabs
+#' @example inst/examples/tabs/app.R
+#' @seealso See \url{https://nextui.org/docs/components/tabs}.
 NULL
 
 #' textarea
@@ -906,41 +1094,39 @@ NULL
 #'
 #' @details
 #'
-#' 1. Textarea Props
 #' \itemize{
-#'\item \bold{value}. Textarea value. Type: string. Default: NA.
-#'\item \bold{initialValue}. Textarea default value. Type: string. Default: NA.
-#'\item \bold{placeholder}. The short hint displayed in the textarea. Type: string. Default: NA.
-#'\item \bold{size}. Change textarea size. Type: NormalSizes. Default: medium.
-#'\item \bold{color}. Change textarea text, border and label color. Type: SimpleColors. Default: default.
-#'\item \bold{status}. Change textarea status color. Type: SimpleColors. Default: default.
-#'\item \bold{rows}. Textarea rows count. Type: number. Default: NA.
-#'\item \bold{minRows}. Minimum number of rows to show for textarea. Type: number. Default: 3.
-#'\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow. Type: number. Default: 6.
-#'\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: true.
-#'\item \bold{helperColor}. Change helper text color. Type: SimpleColors. Default: default.
-#'\item \bold{required}. Required textarea prop. Type: boolean. Default: false.
-#'\item \bold{readOnly}. It prevents the user from changing the value of the field. Type: boolean. Default: false.
-#'\item \bold{disabled}. Disable textarea. Type: boolean. Default: false.
-#'\item \bold{bordered}. Bordered textarea. Type: boolean. Default: false.
-#'\item \bold{underlined}. Underlined textarea. Type: boolean. Default: false.
-#'\item \bold{shadow}. Enable or disable the textarea shadow. Type: boolean. Default: true.
-#'\item \bold{animated}. Enable or disable the textarea animation. Type: boolean. Default: true.
-#'\item \bold{autoComplete}. HTML textarea autocomplete attribute. Type: string. Default: off.
-#'\item \bold{borderWeight}. Border weight for bordered textarea. Type: NormalWeights. Default: normal.
-#'\item \bold{fullWidth}. If true, the textarea will take up the full width of its container.. Type: boolean. Default: false.
-#'\item \bold{width}. Textarea width. Type: string. Default: initial.
-#'\item \bold{label}. Text label for textarea. Type: string. Default: NA.
-#'\item \bold{labelPlaceholder}. The placeholder becomes a label. Type: string. Default: NA.
-#'\item \bold{helperText}. Add a helper text to textarea. Type: string. Default: NA.
-#'\item \bold{onHeightChange}. Callback fired whenthe textarea height change. Type: (height: number, meta: {rowHeight: number}) => void. Default: NA.
-#'\item \bold{onChange}. Callback fired when the value is changed. Type: (e: React.ChangeEvent<HTMLTextAreaElement>) => void. Default: NA.
-#'\item \bold{onFocus}. Callback fired when the textarea is focused.. Type: (e: React.FocusEvent<HTMLTextAreaElement>) => void. Default: NA.
-#'\item \bold{onBlur}. Callback fired when the textarea is blurred.. Type: (e: React.FocusEvent<HTMLTextAreaElement>) => void. Default: NA.
-#'\item \bold{ref}. forwardRef. Type: Ref<HTMLTextAreaElement | null>. Default: NA.
-#'\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: input.
-#'\item \bold{...}. Textarea native props. Type: TextareaHTMLAttributes. Default: NA.
+#'\item \bold{children}. The content of the textarea.. Type: ReactNode. Default: NA.
+#'\item \bold{minRows}. The minimum number of rows to display.. Type: number. Default: 3.
+#'\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow.. Type: number. Default: 8.
+#'\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: false.
+#'\item \bold{variant}. The variant of the textarea.. Type: flat | bordered | faded | underlined. Default: flat.
+#'\item \bold{color}. The color of the textarea.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{size}. The size of the textarea.. Type: sm|md|lg. Default: md.
+#'\item \bold{radius}. The radius of the textarea.. Type: none | sm | md | lg | full. Default: NA.
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{value}. The current value of the textarea (controlled).. Type: string. Default: NA.
+#'\item \bold{defaultValue}. The default value of the textarea (uncontrolled).. Type: string. Default: NA.
+#'\item \bold{placeholder}. The placeholder of the textarea.. Type: string. Default: NA.
+#'\item \bold{startContent}. Element to be rendered in the left side of the input.. Type: ReactNode. Default: NA.
+#'\item \bold{endContent}. Element to be rendered in the right side of the input.. Type: ReactNode. Default: NA.
+#'\item \bold{description}. A description for the textarea. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
+#'\item \bold{errorMessage}. An error message for the textarea.. Type: ReactNode. Default: NA.
+#'\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
+#'\item \bold{fullWidth}. Whether the textarea should take up the width of its parent.. Type: boolean. Default: true.
+#'\item \bold{isRequired}. Whether user input is required on the textarea before form submission.. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Whether the textarea can be selected but not changed by the user.. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Whether the textarea is disabled.. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Whether the textarea is invalid.. Type: boolean. Default: false.
+#'\item \bold{validationState}. Whether the textarea should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+#'\item \bold{disableAutosize}. Whether the textarea auto vertically resize should be disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the textarea should be animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper" ｜ "input" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Handler that is called when the element's value changes. You can pull out the new value by accessing event.target.value (string).. Type: React.ChangeEvent <HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Handler that is called when the element's value changes.. Type: (value: string) => void. Default: NA.
+#'\item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
+#'\item \bold{onHeightChange}. Handler that is called when the height of the textarea changes.. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
 #' }
 #' @md
 #' @name textarea
@@ -948,227 +1134,70 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/textarea}.
 NULL
 
-#' dropdown
+#' tooltip
 #'
 #' @description
-#' Displays a list of actions or options that a user can choose. Dropdown implementation is based on
-#' \code{react-aria/menu}
+#' Tooltips display a brief, informative message that appears when a user interacts with an element.
 #'
 #' @details
 #'
-#' 1. Dropdown Props
 #' \itemize{
-#'\item \bold{children*}. The content of the dropdown. It's usually the Dropdown.Trigger, Dropdown.Button and Dropdown.Menu.. Type: ReactNode[]. Default: NA.
-#'\item \bold{type}. The type of dropdown menu that the dropdown trigger opens.. Type: TriggerType. Default: menu.
-#'\item \bold{trigger}. How the dropdown menu is triggered.. Type: MenuTriggerType. Default: press.
-#'\item \bold{closeOnSelect}. Whether the dropdown menu closes when a selection is made.. Type: boolean. Default: true.
-#'\item \bold{isDisabled}. Whether dropdown trigger is disabled.. Type: boolean. Default: false.
-#'\item \bold{disableTriggerPressedAnimation new}. Whether the trigger should show a pressed animation when the menu is open.. Type: boolean. Default: false.
-#'\item \bold{PopoverProps}. Since dropdown is based on the Popover you can use any of the Popover props.. Type: PopoverProps. Default: NA.
+#'\item \bold{children*}. The children to render. Usually a trigger element.. Type: ReactNode[]. Default: NA.
+#'\item \bold{content}. The content to render inside the tooltip.. Type: ReactNode. Default: NA.
+#'\item \bold{size}. The tooltip size. This change the content font size.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The tooltip color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+#'\item \bold{radius}. The tooltip border radius.. Type: none | sm | md | lg | full. Default: md.
+#'\item \bold{shadow}. The tooltip shadow.. Type: none | sm | md | lg. Default: sm.
+#'\item \bold{placement}. The placement of the tooltip relative to its trigger reference.. Type: TooltipPlacement. Default: top.
+#'\item \bold{delay}. The delay in milliseconds before the tooltip opens.. Type: number. Default: 500.
+#'\item \bold{closeDelay}. The delay in milliseconds before the tooltip closes.. Type: number. Default: 0.
+#'\item \bold{isOpen}. Whether the tooltip is open by default (controlled).. Type: boolean. Default: NA.
+#'\item \bold{defaultOpen}. Whether the tooltip is open by default (uncontrolled).. Type: boolean. Default: NA.
+#'\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 7.
+#'\item \bold{containerPadding(px)}. The placement padding that should be applied between the element and its surrounding container.. Type: number. Default: 12.
+#'\item \bold{crossOffset(px)}. The additional offset applied along the cross axis between the element and its anchor element.. Type: number. Default: 0.
+#'\item \bold{triggerType}. Type of tooltip that is opened by the trigger.. Type: dialog | menu | listbox | tree | grid;. Default: dialog.
+#'\item \bold{showArrow}. Whether the tooltip should have an arrow.. Type: boolean. Default: false.
+#'\item \bold{shouldFlip}. Whether the tooltip should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
+#'\item \bold{triggerScaleOnOpen}. Whether the trigger should scale down when the tooltip is open.. Type: boolean. Default: true.
+#'\item \bold{shouldBlockScroll}. Whether to block scrolling outside the tooltip.. Type: boolean. Default: true.
+#'\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the tooltip should be disabled.. Type: boolean. Default: false.
+#'\item \bold{isDismissable}. Whether to close the overlay when the user interacts outside it.. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnBlur}. Whether the tooltip should close when focus is lost or moves outside it.. Type: boolean. Default: true.
+#'\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: NA.
+#'\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+#'\item \bold{updatePositionDeps}. The dependencies to force the tooltip position update.. Type: any[]. Default: [].
+#'\item \bold{isDisabled}. Whether the tooltip is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether the tooltip is animated.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"arrow", string>. Default: NA.
 #' }
-#' 2. Dropdown Events
 #' \itemize{
-#'\item \bold{PopoverEvents}. Since dropdown is based on the Popover you can use any of the Popover events.. Type: PopoverEvents. Default: NA.
-#' }
-#' 3. Dropdown.Trigger Props
-#' \itemize{
-#'\item \bold{children*}. The dropdown trigger component, ensure the children passed is focusable. Users can tab to it using their keyboard, and it can take a ref. It is critical for accessiblity.. Type: ReactNode. Default: NA.
-#' }
-#' 4. Dropdown.Button Props
-#' \itemize{
-#'\item \bold{ButtonProps}. Since dropdown button is based on the Button you can use any of the Button props.. Type: ButtonProps. Default: NA.
-#' }
-#' 5. Dropdown.Menu Props
-#' \itemize{
-#'\item \bold{children*}. The contents of the collection. It's usually the Dropdown.Item or Dropdown.Section.. Type: CollectionChildrentype. Default: NA.
-#'\item \bold{items}. Item objects in the collection.. Type: Iterable<T>. Default: NA.
-#'\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all Iterable<T>. Default: NA.
-#'\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all Iterable<T>. Default: NA.
-#'\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: Iterable<T>. Default: NA.
-#'\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: SelectionModeType. Default: NA.
-#'\item \bold{keyboardDelegate}. An optional keyboard delegate implementation for type to select, to override the default.. Type: KeyboardDelegateType. Default: NA.
-#'\item \bold{color}. The dropdown menu items color. Type: SimpleColors. Default: default.
-#'\item \bold{textColor}. The dropdown menu items text color. Type: SimpleColors. Default: default.
-#'\item \bold{variant}. The dropdown menu items variantion. Type: DropdownVariant. Default: flat.
-#'\item \bold{isVirtualized}. Whether the dropdown menu uses virtual scrolling.. Type: boolean. Default: false.
-#'\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
-#'\item \bold{autoFocus}. Where the focus should be set.. Type: boolean FocusStrategyType. Default: false.
-#'\item \bold{shouldFocusWrap}. Whether keyboard navigation is circular.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{containerCss new}. Override the dropdown mmenu container (Popover.Content) CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
-#' }
-#' 6. Dropdown.Menu Events
-#' \itemize{
-#'\item \bold{onAction}. Handler that is called when an item is selected.. Type: (key: Key) => void. Default: NA.
-#'\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys:SelectionType) => any. Default: NA.
-#' }
-#' 7. Dropdown.Menu Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#'\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-#' }
-#' 8. Dropdown.Item Props
-#' \itemize{
-#'\item \bold{key}. The unique key for the menu item.. Type: Key. Default: false.
-#'\item \bold{description}. Description text element inside the dropdown menu item.. Type: string. Default: NA.
-#'\item \bold{command}. Right-aligned label text content, useful for displaying hotkeys.. Type: string. Default: NA.
-#'\item \bold{icon}. The icon to render before the dropdown menu item's label.. Type: ReactNode. Default: NA.
-#'\item \bold{dividerWeight}. The dropdown item divider height. Type: NormalWeights. Default: light.
-#'\item \bold{color}. The dropdown item color. Type: SimpleColors. Default: default.
-#'\item \bold{textColor}. The dropdown item text color. Type: SimpleColors. Default: default.
-#'\item \bold{variant}. The dropdown item variation. Type: DropdownVariant. Default: flat.
-#'\item \bold{withDivider}. Whether the dropdown item should have a border on top. Type: boolean. Default: false.
-#'\item \bold{showFullDescription new}. Whether the item description should be truncated or not.. Type: boolean. Default: false.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
-#' }
-#' 9. Dropdown.Item Accessibility Props
-#' \itemize{
-#'\item \bold{aria-label}. A screen reader only label for the dropdown menu item.. Type: string. Default: NA.
-#' }
-#' 10. Dropdown.Section Props
-#' \itemize{
-#'\item \bold{heading}. The heading for the section.. Type: ReactNode. Default: NA.
-#' }
-#' 11. Dropdown.Section Accessibility Props
-#' \itemize{
-#'\item \bold{aria-label}. An accessibility label for the section. Required if heading is not present.. Type: string. Default: NA.
+#'\item \bold{onOpenChange}. Handler that is called when the tooltip's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
+#'\item \bold{onClose}. Handler that is called when the tooltip should close.. Type: () => void. Default: NA.
 #' }
 #' @md
-#' @name dropdown
-#' @example inst/examples/dropdown/app.R
-#' @seealso See \url{https://nextui.org/docs/components/dropdown}.
+#' @name tooltip
+#' @example inst/examples/tooltip/app.R
+#' @seealso See \url{https://nextui.org/docs/components/tooltip}.
 NULL
 
-#' navbar
+#' user
 #'
 #' @description
-#' A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse and more.
+#' Display user information with avatar and name.
 #'
 #' @details
 #'
-#' 1. Navbar Props
 #' \itemize{
-#'\item \bold{children*}. The content of the navbar. It's usually the brand, content, toggle and collapse.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{parentRef}. The parent element where the navbar is placed within. This is used to determine the scroll position and whether the navbar should be hidden or not.. Type: RefObject<HTMLElement>. Default: window.
-#'\item \bold{variant}. The navbar positions variantions.. Type: NavbarVariants. Default: static.
-#'\item \bold{height}. The height of the navbar. When the navbar is compacted (isCompact=true) the height is reduced to 54px.. Type: number string. Default: 76px.
-#'\item \bold{maxWidth}. The navbar maximum width.. Type: NavbarMaxWidth. Default: lg.
-#'\item \bold{isBordered}. Whether the navbar should be bordered.. Type: boolean. Default: false.
-#'\item \bold{isCompact}. Whether the navbar should be compact. It reduces the height to 54px.. Type: boolean. Default: false.
-#'\item \bold{borderWeight}. The border weight of the bordered navbar.. Type: NormalWeights. Default: light.
-#'\item \bold{shouldHideOnScroll}. Whether the navbar should hide on scroll or not.. Type: boolean. Default: false.
-#'\item \bold{disableShadow}. Whether the navbar should have a shadow or not.. Type: boolean. Default: false.
-#'\item \bold{disableBlur}. Whether the navbar should be blurred or not. (only supported by this browser list. Type: boolean. Default: false.
-#'\item \bold{disableScrollHandler}. Whether the navbar parent scroll event should be listened to or not.. Type: boolean. Default: false.
-#'\item \bold{containerCss}. The css object of the navbar container.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: nav.
-#' }
-#' 2. Navbar Events
-#' \itemize{
-#'\item \bold{onScrollPositionChange}. The scroll event handler for the navbar. The event fires when the navbar parent element is scrolled. it only works if disableScrollHandler is set to false or shouldHideOnScroll is set to true.. Type: (scrollPosition: number) => void. Default: NA.
-#' }
-#' 3. Navbar.Brand Props
-#' \itemize{
-#'\item \bold{children}. The content of the navbar brand. It's usually the logo and name of the brand.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: span.
-#' }
-#' 4. Navbar.Content Props
-#' \itemize{
-#'\item \bold{children}. The content of the navbar content. It's usually the navbar item and navbar link.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{variant}. The variant of the navbar content items.. Type: NavbarContentVariants. Default: default.
-#'\item \bold{gap}. The gap between each content item. It's 0px for highlight variants.. Type: number string CSSGapUnit. Default: $10.
-#'\item \bold{activeColor}. The active color of the navbar content items.. Type: SimpleColors. Default: default (link).
-#'\item \bold{underlineHeight}. The height of the navbar content items's underline.. Type: NormalWeights. Default: normal.
-#'\item \bold{enableCursorHighlight}. Whether the navbar content highlighted cursor should be visible.. Type: NormalWeights. Default: false.
-#'\item \bold{isCursorHighlightRounded}. Whether the navbar content highlighted cursor should be rounded.. Type: NormalWeights. Default: false.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
-#' }
-#' 5. Navbar.Item Props
-#' \itemize{
-#'\item \bold{children*}. The contents of the navbar item.. Type: ReactNode. Default: NA.
-#'\item \bold{variant}. The variant of the navbar item.. Type: NavbarContentVariants. Default: default.
-#'\item \bold{activeColor}. The active color of the navbar item.. Type: SimpleColors. Default: default (link).
-#'\item \bold{underlineHeight}. The height of the navbar item underline.. Type: NormalWeights. Default: normal.
-#'\item \bold{isActive}. Whether navbar item is active.. Type: boolean. Default: false.
-#'\item \bold{isDisabled}. Whether navbar item is disabled.. Type: boolean. Default: false.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
-#' }
-#' 6. Navbar.Link Props
-#' \itemize{
-#'\item \bold{ItemProps}. Since dropdown navbar link is based on the Navbar.Item component you can use any of the Navbar.Item props.. Type: NavbarItemProps. Default: NA.
-#'\item \bold{LinkProps}. Since dropdown navbar link uses the Link component as a base, you can use any of the Link props.. Type: LinkProps. Default: NA.
-#'\item \bold{itemCss}. Override the navbar item CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{itemClassName}. Add a class name to the navbar item.. Type: string. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: a.
-#' }
-#' 7. Navbar.Toggle Props
-#' \itemize{
-#'\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode. Default: NA.
-#'\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: HideShowIn. Default: false.
-#'\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: HideShowIn. Default: NA.
-#'\item \bold{autoFocus}. Whether the element should receive focus on render.. Type: HideShowIn. Default: false.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: button.
-#' }
-#' 8. Navbar.Toggle Events
-#' \itemize{
-#'\item \bold{onChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
-#' }
-#' 9. Navbar.Toggle Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-#' }
-#' 10. Navbar.Collapse Props
-#' \itemize{
-#'\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{transitionDelay}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 0.
-#'\item \bold{transitionTime}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 450.
-#'\item \bold{transitionMatrix}. The matrix of all collapse items transition.. Type: CollapseTransitionMatrix. Default: {in: "matrix(1, 0, 0, 1, 0, 0)", out: "matrix(0.97, 0, 0, 1, 0, 20)"}.
-#'\item \bold{disableAnimation}. Whether the all navbar collapse items are animated.. Type: boolean. Default: false.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
-#' }
-#' 11. Navbar.Collapse Accessibility Props
-#' \itemize{
-#'\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-#'\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-#'\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-#' }
-#' 12. Navbar.CollapseItem Props
-#' \itemize{
-#'\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode ReactNode[]. Default: NA.
-#'\item \bold{transitionDelay}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 0.
-#'\item \bold{transitionTime}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 450.
-#'\item \bold{transitionMatrix}. The matrix of all collapse items transition.. Type: CollapseTransitionMatrix. Default: {in: "matrix(1, 0, 0, 1, 0, 0)", out: "matrix(0.97, 0, 0, 1, 0, 20)"}.
-#'\item \bold{disableAnimation}. Whether the navbar collapse item is animated.. Type: boolean. Default: false.
-#'\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-#'\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-#'\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-#'\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
+#'\item \bold{name}. The name of the user.. Type: string. Default: NA.
+#'\item \bold{description}. The description component.. Type: ReactNode. Default: NA.
+#'\item \bold{isFocusable}. Whether the user is focusable. This is useful when using Dropdown or similar components.. Type: boolean. Default: false.
+#'\item \bold{avatarProps}. The avatar component props. The name is passed by default.. Type: AvatarProps. Default: NA.
+#'\item \bold{classNames}. Allows to set custom class names for the user slots.. Type: Record<"base"｜ "wrapper"｜ "name"｜ "description", string>. Default: NA.
 #' }
 #' @md
-#' @name navbar
-#' @example inst/examples/navbar/app.R
-#' @seealso See \url{https://nextui.org/docs/components/navbar}.
+#' @name user
+#' @example inst/examples/user/app.R
+#' @seealso See \url{https://nextui.org/docs/components/user}.
 NULL

@@ -32,43 +32,39 @@ The update functions return nothing (called for side effects).
 Textarea component is a multi-line Input which allows you to write large texts.
 }
 \details{
-\enumerate{
-\item Textarea Props
 \itemize{
-\item \bold{value}. Textarea value. Type: string. Default: NA.
-\item \bold{initialValue}. Textarea default value. Type: string. Default: NA.
-\item \bold{placeholder}. The short hint displayed in the textarea. Type: string. Default: NA.
-\item \bold{size}. Change textarea size. Type: NormalSizes. Default: medium.
-\item \bold{color}. Change textarea text, border and label color. Type: SimpleColors. Default: default.
-\item \bold{status}. Change textarea status color. Type: SimpleColors. Default: default.
-\item \bold{rows}. Textarea rows count. Type: number. Default: NA.
-\item \bold{minRows}. Minimum number of rows to show for textarea. Type: number. Default: 3.
-\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow. Type: number. Default: 6.
-\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: true.
-\item \bold{helperColor}. Change helper text color. Type: SimpleColors. Default: default.
-\item \bold{required}. Required textarea prop. Type: boolean. Default: false.
-\item \bold{readOnly}. It prevents the user from changing the value of the field. Type: boolean. Default: false.
-\item \bold{disabled}. Disable textarea. Type: boolean. Default: false.
-\item \bold{bordered}. Bordered textarea. Type: boolean. Default: false.
-\item \bold{underlined}. Underlined textarea. Type: boolean. Default: false.
-\item \bold{shadow}. Enable or disable the textarea shadow. Type: boolean. Default: true.
-\item \bold{animated}. Enable or disable the textarea animation. Type: boolean. Default: true.
-\item \bold{autoComplete}. HTML textarea autocomplete attribute. Type: string. Default: off.
-\item \bold{borderWeight}. Border weight for bordered textarea. Type: NormalWeights. Default: normal.
-\item \bold{fullWidth}. If true, the textarea will take up the full width of its container.. Type: boolean. Default: false.
-\item \bold{width}. Textarea width. Type: string. Default: initial.
-\item \bold{label}. Text label for textarea. Type: string. Default: NA.
-\item \bold{labelPlaceholder}. The placeholder becomes a label. Type: string. Default: NA.
-\item \bold{helperText}. Add a helper text to textarea. Type: string. Default: NA.
-\item \bold{onHeightChange}. Callback fired whenthe textarea height change. Type: (height: number, meta: {rowHeight: number}) => void. Default: NA.
-\item \bold{onChange}. Callback fired when the value is changed. Type: (e: React.ChangeEvent\if{html}{\out{<HTMLTextAreaElement>}}) => void. Default: NA.
-\item \bold{onFocus}. Callback fired when the textarea is focused.. Type: (e: React.FocusEvent\if{html}{\out{<HTMLTextAreaElement>}}) => void. Default: NA.
-\item \bold{onBlur}. Callback fired when the textarea is blurred.. Type: (e: React.FocusEvent\if{html}{\out{<HTMLTextAreaElement>}}) => void. Default: NA.
-\item \bold{ref}. forwardRef. Type: Ref<HTMLTextAreaElement | null>. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: input.
-\item \bold{...}. Textarea native props. Type: TextareaHTMLAttributes. Default: NA.
+\item \bold{children}. The content of the textarea.. Type: ReactNode. Default: NA.
+\item \bold{minRows}. The minimum number of rows to display.. Type: number. Default: 3.
+\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow.. Type: number. Default: 8.
+\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: false.
+\item \bold{variant}. The variant of the textarea.. Type: flat | bordered | faded | underlined. Default: flat.
+\item \bold{color}. The color of the textarea.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{size}. The size of the textarea.. Type: sm|md|lg. Default: md.
+\item \bold{radius}. The radius of the textarea.. Type: none | sm | md | lg | full. Default: NA.
+\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+\item \bold{value}. The current value of the textarea (controlled).. Type: string. Default: NA.
+\item \bold{defaultValue}. The default value of the textarea (uncontrolled).. Type: string. Default: NA.
+\item \bold{placeholder}. The placeholder of the textarea.. Type: string. Default: NA.
+\item \bold{startContent}. Element to be rendered in the left side of the input.. Type: ReactNode. Default: NA.
+\item \bold{endContent}. Element to be rendered in the right side of the input.. Type: ReactNode. Default: NA.
+\item \bold{description}. A description for the textarea. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
+\item \bold{errorMessage}. An error message for the textarea.. Type: ReactNode. Default: NA.
+\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
+\item \bold{fullWidth}. Whether the textarea should take up the width of its parent.. Type: boolean. Default: true.
+\item \bold{isRequired}. Whether user input is required on the textarea before form submission.. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Whether the textarea can be selected but not changed by the user.. Type: boolean. Default: .
+\item \bold{isDisabled}. Whether the textarea is disabled.. Type: boolean. Default: false.
+\item \bold{isInvalid}. Whether the textarea is invalid.. Type: boolean. Default: false.
+\item \bold{validationState}. Whether the textarea should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
+\item \bold{disableAutosize}. Whether the textarea auto vertically resize should be disabled.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether the textarea should be animated.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper" ｜ "input" ｜ "description" ｜ "errorMessage", string>. Default: NA.
 }
+\itemize{
+\item \bold{onChange}. Handler that is called when the element's value changes. You can pull out the new value by accessing event.target.value (string).. Type: React.ChangeEvent \if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Handler that is called when the element's value changes.. Type: (value: string) => void. Default: NA.
+\item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
+\item \bold{onHeightChange}. Handler that is called when the height of the textarea changes.. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
 }
 }
 \examples{

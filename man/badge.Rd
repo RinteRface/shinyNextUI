@@ -17,27 +17,21 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Badges are used as a small numerical value or status descriptor for UI elements.
 }
 \details{
-\enumerate{
-\item Badge Props
 \itemize{
-\item \bold{children}. The wrapped component.. Type: ReactNode. Default: NA.
-\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string number ReactNode. Default: NA.
-\item \bold{color}. The badge color.. Type: SimpleColors. Default: default.
-\item \bold{size}. The badge size.. Type: NormalSizes. Default: md.
-\item \bold{variant}. The badge variation.. Type: BadgeVariant. Default: default.
-\item \bold{placement}. The placement of the badge content.. Type: BadgePlacements. Default: top-right.
-\item \bold{borderWeight}. The border weight for bordered badge variation.. Type: NormalWeights. Default: normal.
-\item \bold{shape}. The wrapped shape the badge should overlap.. Type: circle rectangle. Default: rectangle.
-\item \bold{horizontalOffset}. The horizontal offset of the badge content.. Type: string number. Default: NA.
-\item \bold{verticalOffset}. The vertical offset of the badge content.. Type: string number. Default: NA.
-\item \bold{isInvisible}. Whether the badge is invisible.. Type: boolean. Default: false.
-\item \bold{enableShadow}. Whether the badge shadow should be enabled.. Type: boolean. Default: false.
-\item \bold{isSquared}. Whether the badge corners should be squared.. Type: boolean. Default: false.
-\item \bold{disableOutline}. Whether the badge outline should be disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the badge content animation should be disabled.. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: span.
-}
+\item \bold{children *}. The wrapped component.. Type: ReactNode. Default: NA.
+\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string | number | ReactNode. Default: NA.
+\item \bold{variant}. The variant style of the badge.. Type: solid | flat | faded | shadow. Default: solid.
+\item \bold{color}. The color of the badge.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{size}. The size of the badge.. Type: sm | md | lg. Default: md.
+\item \bold{shape}. The shape of the badge.. Type: circle | rectangle. Default: rectangle.
+\item \bold{placement}. The placement of the badge.. Type: top-right | top-left | bottom-right | bottom-left. Default: top-right.
+\item \bold{showOutline}. If true, the badge will have an outline.. Type: boolean. Default: true.
+\item \bold{disableOutline}. If true, the badge will not have an outline. Deprecated use showOutline instead.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. If true, the badge will not have an animation.. Type: boolean. Default: false.
+\item \bold{isInvisible}. If true, the badge will be invisible.. Type: boolean. Default: false.
+\item \bold{isOneChar}. If true, the badge will have the same width and height.. Type: boolean. Default: false.
+\item \bold{isDot}. If true, the badge will have smaller dimensions.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the badge slots.. Type: Record<"base"｜"badge", string>. Default: NA.
 }
 }
 \examples{

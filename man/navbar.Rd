@@ -26,126 +26,54 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse and more.
+A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse menu and more.
 }
 \details{
-\enumerate{
-\item Navbar Props
 \itemize{
-\item \bold{children*}. The content of the navbar. It's usually the brand, content, toggle and collapse.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{parentRef}. The parent element where the navbar is placed within. This is used to determine the scroll position and whether the navbar should be hidden or not.. Type: RefObject\if{html}{\out{<HTMLElement>}}. Default: window.
-\item \bold{variant}. The navbar positions variantions.. Type: NavbarVariants. Default: static.
-\item \bold{height}. The height of the navbar. When the navbar is compacted (isCompact=true) the height is reduced to 54px.. Type: number string. Default: 76px.
-\item \bold{maxWidth}. The navbar maximum width.. Type: NavbarMaxWidth. Default: lg.
-\item \bold{isBordered}. Whether the navbar should be bordered.. Type: boolean. Default: false.
-\item \bold{isCompact}. Whether the navbar should be compact. It reduces the height to 54px.. Type: boolean. Default: false.
-\item \bold{borderWeight}. The border weight of the bordered navbar.. Type: NormalWeights. Default: light.
-\item \bold{shouldHideOnScroll}. Whether the navbar should hide on scroll or not.. Type: boolean. Default: false.
-\item \bold{disableShadow}. Whether the navbar should have a shadow or not.. Type: boolean. Default: false.
-\item \bold{disableBlur}. Whether the navbar should be blurred or not. (only supported by this browser list. Type: boolean. Default: false.
+\item \bold{children*}. The children to render. Usually navbar elements such as NavbarBrand, NavbarContent and NavbarItem. Type: ReactNode[]. Default: NA.
+\item \bold{height}. The height of the navbar.. Type: string | number. Default: 4rem (64px).
+\item \bold{position}. The position of the navbar.. Type: static | sticky. Default: sticky.
+\item \bold{maxWidth}. The max width of the navbar wrapper.. Type: sm | md | lg | xl | 2xl | full. Default: lg.
+\item \bold{parentRef}. The parent element where the navbar is placed within. This is used to determine the scroll position and whether the navbar should be hidden or not.. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: window.
+\item \bold{isBordered}. Whether the navbar should have a bottom border or not.. Type: boolean. Default: false.
+\item \bold{isBlurred}. Whether the navbar should have a blur effect or not.. Type: boolean. Default: true.
+\item \bold{isMenuOpen}. Indicates if the navbar menu is open. (controlled). Type: boolean. Default: false.
+\item \bold{isMenuDefaultOpen}. Indicates if the navbar menu is open by default. (uncontrolled). Type: boolean. Default: false.
+\item \bold{shouldHideOnScroll}. Indicates if the navbar should hide on scroll.. Type: boolean. Default: false.
+\item \bold{motionProps}. The motion props to controle the visible / hidden animation. This motion is only available if the shouldHideOnScroll prop is set to true.. Type: MotionProps. Default: NA.
 \item \bold{disableScrollHandler}. Whether the navbar parent scroll event should be listened to or not.. Type: boolean. Default: false.
-\item \bold{containerCss}. The css object of the navbar container.. Type: Stitches.CSS. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: nav.
+\item \bold{disableAnimation}. Whether the navbar menu animation should be disabled or not.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the navbar slots.. Type: Record<"base"｜ "wrapper"｜ "brand"｜ "content"｜ "item"｜ "toggle"｜ "toggleIcon"｜ "menu"｜ "menuItem", string>. Default: NA.
 }
-\item Navbar Events
 \itemize{
-\item \bold{onScrollPositionChange}. The scroll event handler for the navbar. The event fires when the navbar parent element is scrolled. it only works if disableScrollHandler is set to false or shouldHideOnScroll is set to true.. Type: (scrollPosition: number) => void. Default: NA.
+\item \bold{onMenuOpenChange}. Handler that is called when the navbar menu open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{onScrollPositionChange}. Handler that is called when the navbar parent element is scrolled. This event is only dispatched if disableScrollHandler is set to false or shouldHideOnScroll is set to true.. Type: (position: number) => void. Default: NA.
 }
-\item Navbar.Brand Props
 \itemize{
-\item \bold{children}. The content of the navbar brand. It's usually the logo and name of the brand.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: span.
+\item \bold{children*}. The children to render. Usually navbar elements such as NavbarBrand, NavbarContent and NavbarItem. Type: ReactNode[]. Default: NA.
+\item \bold{justify}. The justify content of the navbar content. It takes into account the correct space distribution.. Type: start | center | end. Default: start.
 }
-\item Navbar.Content Props
 \itemize{
-\item \bold{children}. The content of the navbar content. It's usually the navbar item and navbar link.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{variant}. The variant of the navbar content items.. Type: NavbarContentVariants. Default: default.
-\item \bold{gap}. The gap between each content item. It's 0px for highlight variants.. Type: number string CSSGapUnit. Default: $10.
-\item \bold{activeColor}. The active color of the navbar content items.. Type: SimpleColors. Default: default (link).
-\item \bold{underlineHeight}. The height of the navbar content items's underline.. Type: NormalWeights. Default: normal.
-\item \bold{enableCursorHighlight}. Whether the navbar content highlighted cursor should be visible.. Type: NormalWeights. Default: false.
-\item \bold{isCursorHighlightRounded}. Whether the navbar content highlighted cursor should be rounded.. Type: NormalWeights. Default: false.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
+\item \bold{children}. The children to render as the navbar item.. Type: ReactNode. Default: NA.
+\item \bold{isActive}. Whether the navbar item is active or not.. Type: boolean. Default: false.
 }
-\item Navbar.Item Props
 \itemize{
-\item \bold{children*}. The contents of the navbar item.. Type: ReactNode. Default: NA.
-\item \bold{variant}. The variant of the navbar item.. Type: NavbarContentVariants. Default: default.
-\item \bold{activeColor}. The active color of the navbar item.. Type: SimpleColors. Default: default (link).
-\item \bold{underlineHeight}. The height of the navbar item underline.. Type: NormalWeights. Default: normal.
-\item \bold{isActive}. Whether navbar item is active.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether navbar item is disabled.. Type: boolean. Default: false.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
+\item \bold{icon}. The icon to render as the navbar menu toggle.. Type: ReactNode | (isOpen: boolean | undefined) => ReactNode | null;. Default: NA.
+\item \bold{isSelected}. Whether the navbar menu toggle is selected. (controlled). Type: boolean. Default: false.
+\item \bold{defaultSelected}. Whether the navbar menu toggle is selected by default. (uncontrolled). Type: boolean. Default: false.
+\item \bold{srOnlyText}. The text to be used by screen readers.. Type: string. Default: open/close navigation menu.
 }
-\item Navbar.Link Props
 \itemize{
-\item \bold{ItemProps}. Since dropdown navbar link is based on the Navbar.Item component you can use any of the Navbar.Item props.. Type: NavbarItemProps. Default: NA.
-\item \bold{LinkProps}. Since dropdown navbar link uses the Link component as a base, you can use any of the Link props.. Type: LinkProps. Default: NA.
-\item \bold{itemCss}. Override the navbar item CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{itemClassName}. Add a class name to the navbar item.. Type: string. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: a.
+\item \bold{onChange}. Handler that is called when the navbar menu toggle is pressed.. Type: (isOpen: boolean) => void. Default: NA.
 }
-\item Navbar.Toggle Props
 \itemize{
-\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode. Default: NA.
-\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: HideShowIn. Default: false.
-\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: HideShowIn. Default: NA.
-\item \bold{autoFocus}. Whether the element should receive focus on render.. Type: HideShowIn. Default: false.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: button.
+\item \bold{children*}. The children to render as the navbar menu. Usually a list of NavbarMenuItem components.. Type: ReactNode[]. Default: NA.
+\item \bold{portalContainer}. The container element in which the navbar menu overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+\item \bold{motionProps}. The motion props to controle the open / close animation. This motion is only available if the disableAnimation prop is set to false.. Type: MotionProps. Default: NA.
 }
-\item Navbar.Toggle Events
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
-}
-\item Navbar.Toggle Accessibility Props
-\itemize{
-\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-}
-\item Navbar.Collapse Props
-\itemize{
-\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{transitionDelay}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 0.
-\item \bold{transitionTime}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 450.
-\item \bold{transitionMatrix}. The matrix of all collapse items transition.. Type: CollapseTransitionMatrix. Default: {in: "matrix(1, 0, 0, 1, 0, 0)", out: "matrix(0.97, 0, 0, 1, 0, 20)"}.
-\item \bold{disableAnimation}. Whether the all navbar collapse items are animated.. Type: boolean. Default: false.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: ul.
-}
-\item Navbar.Collapse Accessibility Props
-\itemize{
-\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-}
-\item Navbar.CollapseItem Props
-\itemize{
-\item \bold{children}. The contents of the navbar toggle. It's usually an hamburguer icon button.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{transitionDelay}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 0.
-\item \bold{transitionTime}. The delay of all collapse items transition. (milliseconds). Type: number. Default: 450.
-\item \bold{transitionMatrix}. The matrix of all collapse items transition.. Type: CollapseTransitionMatrix. Default: {in: "matrix(1, 0, 0, 1, 0, 0)", out: "matrix(0.97, 0, 0, 1, 0, 20)"}.
-\item \bold{disableAnimation}. Whether the navbar collapse item is animated.. Type: boolean. Default: false.
-\item \bold{hideIn}. Sets the breakpoint from where the component should start hiding.. Type: HideShowIn. Default: NA.
-\item \bold{showIn}. Sets the breakpoint from where the component should start displaying.. Type: HideShowIn. Default: NA.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: li.
-}
+\item \bold{children}. The children to render as the menu item.. Type: ReactNode. Default: NA.
+\item \bold{isActive}. Whether the menu item is active or not.. Type: boolean. Default: false.
 }
 }
 \examples{

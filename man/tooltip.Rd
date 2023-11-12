@@ -7,34 +7,43 @@
 tooltip(...)
 }
 \description{
-Tooltips displays informative text when users hover, focus, or click an element.
+Tooltips display a brief, informative message that appears when a user interacts with an element.
 }
 \details{
-\enumerate{
-\item Tooltip Props
 \itemize{
-\item \bold{content}. Tooltip content. Type: React.ReactNode string. Default: NA.
-\item \bold{color}. Change tooltip background color. Type: TooltipTypes string. Default: default.
-\item \bold{contentColor}. Checkbox tooltip text color. Type: SimpleColors string. Default: default.
-\item \bold{placement}. Tooltip placement relative to the target. Type: Placement. Default: top.
-\item \bold{initialVisible}. Determine if the tooltip is visible on initial. Type: boolean. Default: false.
-\item \bold{animated}. Display tooltip animations. Type: boolean. Default: true.
-\item \bold{visible}. Force if the tooltip is visible or not. Type: boolean. Default: NA.
-\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-\item \bold{rounded}. Rounded tooltip. Type: boolean. Default: false.
-\item \bold{hideArrow}. Hide tooltip arrow icon. Type: boolean. Default: NA.
-\item \bold{keepMounted}. Keep tooltip mounted on the DOM. Type: boolean. Default: false.
-\item \bold{*isDisabled}. Whether the tooltip content should be displayed or not. Type: boolean. Default: false.
-\item \bold{trigger}. Tooltip trigger mode. Type: TriggerTypes. Default: hover.
-\item \bold{enterDelay(ms)}. Delay before tooltip is shown. Type: number. Default: 0.
-\item \bold{leaveDelay(ms)}. Delay before tooltip is hidden (only works in 'hover' mode). Type: number. Default: 0.
-\item \bold{offset(px)}. Distance between tooltip and target. Type: number. Default: 12.
-\item \bold{portalClassName}. Tooltip box content className. Type: string. Default: NA.
-\item \bold{onVisibleChange}. Callback when tooltip visibility has changed. Type: number. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native div props. Type: DivHTMLAttributes. Default: NA.
+\item \bold{children*}. The children to render. Usually a trigger element.. Type: ReactNode[]. Default: NA.
+\item \bold{content}. The content to render inside the tooltip.. Type: ReactNode. Default: NA.
+\item \bold{size}. The tooltip size. This change the content font size.. Type: sm | md | lg. Default: md.
+\item \bold{color}. The tooltip color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{radius}. The tooltip border radius.. Type: none | sm | md | lg | full. Default: md.
+\item \bold{shadow}. The tooltip shadow.. Type: none | sm | md | lg. Default: sm.
+\item \bold{placement}. The placement of the tooltip relative to its trigger reference.. Type: TooltipPlacement. Default: top.
+\item \bold{delay}. The delay in milliseconds before the tooltip opens.. Type: number. Default: 500.
+\item \bold{closeDelay}. The delay in milliseconds before the tooltip closes.. Type: number. Default: 0.
+\item \bold{isOpen}. Whether the tooltip is open by default (controlled).. Type: boolean. Default: NA.
+\item \bold{defaultOpen}. Whether the tooltip is open by default (uncontrolled).. Type: boolean. Default: NA.
+\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 7.
+\item \bold{containerPadding(px)}. The placement padding that should be applied between the element and its surrounding container.. Type: number. Default: 12.
+\item \bold{crossOffset(px)}. The additional offset applied along the cross axis between the element and its anchor element.. Type: number. Default: 0.
+\item \bold{triggerType}. Type of tooltip that is opened by the trigger.. Type: dialog | menu | listbox | tree | grid;. Default: dialog.
+\item \bold{showArrow}. Whether the tooltip should have an arrow.. Type: boolean. Default: false.
+\item \bold{shouldFlip}. Whether the tooltip should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
+\item \bold{triggerScaleOnOpen}. Whether the trigger should scale down when the tooltip is open.. Type: boolean. Default: true.
+\item \bold{shouldBlockScroll}. Whether to block scrolling outside the tooltip.. Type: boolean. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the tooltip should be disabled.. Type: boolean. Default: false.
+\item \bold{isDismissable}. Whether to close the overlay when the user interacts outside it.. Type: boolean. Default: false.
+\item \bold{shouldCloseOnBlur}. Whether the tooltip should close when focus is lost or moves outside it.. Type: boolean. Default: true.
+\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: NA.
+\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+\item \bold{updatePositionDeps}. The dependencies to force the tooltip position update.. Type: any[]. Default: [].
+\item \bold{isDisabled}. Whether the tooltip is disabled.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether the tooltip is animated.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"arrow", string>. Default: NA.
 }
+\itemize{
+\item \bold{onOpenChange}. Handler that is called when the tooltip's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
+\item \bold{onClose}. Handler that is called when the tooltip should close.. Type: () => void. Default: NA.
 }
 }
 \examples{

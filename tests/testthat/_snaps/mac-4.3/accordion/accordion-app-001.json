@@ -1,0 +1,18 @@
+{
+  "input": {
+    "accordion1": "2",
+    "accordion2": "3",
+    "accordion3": null,
+    "accordion4": "2",
+    "accordion5": "",
+    "select": "",
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+
+  },
+  "export": {
+
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "input": {
+    "navbar_button-main": null,
+    "navbar_button-other": null,
+    "obs": 500,
+    "routes": [
+      "main",
+      "other",
+      "404"
+    ],
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "distPlot": {
+      "src": "[image data hash: 16b730942d64ef5926d6e9ba4515e7f2]",
+      "width": 736,
+      "height": 400,
+      "alt": "Plot object",
+      "coordmap": {
+        "panels": [
+          {
+            "domain": {
+              "left": -3.24,
+              "right": 3.24,
+              "bottom": -4,
+              "top": 104
+            },
+            "range": {
+              "left": 118.08,
+              "right": 1411.52,
+              "bottom": 652.12,
+              "top": 117.08
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "mapping": {
+
+            }
+          }
+        ],
+        "dims": {
+          "width": 1472,
+          "height": 800
+        }
+      }
+    },
+    "nav_main": {
+      "data": {
+        "type": "array",
+        "value": [
+          {
+            "type": "element",
+            "name": "script",
+            "props": {
+              "type": "raw",
+              "value": {
+                "children": "Shiny.setInputValue('navbar_main', 0)"
+              }
+            }
+          },
+          {
+            "type": "element",
+            "module": "@nextui-org/react",
+            "name": "Navbar",
+            "props": {
+              "type": "object",
+              "value": {
+                "id": {
+                  "type": "raw",
+                  "value": "navbar_main"
+                },
+                "maxWidth": {
+                  "type": "raw",
+                  "value": "lg"
+                },
+                "variant": {
+                  "type": "raw",
+                  "value": "floating"
+                },
+                "isBordered": {
+                  "type": "raw",
+                  "value": true
+                },
+                "children": {
+                  "type": "array",
+                  "value": [
+                    {
+                      "type": "element",
+                      "module": "@nextui-org/react",
+                      "name": "NavbarBrand",
+                      "props": {
+                        "type": "object",
+                        "value": {
+                          "children": {
+                            "type": "element",
+                            "name": "p",
+                            "props": {
+                              "type": "raw",
+                              "value": {
+                                "b": true,
+                                "color": "inherit",
+                                "hideIn": "xs",
+                                "children": "Brand"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "module": "@nextui-org/react",
+                      "name": "NavbarContent",
+                      "props": {
+                        "type": "object",
+                        "value": {
+                          "variant": {
+                            "type": "raw",
+                            "value": "highlight"
+                          },
+                          "activeColor": {
+                            "type": "raw",
+                            "value": "success"
+                          },
+                          "children": {
+                            "type": "array",
+                            "value": [
+                              {
+                                "type": "array",
+                                "value": [
+                                  {
+                                    "type": "element",
+                                    "module": "@nextui-org/react",
+                                    "name": "Link",
+                                    "props": {
+                                      "type": "raw",
+                                      "value": {
+                                        "inputId": "link_1",
+                                        "href": "./#!/main",
+                                        "key": 1,
+                                        "value": 1,
+                                        "parent": "navbar_main",
+                                        "isActive": true,
+                                        "children": "Link to main"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "element",
+                                    "module": "@nextui-org/react",
+                                    "name": "Link",
+                                    "props": {
+                                      "type": "raw",
+                                      "value": {
+                                        "inputId": "link_2",
+                                        "href": "./#!/other",
+                                        "key": 2,
+                                        "value": 2,
+                                        "parent": "navbar_other",
+                                        "isActive": false,
+                                        "children": "Link to other"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "element",
+                                "module": "@nextui-org/react",
+                                "name": "NavbarItem",
+                                "props": {
+                                  "type": "object",
+                                  "value": {
+                                    "children": {
+                                      "type": "element",
+                                      "module": "@/NextUI",
+                                      "name": "Button",
+                                      "props": {
+                                        "type": "raw",
+                                        "value": {
+                                          "inputId": "navbar_button-main",
+                                          "auto": true,
+                                          "flat": true,
+                                          "value": null,
+                                          "type": null,
+                                          "children": "Click me"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "deps": [
+        {
+          "name": "nextui",
+          "version": "2.0.0",
+          "src": {
+            "href": "nextui-2.0.0"
+          },
+          "meta": null,
+          "script": "nextui.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    },
+    "nav_other": {
+      "data": {
+        "type": "array",
+        "value": [
+          {
+            "type": "element",
+            "name": "script",
+            "props": {
+              "type": "raw",
+              "value": {
+                "children": "Shiny.setInputValue('navbar_other', 0)"
+              }
+            }
+          },
+          {
+            "type": "element",
+            "module": "@nextui-org/react",
+            "name": "Navbar",
+            "props": {
+              "type": "object",
+              "value": {
+                "id": {
+                  "type": "raw",
+                  "value": "navbar_other"
+                },
+                "maxWidth": {
+                  "type": "raw",
+                  "value": "lg"
+                },
+                "variant": {
+                  "type": "raw",
+                  "value": "floating"
+                },
+                "isBordered": {
+                  "type": "raw",
+                  "value": true
+                },
+                "children": {
+                  "type": "array",
+                  "value": [
+                    {
+                      "type": "element",
+                      "module": "@nextui-org/react",
+                      "name": "NavbarBrand",
+                      "props": {
+                        "type": "object",
+                        "value": {
+                          "children": {
+                            "type": "element",
+                            "name": "p",
+                            "props": {
+                              "type": "raw",
+                              "value": {
+                                "b": true,
+                                "color": "inherit",
+                                "hideIn": "xs",
+                                "children": "Brand"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "module": "@nextui-org/react",
+                      "name": "NavbarContent",
+                      "props": {
+                        "type": "object",
+                        "value": {
+                          "variant": {
+                            "type": "raw",
+                            "value": "highlight"
+                          },
+                          "activeColor": {
+                            "type": "raw",
+                            "value": "success"
+                          },
+                          "children": {
+                            "type": "array",
+                            "value": [
+                              {
+                                "type": "array",
+                                "value": [
+                                  {
+                                    "type": "element",
+                                    "module": "@nextui-org/react",
+                                    "name": "Link",
+                                    "props": {
+                                      "type": "raw",
+                                      "value": {
+                                        "inputId": "link_1",
+                                        "href": "./#!/main",
+                                        "key": 1,
+                                        "value": 1,
+                                        "parent": "navbar_main",
+                                        "isActive": true,
+                                        "children": "Link to main"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "element",
+                                    "module": "@nextui-org/react",
+                                    "name": "Link",
+                                    "props": {
+                                      "type": "raw",
+                                      "value": {
+                                        "inputId": "link_2",
+                                        "href": "./#!/other",
+                                        "key": 2,
+                                        "value": 2,
+                                        "parent": "navbar_other",
+                                        "isActive": false,
+                                        "children": "Link to other"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "element",
+                                "module": "@nextui-org/react",
+                                "name": "NavbarItem",
+                                "props": {
+                                  "type": "object",
+                                  "value": {
+                                    "children": {
+                                      "type": "element",
+                                      "module": "@/NextUI",
+                                      "name": "Button",
+                                      "props": {
+                                        "type": "raw",
+                                        "value": {
+                                          "inputId": "navbar_button-other",
+                                          "auto": true,
+                                          "flat": true,
+                                          "value": null,
+                                          "type": null,
+                                          "children": "Click me"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "deps": [
+        {
+          "name": "nextui",
+          "version": "2.0.0",
+          "src": {
+            "href": "nextui-2.0.0"
+          },
+          "meta": null,
+          "script": "nextui.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    },
+    "table": "<table  class = 'table shiny-table table- spacing-s' style = 'width:auto;'>\n<thead> <tr> <th style='text-align: right;'> Sepal.Length <\/th> <th style='text-align: right;'> Sepal.Width <\/th> <th style='text-align: right;'> Petal.Length <\/th> <th style='text-align: right;'> Petal.Width <\/th> <th style='text-align: left;'> Species <\/th>  <\/tr> <\/thead> <tbody>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.60 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.90 <\/td> <td align=\"right\"> 1.70 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.10 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.70 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.10 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.30 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.10 <\/td> <td align=\"right\"> 0.10 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.20 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.90 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 1.70 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.70 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.70 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 3.60 <\/td> <td align=\"right\"> 1.00 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 1.70 <\/td> <td align=\"right\"> 0.50 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.90 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 4.10 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.10 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 4.20 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 1.20 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 3.60 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.10 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 2.30 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 1.30 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.60 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 1.90 <\/td> <td align=\"right\"> 0.40 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.30 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 1.60 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.30 <\/td> <td align=\"right\"> 3.70 <\/td> <td align=\"right\"> 1.50 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 1.40 <\/td> <td align=\"right\"> 0.20 <\/td> <td> setosa <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.00 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.90 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.30 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.50 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 1.60 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 2.40 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.60 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 3.90 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 2.00 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.90 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.20 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 2.20 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 3.60 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 4.10 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.20 <\/td> <td align=\"right\"> 2.20 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 3.90 <\/td> <td align=\"right\"> 1.10 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.90 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 1.80 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 1.20 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.30 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.60 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.80 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 1.70 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.60 <\/td> <td align=\"right\"> 3.50 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.40 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 1.10 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.40 <\/td> <td align=\"right\"> 3.70 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 3.90 <\/td> <td align=\"right\"> 1.20 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 1.60 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.60 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 4.70 <\/td> <td align=\"right\"> 1.50 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.30 <\/td> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.10 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.60 <\/td> <td align=\"right\"> 4.40 <\/td> <td align=\"right\"> 1.20 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.60 <\/td> <td align=\"right\"> 1.40 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.60 <\/td> <td align=\"right\"> 4.00 <\/td> <td align=\"right\"> 1.20 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 2.30 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 1.00 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 4.20 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.20 <\/td> <td align=\"right\"> 1.20 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.20 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.20 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 4.30 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 1.10 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.10 <\/td> <td align=\"right\"> 1.30 <\/td> <td> versicolor <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 2.50 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 1.90 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.10 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.90 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.50 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.20 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.60 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 6.60 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 4.50 <\/td> <td align=\"right\"> 1.70 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.30 <\/td> <td align=\"right\"> 2.90 <\/td> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.20 <\/td> <td align=\"right\"> 3.60 <\/td> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.50 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.50 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 5.30 <\/td> <td align=\"right\"> 1.90 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.80 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 2.40 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 5.30 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.50 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.70 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 2.20 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.70 <\/td> <td align=\"right\"> 2.60 <\/td> <td align=\"right\"> 6.90 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 2.20 <\/td> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 1.50 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.90 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.70 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.20 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.20 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.90 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.20 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 1.60 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.40 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 1.90 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.90 <\/td> <td align=\"right\"> 3.80 <\/td> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.20 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.80 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 1.50 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.60 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 1.40 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 7.70 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 6.10 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.40 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.40 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 5.50 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.00 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 4.80 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.90 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 2.10 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 5.60 <\/td> <td align=\"right\"> 2.40 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.90 <\/td> <td align=\"right\"> 3.10 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.80 <\/td> <td align=\"right\"> 2.70 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 1.90 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.80 <\/td> <td align=\"right\"> 3.20 <\/td> <td align=\"right\"> 5.90 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.30 <\/td> <td align=\"right\"> 5.70 <\/td> <td align=\"right\"> 2.50 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.70 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.30 <\/td> <td align=\"right\"> 2.50 <\/td> <td align=\"right\"> 5.00 <\/td> <td align=\"right\"> 1.90 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.50 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.20 <\/td> <td align=\"right\"> 2.00 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 6.20 <\/td> <td align=\"right\"> 3.40 <\/td> <td align=\"right\"> 5.40 <\/td> <td align=\"right\"> 2.30 <\/td> <td> virginica <\/td> <\/tr>\n  <tr> <td align=\"right\"> 5.90 <\/td> <td align=\"right\"> 3.00 <\/td> <td align=\"right\"> 5.10 <\/td> <td align=\"right\"> 1.80 <\/td> <td> virginica <\/td> <\/tr>\n   <\/tbody> <\/table>"
+  },
+  "export": {
+
+  }
+}

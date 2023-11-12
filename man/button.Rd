@@ -29,55 +29,41 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Buttons allow users to perform actions and choose with a single tap.
 }
 \details{
-\enumerate{
-\item Button Props
 \itemize{
-\item \bold{color}. Change button color. Type: NormalColors. Default: default.
-\item \bold{size}. Change button size. Type: NormalSizes. Default: md.
-\item \bold{disabled}. Disable button. Type: boolean. Default: false.
-\item \bold{bordered}. Bordered button. Type: boolean. Default: false.
-\item \bold{flat}. Flat button. Type: boolean. Default: false.
-\item \bold{rounded}. Rounded button. Type: boolean. Default: false.
-\item \bold{ghost}. The opposite color. Type: boolean. Default: false.
-\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-\item \bold{ripple}. Display drip animation. Type: boolean. Default: true.
-\item \bold{auto}. Autoscale button width. Type: boolean. Default: false.
-\item \bold{animated}. Display drip and scale animation. Type: boolean. Default: true.
-\item \bold{borderWeight}. Border weight for bordered button. Type: NormalWeights. Default: normal.
-\item \bold{autoFocus}. Automatically focus button. Type: boolean. Default: false.
-\item \bold{onClick}. Button click handler. Type: MouseEventHandler. Default: NA.
-\item \bold{icon}. Show icon in button. Type: ReactNode. Default: NA.
-\item \bold{iconRight}. Show icon on the other side of the button. Type: ReactNode. Default: NA.
-\item \bold{type}. Native type of button element. Type: button reset submit. Default: button.
-\item \bold{ref}. forwardRef. Type: Ref<HTMLButtonElement | null>. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{iconLeftCss}. Override icon CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{iconRightCss}. Override iconRight CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: button.
-\item \bold{...}. Button native props. Type: 'id', 'className', .... Default: NA.
+\item \bold{children}. The content to display in the button.. Type: ReactNode. Default: NA.
+\item \bold{variant}. The button appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
+\item \bold{color}. The button color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{size}. The button size.. Type: sm | md | lg. Default: md.
+\item \bold{radius}. The button border radius.. Type: none | sm | md | lg | full. Default: NA.
+\item \bold{startContent}. The button start content.. Type: ReactNode. Default: NA.
+\item \bold{endContent}. The button end content.. Type: ReactNode. Default: NA.
+\item \bold{spinner}. Spinner to display when loading.. Type: ReactNode. Default: NA.
+\item \bold{spinnerPlacement}. The spinner placement.. Type: start | end. Default: start.
+\item \bold{fullWidth}. Whether the button should take the full width of its parent.. Type: boolean. Default: false.
+\item \bold{isIconOnly}. Whether the button should have the same width and height.. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the button is disabled.. Type: boolean. Default: false.
+\item \bold{isLoading}. Whether the button is loading.. Type: boolean. Default: false.
+\item \bold{disableRipple}. Whether the button should display a ripple effect on press.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether the button should display animations.. Type: boolean. Default: false.
 }
-\item Button Events
 \itemize{
-\item \bold{onClick deprecated}. Button click handler. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPress}. Handler that is called when the press is released over the button.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressUp}. Handler that is called when a press is released over the button, regardless of whether it started on the button or not.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the button or when the pointer leaves the button.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 }
-\item Button Accessibility Props
 \itemize{
-\item \bold{id}. The element's unique identifier. See MDN. Type: string. Default: NA.
-\item \bold{excludeFromTabOrder}. Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.. Type: boolean. Default: NA.
-\item \bold{aria-expanded}. Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.. Type: boolean. Default: NA.
-\item \bold{aria-haspopup}. Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.. Type: boolean menu listbox tree grid dialog. Default: NA.
-\item \bold{aria-controls}. Identifies the element (or elements) whose contents or presence are controlled by the current element.. Type: string. Default: NA.
-\item \bold{aria-pressed}. Indicates the current "pressed" state of toggle buttons.. Type: boolean. Default: NA.
-\item \bold{aria-label}. Defines a string value that labels the current element. Type: string. Default: NA.
-\item \bold{aria-labelledby}. Identifies the element (or elements) that labels the current element. Type: string. Default: NA.
-\item \bold{aria-describedby}. Identifies the element (or elements) that describes the object.. Type: string. Default: NA.
-\item \bold{aria-details}. Identifies the element (or elements) that provide a detailed, extended description for the object.. Type: string. Default: NA.
-}
+\item \bold{children}. The buttons to display.. Type: ReactNode | ReactNode[]. Default: NA.
+\item \bold{variant}. The buttons appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
+\item \bold{color}. The buttons color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{size}. The buttons size.. Type: sm | md | lg. Default: md.
+\item \bold{radius}. The buttons border radius.. Type: none | sm | md | lg | full. Default: xl.
+\item \bold{fullWidth}. Whether the buttons should take the full width.. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the buttons are disabled.. Type: boolean. Default: false.
 }
 }
 \examples{

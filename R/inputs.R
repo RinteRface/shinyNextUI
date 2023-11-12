@@ -128,6 +128,7 @@ checkbox_input <- input("Checkbox", FALSE)
 update_checkbox_input <- shiny.react::updateReactInput
 
 #' @keywords internal
+#' @noRd
 create_group_input <- function(
     inputId,
     ...,
@@ -180,6 +181,7 @@ radio_input <- function(inputId, ..., choices, selected = choices[1]) {
 }
 
 #' @param keywords internal
+#' @noRd
 update_group_input <- function(
     session = shiny::getDefaultReactiveDomain(),
     inputId,
@@ -203,7 +205,6 @@ update_group_input <- function(
 
 #' @rdname radio
 #' @param session Shiny session.
-#' @inheritParams radio_input
 #' @export
 update_radio_input <- function(
     session = shiny::getDefaultReactiveDomain(),
@@ -222,8 +223,10 @@ update_radio_input <- function(
   )
 }
 
+#' Checkbox group input
+#'
 #' @rdname checkbox-group
-#' @inherit radio_input
+#' @inheritParams radio_input
 #' @export
 checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
   create_group_input(
@@ -269,6 +272,8 @@ accordion_item <- component("AccordionItem")
 #' @export
 update_accordion <- shiny.react::updateReactInput
 
+#' Dropdown menu
+#'
 #' @rdname dropdown
 #' @inherit shinyInput params return
 #' @export

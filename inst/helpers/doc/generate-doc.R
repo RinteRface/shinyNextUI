@@ -93,6 +93,7 @@ items <- list(
     #"checkbox-group",
     "chip",
     "code",
+    "divider",
     #"dropdown",
     "image",
     "input",

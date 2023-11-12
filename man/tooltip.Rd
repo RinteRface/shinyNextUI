@@ -6,6 +6,13 @@
 \usage{
 tooltip(...)
 }
+\arguments{
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
+}
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+}
 \description{
 Tooltips display a brief, informative message that appears when a user interacts with an element.
 }

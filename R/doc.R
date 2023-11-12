@@ -421,6 +421,22 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/code}.
 NULL
 
+#' divider
+#'
+#' @description
+#' Divider is a component that separates content in a page.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{orientation}. The orientation of the divider.. Type: horizontal | vertical. Default: horizontal.
+#' }
+#' @md
+#' @name divider
+#' @example inst/examples/divider/app.R
+#' @seealso See \url{https://nextui.org/docs/components/divider}.
+NULL
+
 #' image
 #'
 #' @description

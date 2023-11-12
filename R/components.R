@@ -55,7 +55,6 @@ code_block <- component("Code")
 
 #' @rdname divider
 #' @inherit component params return
-#' @noRd
 #' @export
 divider <- component("Divider")
 

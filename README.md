@@ -33,6 +33,8 @@ run_example("card")
 
 ## Developer
 
+Within the `js` folder, run `npm install`. Then, for each change:
+
 ```shell
 # Update CSS
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch

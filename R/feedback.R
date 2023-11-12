@@ -33,5 +33,6 @@ popover_trigger <- component("PopoverTrigger")
 popover_content <- component("PopoverContent")
 
 #' @rdname tooltip
+#' @inherit component params return
 #' @export
 tooltip <- component("Tooltip")

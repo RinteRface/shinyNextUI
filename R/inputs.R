@@ -15,37 +15,37 @@ input <- function(name, default_value = NULL, type = NULL) {
 }
 
 # Useful for radioButtons, checkBoxGroup
-group_input <- function(name, type) {
-  function(inputId, ..., choices = choices, selected = NULL) {
-
-    choices_fun <- switch(
-      type,
-      "checkbox" = checkbox_option,
-      "radio" = radio_option
-    )
-    # choices must be
-    # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
-    choices <-  lapply(seq_along(choices), function(i) {
-      choices_fun(
-        key = names(choices)[[i]],
-        value = names(choices)[[i]],
-        choices[[i]]
-      )
-    })
-
-    shiny.react::reactElement(
-      module = "@/NextUI",
-      name = name,
-      props = shiny.react::asProps(
-        inputId = inputId,
-        ...,
-        value = selected,
-        choices # expect radio component
-      ),
-      deps = nextui_deps()
-    )
-  }
-}
+#group_input <- function(name, type) {
+#  function(inputId, ..., choices = choices, selected = NULL) {
+#
+#    choices_fun <- switch(
+#      type,
+#      "checkbox" = checkbox_option,
+#      "radio" = radio_option
+#    )
+#    # choices must be
+#    # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
+#    choices <-  lapply(seq_along(choices), function(i) {
+#      choices_fun(
+#        key = names(choices)[[i]],
+#        value = names(choices)[[i]],
+#        choices[[i]]
+#      )
+#    })
+#
+#    shiny.react::reactElement(
+#      module = "@/NextUI",
+#      name = name,
+#      props = shiny.react::asProps(
+#        inputId = inputId,
+#        ...,
+#        value = selected,
+#        choices # expect radio component
+#      ),
+#      deps = nextui_deps()
+#    )
+#  }
+#}
 
 #' @rdname button
 #' @inherit shinyInput params return
@@ -275,6 +275,7 @@ update_accordion <- shiny.react::updateReactInput
 #' Dropdown menu
 #'
 #' @rdname dropdown
+#' @inheritParams radio_input
 #' @inherit shinyInput params return
 #' @export
 dropdow_menu <- function(inputId, ..., choices = NULL, selected = NULL) {

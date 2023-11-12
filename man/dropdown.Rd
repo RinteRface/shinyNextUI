@@ -16,12 +16,15 @@ dropdown_section(...)
 update_dropdown(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
-\item{inputId}{ID of the component.}
+\item{inputId}{Unique input id.}
 
-\item{...}{Props to pass to the component.
-The allowed props are listed below in the \bold{Details} section.}
+\item{...}{Props.}
 
-\item{session}{Object passed as the \code{session} argument to Shiny server.}
+\item{choices}{Radio choices.}
+
+\item{selected}{Default selected value.}
+
+\item{session}{Shiny session.}
 }
 \value{
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.

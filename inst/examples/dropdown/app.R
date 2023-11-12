@@ -70,9 +70,9 @@ ui <- nextui_page(
       inputId = "dropdown",
       label = "Dropdown menu",
       color = color,
-      selected = "new",
+      selected = "Item 2",
       variant = "bordered",
-      disabledKeys = c(3, 4),
+      disabledKeys = c("Item 3", "Item 4"),
       selectionMode = "multiple",
       choices = items
     )

@@ -4,17 +4,10 @@
 \alias{nextui_page}
 \title{NextUI page wrapper}
 \usage{
-nextui_page(
-  ...,
-  theme = c("light", "dark"),
-  dark_mode = FALSE,
-  debug_react = FALSE
-)
+nextui_page(..., dark_mode = FALSE, debug_react = FALSE)
 }
 \arguments{
 \item{...}{UI elements.}
-
-\item{theme}{Global page theme.}
 
 \item{dark_mode}{Apply global dark mode. If NULL, no switch is shown.}
 

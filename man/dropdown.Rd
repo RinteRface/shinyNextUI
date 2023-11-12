@@ -9,9 +9,7 @@
 \alias{update_dropdown}
 \title{dropdown}
 \usage{
-dropdown(...)
-
-dropdow_menu(inputId, ..., value = default_value)
+dropdow_menu(inputId, ..., choices = NULL, selected = NULL)
 
 dropdown_trigger(...)
 
@@ -22,17 +20,16 @@ dropdown_section(...)
 update_dropdown(session = shiny::getDefaultReactiveDomain(), inputId, ...)
 }
 \arguments{
-\item{...}{Props to pass to the component.
-The allowed props are listed below in the \bold{Details} section.}
-
 \item{inputId}{ID of the component.}
 
-\item{value}{Starting value.}
+\item{...}{Props to pass to the component.
+The allowed props are listed below in the \bold{Details} section.}
 
 \item{session}{Object passed as the \code{session} argument to Shiny server.}
 }
 \value{
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+The update functions return nothing (called for side effects).
 }
 \description{
 Displays a list of actions or options that a user can choose. Dropdown implementation is based on
@@ -146,22 +143,14 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-2 my-2",
-    dropdown(
-      dropdown_trigger(
-        button(
-          "Trigger",
-          color = color
-        )
-      ),
-      dropdow_menu(
-        inputId = "dropdown",
-        color = color,
-        disabledKeys = JS("['3', '4']"),
-        selectionMode = "multiple",
-        items,
-        dropdown_section(
-          dropdown_item(key = 9, "Item 9")
-        )
+    dropdow_menu(
+      inputId = "dropdown",
+      color = color,
+      #disabledKeys = JS("['3', '4']"),
+      selectionMode = "multiple",
+      choices = items,
+      dropdown_section(
+        dropdown_item(key = 9, "Item 9")
       )
     )
   ),

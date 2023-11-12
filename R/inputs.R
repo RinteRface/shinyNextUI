@@ -128,26 +128,32 @@ checkbox_input <- input("Checkbox", FALSE)
 update_checkbox_input <- shiny.react::updateReactInput
 
 #' @keywords internal
-create_group_input <- function(inputId, ..., choices, selected, type = c("Checkbox", "Radio")) {
+create_group_input <- function(
+    inputId,
+    ...,
+    choices,
+    selected,
+    type = c("CheckboxGroup", "RadioGroup", "DropdownMenu")
+  ) {
 
   type <- match.arg(type)
-  module <- paste0(type, "Group")
 
   process_val <- switch(
     type,
-    "Checkbox" = as.list,
-    "Radio" = I
+    "CheckboxGroup" = as.list,
+    "RadioGroup" = I,
+    "DropdownMenu" = as.list
   )
 
   tagList(
     # This seems a bit hacky but this can't be called from the main JS script
     # because we only need it when the radio is invoked ...
-    tags$script(sprintf("jsmodule['@/ReactR']['%s']()", module)),
+    tags$script(sprintf("jsmodule['@/ReactR']['%s']()", type)),
     createReactShinyInput(
       inputId = inputId,
-      class = tolower(module),
+      class = tolower(type),
       default = process_val(selected),
-      configuration = list(children = as.list(choices), ...),
+      configuration = listRenderTags(list(children = as.list(choices), ...)),
       container = htmltools::tags$div
     )
   )
@@ -169,7 +175,7 @@ radio_input <- function(inputId, ..., choices, selected = choices[1]) {
     ...,
     choices = choices,
     selected = selected,
-    type = "Radio"
+    type = "RadioGroup"
   )
 }
 
@@ -180,15 +186,15 @@ update_group_input <- function(
     ...,
     choices = NULL,
     selected = NULL,
-    type = c("Checkbox", "Radio")
+    type = c("CheckboxGroup", "RadioGroup")
 ) {
 
   type <- match.arg(type)
 
   message <- list()
-  if (type == "Checkbox") selected <- as.list(selected)
+  if (type == "CheckboxGroup") selected <- as.list(selected)
   message$value <-  selected
-  configuration <- c(children = as.list(choices), list(...))
+  configuration <- listRenderTags(c(children = as.list(choices), list(...)))
   if (length(configuration) > 0) {
     message$configuration <- configuration
   }
@@ -212,7 +218,7 @@ update_radio_input <- function(
     ...,
     choices = choices,
     selected = selected,
-    type = "Radio"
+    type = "RadioGroup"
   )
 }
 
@@ -225,7 +231,7 @@ checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
     ...,
     choices = choices,
     selected = selected,
-    type = "Checkbox"
+    type = "CheckboxGroup"
   )
 }
 
@@ -245,7 +251,7 @@ update_checkboxgroup_input <- function(
     ...,
     choices = choices,
     selected = selected,
-    type = "Checkbox"
+    type = "CheckboxGroup"
   )
 }
 
@@ -264,27 +270,42 @@ accordion_item <- component("AccordionItem")
 update_accordion <- shiny.react::updateReactInput
 
 #' @rdname dropdown
-#' @inherit component params return
-#' @export
-dropdown <- component("Dropdown")
-
-#' @rdname dropdown
 #' @inherit shinyInput params return
 #' @export
-dropdow_menu <- input("DropdownMenu")
+dropdow_menu <- function(inputId, ..., choices = NULL, selected = NULL) {
+  create_group_input(
+    inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "DropdownMenu"
+  )
+}
 
 #' @rdname dropdown
 #' @export
-dropdown_trigger <- component("DropdownTrigger")
-
-#' @rdname dropdown
-#' @export
-dropdown_item <- component("DropdownItem")
+dropdown_item <- function(...) {
+  list(..., dropdownItem = TRUE)
+}
 
 #' @rdname dropdown
 #' @note Container for related \link{dropdown_item}.
 #' @export
-dropdown_section <- component("DropdownSection")
+dropdown_section <- function(...) {
+  tmp <- list(...)
+  props <- list()
+  children <- list()
+  for (i in seq_along(tmp)) {
+    if (inherits(tmp[[i]], "list")) {
+      children <- append(children, tmp[[i]])
+    } else {
+      l <- tmp[[i]]
+      names(l) <- names(tmp)[[i]]
+      props <- append(props, l)
+    }
+  }
+  list(props = props, children = children, dropdownSection = TRUE)
+}
 
 #' @rdname dropdown
 #' @export

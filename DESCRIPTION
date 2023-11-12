@@ -12,7 +12,8 @@ RoxygenNote: 7.2.3
 Imports:
   htmltools,
   shiny,
-  shiny.react
+  shiny.react,
+  jsonlite
 Suggests: 
     testthat (>= 3.0.0),
     shinytest2,

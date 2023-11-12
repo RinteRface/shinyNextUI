@@ -2,13 +2,63 @@ library(shiny)
 library(shinyNextUI)
 library(shiny.react)
 
-items <- lapply(1:8, function(i) {
-  dropdown_item(
-    key = i,
-    description = sprintf("Description %s", i),
-    sprintf("Item %s", i)
+items <- list(
+  # Dropdown section
+  dropdown_section(
+    showDivider = TRUE,
+    title = "Section 1",
+    # Dropdown Items
+    list(
+      dropdown_item(
+        title = "Item 1",
+        shortcut = "⌘N",
+        color = "danger",
+        description = "Item description",
+        startContent = icon("clock")
+      ),
+      dropdown_item(
+        title = "Item 2",
+        shortcut = "⌘N",
+        color = "success",
+        description = "Item description",
+        startContent = icon("home")
+      )
+    )
+  ),
+  dropdown_section(
+    showDivider = FALSE,
+    title = "Section 2",
+    # Dropdown Items
+    list(
+      dropdown_item(
+        title = "Item 3",
+        color = "warning",
+        description = "Item description"
+      ),
+      dropdown_item(
+        title = "Item 4"
+      )
+    )
   )
-})
+)
+
+# You can also skip section
+#items <- list(
+#  dropdown_item(
+#    title = "Item 1",
+#    shortcut = "⌘N",
+#    color = "danger",
+#    description = "Item description"#,
+#    #startContent = icon("clock")
+#  ),
+#  dropdown_item(
+#    title = "Item 2",
+#    shortcut = "⌘N",
+#    color = "success",
+#    description = "Item description"#,
+#    #startContent = icon("home")
+#  )
+#)
 
 color <- "success"
 
@@ -16,23 +66,15 @@ ui <- nextui_page(
   debug_react = TRUE,
   div(
     class = "flex gap-2 my-2",
-    dropdown(
-      dropdown_trigger(
-        button(
-          "Trigger",
-          color = color
-        )
-      ),
-      dropdow_menu(
-        inputId = "dropdown",
-        color = color,
-        disabledKeys = JS("['3', '4']"),
-        selectionMode = "multiple",
-        items,
-        dropdown_section(
-          dropdown_item(key = 9, "Item 9")
-        )
-      )
+    dropdow_menu(
+      inputId = "dropdown",
+      label = "Dropdown menu",
+      color = color,
+      selected = "new",
+      variant = "bordered",
+      disabledKeys = c(3, 4),
+      selectionMode = "multiple",
+      choices = items
     )
   ),
   verbatimTextOutput("dropdown_val")

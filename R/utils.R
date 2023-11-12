@@ -41,6 +41,23 @@ createReactShinyInput <- function (
   )
 }
 
+# Converts any shiny tag into character so that toJSON does not cry
+listRenderTags <- function(l) {
+  lapply(
+    X = l,
+    function(x) {
+      if (inherits(x, c("shiny.tag", "shiny.tag.list"))) {
+        as.character(x)
+      } else if (inherits(x, "list")) {
+        # Recursive part
+        listRenderTags(x)
+      } else {
+        x
+      }
+    }
+  )
+}
+
 #' Indicates whether testthat is running
 #'
 #' @return Boolean.

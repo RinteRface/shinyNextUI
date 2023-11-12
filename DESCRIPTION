@@ -21,3 +21,6 @@ Suggests:
     thematic,
     shiny.router
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true

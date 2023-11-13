@@ -48,7 +48,7 @@ mod_poke_type_server <- function(id, selected) {
 
       types <- selected()$types
 
-      lapply(seq_along(types), FUN = function(i) {
+      items <- lapply(seq_along(types), FUN = function(i) {
         type_name <- types[[i]]$name
         type_slot <- types[[i]]$slot
 
@@ -75,24 +75,38 @@ mod_poke_type_server <- function(id, selected) {
 
         poke_color <- get_type_colors(type_name)
 
-        table(
-          removeWrapper = TRUE,
-          data.frame(
-            Damages = c("2X", "1/2", "0"),
-            `Damages from` = c(
-              paste(double_damage_from, collapse = ", "),
-              paste(half_damage_from, collapse = ", "),
-              paste(no_damage_from, collapse = ", ")
-            ),
-            `Damages to` = c(
-              paste(double_damage_to, collapse = ", "),
-              paste(half_damage_to, collapse = ", "),
-              paste(no_damage_to, collapse = ", ")
+        accordion_item(
+          key = i,
+          title = type_name,
+          table(
+            removeWrapper = TRUE,
+            isStriped = TRUE,
+            data.frame(
+              Damages = c("2X", "1/2", "0"),
+              `Damages from` = c(
+                paste(double_damage_from, collapse = ", "),
+                paste(half_damage_from, collapse = ", "),
+                paste(no_damage_from, collapse = ", ")
+              ),
+              `Damages to` = c(
+                paste(double_damage_to, collapse = ", "),
+                paste(half_damage_to, collapse = ", "),
+                paste(no_damage_to, collapse = ", ")
+              )
             )
           )
         )
 
       })
+
+      accordion(
+        "type_accordion",
+        variant = "bordered",
+        selectionMode = "multiple",
+        isCompact = TRUE,
+        value = JS("['1', '2']"),
+        items
+      )
 
     })
   })

@@ -18,6 +18,7 @@ ui <- nextui_page(
   card(
     shadow = "sm",
     card_header(
+      className = "flex gap-4 justify-evenly",
       mod_poke_info_ui("poke_info_1")
     ),
     divider(),
@@ -26,9 +27,8 @@ ui <- nextui_page(
       mod_poke_stats_ui("poke_stats_1"),
       p(class = "font-extrabold text-2xl uppercase", "Moves"),
       accordion(
-        "accordion",
+        "moves_accordion",
         variant = "bordered",
-        selectionMode = "multiple",
         isCompact = TRUE,
         value = JS("['1']"),
         accordion_item(

@@ -18,7 +18,7 @@ mod_poke_evolve_server <- function(id, selected, is_shiny) {
         # Check that the evolution belongs to the first 151 pkmns ...
         if (evol$id <= 151) {
           tags$div(
-            tags$p("Evolves From"),
+            tags$p("Evolves from:"),
             avatar(
               size = "xs",
               src = if (is_shiny()) {

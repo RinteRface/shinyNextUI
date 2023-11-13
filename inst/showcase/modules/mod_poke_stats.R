@@ -85,9 +85,9 @@ process_pokemon_stats <- function(stats) {
 mod_poke_stats_ui <- function(id) {
   ns <- NS(id)
   div(
-    class = "flex flex-row gap-4 justify-center",
+    class = "flex gap-4 justify-evenly",
     div(
-      class = "flex flex-col gap-4 basis-1/3",
+      class = "flex flex-col gap-4 basis-1/2",
       p(class = "font-extrabold text-2xl uppercase my-2", "General"),
       uiOutput(ns("basic_stats")),
       p(class = "font-extrabold text-2xl uppercase my-2", icon("location-dot"), " Location"),
@@ -96,9 +96,9 @@ mod_poke_stats_ui <- function(id) {
       mod_poke_type_ui(ns("poke_type_1"))
     ),
     div(
-      class = "flex flex-col gap-4 basis-2/3",
+      class = "flex flex-col gap-4 basis-1/2",
       div(
-        class = "flex flex-row gap-4",
+        class = "flex gap-4",
         p(
           class = "font-extrabold text-2xl uppercase",
           badge(
@@ -138,12 +138,13 @@ mod_poke_stats_server <- function(id, selected) {
         lapply(other_stats_names(), function(stat) {
           listbox_item(
             key = stat,
-            startContent = switch(stat,
-                                  "height" = icon("up-down"),
-                                  "weight" = icon("weight-scale"),
-                                  "base_happiness" = icon("face-smile"),
-                                  "capture_rate" = icon("house"),
-                                  "growth_rate" = icon("up-long")
+            startContent = switch(
+              stat,
+              "height" = icon("up-down"),
+              "weight" = icon("weight-scale"),
+              "base_happiness" = icon("face-smile"),
+              "capture_rate" = icon("bowling-ball"),
+              "growth_rate" = icon("up-long")
             ),
             stat,
             endContent = selected()$other_stats[[stat]]

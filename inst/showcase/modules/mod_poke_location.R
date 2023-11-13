@@ -10,7 +10,7 @@ mod_poke_location_server <- function(id, selected) {
     output$poke_locations <- renderUI({
       req(!is.null(selected()))
 
-      locations <- selected()$locations
+      locations <- unique(selected()$locations)
 
       if (is.null(locations)) {
         "This pokemon cannot be found in the wild."

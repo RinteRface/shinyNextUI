@@ -1352,6 +1352,10 @@ video {
   flex-basis: 0px;
 }
 
+.basis-1\/2 {
+  flex-basis: 50%;
+}
+
 .basis-1\/3 {
   flex-basis: 33.333333%;
 }

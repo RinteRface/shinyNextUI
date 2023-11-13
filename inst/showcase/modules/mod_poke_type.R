@@ -21,7 +21,19 @@ get_type_colors <- function(type) {
 mod_poke_type_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    p(class = "font-extrabold text-2xl uppercase my-2", "Types"),
+    div(
+      class = "flex flex-row gap-2",
+      p(class = "font-extrabold text-2xl uppercase", "Types"),
+      tooltip(
+        tags$sup(icon("question", size = "0.75em")),
+        content = HTML("A pokemon has at least one type but may have several. <br/>
+        Each type has weakness/strength against another one. <br/>
+        For instance, fire is weak against water."),
+        color = "foreground",
+        placement = "right",
+        showArrow = TRUE
+      )
+    ),
     uiOutput(ns("poke_types"))
   )
 }
@@ -63,12 +75,21 @@ mod_poke_type_server <- function(id, selected) {
 
         poke_color <- get_type_colors(type_name)
 
-        damages_table <- data.frame(
-
-        )
-
         table(
-
+          removeWrapper = TRUE,
+          data.frame(
+            Damages = c("2X", "1/2", "0"),
+            `Damages from` = c(
+              paste(double_damage_from, collapse = ", "),
+              paste(half_damage_from, collapse = ", "),
+              paste(no_damage_from, collapse = ", ")
+            ),
+            `Damages to` = c(
+              paste(double_damage_to, collapse = ", "),
+              paste(half_damage_to, collapse = ", "),
+              paste(no_damage_to, collapse = ", ")
+            )
+          )
         )
 
       })

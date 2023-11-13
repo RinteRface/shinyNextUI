@@ -16,7 +16,7 @@ mod_poke_location_server <- function(id, selected) {
         "This pokemon cannot be found in the wild."
       } else {
         div(
-          class = "flex flex-row gap-2",
+          class = "flex gap-2 flex-wrap",
           lapply(locations, \(loc) {
             chip(loc)
           })

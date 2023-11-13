@@ -14,9 +14,9 @@ mod_poke_move_server <- function(id, selected) {
       moves <- selected()$moves
 
       dat <- data.frame(
-        name = purrr::map(moves, `[`, 'name') |> unlist(),
-        power = purrr::map(moves, `[`, 'power') |> unlist(),
-        text = purrr::map(moves, `[`, 'text') |> unlist()
+        Name = purrr::map(moves, `[`, 'name') |> unlist(),
+        Power = purrr::map(moves, `[`, 'power') |> unlist(),
+        Description = purrr::map(moves, `[`, 'text') |> unlist()
       )
 
       table(dat, isStriped = TRUE, isHeaderSticky = TRUE, removeWrapper = TRUE)

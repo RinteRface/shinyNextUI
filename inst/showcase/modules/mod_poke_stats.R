@@ -90,11 +90,32 @@ mod_poke_stats_ui <- function(id) {
       class = "flex flex-col gap-4 basis-1/3",
       p(class = "font-extrabold text-2xl uppercase my-2", "General"),
       uiOutput(ns("basic_stats")),
+      p(class = "font-extrabold text-2xl uppercase my-2", icon("location-dot"), " Location"),
+      mod_poke_location_ui(ns("poke_location_1")),
+      spacer(y = 5),
       mod_poke_type_ui(ns("poke_type_1"))
     ),
     div(
       class = "flex flex-col gap-4 basis-2/3",
-      p(class = "font-extrabold text-2xl uppercase my-2", "Stats"),
+      div(
+        class = "flex flex-row gap-4",
+        p(
+          class = "font-extrabold text-2xl uppercase",
+          badge(
+            color = "danger",
+            placement = "bottom-right", "Stats",
+            content = textOutput(ns("sum_stats"))
+          )
+        ),
+        tooltip(
+          tags$sup(icon("question", size = "0.75em")),
+          content = HTML("Sum of stats. <br/>
+            Mew is 500."),
+          color = "foreground",
+          placement = "right",
+          showArrow = TRUE
+        )
+      ),
       uiOutput(ns("poke_stats_card"))
     )
   )
@@ -105,6 +126,7 @@ mod_poke_stats_server <- function(id, selected) {
     ns <- session$ns
 
     mod_poke_type_server("poke_type_1", selected)
+    mod_poke_location_server("poke_location_1", selected)
 
     # Programmatically generate stat cards
     output$basic_stats <- renderUI({
@@ -117,11 +139,11 @@ mod_poke_stats_server <- function(id, selected) {
           listbox_item(
             key = stat,
             startContent = switch(stat,
-              "height" = icon("up-down"),
-              "weight" = icon("weight-scale"),
-              "base_happiness" = icon("face-smile"),
-              "capture_rate" = icon("house"),
-              "growth_rate" = icon("up-long")
+                                  "height" = icon("up-down"),
+                                  "weight" = icon("weight-scale"),
+                                  "base_happiness" = icon("face-smile"),
+                                  "capture_rate" = icon("house"),
+                                  "growth_rate" = icon("up-long")
             ),
             stat,
             endContent = selected()$other_stats[[stat]]
@@ -136,14 +158,14 @@ mod_poke_stats_server <- function(id, selected) {
       create_radar_stats(selected())
     })
 
+    output$sum_stats <- renderText({
+      selected()$sum_stats
+    })
+
     # card wrapper for the charts
     output$poke_stats_card <- renderUI({
       req(!is.null(selected()))
-
-      tagList(
-        echarts4rOutput(outputId = ns("poke_stats")),
-        tags$strong(sprintf("Sum of stats: %s (Mew is 500)", selected()$sum_stats))
-      )
+      echarts4rOutput(outputId = ns("poke_stats"), height = "700px")
     })
   })
 }

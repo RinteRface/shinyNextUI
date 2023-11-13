@@ -42,7 +42,7 @@ get_max_of_max <- function(data = get_max_stats()) {
     max()
 }
 
-create_radar_stats <- function(pokemon) {
+create_radar_stats <- function(pokemon, theme) {
   # R CMD check stop crying ...
   x <- y <- z <- NULL
 
@@ -52,6 +52,9 @@ create_radar_stats <- function(pokemon) {
 
   # Also adds previous pokemon stats to compare
   # Check that the evolution belongs to the first 151 pkmns ...
+
+  legend_color <- if (theme == "light") "#000" else "#fff"
+
   if (length(pokemon$evolve_from) > 0 && pokemon$evolve_from$id <= 151) {
     tmp <- process_pokemon_stats(
       poke_data[[pokemon$evolve_from$name]]$stats
@@ -65,12 +68,14 @@ create_radar_stats <- function(pokemon) {
         max = get_max_of_max()
       ) |>
       e_radar(z, name = paste0(pokemon$evolve_from$name, " Stats")) |>
-      e_tooltip(trigger = "item")
+      e_tooltip(trigger = "item") |>
+      e_legend(textStyle = list(color = legend_color))
   } else {
     data |>
       e_charts(x) |>
       e_radar(y, name = paste0(pokemon$name, " Stats"), max = get_max_of_max()) |>
-      e_tooltip(trigger = "item")
+      e_tooltip(trigger = "item") |>
+      e_legend(textStyle = list(color = legend_color))
   }
 }
 
@@ -121,7 +126,7 @@ mod_poke_stats_ui <- function(id) {
   )
 }
 
-mod_poke_stats_server <- function(id, selected) {
+mod_poke_stats_server <- function(id, selected, theme) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
@@ -156,7 +161,7 @@ mod_poke_stats_server <- function(id, selected) {
     # Generate radar chart for pokemons
     output$poke_stats <- renderEcharts4r({
       req(!is.null(selected()))
-      create_radar_stats(selected())
+      create_radar_stats(selected(), theme())
     })
 
     output$sum_stats <- renderText({

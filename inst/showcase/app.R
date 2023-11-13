@@ -1,6 +1,7 @@
 library(shiny)
 library(shinyNextUI)
 library(echarts4r)
+library(shiny.react)
 library(dplyr)
 
 sapply(list.files(

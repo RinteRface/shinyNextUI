@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 ui <- nextui_page(
   dark_mode = TRUE,

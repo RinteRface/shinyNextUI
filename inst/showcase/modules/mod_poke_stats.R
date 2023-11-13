@@ -84,15 +84,19 @@ process_pokemon_stats <- function(stats) {
 
 mod_poke_stats_ui <- function(id) {
   ns <- NS(id)
-  tagList(
+  div(
+    class = "flex flex-row gap-4 justify-center",
     div(
-      class = "grid grid-cols-4 gap-4",
-      lapply(other_stats_names(), function(stat) {
-        uiOutput(ns(stat))
-      })
+      class = "flex flex-col gap-4 basis-1/3",
+      p(class = "font-extrabold text-2xl uppercase my-2", "General"),
+      uiOutput(ns("basic_stats")),
+      mod_poke_type_ui(ns("poke_type_1"))
     ),
-    spacer(y = 2),
-    uiOutput(ns("poke_stats_card"))
+    div(
+      class = "flex flex-col gap-4 basis-2/3",
+      p(class = "font-extrabold text-2xl uppercase my-2", "Stats"),
+      uiOutput(ns("poke_stats_card"))
+    )
   )
 }
 
@@ -100,17 +104,30 @@ mod_poke_stats_server <- function(id, selected) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
-    # Programmatically generate stat cards
-    lapply(other_stats_names(), function(stat) {
-      output[[stat]] <- renderUI({
-        req(input$poke_basic_stats)
-        val <- selected()$other_stats[[stat]]
+    mod_poke_type_server("poke_type_1", selected)
 
-        card(
-          card_header(h1(stat)),
-          card_body(val)
-        )
-      })
+    # Programmatically generate stat cards
+    output$basic_stats <- renderUI({
+      listbox(
+        "basic_stats",
+        label = "Basic stats",
+        className = "w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100",
+        selectionMode = "none",
+        lapply(other_stats_names(), function(stat) {
+          listbox_item(
+            key = stat,
+            startContent = switch(stat,
+              "height" = icon("up-down"),
+              "weight" = icon("weight-scale"),
+              "base_happiness" = icon("face-smile"),
+              "capture_rate" = icon("house"),
+              "growth_rate" = icon("up-long")
+            ),
+            stat,
+            endContent = selected()$other_stats[[stat]]
+          )
+        })
+      )
     })
 
     # Generate radar chart for pokemons
@@ -123,19 +140,9 @@ mod_poke_stats_server <- function(id, selected) {
     output$poke_stats_card <- renderUI({
       req(!is.null(selected()))
 
-      card(
-        card_header(
-          class = "flex flex-row",
-          h1(paste0(selected()$name, " Stats")),
-          switch_input(
-            inputId = ns("poke_basic_stats"),
-            label = "Display Basic Stats?",
-            color = "warning"
-          )
-        ),
-        divider(),
-        card_footer(tags$strong(sprintf("Sum of stats: %s (Mew is 500)", selected()$sum_stats))),
-        card_body(echarts4rOutput(outputId = ns("poke_stats")))
+      tagList(
+        echarts4rOutput(outputId = ns("poke_stats")),
+        tags$strong(sprintf("Sum of stats: %s (Mew is 500)", selected()$sum_stats))
       )
     })
   })

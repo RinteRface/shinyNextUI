@@ -1,6 +1,6 @@
 mod_poke_evolve_ui <- function(id) {
   ns <- NS(id)
-  uiOutput(ns("poke_evolve"))
+  uiOutput(ns("poke_evolve"), inline = TRUE)
 }
 
 mod_poke_evolve_server <- function(id, selected, is_shiny) {
@@ -13,15 +13,14 @@ mod_poke_evolve_server <- function(id, selected, is_shiny) {
 
       # If pokemon can't evolve ...
       if (length(evol) == 0) {
-        tags$div(
-          tags$p("Base Pokemon"),
-        )
+        avatar(name = "Base")
       } else {
         # Check that the evolution belongs to the first 151 pkmns ...
         if (evol$id <= 151) {
           tags$div(
             tags$p("Evolves From"),
-            image(
+            avatar(
+              size = "xs",
               src = if (is_shiny()) {
                 poke_data[[evol$id]]$sprites$front_shiny
               } else {
@@ -29,13 +28,8 @@ mod_poke_evolve_server <- function(id, selected, is_shiny) {
               },
             )
           )
-        } else {
-          tags$div(
-            tags$p("Not first generation"),
-          )
         }
       }
-
     })
   })
 }

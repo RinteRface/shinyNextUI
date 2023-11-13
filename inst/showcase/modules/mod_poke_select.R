@@ -18,20 +18,26 @@ mod_poke_select_ui <- function(id) {
 
   ns <- NS(id)
   div(
-    class = "flex flex-row",
+    class = "flex flex-row justify-center",
     autocomplete(
       inputId = ns("selected"),
       label = "Select a pokemon:",
+      variant = "bordered",
+      size = "lg",
+      isRequired = TRUE,
+      startContent = icon("search"),
       items,
       value = poke_names[[1]]
     ),
     spacer(x = 5),
     # because it's a shiny app ;)
-    switch_input(
-      inputId = ns("is_shiny"),
-      label = "Shiny?",
-      value = TRUE,
-      color = "danger"
+    div(
+      class = "mt-4",
+      switch_input(
+        inputId = ns("is_shiny"),
+        "Shiny?",
+        value = TRUE
+      )
     )
   )
 }

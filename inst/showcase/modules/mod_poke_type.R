@@ -1,20 +1,20 @@
 get_type_colors <- function(type) {
   switch(type,
-         "normal" = "lightgray",
-         "fighting" = "#F98D80",
-         "flying" = "#BD9FFC",
-         "poison" = "#CBC3E3",
-         "ground" = "#FFFFED",
-         "rock" = "#FDDA0D",
-         "bug" = "#AEF1BD",
-         "ghost" = "#BD9FFC",
-         "fire" = "orange",
-         "water" = "#B3DFF8",
-         "grass" = "#1EE80A",
-         "electric" = "yellow",
-         "psychic" = "#FF9AD0",
-         "ice" = "#C5FAF8",
-         "dragon" = "#BD9FFC"
+         "normal" = "rgb(229 231 235)",
+         "fighting" = "rgb(244 63 94)",
+         "flying" = "rgb(147 197 253)",
+         "poison" = "rgb(139 92 246)",
+         "ground" = "rgb(180 83 9)",
+         "rock" = "rgb(253 230 138)",
+         "bug" = "rgb(132 204 22)",
+         "ghost" = "rgb(30 58 138)",
+         "fire" = "rgb(249 115 22)0",
+         "water" = "rgb(14 165 233)",
+         "grass" = "rgb(22 163 74)",
+         "electric" = "rgb(253 224 71)",
+         "psychic" = "rgb(251 113 133)",
+         "ice" = "rgb(94 234 212)",
+         "dragon" = "rgb(29 78 216)"
   )
 }
 
@@ -73,10 +73,12 @@ mod_poke_type_server <- function(id, selected) {
           damage_relations$no_damage_to
         )
 
-        poke_color <- get_type_colors(type_name)
-
         accordion_item(
           key = i,
+          startContent = chip(
+            i,
+            style = sprintf("background: %s;", get_type_colors(type_name))
+          ),
           title = type_name,
           table(
             removeWrapper = TRUE,
@@ -104,7 +106,7 @@ mod_poke_type_server <- function(id, selected) {
         variant = "bordered",
         selectionMode = "multiple",
         isCompact = TRUE,
-        value = JS("['1', '2']"),
+        #value = JS("['1', '2']"),
         items
       )
 

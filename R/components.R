@@ -43,6 +43,11 @@ card_header <- component("CardHeader")
 #' @export
 card_footer <- component("CardFooter")
 
+#' @rdname circular-progress
+#' @inherit component params return
+#' @export
+circular_progress <- component("CircularProgress")
+
 #' @rdname chip
 #' @inherit component params return
 #' @export
@@ -114,20 +119,36 @@ table_cell <-component("TableCell")
 #' @param data Data to render.
 #' @export
 table <- function(data = NULL, ...) {
-  cols <- colnames(data)
+  if (!inherits(data, "list")) {
+    cols <- colnames(data)
+    data <- if (nrow(data) == 0) {
+      list()
+    } else {
+      split(data, seq(nrow(data)))
+    }
+  } else {
+    if (length(names(data[[1]])) == 0) {
+      stop("Data should be a named list")
+    } else {
+      cols <- names(data[[1]])
+    }
+  }
 
-  if (is.null(data) || nrow(data) == 0) {
+  if (is.null(data) || length(data) == 0) {
     body <- table_body(
       emptyContent = chip("No data :( ...", color = "danger"),
       JS("[]")
     )
   } else {
+    # convert each rows to a list
+
     body <- table_body(
-      lapply(seq_len(nrow(data)), function(i) {
+      lapply(seq_along(data), function(i) {
+        tmp <- as.list(data[[i]])
         table_row(
           key = i,
-          lapply(seq_along(data[i, ]), function(j) {
-            table_cell(data[i, j])
+          lapply(seq_along(tmp), function(j) {
+            table_cell(tmp[[j]])
           })
         )
       })

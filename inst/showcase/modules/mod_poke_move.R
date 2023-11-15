@@ -13,11 +13,25 @@ mod_poke_move_server <- function(id, selected) {
       req(!is.null(selected()))
       moves <- selected()$moves
 
-      dat <- data.frame(
-        Name = purrr::map(moves, `[`, 'name') |> unlist(),
-        Power = purrr::map(moves, `[`, 'power') |> unlist(),
-        Description = purrr::map(moves, `[`, 'text') |> unlist()
-      )
+      dat <- lapply(moves, function(move) {
+        list(
+          name =  chip(move$name),
+          type = chip(
+            move$type,
+            style = sprintf("background: %s", get_type_colors(move$type))
+          ),
+          power = progress(
+            value = move$power,
+            valueLabel = move$power,
+            maxValue = 150,
+            showValueLabel = TRUE
+          ),
+          pp = move$pp,
+          priority = move$priority,
+          accuracy = move$accuracy,
+          text = move$text
+        )
+      })
 
       table(dat, isStriped = TRUE, isHeaderSticky = TRUE, removeWrapper = TRUE)
 

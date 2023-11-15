@@ -37,6 +37,7 @@ Circular progress indicators are utilized to indicate an undetermined wait perio
 }
 \examples{
 library(shiny)
+library(shinyNextUI)
 
 ui <- nextui_page(
   dark_mode = TRUE,
@@ -75,7 +76,7 @@ server <- function(input, output, session) {
 
 }
 
-shinyApp(ui, server)
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
 See \url{https://nextui.org/docs/components/circular-progress}.

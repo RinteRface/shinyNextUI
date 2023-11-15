@@ -33,7 +33,7 @@ table(data = NULL, ...)
 Table widget
 }
 \details{
-See \url{https://nextui.org/docs/layout/spacer} to get the list of
+See \url{https://nextui.org/docs/components/table} to get the list of
 parameters to pass in \code{...}.
 }
 \examples{
@@ -117,9 +117,9 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {}
 
-shinyApp(ui, server)
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/layout/table}.
+See \url{https://nextui.org/docs/components/table}.
 }
 \keyword{internal}

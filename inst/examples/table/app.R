@@ -78,4 +78,4 @@ ui <- nextui_page(
 
 server <- function(input, output, session) {}
 
-shinyApp(ui, server)
+if (interactive() || is_testing()) shinyApp(ui, server)

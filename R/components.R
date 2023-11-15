@@ -119,10 +119,10 @@ table_cell <-component("TableCell")
 #' @param ... Options.
 #' @export
 #' @details
-#' See \url{https://nextui.org/docs/layout/spacer} to get the list of
+#' See \url{https://nextui.org/docs/components/table} to get the list of
 #' parameters to pass in \code{...}.
 #' @example inst/examples/table/app.R
-#' @seealso See \url{https://nextui.org/docs/layout/table}.
+#' @seealso See \url{https://nextui.org/docs/components/table}.
 table <- function(data = NULL, ...) {
   if (!inherits(data, "list")) {
     cols <- colnames(data)

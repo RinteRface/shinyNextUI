@@ -170,6 +170,11 @@ create_group_input <- function(
 #' @return A radio input tag.
 #' @rdname radio
 #' @export
+#' @details
+#' See \url{https://nextui.org/docs/components/radio-group}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/radio/app.R
+#' @seealso See \url{https://nextui.org/docs/components/radio-group}.
 radio_input <- function(inputId, ..., choices, selected = choices[1]) {
   create_group_input(
     inputId,
@@ -228,6 +233,11 @@ update_radio_input <- function(
 #' @rdname checkbox-group
 #' @inheritParams radio_input
 #' @export
+#' @details
+#' See \url{https://nextui.org/docs/components/checkbox-group}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/checkbox-group/app.R
+#' @seealso See \url{https://nextui.org/docs/components/checkbox-group}.
 checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
   create_group_input(
     inputId = inputId,
@@ -278,6 +288,11 @@ update_accordion <- shiny.react::updateReactInput
 #' @inheritParams radio_input
 #' @inherit shinyInput params return
 #' @export
+#' @details
+#' See \url{https://nextui.org/docs/components/dropdown}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/dropdown/app.R
+#' @seealso See \url{https://nextui.org/docs/components/dropdown}.
 dropdow_menu <- function(inputId, ..., choices = NULL, selected = NULL) {
   create_group_input(
     inputId,

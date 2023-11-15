@@ -55,7 +55,8 @@ mod_poke_select_server <- function(id) {
     return(
       list(
         selected = selected_pokemon,
-        is_shiny = reactive(input$is_shiny)
+        is_shiny = reactive(input$is_shiny),
+        select_state = reactive(input$selected)
       )
     )
   })

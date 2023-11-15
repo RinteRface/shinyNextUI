@@ -39,7 +39,8 @@ ui <- nextui_page(
         )
       )
     )
-  )
+  ),
+  reactOutput("no_pokemon_modal")
 )
 
 server <- function(input, output, session) {
@@ -47,6 +48,31 @@ server <- function(input, output, session) {
   mod_poke_info_server("poke_info_1", main$selected, main$is_shiny)
   mod_poke_stats_server("poke_stats_1", main$selected, reactive(input$theme))
   mod_poke_move_server("poke_move_1", main$selected, reactive(input$theme))
+
+  modalVisible <- reactiveVal(FALSE)
+  observeEvent(main$select_state(), {
+   if (is.null(main$select_state())) modalVisible(TRUE)
+  }, ignoreNULL = FALSE, ignoreInit = TRUE)
+
+  observeEvent(input$modal_closed, {
+    modalVisible(FALSE)
+  })
+
+  output$no_pokemon_modal <- renderReact({
+    modal(
+      scrollBehavior = input$scroll,
+      isOpen = modalVisible(),
+      size = "sm",
+      backdrop = "blur",
+      onClose = JS(
+        "() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})
+      "),
+      modal_content(
+        modal_header("Oups, no pokemon is selected ..."),
+        modal_body("Select a pokemon to see the data!")
+      )
+    )
+  })
 }
 
 shinyApp(ui, server)

@@ -35,7 +35,15 @@ mod_poke_move_server <- function(id, selected, theme) {
           },
           pp = move$pp,
           priority = move$priority,
-          accuracy = move$accuracy,
+          accuracy = if (is.na(move$accuracy)) {
+            "NA"
+          } else {
+            progress(
+              value = move$accuracy,
+              maxValue = 100,
+              showValueLabel = TRUE
+            )
+          },
           text = move$text
         )
       })

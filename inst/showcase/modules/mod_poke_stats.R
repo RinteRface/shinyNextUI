@@ -1,5 +1,6 @@
 other_stats_names <- function() {
-  names(poke_data[[1]]$other_stats)
+  #names(poke_data[[1]]$other_stats)
+  c("height", "weight", "capture_rate")
 }
 
 extra_from_list <- function(l, key = "name", type = character(1)) {
@@ -171,7 +172,7 @@ mod_poke_stats_server <- function(id, selected, theme) {
     # card wrapper for the charts
     output$poke_stats_card <- renderUI({
       req(!is.null(selected()))
-      echarts4rOutput(outputId = ns("poke_stats"), height = "700px")
+      echarts4rOutput(outputId = ns("poke_stats"))
     })
   })
 }

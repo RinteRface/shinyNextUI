@@ -12,7 +12,7 @@ mod_poke_location_server <- function(id, selected) {
 
       locations <- unique(selected()$locations)
 
-      if (is.null(locations)) {
+      if (length(locations) == 0) {
         "This pokemon cannot be found in the wild."
       } else {
         div(

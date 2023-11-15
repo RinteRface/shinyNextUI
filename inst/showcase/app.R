@@ -46,7 +46,7 @@ server <- function(input, output, session) {
   main <- mod_poke_select_server("poke_select_1")
   mod_poke_info_server("poke_info_1", main$selected, main$is_shiny)
   mod_poke_stats_server("poke_stats_1", main$selected, reactive(input$theme))
-  mod_poke_move_server("poke_move_1", main$selected)
+  mod_poke_move_server("poke_move_1", main$selected, reactive(input$theme))
 }
 
 shinyApp(ui, server)

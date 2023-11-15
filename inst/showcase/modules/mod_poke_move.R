@@ -3,7 +3,7 @@ mod_poke_move_ui <- function(id) {
   uiOutput(ns("poke_moves"), style = "max-height: 400px; overflow-y: scroll;")
 }
 
-mod_poke_move_server <- function(id, selected) {
+mod_poke_move_server <- function(id, selected, theme) {
   moduleServer(id, function(input, output, session) {
 
     ns <- session$ns
@@ -15,17 +15,24 @@ mod_poke_move_server <- function(id, selected) {
 
       dat <- lapply(moves, function(move) {
         list(
-          name =  chip(move$name),
+          name =  move$name,
           type = chip(
             move$type,
-            style = sprintf("background: %s", get_type_colors(move$type))
+            style = paste(
+              sprintf("background: %s", get_type_colors(move$type)),
+              if (move$type == "normal" && theme() == "dark") "text-color: white"
+            )
           ),
-          power = progress(
-            value = move$power,
-            valueLabel = move$power,
-            maxValue = 150,
-            showValueLabel = TRUE
-          ),
+          power = if (is.na(move$power)) {
+            "NA"
+          } else {
+            progress(
+              value = move$power,
+              valueLabel = move$power,
+              maxValue = 150,
+              showValueLabel = TRUE
+            )
+          },
           pp = move$pp,
           priority = move$priority,
           accuracy = move$accuracy,

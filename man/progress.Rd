@@ -17,73 +17,65 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 The Progress component allows you to view the progress of any activity.
 }
 \details{
-\enumerate{
-\item Progress Props
 \itemize{
-\item \bold{value}. Current value. Type: number. Default: NA.
-\item \bold{min}. Progress min value. Type: number. Default: 0.
-\item \bold{max}. Progress max value. Type: number. Default: 100.
-\item \bold{color}. Change filler bar color. Type: NormalColors. Default: default.
-\item \bold{status}. Change filler bar background color. Type: NormalColors. Default: default.
-\item \bold{size}. Change progress size. Type: NormalSizes. Default: medium.
-\item \bold{striped}. Stripe over the progress bar's background color. Type: boolean. Default: false.
-\item \bold{indeterminated}. Indeterminated progress. Type: boolean. Default: false.
-\item \bold{shadow}. Display shadow effect. Type: boolean. Default: false.
-\item \bold{squared}. Squared progress. Type: boolean. Default: false.
-\item \bold{animated}. Enable or disable the progress animation. Type: boolean. Default: true.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Progress native props. Type: ProgressHTMLAttributes. Default: NA.
-}
+\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+\item \bold{size}. The size of the indicator.. Type: sm | md | lg. Default: md.
+\item \bold{color}. The color of the indicator.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+\item \bold{radius}. The progress border radius.. Type: none | sm | md | lg | full. Default: full.
+\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
+\item \bold{valueLabel}. The content to display as the value's label (e.g. 1 of 4).. Type: ReactNode. Default: NA.
+\item \bold{minValue}. The smallest value allowed for the input.. Type: number. Default: 0.
+\item \bold{maxValue}. The largest value allowed for the input.. Type: number. Default: 100.
+\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: {style: 'percent'}.
+\item \bold{isIndeterminate}. Whether the progress is indeterminate.. Type: boolean. Default: false.
+\item \bold{isStriped}. Whether the progress is striped.. Type: boolean. Default: false.
+\item \bold{showValueLabel}. Whether to show the value label.. Type: boolean. Default: true.
+\item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the progress slots.. Type: Record<"base"｜"labelWrapper"｜"label"｜"track"｜"value"｜"track"｜"indicator", string>. Default: NA.
 }
 }
 \examples{
 library(shiny)
 library(shinyNextUI)
 
-progress <- shinyNextUI:::component("Progress")
 colors <- c(
+  "default",
   "primary",
   "secondary",
   "success",
   "warning",
-  "error",
-  "gradient"
+  "danger"
 )
 
 bool_par <- c(rep(FALSE, 3), rep(TRUE, 2), FALSE)
 
 progress_config <- data.frame(
+  label = c(rep("A label", 3), rep("", 3)),
+  show_value_label = c(rep(FALSE, 3), rep(TRUE, 3)),
   size = c("xs", "sm", rep("md", 2), "lg", "xl"),
   color = colors,
-  status = colors,
-  shadow = bool_par,
   striped = bool_par,
-  squared = bool_par
+  radius = c(rep("none", 2), "sm", "md", "lg", "full")
 )
 
-progress_factory <- function(size, color, status, shadow, striped, squared) {
-  grid(
-    progress(
-      value = round(runif(1, 0, 100)),
-      size = size,
-      color = color,
-      status = status,
-      shadow = shadow,
-      striped = striped,
-      squared = squared
-    )
+progress_factory <- function(label, show_value_label, size, color, striped, radius) {
+  progress(
+    label = label,
+    showValueLabel = show_value_label,
+    value = round(runif(1, 0, 100)),
+    size = size,
+    color = color,
+    isStriped = striped,
+    radius = radius
   )
 }
 
 progresses <- purrr::pmap(progress_config, progress_factory)
 
 ui <- nextui_page(
-  text("Progress"),
-  grid_container(
-    gap = 2,
-    xs = 12,
-    sm = 6,
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
     progresses
   )
 )

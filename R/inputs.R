@@ -14,39 +14,38 @@ input <- function(name, default_value = NULL, type = NULL) {
   }
 }
 
-# Usefull for radioButtons, checkBoxGroup
-group_input <- function(name, type) {
-  function(inputId, ..., choices = choices, selected = NULL) {
-
-    choices_fun <- switch(
-      type,
-      "checkbox" = checkbox_option,
-      "radio" = radio_option
-    )
-    # choices must be
-    # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
-    if (type != "collapse") {
-      choices <-  lapply(seq_along(choices), function(i) {
-        choices_fun(
-          value = names(choices)[[i]],
-          choices[[i]]
-        )
-      })
-    }
-
-    shiny.react::reactElement(
-      module = "@/NextUI",
-      name = name,
-      props = shiny.react::asProps(
-        inputId = inputId,
-        ...,
-        value = selected,
-        choices # expect radio component
-      ),
-      deps = nextui_deps()
-    )
-  }
-}
+# Useful for radioButtons, checkBoxGroup
+#group_input <- function(name, type) {
+#  function(inputId, ..., choices = choices, selected = NULL) {
+#
+#    choices_fun <- switch(
+#      type,
+#      "checkbox" = checkbox_option,
+#      "radio" = radio_option
+#    )
+#    # choices must be
+#    # c("CHOICE_NAME" = "CHOICE_DESCRIPTION", ...)
+#    choices <-  lapply(seq_along(choices), function(i) {
+#      choices_fun(
+#        key = names(choices)[[i]],
+#        value = names(choices)[[i]],
+#        choices[[i]]
+#      )
+#    })
+#
+#    shiny.react::reactElement(
+#      module = "@/NextUI",
+#      name = name,
+#      props = shiny.react::asProps(
+#        inputId = inputId,
+#        ...,
+#        value = selected,
+#        choices # expect radio component
+#      ),
+#      deps = nextui_deps()
+#    )
+#  }
+#}
 
 #' @rdname button
 #' @inherit shinyInput params return
@@ -56,6 +55,23 @@ action_button <- input("Button")
 #' @rdname button
 #' @export
 update_action_button <- shiny.react::updateReactInput
+
+#' @rdname autocomplete
+#' @inherit shinyInput params return
+#' @export
+autocomplete <- input("Autocomplete")
+
+#' @rdname autocomplete
+#' @export
+autocomplete_section <- component("AutocompleteSection")
+
+#' @rdname autocomplete
+#' @export
+autocomplete_item <- component("AutocompleteItem")
+
+#' @rdname autocomplete
+#' @export
+update_autocomplete <- shiny.react::updateReactInput
 
 #' @rdname switch
 #' @inherit shinyInput params return
@@ -69,11 +85,11 @@ update_switch_input <- shiny.react::updateReactInput
 #' @rdname textarea
 #' @inherit shinyInput params return
 #' @export
-text_area_input <- input("Textarea", "")
+textarea_input <- input("Textarea", "")
 
 #' @rdname textarea
 #' @export
-update_text_area_input <- shiny.react::updateReactInput
+update_textarea_input <- shiny.react::updateReactInput
 
 #' @rdname input
 #' @inherit shinyInput params return
@@ -111,108 +127,275 @@ checkbox_input <- input("Checkbox", FALSE)
 #' @export
 update_checkbox_input <- shiny.react::updateReactInput
 
-#' @rdname checkbox-group
-#' @inherit shinyInput params return
-#' @export
-checkbox_group_input <- group_input("CheckboxGroup", type = "checkbox")
-
-#' @rdname checkbox-group
-#' @note Required by \link{checkbox_group_input} to create options.
-#' Don't use standalone.
-#' @inherit component params return
 #' @keywords internal
-checkbox_option <- component("Checkbox")
+#' @noRd
+create_group_input <- function(
+    inputId,
+    ...,
+    choices,
+    selected,
+    type = c("CheckboxGroup", "RadioGroup", "DropdownMenu")
+  ) {
+
+  type <- match.arg(type)
+
+  process_val <- switch(
+    type,
+    "CheckboxGroup" = as.list,
+    "RadioGroup" = I,
+    "DropdownMenu" = as.list
+  )
+
+  tagList(
+    # This seems a bit hacky but this can't be called from the main JS script
+    # because we only need it when the radio is invoked ...
+    tags$script(sprintf("jsmodule['@/ReactR']['%s']()", type)),
+    createReactShinyInput(
+      inputId = inputId,
+      class = tolower(type),
+      default = process_val(selected),
+      configuration = listRenderTags(list(children = as.list(choices), ...)),
+      container = htmltools::tags$div
+    )
+  )
+}
+
+#' Radio input
+#'
+#' @param inputId Unique input id.
+#' @param ... Props.
+#' @param choices Radio choices.
+#' @param selected Default selected value.
+#'
+#' @return A radio input tag.
+#' @rdname radio
+#' @export
+#' @details
+#' See \url{https://nextui.org/docs/components/radio-group}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/radio/app.R
+#' @seealso See \url{https://nextui.org/docs/components/radio-group}.
+radio_input <- function(inputId, ..., choices, selected = choices[1]) {
+  create_group_input(
+    inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "RadioGroup"
+  )
+}
+
+#' @param keywords internal
+#' @noRd
+update_group_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL,
+    type = c("CheckboxGroup", "RadioGroup")
+) {
+
+  type <- match.arg(type)
+
+  message <- list()
+  if (type == "CheckboxGroup") selected <- as.list(selected)
+  message$value <-  selected
+  configuration <- listRenderTags(c(children = as.list(choices), list(...)))
+  if (length(configuration) > 0) {
+    message$configuration <- configuration
+  }
+  session$sendInputMessage(inputId, message);
+}
+
+#' @rdname radio
+#' @param session Shiny session.
+#' @export
+update_radio_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL
+) {
+  update_group_input(
+    session,
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "RadioGroup"
+  )
+}
+
+#' Checkbox group input
+#'
+#' @rdname checkbox-group
+#' @inheritParams radio_input
+#' @export
+#' @details
+#' See \url{https://nextui.org/docs/components/checkbox-group}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/checkbox-group/app.R
+#' @seealso See \url{https://nextui.org/docs/components/checkbox-group}.
+checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
+  create_group_input(
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "CheckboxGroup"
+  )
+}
 
 #' @rdname checkbox-group
+#' @inheritParams update_radio_input
 #' @export
-update_checkbox_group_input <- shiny.react::updateReactInput
+update_checkboxgroup_input <- function(
+    session = shiny::getDefaultReactiveDomain(),
+    inputId,
+    ...,
+    choices = NULL,
+    selected = NULL
+) {
+  update_group_input(
+    session,
+    inputId = inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "CheckboxGroup"
+  )
+}
 
-#' @rdname radio
-#' @note Required by \link{radioButtons} to create options.
-#' Don't use standalone.
-#' @inherit component params return
-#' @keywords internal
-radio_option <- component("Radio")
-
-#' @rdname radio
+#' @rdname accordion
 #' @inherit shinyInput params return
 #' @export
-radio_input <- group_input("Radio", type = "radio")
+accordion <- input("Accordion")
 
-#' @rdname radio
+#' @rdname accordion
+#' @inherit component params return
 #' @export
-update_radio_input <- shiny.react::updateReactInput
+accordion_item <- component("AccordionItem")
 
-#' @rdname collapse
+#' @rdname accordion
+#' @export
+update_accordion <- shiny.react::updateReactInput
+
+#' Dropdown menu
+#'
+#' @rdname dropdown
+#' @inheritParams radio_input
 #' @inherit shinyInput params return
 #' @export
-collapse_panel <- input("Collapse", FALSE)
-
-#' @rdname collapse
-#' @note \link{update_collapse_panel} currently does not work.
-#' @export
-update_collapse_panel <- shiny.react::updateReactInput
-
-#' @rdname collapse
-#' @inherit component params return
-#' @export
-collapse_option <- component("Collapse")
-
-#' @rdname collapse
-#' @note For \link{collapse_group}, the inputId gives the index
-#' of the currently opened item. For \link{collapse} inputId,
-#' indicates FALSE when closed and TRUE when the item is
-#' uncollapsed.
-#' @inherit shinyInput params return
-#' @param choices Slot for \link{collapse_option}. Wrap inside
-#' tagList.
-#' @param selected Default selected choice.
-#' @export
-collapse_group <- group_input("CollapseGroup", type = "collapse")
+#' @details
+#' See \url{https://nextui.org/docs/components/dropdown}
+#' to get the list of parameters to pass in \code{...}.
+#' @example inst/examples/dropdown/app.R
+#' @seealso See \url{https://nextui.org/docs/components/dropdown}.
+dropdow_menu <- function(inputId, ..., choices = NULL, selected = NULL) {
+  create_group_input(
+    inputId,
+    ...,
+    choices = choices,
+    selected = selected,
+    type = "DropdownMenu"
+  )
+}
 
 #' @rdname dropdown
-#' @inherit component params return
 #' @export
-dropdown <- component("Dropdown")
-
-#' @rdname dropdown
-#' @inherit shinyInput params return
-#' @export
-dropdow_menu <- input("Dropdown")
-
-#' @rdname dropdown
-#' @inherit component params return
-#' @export
-dropdown_button <- custom_component("Dropdown.Button", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Button;
-")
-
-#' @rdname dropdown
-#' @inherit component params return
-#' @export
-dropdown_item <- custom_component("Dropdown.Item", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Item;
-")
+dropdown_item <- function(...) {
+  list(..., dropdownItem = TRUE)
+}
 
 #' @rdname dropdown
 #' @note Container for related \link{dropdown_item}.
-#' @inherit component params return
 #' @export
-dropdown_section <- custom_component("Dropdown.Section", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Section;
-")
-
-#' @rdname dropdown
-#' @inherit component params return
-#' @export
-dropdown_trigger <- custom_component("Dropdown.Trigger", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Dropdown.Trigger;
-")
+dropdown_section <- function(...) {
+  tmp <- list(...)
+  props <- list()
+  children <- list()
+  for (i in seq_along(tmp)) {
+    if (inherits(tmp[[i]], "list")) {
+      children <- append(children, tmp[[i]])
+    } else {
+      l <- tmp[[i]]
+      names(l) <- names(tmp)[[i]]
+      props <- append(props, l)
+    }
+  }
+  list(props = props, children = children, dropdownSection = TRUE)
+}
 
 #' @rdname dropdown
 #' @export
 update_dropdown <- shiny.react::updateReactInput
+
+#' @rdname listbox
+#' @inherit shinyInput params return
+#' @export
+listbox <- input("Listbox")
+
+#' @rdname listbox
+#' @inherit component params return
+#' @export
+listbox_section <- component("ListboxSection")
+
+#' @rdname listbox
+#' @export
+listbox_item <- component("ListboxItem")
+
+#' @rdname listbox
+#' @export
+update_listbox <- shiny.react::updateReactInput
+
+#' @rdname pagination
+#' @inherit shinyInput params return
+#' @export
+pagination <- input("Pagination", 1)
+
+#' @rdname pagination
+#' @export
+update_pagination <- shiny.react::updateReactInput
+
+#' @rdname select
+#' @inherit shinyInput params return
+#' @export
+select_input <- input("Select", "")
+
+#' @rdname select
+#' @inherit component params return
+#' @export
+select_section <- component("SelectSection")
+
+#' @rdname select
+#' @export
+select_item <- component("SelectItem")
+
+#' @rdname select
+#' @export
+update_select_input <- shiny.react::updateReactInput
+
+#' @rdname slider
+#' @inherit shinyInput params return
+#' @export
+slider_input <- input("Slider", numeric())
+
+#' @rdname slider
+#' @export
+update_slider_input <- shiny.react::updateReactInput
+
+#' @rdname tabs
+#' @inherit shinyInput params return
+#' @export
+tabs <- input("Tabs", "1")
+
+#' @rdname tabs
+#' @export
+update_tabs <- shiny.react::updateReactInput
+
+#' @rdname tabs
+#' @inherit component params return
+#' @export
+tab <- component("Tab")

@@ -4,28 +4,20 @@
 modal <- component("Modal")
 
 #' @rdname modal
-#' @inherit component params return
 #' @export
-modal_header <- custom_component("Modal.Header", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Modal.Header;
-")
+modal_content <- component("ModalContent")
 
 #' @rdname modal
-#' @inherit component params return
 #' @export
-modal_body <- custom_component("Modal.Body", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Modal.Body;
-")
+modal_header <- component("ModalHeader")
 
 #' @rdname modal
-#' @inherit component params return
 #' @export
-modal_footer <- custom_component("Modal.Footer", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Modal.Footer;
-")
+modal_body <- component("ModalBody")
+
+#' @rdname modal
+#' @export
+modal_footer <- component("ModalFooter")
 
 #' @rdname popover
 #' @inherit component params return
@@ -33,20 +25,12 @@ modal_footer <- custom_component("Modal.Footer", "
 popover <- component("Popover")
 
 #' @rdname popover
-#' @inherit component params return
 #' @export
-popover_trigger <- custom_component("Popover.Trigger", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Popover.Trigger;
-")
+popover_trigger <- component("PopoverTrigger")
 
 #' @rdname popover
-#' @inherit component params return
 #' @export
-popover_content <- custom_component("Popover.Content", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Popover.Content;
-")
+popover_content <- component("PopoverContent")
 
 #' @rdname tooltip
 #' @inherit component params return

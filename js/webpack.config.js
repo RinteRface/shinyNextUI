@@ -3,9 +3,9 @@ const path = require('path');
 
 const config = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   output: {
-    path: path.join(__dirname, '..', 'inst', 'nextui-1.0.0'),
+    path: path.join(__dirname, '..', 'inst', 'nextui-2.0.0'),
     filename: 'nextui.js'
   },
   module: {
@@ -15,6 +15,12 @@ const config = {
         use: [
           'style-loader',
           'css-loader'
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        use: [
+          'babel-loader'
         ]
       }
     ]

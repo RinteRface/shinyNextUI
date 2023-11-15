@@ -1,0 +1,23 @@
+{
+  "input": {
+    "customselect": "",
+    "select": "pikachu",
+    "select-bordered": "pikachu",
+    "select-faded": "pikachu",
+    "select-flat": "pikachu",
+    "select-inside": "",
+    "select-outside": "",
+    "select-outside-left": "",
+    "select-underlined": "pikachu",
+    "theme": "light",
+    "theme_switcher": true,
+    "toggle": null,
+    "update": null
+  },
+  "output": {
+    "select_val": "pikachu"
+  },
+  "export": {
+
+  }
+}

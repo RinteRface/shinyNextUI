@@ -1,0 +1,104 @@
+{
+  "input": {
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "modal": {
+      "data": {
+        "type": "element",
+        "module": "@nextui-org/react",
+        "name": "Modal",
+        "props": {
+          "type": "object",
+          "value": {
+            "scrollBehavior": {
+              "type": "raw",
+              "value": null
+            },
+            "isOpen": {
+              "type": "raw",
+              "value": false
+            },
+            "size": {
+              "type": "raw",
+              "value": "sm"
+            },
+            "placement": {
+              "type": "raw",
+              "value": "top"
+            },
+            "onClose": {
+              "type": "expr",
+              "value": "() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})"
+            },
+            "children": {
+              "type": "element",
+              "module": "@nextui-org/react",
+              "name": "ModalContent",
+              "props": {
+                "type": "object",
+                "value": {
+                  "children": {
+                    "type": "array",
+                    "value": [
+                      {
+                        "type": "element",
+                        "module": "@nextui-org/react",
+                        "name": "ModalHeader",
+                        "props": {
+                          "type": "raw",
+                          "value": {
+                            "children": "Congrats"
+                          }
+                        }
+                      },
+                      {
+                        "type": "element",
+                        "module": "@nextui-org/react",
+                        "name": "ModalBody",
+                        "props": {
+                          "type": "object",
+                          "value": {
+                            "children": {
+                              "type": "element",
+                              "name": "p",
+                              "props": {
+                                "type": "raw",
+                                "value": {
+                                  "children": "You closed me!"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "deps": [
+        {
+          "name": "nextui",
+          "version": "2.0.0",
+          "src": {
+            "href": "nextui-2.0.0"
+          },
+          "meta": null,
+          "script": "nextui.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    }
+  },
+  "export": {
+
+  }
+}

@@ -20,91 +20,93 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
 }
 \details{
-\enumerate{
-\item Avatar Props
 \itemize{
-\item \bold{color}. Change avatar color. Type: NormalColors string. Default: default.
-\item \bold{textColor}. Change avatar text color. Type: SimpleColors string. Default: default.
-\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
-\item \bold{text}. Display text when image is missing. Type: string. Default: NA.
-\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
-\item \bold{size}. Avatar size. Type: NormalSizes number. Default: medium.
-\item \bold{bordered}. Bordered avatar. Type: boolean. Default: false.
-\item \bold{borderWeight}. Border weight for bordered avatar. Type: NormalWeights. Default: normal.
-\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
-\item \bold{stacked}. Stacked display group. Type: boolean. Default: false.
-\item \bold{zoomed}. Zoomed avatar. Type: boolean. Default: false.
-\item \bold{squared}. Squared avatar. Type: boolean. Default: false.
-\item \bold{icon}. Show icon in avatar. Type: ReactNode. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
-\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
+\item \bold{src}. The source URL of the image to be displayed.. Type: string. Default: NA.
+\item \bold{color}. Sets the avatar background color.. Type: default | primary | secondary | success | warning | danger. Default: default.
+\item \bold{radius}. Sets the avatar border radius.. Type: none | sm | md | lg | full. Default: full.
+\item \bold{size}. Sets the avatar size.. Type: sm | md | lg. Default: md.
+\item \bold{name}. Displays the initials if the image is not provided or fails to load.. Type: string. Default: NA.
+\item \bold{icon}. Displays a custom icon inside the avatar.. Type: ReactNode. Default: NA.
+\item \bold{fallback}. A custom fallback component to display when the image fails to load.. Type: ReactNode. Default: NA.
+\item \bold{isBordered}. If true, adds a border around the avatar.. Type: boolean. Default: false.
+\item \bold{isDisabled}. If true, disables the avatar and applies a disabled styling.. Type: boolean. Default: false.
+\item \bold{isFocusable}. If true, makes the avatar focusable for keyboard navigation.. Type: boolean. Default: false.
+\item \bold{showFallback}. If true, shows the fallback icon or initials when the image fails to load.. Type: boolean. Default: false.
+\item \bold{ImgComponent}. The component to be used as the image element.. Type: React.ElementType. Default: img.
+\item \bold{imgProps}. Props to be passed to the image element.. Type: ImgComponentProps. Default: NA.
+\item \bold{classNames}. Allows to set custom class names for the avatar slots.. Type: Record<"base"｜ "img"｜ "fallback"｜ "name"｜ "icon", string>. Default: NA.
 }
-\item Avatar Group Props
 \itemize{
-\item \bold{count}. Total count of avatars. Type: number. Default: NA.
-\item \bold{animated}. Display translations animation on hover. Type: boolean. Default: true.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-}
+\item \bold{max}. The maximum number of visible avatars. Type: number. Default: 5.
+\item \bold{total}. Control the number of avatar not visible. Type: number. Default: NA.
+\item \bold{size}. Size of the avatars. Type: AvatarProps\link{'size'}. Default: NA.
+\item \bold{color}. Color of the avatars. Type: AvatarProps\link{'color'}. Default: NA.
+\item \bold{radius}. Radius of the avatars. Type: AvatarProps\link{'radius'}. Default: NA.
+\item \bold{isGrid}. Whether the avatars should be displayed in a grid. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the avatars are disabled. Type: boolean. Default: NA.
+\item \bold{isBordered}. Whether the avatars have a border. Type: boolean. Default: NA.
+\item \bold{renderCount}. This allows you to render a custom count component.. Type: (count: number) => ReactNode. Default: NA.
 }
 }
 \examples{
 library(shiny)
 library(shinyNextUI)
 
-links <- c(
-  "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-  "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-  "https://i.pravatar.cc/150?u=a04258114e29026702d",
-  "https://i.pravatar.cc/150?u=a048581f4e29026701d",
-  "https://i.pravatar.cc/150?u=a092581d4ef9026700d"
+avatar_config <- data.frame(
+  size = c("xs", "sm", "md", "lg", "xl"),
+  src = c(
+    "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+    "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    "https://i.pravatar.cc/150?u=a048581f4e29026701d",
+    "https://i.pravatar.cc/150?u=a092581d4ef9026700d"
+  ),
+  radius = c(rep("full", 2), "lg", "md", "sm"),
+  disabled = c(rep(FALSE, 4), TRUE),
+  bordered = c(rep(TRUE, 3), rep(FALSE, 2)),
+  color = c(
+    "primary",
+    "secondary",
+    "danger",
+    "success",
+    "warning"
+  ),
+  fallback = rep(TRUE, 5)
 )
 
+avatar_factory <- function(src, size, disabled, bordered, radius, color, fallback) {
+  avatar(
+    src = src,
+    size = size,
+    isDisabled = disabled,
+    isBordered = bordered,
+    radius = radius,
+    color = color,
+    showFallback = fallback
+  )
+}
+
+avatars <- purrr::pmap(avatar_config, avatar_factory)
+
 ui <- nextui_page(
-  text("avatar()"),
-  grid_container(
-    gap = 2,
-    grid(avatar(text = "Avatar")),
-    grid(
-      avatar(
-        squared = TRUE,
-        src = "https://i.pravatar.cc/150?u=a042581f4e29026024d"
-      )
-    ),
-    grid(avatar(text = "Avatar", size = "xl")),
-    grid(
-      avatar(
-        text = "Avatar",
-        color = "secondary",
-        textColor="white"
-      )
-    ),
-    grid(
-      avatar(
-        src = "https://i.pravatar.cc/150?u=a042581f4e25056704b",
-        color = "warning",
-        bordered = TRUE
-      )
-    ),
-    grid(
-      avatar(
-        src = "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-        zoomed = TRUE
-      )
-    )
+  debug_react = TRUE,
+  class = "container mx-auto px-4",
+  p("avatar()"),
+  spacer(y = 1),
+  div(
+    class = "flex gap-3 items-center",
+    avatars
   ),
   spacer(y = 2),
-  text("avatar_group()"),
-  grid_container(
-    gap = 4,
-    grid(
-      xs = 12,
-      avatar_group(
-        count = 12,
-        lapply(links, function(link) avatar(src = link))
-      )
+  p("avatar_group()"),
+  spacer(y = 1),
+  div(
+    class = "flex",
+    avatar_group(
+      isBordered = TRUE,
+      max = 3,
+      total = 10,
+      lapply(avatar_config$src, function(link) avatar(src = link))
     )
   )
 )

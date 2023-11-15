@@ -2,37 +2,85 @@ library(shiny)
 library(shinyNextUI)
 library(shiny.react)
 
-items <- lapply(1:8, function(i) {
-  dropdown_item(
-    key = i,
-    description = sprintf("Description %s", i),
-    sprintf("Item %s", i)
+items <- list(
+  # Dropdown section
+  dropdown_section(
+    showDivider = TRUE,
+    title = "Section 1",
+    # Dropdown Items
+    list(
+      dropdown_item(
+        title = "Item 1",
+        shortcut = "⌘N",
+        color = "danger",
+        description = "Item description",
+        startContent = icon("clock")
+      ),
+      dropdown_item(
+        title = "Item 2",
+        shortcut = "⌘N",
+        color = "success",
+        description = "Item description",
+        startContent = icon("home")
+      ),
+      dropdown_item(
+        title = "External link",
+        href = "https://nextui.org/",
+        target = "_blank",
+        description = "Go to nextui documentation"
+      )
+    )
+  ),
+  dropdown_section(
+    showDivider = FALSE,
+    title = "Section 2",
+    # Dropdown Items
+    list(
+      dropdown_item(
+        title = "Item 3",
+        color = "warning",
+        description = "Item description"
+      ),
+      dropdown_item(
+        title = "Item 4"
+      )
+    )
   )
-})
+)
 
-color <- "success"
+# You can also skip section
+#items <- list(
+#  dropdown_item(
+#    title = "Item 1",
+#    shortcut = "⌘N",
+#    color = "danger",
+#    description = "Item description"#,
+#    #startContent = icon("clock")
+#  ),
+#  dropdown_item(
+#    title = "Item 2",
+#    shortcut = "⌘N",
+#    color = "success",
+#    description = "Item description"#,
+#    #startContent = icon("home")
+#  )
+#)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      dropdown(
-        dropdown_button("Trigger", flat = TRUE, color = color),
-        dropdow_menu(
-          isVirtualized = TRUE,
-          color = color,
-          inputId = "dropdown",
-          disabledKeys = JS("['3', '4']"),
-          selectionMode = "multiple",
-          items,
-          dropdown_section(
-            dropdown_item(key = 9, "Item 9")
-          )
-        )
-      )
-    ),
-    grid(verbatimTextOutput("dropdown_val"))
-  )
+  debug_react = TRUE,
+  div(
+    class = "flex gap-2 my-2",
+    dropdow_menu(
+      inputId = "dropdown",
+      label = "Dropdown menu",
+      selected = "Item 2",
+      variant = "bordered",
+      disabledKeys = c("Item 3", "Item 4"),
+      selectionMode = "multiple",
+      choices = items
+    )
+  ),
+  verbatimTextOutput("dropdown_val")
 )
 
 server <- function(input, output, session) {

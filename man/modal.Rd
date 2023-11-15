@@ -2,12 +2,15 @@
 % Please edit documentation in R/doc.R, R/feedback.R
 \name{modal}
 \alias{modal}
+\alias{modal_content}
 \alias{modal_header}
 \alias{modal_body}
 \alias{modal_footer}
 \title{modal}
 \usage{
 modal(...)
+
+modal_content(...)
 
 modal_header(...)
 
@@ -26,48 +29,29 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Displays a dialog with a custom content that requires attention or provides additional information.
 }
 \details{
-\enumerate{
-\item Modal Props
 \itemize{
-\item \bold{open}. Determine if the modal is visible or hidden. Type: boolean. Default: false.
-\item \bold{scroll}. Makes the content a maximum high and gives the possibility to overflow the content add scroll. Type: boolean. Default: false.
-\item \bold{blur}. Makes all elements blur when the modal opens. Type: boolean. Default: false.
-\item \bold{animated}. Display the modal with opening and close animation. Type: boolean. Default: true.
-\item \bold{noPadding}. Eliminates the padding of the base elements of the modal. Type: boolean. Default: false.
-\item \bold{closeButton}. Determine if the modal close button is visible or hidden. Type: boolean. Default: false.
-\item \bold{fullScreen}. Makes the modal the size of the window. Type: boolean. Default: false.
-\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: NA.
-\item \bold{preventClose}. Modal cannot be closed by clicking outside or by pressing the esc key. Type: boolean. Default: false.
-\item \bold{width}. Determine the width of the modal. Type: string number. Default: 400px.
-\item \bold{onClose}. Callback fired when the modal is closed. Type: () => void. Default: NA.
-\item \bold{onOpen}. Callback fired when the modal is open. Type: () => void. Default: NA.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: section.
-\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
+\item \bold{children*}. The content of the modal. It's usually the ModalContent.. Type: ReactNode. Default: NA.
+\item \bold{size}. The modal size. This changes the modal max-width and height (full).. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: md.
+\item \bold{radius}. The modal border radius.. Type: none | sm | md | lg. Default: lg.
+\item \bold{shadow}. The modal shadow.. Type: none | sm | md | lg. Default: lg.
+\item \bold{backdrop}. The modal backdrop type.. Type: transparent | opaque | blur. Default: opaque.
+\item \bold{scrollBehavior}. The modal scroll behavior.. Type: normal | inside | outside. Default: normal.
+\item \bold{placement}. The modal position.. Type: auto | top | center | bottom. Default: auto.
+\item \bold{isOpen}. Whether the modal is open by default (controlled).. Type: boolean. Default: NA.
+\item \bold{defaultOpen}. Whether the modal is open by default (uncontrolled).. Type: boolean. Default: NA.
+\item \bold{isDismissable}. Whether the modal can be closed by clicking on the overlay or pressing the Esc key.. Type: boolean. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Whether pressing the Esc key to close the modal should be disabled.. Type: boolean. Default: false.
+\item \bold{shouldBlockScroll}. Whether the modal should block the scroll of the page on open.. Type: boolean. Default: true.
+\item \bold{hideCloseButton}. Whether to hide the modal close button.. Type: boolean. Default: false.
+\item \bold{closeButton}. Custom close button to display on top right corner.. Type: ReactNode. Default: NA.
+\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
+\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
+\item \bold{disableAnimation}. Whether the modal should not have animations.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the modal slots.. Type: Record<"wrapper"｜ "base"｜ "backdrop"｜ "header" ｜ "body" ｜ "footer" ｜ "closeButton", string>. Default: NA.
 }
-\item Modal.Header Props
 \itemize{
-\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: center.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-}
-\item Modal.Body Props
-\itemize{
-\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-}
-\item Modal.Footer Props
-\itemize{
-\item \bold{autoMargin}. Apply or not a margin to the base elements of the modal. Type: boolean. Default: true.
-\item \bold{justify}. CSS "justify-content" property. Type: Justify. Default: flex-end.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-\item \bold{...}. Native props. Type: HTMLAttributes. Default: NA.
-}
+\item \bold{onOpenChange}. Handler that is called when the modal's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{onClose}. Handler that is called when the modal is closed.. Type: () => void. Default: NA.
 }
 }
 \examples{
@@ -81,6 +65,15 @@ ui <- nextui_page(
     color = "primary",
     shadow = TRUE,
     "Show modal"
+  ),
+  radio_input(
+    "scroll",
+    label = "Scroll option",
+    choices = c(
+      "inside" = "Inside",
+      "outside" = "Outside"
+    ),
+    selected = "inside"
   ),
   reactOutput("modal")
 )
@@ -97,16 +90,63 @@ server <- function(input, output, session) {
 
   output$modal <- renderReact({
     modal(
-      open = modalVisible(),
-      modal_header("My modal"),
-      modal_body(
-        text(
-          "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+      scrollBehavior = input$scroll,
+      isOpen = modalVisible(),
+      size = "sm",
+      modal_content(
+        modal_header("My modal"),
+        modal_body(
+          p(
+            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
             dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
             ac consectetur ac, vestibulum at eros."
-        )
+          ),
+          p(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam pulvinar risus non risus hendrerit venenatis.
+            Pellentesque sit amet hendrerit risus, sed porttitor quam.
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem
+            aliqua enim laboris do dolor eiusmod. Et mollit incididunt
+            nisi consectetur esse laborum eiusmod pariatur proident Lorem
+            eiusmod et. Culpa deserunt nostrud ad veniam."
+          ),
+          p(
+            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
+             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+             eiusmod. Et mollit incididunt nisi consectetur esse laborum
+             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
+             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Nullam pulvinar risus non risus hendrerit
+             venenatis. Pellentesque sit amet hendrerit risus, sed
+             porttitor quam. Magna exercitation reprehenderit magna aute
+             tempor cupidatat consequat elit dolor adipisicing. Mollit
+             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
+             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
+             mollit incididunt nisi consectetur esse laborum eiusmod
+             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
+             veniam."
+          ),
+          p(
+            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
+             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+             eiusmod. Et mollit incididunt nisi consectetur esse laborum
+             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
+             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Nullam pulvinar risus non risus hendrerit
+             venenatis. Pellentesque sit amet hendrerit risus, sed
+             porttitor quam. Magna exercitation reprehenderit magna aute
+             tempor cupidatat consequat elit dolor adipisicing. Mollit
+             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
+             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
+             mollit incididunt nisi consectetur esse laborum eiusmod
+             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
+             veniam."
+          )
+        ),
+        modal_footer("Modal footer")
       ),
-      modal_footer("Modal footer"),
       onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
     )
   })

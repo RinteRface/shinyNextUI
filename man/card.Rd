@@ -4,9 +4,7 @@
 \alias{card}
 \alias{card_body}
 \alias{card_header}
-\alias{card_divider}
 \alias{card_footer}
-\alias{card_image}
 \title{card}
 \usage{
 card(...)
@@ -15,11 +13,7 @@ card_body(...)
 
 card_header(...)
 
-card_divider(...)
-
 card_footer(...)
-
-card_image(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
@@ -32,48 +26,27 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 Card is a container for text, photos, and actions in the context of a single subject.
 }
 \details{
-\enumerate{
-\item Card Props
 \itemize{
-\item \bold{children*}. The content of the card. It's usually the header, body, and footer.. Type: ReactNode ReactNode[]. Default: NA.
-\item \bold{variant}. The card variant style.. Type: CardVariants. Default: shadow.
-\item \bold{borderWeight}. The border weight of the bordered card.. Type: NormalWeights. Default: light.
-\item \bold{isHoverable}. Whether the card can be hovered by the user.. Type: boolean. Default: false.
-\item \bold{isPressable}. Whether the card should allow users to interact with the card.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the card is animated.. Type: boolean. Default: false.
-\item \bold{disableRipple}. Whether the card should show a ripple animation on press. Type: boolean. Default: false.
-\item \bold{allowTextSelectionOnPress}. Whether the card should allow text selection on press. (only for pressable cards). Type: boolean. Default: true.
-\item \bold{css}. Override Default CSS style.. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs.. Type: keyof JSX.IntrinsicElements. Default: div.
+\item \bold{children}. Usually the Card parts, CardHeader, CardBody and CardFooter.. Type: ReactNode | ReactNode[]. Default: NA.
+\item \bold{shadow}. The card shadow.. Type: none | sm | md | lg. Default: md.
+\item \bold{radius}. The card border radius.. Type: none | sm | md | lg. Default: lg.
+\item \bold{fullWidth}. Whether the card should take the full width of its parent.. Type: boolean. Default: false.
+\item \bold{isHoverable}. Whether the card should change the background on hover.. Type: boolean. Default: false.
+\item \bold{isPressable}. Whether the card should allow to be pressed.. Type: boolean. Default: false.
+\item \bold{isBlurred}. Whether the card background should be blurred.. Type: boolean. Default: false.
+\item \bold{isFooterBlurred}. Whether the card footer background should be blurred.. Type: boolean. Default: false.
+\item \bold{isDisabled}. Whether the card should be disabled. The press events will be ignored.. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+\item \bold{disableRipple}. Whether to disable ripple effect. Only when isPressable is true.. Type: boolean. Default: false.
+\item \bold{allowTextSelectionOnPress}. Whether to allow text selection on pressing. Only when isPressable is true.. Type: boolean. Default: false.
+\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "header"｜ "body"｜ "footer", string>. Default: NA.
 }
-\item Card Events
 \itemize{
 \item \bold{onPress}. Handler that is called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
 \item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-}
-\item Card.Header Props
-\itemize{
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Body Props
-\itemize{
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Footer Props
-\itemize{
-\item \bold{isBlurred}. Whether the card footer background should be blurry.. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: div.
-}
-\item Card.Image Props
-\itemize{
-\item \bold{ImageProps}. NA. Type: ImageProps. Default: NA.
-}
 }
 }
 \examples{
@@ -82,200 +55,31 @@ library(shinyNextUI)
 library(shiny.react)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      xs = 4,
-      md = 4,
-      card(
-        variant = "bordered",
-        card_header("Card title"),
-        card_divider(),
-        card_body(h1("Card body")),
-        card_divider(),
-        card_footer("Card Footer")
-      )
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
+    card(card_body("Simple card without anything")),
+    card(
+      variant = "bordered",
+      card_header("Card title"),
+      divider(),
+      card_body(h1("Card body")),
+      divider(),
+      card_footer("Card Footer")
     ),
-    grid(
-      xs = 4,
-      md = 4,
-      card(
-        css = JS("{ w: '100\%', h: '400px' }"),
-        card_header(
-          css = JS("{ position: 'absolute', zIndex: 1, top: 5 }"),
-          col(
-            text(
-              size = 12,
-              weight = "bold",
-              transform = "uppercase",
-              color = "#9E9E9E",
-              "Your day your way"
-            ),
-            text(h3 = TRUE,  color = "white", "Your checklist for better sleep")
-          )
-        ),
-        card_body(
-          css = JS("{ p: 0 }"),
-          card_image(
-            src = "https://nextui.org/images/card-example-5.jpeg",
-            objectFit = "cover",
-            width = "100\%",
-            height = "100\%",
-            alt = "Relaxing app background",
-          )
-        ),
-        card_footer(
-          isBlurred = TRUE,
-          css = JS(
-            "{
-              position: 'absolute',
-              bgBlur: '#0f111466',
-              borderTop: '$borderWeights$light solid $gray800',
-              bottom: 0,
-              zIndex: 1,
-            }"
-          ),
-          row(
-            col(
-              row(
-                col(
-                  span = 3,
-                  card_image(
-                    src = "https://nextui.org/images/breathing-app-icon.jpeg",
-                    css = JS("{ bg: 'black', br: '50\%' }"),
-                    height = 40,
-                    width = 40,
-                    alt = "Breathing app icon"
-                  )
-                ),
-                col(
-                  text(color = "#d1d1d1", size = 12, "Breathing App"),
-                  text(color = "#d1d1d1", size = 12, "Get a good night's sleep.")
-                )
-              )
-            ),
-            col(
-              row(
-                justify = "flex-end",
-                action_button(
-                  inputId = "card_button",
-                  flat = TRUE,
-                  auto = TRUE,
-                  rounded = TRUE,
-                  css = JS("{ color: '#94f9f0', bg: '#94f9f026' }"),
-                  text(
-                    css = JS("{ color: 'inherit' }"),
-                    size = 12,
-                    weight= "bold",
-                    transform = "uppercase",
-                    "Get App"
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
-    ),
-    grid(
-      md = 4,
-      xs = 4,
-      card(
-        className = "user-twitter-card__container",
-        css = JS(
-          "{
-            mw: '270px',
-            borderRadius: '$lg',
-            padding: '$sm',
-          }"
-        ),
-        row(
-          justify = "space-around",
-          align = "center",
-          col(
-            span = 8,
-            user(
-              src = "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-              name = "Ariana Wattson",
-              description = "UI/UX Designer",
-              css = JS("{ px: 0 }")
-            )
-          ),
-          col(
-            span = 4,
-            row(
-              action_button(
-                inputId = "twitter_button",
-                auto = TRUE,
-                rounded = TRUE,
-                onPress = NULL,
-                css = JS(
-                  "{
-                    maxHeight: '$space$12',
-                    fs: '$xs',
-                    fontWeight: '$semibold',
-                    borderColor: '$primary',
-                    color: '$white'
-                  }"
-                ),
-                color = "primary",
-                bordered = FALSE,
-                "Click me"
-              )
-            )
-          )
-        ),
-        grid_container(
-          className = "user-twitter-card__username-container",
-          grid(
-            xs = 12,
-            text(
-              className = "user-twitter-card__text",
-              size = 14,
-              css = JS("{ mt: '$1' }"),
-              color = "#888888",
-              "Full-stack developer, @getnextui lover she/her 🎉"
-            )
-          )
-        ),
-        grid_container(
-          className = "user-twitter-card__metrics-container",
-          justify = "flex-start",
-          alignContent = "center",
-          text(
-            className = "user-twitter-card__text",
-            size = 14,
-            color = "#888888",
-            text(
-              b = TRUE,
-              color = "foreground",
-              classNam. = "user-twitter-card__text",
-              size = 14,
-              "4"
-            ),
-            text("Following")
-          ),
-          spacer(inline = TRUE, x = 0.5),
-          text(
-            className = "user-twitter-card__text",
-            size = 14,
-            color = "#888888",
-            text(
-              b = TRUE,
-              color = "foreground",
-              classNam. = "user-twitter-card__text",
-              size = 14,
-              "97.1K"
-            ),
-            text("Followers")
-          )
-        )
-      )
+    card(
+      #isBlurred = TRUE,
+      isPressable = TRUE,
+      onPress = JS("() => alert('You pressed me')"),
+      shadow = "sm",
+      className = "border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]",
+      card_body("Press me!")
     )
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output, session) {
+
+}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
 }

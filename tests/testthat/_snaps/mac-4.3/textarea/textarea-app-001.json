@@ -1,0 +1,14 @@
+{
+  "input": {
+    "textarea": "",
+    "theme": "light",
+    "theme_switcher": true,
+    "update_text": null
+  },
+  "output": {
+    "textarea_val": ""
+  },
+  "export": {
+
+  }
+}

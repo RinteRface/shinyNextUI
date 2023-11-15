@@ -8,7 +8,7 @@
 The goal of `{shinyNextUI}` is to provide a wrapper around the
 NextUI React [library](https://nextui.org/).
 
-![](./man/figures/navbar.png)
+![](./man/figures/pkmn.png)
 
 ## Installation
 
@@ -21,7 +21,7 @@ devtools::install_github("RinteRface/shinyNextUI")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+To quickly get started with any example:
 
 ``` r
 library(shinyNextUI)
@@ -31,3 +31,14 @@ get_examples()
 run_example("card")
 ```
 
+## Developer
+
+Within the `js` folder, run `npm install`. Then, for each change:
+
+```shell
+# Update CSS
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+# Change JS files
+yarn webpack
+```

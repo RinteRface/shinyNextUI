@@ -12,9 +12,15 @@ RoxygenNote: 7.2.3
 Imports:
   htmltools,
   shiny,
-  shiny.react
+  shiny.react,
+  jsonlite
 Suggests: 
     testthat (>= 3.0.0),
     shinytest2,
-    purrr
+    purrr,
+    thematic,
+    shiny.router
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true

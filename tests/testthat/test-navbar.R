@@ -7,6 +7,7 @@ test_that("navbar works as expected", {
     package = "shinyNextUI"
   )
   app <- AppDriver$new(
+    seed = 4323,
     shiny_app_path,
     name = "navbar-app",
     variant = platform_variant()

@@ -2,12 +2,9 @@
 % Please edit documentation in R/components.R, R/doc.R
 \name{user}
 \alias{user}
-\alias{user_link}
 \title{user}
 \usage{
 user(...)
-
-user_link(...)
 }
 \arguments{
 \item{...}{Props to pass to the component.
@@ -17,93 +14,32 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Flexible User Profile Component.
+Display user information with avatar and name.
 }
 \details{
-\enumerate{
-\item User Props
 \itemize{
-\item \bold{color}. Change User Profile border color. Type: NormalColors string. Default: default.
-\item \bold{src}. Image source (local or remote). Type: string. Default: NA.
-\item \bold{name}. Display Text Next to Image. Type: string. Default: NA.
-\item \bold{text}. Display Text when image is missing. Type: string. Default: NA.
-\item \bold{alt}. Display alt text when image is missing. Type: string. Default: NA.
-\item \bold{size}. User Profile size. Type: NormalSizes number. Default: medium.
-\item \bold{bordered}. Bordered User Profile. Type: boolean. Default: false.
-\item \bold{zoomed}. Zoomed User Profile. Type: boolean. Default: false.
-\item \bold{pointer}. Display pointer cursor on hover. Type: boolean. Default: false.
-\item \bold{squared}. Squared User Profile. Type: boolean. Default: false.
-\item \bold{css}. Override Default CSS style. Type: Stitches.CSS. Default: NA.
-\item \bold{as}. Changes which tag component outputs. Type: keyof JSX.IntrinsicElements. Default: span.
-\item \bold{...}. Native props. Type: ImgHTMLAttributes. Default: NA.
-}
+\item \bold{name}. The name of the user.. Type: string. Default: NA.
+\item \bold{description}. The description component.. Type: ReactNode. Default: NA.
+\item \bold{isFocusable}. Whether the user is focusable. This is useful when using Dropdown or similar components.. Type: boolean. Default: false.
+\item \bold{avatarProps}. The avatar component props. The name is passed by default.. Type: AvatarProps. Default: NA.
+\item \bold{classNames}. Allows to set custom class names for the user slots.. Type: Record<"base"｜ "wrapper"｜ "name"｜ "description", string>. Default: NA.
 }
 }
 \examples{
 library(shiny)
 library(shinyNextUI)
-
-user <- shinyNextUI:::component("User")
-colors <- c(
-  "primary",
-  "secondary",
-  "success",
-  "warning",
-  "error"
-)
-
-bool_parm <- c(rep(TRUE, 3), rep(FALSE, 2))
-
-user_config <- data.frame(
-  src = c(
-    "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-    "https://i.pravatar.cc/150?u=a04258114e29026702d",
-    "https://i.pravatar.cc/150?u=a048581f4e29026701d",
-    "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
-    "https://i.pravatar.cc/150?u=a042581f4e29026024d"
-  ),
-  name = c(
-    "Ariana Wattson",
-    "Jane Fisher",
-    "William Howard",
-    "Kristen Copper",
-    "Tony Reichert"
-  ),
-  size = c("xs", "sm", "md", "lg", "xl"),
-  color = colors,
-  bordered = bool_parm,
-  zoomed = bool_parm,
-  pointer = bool_parm,
-  squared = bool_parm,
-  description = c(rep(NA, 2), rep("Description", 3))
-)
-
-user_factory <- function(src, name, size, color, bordered, zoomed, pointer, squared, description) {
-  grid(
-    user(
-      src = src,
-      name = name,
-      size = size,
-      color = color,
-      bordered = bordered,
-      zoomed = zoomed,
-      pointer = pointer,
-      squared = squared,
-      description = description,
-      user_link(href = "https://nextui.org/", "Link")
-    )
-  )
-}
-
-users <- purrr::pmap(user_config, user_factory)
+library(shiny.react)
 
 ui <- nextui_page(
-  text("user"),
-  grid_container(
-    gap = 2,
-    xs = 12,
-    sm = 6,
-    users
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
+    user(
+      name = "Jane Doe",
+      description = "Product Designer",
+      avatarProps = JS("{
+        src: 'https://i.pravatar.cc/150?u=a04258114e29026702d'
+      }")
+    )
   )
 )
 

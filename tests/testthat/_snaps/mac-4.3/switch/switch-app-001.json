@@ -1,0 +1,15 @@
+{
+  "input": {
+    "custom_switch": false,
+    "switch": true,
+    "theme": "light",
+    "theme_switcher": true,
+    "update": null
+  },
+  "output": {
+    "switch_val": "TRUE"
+  },
+  "export": {
+
+  }
+}

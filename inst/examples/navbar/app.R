@@ -29,14 +29,14 @@ layout <- function(..., content) {
   )
 }
 
-# TO DO: create wrapper for enduser to simplify all this mess.
+# TO DO: create wrapper for end-user to simplify all this mess.
 create_navbar <- function(id) {
 
   input <- get("input", envir = parent.frame())
 
   nav_links <- lapply(seq_along(sections), function(i) {
     # Li elements
-    navbar_link(
+    link(
       inputId = sprintf("link_%s", i),
       href = route_link(sections[[i]]),
       key = i,
@@ -56,7 +56,7 @@ create_navbar <- function(id) {
     maxWidth = "lg",
     variant = "floating",
     isBordered = TRUE,
-    navbar_brand(text(b = TRUE, "Brand", color = "inherit", hideIn = "xs")),
+    navbar_brand(p(b = TRUE, "Brand", color = "inherit", hideIn = "xs")),
     # Ul element
     navbar_content(
       variant = "highlight",
@@ -94,66 +94,18 @@ page <- function(id, content) {
 
 home <- page(
   id = "main",
-  grid_container(
-    gap = 2,
-    grid(
-      xs = 12,
-      card(
-        variant = "bordered",
-        card_header(text("Amazing plot", as = "h3")),
-        card_divider(),
-        card_body(
-          row(
-            justify = "center",
-            align = "center",
-            gap = 1,
-            col(
-              span = 2,
-              collapse_panel(
-                shadow = TRUE,
-                bordered = TRUE,
-                css = JS("{
-                  background: 'gainsboro'
-                }"),
-                title = "Plot options",
-                subtitle = "A panel containing options",
-                inputId = "options",
-                value = TRUE,
-                numeric_input(
-                  inputId = "obs",
-                  label = "Number of observations:",
-                  value = 500
-                )
-              )
-            ),
-            col(
-              span = 10,
-              plotOutput("distPlot")
-            )
-          )
-        )
-      )
-    )
+  card(
+    numeric_input(
+      inputId = "obs",
+      label = "Number of observations:",
+      value = 500
+    ),
+    plotOutput("distPlot")
   )
 )
 other <- page(
   id = "other",
-  grid_container(
-    gap = 2,
-    grid(
-      xs = 12,
-      card(
-        css = JS(
-          "{
-           maxHeight: '400px',
-          overflowY: 'scroll'
-          }"
-        ),
-        variant = "bordered",
-        tableOutput('table')
-      )
-    )
-  )
+  tableOutput('table')
 )
 
 ui <- nextui_page(

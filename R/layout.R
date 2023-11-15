@@ -4,49 +4,38 @@
 #' needed.
 #'
 #' @param ... UI elements.
+#' @param dark_mode Apply global dark mode. If NULL, no switch is shown.
 #' @param debug_react Whether to enable react debug mode.
 #' Default to FALSE.
 #'
 #' @return Object which can be passed as the UI of a Shiny app.
+#' @import shiny
+#' @import shiny.react
 #' @export
-nextui_page <- function(..., debug_react = FALSE) {
-  #tagList(
-    #create_react_deps(),
+nextui_page <- function(..., dark_mode = FALSE, debug_react = FALSE) {
+
+  tagList(
+    create_react_deps(),
     htmltools::tags$body(
-      htmltools::suppressDependencies("bootstrap"),
+      `data-skin` = if (is.null(dark_mode) || !dark_mode) "light" else "dark",
+      class = "container my-auto mx-auto px-4",
+      htmltools::suppressDependencies("bootstrap", "react"),
       if (debug_react) enableReactDebugMode(),
+      spacer(y = 2),
+      if (!is.null(dark_mode)) {
+        div(class = "flex flex-row-reverse", theme_switcher(value = !dark_mode))
+      },
       ...
     )
-  #)
+  )
 }
 
-#' @rdname container
-#' @inherit component params return
-#' @export
-container <- component("Container")
-
-#' @rdname container
-#' @inherit component params return
-#' @export
-row <- component("Row")
-
-#' @rdname container
-#' @inherit component params return
-#' @export
-col <- component("Col")
-
-#' @rdname grid
-#' @inherit component params return
-#' @export
-grid <- component("Grid")
-
-#' @rdname grid
-#' @inherit component params return
-#' @export
-grid_container <- custom_component("Grid.Container", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Grid.Container;
-")
+flex <- function(...) {
+  div(
+    class = "flex flex-wrap",
+    ...
+  )
+}
 
 #' @rdname spacer
 #' @inherit component params return
@@ -59,59 +48,17 @@ spacer <- component("Spacer")
 navbar <- component("Navbar")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
-navbar_brand <- custom_component("Navbar.Brand", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Brand;
-")
+navbar_brand <- component("NavbarBrand")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
-navbar_content <- custom_component("Navbar.Content", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Content;
-")
+navbar_content <- component("NavbarContent")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
-navbar_item <- custom_component("Navbar.Item", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Item;
-")
+navbar_item <- component("NavbarItem")
 
 #' @rdname navbar
-#' @inherit component params return
 #' @export
-navbar_link <- input("NavbarLink")
-
-#custom_component("Navbar.Link", "
-#  const NextUI = jsmodule['@nextui-org/react'];
-#  return NextUI.Navbar.Link;
-#")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_toggle <- custom_component("Navbar.Toggle", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Toggle;
-")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_collapse <- custom_component("Navbar.Collapse", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.Collapse;
-")
-
-#' @rdname navbar
-#' @inherit component params return
-#' @export
-navbar_collapse_item <- custom_component("Navbar.CollapseItem", "
-  const NextUI = jsmodule['@nextui-org/react'];
-  return NextUI.Navbar.CollapseItem;
-")
+navbar_toggle <- component("NavbarToggle")

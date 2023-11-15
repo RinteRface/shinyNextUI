@@ -1,0 +1,48 @@
+{
+  "input": {
+    "obs-1": 500,
+    "pagination": 1,
+    "theme": "light",
+    "theme_switcher": true
+  },
+  "output": {
+    "distPlot-1": {
+      "src": "[image data hash: cb35ca66bb2740d52387048729761656]",
+      "width": 712,
+      "height": 400,
+      "alt": "Plot object",
+      "coordmap": {
+        "panels": [
+          {
+            "domain": {
+              "left": -3.24,
+              "right": 3.24,
+              "bottom": -4,
+              "top": 104
+            },
+            "range": {
+              "left": 118.0799999999999,
+              "right": 1363.52,
+              "bottom": 652.12,
+              "top": 117.08
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "mapping": {
+
+            }
+          }
+        ],
+        "dims": {
+          "width": 1424,
+          "height": 800
+        }
+      }
+    }
+  },
+  "export": {
+
+  }
+}

@@ -1,27 +1,38 @@
 library(shiny)
 library(shinyNextUI)
+library(shiny.react)
 
 ui <- nextui_page(
-  grid_container(
-    gap = 2,
-    grid(
-      checkbox_group_input(
-        inputId = "checkbox_group",
-        label = "Checkbox Group",
-        choices = c(
-          "choice 1" = "My first choice",
-          "choice 2" = "My second choice"
-        ),
-        orientation = "horizontal",
-        color = "secondary",
-        selected = "choice 2"
-      )
+  debug_react = TRUE,
+  div(
+    class = "flex flex-col gap-1",
+    spacer(y = 2),
+    select_input(
+      "select",
+      label = "Tab to select:",
+      value = JS("['sydney']"),
+      selectionMode = "multiple",
+      select_item(key = "buenos-aires", value = "buenos-aires", "Buenos Aires"),
+      select_item(key = "sydney", value = "sydney", "Sydney")
     ),
-    grid(textOutput("checkbox_group_val"))
+    checkboxgroup_input(
+      inputId = "checkbox_group",
+      label = "Checkbox Group",
+      choices = c(
+        "buenos-aires" = "Buenos Aires",
+        "sydney" = "Sydney"
+      ),
+      orientation = "horizontal",
+      color = "secondary"
+    ),
+    textOutput("checkbox_group_val")
   )
 )
 
 server <- function(input, output, session) {
+  observeEvent(input$select, {
+    update_checkboxgroup_input(session, "checkbox_group", selected = input$select)
+  }, ignoreNULL = FALSE)
   output$checkbox_group_val <- renderText(input$checkbox_group)
 }
 

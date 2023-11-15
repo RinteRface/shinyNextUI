@@ -122,7 +122,7 @@ label_placements <- c(
 
 ui <- nextui_page(
   debug_react = TRUE,
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Basic select"),
+  p(class = "font-extrabold text-2xl uppercase", "Basic select"),
   action_button("update", "Update to bulbasaur?"),
   spacer(y = 2),
   action_button("toggle", "Open select"),
@@ -138,7 +138,7 @@ ui <- nextui_page(
   textOutput("select_val"),
   spacer(y = 5),
   divider(),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Variants"),
+  p(class = "font-extrabold text-2xl uppercase", "Variants"),
   lapply(select_variants, function(variant) {
     tagList(
       select_input(
@@ -155,7 +155,7 @@ ui <- nextui_page(
   spacer(y = 5),
   divider(),
   p(
-    class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2",
+    class = "font-extrabold text-2xl uppercase",
     "Label placement and validation (no value specified)"
   ),
   lapply(label_placements, function(placement) {
@@ -173,7 +173,7 @@ ui <- nextui_page(
   spacer(y = 5),
   divider(),
   p(
-    class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2",
+    class = "font-extrabold text-2xl uppercase",
     "Custom render value"
   ),
   select_input(

@@ -65,7 +65,7 @@ A listbox displays a list of options and allows a user to select one or more of 
 \item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable\if{html}{\out{<T>}}. Default: NA.
 \item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
 \item \bold{showDivider}. Whether to show the divider between the groups.. Type: boolean. Default: false.
-\item \bold{DividerProps}. The divider component props.. Type: DividerProps. Default: NA.
+\item \bold{dividerProps}. The divider component props.. Type: DividerProps. Default: NA.
 \item \bold{classNames}. Allows to set custom class names for the listbox section slots.. Type: Record<"base"｜ "heading"｜ "group"｜ "divider", string>. Default: NA.
 \item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
 }

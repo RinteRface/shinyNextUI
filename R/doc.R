@@ -374,6 +374,35 @@ NULL
 #' @seealso See \url{https://nextui.org/docs/components/checkbox}.
 NULL
 
+#' circular-progress
+#'
+#' @description
+#' Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
+#'\item \bold{size}. The size of the indicator.. Type: sm | md | lg. Default: md.
+#'\item \bold{color}. The color of the indicator.. Type: default | primary | secondary | success | warning | danger. Default: primary.
+#'\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
+#'\item \bold{valueLabel}. The content to display as the value's label (e.g. 1 of 4).. Type: ReactNode. Default: NA.
+#'\item \bold{minValue}. The smallest value allowed for the input.. Type: number. Default: 0.
+#'\item \bold{maxValue}. The largest value allowed for the input.. Type: number. Default: 100.
+#'\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: {style: 'percent'}.
+#'\item \bold{isIndeterminate}. Whether the progress is indeterminate.. Type: boolean. Default: true.
+#'\item \bold{showValueLabel}. Whether to show the value label.. Type: boolean. Default: true.
+#'\item \bold{strokeWidth}. The width of the progress stroke.. Type: number. Default: 2.
+#'\item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
+#'\item \bold{classNames}. Allows to set custom class names for the circular progress slots.. Type: Record<"base"｜"svgWrapper"｜"svg"｜"track"｜"indicator"｜"value"｜"label", string>. Default: NA.
+#' }
+#' @md
+#' @name circular-progress
+#' @example inst/examples/circular-progress/app.R
+#' @seealso See \url{https://nextui.org/docs/components/circular-progress}.
+NULL
+
 #' chip
 #'
 #' @description
@@ -594,7 +623,7 @@ NULL
 #'\item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable<T>. Default: NA.
 #'\item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
 #'\item \bold{showDivider}. Whether to show the divider between the groups.. Type: boolean. Default: false.
-#'\item \bold{DividerProps}. The divider component props.. Type: DividerProps. Default: NA.
+#'\item \bold{dividerProps}. The divider component props.. Type: DividerProps. Default: NA.
 #'\item \bold{classNames}. Allows to set custom class names for the listbox section slots.. Type: Record<"base"｜ "heading"｜ "group"｜ "divider", string>. Default: NA.
 #'\item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
 #' }
@@ -1185,7 +1214,7 @@ NULL
 #'\item \bold{updatePositionDeps}. The dependencies to force the tooltip position update.. Type: any[]. Default: [].
 #'\item \bold{isDisabled}. Whether the tooltip is disabled.. Type: boolean. Default: false.
 #'\item \bold{disableAnimation}. Whether the tooltip is animated.. Type: boolean. Default: false.
-#'\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"arrow", string>. Default: NA.
+#'\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"content", string>. Default: NA.
 #' }
 #' \itemize{
 #'\item \bold{onOpenChange}. Handler that is called when the tooltip's open state changes.. Type: (isOpen: boolean) => void. Default: NA.

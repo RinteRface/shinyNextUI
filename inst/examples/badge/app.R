@@ -32,13 +32,13 @@ badge_factory <- function(size, color, disable_outline) {
 badges <- purrr::pmap(badge_config, badge_factory)
 
 ui <- nextui_page(
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Badges"),
+  p(class = "font-extrabold text-2xl uppercase", "Badges"),
   div(
     class = "flex flex-row",
     badges
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Badge content"),
+  p(class = "font-extrabold text-2xl uppercase", "Badge content"),
   div(
     class = "flex flex-row",
     badge(
@@ -55,17 +55,29 @@ ui <- nextui_page(
     )
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Solid variant"),
-  div(class = "flex flex-row", badge(variant = "solid", color = "success", size = "lg", content = 5, avatar())),
+  p(class = "font-extrabold text-2xl uppercase", "Solid variant"),
+  div(
+    class = "flex flex-row",
+    badge(variant = "solid", color = "success", size = "lg", content = 5, avatar())
+  ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Flat variant"),
-  div(class = "flex flex-row", badge(variant = "flat", color = "success", size = "lg", content = 5, avatar())),
+  p(class = "font-extrabold text-2xl uppercase", "Flat variant"),
+  div(
+    class = "flex flex-row",
+    badge(variant = "flat", color = "success", size = "lg", content = 5, avatar())
+  ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Faded variant"),
-  div(class = "flex flex-row", badge(variant = "faded", color = "success", size = "lg", content = 5, avatar())),
+  p(class = "font-extrabold text-2xl uppercase", "Faded variant"),
+  div(
+    class = "flex flex-row",
+    badge(variant = "faded", color = "success", size = "lg", content = 5, avatar())
+  ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Shadow variant"),
-  div(class = "flex flex-row", badge(variant = "shadow", color = "success", size = "lg", content = 5, avatar()))
+  p(class = "font-extrabold text-2xl uppercase", "Shadow variant"),
+  div(
+    class = "flex flex-row",
+    badge(variant = "shadow", color = "success", size = "lg", content = 5, avatar())
+  )
 )
 
 server <- function(input, output, session) {}

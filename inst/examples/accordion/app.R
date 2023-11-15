@@ -4,7 +4,7 @@ library(shiny.react)
 
 ui <- nextui_page(
   debug_react = TRUE,
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "accordion()"),
+  p(class = "font-extrabold text-2xl uppercase", "accordion()"),
   accordion(
     inputId = "accordion1",
     value = "2",
@@ -24,7 +24,7 @@ ui <- nextui_page(
     accordion_item("plop", title = "Element 2", key = "2")
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "shadow variant accordion()"),
+  p(class = "font-extrabold text-2xl uppercase", "shadow variant accordion()"),
   accordion(
     inputId = "accordion2",
     isCompact = TRUE,
@@ -35,7 +35,7 @@ ui <- nextui_page(
     accordion_item("plop", title = "Element 3", key = "3")
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "bordered variant accordion()"),
+  p(class = "font-extrabold text-2xl uppercase", "bordered variant accordion()"),
   accordion(
     inputId = "accordion3",
     isCompact = TRUE,
@@ -44,7 +44,7 @@ ui <- nextui_page(
     accordion_item("plop", title = "Element 2", key = "2")
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "splitted variant accordion()"),
+  p(class = "font-extrabold text-2xl uppercase", "splitted variant accordion()"),
   accordion(
     inputId = "accordion4",
     isCompact = TRUE,
@@ -91,7 +91,7 @@ ui <- nextui_page(
     accordion_item("plop", title = "Element 2", key = "2")
   ),
   spacer(y = 2),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Update accordion"),
+  p(class = "font-extrabold text-2xl uppercase", "Update accordion"),
   select_input(
     "select",
     label = "Accordion to open:",

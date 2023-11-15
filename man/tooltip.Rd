@@ -45,7 +45,7 @@ Tooltips display a brief, informative message that appears when a user interacts
 \item \bold{updatePositionDeps}. The dependencies to force the tooltip position update.. Type: any[]. Default: [].
 \item \bold{isDisabled}. Whether the tooltip is disabled.. Type: boolean. Default: false.
 \item \bold{disableAnimation}. Whether the tooltip is animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"arrow", string>. Default: NA.
+\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"content", string>. Default: NA.
 }
 \itemize{
 \item \bold{onOpenChange}. Handler that is called when the tooltip's open state changes.. Type: (isOpen: boolean) => void. Default: NA.

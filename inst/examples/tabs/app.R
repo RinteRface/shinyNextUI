@@ -43,7 +43,7 @@ items <- tagList(
 
 ui <- nextui_page(
   debug_react = TRUE,
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Simple tabs"),
+  p(class = "font-extrabold text-2xl uppercase", "Simple tabs"),
   tabs(
     inputId = "tabs1",
     disabledKeys = "2",
@@ -60,7 +60,7 @@ ui <- nextui_page(
   p("Selected tab is:", textOutput("active_tab", inline = TRUE)),
   spacer(y = 5),
   divider(),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Tab size"),
+  p(class = "font-extrabold text-2xl uppercase", "Tab size"),
   lapply(sizes, function(size) {
     tagList(
       p(class = "", sprintf("Size: %s", size)),
@@ -73,7 +73,7 @@ ui <- nextui_page(
   }),
   spacer(y = 5),
   divider(),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Tab variants"),
+  p(class = "font-extrabold text-2xl uppercase", "Tab variants"),
   lapply(tabs_variants, function(variant) {
     tagList(
       p(sprintf("Variant: %s", variant)),
@@ -86,7 +86,7 @@ ui <- nextui_page(
   }),
   spacer(y = 5),
   divider(),
-  p(class = "text-teal-300 font-extrabold hover:text-rose-300 text-2xl uppercase my-2", "Tab color"),
+  p(class = "font-extrabold text-2xl uppercase", "Tab color"),
   lapply(colors, function(color) {
     tagList(
       p(class = "", sprintf("Color: %s", color)),

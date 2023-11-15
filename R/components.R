@@ -89,7 +89,6 @@ skeleton <- component("Skeleton")
 snippet <- component("Snippet")
 
 #' @rdname table
-#' @inherit component params return
 #' @keywords internal
 .table <- component("Table")
 
@@ -117,7 +116,13 @@ table_cell <-component("TableCell")
 #'
 #' @rdname table
 #' @param data Data to render.
+#' @param ... Options.
 #' @export
+#' @details
+#' See \url{https://nextui.org/docs/layout/spacer} to get the list of
+#' parameters to pass in \code{...}.
+#' @example inst/examples/table/app.R
+#' @seealso See \url{https://nextui.org/docs/layout/table}.
 table <- function(data = NULL, ...) {
   if (!inherits(data, "list")) {
     cols <- colnames(data)

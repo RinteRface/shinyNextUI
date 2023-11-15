@@ -91,6 +91,7 @@ items <- list(
     "card",
     "checkbox",
     #"checkbox-group",
+    "circular-progress",
     "chip",
     "code",
     "divider",

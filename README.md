@@ -22,7 +22,7 @@ The current roadmap:
 - Refine the navbar template.
 - Allow to dynamically create [themes](https://nextui.org/docs/customization/theme).
 
-`{shinyNextUI}` leverages tailwind css. 
+`{shinyNextUI}` leverages tailwind css and some [rules](https://github.com/RinteRface/shinyNextUI/blob/main/js/src/output.css) have already been pre-compiled to use in the various [examples](https://github.com/RinteRface/shinyNextUI/tree/main/inst/examples). If you need custom styles, you can use the [`{windy}`](https://github.com/devOpifex/windy) package.
 
 ## Installation
 
@@ -47,7 +47,7 @@ run_example("card")
 
 ## Developer
 
-`{shinyNextUI}` leverages [tailwind](https://tailwindcss.com/) for the CSS management and [webpack](https://webpack.js.org/) as JS bundler.
+`{shinyNextUI}` leverages [tailwind](https://tailwindcss.com/) for the CSS management and [webpack](https://webpack.js.org/) as JS bundler and a mix between `{shiny.react}` and `{reactR}` for components and input management.
 
 Within the `js` folder, run `npm install`. Then, for each change:
 

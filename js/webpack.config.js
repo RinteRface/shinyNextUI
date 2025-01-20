@@ -5,7 +5,7 @@ const config = {
   entry: './src/index.js',
   mode: 'production',
   output: {
-    path: path.join(__dirname, '..', 'inst', 'nextui-2.0.0'),
+    path: path.join(__dirname, '..', 'inst', 'nextui-2.6.14'),
     filename: 'nextui.js'
   },
   module: {

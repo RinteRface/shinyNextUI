@@ -130,13 +130,12 @@ update_checkbox_input <- shiny.react::updateReactInput
 #' @keywords internal
 #' @noRd
 create_group_input <- function(
-    inputId,
-    ...,
-    choices,
-    selected,
-    type = c("CheckboxGroup", "RadioGroup", "DropdownMenu")
-  ) {
-
+  inputId,
+  ...,
+  choices,
+  selected,
+  type = c("CheckboxGroup", "RadioGroup", "DropdownMenu")
+) {
   type <- match.arg(type)
 
   process_val <- switch(
@@ -188,35 +187,34 @@ radio_input <- function(inputId, ..., choices, selected = choices[1]) {
 #' @param keywords internal
 #' @noRd
 update_group_input <- function(
-    session = shiny::getDefaultReactiveDomain(),
-    inputId,
-    ...,
-    choices = NULL,
-    selected = NULL,
-    type = c("CheckboxGroup", "RadioGroup")
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...,
+  choices = NULL,
+  selected = NULL,
+  type = c("CheckboxGroup", "RadioGroup")
 ) {
-
   type <- match.arg(type)
 
   message <- list()
   if (type == "CheckboxGroup") selected <- as.list(selected)
-  message$value <-  selected
+  message$value <- selected
   configuration <- listRenderTags(c(children = as.list(choices), list(...)))
   if (length(configuration) > 0) {
     message$configuration <- configuration
   }
-  session$sendInputMessage(inputId, message);
+  session$sendInputMessage(inputId, message)
 }
 
 #' @rdname radio
 #' @param session Shiny session.
 #' @export
 update_radio_input <- function(
-    session = shiny::getDefaultReactiveDomain(),
-    inputId,
-    ...,
-    choices = NULL,
-    selected = NULL
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...,
+  choices = NULL,
+  selected = NULL
 ) {
   update_group_input(
     session,
@@ -252,11 +250,11 @@ checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
 #' @inheritParams update_radio_input
 #' @export
 update_checkboxgroup_input <- function(
-    session = shiny::getDefaultReactiveDomain(),
-    inputId,
-    ...,
-    choices = NULL,
-    selected = NULL
+  session = shiny::getDefaultReactiveDomain(),
+  inputId,
+  ...,
+  choices = NULL,
+  selected = NULL
 ) {
   update_group_input(
     session,

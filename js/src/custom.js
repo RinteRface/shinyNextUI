@@ -1,4 +1,4 @@
-import * as NextUI from '@nextui-org/react';
+import * as NextUI from "@heroui/react";
 import * as ReactR from './utils.js';
 
 /* Radio and checkbox group don't work with shiny.react, have to use reactR ... */

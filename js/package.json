@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@heroui/react": "2.6.14",
     "css-loader": "^6.8.1",
     "framer-motion": "^12.0.0",

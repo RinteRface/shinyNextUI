@@ -11,11 +11,12 @@
 #'
 #' @return A list of tags.
 #' @export
-createReactShinyInput <- function (
-    inputId,
-    class,
-    default = NULL, configuration = list(),
-    container = htmltools::tags$div
+createReactShinyInput <- function(
+  inputId,
+  class,
+  default = NULL,
+  configuration = list(),
+  container = htmltools::tags$div
 ) {
   value <- shiny::restoreInput(id = inputId, default = default)
   htmltools::tagList(
@@ -23,18 +24,23 @@ createReactShinyInput <- function (
     htmltools::tags$script(
       id = sprintf("%s_value", inputId),
       type = "application/json",
-      jsonlite::toJSON(value, auto_unbox = TRUE, null = "null")
+      jsonlite::toJSON(value, auto_unbox = TRUE, null = "null", force = TRUE)
     ),
     htmltools::tags$script(
       id = sprintf("%s_configuration", inputId),
       type = "application/json",
-      jsonlite::toJSON(configuration,  auto_unbox = TRUE, null = "null")
+      jsonlite::toJSON(
+        configuration,
+        auto_unbox = TRUE,
+        null = "null",
+        force = TRUE
+      )
     ),
     shinyReactDependency(),
     htmltools::htmlDependency(
       name = "nextui",
-      version = "2.0.0",
-      src = "nextui-2.0.0",
+      version = "2.6.14",
+      src = "nextui-2.6.14",
       package = "shinyNextUI",
       script = "nextui.js"
     )

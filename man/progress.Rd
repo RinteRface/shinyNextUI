@@ -53,13 +53,20 @@ bool_par <- c(rep(FALSE, 3), rep(TRUE, 2), FALSE)
 progress_config <- data.frame(
   label = c(rep("A label", 3), rep("", 3)),
   show_value_label = c(rep(FALSE, 3), rep(TRUE, 3)),
-  size = c("xs", "sm", rep("md", 2), "lg", "xl"),
+  size = c("sm", "sm", rep("md", 2), "lg", "lg"),
   color = colors,
   striped = bool_par,
   radius = c(rep("none", 2), "sm", "md", "lg", "full")
 )
 
-progress_factory <- function(label, show_value_label, size, color, striped, radius) {
+progress_factory <- function(
+  label,
+  show_value_label,
+  size,
+  color,
+  striped,
+  radius
+) {
   progress(
     label = label,
     showValueLabel = show_value_label,
@@ -80,7 +87,8 @@ ui <- nextui_page(
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output, session) {
+}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
 }

@@ -153,7 +153,7 @@ create_group_input <- function(
       inputId = inputId,
       class = tolower(type),
       default = process_val(selected),
-      configuration = listRenderTags(list(children = as.list(choices), ...)),
+      configuration = list(children = choices, ...),
       container = htmltools::tags$div
     )
   )
@@ -199,7 +199,7 @@ update_group_input <- function(
   message <- list()
   if (type == "CheckboxGroup") selected <- as.list(selected)
   message$value <- selected
-  configuration <- listRenderTags(c(children = as.list(choices), list(...)))
+  configuration <- list(children = choices, ...)
   if (length(configuration) > 0) {
     message$configuration <- configuration
   }

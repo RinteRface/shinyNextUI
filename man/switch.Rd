@@ -76,8 +76,7 @@ ui <- nextui_page(
     switch_input(
       inputId = "switch",
       value = TRUE,
-      size = "xs",
-      shadow = TRUE
+      size = "xs"
     ),
     textOutput("switch_val"),
     spacer(y = 5),
@@ -86,18 +85,22 @@ ui <- nextui_page(
     switch_input(
       "custom_switch",
       classNames = JS(
-        sprintf("{
+        sprintf(
+          "{
           base: '\%s',
           wrapper: 'p-0 h-4 overflow-visible',
           thumb: '\%s'
-        }", base_style, thumb_style
-      )),
+        }",
+          base_style,
+          thumb_style
+        )
+      ),
       div(
         className = "flex flex-col gap-1",
         p(className = "text-medium", "Enable early acces"),
         p(
           className = "text-tiny text-default-400",
-         "Get access to new features before they are released."
+          "Get access to new features before they are released."
         )
       )
     )

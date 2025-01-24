@@ -26,6 +26,19 @@ NULL
 #' @name component
 NULL
 
+#' Documentation template for remaining components
+#'
+#' @param ... Props to pass to the component.
+#' The allowed props are listed below in the \bold{Details} section.
+#' @param motion Prop relation to the framer-motion react library.
+#'
+#' @return
+#' Object with `shiny.tag` class suitable for use in the UI of a Shiny app.
+#'
+#' @keywords internal
+#' @name custom_component
+NULL
+
 #' spacer
 #'
 #' @description

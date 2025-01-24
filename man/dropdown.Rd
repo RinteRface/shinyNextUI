@@ -45,7 +45,7 @@ library(shiny)
 library(shinyNextUI)
 library(shiny.react)
 
-items <- tagList(
+items <- list(
   # Dropdown section
   dropdown_section(
     showDivider = TRUE,

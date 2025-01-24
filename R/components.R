@@ -1,11 +1,28 @@
 component <- function(name) {
-  function(...)
+  function(...) {
     shiny.react::reactElement(
       module = "@heroui/react",
       name = name,
       props = shiny.react::asProps(...),
       deps = nextui_deps()
     )
+  }
+}
+
+custom_component <- function(name, motion) {
+  function(...) {
+    shiny.react::reactElement(
+      module = "@heroui/react",
+      name = name,
+      props = shiny.react::asProps(
+        ...,
+        # There is a bug in react motion that prevents
+        # tooltips and popovers to be visible. This will fix it
+        motionProps = motion
+      ),
+      deps = nextui_deps()
+    )
+  }
 }
 
 #' @rdname avatar

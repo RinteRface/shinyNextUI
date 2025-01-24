@@ -145,6 +145,8 @@ create_group_input <- function(
     "DropdownMenu" = as.list
   )
 
+  dependencies <- htmltools::findDependencies(choices)
+
   tagList(
     # This seems a bit hacky but this can't be called from the main JS script
     # because we only need it when the radio is invoked ...
@@ -154,7 +156,8 @@ create_group_input <- function(
       class = tolower(type),
       default = process_val(selected),
       configuration = list(children = choices, ...),
-      container = htmltools::tags$div
+      container = htmltools::tags$div,
+      dependencies = dependencies
     )
   )
 }

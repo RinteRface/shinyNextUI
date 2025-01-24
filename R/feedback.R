@@ -22,7 +22,35 @@ modal_footer <- component("ModalFooter")
 #' @rdname popover
 #' @inherit component params return
 #' @export
-popover <- component("Popover")
+popover <- custom_component(
+  "Popover",
+  motion = JS(
+    "{
+    variants: {
+      enter: {
+        y: 0,
+        opacity: 1,
+        duration: 0.1,
+        transition: {
+          opacity: {
+            duration: 0.15,
+          },
+        },
+      },
+      exit: {
+        y: '10%',
+        opacity: 0,
+        duration: 0,
+        transition: {
+          opacity: {
+            duration: 0.1,
+          },
+        },
+      },
+    },
+  }"
+  )
+)
 
 #' @rdname popover
 #' @export
@@ -35,4 +63,26 @@ popover_content <- component("PopoverContent")
 #' @rdname tooltip
 #' @inherit component params return
 #' @export
-tooltip <- component("Tooltip")
+tooltip <- custom_component(
+  "Tooltip",
+  motion = JS(
+    "{
+      variants: {
+        exit: {
+          opacity: 0,
+          transition: {
+            duration: 0.1,
+            ease: 'easeIn',
+          },
+        },
+        enter: {
+          opacity: 1,
+          transition: {
+            duration: 0.15,
+            ease: 'easeOut',
+          },
+        },
+      },
+    }"
+  )
+)

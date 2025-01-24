@@ -9,7 +9,8 @@ createReactShinyInput(
   class,
   default = NULL,
   configuration = list(),
-  container = htmltools::tags$div
+  container = htmltools::tags$div,
+  dependencies = NULL
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ createReactShinyInput(
 \item{configuration}{Props.}
 
 \item{container}{Default container.}
+
+\item{dependencies}{Deps.}
 }
 \value{
 A list of tags.

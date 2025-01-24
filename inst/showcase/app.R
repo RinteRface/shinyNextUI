@@ -4,13 +4,16 @@ library(echarts4r)
 library(dplyr)
 library(shiny.react)
 
-sapply(list.files(
-  "./modules",
-  #system.file("showcase/modules", package = "shinyNextUI"),
-  full.names = TRUE
-), function(i) {
-  source(i)
-})
+sapply(
+  list.files(
+    "./modules",
+    #system.file("showcase/modules", package = "shinyNextUI"),
+    full.names = TRUE
+  ),
+  function(i) {
+    source(i)
+  }
+)
 
 ui <- nextui_page(
   dark_mode = TRUE,
@@ -50,9 +53,14 @@ server <- function(input, output, session) {
   mod_poke_move_server("poke_move_1", main$selected, reactive(input$theme))
 
   modalVisible <- reactiveVal(FALSE)
-  observeEvent(main$select_state(), {
-   if (is.null(main$select_state())) modalVisible(TRUE)
-  }, ignoreNULL = FALSE, ignoreInit = TRUE)
+  observeEvent(
+    main$select_state(),
+    {
+      if (is.null(main$select_state())) modalVisible(TRUE)
+    },
+    ignoreNULL = FALSE,
+    ignoreInit = TRUE
+  )
 
   observeEvent(input$modal_closed, {
     modalVisible(FALSE)
@@ -66,7 +74,8 @@ server <- function(input, output, session) {
       backdrop = "blur",
       onClose = JS(
         "() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})
-      "),
+      "
+      ),
       modal_content(
         modal_header("Oups, no pokemon is selected ..."),
         modal_body("Select a pokemon to see the data!")

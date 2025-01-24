@@ -8,6 +8,7 @@
 #' @param default Default value.
 #' @param configuration Props.
 #' @param container Default container.
+#' @param dependencies Deps.
 #'
 #' @return A list of tags.
 #' @export
@@ -16,7 +17,8 @@ createReactShinyInput <- function(
   class,
   default = NULL,
   configuration = list(),
-  container = htmltools::tags$div
+  container = htmltools::tags$div,
+  dependencies = NULL
 ) {
   value <- shiny::restoreInput(id = inputId, default = default)
   htmltools::tagList(
@@ -43,7 +45,8 @@ createReactShinyInput <- function(
       src = "nextui-2.6.14",
       package = "shinyNextUI",
       script = "nextui.js"
-    )
+    ),
+    dependencies
   )
 }
 

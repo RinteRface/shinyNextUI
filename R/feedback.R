@@ -1,3 +1,24 @@
+#' @rdname drawer
+#' @inherit component params return
+#' @export
+drawer <- component("Drawer")
+
+#' @rdname drawer
+#' @export
+drawer_content <- component("DrawerContent")
+
+#' @rdname drawer
+#' @export
+drawer_header <- component("DrawerHeader")
+
+#' @rdname drawer
+#' @export
+drawer_body <- component("DrawerBody")
+
+#' @rdname drawer
+#' @export
+drawer_footer <- component("DrawerFooter")
+
 #' @rdname modal
 #' @inherit component params return
 #' @export
@@ -82,7 +103,7 @@ tooltip <- custom_component(
             ease: 'easeOut',
           },
         },
-      },
+      }
     }"
   )
 )

@@ -1,9 +1,9 @@
 nextui_deps <- function() {
   htmltools::htmlDependency(
     name = "nextui",
-    version = "2.6.14",
+    version = "2.7.4",
     package = "shinyNextUI",
-    src = c(file = "nextui-2.6.14"),
+    src = c(file = "nextui-2.7.4"),
     script = "nextui.js"
   )
 }

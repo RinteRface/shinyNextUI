@@ -6,9 +6,10 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@heroui/react": "2.6.14",
+    "@heroui/react": "^2.7.4",
     "css-loader": "^6.8.1",
-    "framer-motion": "^12.0.1",
+    "framer-motion": "^12.4.10",
+    "latest": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^3.3.3"

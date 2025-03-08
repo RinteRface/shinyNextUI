@@ -65,6 +65,8 @@ ui <- nextui_page(
       content = "A tooltip...",
       color = "primary",
       showArrow = TRUE,
+      closeDelay = 0,
+      delay = 0,
       button("Click me!", color = "warning")
     )
   )

@@ -8,7 +8,8 @@ module.exports = {
       "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
       "../inst/examples/**/*.R",
       "../inst/showcase/modules/*.R",
-      "../R/*.R"
+      "../R/*.R",
+      "./node_modules/@heroui/theme/dist/components/popover.js",
     ],
     extract: {
       R: (content) => {

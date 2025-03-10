@@ -5,7 +5,6 @@ mod_poke_evolve_ui <- function(id) {
 
 mod_poke_evolve_server <- function(id, selected, is_shiny) {
   moduleServer(id, function(input, output, session) {
-
     # treat data and generate the timeline
     output$poke_evolve <- renderUI({
       req(!is.null(selected()))
@@ -20,7 +19,7 @@ mod_poke_evolve_server <- function(id, selected, is_shiny) {
           tags$div(
             tags$p("Evolves from:"),
             avatar(
-              size = "xs",
+              size = "sm",
               src = if (is_shiny()) {
                 poke_data[[evol$id]]$sprites$front_shiny
               } else {

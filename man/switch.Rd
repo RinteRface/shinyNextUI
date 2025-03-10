@@ -29,25 +29,24 @@ The Switch component is used as an alternative between checked and not checked s
 }
 \details{
 \itemize{
-\item \bold{children}. The label of the switch.. Type: ReactNode. Default: NA.
-\item \bold{value}. The value of the input element, used when submitting an HTML form.. Type: string. Default: NA.
-\item \bold{name}. The name of the input element, used when submitting an HTML form.. Type: string. Default: NA.
-\item \bold{size}. The size of the switch.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the switch.. Type: default | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{thumbIcon}. The icon to be displayed when the switch is checked.. Type: ThumbIconProps. Default: NA.
-\item \bold{startContent}. The icon to be displayed at the start of the switch.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. The icon to be displayed at the end of the switch.. Type: ReactNode. Default: NA.
-\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: NA.
-\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: NA.
-\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: NA.
-\item \bold{isDisabled}. Whether the switch is disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the switch slots.. Type: Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{value}. Type: \code{string}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{thumbIcon}. Type: \code{ThumbIconProps}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
+\item \bold{onValueChange}. Type: \code{(isSelected: boolean) => void}. Default: NA.
 }
 }
 \examples{
@@ -76,8 +75,7 @@ ui <- nextui_page(
     switch_input(
       inputId = "switch",
       value = TRUE,
-      size = "xs",
-      shadow = TRUE
+      size = "xs"
     ),
     textOutput("switch_val"),
     spacer(y = 5),
@@ -86,18 +84,22 @@ ui <- nextui_page(
     switch_input(
       "custom_switch",
       classNames = JS(
-        sprintf("{
+        sprintf(
+          "{
           base: '\%s',
           wrapper: 'p-0 h-4 overflow-visible',
           thumb: '\%s'
-        }", base_style, thumb_style
-      )),
+        }",
+          base_style,
+          thumb_style
+        )
+      ),
       div(
         className = "flex flex-col gap-1",
         p(className = "text-medium", "Enable early acces"),
         p(
           className = "text-tiny text-default-400",
-         "Get access to new features before they are released."
+          "Get access to new features before they are released."
         )
       )
     )

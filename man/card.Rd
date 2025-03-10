@@ -27,26 +27,26 @@ Card is a container for text, photos, and actions in the context of a single sub
 }
 \details{
 \itemize{
-\item \bold{children}. Usually the Card parts, CardHeader, CardBody and CardFooter.. Type: ReactNode | ReactNode[]. Default: NA.
-\item \bold{shadow}. The card shadow.. Type: none | sm | md | lg. Default: md.
-\item \bold{radius}. The card border radius.. Type: none | sm | md | lg. Default: lg.
-\item \bold{fullWidth}. Whether the card should take the full width of its parent.. Type: boolean. Default: false.
-\item \bold{isHoverable}. Whether the card should change the background on hover.. Type: boolean. Default: false.
-\item \bold{isPressable}. Whether the card should allow to be pressed.. Type: boolean. Default: false.
-\item \bold{isBlurred}. Whether the card background should be blurred.. Type: boolean. Default: false.
-\item \bold{isFooterBlurred}. Whether the card footer background should be blurred.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the card should be disabled. The press events will be ignored.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
-\item \bold{disableRipple}. Whether to disable ripple effect. Only when isPressable is true.. Type: boolean. Default: false.
-\item \bold{allowTextSelectionOnPress}. Whether to allow text selection on pressing. Only when isPressable is true.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "header"｜ "body"｜ "footer", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
+\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
+\item \bold{isHoverable}. Type: \code{boolean}. Default: false.
+\item \bold{isPressable}. Type: \code{boolean}. Default: false.
+\item \bold{isBlurred}. Type: \code{boolean}. Default: false.
+\item \bold{isFooterBlurred}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{disableRipple}. Type: \code{boolean}. Default: false.
+\item \bold{allowTextSelectionOnPress}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'header' | 'body' | 'footer', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onPress}. Handler that is called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler that is called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
 }
 }
 \examples{

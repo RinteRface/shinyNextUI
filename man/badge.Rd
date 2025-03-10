@@ -18,20 +18,20 @@ Badges are used as a small numerical value or status descriptor for UI elements.
 }
 \details{
 \itemize{
-\item \bold{children *}. The wrapped component.. Type: ReactNode. Default: NA.
-\item \bold{content}. The content of the badge. The badge will be rendered relative to its children.. Type: string | number | ReactNode. Default: NA.
-\item \bold{variant}. The variant style of the badge.. Type: solid | flat | faded | shadow. Default: solid.
-\item \bold{color}. The color of the badge.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the badge.. Type: sm | md | lg. Default: md.
-\item \bold{shape}. The shape of the badge.. Type: circle | rectangle. Default: rectangle.
-\item \bold{placement}. The placement of the badge.. Type: top-right | top-left | bottom-right | bottom-left. Default: top-right.
-\item \bold{showOutline}. If true, the badge will have an outline.. Type: boolean. Default: true.
-\item \bold{disableOutline}. If true, the badge will not have an outline. Deprecated use showOutline instead.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. If true, the badge will not have an animation.. Type: boolean. Default: false.
-\item \bold{isInvisible}. If true, the badge will be invisible.. Type: boolean. Default: false.
-\item \bold{isOneChar}. If true, the badge will have the same width and height.. Type: boolean. Default: false.
-\item \bold{isDot}. If true, the badge will have smaller dimensions.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the badge slots.. Type: Record<"base"｜"badge", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{content}. Type: \code{string | number | ReactNode}. Default: NA.
+\item \bold{variant}. Type: \code{solid | flat | faded | shadow}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{shape}. Type: \code{circle | rectangle}. Default: "rectangle".
+\item \bold{placement}. Type: \code{top-right | top-left | bottom-right | bottom-left}. Default: "top-right".
+\item \bold{showOutline}. Type: \code{boolean}. Default: true.
+\item \bold{disableOutline}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{isInvisible}. Type: \code{boolean}. Default: false.
+\item \bold{isOneChar}. Type: \code{boolean}. Default: false.
+\item \bold{isDot}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"badge", string>>}. Default: NA.
 }
 }
 \examples{

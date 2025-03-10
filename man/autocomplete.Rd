@@ -36,65 +36,70 @@ An autocomplete combines a text input with a listbox, allowing users to filter a
 \enumerate{
 \item Autocomplete Props
 \itemize{
-\item \bold{children*}. The children to render. Usually a list of AutocompleteItem and AutocompleteSection elements.. Type: ReactNode[]. Default: NA.
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN.. Type: string. Default: NA.
-\item \bold{variant}. The variant of the Autocomplete.. Type: flat | bordered | faded | underlined. Default: flat.
-\item \bold{color}. The color of the Autocomplete.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the Autocomplete.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The radius of the Autocomplete.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{items}. The list of Autocomplete items. (controlled). Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{defaultItems}. The list of Autocomplete items (uncontrolled).. Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{inputValue}. The value of the Autocomplete input (controlled).. Type: string. Default: NA.
-\item \bold{defaultInputValue}. The value of the Autocomplete input (uncontrolled).. Type: string. Default: NA.
-\item \bold{allowsCustomValue}. Whether the Autocomplete allows a non-item matching input value to be set.. Type: boolean. Default: false.
-\item \bold{allowsEmptyCollection}. Whether the autocomplete allows the menu to be open when the collection is empty.. Type: boolean. Default: true.
-\item \bold{shouldCloseOnBlur}. Whether the Autocomplete should close when the input is blurred.. Type: boolean. Default: true.
-\item \bold{placeholder}. Temporary text that occupies the text input when it is empty.. Type: string. Default: NA.
-\item \bold{description}. A description for the field. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
-\item \bold{menuTrigger}. The action that causes the menu to open.. Type: focus | input | manual. Default: focus.
-\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
-\item \bold{selectedKey}. The currently selected key in the collection (controlled).. Type: React.Key. Default: NA.
-\item \bold{defaultSelectedKey}. The initial selected key in the collection (uncontrolled).. Type: React.Key. Default: NA.
-\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: all | React.Key[]. Default: NA.
-\item \bold{errorMessage}. An error message to display below the field.. Type: ReactNode. Default: NA.
-\item \bold{startContent}. Element to be rendered in the left side of the Autocomplete.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. Element to be rendered in the right side of the Autocomplete.. Type: ReactNode. Default: NA.
-\item \bold{autoFocus}. Whether the Autocomplete should be focused on render.. Type: boolean. Default: false.
-\item \bold{defaultFilter}. The filter function used to determine if a option should be included in the Autocomplete list.. Type: (textValue: string, inputValue: string) => boolean. Default: NA.
-\item \bold{filterOptions}. The options used to create the collator used for filtering.. Type: Intl.CollatorOptions. Default: { sensitivity: 'base'}.
-\item \bold{isReadOnly}. Whether the Autocomplete is read only.. Type: boolean. Default: false.
-\item \bold{isRequired}. Whether the Autocomplete is required.. Type: boolean. Default: false.
-\item \bold{isInvalid}. Whether the Autocomplete is invalid.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the Autocomplete is disabled.. Type: boolean. Default: false.
-\item \bold{fullWidth}. Whether the input should take up the width of its parent.. Type: boolean. Default: true.
-\item \bold{selectorIcon}. The icon that represents the autocomplete open state. Usually a chevron icon.. Type: ReactNode. Default: NA.
-\item \bold{clearIcon}. The icon to be used in the clear button. Usually a cross icon.. Type: ReactNode. Default: NA.
-\item \bold{showScrollIndicators}. Whether the scroll indicators should be shown when the listbox is scrollable.. Type: boolean. Default: true.
-\item \bold{scrollRef}. A ref to the scrollable element.. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: NA.
-\item \bold{inputProps}. Props to be passed to the Input component.. Type: InputProps. Default: NA.
-\item \bold{popoverProps}. Props to be passed to the Popover component.. Type: PopoverProps. Default: NA.
-\item \bold{listboxProps}. Props to be passed to the Listbox component.. Type: ListboxProps. Default: NA.
-\item \bold{scrollShadowProps}. Props to be passed to the ScrollShadow component.. Type: ScrollShadowProps. Default: NA.
-\item \bold{selectorButtonProps}. Props to be passed to the selector button.. Type: ButtonProps. Default: NA.
-\item \bold{clearButtonProps}. Props to be passed to the clear button.. Type: ButtonProps. Default: NA.
-\item \bold{isClearable}. Whether the clear button should be shown.. Type: boolean. Default: true.
-\item \bold{disableClearable}. Whether the clear button should be hidden. (Deprecated) Use isClearable instead.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the Autocomplete should be animated.. Type: boolean. Default: true.
-\item \bold{disableSelectorIconRotation}. Whether the select should disable the rotation of the selector icon.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the Autocomplete slots.. Type: Record<"base"｜ "listboxWrapper"｜ "listbox"｜ "popoverContent" ｜ "endContentWrapper"｜ "clearButton" ｜ "selectorButton", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{defaultItems}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{inputValue}. Type: \code{string}. Default: NA.
+\item \bold{defaultInputValue}. Type: \code{string}. Default: NA.
+\item \bold{allowsCustomValue}. Type: \code{boolean}. Default: false.
+\item \bold{allowsEmptyCollection}. Type: \code{boolean}. Default: true.
+\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: true.
+\item \bold{placeholder}. Type: \code{string}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{menuTrigger}. Type: \code{focus | input | manual}. Default: "focus".
+\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
+\item \bold{selectedKey}. Type: \code{React.Key}. Default: NA.
+\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: NA.
+\item \bold{disabledKeys}. Type: \code{all | React.Key[]}. Default: NA.
+\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
+\item \bold{validate}. Type: \code{(value: { inputValue: string, selectedKey: React.Key }) => ValidationError | true | null | undefined}. Default: NA.
+\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{autoFocus}. Type: \code{boolean}. Default: false.
+\item \bold{defaultFilter}. Type: \code{(textValue: string, inputValue: string) => boolean}. Default: NA.
+\item \bold{filterOptions}. Type: \code{Intl.CollatorOptions}. Default: "{ sensitivity: 'base'}".
+\item \bold{maxListboxHeight}. Type: \code{number}. Default: "256".
+\item \bold{itemHeight}. Type: \code{number}. Default: "32".
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: "undefined".
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
+\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{clearIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: true.
+\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
+\item \bold{inputProps}. Type: \code{InputProps}. Default: NA.
+\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: NA.
+\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: NA.
+\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: NA.
+\item \bold{selectorButtonProps}. Type: \code{ButtonProps}. Default: NA.
+\item \bold{clearButtonProps}. Type: \code{ButtonProps}. Default: NA.
+\item \bold{isClearable}. Type: \code{boolean}. Default: true.
+\item \bold{disableClearable}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: true.
+\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'listboxWrapper' | 'listbox' | 'popoverContent' | 'endContentWrapper' | 'clearButton' | 'selectorButton', string>>}. Default: NA.
 }
 \item Autocomplete Events
 \itemize{
-\item \bold{onOpenChange}. Method that is called when the open state of the menu changes. Returns the new open state and the action that caused the opening of the menu.. Type: (isOpen: boolean, menuTrigger?: MenuTriggerAction) => void. Default: NA.
-\item \bold{onInputChange}. Handler that is called when the Autocomplete input value changes.. Type: (value: string) => void. Default: NA.
-\item \bold{onSelectionChange}. Handler that is called when the Autocomplete selection changes.. Type: (key: React.Key) => void. Default: NA.
-\item \bold{onFocus}. Handler that is called when the Autocomplete input is focused.. Type: (e:FocusEvent\if{html}{\out{<HTMLInputElement>}}) => void. Default: NA.
-\item \bold{onBlur}. Handler that is called when the Autocomplete input is blurred.. Type: (e:FocusEvent\if{html}{\out{<HTMLInputElement>}}) => void. Default: NA.
-\item \bold{onFocusChange}. Handler that is called when the Autocomplete input focus changes.. Type: (isFocused: boolean) => void. Default: NA.
-\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClose}. Handler that is called when the Autocomplete's Popover is closed.. Type: () => void. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean, menuTrigger?: MenuTriggerAction) => void}. Default: NA.
+\item \bold{onInputChange}. Type: \code{(value: string) => void}. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => void}. Default: NA.
+\item \bold{onFocus}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: NA.
+\item \bold{onBlur}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: NA.
+\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: NA.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
 }
 }
 }

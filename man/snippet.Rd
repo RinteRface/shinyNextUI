@@ -18,25 +18,25 @@ Snippet is a component that can be used to display inline or multiline code snip
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the snippet.. Type: ReactNode | ReactNode[]. Default: NA.
-\item \bold{size}. The size of the snippet.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The radius of the snippet.. Type: none | sm | md | lg. Default: lg.
-\item \bold{symbol}. The symbol to show before the snippet.. Type: string | ReactNode. Default: $.
-\item \bold{timeout}. he time in milliseconds to wait before resetting the clipboard.. Type: number. Default: 2000.
-\item \bold{codeString}. The code string to copy. if codeString is passed, it will be copied instead of the children.. Type: string. Default: NA.
-\item \bold{tooltipProps}. The props of the tooltip.. Type: TooltipProps. Default: NA.
-\item \bold{copyIcon}. The copy icon.. Type: ReactNode. Default: NA.
-\item \bold{checkIcon}. The check icon.. Type: ReactNode. Default: NA.
-\item \bold{disableTooltip}. Whether to disable the tooltip.. Type: boolean. Default: false.
-\item \bold{disableCopy}. Whether to disable the copy button.. Type: boolean. Default: false.
-\item \bold{hideCopyButton}. Whether to hide the copy button.. Type: boolean. Default: false.
-\item \bold{hideSymbol}. Whether to hide the symbol.. Type: boolean. Default: false.
-\item \bold{copyButtonProps}. The props of the copy button.. Type: ButtonProps. Default: NA.
-\item \bold{disableAnimation}. Whether to disable the animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the snippet slots.. Type: Record<"base"｜"content"｜"pre"｜"symbol"｜"copyButton"｜"checkIcon", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{symbol}. Type: \code{string | ReactNode}. Default: "$".
+\item \bold{timeout}. Type: \code{number}. Default: "2000".
+\item \bold{codeString}. Type: \code{string}. Default: NA.
+\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: NA.
+\item \bold{copyIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{checkIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{disableTooltip}. Type: \code{boolean}. Default: false.
+\item \bold{disableCopy}. Type: \code{boolean}. Default: false.
+\item \bold{hideCopyButton}. Type: \code{boolean}. Default: false.
+\item \bold{hideSymbol}. Type: \code{boolean}. Default: false.
+\item \bold{copyButtonProps}. Type: \code{ButtonProps}. Default: NA.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'content' | 'pre' | 'symbol' | 'copyButton' | 'checkIcon', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onCopy}. Handler that is called when the code is copied.. Type: (value: string ｜ string[]) => void;. Default: NA.
+\item \bold{onCopy}. Type: \code{(value: string | string[]) => void}. Default: NA.
 }
 }
 \examples{

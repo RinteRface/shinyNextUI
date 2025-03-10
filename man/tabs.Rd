@@ -31,39 +31,42 @@ Tabs organize content into multiple sections and allow users to navigate between
 }
 \details{
 \itemize{
-\item \bold{children*}. The list of tabs.. Type: ReactNode | ((item: T) => ReactElement). Default: NA.
-\item \bold{variant}. The tabs appearance style.. Type: solid | bordered | light | underlined. Default: solid.
-\item \bold{color}. The tabs color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The tabs size.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The tabs border radius.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{fullWidth}. Whether the tabs should take the full width of its parent.. Type: boolean. Default: false.
-\item \bold{items}. The list of tabs (dynamic).. Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: NA.
-\item \bold{selectedKey}. The key for the currently selected item.. Type: React.Key. Default: NA.
-\item \bold{defaultSelectedKey}. The key for the initially selected item.. Type: React.Key. Default: NA.
-\item \bold{disallowEmptySelection}. Whether the tabs should allow empty selection.. Type: boolean. Default: false.
-\item \bold{shouldSelectOnPressUp}. Whether the tabs selection should occur on press up instead of press down.. Type: boolean. Default: true.
-\item \bold{keyboardActivation}. Whether tabs are activated automatically on focus or manually.. Type: automatic | manual. Default: automatic.
-\item \bold{motionProps}. The props to modify the cursor framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: NA.
-\item \bold{disableCursorAnimation}. Whether the cursor should be hidden.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the tab list should be disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the tab list should be animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the card slots.. Type: Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode | ((item: T) => ReactElement)}. Default: NA.
+\item \bold{variant}. Type: \code{solid | bordered | light | underlined}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
+\item \bold{selectedKey}. Type: \code{React.Key}. Default: NA.
+\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: NA.
+\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: true.
+\item \bold{keyboardActivation}. Type: \code{automatic | manual}. Default: "automatic".
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel" ｜ "tabWrapper", string>>}. Default: NA.
+\item \bold{placement}. Type: \code{top | bottom | start | end}. Default: "top".
+\item \bold{isVertical}. Type: \code{boolean}. Default: false.
+\item \bold{destroyInactiveTabPanel}. Type: \code{boolean}. Default: true.
 }
 \itemize{
-\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (key: React.Key) => any. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => any}. Default: NA.
 }
 \itemize{
-\item \bold{children*}. The content of the tab.. Type: ReactNode. Default: NA.
-\item \bold{title}. The title of the tab.. Type: ReactNode. Default: NA.
-\item \bold{titleValue}. A string representation of the item's contents. Use this when the title is not readable.. Type: string. Default: NA.
-\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
-\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
-\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
-\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
-\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
-\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
-\item \bold{shouldSelectOnPressUp}. Whether the tab selection should occur on press up instead of press down.. Type: boolean. Default: NA.
+\item \bold{tabRef}. Type: \code{RefObject<HTMLButtonElement>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{title}. Type: \code{ReactNode}. Default: NA.
+\item \bold{titleValue}. Type: \code{string}. Default: NA.
+\item \bold{href}. Type: \code{string}. Default: NA.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
+\item \bold{rel}. Type: \code{string}. Default: NA.
+\item \bold{download}. Type: \code{boolean | string}. Default: NA.
+\item \bold{ping}. Type: \code{string}. Default: NA.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
+\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: NA.
 }
 }
 \examples{

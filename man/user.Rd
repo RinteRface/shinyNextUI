@@ -18,11 +18,11 @@ Display user information with avatar and name.
 }
 \details{
 \itemize{
-\item \bold{name}. The name of the user.. Type: string. Default: NA.
-\item \bold{description}. The description component.. Type: ReactNode. Default: NA.
-\item \bold{isFocusable}. Whether the user is focusable. This is useful when using Dropdown or similar components.. Type: boolean. Default: false.
-\item \bold{avatarProps}. The avatar component props. The name is passed by default.. Type: AvatarProps. Default: NA.
-\item \bold{classNames}. Allows to set custom class names for the user slots.. Type: Record<"base"｜ "wrapper"｜ "name"｜ "description", string>. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isFocusable}. Type: \code{boolean}. Default: false.
+\item \bold{avatarProps}. Type: \code{AvatarProps}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "wrapper" | "name" | "description", string>>}. Default: NA.
 }
 }
 \examples{

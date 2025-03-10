@@ -19,20 +19,20 @@ Circular progress indicators are utilized to indicate an undetermined wait perio
 }
 \details{
 \itemize{
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{size}. The size of the indicator.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the indicator.. Type: default | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
-\item \bold{valueLabel}. The content to display as the value's label (e.g. 1 of 4).. Type: ReactNode. Default: NA.
-\item \bold{minValue}. The smallest value allowed for the input.. Type: number. Default: 0.
-\item \bold{maxValue}. The largest value allowed for the input.. Type: number. Default: 100.
-\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: {style: 'percent'}.
-\item \bold{isIndeterminate}. Whether the progress is indeterminate.. Type: boolean. Default: true.
-\item \bold{showValueLabel}. Whether to show the value label.. Type: boolean. Default: true.
-\item \bold{strokeWidth}. The width of the progress stroke.. Type: number. Default: 2.
-\item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the circular progress slots.. Type: Record<"base"｜"svgWrapper"｜"svg"｜"track"｜"indicator"｜"value"｜"label", string>. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{value}. Type: \code{number}. Default: NA.
+\item \bold{valueLabel}. Type: \code{ReactNode}. Default: NA.
+\item \bold{minValue}. Type: \code{number}. Default: "0".
+\item \bold{maxValue}. Type: \code{number}. Default: "100".
+\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: "{style: 'percent'}".
+\item \bold{isIndeterminate}. Type: \code{boolean}. Default: true.
+\item \bold{showValueLabel}. Type: \code{boolean}. Default: true.
+\item \bold{strokeWidth}. Type: \code{number}. Default: "2".
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'base'｜'svgWrapper'｜'svg'｜'track'｜'indicator'｜'value'｜'label', string>>}. Default: NA.
 }
 }
 \examples{

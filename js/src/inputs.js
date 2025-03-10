@@ -1,4 +1,4 @@
-import * as NextUI from '@nextui-org/react';
+import * as NextUI from "@heroui/react";
 import { ButtonAdapter, InputAdapter, debounce } from '@/shiny.react';
 import React from "react";
 
@@ -11,13 +11,13 @@ export const setTheme = () => {
     $('html').removeClass('light').addClass('dark');
     theme = 'dark';
   }
-  Shiny.setInputValue('theme', theme, {priority: 'event'});
+  Shiny.setInputValue('theme', theme, { priority: 'event' });
 };
 
 export const Button = ButtonAdapter(NextUI.Button);
 
 export const ThemeSwitcher = InputAdapter(NextUI.Switch, (value, setValue) => ({
-  isSelected: $('html').hasClass('light') ? true: false,
+  isSelected: $('html').hasClass('light') ? true : false,
   onChange: (event) => {
     setTheme();
     setValue(event.target.checked);
@@ -25,7 +25,7 @@ export const ThemeSwitcher = InputAdapter(NextUI.Switch, (value, setValue) => ({
 }));
 
 export const Switch = InputAdapter(NextUI.Switch, (value, setValue, props) => {
-  return({
+  return ({
     isSelected: value,
     onChange: (event) => {
       setValue(event.target.checked);
@@ -54,7 +54,7 @@ export const Input = InputAdapter(NextUI.Input, (value, setValue, props) => ({
 
 export const Checkbox = InputAdapter(NextUI.Checkbox, (value, setValue, props) => ({
   isSelected: value,
-  onChange: (e) => {
+  onValueChange: (e) => {
     setValue(e.target.checked);
   },
 }));
@@ -96,7 +96,7 @@ export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, 
   const [touched, setTouched] = React.useState(true);
 
   const isValid = value !== null;
-  return({
+  return ({
     isInvalid: isValid || !touched ? false : true,
     errorMessage: isValid || !touched ? "" : "You must select a value",
     selectedKey: value,
@@ -104,7 +104,8 @@ export const Autocomplete = InputAdapter(NextUI.Autocomplete, (value, setValue, 
       setValue(key);
     },
     onClose: () => setTouched(true)
-  });}
+  });
+}
 );
 
 //export const DropdownMenu = InputAdapter(NextUI.DropdownMenu, (value, setValue, props) => {
@@ -167,7 +168,7 @@ export const Select = InputAdapter(NextUI.Select, (value, setValue, props) => {
   }
 
   let isValid = value !== '';
-  return({
+  return ({
     isInvalid: isValid || !touched ? false : true,
     errorMessage: isValid || !touched ? "" : "You must select a value",
     selectedKeys: value,

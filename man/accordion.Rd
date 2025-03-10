@@ -31,57 +31,57 @@ Accordion display a list of high-level options that can expand/collapse to revea
 }
 \details{
 \itemize{
-\item \bold{children}. The contents of the collection. Usually the array of AccordionItem. Type: ReactNode | ReactNode[]. Default: .
-\item \bold{variant}. The accordion appearance style.. Type: light | shadow | bordered | splitted. Default: light.
-\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: none | single | multiple. Default: .
-\item \bold{selectionBehavior}. The accordion selection behavior.. Type: toggle | replace. Default: toggle.
-\item \bold{isCompact}. Whether all Accordion items should be smaller.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the Accordion items are disabled.. Type: boolean. Default: .
-\item \bold{showDivider}. WWhether to display a divider at the bottom of the each accordion item.. Type: boolean. Default: true.
-\item \bold{DividerProps}. The divider component props.. Type: DividerProps. Default: NA.
-\item \bold{hideIndicator}. Whether the Accordion items indicator is hidden.. Type: boolean. Default: .
-\item \bold{disableAnimation}. Whether the Accordion items open/close animation is disabled.. Type: boolean. Default: .
-\item \bold{disableIndicatorAnimation}. Whether the Accordion items indicator animation is disabled.. Type: boolean. Default: .
-\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: .
-\item \bold{keepContentMounted}. Whether the Accordion items content should be always mounted.. Type: boolean. Default: false.
-\item \bold{fullWidth}. Whether the accordion should take up the full width of its parent container.. Type: boolean. Default: true.
-\item \bold{motionProps}. The motion properties of the Accordion.. Type: MotionProps. Default: .
-\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: .
-\item \bold{itemClasses}. The accordion items classNames.. Type: Classnames. Default: .
-\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all | React.Key[]. Default: .
-\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: .
-\item \bold{disabledKeys}. The currently disabled keys in the collection (controlled).. Type: React.Key[]. Default: .
+\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
+\item \bold{variant}. Type: \code{light | shadow | bordered | splitted}. Default: "light".
+\item \bold{selectionMode}. Type: \code{none | single | multiple}. Default: NA.
+\item \bold{selectionBehavior}. Type: \code{toggle | replace}. Default: "toggle".
+\item \bold{isCompact}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{showDivider}. Type: \code{boolean}. Default: true.
+\item \bold{dividerProps}. Type: \code{DividerProps}. Default: NA.
+\item \bold{hideIndicator}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
+\item \bold{keepContentMounted}. Type: \code{boolean}. Default: false.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
+\item \bold{itemClasses}. Type: \code{AccordionItemClassnames}. Default: NA.
+\item \bold{selectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
+\item \bold{defaultSelectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
 }
 \itemize{
-\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys: "all" ｜ Set<React.Key>) => any. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(keys: "all" | Set<React.Key>) => any}. Default: NA.
 }
 \itemize{
-\item \bold{children}. The content of the component.. Type: ReactNode | string. Default: .
-\item \bold{title}. The accordion item title.. Type: ReactNode | string. Default: .
-\item \bold{subtitle}. The accordion item subtitle.. Type: ReactNode | string. Default: .
-\item \bold{indicator}. The accordion item expanded indicator, usually an arrow icon.. Type: IndicatorProps. Default: .
-\item \bold{startContent}. The accordion item start content, usually an icon or avatar.. Type: ReactNode. Default: .
-\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
-\item \bold{isCompact}. Whether the AccordionItem is compact.. Type: boolean. Default: false.
-\item \bold{isDisabled}. The current disabled status.. Type: boolean. Default: false.
-\item \bold{keepContentMounted}. Whether the AccordionItem content is kept mounted when closed.. Type: boolean. Default: false.
-\item \bold{hideIndicator}. Whether the AccordionItem indicator is hidden.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the AccordionItem animation is disabled.. Type: boolean. Default: false.
-\item \bold{disableIndicatorAnimation}. Whether the AccordionItem indicator animation is disabled.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the accordion item slots.. Type: Classnames. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{title}. Type: \code{ReactNode}. Default: NA.
+\item \bold{subtitle}. Type: \code{ReactNode}. Default: NA.
+\item \bold{indicator}. Type: \code{IndicatorProps}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{isCompact}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{keepContentMounted}. Type: \code{boolean}. Default: false.
+\item \bold{hideIndicator}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{HeadingComponent}. Type: \code{React.ElementType}. Default: "h2".
+\item \bold{classNames}. Type: \code{AccordionItemClassnames}. Default: NA.
 }
 \itemize{
-\item \bold{onFocus}. Handler that is called when the element receives focus.. Type: (e: FocusEvent) => void. Default: NA.
-\item \bold{onBlur}. Handler that is called when the element loses focus.. Type: (e: FocusEvent) => void. Default: NA.
-\item \bold{onFocusChange}. Handler that is called when the element's focus status changes.. Type: (isFocused: boolean) => void. Default: NA.
-\item \bold{onKeyDown}. Handler that is called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler that is called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
+\item \bold{onFocus}. Type: \code{(e: FocusEvent) => void}. Default: NA.
+\item \bold{onBlur}. Type: \code{(e: FocusEvent) => void}. Default: NA.
+\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: NA.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
 }
 }
 \examples{

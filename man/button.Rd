@@ -54,40 +54,40 @@ Buttons allow users to perform actions and choose with a single tap.
 }
 \details{
 \itemize{
-\item \bold{children}. The content to display in the button.. Type: ReactNode. Default: NA.
-\item \bold{variant}. The button appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
-\item \bold{color}. The button color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The button size.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The button border radius.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{startContent}. The button start content.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. The button end content.. Type: ReactNode. Default: NA.
-\item \bold{spinner}. Spinner to display when loading.. Type: ReactNode. Default: NA.
-\item \bold{spinnerPlacement}. The spinner placement.. Type: start | end. Default: start.
-\item \bold{fullWidth}. Whether the button should take the full width of its parent.. Type: boolean. Default: false.
-\item \bold{isIconOnly}. Whether the button should have the same width and height.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the button is disabled.. Type: boolean. Default: false.
-\item \bold{isLoading}. Whether the button is loading.. Type: boolean. Default: false.
-\item \bold{disableRipple}. Whether the button should display a ripple effect on press.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the button should display animations.. Type: boolean. Default: false.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow | ghost}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{spinner}. Type: \code{ReactNode}. Default: NA.
+\item \bold{spinnerPlacement}. Type: \code{start | end}. Default: "start".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
+\item \bold{isIconOnly}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isLoading}. Type: \code{boolean}. Default: false.
+\item \bold{disableRipple}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
 }
 \itemize{
-\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
 }
 \itemize{
-\item \bold{children}. The buttons to display.. Type: ReactNode | ReactNode[]. Default: NA.
-\item \bold{variant}. The buttons appearance style.. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: solid.
-\item \bold{color}. The buttons color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The buttons size.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The buttons border radius.. Type: none | sm | md | lg | full. Default: xl.
-\item \bold{fullWidth}. Whether the buttons should take the full width.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the buttons are disabled.. Type: boolean. Default: false.
+\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
+\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow | ghost}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "xl".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
 }
 }
 \examples{

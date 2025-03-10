@@ -6,7 +6,7 @@
   <!-- badges: end -->
 
 The goal of `{shinyNextUI}` is to provide a wrapper around the
-NextUI React [library](https://nextui.org/).
+HeroUI React [library](https://www.heroui.com/).
 
 ![](./man/figures/pkmn.png)
 

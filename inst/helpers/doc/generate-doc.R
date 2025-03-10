@@ -5,37 +5,42 @@ library(rvest)
 # for roxygen documentation.
 #' @keywords internal
 generate_details <- function(x) {
-  res <- vapply(seq_along(x), function(i) {
-    tmp <- x[[i]]
-    tmp <- vapply(seq_len(nrow(tmp)), function(r) {
-      attribute <- if (!("Attribute" %in% colnames(tmp[r, ]))) {
-        value_not_available(tmp[r, ]$Name)
-      } else {
-        value_not_available(tmp[r, ]$Attribute)
-      }
-      description <- value_not_available(tmp[r, ]$Description)
-      type <- value_not_available(tmp[r, ]$Type)
-      default <- if (!("Default" %in% colnames(tmp[r, ]))) {
-        "NA"
-      } else {
-        value_not_available(tmp[r, ]$Default)
-      }
+  res <- vapply(
+    seq_along(x),
+    function(i) {
+      tmp <- x[[i]]
+      tmp <- vapply(
+        seq_len(nrow(tmp)),
+        function(r) {
+          attribute <- value_not_available(tmp[r, ]$Prop)
+          # Not available anymore: the description is now a tooltip
+          # and there is no way to extract its content ... :(
+          #description <- value_not_available(tmp[r, ]$Description)
+          type <- value_not_available(tmp[r, ]$Type)
+          default <- if (!("Default" %in% colnames(tmp[r, ]))) {
+            "NA"
+          } else {
+            value_not_available(tmp[r, ]$Default)
+          }
 
-      sprintf(
-        "#'  \\item \\bold{%s}. %s. Type: %s. Default: %s.",
-        attribute,
-        description,
-        type,
-        default
+          sprintf(
+            "#'  \\item \\bold{%s}. Type: \\code{%s}. Default: %s.",
+            attribute,
+            type,
+            default
+          )
+        },
+        FUN.VALUE = character(1)
       )
-    }, FUN.VALUE = character(1))
-    paste0(
-      sprintf("#' %s. %s\n", i, names(x)[[i]]),
-      "#' \\itemize{\n",
-      paste(tmp, collapse = "\n"),
-      "\n#' }"
-    )
-  }, FUN.VALUE = character(1))
+      paste0(
+        sprintf("#' %s. %s\n", i, names(x)[[i]]),
+        "#' \\itemize{\n",
+        paste(tmp, collapse = "\n"),
+        "\n#' }"
+      )
+    },
+    FUN.VALUE = character(1)
+  )
   paste(res, collapse = "\n")
 }
 
@@ -43,7 +48,8 @@ generate_details <- function(x) {
 # el must be a list containing all the necessary metadata.
 #' @keywords internal
 generate_element_doc <- function(doc) {
-  el_doc <- sprintf("
+  el_doc <- sprintf(
+    "
     #' %s
     #'
     #' @description
@@ -71,9 +77,9 @@ generate_element_doc <- function(doc) {
 #' @keywords internal
 value_not_available <- function(v) {
   if (is.na(v)) return("NA")
+  if (nchar(v) == 0) return("NA")
   if (v == "-") "NA" else v
 }
-
 
 # TO DO: find way to avoid hardcoding this
 items <- list(
@@ -95,6 +101,7 @@ items <- list(
     "chip",
     "code",
     "divider",
+    "drawer",
     #"dropdown",
     "image",
     "input",
@@ -121,16 +128,32 @@ items <- list(
 get_element_api <- function(el, context) {
   url <- sprintf("https://nextui.org/docs/%s/%s", context, el)
   root <- read_html(url)
+
+  # Get parameter values
   params <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#api ~ * table") |>
+    html_elements(css = "#api ~ * table tbody") |>
     html_table()
 
+  # Get colnames
+  params_col_names <- root |>
+    # This CSS selector avoids to select unwanted tables
+    # that would be located before the API tables.
+    html_elements(css = "#api ~ * table thead") |>
+    html_table()
+
+  # Assign col names for all tables
+  for (i in seq_along(params)) {
+    colnames(params[[i]]) <- as.character(params_col_names[[1]])
+  }
+  # Give a name to all tables
   tmp <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#api ~ h3[id$='props'] a, #api ~ h3[id$='events'] a") |>
+    html_elements(
+      css = "#api ~ h3[id$='props'] a, #api ~ h3[id$='events'] a"
+    ) |>
     html_text2()
 
   if (length(tmp) > length(params)) {
@@ -164,13 +187,18 @@ get_element_api <- function(el, context) {
 layout_apis <- lapply(items$layout, get_element_api, context = "layout")
 names(layout_apis) <- items$layout
 
-component_apis <- lapply(items$components, get_element_api, context = "components")
+component_apis <- lapply(
+  items$components,
+  get_element_api,
+  context = "components"
+)
 names(component_apis) <- items$components
 
 apis <- c(layout_apis, component_apis)
 
-# Create doc
+# Create doc: don't forget to cleanup doc.R before running this
 pkgload::load_all()
+writeLines("", "./R/doc.R")
 lapply(names(apis), function(name) {
   print(name)
   generate_element_doc(apis[[name]])

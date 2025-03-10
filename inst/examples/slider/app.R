@@ -18,7 +18,8 @@ ui <- nextui_page(
     showSteps = TRUE,
     color = "foreground",
     size = "sm",
-    marks = JS("
+    marks = JS(
+      "
       [
         {
           value: 2,
@@ -33,7 +34,8 @@ ui <- nextui_page(
           label: 'Third mark',
         },
       ]
-    ")
+    "
+    )
   ),
   spacer(y = 10),
   slider_input(
@@ -62,7 +64,7 @@ ui <- nextui_page(
   spacer(y = 10),
   slider_input(
     "slider4",
-    "With start and end content",
+    label = "With start and end content",
     minValue = 0,
     maxValue = 10,
     value = 5,

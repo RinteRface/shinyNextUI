@@ -1,3 +1,24 @@
+#' @rdname drawer
+#' @inherit component params return
+#' @export
+drawer <- component("Drawer")
+
+#' @rdname drawer
+#' @export
+drawer_content <- component("DrawerContent")
+
+#' @rdname drawer
+#' @export
+drawer_header <- component("DrawerHeader")
+
+#' @rdname drawer
+#' @export
+drawer_body <- component("DrawerBody")
+
+#' @rdname drawer
+#' @export
+drawer_footer <- component("DrawerFooter")
+
 #' @rdname modal
 #' @inherit component params return
 #' @export
@@ -22,7 +43,35 @@ modal_footer <- component("ModalFooter")
 #' @rdname popover
 #' @inherit component params return
 #' @export
-popover <- component("Popover")
+popover <- custom_component(
+  "Popover",
+  motion = JS(
+    "{
+    variants: {
+      enter: {
+        y: 0,
+        opacity: 1,
+        duration: 0.1,
+        transition: {
+          opacity: {
+            duration: 0.15,
+          },
+        },
+      },
+      exit: {
+        y: '10%',
+        opacity: 0,
+        duration: 0,
+        transition: {
+          opacity: {
+            duration: 0.1,
+          },
+        },
+      },
+    },
+  }"
+  )
+)
 
 #' @rdname popover
 #' @export
@@ -35,4 +84,26 @@ popover_content <- component("PopoverContent")
 #' @rdname tooltip
 #' @inherit component params return
 #' @export
-tooltip <- component("Tooltip")
+tooltip <- custom_component(
+  "Tooltip",
+  motion = JS(
+    "{
+      variants: {
+        enter: {
+          opacity: 1,
+          transition: {
+            duration: 0.15,
+            ease: 'easeOut',
+          },
+        },
+        exit: {
+          opacity: 1,
+          transition: {
+            duration: 0.1,
+            ease: 'easeIn',
+          },
+        },
+      },
+    }"
+  )
+)

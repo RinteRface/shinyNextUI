@@ -12,7 +12,7 @@ $(function(){
 
 window.jsmodule = {
   ...window.jsmodule,
-  '@nextui-org/react': require('@nextui-org/react'),
+  '@heroui/react': require("@heroui/react"),
   '@/NextUI': require('./inputs'),
   '@/ReactR': require('./custom.js')
 };

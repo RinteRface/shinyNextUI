@@ -37,51 +37,55 @@ A select displays a collapsible list of options and allows a user to select one 
 \enumerate{
 \item Select Props
 \itemize{
-\item \bold{children*}. The children to render. Usually a list of SelectItem and SelectSection elements.. Type: ReactNode[]. Default: NA.
-\item \bold{items}. Item objects in the select. (dynamic). Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: single | multiple. Default: NA.
-\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: all | React.Key[]. Default: NA.
-\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: all | React.Key[]. Default: NA.
-\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: NA.
-\item \bold{variant}. The variant of the select.. Type: flat | bordered | faded | underlined. Default: flat.
-\item \bold{color}. The color of the select.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the select.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The radius of the select.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{placeholder}. The placeholder of the select.. Type: string. Default: Select an option.
-\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{description}. A description for the select. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
-\item \bold{errorMessage}. An error message for the select.. Type: ReactNode. Default: NA.
-\item \bold{startContent}. Element to be rendered in the left side of the select.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. Element to be rendered in the right side of the select.. Type: ReactNode. Default: NA.
-\item \bold{selectorIcon}. Element to be rendered as the selector icon.. Type: ReactNode. Default: NA.
-\item \bold{scrollRef}. A ref to the scrollable element.. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: NA.
-\item \bold{spinnerRef}. A ref to the spinner element.. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: NA.
-\item \bold{fullWidth}. Whether the select should take up the width of its parent.. Type: boolean. Default: true.
-\item \bold{isOpen}. Whether the select is open by default (controlled).. Type: boolean. Default: NA.
-\item \bold{defaultOpen}. Whether the select is open by default (uncontrolled).. Type: boolean. Default: NA.
-\item \bold{isRequired}. Whether user select is required on the select before form submission.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the select is disabled.. Type: boolean. Default: false.
-\item \bold{isMultiline}. Whether the select should allow multiple lines of text.. Type: boolean. Default: false.
-\item \bold{isInvalid}. Whether the select is invalid.. Type: boolean. Default: false.
-\item \bold{validationState}. Whether the select should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
-\item \bold{showScrollIndicators}. Whether the select should show scroll indicators when the listbox is scrollable.. Type: boolean. Default: true.
-\item \bold{autoFocus}. Whether the select should be focused on the first mount.. Type: boolean. Default: false.
-\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the select should be animated.. Type: boolean. Default: true.
-\item \bold{disableSelectorIconRotation}. Whether the select should disable the rotation of the selector icon.. Type: boolean. Default: false.
-\item \bold{popoverProps}. Props to be passed to the popover component.. Type: PopoverProps. Default: NA.
-\item \bold{listboxProps}. Props to be passed to the listbox component.. Type: ListboxProps. Default: NA.
-\item \bold{scrollShadowProps}. Props to be passed to the scroll shadow component.. Type: ScrollShadowProps. Default: NA.
-\item \bold{classNames}. Allows to set custom class names for the Select slots.. Type: Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{selectionMode}. Type: \code{single | multiple}. Default: NA.
+\item \bold{selectedKeys}. Type: \code{all | Iterable<React.Key>}. Default: NA.
+\item \bold{disabledKeys}. Type: \code{Iterable<React.Key>}. Default: NA.
+\item \bold{defaultSelectedKeys}. Type: \code{all | Iterable<React.Key>}. Default: NA.
+\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{placeholder}. Type: \code{string}. Default: "Select an option".
+\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
+\item \bold{spinnerRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
+\item \bold{maxListboxHeight}. Type: \code{number}. Default: "256".
+\item \bold{itemHeight}. Type: \code{number}. Default: "32".
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: "undefined".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
+\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isMultiline}. Type: \code{boolean}. Default: false.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
+\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: true.
+\item \bold{autoFocus}. Type: \code{boolean}. Default: false.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: true.
+\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: false.
+\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: false.
+\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: NA.
+\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: NA.
+\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>}. Default: NA.
 }
-\item Select Events
+2. Select Events
 \itemize{
-\item \bold{onClose}. Callback fired when the select popover is closed.. Type: () => void. Default: NA.
-\item \bold{onOpenChange}. Callback fired when the select popover is opened or closed.. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{onSelectionChange}. Callback fired when the selected keys change.. Type: (keys: React.Key[]) => void. Default: NA.
-\item \bold{onChange}. Native select change event, fired when the selected value changes.. Type: React.ChangeEvent\if{html}{\out{<HTMLSelectElement>}}. Default: NA.
-\item \bold{renderValue}. Function to render the value of the select. It renders the selected item by default.. Type: RenderValueFunction. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(keys: "all" | Set<React.Key> & {anchorKey?: string; currentKey?: string}) => void}. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLSelectElement>}. Default: NA.
+\item \bold{renderValue}. Type: \code{RenderValueFunction}. Default: NA.
 }
 }
 }

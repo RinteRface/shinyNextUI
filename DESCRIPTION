@@ -8,7 +8,8 @@ Description: A set of UI components to create beautiful Shiny apps with
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
+URL: https://rinterface.github.io/shinyNextUI/
 Imports:
   htmltools,
   shiny,
@@ -19,7 +20,8 @@ Suggests:
     shinytest2,
     purrr,
     thematic,
-    shiny.router
+    shiny.router,
+    roxy.shinylive
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)

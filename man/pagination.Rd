@@ -28,29 +28,29 @@ The Pagination component allows you to display active page and navigate between 
 }
 \details{
 \itemize{
-\item \bold{variant}. The pagination variant.. Type: flat | bordered | light | faded. Default: flat.
-\item \bold{color}. The pagination color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The pagination size.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The pagination border radius.. Type: none | sm | md | lg | full. Default: xl.
-\item \bold{total}. The total number of pages.. Type: number. Default: 1.
-\item \bold{dotsJump}. The number of pages that are added or subtracted on the '...' button.. Type: number. Default: 5.
-\item \bold{initialPage}. The initial page. (uncontrolled). Type: number. Default: 1.
-\item \bold{page}. The current page. (controlled). Type: number. Default: NA.
-\item \bold{siblings}. The number of pages to show before and after the current page.. Type: number. Default: 1.
-\item \bold{boundaries}. The number of pages to show at the beginning and end of the pagination.. Type: number. Default: 1.
-\item \bold{loop}. Whether the pagination should be looped.. Type: boolean. Default: false.
-\item \bold{isCompact}. Whether the pagination should have a compact style.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the pagination is disabled.. Type: boolean. Default: false.
-\item \bold{showShadow}. Whether the pagination cursor should have a shadow.. Type: boolean. Default: false.
-\item \bold{showControls}. Whether the pagination should have controls.. Type: boolean. Default: false.
-\item \bold{disableCursorAnimation}. Whether the pagination cursor should be hidden.. Type: boolean. Default: false.
-\item \bold{renderItem}. The pagination item render function.. Type: PaginationItemProps. Default: NA.
-\item \bold{getItemAriaLabel}. A function that allows you to customize the pagination items aria-label.. Type: (page: string) => string. Default: NA.
-\item \bold{disableAnimation}. Whether the pagination cursor should be animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the pagination slots.. Type: Record<"base"｜ "wrapper" ｜ "prev"｜ "next" ｜ "item" ｜ "cursor" ｜ "forwardIcon" ｜ "ellipsis" ｜ "chevronNext", string>. Default: NA.
+\item \bold{variant}. Type: \code{flat | bordered | light | faded}. Default: "flat".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "xl".
+\item \bold{total}. Type: \code{number}. Default: "1".
+\item \bold{dotsJump}. Type: \code{number}. Default: "5".
+\item \bold{initialPage}. Type: \code{number}. Default: "1".
+\item \bold{page}. Type: \code{number}. Default: NA.
+\item \bold{siblings}. Type: \code{number}. Default: "1".
+\item \bold{boundaries}. Type: \code{number}. Default: "1".
+\item \bold{loop}. Type: \code{boolean}. Default: false.
+\item \bold{isCompact}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{showShadow}. Type: \code{boolean}. Default: false.
+\item \bold{showControls}. Type: \code{boolean}. Default: false.
+\item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{renderItem}. Type: \code{PaginationItemProps}. Default: NA.
+\item \bold{getItemAriaLabel}. Type: \code{(page: string) => string}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'wrapper' | 'prev' | 'next' | 'item' | 'cursor' | 'forwardIcon' | 'ellipsis' | 'chevronNext', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the pagination acitve page changes.. Type: (page: number) => void. Default: NA.
+\item \bold{onChange}. Type: \code{(page: number) => void}. Default: NA.
 }
 }
 \examples{
@@ -70,7 +70,13 @@ cards <- lapply(seq_len(max), function(i) {
       card_header(sprintf("Card \%s", i)),
       card_body(
         sprintf("Card content \%s", i),
-        slider_input(sprintf("obs-\%s", i), "Obs", minValue = 0, maxValue = 1000, value = 500),
+        slider_input(
+          sprintf("obs-\%s", i),
+          "Obs",
+          minValue = 0,
+          maxValue = 1000,
+          value = 500
+        ),
         plotOutput(sprintf("distPlot-\%s", i))
       )
     )
@@ -90,12 +96,12 @@ ui <- nextui_page(
 )
 
 server <- function(input, output, session) {
-
   history <- reactiveVal(NULL)
 
   # Dynamically insert cards with the pagination.
   observeEvent(input$pagination, {
-    if (!is.null(history())) removeUI(sprintf("#mycard-\%s", history()), multiple = TRUE)
+    if (!is.null(history()))
+      removeUI(sprintf("#mycard-\%s", history()), multiple = TRUE)
     insertUI(
       selector = "#pagination",
       where = "afterEnd",
@@ -104,6 +110,7 @@ server <- function(input, output, session) {
     history(input$pagination)
 
     output[[sprintf("distPlot-\%s", history())]] <- renderPlot({
+      req(input[[sprintf("obs-\%s", history())]])
       hist(
         rnorm(input[[sprintf("obs-\%s", history())]]),
         main = sprintf("Super plot \%s", history())

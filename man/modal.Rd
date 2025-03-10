@@ -26,32 +26,32 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Displays a dialog with a custom content that requires attention or provides additional information.
+Displays a dialog with custom content that requires attention or provides additional information.
 }
 \details{
 \itemize{
-\item \bold{children*}. The content of the modal. It's usually the ModalContent.. Type: ReactNode. Default: NA.
-\item \bold{size}. The modal size. This changes the modal max-width and height (full).. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: md.
-\item \bold{radius}. The modal border radius.. Type: none | sm | md | lg. Default: lg.
-\item \bold{shadow}. The modal shadow.. Type: none | sm | md | lg. Default: lg.
-\item \bold{backdrop}. The modal backdrop type.. Type: transparent | opaque | blur. Default: opaque.
-\item \bold{scrollBehavior}. The modal scroll behavior.. Type: normal | inside | outside. Default: normal.
-\item \bold{placement}. The modal position.. Type: auto | top | center | bottom. Default: auto.
-\item \bold{isOpen}. Whether the modal is open by default (controlled).. Type: boolean. Default: NA.
-\item \bold{defaultOpen}. Whether the modal is open by default (uncontrolled).. Type: boolean. Default: NA.
-\item \bold{isDismissable}. Whether the modal can be closed by clicking on the overlay or pressing the Esc key.. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Whether pressing the Esc key to close the modal should be disabled.. Type: boolean. Default: false.
-\item \bold{shouldBlockScroll}. Whether the modal should block the scroll of the page on open.. Type: boolean. Default: true.
-\item \bold{hideCloseButton}. Whether to hide the modal close button.. Type: boolean. Default: false.
-\item \bold{closeButton}. Custom close button to display on top right corner.. Type: ReactNode. Default: NA.
-\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
-\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
-\item \bold{disableAnimation}. Whether the modal should not have animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the modal slots.. Type: Record<"wrapper"｜ "base"｜ "backdrop"｜ "header" ｜ "body" ｜ "footer" ｜ "closeButton", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{backdrop}. Type: \code{transparent | opaque | blur}. Default: "opaque".
+\item \bold{scrollBehavior}. Type: \code{normal | inside | outside}. Default: "normal".
+\item \bold{placement}. Type: \code{auto | top | center | bottom}. Default: "auto".
+\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: true.
+\item \bold{hideCloseButton}. Type: \code{boolean}. Default: false.
+\item \bold{closeButton}. Type: \code{ReactNode}. Default: NA.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onOpenChange}. Handler that is called when the modal's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{onClose}. Handler that is called when the modal is closed.. Type: () => void. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
 }
 }
 \examples{

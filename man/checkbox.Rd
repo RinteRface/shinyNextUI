@@ -33,28 +33,28 @@ Checkboxes allow users to select multiple items from a list of individual items,
 }
 \details{
 \itemize{
-\item \bold{children}. The label of the checkbox.. Type: ReactNode. Default: NA.
-\item \bold{icon}. The icon to be displayed when the checkbox is checked.. Type: CheckboxIconProps. Default: NA.
-\item \bold{value}. The value of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
-\item \bold{name}. The name of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
-\item \bold{size}. The size of the checkbox.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the checkbox.. Type: default | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{radius}. The radius of the checkbox.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{lineThrough}. Whether the label should be crossed out.. Type: boolean. Default: false.
-\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: .
-\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: .
-\item \bold{isRequired}. Whether user checkbox is required on the checkbox before form submission.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the checkbox can be selected but not changed by the user.. Type: boolean. Default: .
-\item \bold{isDisabled}. Whether the checkbox is disabled.. Type: boolean. Default: false.
-\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: .
-\item \bold{isInvalid}. Whether the checkbox is invalid.. Type: boolean. Default: false.
-\item \bold{validationState}. Whether the checkbox should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
-\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{icon}. Type: \code{CheckboxIconProps}. Default: NA.
+\item \bold{value}. Type: \code{string}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{lineThrough}. Type: \code{boolean}. Default: false.
+\item \bold{isSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isIndeterminate}. Type: \code{boolean}. Default: NA.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
+\item \bold{onValueChange}. Type: \code{(isSelected: boolean) => void}. Default: NA.
 }
 }
 \examples{

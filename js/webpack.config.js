@@ -3,9 +3,9 @@ const path = require('path');
 
 const config = {
   entry: './src/index.js',
-  mode: 'production',
+  mode: 'development',
   output: {
-    path: path.join(__dirname, '..', 'inst', 'nextui-2.0.0'),
+    path: path.join(__dirname, '..', 'inst', 'nextui-2.7.4'),
     filename: 'nextui.js'
   },
   module: {

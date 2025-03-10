@@ -18,10 +18,10 @@ Skeleton is a placeholder to show a loading state and the expected shape of a co
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the skeleton.. Type: ReactNode. Default: NA.
-\item \bold{isLoaded}. Whether the skeleton is loaded.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the skeleton slots.. Type: Record<"base"｜"content", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isLoaded}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "content", string>>}. Default: NA.
 }
 }
 \examples{

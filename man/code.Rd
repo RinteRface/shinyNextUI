@@ -19,10 +19,10 @@ Code is a component used to display inline code.
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the code.. Type: ReactNode. Default: NA.
-\item \bold{size}. The size of the code.. Type: sm | md | lg. Default: sm.
-\item \bold{color}. The color of the code.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{radius}. The radius of the code.. Type: none | sm | md | lg | full. Default: sm.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "sm".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "sm".
 }
 }
 \examples{

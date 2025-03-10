@@ -18,8 +18,8 @@ Spacer is a component used to add space between components.
 }
 \details{
 \itemize{
-\item \bold{x}. The x axis space. Type: Space. Default: 1.
-\item \bold{y}. The y axis space. Type: Space. Default: 1.
+\item \bold{x}. Type: \code{Space}. Default: "1".
+\item \bold{y}. Type: \code{Space}. Default: "1".
 }
 }
 \examples{

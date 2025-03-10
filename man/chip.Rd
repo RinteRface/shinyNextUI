@@ -18,19 +18,19 @@ A Chip is a small block of essential information that represent an input, attrib
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the chip.. Type: ReactNode. Default: NA.
-\item \bold{variant}. The chip appearance style.. Type: solid | bordered | light | flat | faded | shadow | dot. Default: solid.
-\item \bold{color}. The color of the chip.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the chip.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The radius of the chip.. Type: none | sm | md | lg | full. Default: full.
-\item \bold{avatar}. Avatar to be rendered in the left side of the chip.. Type: ReactNode. Default: NA.
-\item \bold{startContent}. Element to be rendered in the left side of the chip. This prop overrides the avatar prop.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. Element to be rendered in the right side of the chip. This prop overrides the default close button when onClose is passed.. Type: ReactNode. Default: NA.
-\item \bold{isDisabled}. Whether the chip is disabled.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the chip slots.. Type: Record<"base"｜ "content"｜ "dot"｜ "avatar"｜ "closeButton", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow | dot}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "full".
+\item \bold{avatar}. Type: \code{ReactNode}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "content" | "dot" | "avatar" | "closeButton", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onClose}. Handler that is called when the close button is pressed. If you pass this prop, the chip will display a close button (endContent).. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onClose}. Type: \code{(e: PressEvent) => void}. Default: NA.
 }
 }
 \examples{

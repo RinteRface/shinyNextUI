@@ -18,7 +18,7 @@ Divider is a component that separates content in a page.
 }
 \details{
 \itemize{
-\item \bold{orientation}. The orientation of the divider.. Type: horizontal | vertical. Default: horizontal.
+\item \bold{orientation}. Type: \code{`horizontal` | `vertical`}. Default: "\code{horizontal}".
 }
 }
 \examples{

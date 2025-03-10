@@ -30,58 +30,31 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
-
-Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
 }
 \details{
 \itemize{
-\item \bold{children}. The label of the checkbox.. Type: ReactNode. Default: NA.
-\item \bold{icon}. The icon to be displayed when the checkbox is checked.. Type: CheckboxIconProps. Default: NA.
-\item \bold{value}. The value of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
-\item \bold{name}. The name of the checkbox element, used when submitting an HTML form.. Type: string. Default: .
-\item \bold{size}. The size of the checkbox.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the checkbox.. Type: default | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{radius}. The radius of the checkbox.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{lineThrough}. Whether the label should be crossed out.. Type: boolean. Default: false.
-\item \bold{isSelected}. Whether the element should be selected (controlled).. Type: boolean. Default: .
-\item \bold{defaultSelected}. Whether the element should be selected (uncontrolled).. Type: boolean. Default: .
-\item \bold{isRequired}. Whether user checkbox is required on the checkbox before form submission.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the checkbox can be selected but not changed by the user.. Type: boolean. Default: .
-\item \bold{isDisabled}. Whether the checkbox is disabled.. Type: boolean. Default: false.
-\item \bold{isIndeterminate}. Indeterminism is presentational only. The indeterminate visual representation remains regardless of user interaction.. Type: boolean. Default: .
-\item \bold{isInvalid}. Whether the checkbox is invalid.. Type: boolean. Default: false.
-\item \bold{validationState}. Whether the checkbox should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
-\item \bold{disableAnimation}. Whether the animation should be disabled.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{icon}. Type: \code{CheckboxIconProps}. Default: NA.
+\item \bold{value}. Type: \code{string}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{lineThrough}. Type: \code{boolean}. Default: false.
+\item \bold{isSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultSelected}. Type: \code{boolean}. Default: NA.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isIndeterminate}. Type: \code{boolean}. Default: NA.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
-}
-
-\itemize{
-\item \bold{children}. Type: ReactNode. Default: .
-\item \bold{icon}. Type: CheckboxIconProps. Default: .
-\item \bold{value}. Type: string. Default: .
-\item \bold{name}. Type: string. Default: .
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
-\item \bold{lineThrough}. Type: boolean. Default: false.
-\item \bold{isSelected}. Type: boolean. Default: .
-\item \bold{defaultSelected}. Type: boolean. Default: .
-\item \bold{isRequired}. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Type: boolean. Default: .
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{isIndeterminate}. Type: boolean. Default: .
-\item \bold{isInvalid}. Type: boolean. Default: false.
-\item \bold{validationState}. Type: valid | invalid. Default: .
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>. Default: .
-}
-\itemize{
-\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Type: (isSelected: boolean) => void. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
+\item \bold{onValueChange}. Type: \code{(isSelected: boolean) => void}. Default: NA.
 }
 }
 \examples{
@@ -113,37 +86,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-
-ui <- nextui_page(
-  div(
-    class = "flex gap-1",
-    action_button("update", "Toggle checkbox"),
-    spacer(y = 2),
-    checkbox_input(
-      inputId = "checkbox",
-      value = TRUE,
-      "My checkbox",
-      isRounded = TRUE,
-      color = "warning",
-      lineThrough = TRUE
-    ),
-    textOutput("check_val")
-  )
-)
-
-server <- function(input, output, session) {
-  output$check_val <- renderText(input$checkbox)
-  observeEvent(input$update, {
-    update_checkbox_input(session, "checkbox", value = !input$checkbox)
-  })
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/checkbox}.
-
 See \url{https://nextui.org/docs/components/checkbox}.
 }

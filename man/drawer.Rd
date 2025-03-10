@@ -30,25 +30,25 @@ Displays a panel that slides in from the edge of the screen, containing suppleme
 }
 \details{
 \itemize{
-\item \bold{children}. Type: ReactNode. Default: .
-\item \bold{size}. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: "md".
-\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
-\item \bold{placement}. Type: left | right | top | bottom. Default: "right".
-\item \bold{isOpen}. Type: boolean. Default: .
-\item \bold{defaultOpen}. Type: boolean. Default: .
-\item \bold{isDismissable}. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
-\item \bold{shouldBlockScroll}. Type: boolean. Default: true.
-\item \bold{hideCloseButton}. Type: boolean. Default: false.
-\item \bold{closeButton}. Type: ReactNode. Default: .
-\item \bold{motionProps}. Type: MotionProps. Default: .
-\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>. Default: .
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{placement}. Type: \code{left | right | top | bottom}. Default: "right".
+\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: true.
+\item \bold{hideCloseButton}. Type: \code{boolean}. Default: false.
+\item \bold{closeButton}. Type: \code{ReactNode}. Default: NA.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{onClose}. Type: () => void. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
 }
 }
 \examples{

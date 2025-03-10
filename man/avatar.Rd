@@ -18,65 +18,35 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
-
-The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
 }
 \details{
 \itemize{
-\item \bold{src}. The source URL of the image to be displayed.. Type: string. Default: NA.
-\item \bold{color}. Sets the avatar background color.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{radius}. Sets the avatar border radius.. Type: none | sm | md | lg | full. Default: full.
-\item \bold{size}. Sets the avatar size.. Type: sm | md | lg. Default: md.
-\item \bold{name}. Displays the initials if the image is not provided or fails to load.. Type: string. Default: NA.
-\item \bold{icon}. Displays a custom icon inside the avatar.. Type: ReactNode. Default: NA.
-\item \bold{fallback}. A custom fallback component to display when the image fails to load.. Type: ReactNode. Default: NA.
-\item \bold{isBordered}. If true, adds a border around the avatar.. Type: boolean. Default: false.
-\item \bold{isDisabled}. If true, disables the avatar and applies a disabled styling.. Type: boolean. Default: false.
-\item \bold{isFocusable}. If true, makes the avatar focusable for keyboard navigation.. Type: boolean. Default: false.
-\item \bold{showFallback}. If true, shows the fallback icon or initials when the image fails to load.. Type: boolean. Default: false.
-\item \bold{ImgComponent}. The component to be used as the image element.. Type: React.ElementType. Default: img.
-\item \bold{imgProps}. Props to be passed to the image element.. Type: ImgComponentProps. Default: NA.
-\item \bold{classNames}. Allows to set custom class names for the avatar slots.. Type: Record<"base"｜ "img"｜ "fallback"｜ "name"｜ "icon", string>. Default: NA.
+\item \bold{src}. Type: \code{string}. Default: NA.
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "full".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{icon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{fallback}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isBordered}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isFocusable}. Type: \code{boolean}. Default: false.
+\item \bold{showFallback}. Type: \code{boolean}. Default: false.
+\item \bold{ImgComponent}. Type: \code{React.ElementType}. Default: "img".
+\item \bold{imgProps}. Type: \code{ImgComponentProps}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "img" | "fallback" | "name" | "icon", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{max}. The maximum number of visible avatars. Type: number. Default: 5.
-\item \bold{total}. Control the number of avatar not visible. Type: number. Default: NA.
-\item \bold{size}. Size of the avatars. Type: AvatarProps\link{'size'}. Default: NA.
-\item \bold{color}. Color of the avatars. Type: AvatarProps\link{'color'}. Default: NA.
-\item \bold{radius}. Radius of the avatars. Type: AvatarProps\link{'radius'}. Default: NA.
-\item \bold{isGrid}. Whether the avatars should be displayed in a grid. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the avatars are disabled. Type: boolean. Default: NA.
-\item \bold{isBordered}. Whether the avatars have a border. Type: boolean. Default: NA.
-\item \bold{renderCount}. This allows you to render a custom count component.. Type: (count: number) => ReactNode. Default: NA.
-}
-
-\itemize{
-\item \bold{src}. Type: string. Default: .
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{name}. Type: string. Default: .
-\item \bold{icon}. Type: ReactNode. Default: .
-\item \bold{fallback}. Type: ReactNode. Default: .
-\item \bold{isBordered}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{isFocusable}. Type: boolean. Default: false.
-\item \bold{showFallback}. Type: boolean. Default: false.
-\item \bold{ImgComponent}. Type: React.ElementType. Default: "img".
-\item \bold{imgProps}. Type: ImgComponentProps. Default: .
-\item \bold{classNames}. Type: Partial<Record<"base" | "img" | "fallback" | "name" | "icon", string>>. Default: .
-}
-\itemize{
-\item \bold{max}. Type: number. Default: "5".
-\item \bold{total}. Type: number. Default: .
-\item \bold{size}. Type: AvatarProps\link{'size'}. Default: .
-\item \bold{color}. Type: AvatarProps\link{'color'}. Default: .
-\item \bold{radius}. Type: AvatarProps\link{'radius'}. Default: .
-\item \bold{isGrid}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: .
-\item \bold{isBordered}. Type: boolean. Default: .
-\item \bold{renderCount}. Type: (count: number) => ReactNode. Default: .
-\item \bold{classNames}. Type: Partial<Record<"base" | "count", string>>. Default: .
+\item \bold{max}. Type: \code{number}. Default: "5".
+\item \bold{total}. Type: \code{number}. Default: NA.
+\item \bold{size}. Type: \code{AvatarProps['size']}. Default: NA.
+\item \bold{color}. Type: \code{AvatarProps['color']}. Default: NA.
+\item \bold{radius}. Type: \code{AvatarProps['radius']}. Default: NA.
+\item \bold{isGrid}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: NA.
+\item \bold{isBordered}. Type: \code{boolean}. Default: NA.
+\item \bold{renderCount}. Type: \code{(count: number) => ReactNode}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "count", string>>}. Default: NA.
 }
 }
 \examples{
@@ -145,74 +115,7 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-
-avatar_config <- data.frame(
-  size = c("xs", "sm", "md", "lg", "xl"),
-  src = c(
-    "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-    "https://i.pravatar.cc/150?u=a04258114e29026702d",
-    "https://i.pravatar.cc/150?u=a048581f4e29026701d",
-    "https://i.pravatar.cc/150?u=a092581d4ef9026700d"
-  ),
-  radius = c(rep("full", 2), "lg", "md", "sm"),
-  disabled = c(rep(FALSE, 4), TRUE),
-  bordered = c(rep(TRUE, 3), rep(FALSE, 2)),
-  color = c(
-    "primary",
-    "secondary",
-    "danger",
-    "success",
-    "warning"
-  ),
-  fallback = rep(TRUE, 5)
-)
-
-avatar_factory <- function(src, size, disabled, bordered, radius, color, fallback) {
-  avatar(
-    src = src,
-    size = size,
-    isDisabled = disabled,
-    isBordered = bordered,
-    radius = radius,
-    color = color,
-    showFallback = fallback
-  )
-}
-
-avatars <- purrr::pmap(avatar_config, avatar_factory)
-
-ui <- nextui_page(
-  debug_react = TRUE,
-  class = "container mx-auto px-4",
-  p("avatar()"),
-  spacer(y = 1),
-  div(
-    class = "flex gap-3 items-center",
-    avatars
-  ),
-  spacer(y = 2),
-  p("avatar_group()"),
-  spacer(y = 1),
-  div(
-    class = "flex",
-    avatar_group(
-      isBordered = TRUE,
-      max = 3,
-      total = 10,
-      lapply(avatar_config$src, function(link) avatar(src = link))
-    )
-  )
-)
-
-server <- function(input, output, session) {}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/avatar}.
-
 See \url{https://nextui.org/docs/components/avatar}.
 }

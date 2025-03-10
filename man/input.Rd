@@ -38,77 +38,43 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Input is a component that allows users to enter text. It can be used to get user inputs in forms, search fields, and more.
-
-Input is a component that allows users to enter text. It can be used to get user inputs in forms, search fields, and more.
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the input.. Type: ReactNode. Default: NA.
-\item \bold{variant}. The variant of the input.. Type: flat | bordered | faded | underlined. Default: flat.
-\item \bold{color}. The color of the input.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the input.. Type: sm | md | lg. Default: md.
-\item \bold{radius}. The radius of the input.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{value}. The current value of the input (controlled).. Type: string. Default: NA.
-\item \bold{defaultValue}. The default value of the input (uncontrolled).. Type: string. Default: NA.
-\item \bold{placeholder}. The placeholder of the input.. Type: string. Default: NA.
-\item \bold{description}. A description for the input. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
-\item \bold{errorMessage}. An error message for the input.. Type: ReactNode. Default: NA.
-\item \bold{startContent}. Element to be rendered in the left side of the input.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. Element to be rendered in the right side of the input.. Type: ReactNode. Default: NA.
-\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
-\item \bold{fullWidth}. Whether the input should take up the width of its parent.. Type: boolean. Default: true.
-\item \bold{isClearable}. Whether the input should have a clear button.. Type: boolean. Default: false.
-\item \bold{isRequired}. Whether user input is required on the input before form submission.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the input can be selected but not changed by the user.. Type: boolean. Default: .
-\item \bold{isDisabled}. Whether the input is disabled.. Type: boolean. Default: false.
-\item \bold{isInvalid}. Whether the input is invalid.. Type: boolean. Default: false.
-\item \bold{baseRef}. The ref to the base element.. Type: RefObject\if{html}{\out{<HTMLDivElement>}}. Default: NA.
-\item \bold{validationState}. Whether the input should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
-\item \bold{disableAnimation}. Whether the input should be animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper"｜ "mainWrapper" ｜ "input" ｜ "clearButton" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{value}. Type: \code{string}. Default: NA.
+\item \bold{defaultValue}. Type: \code{string}. Default: NA.
+\item \bold{placeholder}. Type: \code{string}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
+\item \bold{validate}. Type: \code{(value: string) => ValidationError | true | null | undefined}. Default: NA.
+\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
+\item \bold{minLength}. Type: \code{number}. Default: NA.
+\item \bold{maxLength}. Type: \code{number}. Default: NA.
+\item \bold{pattern}. Type: \code{string}. Default: NA.
+\item \bold{type}. Type: \code{text | email | url | password | tel | search | file}. Default: "text".
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
+\item \bold{isClearable}. Type: \code{boolean}. Default: false.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{baseRef}. Type: \code{RefObject<HTMLDivElement>}. Default: NA.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'label' | 'inputWrapper' | 'innerWrapper' | 'mainWrapper' | 'input' | 'clearButton' | 'helperWrapper' | 'description' | 'errorMessage', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's value changes. You can pull out the new value by accessing event.target.value (string).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Handler that is called when the element's value changes.. Type: (value: string) => void. Default: NA.
-\item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
-}
-
-\itemize{
-\item \bold{children}. Type: ReactNode. Default: .
-\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
-\item \bold{label}. Type: ReactNode. Default: .
-\item \bold{value}. Type: string. Default: .
-\item \bold{defaultValue}. Type: string. Default: .
-\item \bold{placeholder}. Type: string. Default: .
-\item \bold{description}. Type: ReactNode. Default: .
-\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
-\item \bold{validate}. Type: (value: string) => ValidationError | true | null | undefined. Default: .
-\item \bold{validationBehavior}. Type: native | aria. Default: "native".
-\item \bold{minLength}. Type: number. Default: .
-\item \bold{maxLength}. Type: number. Default: .
-\item \bold{pattern}. Type: string. Default: .
-\item \bold{type}. Type: text | email | url | password | tel | search | file. Default: "text".
-\item \bold{startContent}. Type: ReactNode. Default: .
-\item \bold{endContent}. Type: ReactNode. Default: .
-\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
-\item \bold{fullWidth}. Type: boolean. Default: true.
-\item \bold{isClearable}. Type: boolean. Default: false.
-\item \bold{isRequired}. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{isInvalid}. Type: boolean. Default: false.
-\item \bold{baseRef}. Type: RefObject\if{html}{\out{<HTMLDivElement>}}. Default: .
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<'base' | 'label' | 'inputWrapper' | 'innerWrapper' | 'mainWrapper' | 'input' | 'clearButton' | 'helperWrapper' | 'description' | 'errorMessage', string>>. Default: .
-}
-\itemize{
-\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Type: (value: string) => void. Default: NA.
-\item \bold{onClear}. Type: () => void. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
+\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: NA.
+\item \bold{onClear}. Type: \code{() => void}. Default: NA.
 }
 }
 \examples{
@@ -155,52 +121,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-
-ui <- nextui_page(
-  div(
-    class = "flex gap-1",
-    text_input(
-      inputId = "text",
-      value = "Plop",
-      placeholder = "Next UI",
-      label = "Text input"
-    ),
-    textOutput("text_val")
-  ),
-  spacer(y = 5),
-  div(
-    class = "flex gap-1",
-    numeric_input(
-      inputId = "numeric",
-      value = 10,
-      label = "Numeric input"
-    ),
-    textOutput("numeric_val")
-  ),
-  spacer(y = 5),
-  div(
-    class = "flex gap-1",
-    date_input(
-      inputId = "date",
-      value = "2023-12-11",
-      label = "Date input"
-    ),
-    textOutput("date_val")
-  )
-)
-
-server <- function(input, output, session) {
-  output$text_val <- renderText(input$text)
-  output$numeric_val <- renderText(input$numeric)
-  output$date_val <- renderText(input$date)
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/input}.
-
 See \url{https://nextui.org/docs/components/input}.
 }

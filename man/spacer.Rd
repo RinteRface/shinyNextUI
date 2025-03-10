@@ -15,25 +15,11 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Spacer is a component used to add space between components.
-
-Spacer is a component used to add space between components.
-
-Spacer is a component used to add space between components.
 }
 \details{
 \itemize{
-\item \bold{x}. The x axis space. Type: Space. Default: 1.
-\item \bold{y}. The y axis space. Type: Space. Default: 1.
-}
-
-\itemize{
-\item \bold{x}. Type: Space. Default: "1".
-\item \bold{y}. Type: Space. Default: "1".
-}
-
-\itemize{
-\item \bold{x}. Type: Space. Default: "1".
-\item \bold{y}. Type: Space. Default: "1".
+\item \bold{x}. Type: \code{Space}. Default: "1".
+\item \bold{y}. Type: \code{Space}. Default: "1".
 }
 }
 \examples{
@@ -61,59 +47,7 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  card(card_body("Card 1")),
-  spacer(y = 10),
-  card(card_body("Card 2")),
-  spacer(y = 2),
-  card(card_body("Card 3")),
-  spacer(y = 10),
-  div(
-    class = "flex",
-    card(card_body("Card 4")),
-    spacer(x = 5),
-    card(card_body("Card 5")),
-    spacer(x = 1),
-    card(card_body("Card 6"))
-  )
-)
-
-server <- function(input, output, session) {}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  card(card_body("Card 1")),
-  spacer(y = 10),
-  card(card_body("Card 2")),
-  spacer(y = 2),
-  card(card_body("Card 3")),
-  spacer(y = 10),
-  div(
-    class = "flex",
-    card(card_body("Card 4")),
-    spacer(x = 5),
-    card(card_body("Card 5")),
-    spacer(x = 1),
-    card(card_body("Card 6"))
-  )
-)
-
-server <- function(input, output, session) {}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/layout/spacer}.
-
-See \url{https://nextui.org/docs/layout/spacer}.
-
 See \url{https://nextui.org/docs/layout/spacer}.
 }

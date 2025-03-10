@@ -30,81 +30,44 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Textarea component is a multi-line Input which allows you to write large texts.
-
-Textarea component is a multi-line Input which allows you to write large texts.
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the textarea.. Type: ReactNode. Default: NA.
-\item \bold{minRows}. The minimum number of rows to display.. Type: number. Default: 3.
-\item \bold{maxRows}. Maximum number of rows up to which the textarea can grow.. Type: number. Default: 8.
-\item \bold{cacheMeasurements}. Reuse previously computed measurements when computing height of textarea.. Type: boolean. Default: false.
-\item \bold{variant}. The variant of the textarea.. Type: flat | bordered | faded | underlined. Default: flat.
-\item \bold{color}. The color of the textarea.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{size}. The size of the textarea.. Type: sm|md|lg. Default: md.
-\item \bold{radius}. The radius of the textarea.. Type: none | sm | md | lg | full. Default: NA.
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{value}. The current value of the textarea (controlled).. Type: string. Default: NA.
-\item \bold{defaultValue}. The default value of the textarea (uncontrolled).. Type: string. Default: NA.
-\item \bold{placeholder}. The placeholder of the textarea.. Type: string. Default: NA.
-\item \bold{startContent}. Element to be rendered in the left side of the input.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. Element to be rendered in the right side of the input.. Type: ReactNode. Default: NA.
-\item \bold{description}. A description for the textarea. Provides a hint such as specific requirements for what to choose.. Type: ReactNode. Default: NA.
-\item \bold{errorMessage}. An error message for the textarea.. Type: ReactNode. Default: NA.
-\item \bold{labelPlacement}. The position of the label.. Type: inside | outside | outside-left. Default: inside.
-\item \bold{fullWidth}. Whether the textarea should take up the width of its parent.. Type: boolean. Default: true.
-\item \bold{isRequired}. Whether user input is required on the textarea before form submission.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the textarea can be selected but not changed by the user.. Type: boolean. Default: .
-\item \bold{isDisabled}. Whether the textarea is disabled.. Type: boolean. Default: false.
-\item \bold{isInvalid}. Whether the textarea is invalid.. Type: boolean. Default: false.
-\item \bold{validationState}. Whether the textarea should display its "valid" or "invalid" visual styling. (Deprecated) use isInvalid instead.. Type: valid | invalid. Default: NA.
-\item \bold{disableAutosize}. Whether the textarea auto vertically resize should be disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the textarea should be animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the checkbox slots.. Type: Record<"base"｜ "label"｜ "inputWrapper"｜ "innerWrapper" ｜ "input" ｜ "description" ｜ "errorMessage", string>. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{minRows}. Type: \code{number}. Default: "3".
+\item \bold{maxRows}. Type: \code{number}. Default: "8".
+\item \bold{cacheMeasurements}. Type: \code{boolean}. Default: false.
+\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{value}. Type: \code{string}. Default: NA.
+\item \bold{defaultValue}. Type: \code{string}. Default: NA.
+\item \bold{placeholder}. Type: \code{string}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
+\item \bold{validate}. Type: \code{(value: string) => ValidationError | true | null | undefined}. Default: NA.
+\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
+\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
+\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
+\item \bold{isRequired}. Type: \code{boolean}. Default: false.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isClearable}. Type: \code{boolean}. Default: false.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
+\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
+\item \bold{disableAutosize}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "label" | "inputWrapper" | "innerWrapper" | "input" | "description" | "errorMessage", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Handler that is called when the element's value changes. You can pull out the new value by accessing event.target.value (string).. Type: React.ChangeEvent \if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Handler that is called when the element's value changes.. Type: (value: string) => void. Default: NA.
-\item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
-\item \bold{onHeightChange}. Handler that is called when the height of the textarea changes.. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
-}
-
-\itemize{
-\item \bold{children}. Type: ReactNode. Default: .
-\item \bold{minRows}. Type: number. Default: "3".
-\item \bold{maxRows}. Type: number. Default: "8".
-\item \bold{cacheMeasurements}. Type: boolean. Default: false.
-\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
-\item \bold{label}. Type: ReactNode. Default: .
-\item \bold{value}. Type: string. Default: .
-\item \bold{defaultValue}. Type: string. Default: .
-\item \bold{placeholder}. Type: string. Default: .
-\item \bold{startContent}. Type: ReactNode. Default: .
-\item \bold{endContent}. Type: ReactNode. Default: .
-\item \bold{description}. Type: ReactNode. Default: .
-\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
-\item \bold{validate}. Type: (value: string) => ValidationError | true | null | undefined. Default: .
-\item \bold{validationBehavior}. Type: native | aria. Default: "native".
-\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
-\item \bold{fullWidth}. Type: boolean. Default: true.
-\item \bold{isRequired}. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Type: boolean. Default: .
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{isClearable}. Type: boolean. Default: false.
-\item \bold{isInvalid}. Type: boolean. Default: false.
-\item \bold{validationState}. Type: valid | invalid. Default: .
-\item \bold{disableAutosize}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base" | "label" | "inputWrapper" | "innerWrapper" | "input" | "description" | "errorMessage", string>>. Default: .
-}
-\itemize{
-\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
-\item \bold{onValueChange}. Type: (value: string) => void. Default: NA.
-\item \bold{onClear}. Type: () => void. Default: NA.
-\item \bold{onHeightChange}. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
+\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: NA.
+\item \bold{onClear}. Type: \code{() => void}. Default: NA.
+\item \bold{onHeightChange}. Type: \code{(height: number, meta: { rowHeight: number }) => void}. Default: NA.
 }
 }
 \examples{
@@ -141,42 +104,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-
-ui <- nextui_page(
-  div(
-    class = "flex gap-5",
-    action_button("update_text", "Update text"),
-    textarea_input(
-      inputId = "textarea",
-      placeholder = "Enter your amazing ideas.",
-      label = "Text area input",
-      bordered = TRUE,
-      color = "secondary",
-      status = "secondary",
-      helperColor = "error",
-      helperText = "Click on update text"
-    )
-  ),
-  textOutput("textarea_val")
-)
-
-server <- function(input, output, session) {
-  output$textarea_val <- renderText(input$textarea)
-
-  observeEvent(input$update_text, {
-    update_textarea_input(
-      inputId = "textarea",
-      value = "Updated value"
-    )
-  })
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/textarea}.
-
 See \url{https://nextui.org/docs/components/textarea}.
 }

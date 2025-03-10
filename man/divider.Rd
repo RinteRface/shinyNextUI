@@ -15,16 +15,10 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Divider is a component that separates content in a page.
-
-Divider is a component that separates content in a page.
 }
 \details{
 \itemize{
-\item \bold{orientation}. The orientation of the divider.. Type: horizontal | vertical. Default: horizontal.
-}
-
-\itemize{
-\item \bold{orientation}. Type: \code{horizontal} | \code{vertical}. Default: "\code{horizontal}".
+\item \bold{orientation}. Type: \code{`horizontal` | `vertical`}. Default: "\code{horizontal}".
 }
 }
 \examples{
@@ -48,29 +42,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  debug_react = TRUE,
-  card(
-    card_header("Header"),
-    divider(),
-    card_body("Body"),
-    divider(),
-    card_footer("Footer")
-  )
-)
-
-server <- function(input, output, session) {
-
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/divider}.
-
 See \url{https://nextui.org/docs/components/divider}.
 }

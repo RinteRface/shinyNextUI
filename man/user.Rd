@@ -15,24 +15,14 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Display user information with avatar and name.
-
-Display user information with avatar and name.
 }
 \details{
 \itemize{
-\item \bold{name}. The name of the user.. Type: string. Default: NA.
-\item \bold{description}. The description component.. Type: ReactNode. Default: NA.
-\item \bold{isFocusable}. Whether the user is focusable. This is useful when using Dropdown or similar components.. Type: boolean. Default: false.
-\item \bold{avatarProps}. The avatar component props. The name is passed by default.. Type: AvatarProps. Default: NA.
-\item \bold{classNames}. Allows to set custom class names for the user slots.. Type: Record<"base"｜ "wrapper"｜ "name"｜ "description", string>. Default: NA.
-}
-
-\itemize{
-\item \bold{name}. Type: string. Default: .
-\item \bold{description}. Type: ReactNode. Default: .
-\item \bold{isFocusable}. Type: boolean. Default: false.
-\item \bold{avatarProps}. Type: AvatarProps. Default: .
-\item \bold{classNames}. Type: Partial<Record<"base" | "wrapper" | "name" | "description", string>>. Default: .
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{description}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isFocusable}. Type: \code{boolean}. Default: false.
+\item \bold{avatarProps}. Type: \code{AvatarProps}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "wrapper" | "name" | "description", string>>}. Default: NA.
 }
 }
 \examples{
@@ -56,29 +46,7 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  div(
-    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
-    user(
-      name = "Jane Doe",
-      description = "Product Designer",
-      avatarProps = JS("{
-        src: 'https://i.pravatar.cc/150?u=a04258114e29026702d'
-      }")
-    )
-  )
-)
-
-server <- function(input, output, session) {}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/user}.
-
 See \url{https://nextui.org/docs/components/user}.
 }

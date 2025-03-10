@@ -15,22 +15,13 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Skeleton is a placeholder to show a loading state and the expected shape of a component.
-
-Skeleton is a placeholder to show a loading state and the expected shape of a component.
 }
 \details{
 \itemize{
-\item \bold{children}. The content of the skeleton.. Type: ReactNode. Default: NA.
-\item \bold{isLoaded}. Whether the skeleton is loaded.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the skeleton slots.. Type: Record<"base"｜"content", string>. Default: NA.
-}
-
-\itemize{
-\item \bold{children}. Type: ReactNode. Default: .
-\item \bold{isLoaded}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base" | "content", string>>. Default: .
+\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isLoaded}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "content", string>>}. Default: NA.
 }
 }
 \examples{
@@ -72,47 +63,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  debug_react = TRUE,
-  reactOutput("skeleton_card")
-)
-
-server <- function(input, output, session) {
-
-  is_loaded <- reactiveVal(FALSE)
-  observeEvent(req(!is_loaded()), {
-    Sys.sleep(4)
-    is_loaded(TRUE)
-  })
-
-  output$skeleton_card <- renderReact({
-    card(
-      card_header(
-        skeleton(
-          isLoaded = is_loaded(),
-          user(
-            name = "Jane Doe",
-            description = "Product Designer",
-            avatarProps = JS("{
-            src: 'https://i.pravatar.cc/150?u=a04258114e29026702d'
-          }")
-          )
-        )
-      ),
-      card_body(skeleton("Hello World", isLoaded = is_loaded())),
-      card_footer(skeleton("Footer", isLoaded = is_loaded()))
-    )
-  })
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/skeleton}.
-
 See \url{https://nextui.org/docs/components/skeleton}.
 }

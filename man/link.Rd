@@ -15,64 +15,34 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
-
-Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
 }
 \details{
 \itemize{
-\item \bold{size}. The size of the link.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the link.. Type: foreground | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{underline}. The underline of the link.. Type: none | hover | always | active | focus. Default: none.
-\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
-\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
-\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
-\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
-\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
-\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
-\item \bold{isExternal}. Whether the link should open in a new tab.. Type: boolean. Default: false.
-\item \bold{showAnchorIcon}. Whether to show the anchor icon.. Type: boolean. Default: false.
-\item \bold{anchorIcon}. The anchor icon.. Type: ReactNode. Default: NA.
-\item \bold{isBlock}. Whether the link should be rendered as block with a hover effect.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the link is disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable link and block animations.. Type: boolean. Default: false.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{foreground | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{underline}. Type: \code{none | hover | always | active | focus}. Default: "none".
+\item \bold{href}. Type: \code{string}. Default: NA.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
+\item \bold{rel}. Type: \code{string}. Default: NA.
+\item \bold{download}. Type: \code{boolean | string}. Default: NA.
+\item \bold{ping}. Type: \code{string}. Default: NA.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
+\item \bold{isExternal}. Type: \code{boolean}. Default: false.
+\item \bold{showAnchorIcon}. Type: \code{boolean}. Default: false.
+\item \bold{anchorIcon}. Type: \code{ReactNode}. Default: NA.
+\item \bold{isBlock}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
 }
 \itemize{
-\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClick}. The native link click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
-}
-
-\itemize{
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
-\item \bold{underline}. Type: none | hover | always | active | focus. Default: "none".
-\item \bold{href}. Type: string. Default: .
-\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
-\item \bold{rel}. Type: string. Default: .
-\item \bold{download}. Type: boolean | string. Default: .
-\item \bold{ping}. Type: string. Default: .
-\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
-\item \bold{isExternal}. Type: boolean. Default: false.
-\item \bold{showAnchorIcon}. Type: boolean. Default: false.
-\item \bold{anchorIcon}. Type: ReactNode. Default: .
-\item \bold{isBlock}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-}
-\itemize{
-\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
 }
 }
 \examples{
@@ -121,54 +91,7 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-
-colors <- c(
-  "default",
-  "primary",
-  "secondary",
-  "success",
-  "warning",
-  "error"
-)
-
-link_config <- data.frame(
-  color = colors,
-  underline = c(rep("none", 2), "hover", "always", "active", "focus"),
-  block = c(rep(TRUE, 3), rep(FALSE, 3)),
-  href = c(rep("#", 3), rep("https://google.com", 3)),
-  isExternal = c(rep(FALSE, 3), rep(TRUE, 3)),
-  size = rep(c("sm", "md", "lg"), 2)
-)
-
-link_factory <- function(color, underline, block, href, isExternal, size) {
-  link(
-    "A super link!",
-    color = color,
-    underline = underline,
-    isBlock = block,
-    href = href,
-    isExternal = isExternal,
-    size = size
-  )
-}
-
-links <- purrr::pmap(link_config, link_factory)
-
-ui <- nextui_page(
-  div(
-    class = "grid gap-4 grid-cols-3 grid-rows-2 m-5",
-    links
-  )
-)
-
-server <- function(input, output, session) {}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/link}.
-
 See \url{https://nextui.org/docs/components/link}.
 }

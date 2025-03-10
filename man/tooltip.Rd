@@ -15,78 +15,40 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Tooltips display a brief, informative message that appears when a user interacts with an element.
-
-Tooltips display a brief, informative message that appears when a user interacts with an element.
 }
 \details{
 \itemize{
-\item \bold{children*}. The children to render. Usually a trigger element.. Type: ReactNode[]. Default: NA.
-\item \bold{content}. The content to render inside the tooltip.. Type: ReactNode. Default: NA.
-\item \bold{size}. The tooltip size. This change the content font size.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The tooltip color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{radius}. The tooltip border radius.. Type: none | sm | md | lg | full. Default: md.
-\item \bold{shadow}. The tooltip shadow.. Type: none | sm | md | lg. Default: sm.
-\item \bold{placement}. The placement of the tooltip relative to its trigger reference.. Type: TooltipPlacement. Default: top.
-\item \bold{delay}. The delay in milliseconds before the tooltip opens.. Type: number. Default: 500.
-\item \bold{closeDelay}. The delay in milliseconds before the tooltip closes.. Type: number. Default: 0.
-\item \bold{isOpen}. Whether the tooltip is open by default (controlled).. Type: boolean. Default: NA.
-\item \bold{defaultOpen}. Whether the tooltip is open by default (uncontrolled).. Type: boolean. Default: NA.
-\item \bold{offset(px)}. The distance or margin between the reference and popper. It is used internally to create an offset modifier.. Type: number. Default: 7.
-\item \bold{containerPadding(px)}. The placement padding that should be applied between the element and its surrounding container.. Type: number. Default: 12.
-\item \bold{crossOffset(px)}. The additional offset applied along the cross axis between the element and its anchor element.. Type: number. Default: 0.
-\item \bold{triggerType}. Type of tooltip that is opened by the trigger.. Type: dialog | menu | listbox | tree | grid;. Default: dialog.
-\item \bold{showArrow}. Whether the tooltip should have an arrow.. Type: boolean. Default: false.
-\item \bold{shouldFlip}. Whether the tooltip should change its placement and flip when it's about to overflow its boundary area.. Type: boolean. Default: true.
-\item \bold{triggerScaleOnOpen}. Whether the trigger should scale down when the tooltip is open.. Type: boolean. Default: true.
-\item \bold{shouldBlockScroll}. Whether to block scrolling outside the tooltip.. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Whether pressing the escape key to close the tooltip should be disabled.. Type: boolean. Default: false.
-\item \bold{isDismissable}. Whether to close the overlay when the user interacts outside it.. Type: boolean. Default: false.
-\item \bold{shouldCloseOnBlur}. Whether the tooltip should close when focus is lost or moves outside it.. Type: boolean. Default: true.
-\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: NA.
-\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
-\item \bold{updatePositionDeps}. The dependencies to force the tooltip position update.. Type: any[]. Default: [].
-\item \bold{isDisabled}. Whether the tooltip is disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether the tooltip is animated.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the tooltip slots.. Type: Record<"base"｜"content", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
+\item \bold{content}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "md".
+\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "sm".
+\item \bold{placement}. Type: \code{TooltipPlacement}. Default: "top".
+\item \bold{delay}. Type: \code{number}. Default: "0".
+\item \bold{closeDelay}. Type: \code{number}. Default: "500".
+\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{offset}. Type: \code{number}. Default: "7".
+\item \bold{containerPadding}. Type: \code{number}. Default: "12".
+\item \bold{crossOffset}. Type: \code{number}. Default: "0".
+\item \bold{showArrow}. Type: \code{boolean}. Default: false.
+\item \bold{shouldFlip}. Type: \code{boolean}. Default: true.
+\item \bold{triggerScaleOnOpen}. Type: \code{boolean}. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: false.
+\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: true.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
+\item \bold{updatePositionDeps}. Type: \code{any[]}. Default: "[]".
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"content", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onOpenChange}. Handler that is called when the tooltip's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
-\item \bold{onClose}. Handler that is called when the tooltip should close.. Type: () => void. Default: NA.
-}
-
-\itemize{
-\item \bold{children*}. Type: ReactNode[]. Default: .
-\item \bold{content}. Type: ReactNode. Default: .
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: "md".
-\item \bold{shadow}. Type: none | sm | md | lg. Default: "sm".
-\item \bold{placement}. Type: TooltipPlacement. Default: "top".
-\item \bold{delay}. Type: number. Default: "0".
-\item \bold{closeDelay}. Type: number. Default: "500".
-\item \bold{isOpen}. Type: boolean. Default: .
-\item \bold{defaultOpen}. Type: boolean. Default: .
-\item \bold{offset}. Type: number. Default: "7".
-\item \bold{containerPadding}. Type: number. Default: "12".
-\item \bold{crossOffset}. Type: number. Default: "0".
-\item \bold{showArrow}. Type: boolean. Default: false.
-\item \bold{shouldFlip}. Type: boolean. Default: true.
-\item \bold{triggerScaleOnOpen}. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
-\item \bold{isDismissable}. Type: boolean. Default: false.
-\item \bold{shouldCloseOnBlur}. Type: boolean. Default: true.
-\item \bold{motionProps}. Type: MotionProps. Default: .
-\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
-\item \bold{updatePositionDeps}. Type: any[]. Default: "[]".
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base"｜"content", string>>. Default: .
-}
-\itemize{
-\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{shouldCloseOnInteractOutside}. Type: (e: HTMLElement) => void. Default: NA.
-\item \bold{onClose}. Type: () => void. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{shouldCloseOnInteractOutside}. Type: \code{(e: HTMLElement) => void}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
 }
 }
 \examples{
@@ -112,31 +74,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  div(
-    className = "flex align-items-start",
-    tooltip(
-      content = "A tooltip...",
-      color = "primary",
-      showArrow = TRUE,
-      closeDelay = 0,
-      delay = 0,
-      button("Click me!", color = "warning")
-    )
-  )
-)
-
-server <- function(input, output, session) {
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/tooltip}.
-
 See \url{https://nextui.org/docs/components/tooltip}.
 }

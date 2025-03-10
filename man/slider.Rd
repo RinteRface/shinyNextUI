@@ -26,87 +26,45 @@ The update functions return nothing (called for side effects).
 }
 \description{
 A slider allows a user to select one or more values within a range.
-
-A slider allows a user to select one or more values within a range.
 }
 \details{
 \itemize{
-\item \bold{label}. The content to display as the label.. Type: ReactNode. Default: NA.
-\item \bold{name}. The name of the input element, used when submitting an HTML form. See MDN.. Type: string. Default: NA.
-\item \bold{size}. The size of the Slider filler and thumb.. Type: sm | md | lg. Default: md.
-\item \bold{color}. The color of the filler and thumb.. Type: foreground | primary | secondary | success | warning | danger. Default: primary.
-\item \bold{radius}. The Slider's thumbs border radius.. Type: none | sm | md | lg | full. Default: full.
-\item \bold{step}. The Slider's step value.. Type: number. Default: 1.
-\item \bold{value}. The current value (controlled).. Type: number. Default: NA.
-\item \bold{defaultValue}. The default value (uncontrolled).. Type: number. Default: NA.
-\item \bold{minValue}. The slider's minimum value.. Type: number. Default: 0.
-\item \bold{maxValue}. The slider's maximum value.. Type: number. Default: 100.
-\item \bold{orientation}. The orientation of the Slider.. Type: horizontal | vertical. Default: horizontal.
-\item \bold{fillOffset}. The offset from which to start the fill.. Type: number. Default: NA.
-\item \bold{showSteps}. Whether to show the steps indicators.. Type: boolean. Default: false.
-\item \bold{showTooltip}. Whether to show a tooltip with the current thumb value when the user hovers or drags the thumb.. Type: boolean. Default: false.
-\item \bold{marks}. The marks to display on the Slider's steps.. Type: SliderStepMarks. Default: NA.
-\item \bold{startContent}. The content to display at the beginning of the Slider.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. The content to display at the end of the Slider.. Type: ReactNode. Default: NA.
-\item \bold{formatOptions}. The options to format the value.. Type: Intl.NumberFormat. Default: NA.
-\item \bold{tooltipValueFormatOptions}. The options to format the tooltip value. By default, it uses the same options as formatOptions.. Type: Intl.NumberFormat. Default: NA.
-\item \bold{tooltipProps}. The props to pass to the thumbs's tooltip.. Type: TooltipProps. Default: NA.
-\item \bold{showOutline}. Whether to show a small outline around the thumbs.. Type: boolean. Default: false.
-\item \bold{hideValue}. Whether to hide the Slider value.. Type: boolean. Default: false.
-\item \bold{hideThumb}. Whether to hide all the Slider thumbs.. Type: boolean. Default: false.
-\item \bold{disableThumbScale}. Whether to disable the thumb scale animation.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the whole Slider is disabled.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the Slider animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the Slider slots.. Type: Record<"base"｜"labelWrapper"｜"label"｜ "value" ｜ "step" ｜ "mark" ｜ "trackWrapper" ｜ "track"｜ "output" ｜ "filler" ｜ "thumb" ｜ "startContent" ｜ "endContent", string>. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: NA.
+\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
+\item \bold{color}. Type: \code{foreground | primary | secondary | success | warning | danger}. Default: "primary".
+\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "full".
+\item \bold{step}. Type: \code{number}. Default: "1".
+\item \bold{value}. Type: \code{number}. Default: NA.
+\item \bold{defaultValue}. Type: \code{number}. Default: NA.
+\item \bold{minValue}. Type: \code{number}. Default: "0".
+\item \bold{maxValue}. Type: \code{number}. Default: "100".
+\item \bold{orientation}. Type: \code{horizontal | vertical}. Default: "horizontal".
+\item \bold{fillOffset}. Type: \code{number}. Default: NA.
+\item \bold{showSteps}. Type: \code{boolean}. Default: false.
+\item \bold{showTooltip}. Type: \code{boolean}. Default: false.
+\item \bold{marks}. Type: \code{SliderStepMarks}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: NA.
+\item \bold{tooltipValueFormatOptions}. Type: \code{Intl.NumberFormat}. Default: NA.
+\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: NA.
+\item \bold{showOutline}. Type: \code{boolean}. Default: false.
+\item \bold{hideValue}. Type: \code{boolean}. Default: false.
+\item \bold{hideThumb}. Type: \code{boolean}. Default: false.
+\item \bold{disableThumbScale}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
 }
 \itemize{
-\item \bold{getValue}. A function to format the value. Overrides default formatted number.. Type: (value: SliderValue) => string. Default: NA.
-\item \bold{renderLabel}. A function to render the label.. Type: (props: DOMAttributes\if{html}{\out{<HTMLLabelElement>}}) => ReactNode. Default: NA.
-\item \bold{renderValue}. A function to render the value.. Type: (props: DOMAttributes\if{html}{\out{<HTMLOutputElement>}}) => ReactNode. Default: NA.
-\item \bold{renderThumb}. A function to render the thumbs. The index prop will tell you which thumb is being rendered.. Type: (props: DOMAttributes\if{html}{\out{<HTMLDivElement>}} & {index?: number}) => ReactNode. Default: NA.
+\item \bold{getValue}. Type: \code{(value: SliderValue) => string}. Default: NA.
+\item \bold{renderLabel}. Type: \code{(props: DOMAttributes<HTMLLabelElement>) => ReactNode}. Default: NA.
+\item \bold{renderValue}. Type: \code{(props: DOMAttributes<HTMLOutputElement>) => ReactNode}. Default: NA.
+\item \bold{renderThumb}. Type: \code{(props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode}. Default: NA.
 }
 \itemize{
-\item \bold{onChange}. Callback fired when the value changes.. Type: (value: SliderValue) => void. Default: NA.
-\item \bold{onChangeEnd}. Callback fired when the value changes and the user stops dragging the thumb.. Type: (value: SliderValue) => void. Default: NA.
-}
-
-\itemize{
-\item \bold{label}. Type: ReactNode. Default: .
-\item \bold{name}. Type: string. Default: .
-\item \bold{size}. Type: sm | md | lg. Default: "md".
-\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
-\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
-\item \bold{step}. Type: number. Default: "1".
-\item \bold{value}. Type: number. Default: .
-\item \bold{defaultValue}. Type: number. Default: .
-\item \bold{minValue}. Type: number. Default: "0".
-\item \bold{maxValue}. Type: number. Default: "100".
-\item \bold{orientation}. Type: horizontal | vertical. Default: "horizontal".
-\item \bold{fillOffset}. Type: number. Default: .
-\item \bold{showSteps}. Type: boolean. Default: false.
-\item \bold{showTooltip}. Type: boolean. Default: false.
-\item \bold{marks}. Type: SliderStepMarks. Default: .
-\item \bold{startContent}. Type: ReactNode. Default: .
-\item \bold{endContent}. Type: ReactNode. Default: .
-\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: .
-\item \bold{tooltipValueFormatOptions}. Type: Intl.NumberFormat. Default: .
-\item \bold{tooltipProps}. Type: TooltipProps. Default: .
-\item \bold{showOutline}. Type: boolean. Default: false.
-\item \bold{hideValue}. Type: boolean. Default: false.
-\item \bold{hideThumb}. Type: boolean. Default: false.
-\item \bold{disableThumbScale}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-}
-\itemize{
-\item \bold{getValue}. Type: (value: SliderValue) => string. Default: NA.
-\item \bold{renderLabel}. Type: (props: DOMAttributes\if{html}{\out{<HTMLLabelElement>}}) => ReactNode. Default: NA.
-\item \bold{renderValue}. Type: (props: DOMAttributes\if{html}{\out{<HTMLOutputElement>}}) => ReactNode. Default: NA.
-\item \bold{renderThumb}. Type: (props: DOMAttributes\if{html}{\out{<HTMLDivElement>}} & {index?: number}) => ReactNode. Default: NA.
-}
-\itemize{
-\item \bold{onChange}. Type: (value: SliderValue) => void. Default: NA.
-\item \bold{onChangeEnd}. Type: (value: SliderValue) => void. Default: NA.
+\item \bold{onChange}. Type: \code{(value: SliderValue) => void}. Default: NA.
+\item \bold{onChangeEnd}. Type: \code{(value: SliderValue) => void}. Default: NA.
 }
 }
 \examples{
@@ -235,134 +193,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  debug_react = TRUE,
-  action_button("update", "Update slider 1"),
-  slider_input(
-    "slider",
-    label = "My slider",
-    showTooltip = TRUE,
-    radius = "none",
-    step = 1,
-    maxValue = 10,
-    minValue = 0,
-    value = 5,
-    className = "max-w-md",
-    showSteps = TRUE,
-    color = "foreground",
-    size = "sm",
-    marks = JS(
-      "
-      [
-        {
-          value: 2,
-          label: 'First mark',
-        },
-        {
-          value: 5,
-          label: 'Second mark',
-        },
-        {
-          value: 8,
-          label: 'Third mark',
-        },
-      ]
-    "
-    )
-  ),
-  spacer(y = 10),
-  slider_input(
-    "slider2",
-    radius = "lg",
-    label = "Color offset",
-    size = "sm",
-    showTooltip = TRUE,
-    color = "warning",
-    maxValue = 5,
-    minValue = -5,
-    fillOffset = 0,
-    value = 1,
-    formatOptions = JS("{signDisplay: 'always'}")
-  ),
-  spacer(y = 10),
-  slider_input(
-    "slider3",
-    label = "Outline",
-    color = "foreground",
-    showOutline = TRUE,
-    minValue = 0,
-    maxValue = 10,
-    value = 5
-  ),
-  spacer(y = 10),
-  slider_input(
-    "slider4",
-    label = "With start and end content",
-    minValue = 0,
-    maxValue = 10,
-    value = 5,
-    startContent = icon("volume-xmark"),
-    endContent = icon("volume-high")
-  ),
-  spacer(y = 10),
-  slider_input(
-    "slider5",
-    color = "success",
-    step = 0.1,
-    label = "Format value with getValue",
-    getValue = JS("(val) => `${val} / 10`"),
-    maxValue = 10,
-    minValue = 0,
-    value = 5
-  ),
-  spacer(y = 10),
-  slider_input(
-    "range",
-    label = "Range",
-    color = "danger",
-    minValue = 0,
-    maxValue = 10,
-    value = c(1, 4)
-  ),
-  spacer(y = 10),
-  div(
-    class = "flex flex-row  max-w-md h-[348px] gap-6 w-full",
-    slider_input(
-      "slider4",
-      label = "Vertical",
-      size = "sm",
-      orientation = "vertical",
-      minValue = 0,
-      maxValue = 10,
-      value = 5,
-      startContent = icon("volume-high"),
-      endContent = icon("volume-xmark")
-    )
-  )
-)
-
-server <- function(input, output, session) {
-  observeEvent(input$update, {
-    update_slider_input(session, inputId = "slider", value = 10)
-  })
-
-  observeEvent(input$slider, {
-    print(class(input$slider))
-    print(sprintf("Slider is: \%s", input$slider))
-  })
-  observeEvent(input$range, {
-    print(input$range)
-  })
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/slider}.
-
 See \url{https://nextui.org/docs/components/slider}.
 }

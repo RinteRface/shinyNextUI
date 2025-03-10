@@ -26,59 +26,32 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Displays a dialog with a custom content that requires attention or provides additional information.
-
 Displays a dialog with custom content that requires attention or provides additional information.
 }
 \details{
 \itemize{
-\item \bold{children*}. The content of the modal. It's usually the ModalContent.. Type: ReactNode. Default: NA.
-\item \bold{size}. The modal size. This changes the modal max-width and height (full).. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: md.
-\item \bold{radius}. The modal border radius.. Type: none | sm | md | lg. Default: lg.
-\item \bold{shadow}. The modal shadow.. Type: none | sm | md | lg. Default: lg.
-\item \bold{backdrop}. The modal backdrop type.. Type: transparent | opaque | blur. Default: opaque.
-\item \bold{scrollBehavior}. The modal scroll behavior.. Type: normal | inside | outside. Default: normal.
-\item \bold{placement}. The modal position.. Type: auto | top | center | bottom. Default: auto.
-\item \bold{isOpen}. Whether the modal is open by default (controlled).. Type: boolean. Default: NA.
-\item \bold{defaultOpen}. Whether the modal is open by default (uncontrolled).. Type: boolean. Default: NA.
-\item \bold{isDismissable}. Whether the modal can be closed by clicking on the overlay or pressing the Esc key.. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Whether pressing the Esc key to close the modal should be disabled.. Type: boolean. Default: false.
-\item \bold{shouldBlockScroll}. Whether the modal should block the scroll of the page on open.. Type: boolean. Default: true.
-\item \bold{hideCloseButton}. Whether to hide the modal close button.. Type: boolean. Default: false.
-\item \bold{closeButton}. Custom close button to display on top right corner.. Type: ReactNode. Default: NA.
-\item \bold{motionProps}. The props to modify the framer motion animation. Use the variants API to create your own animation.. Type: MotionProps. Default: .
-\item \bold{portalContainer}. The container element in which the overlay portal will be placed.. Type: HTMLElement. Default: document.body.
-\item \bold{disableAnimation}. Whether the modal should not have animations.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the modal slots.. Type: Record<"wrapper"｜ "base"｜ "backdrop"｜ "header" ｜ "body" ｜ "footer" ｜ "closeButton", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{size}. Type: \code{xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full}. Default: "md".
+\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "lg".
+\item \bold{backdrop}. Type: \code{transparent | opaque | blur}. Default: "opaque".
+\item \bold{scrollBehavior}. Type: \code{normal | inside | outside}. Default: "normal".
+\item \bold{placement}. Type: \code{auto | top | center | bottom}. Default: "auto".
+\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: true.
+\item \bold{hideCloseButton}. Type: \code{boolean}. Default: false.
+\item \bold{closeButton}. Type: \code{ReactNode}. Default: NA.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onOpenChange}. Handler that is called when the modal's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{onClose}. Handler that is called when the modal is closed.. Type: () => void. Default: NA.
-}
-
-\itemize{
-\item \bold{children*}. Type: ReactNode. Default: .
-\item \bold{size}. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: "md".
-\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
-\item \bold{shadow}. Type: none | sm | md | lg. Default: "lg".
-\item \bold{backdrop}. Type: transparent | opaque | blur. Default: "opaque".
-\item \bold{scrollBehavior}. Type: normal | inside | outside. Default: "normal".
-\item \bold{placement}. Type: auto | top | center | bottom. Default: "auto".
-\item \bold{isOpen}. Type: boolean. Default: .
-\item \bold{defaultOpen}. Type: boolean. Default: .
-\item \bold{isDismissable}. Type: boolean. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
-\item \bold{shouldBlockScroll}. Type: boolean. Default: true.
-\item \bold{hideCloseButton}. Type: boolean. Default: false.
-\item \bold{closeButton}. Type: ReactNode. Default: .
-\item \bold{motionProps}. Type: MotionProps. Default: .
-\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>. Default: .
-}
-\itemize{
-\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
-\item \bold{onClose}. Type: () => void. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: NA.
 }
 }
 \examples{
@@ -184,111 +157,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-ui <- nextui_page(
-  action_button(
-    inputId = "show_modal",
-    color = "primary",
-    shadow = TRUE,
-    "Show modal"
-  ),
-  radio_input(
-    "scroll",
-    label = "Scroll option",
-    choices = c(
-      "inside" = "Inside",
-      "outside" = "Outside"
-    ),
-    selected = "inside"
-  ),
-  reactOutput("modal")
-)
-
-server <- function(input, output, session) {
-  modalVisible <- reactiveVal(FALSE)
-  observeEvent(input$show_modal, {
-    modalVisible(TRUE)
-  })
-
-  observeEvent(input$modal_closed, {
-    modalVisible(FALSE)
-  })
-
-  output$modal <- renderReact({
-    modal(
-      scrollBehavior = input$scroll,
-      isOpen = modalVisible(),
-      size = "sm",
-      modal_content(
-        modal_header("My modal"),
-        modal_body(
-          p(
-            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros."
-          ),
-          p(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nullam pulvinar risus non risus hendrerit venenatis.
-            Pellentesque sit amet hendrerit risus, sed porttitor quam.
-            Magna exercitation reprehenderit magna aute tempor cupidatat
-            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-            incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-            aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-            nisi consectetur esse laborum eiusmod pariatur proident Lorem
-            eiusmod et. Culpa deserunt nostrud ad veniam."
-          ),
-          p(
-            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
-             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
-             eiusmod. Et mollit incididunt nisi consectetur esse laborum
-             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
-             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
-             adipiscing elit. Nullam pulvinar risus non risus hendrerit
-             venenatis. Pellentesque sit amet hendrerit risus, sed
-             porttitor quam. Magna exercitation reprehenderit magna aute
-             tempor cupidatat consequat elit dolor adipisicing. Mollit
-             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
-             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
-             mollit incididunt nisi consectetur esse laborum eiusmod
-             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
-             veniam."
-          ),
-          p(
-            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
-             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
-             eiusmod. Et mollit incididunt nisi consectetur esse laborum
-             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
-             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
-             adipiscing elit. Nullam pulvinar risus non risus hendrerit
-             venenatis. Pellentesque sit amet hendrerit risus, sed
-             porttitor quam. Magna exercitation reprehenderit magna aute
-             tempor cupidatat consequat elit dolor adipisicing. Mollit
-             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
-             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
-             mollit incididunt nisi consectetur esse laborum eiusmod
-             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
-             veniam."
-          )
-        ),
-        modal_footer("Modal footer")
-      ),
-      onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
-    )
-  })
-
-  exportTestValues(
-    modal_state = modalVisible()
-  )
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/modal}.
-
 See \url{https://nextui.org/docs/components/modal}.
 }

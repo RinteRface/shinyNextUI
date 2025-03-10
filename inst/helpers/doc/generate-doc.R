@@ -24,7 +24,7 @@ generate_details <- function(x) {
           }
 
           sprintf(
-            "#'  \\item \\bold{%s}. Type: %s. Default: %s.",
+            "#'  \\item \\bold{%s}. Type: \\code{%s}. Default: %s.",
             attribute,
             type,
             default
@@ -77,6 +77,7 @@ generate_element_doc <- function(doc) {
 #' @keywords internal
 value_not_available <- function(v) {
   if (is.na(v)) return("NA")
+  if (nchar(v) == 0) return("NA")
   if (v == "-") "NA" else v
 }
 
@@ -195,8 +196,9 @@ names(component_apis) <- items$components
 
 apis <- c(layout_apis, component_apis)
 
-# Create doc
+# Create doc: don't forget to cleanup doc.R before running this
 pkgload::load_all()
+writeLines("", "./R/doc.R")
 lapply(names(apis), function(name) {
   print(name)
   generate_element_doc(apis[[name]])

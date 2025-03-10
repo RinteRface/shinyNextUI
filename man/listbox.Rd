@@ -31,154 +31,80 @@ The update functions return nothing (called for side effects).
 }
 \description{
 A listbox displays a list of options and allows a user to select one or more of them.
-
-A listbox displays a list of options and allows a user to select one or more of them.
 }
 \details{
 \itemize{
-\item \bold{children*}. The children to render. Usually a list of ListboxItem or ListboxSection. Type: ReactNode[]. Default: NA.
-\item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{variant}. The listbox items appearance style.. Type: solid | bordered | light | flat | faded | shadow. Default: solid.
-\item \bold{color}. The listbox items color theme.. Type: default | primary | secondary | success | warning | danger. Default: default.
-\item \bold{selectionMode}. The type of selection that is allowed in the collection.. Type: none | single | multiple. Default: NA.
-\item \bold{selectedKeys}. The currently selected keys in the collection (controlled).. Type: React.Key[]. Default: NA.
-\item \bold{disabledKeys}. The item keys that are disabled. These items cannot be selected, focused, or otherwise interacted with.. Type: React.Key[]. Default: NA.
-\item \bold{defaultSelectedKeys}. The initial selected keys in the collection (uncontrolled).. Type: all | React.Key[]. Default: NA.
-\item \bold{disallowEmptySelection}. Whether the collection allows empty selection.. Type: boolean. Default: false.
-\item \bold{shouldHighlightOnFocus}. Whether the focused item should be highlighted. It applies the same styles to the items as when hovered.. Type: boolean. Default: false.
-\item \bold{autoFocus}. Where the focus should be set.. Type: boolean | first | last. Default: false.
-\item \bold{topContent}. The content to display above the listbox items.. Type: ReactNode. Default: NA.
-\item \bold{bottomContent}. The content to display below the listbox items.. Type: ReactNode. Default: NA.
-\item \bold{emptyContent}. The content to display when the collection is empty.. Type: ReactNode. Default: No items..
-\item \bold{shouldFocusWrap}. Whether keyboard navigation is circular.. Type: boolean. Default: false.
-\item \bold{hideEmptyContent}. Whether to not display the empty content when the collection is empty.. Type: boolean. Default: false.
-\item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Whether to disable the animation of the listbox items.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the listbox slots.. Type: Record<"base"｜ "list"｜ "emptyContent", string>. Default: NA.
-\item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "selectedIcon", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow}. Default: "solid".
+\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
+\item \bold{selectionMode}. Type: \code{none | single | multiple}. Default: NA.
+\item \bold{selectedKeys}. Type: \code{React.Key[]}. Default: NA.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
+\item \bold{defaultSelectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
+\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: false.
+\item \bold{autoFocus}. Type: \code{boolean | first | last}. Default: false.
+\item \bold{topContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{bottomContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{emptyContent}. Type: \code{ReactNode}. Default: "No items.".
+\item \bold{shouldFocusWrap}. Type: \code{boolean}. Default: false.
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: false.
+\item \bold{virtualization}. Type: \code{Record<"maxListboxHeight" & "itemHeight", number>}. Default: NA.
+\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: false.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "list" | "emptyContent", string>>}. Default: NA.
+\item \bold{itemClasses}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "selectedIcon", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onAction}. Handler that is called when an item is selected.. Type: (key: React.Key) => void. Default: NA.
-\item \bold{onSelectionChange}. Handler that is called when the selection changes.. Type: (keys: React.Key[]) => void. Default: NA.
+\item \bold{onAction}. Type: \code{(key: React.Key) => void}. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(keys: React.Key[]) => void}. Default: NA.
 }
 \itemize{
-\item \bold{children*}. The contents of the listbox section. Usually a list of ListboxItem components. (static). Type: ReactNode. Default: NA.
-\item \bold{title}. The title of the listbox section.. Type: string. Default: NA.
-\item \bold{items}. Item objects in the collection. (dynamic). Type: Iterable\if{html}{\out{<T>}}. Default: NA.
-\item \bold{hideSelectedIcon}. Whether to hide the check icon when the items are selected.. Type: boolean. Default: false.
-\item \bold{showDivider}. Whether to show the divider between the groups.. Type: boolean. Default: false.
-\item \bold{dividerProps}. The divider component props.. Type: DividerProps. Default: NA.
-\item \bold{classNames}. Allows to set custom class names for the listbox section slots.. Type: Record<"base"｜ "heading"｜ "group"｜ "divider", string>. Default: NA.
-\item \bold{itemClasses}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{title}. Type: \code{string}. Default: NA.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
+\item \bold{showDivider}. Type: \code{boolean}. Default: false.
+\item \bold{dividerProps}. Type: \code{DividerProps}. Default: NA.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "heading" | "group" | "divider", string>>}. Default: NA.
+\item \bold{itemClasses}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{children*}. The contents of the listbox item.. Type: ReactNode. Default: NA.
-\item \bold{key}. The unique key for the listbox item.. Type: React.Key. Default: NA.
-\item \bold{title}. The title of the listbox item.. Type: string | ReactNode. Default: NA.
-\item \bold{textValue}. A string representation of the item's contents, used for features like typeahead.. Type: string. Default: NA.
-\item \bold{description}. The description of the listbox item.. Type: string | ReactNode. Default: NA.
-\item \bold{shortcut}. The listbox item keyboard shortcut.. Type: string | ReactNode. Default: NA.
-\item \bold{startContent}. The start content of the listbox item.. Type: ReactNode. Default: NA.
-\item \bold{endContent}. The end content of the listbox item. This is positioned after the shortcut and the selected icon.. Type: ReactNode. Default: NA.
-\item \bold{selectedIcon}. Custom icon to render when the item is selected.. Type: SelectedIconProps. Default: NA.
-\item \bold{href}. A URL to link to. See MDN.. Type: string. Default: NA.
-\item \bold{target}. The target window for the link. See MDN.. Type: HTMLAttributeAnchorTarget. Default: NA.
-\item \bold{rel}. The relationship between the linked resource and the current page. See MDN.. Type: string. Default: NA.
-\item \bold{download}. Causes the browser to download the linked URL. A string may be provided to suggest a file name. See MDN.. Type: boolean | string. Default: NA.
-\item \bold{ping}. A space-separated list of URLs to ping when the link is followed. See MDN.. Type: string. Default: NA.
-\item \bold{referrerPolicy}. How much of the referrer to send when following the link. See MDN.. Type: HTMLAttributeReferrerPolicy. Default: NA.
-\item \bold{shouldHighlightOnFocus}. Whether the focused item should be highlighted. It applies the same styles to the item as when hovered.. Type: boolean. Default: false.
-\item \bold{hideSelectedIcon}. Whether to hide the check icon when the item is selected.. Type: boolean. Default: false.
-\item \bold{showDivider}. Whether to show a divider below the item.. Type: boolean. Default: false.
-\item \bold{isDisabled}. Whether the listbox item should be disabled. (Deprecated) pass disabledKeys to Listbox instead.. Type: boolean. Default: false.
-\item \bold{isSelected}. Whether the listbox item should be selected. (Deprecated) pass selectedKeys to Listbox instead.. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Whether the listbox item press events should be ignored.. Type: boolean. Default: false.
-\item \bold{classNames}. Allows to set custom class names for the listbox item slots.. Type: Record<"base"｜ "wrapper"｜ "title"｜ "description"｜ "shortcut" ｜ "selectedIcon", string>. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{key}. Type: \code{React.Key}. Default: NA.
+\item \bold{title}. Type: \code{string | ReactNode}. Default: NA.
+\item \bold{textValue}. Type: \code{string}. Default: NA.
+\item \bold{description}. Type: \code{string | ReactNode}. Default: NA.
+\item \bold{shortcut}. Type: \code{string | ReactNode}. Default: NA.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
+\item \bold{selectedIcon}. Type: \code{ListboxItemSelectedIconProps}. Default: NA.
+\item \bold{href}. Type: \code{string}. Default: NA.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
+\item \bold{rel}. Type: \code{string}. Default: NA.
+\item \bold{download}. Type: \code{boolean | string}. Default: NA.
+\item \bold{ping}. Type: \code{string}. Default: NA.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
+\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: false.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
+\item \bold{showDivider}. Type: \code{boolean}. Default: false.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{isSelected}. Type: \code{boolean}. Default: false.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>}. Default: NA.
 }
 \itemize{
-\item \bold{onAction}. Handler that is called when the listbox item is selected. (Deprecated) pass to Listbox instead.. Type: () => void. Default: NA.
-\item \bold{onPress}. Handler called when the press is released over the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Handler called when a press interaction starts.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Handler called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
-}
-
-\itemize{
-\item \bold{children*}. Type: ReactNode[]. Default: .
-\item \bold{items}. Type: Iterable\if{html}{\out{<T>}}. Default: .
-\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow. Default: "solid".
-\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
-\item \bold{selectionMode}. Type: none | single | multiple. Default: .
-\item \bold{selectedKeys}. Type: React.Key[]. Default: .
-\item \bold{disabledKeys}. Type: React.Key[]. Default: .
-\item \bold{defaultSelectedKeys}. Type: all | React.Key[]. Default: .
-\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
-\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
-\item \bold{autoFocus}. Type: boolean | first | last. Default: false.
-\item \bold{topContent}. Type: ReactNode. Default: .
-\item \bold{bottomContent}. Type: ReactNode. Default: .
-\item \bold{emptyContent}. Type: ReactNode. Default: "No items.".
-\item \bold{shouldFocusWrap}. Type: boolean. Default: false.
-\item \bold{isVirtualized}. Type: boolean. Default: false.
-\item \bold{virtualization}. Type: Record<"maxListboxHeight" & "itemHeight", number>. Default: .
-\item \bold{hideEmptyContent}. Type: boolean. Default: false.
-\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
-\item \bold{disableAnimation}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base" | "list" | "emptyContent", string>>. Default: .
-\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "selectedIcon", string>>. Default: .
-}
-\itemize{
-\item \bold{onAction}. Type: (key: React.Key) => void. Default: NA.
-\item \bold{onSelectionChange}. Type: (keys: React.Key[]) => void. Default: NA.
-}
-\itemize{
-\item \bold{children*}. Type: ReactNode. Default: .
-\item \bold{title}. Type: string. Default: .
-\item \bold{items}. Type: Iterable\if{html}{\out{<T>}}. Default: .
-\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
-\item \bold{showDivider}. Type: boolean. Default: false.
-\item \bold{dividerProps}. Type: DividerProps. Default: .
-\item \bold{classNames}. Type: Partial<Record<"base" | "heading" | "group" | "divider", string>>. Default: .
-\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
-}
-\itemize{
-\item \bold{children*}. Type: ReactNode. Default: .
-\item \bold{key}. Type: React.Key. Default: .
-\item \bold{title}. Type: string | ReactNode. Default: .
-\item \bold{textValue}. Type: string. Default: .
-\item \bold{description}. Type: string | ReactNode. Default: .
-\item \bold{shortcut}. Type: string | ReactNode. Default: .
-\item \bold{startContent}. Type: ReactNode. Default: .
-\item \bold{endContent}. Type: ReactNode. Default: .
-\item \bold{selectedIcon}. Type: ListboxItemSelectedIconProps. Default: .
-\item \bold{href}. Type: string. Default: .
-\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
-\item \bold{rel}. Type: string. Default: .
-\item \bold{download}. Type: boolean | string. Default: .
-\item \bold{ping}. Type: string. Default: .
-\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
-\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
-\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
-\item \bold{showDivider}. Type: boolean. Default: false.
-\item \bold{isDisabled}. Type: boolean. Default: false.
-\item \bold{isSelected}. Type: boolean. Default: false.
-\item \bold{isReadOnly}. Type: boolean. Default: false.
-\item \bold{classNames}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
-}
-\itemize{
-\item \bold{onAction}. Type: () => void. Default: NA.
-\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
-\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
-\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
-\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+\item \bold{onAction}. Type: \code{() => void}. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
 }
 }
 \examples{
@@ -245,72 +171,7 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
-library(shiny)
-library(shinyNextUI)
-library(shiny.react)
-
-animals <- list(
-  list(
-    label = "Bulbasaur",
-    value = "bulbasaur",
-    description = "Blabla",
-    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-  ),
-  list(
-    label = "Pikachu",
-    value = "pikachu",
-    description = "Electric mouse",
-    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-  )
-)
-
-items <- lapply(animals, function(animal) {
-  listbox_item(
-    key = animal[["value"]],
-    description = animal[["description"]],
-    startContent = avatar(src = animal[["avatar"]]),
-    animal[["label"]]
-  )
-})
-
-ui <- nextui_page(
-  debug_react = TRUE,
-  spacer(y = 4),
-  action_button("update", "Update to Pikachu?"),
-  spacer(y = 4),
-  div(
-    class = "w-full max-w-[260px] border-small px-1 py-2
-    rounded-small border-default-200 dark:border-default-100",
-    listbox(
-      "listbox",
-      label = "Select a pokemon",
-      value = "bulbasaur",
-      variant = "flat",
-      selectionMode = "single",
-      listbox_section(
-        title = "Default pokemons",
-        items
-      )
-    )
-  ),
-  textOutput("res")
-)
-
-server <- function(input, output, session) {
-  output$res <- renderText(input$listbox)
-  observeEvent(input$listbox, {
-    print(input$listbox)
-  })
-
-  observeEvent(input$update, {
-    update_listbox(session, "listbox", value = JS("['pikachu']"))
-  })
-}
-
-if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/listbox}.
-
 See \url{https://nextui.org/docs/components/listbox}.
 }

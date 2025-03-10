@@ -21,6 +21,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something.
+
+Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something.
 }
 \details{
 \itemize{
@@ -62,6 +64,45 @@ Popover is a non-modal dialog that floats around its disclosure. It's commonly u
 \itemize{
 \item \bold{children}. The content that is displayed when the trigger is pressed.. Type: ReactNode. Default: NA.
 }
+
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "lg".
+\item \bold{shadow}. Type: none | sm | md | lg. Default: "lg".
+\item \bold{backdrop}. Type: transparent | opaque | blur. Default: "transparent".
+\item \bold{placement}. Type: PopoverPlacement. Default: "bottom".
+\item \bold{state}. Type: OverlayTriggerState. Default: .
+\item \bold{isOpen}. Type: boolean. Default: .
+\item \bold{defaultOpen}. Type: boolean. Default: .
+\item \bold{offset}. Type: number. Default: "7".
+\item \bold{containerPadding}. Type: number. Default: "12".
+\item \bold{crossOffset}. Type: number. Default: "0".
+\item \bold{triggerType}. Type: dialog | menu | listbox | tree | grid. Default: "dialog".
+\item \bold{showArrow}. Type: boolean. Default: false.
+\item \bold{shouldFlip}. Type: boolean. Default: true.
+\item \bold{triggerScaleOnOpen}. Type: boolean. Default: true.
+\item \bold{shouldBlockScroll}. Type: boolean. Default: false.
+\item \bold{shouldCloseOnScroll}. Type: boolean. Default: false.
+\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+\item \bold{shouldCloseOnBlur}. Type: boolean. Default: false.
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'trigger' | 'backdrop' | 'content', string>>. Default: .
+}
+\itemize{
+\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{shouldCloseOnInteractOutside}. Type: (e: HTMLElement) => void. Default: NA.
+\item \bold{onClose}. Type: () => void. Default: NA.
+}
+\itemize{
+\item \bold{children*}. Type: ReactNode. Default: NA.
+}
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: NA.
+}
 }
 \examples{
 library(shiny)
@@ -91,7 +132,36 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  dark_mode = TRUE,
+  div(
+    className = "flex align-items-start",
+    popover(
+      showArrow = TRUE,
+      placement = "right",
+      backdrop = "blur",
+      popover_trigger(button("Click me!", color = "primary")),
+      popover_content(
+        div(
+          className = "px-1 py-2",
+          "This is the content of the popover."
+        )
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/popover}.
+
 See \url{https://nextui.org/docs/components/popover}.
 }

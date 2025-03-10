@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
+
+Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
 }
 \details{
 \itemize{
@@ -43,6 +45,34 @@ Links allow users to click their way from page to page. This component is styled
 \item \bold{onKeyDown}. Handler called when a key is pressed.. Type: (e: KeyboardEvent) => void. Default: NA.
 \item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
 \item \bold{onClick}. The native link click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
+}
+
+\itemize{
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{underline}. Type: none | hover | always | active | focus. Default: "none".
+\item \bold{href}. Type: string. Default: .
+\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
+\item \bold{rel}. Type: string. Default: .
+\item \bold{download}. Type: boolean | string. Default: .
+\item \bold{ping}. Type: string. Default: .
+\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
+\item \bold{isExternal}. Type: boolean. Default: false.
+\item \bold{showAnchorIcon}. Type: boolean. Default: false.
+\item \bold{anchorIcon}. Type: ReactNode. Default: .
+\item \bold{isBlock}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+}
+\itemize{
+\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
 }
 }
 \examples{
@@ -91,7 +121,54 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+colors <- c(
+  "default",
+  "primary",
+  "secondary",
+  "success",
+  "warning",
+  "error"
+)
+
+link_config <- data.frame(
+  color = colors,
+  underline = c(rep("none", 2), "hover", "always", "active", "focus"),
+  block = c(rep(TRUE, 3), rep(FALSE, 3)),
+  href = c(rep("#", 3), rep("https://google.com", 3)),
+  isExternal = c(rep(FALSE, 3), rep(TRUE, 3)),
+  size = rep(c("sm", "md", "lg"), 2)
+)
+
+link_factory <- function(color, underline, block, href, isExternal, size) {
+  link(
+    "A super link!",
+    color = color,
+    underline = underline,
+    isBlock = block,
+    href = href,
+    isExternal = isExternal,
+    size = size
+  )
+}
+
+links <- purrr::pmap(link_config, link_factory)
+
+ui <- nextui_page(
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-2 m-5",
+    links
+  )
+)
+
+server <- function(input, output, session) {}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/link}.
+
 See \url{https://nextui.org/docs/components/link}.
 }

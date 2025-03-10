@@ -24,6 +24,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Card is a container for text, photos, and actions in the context of a single subject.
+
+Card is a container for text, photos, and actions in the context of a single subject.
 }
 \details{
 \itemize{
@@ -47,6 +49,29 @@ Card is a container for text, photos, and actions in the context of a single sub
 \item \bold{onPressEnd}. Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onPressChange}. Handler that is called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
 \item \bold{onPressUp}. Handler that is called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+\item \bold{shadow}. Type: none | sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+\item \bold{fullWidth}. Type: boolean. Default: false.
+\item \bold{isHoverable}. Type: boolean. Default: false.
+\item \bold{isPressable}. Type: boolean. Default: false.
+\item \bold{isBlurred}. Type: boolean. Default: false.
+\item \bold{isFooterBlurred}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{disableRipple}. Type: boolean. Default: false.
+\item \bold{allowTextSelectionOnPress}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'header' | 'body' | 'footer', string>>. Default: .
+}
+\itemize{
+\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
 }
 }
 \examples{
@@ -82,7 +107,41 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
+    card(card_body("Simple card without anything")),
+    card(
+      variant = "bordered",
+      card_header("Card title"),
+      divider(),
+      card_body(h1("Card body")),
+      divider(),
+      card_footer("Card Footer")
+    ),
+    card(
+      #isBlurred = TRUE,
+      isPressable = TRUE,
+      onPress = JS("() => alert('You pressed me')"),
+      shadow = "sm",
+      className = "border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]",
+      card_body("Press me!")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/card}.
+
 See \url{https://nextui.org/docs/components/card}.
 }

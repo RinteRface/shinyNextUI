@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Snippet is a component that can be used to display inline or multiline code snippets.
+
+Snippet is a component that can be used to display inline or multiline code snippets.
 }
 \details{
 \itemize{
@@ -37,6 +39,28 @@ Snippet is a component that can be used to display inline or multiline code snip
 }
 \itemize{
 \item \bold{onCopy}. Handler that is called when the code is copied.. Type: (value: string ｜ string[]) => void;. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+\item \bold{symbol}. Type: string | ReactNode. Default: "$".
+\item \bold{timeout}. Type: number. Default: "2000".
+\item \bold{codeString}. Type: string. Default: .
+\item \bold{tooltipProps}. Type: TooltipProps. Default: .
+\item \bold{copyIcon}. Type: ReactNode. Default: .
+\item \bold{checkIcon}. Type: ReactNode. Default: .
+\item \bold{disableTooltip}. Type: boolean. Default: false.
+\item \bold{disableCopy}. Type: boolean. Default: false.
+\item \bold{hideCopyButton}. Type: boolean. Default: false.
+\item \bold{hideSymbol}. Type: boolean. Default: false.
+\item \bold{copyButtonProps}. Type: ButtonProps. Default: .
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'content' | 'pre' | 'symbol' | 'copyButton' | 'checkIcon', string>>. Default: .
+}
+\itemize{
+\item \bold{onCopy}. Type: (value: string | string[]) => void. Default: NA.
 }
 }
 \examples{
@@ -63,7 +87,32 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  snippet("npm install @nextui-org/react", variant = "bordered"),
+  spacer(y = 2),
+  snippet("you can't copy me", hideCopyButton = TRUE),
+  spacer(y = 2),
+  snippet(
+    color = "secondary",
+    variant = "flat",
+    span("npm install @nextui-org/react"),
+    span("yarn add @nextui-org/react")
+  )
+)
+
+server <- function(input, output, session) {
+
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/snippet}.
+
 See \url{https://nextui.org/docs/components/snippet}.
 }

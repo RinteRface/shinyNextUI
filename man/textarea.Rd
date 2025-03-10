@@ -30,6 +30,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Textarea component is a multi-line Input which allows you to write large texts.
+
+Textarea component is a multi-line Input which allows you to write large texts.
 }
 \details{
 \itemize{
@@ -66,6 +68,44 @@ Textarea component is a multi-line Input which allows you to write large texts.
 \item \bold{onClear}. Handler that is called when the clear button is clicked.. Type: () => void. Default: NA.
 \item \bold{onHeightChange}. Handler that is called when the height of the textarea changes.. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
 }
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{minRows}. Type: number. Default: "3".
+\item \bold{maxRows}. Type: number. Default: "8".
+\item \bold{cacheMeasurements}. Type: boolean. Default: false.
+\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+\item \bold{label}. Type: ReactNode. Default: .
+\item \bold{value}. Type: string. Default: .
+\item \bold{defaultValue}. Type: string. Default: .
+\item \bold{placeholder}. Type: string. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{description}. Type: ReactNode. Default: .
+\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+\item \bold{validate}. Type: (value: string) => ValidationError | true | null | undefined. Default: .
+\item \bold{validationBehavior}. Type: native | aria. Default: "native".
+\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+\item \bold{fullWidth}. Type: boolean. Default: true.
+\item \bold{isRequired}. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Type: boolean. Default: .
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{isClearable}. Type: boolean. Default: false.
+\item \bold{isInvalid}. Type: boolean. Default: false.
+\item \bold{validationState}. Type: valid | invalid. Default: .
+\item \bold{disableAutosize}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base" | "label" | "inputWrapper" | "innerWrapper" | "input" | "description" | "errorMessage", string>>. Default: .
+}
+\itemize{
+\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Type: (value: string) => void. Default: NA.
+\item \bold{onClear}. Type: () => void. Default: NA.
+\item \bold{onHeightChange}. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
+}
 }
 \examples{
 library(shiny)
@@ -101,7 +141,42 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+ui <- nextui_page(
+  div(
+    class = "flex gap-5",
+    action_button("update_text", "Update text"),
+    textarea_input(
+      inputId = "textarea",
+      placeholder = "Enter your amazing ideas.",
+      label = "Text area input",
+      bordered = TRUE,
+      color = "secondary",
+      status = "secondary",
+      helperColor = "error",
+      helperText = "Click on update text"
+    )
+  ),
+  textOutput("textarea_val")
+)
+
+server <- function(input, output, session) {
+  output$textarea_val <- renderText(input$textarea)
+
+  observeEvent(input$update_text, {
+    update_textarea_input(
+      inputId = "textarea",
+      value = "Updated value"
+    )
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/textarea}.
+
 See \url{https://nextui.org/docs/components/textarea}.
 }

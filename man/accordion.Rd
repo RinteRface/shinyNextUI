@@ -28,6 +28,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Accordion display a list of high-level options that can expand/collapse to reveal more information.
+
+Accordion display a list of high-level options that can expand/collapse to reveal more information.
 }
 \details{
 \itemize{
@@ -82,6 +84,60 @@ Accordion display a list of high-level options that can expand/collapse to revea
 \item \bold{onPressChange}. Handler called when the press state changes.. Type: (isPressed: boolean) => void. Default: NA.
 \item \bold{onPressUp}. Handler called when a press is released over the target, regardless of whether it started on the target or not.. Type: (e: PressEvent) => void. Default: NA.
 \item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+\item \bold{variant}. Type: light | shadow | bordered | splitted. Default: "light".
+\item \bold{selectionMode}. Type: none | single | multiple. Default: .
+\item \bold{selectionBehavior}. Type: toggle | replace. Default: "toggle".
+\item \bold{isCompact}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{showDivider}. Type: boolean. Default: true.
+\item \bold{dividerProps}. Type: DividerProps. Default: .
+\item \bold{hideIndicator}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{disableIndicatorAnimation}. Type: boolean. Default: false.
+\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
+\item \bold{keepContentMounted}. Type: boolean. Default: false.
+\item \bold{fullWidth}. Type: boolean. Default: true.
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{disabledKeys}. Type: React.Key[]. Default: .
+\item \bold{itemClasses}. Type: AccordionItemClassnames. Default: .
+\item \bold{selectedKeys}. Type: all | React.Key[]. Default: .
+\item \bold{defaultSelectedKeys}. Type: all | React.Key[]. Default: .
+}
+\itemize{
+\item \bold{onSelectionChange}. Type: (keys: "all" | Set<React.Key>) => any. Default: NA.
+}
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{title}. Type: ReactNode. Default: .
+\item \bold{subtitle}. Type: ReactNode. Default: .
+\item \bold{indicator}. Type: IndicatorProps. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{isCompact}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{keepContentMounted}. Type: boolean. Default: false.
+\item \bold{hideIndicator}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{disableIndicatorAnimation}. Type: boolean. Default: false.
+\item \bold{HeadingComponent}. Type: React.ElementType. Default: "h2".
+\item \bold{classNames}. Type: AccordionItemClassnames. Default: .
+}
+\itemize{
+\item \bold{onFocus}. Type: (e: FocusEvent) => void. Default: NA.
+\item \bold{onBlur}. Type: (e: FocusEvent) => void. Default: NA.
+\item \bold{onFocusChange}. Type: (isFocused: boolean) => void. Default: NA.
+\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
 }
 }
 \examples{
@@ -209,7 +265,133 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  p(class = "font-extrabold text-2xl uppercase", "accordion()"),
+  accordion(
+    inputId = "accordion1",
+    value = "2",
+    accordion_item(
+      startContent = avatar(
+        isBordered = TRUE,
+        color = "primary",
+        radius = "lg",
+        src = "https://i.pravatar.cc/150?u=a042581f4e29026024d"
+      ),
+      onPress = JS("(e) => alert('Your pressed me')"),
+      "plop",
+      title = "Element 1",
+      key = "1",
+      subtitle = "subtitle"
+    ),
+    accordion_item("plop", title = "Element 2", key = "2")
+  ),
+  spacer(y = 2),
+  p(class = "font-extrabold text-2xl uppercase", "shadow variant accordion()"),
+  accordion(
+    inputId = "accordion2",
+    isCompact = TRUE,
+    variant = "shadow",
+    value = "3",
+    accordion_item("plop", title = "Element 1", key = "1", subtitle = "subtitle"),
+    accordion_item("plop", title = "Element 2", key = "2"),
+    accordion_item("plop", title = "Element 3", key = "3")
+  ),
+  spacer(y = 2),
+  p(class = "font-extrabold text-2xl uppercase", "bordered variant accordion()"),
+  accordion(
+    inputId = "accordion3",
+    isCompact = TRUE,
+    variant = "bordered",
+    accordion_item("plop", title = "Element 1", key = "1", subtitle = "subtitle"),
+    accordion_item("plop", title = "Element 2", key = "2")
+  ),
+  spacer(y = 2),
+  p(class = "font-extrabold text-2xl uppercase", "splitted variant accordion()"),
+  accordion(
+    inputId = "accordion4",
+    isCompact = TRUE,
+    variant = "splitted",
+    motionProps= JS(
+      '{
+      variants: {
+        enter: {
+          y: 0,
+          opacity: 1,
+          height: "auto",
+          transition: {
+            height: {
+              type: "spring",
+              stiffness: 500,
+              damping: 30,
+              duration: 1,
+            },
+            opacity: {
+              easings: "ease",
+              duration: 1,
+            },
+          },
+        },
+        exit: {
+          y: -10,
+          opacity: 0,
+          height: 0,
+          transition: {
+            height: {
+              easings: "ease",
+              duration: 0.25,
+            },
+            opacity: {
+              easings: "ease",
+              duration: 0.3,
+            },
+          },
+        },
+      },
+    }'),
+    value = "2",
+    accordion_item("plop", title = "Element 1", key = "1", subtitle = "subtitle"),
+    accordion_item("plop", title = "Element 2", key = "2")
+  ),
+  spacer(y = 2),
+  p(class = "font-extrabold text-2xl uppercase", "Update accordion"),
+  select_input(
+    "select",
+    label = "Accordion to open:",
+    select_item(key = 1, value = "1", "1"),
+    select_item(key = 2, value = "2", "2")
+  ),
+  spacer(y = 2),
+  accordion(
+    inputId = "accordion5",
+    isCompact = TRUE,
+    variant = "bordered",
+    accordion_item("plop1", title = "Element 1", key = "1", subtitle = "subtitle"),
+    accordion_item("plop2", title = "Element 2", key = "2")
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$select, {
+    update_accordion(
+      session,
+      "accordion5",
+      value = input$select
+    )
+  })
+  observe(
+    print(input$accordion1)
+  )
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/accordion}.
+
 See \url{https://nextui.org/docs/components/accordion}.
 }

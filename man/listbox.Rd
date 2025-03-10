@@ -31,6 +31,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 A listbox displays a list of options and allows a user to select one or more of them.
+
+A listbox displays a list of options and allows a user to select one or more of them.
 }
 \details{
 \itemize{
@@ -104,6 +106,80 @@ A listbox displays a list of options and allows a user to select one or more of 
 \item \bold{onKeyUp}. Handler called when a key is released.. Type: (e: KeyboardEvent) => void. Default: NA.
 \item \bold{onClick}. The native button click event handler (Deprecated) use onPress instead.. Type: MouseEventHandler. Default: NA.
 }
+
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{items}. Type: Iterable\if{html}{\out{<T>}}. Default: .
+\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow. Default: "solid".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{selectionMode}. Type: none | single | multiple. Default: .
+\item \bold{selectedKeys}. Type: React.Key[]. Default: .
+\item \bold{disabledKeys}. Type: React.Key[]. Default: .
+\item \bold{defaultSelectedKeys}. Type: all | React.Key[]. Default: .
+\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
+\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
+\item \bold{autoFocus}. Type: boolean | first | last. Default: false.
+\item \bold{topContent}. Type: ReactNode. Default: .
+\item \bold{bottomContent}. Type: ReactNode. Default: .
+\item \bold{emptyContent}. Type: ReactNode. Default: "No items.".
+\item \bold{shouldFocusWrap}. Type: boolean. Default: false.
+\item \bold{isVirtualized}. Type: boolean. Default: false.
+\item \bold{virtualization}. Type: Record<"maxListboxHeight" & "itemHeight", number>. Default: .
+\item \bold{hideEmptyContent}. Type: boolean. Default: false.
+\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base" | "list" | "emptyContent", string>>. Default: .
+\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "selectedIcon", string>>. Default: .
+}
+\itemize{
+\item \bold{onAction}. Type: (key: React.Key) => void. Default: NA.
+\item \bold{onSelectionChange}. Type: (keys: React.Key[]) => void. Default: NA.
+}
+\itemize{
+\item \bold{children*}. Type: ReactNode. Default: .
+\item \bold{title}. Type: string. Default: .
+\item \bold{items}. Type: Iterable\if{html}{\out{<T>}}. Default: .
+\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+\item \bold{showDivider}. Type: boolean. Default: false.
+\item \bold{dividerProps}. Type: DividerProps. Default: .
+\item \bold{classNames}. Type: Partial<Record<"base" | "heading" | "group" | "divider", string>>. Default: .
+\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
+}
+\itemize{
+\item \bold{children*}. Type: ReactNode. Default: .
+\item \bold{key}. Type: React.Key. Default: .
+\item \bold{title}. Type: string | ReactNode. Default: .
+\item \bold{textValue}. Type: string. Default: .
+\item \bold{description}. Type: string | ReactNode. Default: .
+\item \bold{shortcut}. Type: string | ReactNode. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{selectedIcon}. Type: ListboxItemSelectedIconProps. Default: .
+\item \bold{href}. Type: string. Default: .
+\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
+\item \bold{rel}. Type: string. Default: .
+\item \bold{download}. Type: boolean | string. Default: .
+\item \bold{ping}. Type: string. Default: .
+\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
+\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
+\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+\item \bold{showDivider}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{isSelected}. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
+}
+\itemize{
+\item \bold{onAction}. Type: () => void. Default: NA.
+\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+}
 }
 \examples{
 library(shiny)
@@ -169,7 +245,72 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+animals <- list(
+  list(
+    label = "Bulbasaur",
+    value = "bulbasaur",
+    description = "Blabla",
+    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+  ),
+  list(
+    label = "Pikachu",
+    value = "pikachu",
+    description = "Electric mouse",
+    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+  )
+)
+
+items <- lapply(animals, function(animal) {
+  listbox_item(
+    key = animal[["value"]],
+    description = animal[["description"]],
+    startContent = avatar(src = animal[["avatar"]]),
+    animal[["label"]]
+  )
+})
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  spacer(y = 4),
+  action_button("update", "Update to Pikachu?"),
+  spacer(y = 4),
+  div(
+    class = "w-full max-w-[260px] border-small px-1 py-2
+    rounded-small border-default-200 dark:border-default-100",
+    listbox(
+      "listbox",
+      label = "Select a pokemon",
+      value = "bulbasaur",
+      variant = "flat",
+      selectionMode = "single",
+      listbox_section(
+        title = "Default pokemons",
+        items
+      )
+    )
+  ),
+  textOutput("res")
+)
+
+server <- function(input, output, session) {
+  output$res <- renderText(input$listbox)
+  observeEvent(input$listbox, {
+    print(input$listbox)
+  })
+
+  observeEvent(input$update, {
+    update_listbox(session, "listbox", value = JS("['pikachu']"))
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/listbox}.
+
 See \url{https://nextui.org/docs/components/listbox}.
 }

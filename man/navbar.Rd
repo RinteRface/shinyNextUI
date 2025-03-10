@@ -27,6 +27,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse menu and more.
+
+A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse menu and more.
 }
 \details{
 \itemize{
@@ -74,6 +76,53 @@ A responsive navigation header positioned on top side of your page that includes
 \itemize{
 \item \bold{children}. The children to render as the menu item.. Type: ReactNode. Default: NA.
 \item \bold{isActive}. Whether the menu item is active or not.. Type: boolean. Default: false.
+}
+
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{height}. Type: string | number. Default: "4rem (64px)".
+\item \bold{position}. Type: static | sticky. Default: "sticky".
+\item \bold{maxWidth}. Type: sm | md | lg | xl | 2xl | full. Default: "lg".
+\item \bold{parentRef}. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: "window".
+\item \bold{isBordered}. Type: boolean. Default: false.
+\item \bold{isBlurred}. Type: boolean. Default: true.
+\item \bold{isMenuOpen}. Type: boolean. Default: false.
+\item \bold{isMenuDefaultOpen}. Type: boolean. Default: false.
+\item \bold{shouldHideOnScroll}. Type: boolean. Default: false.
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{disableScrollHandler}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'wrapper' | 'brand' | 'content' | 'item' | 'toggle' | 'toggleIcon' | 'menu' | 'menuItem', string>>. Default: .
+}
+\itemize{
+\item \bold{onMenuOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{onScrollPositionChange}. Type: (position: number) => void. Default: NA.
+}
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{justify}. Type: start | center | end. Default: "start".
+}
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{isActive}. Type: boolean. Default: false.
+}
+\itemize{
+\item \bold{icon}. Type: ReactNode | ((isOpen: boolean | undefined) => ReactNode). Default: .
+\item \bold{isSelected}. Type: boolean. Default: false.
+\item \bold{defaultSelected}. Type: boolean. Default: false.
+\item \bold{srOnlyText}. Type: string. Default: "open/close navigation menu".
+}
+\itemize{
+\item \bold{onChange}. Type: (isOpen: boolean) => void. Default: NA.
+}
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+\item \bold{motionProps}. Type: MotionProps. Default: .
+}
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{isActive}. Type: boolean. Default: false.
 }
 }
 \examples{
@@ -213,7 +262,145 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+library(shiny.router)
+
+sections <- c("main", "other")
+
+layout <- function(..., content) {
+  tags$div(
+    css = JS("
+      {
+        maxW: '100\%',
+        boxSizing: 'border-box',
+      }"
+    ),
+    ..., # Navbar
+    # Content
+    tags$div(
+      css = JS(
+        "{
+          boxSizing: 'border-box',
+          px: '$12',
+          mt: '$8',
+          '@xsMax': {px: '$10'}
+        }"
+      ),
+      content
+    )
+  )
+}
+
+# TO DO: create wrapper for end-user to simplify all this mess.
+create_navbar <- function(id) {
+
+  input <- get("input", envir = parent.frame())
+
+  nav_links <- lapply(seq_along(sections), function(i) {
+    # Li elements
+    link(
+      inputId = sprintf("link_\%s", i),
+      href = route_link(sections[[i]]),
+      key = i,
+      value = i,
+      parent = sprintf("navbar_\%s", sections[[i]]),
+      isActive = if (is.null(input[[sprintf("navbar_\%s", id)]])) {
+        if (i == 1) TRUE else FALSE
+      } else {
+        if (input[[sprintf("navbar_\%s", id)]] == i) TRUE else FALSE
+      },
+      sprintf("Link to \%s", sections[[i]])
+    )
+  })
+
+  nav <- navbar(
+    id = sprintf("navbar_\%s", id),
+    maxWidth = "lg",
+    variant = "floating",
+    isBordered = TRUE,
+    navbar_brand(p(b = TRUE, "Brand", color = "inherit", hideIn = "xs")),
+    # Ul element
+    navbar_content(
+      variant = "highlight",
+      activeColor = "success",
+      nav_links,
+      navbar_item(
+        action_button(
+          inputId = sprintf("navbar_button-\%s", id),
+          "Click me",
+          auto = TRUE,
+          flat = TRUE
+        )
+      )
+    )
+  )
+
+  if (is.null(input[[sprintf("navbar_\%s", id)]])) {
+    tagList(
+      tags$script(
+        sprintf("Shiny.setInputValue('navbar_\%s', 0)", id)
+      ),
+      nav
+    )
+  } else {
+    nav
+  }
+}
+
+page <- function(id, content) {
+  layout(
+    reactOutput(sprintf("nav_\%s", id)),
+    content = content
+  )
+}
+
+home <- page(
+  id = "main",
+  card(
+    numeric_input(
+      inputId = "obs",
+      label = "Number of observations:",
+      value = 500
+    ),
+    plotOutput("distPlot")
+  )
+)
+other <- page(
+  id = "other",
+  tableOutput('table')
+)
+
+ui <- nextui_page(
+  router_ui(
+    route("main", home),
+    route("other", other)
+  )
+)
+
+server <- function(input, output, session) {
+  observe(print(input$navbar))
+  output$nav_main <- renderReact({
+    create_navbar("main")
+  })
+
+  output$nav_other <- renderReact({
+    create_navbar("other")
+  })
+
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$obs))
+  })
+  output$table <- renderTable(iris)
+
+  router_server("main")
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/navbar}.
+
 See \url{https://nextui.org/docs/components/navbar}.
 }

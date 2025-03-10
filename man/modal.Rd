@@ -27,6 +27,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Displays a dialog with a custom content that requires attention or provides additional information.
+
+Displays a dialog with custom content that requires attention or provides additional information.
 }
 \details{
 \itemize{
@@ -52,6 +54,31 @@ Displays a dialog with a custom content that requires attention or provides addi
 \itemize{
 \item \bold{onOpenChange}. Handler that is called when the modal's open state changes.. Type: (isOpen: boolean) => void. Default: NA.
 \item \bold{onClose}. Handler that is called when the modal is closed.. Type: () => void. Default: NA.
+}
+
+\itemize{
+\item \bold{children*}. Type: ReactNode. Default: .
+\item \bold{size}. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+\item \bold{shadow}. Type: none | sm | md | lg. Default: "lg".
+\item \bold{backdrop}. Type: transparent | opaque | blur. Default: "opaque".
+\item \bold{scrollBehavior}. Type: normal | inside | outside. Default: "normal".
+\item \bold{placement}. Type: auto | top | center | bottom. Default: "auto".
+\item \bold{isOpen}. Type: boolean. Default: .
+\item \bold{defaultOpen}. Type: boolean. Default: .
+\item \bold{isDismissable}. Type: boolean. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+\item \bold{shouldBlockScroll}. Type: boolean. Default: true.
+\item \bold{hideCloseButton}. Type: boolean. Default: false.
+\item \bold{closeButton}. Type: ReactNode. Default: .
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>. Default: .
+}
+\itemize{
+\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{onClose}. Type: () => void. Default: NA.
 }
 }
 \examples{
@@ -157,7 +184,111 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  action_button(
+    inputId = "show_modal",
+    color = "primary",
+    shadow = TRUE,
+    "Show modal"
+  ),
+  radio_input(
+    "scroll",
+    label = "Scroll option",
+    choices = c(
+      "inside" = "Inside",
+      "outside" = "Outside"
+    ),
+    selected = "inside"
+  ),
+  reactOutput("modal")
+)
+
+server <- function(input, output, session) {
+  modalVisible <- reactiveVal(FALSE)
+  observeEvent(input$show_modal, {
+    modalVisible(TRUE)
+  })
+
+  observeEvent(input$modal_closed, {
+    modalVisible(FALSE)
+  })
+
+  output$modal <- renderReact({
+    modal(
+      scrollBehavior = input$scroll,
+      isOpen = modalVisible(),
+      size = "sm",
+      modal_content(
+        modal_header("My modal"),
+        modal_body(
+          p(
+            "Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros."
+          ),
+          p(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam pulvinar risus non risus hendrerit venenatis.
+            Pellentesque sit amet hendrerit risus, sed porttitor quam.
+            Magna exercitation reprehenderit magna aute tempor cupidatat
+            consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+            incididunt cillum quis. Velit duis sit officia eiusmod Lorem
+            aliqua enim laboris do dolor eiusmod. Et mollit incididunt
+            nisi consectetur esse laborum eiusmod pariatur proident Lorem
+            eiusmod et. Culpa deserunt nostrud ad veniam."
+          ),
+          p(
+            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
+             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+             eiusmod. Et mollit incididunt nisi consectetur esse laborum
+             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
+             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Nullam pulvinar risus non risus hendrerit
+             venenatis. Pellentesque sit amet hendrerit risus, sed
+             porttitor quam. Magna exercitation reprehenderit magna aute
+             tempor cupidatat consequat elit dolor adipisicing. Mollit
+             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
+             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
+             mollit incididunt nisi consectetur esse laborum eiusmod
+             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
+             veniam."
+          ),
+          p(
+            "Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit
+             duis sit officia eiusmod Lorem aliqua enim laboris do dolor
+             eiusmod. Et mollit incididunt nisi consectetur esse laborum
+             eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt
+             nostrud ad veniam. Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Nullam pulvinar risus non risus hendrerit
+             venenatis. Pellentesque sit amet hendrerit risus, sed
+             porttitor quam. Magna exercitation reprehenderit magna aute
+             tempor cupidatat consequat elit dolor adipisicing. Mollit
+             dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit
+             officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et
+             mollit incididunt nisi consectetur esse laborum eiusmod
+             pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad
+             veniam."
+          )
+        ),
+        modal_footer("Modal footer")
+      ),
+      onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
+    )
+  })
+
+  exportTestValues(
+    modal_state = modalVisible()
+  )
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/modal}.
+
 See \url{https://nextui.org/docs/components/modal}.
 }

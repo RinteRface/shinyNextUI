@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 The Image component is used to display images with support for fallback.
+
+The Image component is used to display images with support for fallback.
 }
 \details{
 \itemize{
@@ -37,6 +39,28 @@ The Image component is used to display images with support for fallback.
 \itemize{
 \item \bold{onLoad}. Handler that is called when the image load.. Type: ReactEventHandler\if{html}{\out{<HTMLImageElement>}}. Default: NA.
 \item \bold{onError}. Handler that is called when the image fails to load.. Type: () => void. Default: NA.
+}
+
+\itemize{
+\item \bold{src}. Type: string. Default: .
+\item \bold{srcSet}. Type: string. Default: .
+\item \bold{sizes}. Type: string. Default: .
+\item \bold{alt}. Type: string. Default: .
+\item \bold{width}. Type: number. Default: .
+\item \bold{height}. Type: number. Default: .
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+\item \bold{shadow}. Type: none | sm | md | lg. Default: "none".
+\item \bold{loading}. Type: eager | lazy. Default: .
+\item \bold{fallbackSrc}. Type: string. Default: .
+\item \bold{isBlurred}. Type: boolean. Default: false.
+\item \bold{isZoomed}. Type: boolean. Default: false.
+\item \bold{removeWrapper}. Type: boolean. Default: false.
+\item \bold{disableSkeleton}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"img" | "wrapper" | "zoomedWrapper" | "blurredImg", string>>. Default: .
+}
+\itemize{
+\item \bold{onLoad}. Type: ReactEventHandler\if{html}{\out{<HTMLImageElement>}}. Default: NA.
+\item \bold{onError}. Type: () => void. Default: NA.
 }
 }
 \examples{
@@ -71,7 +95,40 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  div(
+    class = "flex gap-5 my-2",
+    image(
+      width = 300,
+      alt = "NextUI hero Image",
+      src = "https://heroui.com/images/hero-card-complete.jpeg"
+    ),
+    image(
+      isBlurred = TRUE,
+      width = 300,
+      alt = "Album cover",
+      src = "https://heroui.com/images/hero-card-complete.jpeg"
+    ),
+    image(
+      isZoomed = TRUE,
+      width = 300,
+      alt = "Fruit image with zoom effect",
+      src = "https://heroui.com/images/hero-card-complete.jpeg"
+    )
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/image}.
+
 See \url{https://nextui.org/docs/components/image}.
 }

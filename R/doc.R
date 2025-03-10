@@ -1259,3 +1259,1293 @@ NULL
 #' @example inst/examples/user/app.R
 #' @seealso See \url{https://nextui.org/docs/components/user}.
 NULL
+
+#' spacer
+#'
+#' @description
+#' Spacer is a component used to add space between components.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{x}. Type: Space. Default: "1".
+#'\item \bold{y}. Type: Space. Default: "1".
+#' }
+#' @md
+#' @name spacer
+#' @example inst/examples/spacer/app.R
+#' @seealso See \url{https://nextui.org/docs/layout/spacer}.
+NULL
+
+#' spacer
+#'
+#' @description
+#' Spacer is a component used to add space between components.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{x}. Type: Space. Default: "1".
+#'\item \bold{y}. Type: Space. Default: "1".
+#' }
+#' @md
+#' @name spacer
+#' @example inst/examples/spacer/app.R
+#' @seealso See \url{https://nextui.org/docs/layout/spacer}.
+NULL
+
+#' accordion
+#'
+#' @description
+#' Accordion display a list of high-level options that can expand/collapse to reveal more information.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+#'\item \bold{variant}. Type: light | shadow | bordered | splitted. Default: "light".
+#'\item \bold{selectionMode}. Type: none | single | multiple. Default: .
+#'\item \bold{selectionBehavior}. Type: toggle | replace. Default: "toggle".
+#'\item \bold{isCompact}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{showDivider}. Type: boolean. Default: true.
+#'\item \bold{dividerProps}. Type: DividerProps. Default: .
+#'\item \bold{hideIndicator}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{disableIndicatorAnimation}. Type: boolean. Default: false.
+#'\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
+#'\item \bold{keepContentMounted}. Type: boolean. Default: false.
+#'\item \bold{fullWidth}. Type: boolean. Default: true.
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{disabledKeys}. Type: React.Key[]. Default: .
+#'\item \bold{itemClasses}. Type: AccordionItemClassnames. Default: .
+#'\item \bold{selectedKeys}. Type: all | React.Key[]. Default: .
+#'\item \bold{defaultSelectedKeys}. Type: all | React.Key[]. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onSelectionChange}. Type: (keys: "all" | Set<React.Key>) => any. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{title}. Type: ReactNode. Default: .
+#'\item \bold{subtitle}. Type: ReactNode. Default: .
+#'\item \bold{indicator}. Type: IndicatorProps. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{isCompact}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{keepContentMounted}. Type: boolean. Default: false.
+#'\item \bold{hideIndicator}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{disableIndicatorAnimation}. Type: boolean. Default: false.
+#'\item \bold{HeadingComponent}. Type: React.ElementType. Default: "h2".
+#'\item \bold{classNames}. Type: AccordionItemClassnames. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onFocus}. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onBlur}. Type: (e: FocusEvent) => void. Default: NA.
+#'\item \bold{onFocusChange}. Type: (isFocused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+#' }
+#' @md
+#' @name accordion
+#' @example inst/examples/accordion/app.R
+#' @seealso See \url{https://nextui.org/docs/components/accordion}.
+NULL
+
+#' autocomplete
+#'
+#' @description
+#' An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+#'
+#' @details
+#'
+#' 1. Autocomplete Props
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{items}. Type: Iterable<T>. Default: .
+#'\item \bold{defaultItems}. Type: Iterable<T>. Default: .
+#'\item \bold{inputValue}. Type: string. Default: .
+#'\item \bold{defaultInputValue}. Type: string. Default: .
+#'\item \bold{allowsCustomValue}. Type: boolean. Default: false.
+#'\item \bold{allowsEmptyCollection}. Type: boolean. Default: true.
+#'\item \bold{shouldCloseOnBlur}. Type: boolean. Default: true.
+#'\item \bold{placeholder}. Type: string. Default: .
+#'\item \bold{description}. Type: ReactNode. Default: .
+#'\item \bold{menuTrigger}. Type: focus | input | manual. Default: "focus".
+#'\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+#'\item \bold{selectedKey}. Type: React.Key. Default: .
+#'\item \bold{defaultSelectedKey}. Type: React.Key. Default: .
+#'\item \bold{disabledKeys}. Type: all | React.Key[]. Default: .
+#'\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+#'\item \bold{validate}. Type: (value: { inputValue: string, selectedKey: React.Key }) => ValidationError | true | null | undefined. Default: .
+#'\item \bold{validationBehavior}. Type: native | aria. Default: "native".
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{autoFocus}. Type: boolean. Default: false.
+#'\item \bold{defaultFilter}. Type: (textValue: string, inputValue: string) => boolean. Default: .
+#'\item \bold{filterOptions}. Type: Intl.CollatorOptions. Default: "{ sensitivity: 'base'}".
+#'\item \bold{maxListboxHeight}. Type: number. Default: "256".
+#'\item \bold{itemHeight}. Type: number. Default: "32".
+#'\item \bold{isVirtualized}. Type: boolean. Default: "undefined".
+#'\item \bold{isReadOnly}. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{fullWidth}. Type: boolean. Default: true.
+#'\item \bold{selectorIcon}. Type: ReactNode. Default: .
+#'\item \bold{clearIcon}. Type: ReactNode. Default: .
+#'\item \bold{showScrollIndicators}. Type: boolean. Default: true.
+#'\item \bold{scrollRef}. Type: React.RefObject<HTMLElement>. Default: .
+#'\item \bold{inputProps}. Type: InputProps. Default: .
+#'\item \bold{popoverProps}. Type: PopoverProps. Default: .
+#'\item \bold{listboxProps}. Type: ListboxProps. Default: .
+#'\item \bold{scrollShadowProps}. Type: ScrollShadowProps. Default: .
+#'\item \bold{selectorButtonProps}. Type: ButtonProps. Default: .
+#'\item \bold{clearButtonProps}. Type: ButtonProps. Default: .
+#'\item \bold{isClearable}. Type: boolean. Default: true.
+#'\item \bold{disableClearable}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: true.
+#'\item \bold{disableSelectorIconRotation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'listboxWrapper' | 'listbox' | 'popoverContent' | 'endContentWrapper' | 'clearButton' | 'selectorButton', string>>. Default: .
+#' }
+#' 2. Autocomplete Events
+#' \itemize{
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean, menuTrigger?: MenuTriggerAction) => void. Default: NA.
+#'\item \bold{onInputChange}. Type: (value: string) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Type: (key: React.Key) => void. Default: NA.
+#'\item \bold{onFocus}. Type: (e: FocusEvent<HTMLInputElement>) => void. Default: NA.
+#'\item \bold{onBlur}. Type: (e: FocusEvent<HTMLInputElement>) => void. Default: NA.
+#'\item \bold{onFocusChange}. Type: (isFocused: boolean) => void. Default: NA.
+#'\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name autocomplete
+#' @example inst/examples/autocomplete/app.R
+#' @seealso See \url{https://nextui.org/docs/components/autocomplete}.
+NULL
+
+#' avatar
+#'
+#' @description
+#' The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{src}. Type: string. Default: .
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{icon}. Type: ReactNode. Default: .
+#'\item \bold{fallback}. Type: ReactNode. Default: .
+#'\item \bold{isBordered}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isFocusable}. Type: boolean. Default: false.
+#'\item \bold{showFallback}. Type: boolean. Default: false.
+#'\item \bold{ImgComponent}. Type: React.ElementType. Default: "img".
+#'\item \bold{imgProps}. Type: ImgComponentProps. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "img" | "fallback" | "name" | "icon", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{max}. Type: number. Default: "5".
+#'\item \bold{total}. Type: number. Default: .
+#'\item \bold{size}. Type: AvatarProps['size']. Default: .
+#'\item \bold{color}. Type: AvatarProps['color']. Default: .
+#'\item \bold{radius}. Type: AvatarProps['radius']. Default: .
+#'\item \bold{isGrid}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: .
+#'\item \bold{isBordered}. Type: boolean. Default: .
+#'\item \bold{renderCount}. Type: (count: number) => ReactNode. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "count", string>>. Default: .
+#' }
+#' @md
+#' @name avatar
+#' @example inst/examples/avatar/app.R
+#' @seealso See \url{https://nextui.org/docs/components/avatar}.
+NULL
+
+#' badge
+#'
+#' @description
+#' Badges are used as a small numerical value or status descriptor for UI elements.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{content}. Type: string | number | ReactNode. Default: .
+#'\item \bold{variant}. Type: solid | flat | faded | shadow. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{shape}. Type: circle | rectangle. Default: "rectangle".
+#'\item \bold{placement}. Type: top-right | top-left | bottom-right | bottom-left. Default: "top-right".
+#'\item \bold{showOutline}. Type: boolean. Default: true.
+#'\item \bold{disableOutline}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{isInvisible}. Type: boolean. Default: false.
+#'\item \bold{isOneChar}. Type: boolean. Default: false.
+#'\item \bold{isDot}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜"badge", string>>. Default: .
+#' }
+#' @md
+#' @name badge
+#' @example inst/examples/badge/app.R
+#' @seealso See \url{https://nextui.org/docs/components/badge}.
+NULL
+
+#' button
+#'
+#' @description
+#' Buttons allow users to perform actions and choose with a single tap.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{spinner}. Type: ReactNode. Default: .
+#'\item \bold{spinnerPlacement}. Type: start | end. Default: "start".
+#'\item \bold{fullWidth}. Type: boolean. Default: false.
+#'\item \bold{isIconOnly}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isLoading}. Type: boolean. Default: false.
+#'\item \bold{disableRipple}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+#'\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+#'\item \bold{fullWidth}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#' }
+#' @md
+#' @name button
+#' @example inst/examples/button/app.R
+#' @seealso See \url{https://nextui.org/docs/components/button}.
+NULL
+
+#' card
+#'
+#' @description
+#' Card is a container for text, photos, and actions in the context of a single subject.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+#'\item \bold{shadow}. Type: none | sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{fullWidth}. Type: boolean. Default: false.
+#'\item \bold{isHoverable}. Type: boolean. Default: false.
+#'\item \bold{isPressable}. Type: boolean. Default: false.
+#'\item \bold{isBlurred}. Type: boolean. Default: false.
+#'\item \bold{isFooterBlurred}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{disableRipple}. Type: boolean. Default: false.
+#'\item \bold{allowTextSelectionOnPress}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'header' | 'body' | 'footer', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+#' }
+#' @md
+#' @name card
+#' @example inst/examples/card/app.R
+#' @seealso See \url{https://nextui.org/docs/components/card}.
+NULL
+
+#' checkbox
+#'
+#' @description
+#' Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{icon}. Type: CheckboxIconProps. Default: .
+#'\item \bold{value}. Type: string. Default: .
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{lineThrough}. Type: boolean. Default: false.
+#'\item \bold{isSelected}. Type: boolean. Default: .
+#'\item \bold{defaultSelected}. Type: boolean. Default: .
+#'\item \bold{isRequired}. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isIndeterminate}. Type: boolean. Default: .
+#'\item \bold{isInvalid}. Type: boolean. Default: false.
+#'\item \bold{validationState}. Type: valid | invalid. Default: .
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Type: (isSelected: boolean) => void. Default: NA.
+#' }
+#' @md
+#' @name checkbox
+#' @example inst/examples/checkbox/app.R
+#' @seealso See \url{https://nextui.org/docs/components/checkbox}.
+NULL
+
+#' circular-progress
+#'
+#' @description
+#' Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{value}. Type: number. Default: .
+#'\item \bold{valueLabel}. Type: ReactNode. Default: .
+#'\item \bold{minValue}. Type: number. Default: "0".
+#'\item \bold{maxValue}. Type: number. Default: "100".
+#'\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: "{style: 'percent'}".
+#'\item \bold{isIndeterminate}. Type: boolean. Default: true.
+#'\item \bold{showValueLabel}. Type: boolean. Default: true.
+#'\item \bold{strokeWidth}. Type: number. Default: "2".
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base'｜'svgWrapper'｜'svg'｜'track'｜'indicator'｜'value'｜'label', string>>. Default: .
+#' }
+#' @md
+#' @name circular-progress
+#' @example inst/examples/circular-progress/app.R
+#' @seealso See \url{https://nextui.org/docs/components/circular-progress}.
+NULL
+
+#' chip
+#'
+#' @description
+#' A Chip is a small block of essential information that represent an input, attribute, or action.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | dot. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+#'\item \bold{avatar}. Type: ReactNode. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "content" | "dot" | "avatar" | "closeButton", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onClose}. Type: (e: PressEvent) => void. Default: NA.
+#' }
+#' @md
+#' @name chip
+#' @example inst/examples/chip/app.R
+#' @seealso See \url{https://nextui.org/docs/components/chip}.
+NULL
+
+#' code
+#'
+#' @description
+#' Code is a component used to display inline code.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "sm".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "sm".
+#' }
+#' @md
+#' @name code
+#' @example inst/examples/code/app.R
+#' @seealso See \url{https://nextui.org/docs/components/code}.
+NULL
+
+#' divider
+#'
+#' @description
+#' Divider is a component that separates content in a page.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{orientation}. Type: `horizontal` | `vertical`. Default: "`horizontal`".
+#' }
+#' @md
+#' @name divider
+#' @example inst/examples/divider/app.R
+#' @seealso See \url{https://nextui.org/docs/components/divider}.
+NULL
+
+#' drawer
+#'
+#' @description
+#' Displays a panel that slides in from the edge of the screen, containing supplementary content.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{placement}. Type: left | right | top | bottom. Default: "right".
+#'\item \bold{isOpen}. Type: boolean. Default: .
+#'\item \bold{defaultOpen}. Type: boolean. Default: .
+#'\item \bold{isDismissable}. Type: boolean. Default: true.
+#'\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+#'\item \bold{shouldBlockScroll}. Type: boolean. Default: true.
+#'\item \bold{hideCloseButton}. Type: boolean. Default: false.
+#'\item \bold{closeButton}. Type: ReactNode. Default: .
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name drawer
+#' @example inst/examples/drawer/app.R
+#' @seealso See \url{https://nextui.org/docs/components/drawer}.
+NULL
+
+#' image
+#'
+#' @description
+#' The Image component is used to display images with support for fallback.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{src}. Type: string. Default: .
+#'\item \bold{srcSet}. Type: string. Default: .
+#'\item \bold{sizes}. Type: string. Default: .
+#'\item \bold{alt}. Type: string. Default: .
+#'\item \bold{width}. Type: number. Default: .
+#'\item \bold{height}. Type: number. Default: .
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+#'\item \bold{shadow}. Type: none | sm | md | lg. Default: "none".
+#'\item \bold{loading}. Type: eager | lazy. Default: .
+#'\item \bold{fallbackSrc}. Type: string. Default: .
+#'\item \bold{isBlurred}. Type: boolean. Default: false.
+#'\item \bold{isZoomed}. Type: boolean. Default: false.
+#'\item \bold{removeWrapper}. Type: boolean. Default: false.
+#'\item \bold{disableSkeleton}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"img" | "wrapper" | "zoomedWrapper" | "blurredImg", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onLoad}. Type: ReactEventHandler<HTMLImageElement>. Default: NA.
+#'\item \bold{onError}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name image
+#' @example inst/examples/image/app.R
+#' @seealso See \url{https://nextui.org/docs/components/image}.
+NULL
+
+#' input
+#'
+#' @description
+#' Input is a component that allows users to enter text. It can be used to get user inputs in forms, search fields, and more.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{value}. Type: string. Default: .
+#'\item \bold{defaultValue}. Type: string. Default: .
+#'\item \bold{placeholder}. Type: string. Default: .
+#'\item \bold{description}. Type: ReactNode. Default: .
+#'\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+#'\item \bold{validate}. Type: (value: string) => ValidationError | true | null | undefined. Default: .
+#'\item \bold{validationBehavior}. Type: native | aria. Default: "native".
+#'\item \bold{minLength}. Type: number. Default: .
+#'\item \bold{maxLength}. Type: number. Default: .
+#'\item \bold{pattern}. Type: string. Default: .
+#'\item \bold{type}. Type: text | email | url | password | tel | search | file. Default: "text".
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+#'\item \bold{fullWidth}. Type: boolean. Default: true.
+#'\item \bold{isClearable}. Type: boolean. Default: false.
+#'\item \bold{isRequired}. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Type: boolean. Default: false.
+#'\item \bold{baseRef}. Type: RefObject<HTMLDivElement>. Default: .
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'label' | 'inputWrapper' | 'innerWrapper' | 'mainWrapper' | 'input' | 'clearButton' | 'helperWrapper' | 'description' | 'errorMessage', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Type: (value: string) => void. Default: NA.
+#'\item \bold{onClear}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name input
+#' @example inst/examples/input/app.R
+#' @seealso See \url{https://nextui.org/docs/components/input}.
+NULL
+
+#' link
+#'
+#' @description
+#' Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an <a>
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{underline}. Type: none | hover | always | active | focus. Default: "none".
+#'\item \bold{href}. Type: string. Default: .
+#'\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
+#'\item \bold{rel}. Type: string. Default: .
+#'\item \bold{download}. Type: boolean | string. Default: .
+#'\item \bold{ping}. Type: string. Default: .
+#'\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
+#'\item \bold{isExternal}. Type: boolean. Default: false.
+#'\item \bold{showAnchorIcon}. Type: boolean. Default: false.
+#'\item \bold{anchorIcon}. Type: ReactNode. Default: .
+#'\item \bold{isBlock}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+#' }
+#' @md
+#' @name link
+#' @example inst/examples/link/app.R
+#' @seealso See \url{https://nextui.org/docs/components/link}.
+NULL
+
+#' listbox
+#'
+#' @description
+#' A listbox displays a list of options and allows a user to select one or more of them.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{items}. Type: Iterable<T>. Default: .
+#'\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{selectionMode}. Type: none | single | multiple. Default: .
+#'\item \bold{selectedKeys}. Type: React.Key[]. Default: .
+#'\item \bold{disabledKeys}. Type: React.Key[]. Default: .
+#'\item \bold{defaultSelectedKeys}. Type: all | React.Key[]. Default: .
+#'\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
+#'\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
+#'\item \bold{autoFocus}. Type: boolean | first | last. Default: false.
+#'\item \bold{topContent}. Type: ReactNode. Default: .
+#'\item \bold{bottomContent}. Type: ReactNode. Default: .
+#'\item \bold{emptyContent}. Type: ReactNode. Default: "No items.".
+#'\item \bold{shouldFocusWrap}. Type: boolean. Default: false.
+#'\item \bold{isVirtualized}. Type: boolean. Default: false.
+#'\item \bold{virtualization}. Type: Record<"maxListboxHeight" & "itemHeight", number>. Default: .
+#'\item \bold{hideEmptyContent}. Type: boolean. Default: false.
+#'\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "list" | "emptyContent", string>>. Default: .
+#'\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "selectedIcon", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onAction}. Type: (key: React.Key) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Type: (keys: React.Key[]) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode. Default: .
+#'\item \bold{title}. Type: string. Default: .
+#'\item \bold{items}. Type: Iterable<T>. Default: .
+#'\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+#'\item \bold{showDivider}. Type: boolean. Default: false.
+#'\item \bold{dividerProps}. Type: DividerProps. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "heading" | "group" | "divider", string>>. Default: .
+#'\item \bold{itemClasses}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode. Default: .
+#'\item \bold{key}. Type: React.Key. Default: .
+#'\item \bold{title}. Type: string | ReactNode. Default: .
+#'\item \bold{textValue}. Type: string. Default: .
+#'\item \bold{description}. Type: string | ReactNode. Default: .
+#'\item \bold{shortcut}. Type: string | ReactNode. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{selectedIcon}. Type: ListboxItemSelectedIconProps. Default: .
+#'\item \bold{href}. Type: string. Default: .
+#'\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: .
+#'\item \bold{rel}. Type: string. Default: .
+#'\item \bold{download}. Type: boolean | string. Default: .
+#'\item \bold{ping}. Type: string. Default: .
+#'\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: .
+#'\item \bold{shouldHighlightOnFocus}. Type: boolean. Default: false.
+#'\item \bold{hideSelectedIcon}. Type: boolean. Default: false.
+#'\item \bold{showDivider}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isSelected}. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onAction}. Type: () => void. Default: NA.
+#'\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+#'\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+#'\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+#'\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+#' }
+#' @md
+#' @name listbox
+#' @example inst/examples/listbox/app.R
+#' @seealso See \url{https://nextui.org/docs/components/listbox}.
+NULL
+
+#' modal
+#'
+#' @description
+#' Displays a dialog with custom content that requires attention or provides additional information.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{shadow}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{backdrop}. Type: transparent | opaque | blur. Default: "opaque".
+#'\item \bold{scrollBehavior}. Type: normal | inside | outside. Default: "normal".
+#'\item \bold{placement}. Type: auto | top | center | bottom. Default: "auto".
+#'\item \bold{isOpen}. Type: boolean. Default: .
+#'\item \bold{defaultOpen}. Type: boolean. Default: .
+#'\item \bold{isDismissable}. Type: boolean. Default: true.
+#'\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+#'\item \bold{shouldBlockScroll}. Type: boolean. Default: true.
+#'\item \bold{hideCloseButton}. Type: boolean. Default: false.
+#'\item \bold{closeButton}. Type: ReactNode. Default: .
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name modal
+#' @example inst/examples/modal/app.R
+#' @seealso See \url{https://nextui.org/docs/components/modal}.
+NULL
+
+#' navbar
+#'
+#' @description
+#' A responsive navigation header positioned on top side of your page that includes support for branding, links, navigation, collapse menu and more.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{height}. Type: string | number. Default: "4rem (64px)".
+#'\item \bold{position}. Type: static | sticky. Default: "sticky".
+#'\item \bold{maxWidth}. Type: sm | md | lg | xl | 2xl | full. Default: "lg".
+#'\item \bold{parentRef}. Type: React.RefObject<HTMLElement>. Default: "window".
+#'\item \bold{isBordered}. Type: boolean. Default: false.
+#'\item \bold{isBlurred}. Type: boolean. Default: true.
+#'\item \bold{isMenuOpen}. Type: boolean. Default: false.
+#'\item \bold{isMenuDefaultOpen}. Type: boolean. Default: false.
+#'\item \bold{shouldHideOnScroll}. Type: boolean. Default: false.
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{disableScrollHandler}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'wrapper' | 'brand' | 'content' | 'item' | 'toggle' | 'toggleIcon' | 'menu' | 'menuItem', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onMenuOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onScrollPositionChange}. Type: (position: number) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{justify}. Type: start | center | end. Default: "start".
+#' }
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{isActive}. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{icon}. Type: ReactNode | ((isOpen: boolean | undefined) => ReactNode). Default: .
+#'\item \bold{isSelected}. Type: boolean. Default: false.
+#'\item \bold{defaultSelected}. Type: boolean. Default: false.
+#'\item \bold{srOnlyText}. Type: string. Default: "open/close navigation menu".
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: (isOpen: boolean) => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#' }
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{isActive}. Type: boolean. Default: false.
+#' }
+#' @md
+#' @name navbar
+#' @example inst/examples/navbar/app.R
+#' @seealso See \url{https://nextui.org/docs/components/navbar}.
+NULL
+
+#' pagination
+#'
+#' @description
+#' The Pagination component allows you to display active page and navigate between multiple pages.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{variant}. Type: flat | bordered | light | faded. Default: "flat".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+#'\item \bold{total}. Type: number. Default: "1".
+#'\item \bold{dotsJump}. Type: number. Default: "5".
+#'\item \bold{initialPage}. Type: number. Default: "1".
+#'\item \bold{page}. Type: number. Default: .
+#'\item \bold{siblings}. Type: number. Default: "1".
+#'\item \bold{boundaries}. Type: number. Default: "1".
+#'\item \bold{loop}. Type: boolean. Default: false.
+#'\item \bold{isCompact}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{showShadow}. Type: boolean. Default: false.
+#'\item \bold{showControls}. Type: boolean. Default: false.
+#'\item \bold{disableCursorAnimation}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{renderItem}. Type: PaginationItemProps. Default: .
+#'\item \bold{getItemAriaLabel}. Type: (page: string) => string. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'wrapper' | 'prev' | 'next' | 'item' | 'cursor' | 'forwardIcon' | 'ellipsis' | 'chevronNext', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: (page: number) => void. Default: NA.
+#' }
+#' @md
+#' @name pagination
+#' @example inst/examples/pagination/app.R
+#' @seealso See \url{https://nextui.org/docs/components/pagination}.
+NULL
+
+#' popover
+#'
+#' @description
+#' Popover is a non-modal dialog that floats around its disclosure. It's commonly used for displaying additional rich content on top of something.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "lg".
+#'\item \bold{shadow}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{backdrop}. Type: transparent | opaque | blur. Default: "transparent".
+#'\item \bold{placement}. Type: PopoverPlacement. Default: "bottom".
+#'\item \bold{state}. Type: OverlayTriggerState. Default: .
+#'\item \bold{isOpen}. Type: boolean. Default: .
+#'\item \bold{defaultOpen}. Type: boolean. Default: .
+#'\item \bold{offset}. Type: number. Default: "7".
+#'\item \bold{containerPadding}. Type: number. Default: "12".
+#'\item \bold{crossOffset}. Type: number. Default: "0".
+#'\item \bold{triggerType}. Type: dialog | menu | listbox | tree | grid. Default: "dialog".
+#'\item \bold{showArrow}. Type: boolean. Default: false.
+#'\item \bold{shouldFlip}. Type: boolean. Default: true.
+#'\item \bold{triggerScaleOnOpen}. Type: boolean. Default: true.
+#'\item \bold{shouldBlockScroll}. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnScroll}. Type: boolean. Default: false.
+#'\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnBlur}. Type: boolean. Default: false.
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'trigger' | 'backdrop' | 'content', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{shouldCloseOnInteractOutside}. Type: (e: HTMLElement) => void. Default: NA.
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: NA.
+#' }
+#' @md
+#' @name popover
+#' @example inst/examples/popover/app.R
+#' @seealso See \url{https://nextui.org/docs/components/popover}.
+NULL
+
+#' progress
+#'
+#' @description
+#' The Progress component allows you to view the progress of any activity.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+#'\item \bold{value}. Type: number. Default: .
+#'\item \bold{valueLabel}. Type: ReactNode. Default: .
+#'\item \bold{minValue}. Type: number. Default: "0".
+#'\item \bold{maxValue}. Type: number. Default: "100".
+#'\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: "{style: 'percent'}".
+#'\item \bold{isIndeterminate}. Type: boolean. Default: false.
+#'\item \bold{isStriped}. Type: boolean. Default: false.
+#'\item \bold{showValueLabel}. Type: boolean. Default: true.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'labelWrapper' | 'label' | 'track' | 'value' | 'indicator', string>>. Default: .
+#' }
+#' @md
+#' @name progress
+#' @example inst/examples/progress/app.R
+#' @seealso See \url{https://nextui.org/docs/components/progress}.
+NULL
+
+#' select
+#'
+#' @description
+#' A select displays a collapsible list of options and allows a user to select one or more of them.
+#'
+#' @details
+#'
+#' 1. Select Props
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{items}. Type: Iterable<T>. Default: .
+#'\item \bold{selectionMode}. Type: single | multiple. Default: .
+#'\item \bold{selectedKeys}. Type: all | Iterable<React.Key>. Default: .
+#'\item \bold{disabledKeys}. Type: Iterable<React.Key>. Default: .
+#'\item \bold{defaultSelectedKeys}. Type: all | Iterable<React.Key>. Default: .
+#'\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{placeholder}. Type: string. Default: "Select an option".
+#'\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{description}. Type: ReactNode. Default: .
+#'\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{selectorIcon}. Type: ReactNode. Default: .
+#'\item \bold{scrollRef}. Type: React.RefObject<HTMLElement>. Default: .
+#'\item \bold{spinnerRef}. Type: React.RefObject<HTMLElement>. Default: .
+#'\item \bold{maxListboxHeight}. Type: number. Default: "256".
+#'\item \bold{itemHeight}. Type: number. Default: "32".
+#'\item \bold{isVirtualized}. Type: boolean. Default: "undefined".
+#'\item \bold{fullWidth}. Type: boolean. Default: true.
+#'\item \bold{isOpen}. Type: boolean. Default: .
+#'\item \bold{defaultOpen}. Type: boolean. Default: .
+#'\item \bold{isRequired}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isMultiline}. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Type: boolean. Default: false.
+#'\item \bold{validationState}. Type: valid | invalid. Default: .
+#'\item \bold{showScrollIndicators}. Type: boolean. Default: true.
+#'\item \bold{autoFocus}. Type: boolean. Default: false.
+#'\item \bold{disallowEmptySelection}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: true.
+#'\item \bold{disableSelectorIconRotation}. Type: boolean. Default: false.
+#'\item \bold{hideEmptyContent}. Type: boolean. Default: false.
+#'\item \bold{popoverProps}. Type: PopoverProps. Default: .
+#'\item \bold{listboxProps}. Type: ListboxProps. Default: .
+#'\item \bold{scrollShadowProps}. Type: ScrollShadowProps. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>. Default: .
+#' }
+#' 2. Select Events
+#' \itemize{
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{onSelectionChange}. Type: (keys: "all" | Set<React.Key> & {anchorKey?: string; currentKey?: string}) => void. Default: NA.
+#'\item \bold{onChange}. Type: React.ChangeEvent<HTMLSelectElement>. Default: NA.
+#'\item \bold{renderValue}. Type: RenderValueFunction. Default: NA.
+#' }
+#' @md
+#' @name select
+#' @example inst/examples/select/app.R
+#' @seealso See \url{https://nextui.org/docs/components/select}.
+NULL
+
+#' skeleton
+#'
+#' @description
+#' Skeleton is a placeholder to show a loading state and the expected shape of a component.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{isLoaded}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "content", string>>. Default: .
+#' }
+#' @md
+#' @name skeleton
+#' @example inst/examples/skeleton/app.R
+#' @seealso See \url{https://nextui.org/docs/components/skeleton}.
+NULL
+
+#' slider
+#'
+#' @description
+#' A slider allows a user to select one or more values within a range.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+#'\item \bold{step}. Type: number. Default: "1".
+#'\item \bold{value}. Type: number. Default: .
+#'\item \bold{defaultValue}. Type: number. Default: .
+#'\item \bold{minValue}. Type: number. Default: "0".
+#'\item \bold{maxValue}. Type: number. Default: "100".
+#'\item \bold{orientation}. Type: horizontal | vertical. Default: "horizontal".
+#'\item \bold{fillOffset}. Type: number. Default: .
+#'\item \bold{showSteps}. Type: boolean. Default: false.
+#'\item \bold{showTooltip}. Type: boolean. Default: false.
+#'\item \bold{marks}. Type: SliderStepMarks. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: .
+#'\item \bold{tooltipValueFormatOptions}. Type: Intl.NumberFormat. Default: .
+#'\item \bold{tooltipProps}. Type: TooltipProps. Default: .
+#'\item \bold{showOutline}. Type: boolean. Default: false.
+#'\item \bold{hideValue}. Type: boolean. Default: false.
+#'\item \bold{hideThumb}. Type: boolean. Default: false.
+#'\item \bold{disableThumbScale}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#' }
+#' \itemize{
+#'\item \bold{getValue}. Type: (value: SliderValue) => string. Default: NA.
+#'\item \bold{renderLabel}. Type: (props: DOMAttributes<HTMLLabelElement>) => ReactNode. Default: NA.
+#'\item \bold{renderValue}. Type: (props: DOMAttributes<HTMLOutputElement>) => ReactNode. Default: NA.
+#'\item \bold{renderThumb}. Type: (props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: (value: SliderValue) => void. Default: NA.
+#'\item \bold{onChangeEnd}. Type: (value: SliderValue) => void. Default: NA.
+#' }
+#' @md
+#' @name slider
+#' @example inst/examples/slider/app.R
+#' @seealso See \url{https://nextui.org/docs/components/slider}.
+NULL
+
+#' snippet
+#'
+#' @description
+#' Snippet is a component that can be used to display inline or multiline code snippets.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg. Default: "lg".
+#'\item \bold{symbol}. Type: string | ReactNode. Default: "$".
+#'\item \bold{timeout}. Type: number. Default: "2000".
+#'\item \bold{codeString}. Type: string. Default: .
+#'\item \bold{tooltipProps}. Type: TooltipProps. Default: .
+#'\item \bold{copyIcon}. Type: ReactNode. Default: .
+#'\item \bold{checkIcon}. Type: ReactNode. Default: .
+#'\item \bold{disableTooltip}. Type: boolean. Default: false.
+#'\item \bold{disableCopy}. Type: boolean. Default: false.
+#'\item \bold{hideCopyButton}. Type: boolean. Default: false.
+#'\item \bold{hideSymbol}. Type: boolean. Default: false.
+#'\item \bold{copyButtonProps}. Type: ButtonProps. Default: .
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<'base' | 'content' | 'pre' | 'symbol' | 'copyButton' | 'checkIcon', string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onCopy}. Type: (value: string | string[]) => void. Default: NA.
+#' }
+#' @md
+#' @name snippet
+#' @example inst/examples/snippet/app.R
+#' @seealso See \url{https://nextui.org/docs/components/snippet}.
+NULL
+
+#' switch
+#'
+#' @description
+#' The Switch component is used as an alternative between checked and not checked states.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{value}. Type: string. Default: .
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+#'\item \bold{thumbIcon}. Type: ThumbIconProps. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{isSelected}. Type: boolean. Default: .
+#'\item \bold{defaultSelected}. Type: boolean. Default: .
+#'\item \bold{isReadOnly}. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Type: (isSelected: boolean) => void. Default: NA.
+#' }
+#' @md
+#' @name switch
+#' @example inst/examples/switch/app.R
+#' @seealso See \url{https://nextui.org/docs/components/switch}.
+NULL
+
+#' tabs
+#'
+#' @description
+#' Tabs organize content into multiple sections and allow users to navigate between them.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode | ((item: T) => ReactElement). Default: .
+#'\item \bold{variant}. Type: solid | bordered | light | underlined. Default: "solid".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{fullWidth}. Type: boolean. Default: false.
+#'\item \bold{items}. Type: Iterable<T>. Default: .
+#'\item \bold{disabledKeys}. Type: React.Key[]. Default: .
+#'\item \bold{selectedKey}. Type: React.Key. Default: .
+#'\item \bold{defaultSelectedKey}. Type: React.Key. Default: .
+#'\item \bold{shouldSelectOnPressUp}. Type: boolean. Default: true.
+#'\item \bold{keyboardActivation}. Type: automatic | manual. Default: "automatic".
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{disableCursorAnimation}. Type: boolean. Default: false.
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel" ｜ "tabWrapper", string>>. Default: .
+#'\item \bold{placement}. Type: top | bottom | start | end. Default: "top".
+#'\item \bold{isVertical}. Type: boolean. Default: false.
+#'\item \bold{destroyInactiveTabPanel}. Type: boolean. Default: true.
+#' }
+#' \itemize{
+#'\item \bold{onSelectionChange}. Type: (key: React.Key) => any. Default: NA.
+#' }
+#' \itemize{
+#'\item \bold{tabRef}. Type: RefObject<HTMLButtonElement>. Default: NA.
+#'\item \bold{children*}. Type: ReactNode. Default: NA.
+#'\item \bold{title}. Type: ReactNode. Default: NA.
+#'\item \bold{titleValue}. Type: string. Default: NA.
+#'\item \bold{href}. Type: string. Default: NA.
+#'\item \bold{target}. Type: HTMLAttributeAnchorTarget. Default: NA.
+#'\item \bold{rel}. Type: string. Default: NA.
+#'\item \bold{download}. Type: boolean | string. Default: NA.
+#'\item \bold{ping}. Type: string. Default: NA.
+#'\item \bold{referrerPolicy}. Type: HTMLAttributeReferrerPolicy. Default: NA.
+#'\item \bold{shouldSelectOnPressUp}. Type: boolean. Default: NA.
+#' }
+#' @md
+#' @name tabs
+#' @example inst/examples/tabs/app.R
+#' @seealso See \url{https://nextui.org/docs/components/tabs}.
+NULL
+
+#' textarea
+#'
+#' @description
+#' Textarea component is a multi-line Input which allows you to write large texts.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children}. Type: ReactNode. Default: .
+#'\item \bold{minRows}. Type: number. Default: "3".
+#'\item \bold{maxRows}. Type: number. Default: "8".
+#'\item \bold{cacheMeasurements}. Type: boolean. Default: false.
+#'\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+#'\item \bold{label}. Type: ReactNode. Default: .
+#'\item \bold{value}. Type: string. Default: .
+#'\item \bold{defaultValue}. Type: string. Default: .
+#'\item \bold{placeholder}. Type: string. Default: .
+#'\item \bold{startContent}. Type: ReactNode. Default: .
+#'\item \bold{endContent}. Type: ReactNode. Default: .
+#'\item \bold{description}. Type: ReactNode. Default: .
+#'\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+#'\item \bold{validate}. Type: (value: string) => ValidationError | true | null | undefined. Default: .
+#'\item \bold{validationBehavior}. Type: native | aria. Default: "native".
+#'\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+#'\item \bold{fullWidth}. Type: boolean. Default: true.
+#'\item \bold{isRequired}. Type: boolean. Default: false.
+#'\item \bold{isReadOnly}. Type: boolean. Default: .
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{isClearable}. Type: boolean. Default: false.
+#'\item \bold{isInvalid}. Type: boolean. Default: false.
+#'\item \bold{validationState}. Type: valid | invalid. Default: .
+#'\item \bold{disableAutosize}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "label" | "inputWrapper" | "innerWrapper" | "input" | "description" | "errorMessage", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onChange}. Type: React.ChangeEvent<HTMLInputElement>. Default: NA.
+#'\item \bold{onValueChange}. Type: (value: string) => void. Default: NA.
+#'\item \bold{onClear}. Type: () => void. Default: NA.
+#'\item \bold{onHeightChange}. Type: (height: number, meta: { rowHeight: number }) => void. Default: NA.
+#' }
+#' @md
+#' @name textarea
+#' @example inst/examples/textarea/app.R
+#' @seealso See \url{https://nextui.org/docs/components/textarea}.
+NULL
+
+#' tooltip
+#'
+#' @description
+#' Tooltips display a brief, informative message that appears when a user interacts with an element.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{children*}. Type: ReactNode[]. Default: .
+#'\item \bold{content}. Type: ReactNode. Default: .
+#'\item \bold{size}. Type: sm | md | lg. Default: "md".
+#'\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+#'\item \bold{radius}. Type: none | sm | md | lg | full. Default: "md".
+#'\item \bold{shadow}. Type: none | sm | md | lg. Default: "sm".
+#'\item \bold{placement}. Type: TooltipPlacement. Default: "top".
+#'\item \bold{delay}. Type: number. Default: "0".
+#'\item \bold{closeDelay}. Type: number. Default: "500".
+#'\item \bold{isOpen}. Type: boolean. Default: .
+#'\item \bold{defaultOpen}. Type: boolean. Default: .
+#'\item \bold{offset}. Type: number. Default: "7".
+#'\item \bold{containerPadding}. Type: number. Default: "12".
+#'\item \bold{crossOffset}. Type: number. Default: "0".
+#'\item \bold{showArrow}. Type: boolean. Default: false.
+#'\item \bold{shouldFlip}. Type: boolean. Default: true.
+#'\item \bold{triggerScaleOnOpen}. Type: boolean. Default: true.
+#'\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+#'\item \bold{isDismissable}. Type: boolean. Default: false.
+#'\item \bold{shouldCloseOnBlur}. Type: boolean. Default: true.
+#'\item \bold{motionProps}. Type: MotionProps. Default: .
+#'\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+#'\item \bold{updatePositionDeps}. Type: any[]. Default: "[]".
+#'\item \bold{isDisabled}. Type: boolean. Default: false.
+#'\item \bold{disableAnimation}. Type: boolean. Default: false.
+#'\item \bold{classNames}. Type: Partial<Record<"base"｜"content", string>>. Default: .
+#' }
+#' \itemize{
+#'\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+#'\item \bold{shouldCloseOnInteractOutside}. Type: (e: HTMLElement) => void. Default: NA.
+#'\item \bold{onClose}. Type: () => void. Default: NA.
+#' }
+#' @md
+#' @name tooltip
+#' @example inst/examples/tooltip/app.R
+#' @seealso See \url{https://nextui.org/docs/components/tooltip}.
+NULL
+
+#' user
+#'
+#' @description
+#' Display user information with avatar and name.
+#'
+#' @details
+#'
+#' \itemize{
+#'\item \bold{name}. Type: string. Default: .
+#'\item \bold{description}. Type: ReactNode. Default: .
+#'\item \bold{isFocusable}. Type: boolean. Default: false.
+#'\item \bold{avatarProps}. Type: AvatarProps. Default: .
+#'\item \bold{classNames}. Type: Partial<Record<"base" | "wrapper" | "name" | "description", string>>. Default: .
+#' }
+#' @md
+#' @name user
+#' @example inst/examples/user/app.R
+#' @seealso See \url{https://nextui.org/docs/components/user}.
+NULL

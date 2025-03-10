@@ -51,6 +51,8 @@ This is a higher level wrapper of \link{update_action_button} to match
 vanilla's Shiny syntax and parameters.
 
 Buttons allow users to perform actions and choose with a single tap.
+
+Buttons allow users to perform actions and choose with a single tap.
 }
 \details{
 \itemize{
@@ -89,8 +91,75 @@ Buttons allow users to perform actions and choose with a single tap.
 \item \bold{fullWidth}. Whether the buttons should take the full width.. Type: boolean. Default: false.
 \item \bold{isDisabled}. Whether the buttons are disabled.. Type: boolean. Default: false.
 }
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: "solid".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{spinner}. Type: ReactNode. Default: .
+\item \bold{spinnerPlacement}. Type: start | end. Default: "start".
+\item \bold{fullWidth}. Type: boolean. Default: false.
+\item \bold{isIconOnly}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{isLoading}. Type: boolean. Default: false.
+\item \bold{disableRipple}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+}
+\itemize{
+\item \bold{onPress}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressStart}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressEnd}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onPressChange}. Type: (isPressed: boolean) => void. Default: NA.
+\item \bold{onPressUp}. Type: (e: PressEvent) => void. Default: NA.
+\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClick}. Type: MouseEventHandler. Default: NA.
+}
+\itemize{
+\item \bold{children}. Type: ReactNode | ReactNode[]. Default: .
+\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | ghost. Default: "solid".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+\item \bold{fullWidth}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+}
 }
 \examples{
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  reactOutput("button")
+)
+
+server <- function(input, output, session) {
+  n_click <- reactiveVal(0)
+  observeEvent(input$clicked, {
+    n_click(n_click() + 1)
+  })
+
+  output$button <- renderReact({
+    action_button(
+      inputId = "clicked",
+      color = "primary",
+      shadow = TRUE,
+      sprintf(
+        "Test Button. You clicked: \%s times.",
+        n_click()
+      )
+    )
+  })
+
+  exportTestValues(n_click = n_click())
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 library(shiny)
 library(shinyNextUI)
 library(shiny.react)
@@ -185,6 +254,8 @@ if (interactive() || is_testing()) shinyApp(ui, server)
 \seealso{
 See \url{https://nextui.org/docs/components/button}
 and \link{action_button} to get the list of possible parameters.
+
+See \url{https://nextui.org/docs/components/button}.
 
 See \url{https://nextui.org/docs/components/button}.
 }

@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 The Progress component allows you to view the progress of any activity.
+
+The Progress component allows you to view the progress of any activity.
 }
 \details{
 \itemize{
@@ -33,6 +35,24 @@ The Progress component allows you to view the progress of any activity.
 \item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
 \item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
 \item \bold{classNames}. Allows to set custom class names for the progress slots.. Type: Record<"base"｜"labelWrapper"｜"label"｜"track"｜"value"｜"track"｜"indicator", string>. Default: NA.
+}
+
+\itemize{
+\item \bold{label}. Type: ReactNode. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+\item \bold{value}. Type: number. Default: .
+\item \bold{valueLabel}. Type: ReactNode. Default: .
+\item \bold{minValue}. Type: number. Default: "0".
+\item \bold{maxValue}. Type: number. Default: "100".
+\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: "{style: 'percent'}".
+\item \bold{isIndeterminate}. Type: boolean. Default: false.
+\item \bold{isStriped}. Type: boolean. Default: false.
+\item \bold{showValueLabel}. Type: boolean. Default: true.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'labelWrapper' | 'label' | 'track' | 'value' | 'indicator', string>>. Default: .
 }
 }
 \examples{
@@ -91,7 +111,64 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+colors <- c(
+  "default",
+  "primary",
+  "secondary",
+  "success",
+  "warning",
+  "danger"
+)
+
+bool_par <- c(rep(FALSE, 3), rep(TRUE, 2), FALSE)
+
+progress_config <- data.frame(
+  label = c(rep("A label", 3), rep("", 3)),
+  show_value_label = c(rep(FALSE, 3), rep(TRUE, 3)),
+  size = c("sm", "sm", rep("md", 2), "lg", "lg"),
+  color = colors,
+  striped = bool_par,
+  radius = c(rep("none", 2), "sm", "md", "lg", "full")
+)
+
+progress_factory <- function(
+  label,
+  show_value_label,
+  size,
+  color,
+  striped,
+  radius
+) {
+  progress(
+    label = label,
+    showValueLabel = show_value_label,
+    value = round(runif(1, 0, 100)),
+    size = size,
+    color = color,
+    isStriped = striped,
+    radius = radius
+  )
+}
+
+progresses <- purrr::pmap(progress_config, progress_factory)
+
+ui <- nextui_page(
+  div(
+    class = "grid gap-4 grid-cols-3 grid-rows-3 m-5",
+    progresses
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/progress}.
+
 See \url{https://nextui.org/docs/components/progress}.
 }

@@ -16,6 +16,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Code is a component used to display inline code.
+
+Code is a component used to display inline code.
 }
 \details{
 \itemize{
@@ -23,6 +25,13 @@ Code is a component used to display inline code.
 \item \bold{size}. The size of the code.. Type: sm | md | lg. Default: sm.
 \item \bold{color}. The color of the code.. Type: default | primary | secondary | success | warning | danger. Default: default.
 \item \bold{radius}. The radius of the code.. Type: none | sm | md | lg | full. Default: sm.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "sm".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "sm".
 }
 }
 \examples{
@@ -47,7 +56,30 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  div(
+    class = "flex gap-2 my-2",
+    code_block(
+      size = "lg",
+      color = "secondary",
+      radius = "full",
+      "npm install @nextui-org/react"
+    )
+  )
+)
+
+server <- function(input, output, session) {
+
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/code}.
+
 See \url{https://nextui.org/docs/components/code}.
 }

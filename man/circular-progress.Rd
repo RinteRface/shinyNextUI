@@ -16,6 +16,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+
+Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
 }
 \details{
 \itemize{
@@ -33,6 +35,23 @@ Circular progress indicators are utilized to indicate an undetermined wait perio
 \item \bold{isDisabled}. Whether the progress is disabled.. Type: boolean. Default: false.
 \item \bold{disableAnimation}. Whether to disable the animation.. Type: boolean. Default: false.
 \item \bold{classNames}. Allows to set custom class names for the circular progress slots.. Type: Record<"base"｜"svgWrapper"｜"svg"｜"track"｜"indicator"｜"value"｜"label", string>. Default: NA.
+}
+
+\itemize{
+\item \bold{label}. Type: ReactNode. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{value}. Type: number. Default: .
+\item \bold{valueLabel}. Type: ReactNode. Default: .
+\item \bold{minValue}. Type: number. Default: "0".
+\item \bold{maxValue}. Type: number. Default: "100".
+\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: "{style: 'percent'}".
+\item \bold{isIndeterminate}. Type: boolean. Default: true.
+\item \bold{showValueLabel}. Type: boolean. Default: true.
+\item \bold{strokeWidth}. Type: number. Default: "2".
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base'｜'svgWrapper'｜'svg'｜'track'｜'indicator'｜'value'｜'label', string>>. Default: .
 }
 }
 \examples{
@@ -77,7 +96,50 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+ui <- nextui_page(
+  dark_mode = TRUE,
+  div(
+    class = "flex gap-4",
+    card(
+      class = "",
+      card_body(
+        class = "grid grid-cols-2 gap-4",
+        circular_progress(
+          value = 3,
+          showValueLabel = TRUE,
+          strokeWidth = 4,
+          size = "lg",
+          minValue = 0,
+          maxValue = 150,
+          valueLabel = div(icon("battery-full", class = "mx-1"), "2\%"),
+          color = "danger"
+        ),
+        circular_progress(
+          value = 120,
+          showValueLabel = TRUE,
+          strokeWidth = 4,
+          size = "lg",
+          minValue = 0,
+          maxValue = 150,
+          valueLabel = div(icon("mobile-screen-button", class = "mx-1"), "80\%"),
+          color = "success"
+        )
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/circular-progress}.
+
 See \url{https://nextui.org/docs/components/circular-progress}.
 }

@@ -30,6 +30,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
 }
 \details{
 \itemize{
@@ -55,6 +57,31 @@ Checkboxes allow users to select multiple items from a list of individual items,
 \itemize{
 \item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
 \item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{icon}. Type: CheckboxIconProps. Default: .
+\item \bold{value}. Type: string. Default: .
+\item \bold{name}. Type: string. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+\item \bold{lineThrough}. Type: boolean. Default: false.
+\item \bold{isSelected}. Type: boolean. Default: .
+\item \bold{defaultSelected}. Type: boolean. Default: .
+\item \bold{isRequired}. Type: boolean. Default: false.
+\item \bold{isReadOnly}. Type: boolean. Default: .
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{isIndeterminate}. Type: boolean. Default: .
+\item \bold{isInvalid}. Type: boolean. Default: false.
+\item \bold{validationState}. Type: valid | invalid. Default: .
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>. Default: .
+}
+\itemize{
+\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Type: (isSelected: boolean) => void. Default: NA.
 }
 }
 \examples{
@@ -86,7 +113,37 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+ui <- nextui_page(
+  div(
+    class = "flex gap-1",
+    action_button("update", "Toggle checkbox"),
+    spacer(y = 2),
+    checkbox_input(
+      inputId = "checkbox",
+      value = TRUE,
+      "My checkbox",
+      isRounded = TRUE,
+      color = "warning",
+      lineThrough = TRUE
+    ),
+    textOutput("check_val")
+  )
+)
+
+server <- function(input, output, session) {
+  output$check_val <- renderText(input$checkbox)
+  observeEvent(input$update, {
+    update_checkbox_input(session, "checkbox", value = !input$checkbox)
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/checkbox}.
+
 See \url{https://nextui.org/docs/components/checkbox}.
 }

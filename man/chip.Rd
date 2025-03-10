@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 A Chip is a small block of essential information that represent an input, attribute, or action.
+
+A Chip is a small block of essential information that represent an input, attribute, or action.
 }
 \details{
 \itemize{
@@ -31,6 +33,22 @@ A Chip is a small block of essential information that represent an input, attrib
 }
 \itemize{
 \item \bold{onClose}. Handler that is called when the close button is pressed. If you pass this prop, the chip will display a close button (endContent).. Type: (e: PressEvent) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{variant}. Type: solid | bordered | light | flat | faded | shadow | dot. Default: "solid".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+\item \bold{avatar}. Type: ReactNode. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base" | "content" | "dot" | "avatar" | "closeButton", string>>. Default: .
+}
+\itemize{
+\item \bold{onClose}. Type: (e: PressEvent) => void. Default: NA.
 }
 }
 \examples{
@@ -98,7 +116,73 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  div(
+    class = "flex gap-2 my-2",
+    chip(
+      id = "plop",
+      "A chip",
+      onClose = JS("(e) => {
+        var chipEl = e.target.offsetParent;
+        Shiny.setInputValue(chipEl.id, false);
+        $(chipEl).remove();
+      }")
+    ),
+    chip(
+      "A chip",
+      color = "success",
+      size = "lg",
+      radius = "sm",
+      variant = "flat",
+      startContent = icon("home"),
+      endContent = icon("bell")
+    ),
+    chip(
+      avatar = avatar(name = "JW", src = "https://i.pravatar.cc/300?u=a042581f4e29026709d"),
+      "hello"
+    ),
+    reactOutput("modal")
+  )
+)
+
+server <- function(input, output, session) {
+
+  modalVisible <- reactiveVal(FALSE)
+  observeEvent({
+    input$plop
+  }, {
+    if (!input$plop) modalVisible(TRUE)
+  })
+
+  observeEvent(input$modal_closed, {
+    modalVisible(FALSE)
+  })
+
+  output$modal <- renderReact({
+    modal(
+      scrollBehavior = input$scroll,
+      isOpen = modalVisible(),
+      size = "sm",
+      placement = "top",
+      modal_content(
+        modal_header("Congrats"),
+        modal_body(
+          p("You closed me!")
+        )
+      ),
+      onClose = JS("() => Shiny.setInputValue('modal_closed', true, {priority: 'event'})")
+    )
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/chip}.
+
 See \url{https://nextui.org/docs/components/chip}.
 }

@@ -12,12 +12,10 @@ generate_details <- function(x) {
       tmp <- vapply(
         seq_len(nrow(tmp)),
         function(r) {
-          attribute <- if (!("Attribute" %in% colnames(tmp[r, ]))) {
-            value_not_available(tmp[r, ]$Name)
-          } else {
-            value_not_available(tmp[r, ]$Attribute)
-          }
-          description <- value_not_available(tmp[r, ]$Description)
+          attribute <- value_not_available(tmp[r, ]$Prop)
+          # Not available anymore: the description is now a tooltip
+          # and there is no way to extract its content ... :(
+          #description <- value_not_available(tmp[r, ]$Description)
           type <- value_not_available(tmp[r, ]$Type)
           default <- if (!("Default" %in% colnames(tmp[r, ]))) {
             "NA"
@@ -26,9 +24,8 @@ generate_details <- function(x) {
           }
 
           sprintf(
-            "#'  \\item \\bold{%s}. %s. Type: %s. Default: %s.",
+            "#'  \\item \\bold{%s}. Type: %s. Default: %s.",
             attribute,
-            description,
             type,
             default
           )
@@ -83,7 +80,6 @@ value_not_available <- function(v) {
   if (v == "-") "NA" else v
 }
 
-
 # TO DO: find way to avoid hardcoding this
 items <- list(
   # layout,
@@ -104,7 +100,7 @@ items <- list(
     "chip",
     "code",
     "divider",
-    #"drawer",
+    "drawer",
     #"dropdown",
     "image",
     "input",
@@ -131,12 +127,26 @@ items <- list(
 get_element_api <- function(el, context) {
   url <- sprintf("https://nextui.org/docs/%s/%s", context, el)
   root <- read_html(url)
+
+  # Get parameter values
   params <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.
-    html_elements(css = "#api ~ * table") |>
+    html_elements(css = "#api ~ * table tbody") |>
     html_table()
 
+  # Get colnames
+  params_col_names <- root |>
+    # This CSS selector avoids to select unwanted tables
+    # that would be located before the API tables.
+    html_elements(css = "#api ~ * table thead") |>
+    html_table()
+
+  # Assign col names for all tables
+  for (i in seq_along(params)) {
+    colnames(params[[i]]) <- as.character(params_col_names[[1]])
+  }
+  # Give a name to all tables
   tmp <- root |>
     # This CSS selector avoids to select unwanted tables
     # that would be located before the API tables.

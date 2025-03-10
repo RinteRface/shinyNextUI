@@ -31,6 +31,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+
+An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
 }
 \details{
 \enumerate{
@@ -97,6 +99,76 @@ An autocomplete combines a text input with a listbox, allowing users to filter a
 \item \bold{onClose}. Handler that is called when the Autocomplete's Popover is closed.. Type: () => void. Default: NA.
 }
 }
+
+\enumerate{
+\item Autocomplete Props
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{label}. Type: ReactNode. Default: .
+\item \bold{name}. Type: string. Default: .
+\item \bold{variant}. Type: flat | bordered | faded | underlined. Default: "flat".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: .
+\item \bold{items}. Type: Iterable\if{html}{\out{<T>}}. Default: .
+\item \bold{defaultItems}. Type: Iterable\if{html}{\out{<T>}}. Default: .
+\item \bold{inputValue}. Type: string. Default: .
+\item \bold{defaultInputValue}. Type: string. Default: .
+\item \bold{allowsCustomValue}. Type: boolean. Default: false.
+\item \bold{allowsEmptyCollection}. Type: boolean. Default: true.
+\item \bold{shouldCloseOnBlur}. Type: boolean. Default: true.
+\item \bold{placeholder}. Type: string. Default: .
+\item \bold{description}. Type: ReactNode. Default: .
+\item \bold{menuTrigger}. Type: focus | input | manual. Default: "focus".
+\item \bold{labelPlacement}. Type: inside | outside | outside-left. Default: "inside".
+\item \bold{selectedKey}. Type: React.Key. Default: .
+\item \bold{defaultSelectedKey}. Type: React.Key. Default: .
+\item \bold{disabledKeys}. Type: all | React.Key[]. Default: .
+\item \bold{errorMessage}. Type: ReactNode | ((v: ValidationResult) => ReactNode). Default: .
+\item \bold{validate}. Type: (value: { inputValue: string, selectedKey: React.Key }) => ValidationError | true | null | undefined. Default: .
+\item \bold{validationBehavior}. Type: native | aria. Default: "native".
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{autoFocus}. Type: boolean. Default: false.
+\item \bold{defaultFilter}. Type: (textValue: string, inputValue: string) => boolean. Default: .
+\item \bold{filterOptions}. Type: Intl.CollatorOptions. Default: "{ sensitivity: 'base'}".
+\item \bold{maxListboxHeight}. Type: number. Default: "256".
+\item \bold{itemHeight}. Type: number. Default: "32".
+\item \bold{isVirtualized}. Type: boolean. Default: "undefined".
+\item \bold{isReadOnly}. Type: boolean. Default: false.
+\item \bold{isRequired}. Type: boolean. Default: false.
+\item \bold{isInvalid}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{fullWidth}. Type: boolean. Default: true.
+\item \bold{selectorIcon}. Type: ReactNode. Default: .
+\item \bold{clearIcon}. Type: ReactNode. Default: .
+\item \bold{showScrollIndicators}. Type: boolean. Default: true.
+\item \bold{scrollRef}. Type: React.RefObject\if{html}{\out{<HTMLElement>}}. Default: .
+\item \bold{inputProps}. Type: InputProps. Default: .
+\item \bold{popoverProps}. Type: PopoverProps. Default: .
+\item \bold{listboxProps}. Type: ListboxProps. Default: .
+\item \bold{scrollShadowProps}. Type: ScrollShadowProps. Default: .
+\item \bold{selectorButtonProps}. Type: ButtonProps. Default: .
+\item \bold{clearButtonProps}. Type: ButtonProps. Default: .
+\item \bold{isClearable}. Type: boolean. Default: true.
+\item \bold{disableClearable}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: true.
+\item \bold{disableSelectorIconRotation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<'base' | 'listboxWrapper' | 'listbox' | 'popoverContent' | 'endContentWrapper' | 'clearButton' | 'selectorButton', string>>. Default: .
+}
+\item Autocomplete Events
+\itemize{
+\item \bold{onOpenChange}. Type: (isOpen: boolean, menuTrigger?: MenuTriggerAction) => void. Default: NA.
+\item \bold{onInputChange}. Type: (value: string) => void. Default: NA.
+\item \bold{onSelectionChange}. Type: (key: React.Key) => void. Default: NA.
+\item \bold{onFocus}. Type: (e: FocusEvent\if{html}{\out{<HTMLInputElement>}}) => void. Default: NA.
+\item \bold{onBlur}. Type: (e: FocusEvent\if{html}{\out{<HTMLInputElement>}}) => void. Default: NA.
+\item \bold{onFocusChange}. Type: (isFocused: boolean) => void. Default: NA.
+\item \bold{onKeyDown}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onKeyUp}. Type: (e: KeyboardEvent) => void. Default: NA.
+\item \bold{onClose}. Type: () => void. Default: NA.
+}
+}
 }
 \examples{
 library(shiny)
@@ -156,7 +228,66 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+animals <- list(
+  list(
+    label = "Bulbasaur",
+    value = "bulbasaur",
+    description = "Blabla",
+    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+  ),
+  list(
+    label = "Pikachu",
+    value = "pikachu",
+    description = "Electric mouse",
+    avatar = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+  )
+)
+
+items <- lapply(animals, function(animal) {
+  autocomplete_item(
+    key = animal[["value"]],
+    value = animal[["value"]],
+    startContent = avatar(src = animal[["avatar"]]),
+    animal[["label"]]
+  )
+})
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  action_button("update", "Update to Pikachu?"),
+  spacer(y = 4),
+  autocomplete(
+    "autocomplete",
+    label = "Select a pokemon",
+    isRequired = TRUE,
+    value = "bulbasaur",
+    autocomplete_section(
+      title = "Default pokemons",
+      items
+    )
+  ),
+  textOutput("res")
+)
+
+server <- function(input, output, session) {
+  output$res <- renderText(input$autocomplete)
+  observeEvent(input$autocomplete, {
+    print(input$autocomplete)
+  })
+
+  observeEvent(input$update, {
+    update_autocomplete(session, "autocomplete", value = "pikachu")
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/autocomplete}.
+
 See \url{https://nextui.org/docs/components/autocomplete}.
 }

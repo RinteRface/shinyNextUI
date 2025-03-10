@@ -25,6 +25,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 The Pagination component allows you to display active page and navigate between multiple pages.
+
+The Pagination component allows you to display active page and navigate between multiple pages.
 }
 \details{
 \itemize{
@@ -51,6 +53,32 @@ The Pagination component allows you to display active page and navigate between 
 }
 \itemize{
 \item \bold{onChange}. Handler that is called when the pagination acitve page changes.. Type: (page: number) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{variant}. Type: flat | bordered | light | faded. Default: "flat".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "xl".
+\item \bold{total}. Type: number. Default: "1".
+\item \bold{dotsJump}. Type: number. Default: "5".
+\item \bold{initialPage}. Type: number. Default: "1".
+\item \bold{page}. Type: number. Default: .
+\item \bold{siblings}. Type: number. Default: "1".
+\item \bold{boundaries}. Type: number. Default: "1".
+\item \bold{loop}. Type: boolean. Default: false.
+\item \bold{isCompact}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{showShadow}. Type: boolean. Default: false.
+\item \bold{showControls}. Type: boolean. Default: false.
+\item \bold{disableCursorAnimation}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{renderItem}. Type: PaginationItemProps. Default: .
+\item \bold{getItemAriaLabel}. Type: (page: string) => string. Default: .
+\item \bold{classNames}. Type: Partial<Record<'base' | 'wrapper' | 'prev' | 'next' | 'item' | 'cursor' | 'forwardIcon' | 'ellipsis' | 'chevronNext', string>>. Default: .
+}
+\itemize{
+\item \bold{onChange}. Type: (page: number) => void. Default: NA.
 }
 }
 \examples{
@@ -120,7 +148,75 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+library(thematic)
+
+thematic_shiny()
+
+max <- 10
+cards <- lapply(seq_len(max), function(i) {
+  tagList(
+    spacer(y = 2),
+    card(
+      id = sprintf("mycard-\%s", i),
+      card_header(sprintf("Card \%s", i)),
+      card_body(
+        sprintf("Card content \%s", i),
+        slider_input(
+          sprintf("obs-\%s", i),
+          "Obs",
+          minValue = 0,
+          maxValue = 1000,
+          value = 500
+        ),
+        plotOutput(sprintf("distPlot-\%s", i))
+      )
+    )
+  )
+})
+
+ui <- nextui_page(
+  pagination(
+    inputId = "pagination",
+    loop = TRUE,
+    size = "lg",
+    variant = "bordered",
+    showControls = TRUE,
+    page = 1,
+    total = max
+  )
+)
+
+server <- function(input, output, session) {
+  history <- reactiveVal(NULL)
+
+  # Dynamically insert cards with the pagination.
+  observeEvent(input$pagination, {
+    if (!is.null(history()))
+      removeUI(sprintf("#mycard-\%s", history()), multiple = TRUE)
+    insertUI(
+      selector = "#pagination",
+      where = "afterEnd",
+      ui = cards[[input$pagination]]
+    )
+    history(input$pagination)
+
+    output[[sprintf("distPlot-\%s", history())]] <- renderPlot({
+      req(input[[sprintf("obs-\%s", history())]])
+      hist(
+        rnorm(input[[sprintf("obs-\%s", history())]]),
+        main = sprintf("Super plot \%s", history())
+      )
+    })
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/pagination}.
+
 See \url{https://nextui.org/docs/components/pagination}.
 }

@@ -26,6 +26,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 The Switch component is used as an alternative between checked and not checked states.
+
+The Switch component is used as an alternative between checked and not checked states.
 }
 \details{
 \itemize{
@@ -48,6 +50,27 @@ The Switch component is used as an alternative between checked and not checked s
 \itemize{
 \item \bold{onChange}. Handler that is called when the element's selection state changes. You can pull out the new checked state by accessing event.target.checked (boolean).. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
 \item \bold{onValueChange}. Handler that is called when the element's selection state changes.. Type: (isSelected: boolean) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{children}. Type: ReactNode. Default: .
+\item \bold{value}. Type: string. Default: .
+\item \bold{name}. Type: string. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{thumbIcon}. Type: ThumbIconProps. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{isSelected}. Type: boolean. Default: .
+\item \bold{defaultSelected}. Type: boolean. Default: .
+\item \bold{isReadOnly}. Type: boolean. Default: .
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>>. Default: .
+}
+\itemize{
+\item \bold{onChange}. Type: React.ChangeEvent\if{html}{\out{<HTMLInputElement>}}. Default: NA.
+\item \bold{onValueChange}. Type: (isSelected: boolean) => void. Default: NA.
 }
 }
 \examples{
@@ -115,7 +138,73 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+base_style <- paste(
+  "inline-flex flex-row-reverse w-full max-w-md bg-content1 hover:bg-content2",
+  "items-center justify-between cursor-pointer rounded-lg gap-2 p-4 border-2",
+  "border-transparent data-[selected=true]:border-primary"
+)
+
+thumb_style <- paste(
+  "w-6 h-6 border-2 shadow-lg group-data-[hover=true]:border-primary",
+  "group-data-[selected=true]:ml-6 group-data-[pressed=true]:w-7",
+  "group-data-[selected]:group-data-[pressed]:ml-4"
+)
+
+ui <- nextui_page(
+  div(
+    class = "flex flex-col",
+    action_button("update", "Toggle switch"),
+    spacer(y = 2),
+    p("Basic"),
+    switch_input(
+      inputId = "switch",
+      value = TRUE,
+      size = "xs"
+    ),
+    textOutput("switch_val"),
+    spacer(y = 5),
+    p("Custom style"),
+    spacer(y = 2),
+    switch_input(
+      "custom_switch",
+      classNames = JS(
+        sprintf(
+          "{
+          base: '\%s',
+          wrapper: 'p-0 h-4 overflow-visible',
+          thumb: '\%s'
+        }",
+          base_style,
+          thumb_style
+        )
+      ),
+      div(
+        className = "flex flex-col gap-1",
+        p(className = "text-medium", "Enable early acces"),
+        p(
+          className = "text-tiny text-default-400",
+          "Get access to new features before they are released."
+        )
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  output$switch_val <- renderText(input$switch)
+  observeEvent(input$update, {
+    update_switch_input(session, "switch", value = !input$switch)
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/switch}.
+
 See \url{https://nextui.org/docs/components/switch}.
 }

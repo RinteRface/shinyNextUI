@@ -26,6 +26,8 @@ The update functions return nothing (called for side effects).
 }
 \description{
 A slider allows a user to select one or more values within a range.
+
+A slider allows a user to select one or more values within a range.
 }
 \details{
 \itemize{
@@ -66,6 +68,45 @@ A slider allows a user to select one or more values within a range.
 \itemize{
 \item \bold{onChange}. Callback fired when the value changes.. Type: (value: SliderValue) => void. Default: NA.
 \item \bold{onChangeEnd}. Callback fired when the value changes and the user stops dragging the thumb.. Type: (value: SliderValue) => void. Default: NA.
+}
+
+\itemize{
+\item \bold{label}. Type: ReactNode. Default: .
+\item \bold{name}. Type: string. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: foreground | primary | secondary | success | warning | danger. Default: "primary".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+\item \bold{step}. Type: number. Default: "1".
+\item \bold{value}. Type: number. Default: .
+\item \bold{defaultValue}. Type: number. Default: .
+\item \bold{minValue}. Type: number. Default: "0".
+\item \bold{maxValue}. Type: number. Default: "100".
+\item \bold{orientation}. Type: horizontal | vertical. Default: "horizontal".
+\item \bold{fillOffset}. Type: number. Default: .
+\item \bold{showSteps}. Type: boolean. Default: false.
+\item \bold{showTooltip}. Type: boolean. Default: false.
+\item \bold{marks}. Type: SliderStepMarks. Default: .
+\item \bold{startContent}. Type: ReactNode. Default: .
+\item \bold{endContent}. Type: ReactNode. Default: .
+\item \bold{formatOptions}. Type: Intl.NumberFormat. Default: .
+\item \bold{tooltipValueFormatOptions}. Type: Intl.NumberFormat. Default: .
+\item \bold{tooltipProps}. Type: TooltipProps. Default: .
+\item \bold{showOutline}. Type: boolean. Default: false.
+\item \bold{hideValue}. Type: boolean. Default: false.
+\item \bold{hideThumb}. Type: boolean. Default: false.
+\item \bold{disableThumbScale}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+}
+\itemize{
+\item \bold{getValue}. Type: (value: SliderValue) => string. Default: NA.
+\item \bold{renderLabel}. Type: (props: DOMAttributes\if{html}{\out{<HTMLLabelElement>}}) => ReactNode. Default: NA.
+\item \bold{renderValue}. Type: (props: DOMAttributes\if{html}{\out{<HTMLOutputElement>}}) => ReactNode. Default: NA.
+\item \bold{renderThumb}. Type: (props: DOMAttributes\if{html}{\out{<HTMLDivElement>}} & {index?: number}) => ReactNode. Default: NA.
+}
+\itemize{
+\item \bold{onChange}. Type: (value: SliderValue) => void. Default: NA.
+\item \bold{onChangeEnd}. Type: (value: SliderValue) => void. Default: NA.
 }
 }
 \examples{
@@ -194,7 +235,134 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  action_button("update", "Update slider 1"),
+  slider_input(
+    "slider",
+    label = "My slider",
+    showTooltip = TRUE,
+    radius = "none",
+    step = 1,
+    maxValue = 10,
+    minValue = 0,
+    value = 5,
+    className = "max-w-md",
+    showSteps = TRUE,
+    color = "foreground",
+    size = "sm",
+    marks = JS(
+      "
+      [
+        {
+          value: 2,
+          label: 'First mark',
+        },
+        {
+          value: 5,
+          label: 'Second mark',
+        },
+        {
+          value: 8,
+          label: 'Third mark',
+        },
+      ]
+    "
+    )
+  ),
+  spacer(y = 10),
+  slider_input(
+    "slider2",
+    radius = "lg",
+    label = "Color offset",
+    size = "sm",
+    showTooltip = TRUE,
+    color = "warning",
+    maxValue = 5,
+    minValue = -5,
+    fillOffset = 0,
+    value = 1,
+    formatOptions = JS("{signDisplay: 'always'}")
+  ),
+  spacer(y = 10),
+  slider_input(
+    "slider3",
+    label = "Outline",
+    color = "foreground",
+    showOutline = TRUE,
+    minValue = 0,
+    maxValue = 10,
+    value = 5
+  ),
+  spacer(y = 10),
+  slider_input(
+    "slider4",
+    label = "With start and end content",
+    minValue = 0,
+    maxValue = 10,
+    value = 5,
+    startContent = icon("volume-xmark"),
+    endContent = icon("volume-high")
+  ),
+  spacer(y = 10),
+  slider_input(
+    "slider5",
+    color = "success",
+    step = 0.1,
+    label = "Format value with getValue",
+    getValue = JS("(val) => `${val} / 10`"),
+    maxValue = 10,
+    minValue = 0,
+    value = 5
+  ),
+  spacer(y = 10),
+  slider_input(
+    "range",
+    label = "Range",
+    color = "danger",
+    minValue = 0,
+    maxValue = 10,
+    value = c(1, 4)
+  ),
+  spacer(y = 10),
+  div(
+    class = "flex flex-row  max-w-md h-[348px] gap-6 w-full",
+    slider_input(
+      "slider4",
+      label = "Vertical",
+      size = "sm",
+      orientation = "vertical",
+      minValue = 0,
+      maxValue = 10,
+      value = 5,
+      startContent = icon("volume-high"),
+      endContent = icon("volume-xmark")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$update, {
+    update_slider_input(session, inputId = "slider", value = 10)
+  })
+
+  observeEvent(input$slider, {
+    print(class(input$slider))
+    print(sprintf("Slider is: \%s", input$slider))
+  })
+  observeEvent(input$range, {
+    print(input$range)
+  })
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/slider}.
+
 See \url{https://nextui.org/docs/components/slider}.
 }

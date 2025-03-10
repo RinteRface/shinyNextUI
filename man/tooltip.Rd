@@ -15,6 +15,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 Tooltips display a brief, informative message that appears when a user interacts with an element.
+
+Tooltips display a brief, informative message that appears when a user interacts with an element.
 }
 \details{
 \itemize{
@@ -52,6 +54,40 @@ Tooltips display a brief, informative message that appears when a user interacts
 \item \bold{shouldCloseOnInteractOutside}. When user interacts with the argument element outside of the tooltip ref, return true if onClose should be called. This gives you a chance to filter out interaction with elements that should not dismiss the tooltip. By default, onClose will always be called on interaction outside the overlay ref.. Type: (e: HTMLElement) => void. Default: NA.
 \item \bold{onClose}. Handler that is called when the tooltip should close.. Type: () => void. Default: NA.
 }
+
+\itemize{
+\item \bold{children*}. Type: ReactNode[]. Default: .
+\item \bold{content}. Type: ReactNode. Default: .
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "md".
+\item \bold{shadow}. Type: none | sm | md | lg. Default: "sm".
+\item \bold{placement}. Type: TooltipPlacement. Default: "top".
+\item \bold{delay}. Type: number. Default: "0".
+\item \bold{closeDelay}. Type: number. Default: "500".
+\item \bold{isOpen}. Type: boolean. Default: .
+\item \bold{defaultOpen}. Type: boolean. Default: .
+\item \bold{offset}. Type: number. Default: "7".
+\item \bold{containerPadding}. Type: number. Default: "12".
+\item \bold{crossOffset}. Type: number. Default: "0".
+\item \bold{showArrow}. Type: boolean. Default: false.
+\item \bold{shouldFlip}. Type: boolean. Default: true.
+\item \bold{triggerScaleOnOpen}. Type: boolean. Default: true.
+\item \bold{isKeyboardDismissDisabled}. Type: boolean. Default: false.
+\item \bold{isDismissable}. Type: boolean. Default: false.
+\item \bold{shouldCloseOnBlur}. Type: boolean. Default: true.
+\item \bold{motionProps}. Type: MotionProps. Default: .
+\item \bold{portalContainer}. Type: HTMLElement. Default: "document.body".
+\item \bold{updatePositionDeps}. Type: any[]. Default: "[]".
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{disableAnimation}. Type: boolean. Default: false.
+\item \bold{classNames}. Type: Partial<Record<"base"｜"content", string>>. Default: .
+}
+\itemize{
+\item \bold{onOpenChange}. Type: (isOpen: boolean) => void. Default: NA.
+\item \bold{shouldCloseOnInteractOutside}. Type: (e: HTMLElement) => void. Default: NA.
+\item \bold{onClose}. Type: () => void. Default: NA.
+}
 }
 \examples{
 library(shiny)
@@ -76,7 +112,31 @@ server <- function(input, output, session) {
 }
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+library(shiny.react)
+
+ui <- nextui_page(
+  div(
+    className = "flex align-items-start",
+    tooltip(
+      content = "A tooltip...",
+      color = "primary",
+      showArrow = TRUE,
+      closeDelay = 0,
+      delay = 0,
+      button("Click me!", color = "warning")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/tooltip}.
+
 See \url{https://nextui.org/docs/components/tooltip}.
 }

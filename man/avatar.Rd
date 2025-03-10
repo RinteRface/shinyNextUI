@@ -18,6 +18,8 @@ Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
 The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
+
+The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon.
 }
 \details{
 \itemize{
@@ -46,6 +48,35 @@ The Avatar component is used to represent a user, and displays the profile pictu
 \item \bold{isDisabled}. Whether the avatars are disabled. Type: boolean. Default: NA.
 \item \bold{isBordered}. Whether the avatars have a border. Type: boolean. Default: NA.
 \item \bold{renderCount}. This allows you to render a custom count component.. Type: (count: number) => ReactNode. Default: NA.
+}
+
+\itemize{
+\item \bold{src}. Type: string. Default: .
+\item \bold{color}. Type: default | primary | secondary | success | warning | danger. Default: "default".
+\item \bold{radius}. Type: none | sm | md | lg | full. Default: "full".
+\item \bold{size}. Type: sm | md | lg. Default: "md".
+\item \bold{name}. Type: string. Default: .
+\item \bold{icon}. Type: ReactNode. Default: .
+\item \bold{fallback}. Type: ReactNode. Default: .
+\item \bold{isBordered}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: false.
+\item \bold{isFocusable}. Type: boolean. Default: false.
+\item \bold{showFallback}. Type: boolean. Default: false.
+\item \bold{ImgComponent}. Type: React.ElementType. Default: "img".
+\item \bold{imgProps}. Type: ImgComponentProps. Default: .
+\item \bold{classNames}. Type: Partial<Record<"base" | "img" | "fallback" | "name" | "icon", string>>. Default: .
+}
+\itemize{
+\item \bold{max}. Type: number. Default: "5".
+\item \bold{total}. Type: number. Default: .
+\item \bold{size}. Type: AvatarProps\link{'size'}. Default: .
+\item \bold{color}. Type: AvatarProps\link{'color'}. Default: .
+\item \bold{radius}. Type: AvatarProps\link{'radius'}. Default: .
+\item \bold{isGrid}. Type: boolean. Default: false.
+\item \bold{isDisabled}. Type: boolean. Default: .
+\item \bold{isBordered}. Type: boolean. Default: .
+\item \bold{renderCount}. Type: (count: number) => ReactNode. Default: .
+\item \bold{classNames}. Type: Partial<Record<"base" | "count", string>>. Default: .
 }
 }
 \examples{
@@ -114,7 +145,74 @@ ui <- nextui_page(
 server <- function(input, output, session) {}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
+library(shiny)
+library(shinyNextUI)
+
+avatar_config <- data.frame(
+  size = c("xs", "sm", "md", "lg", "xl"),
+  src = c(
+    "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+    "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    "https://i.pravatar.cc/150?u=a048581f4e29026701d",
+    "https://i.pravatar.cc/150?u=a092581d4ef9026700d"
+  ),
+  radius = c(rep("full", 2), "lg", "md", "sm"),
+  disabled = c(rep(FALSE, 4), TRUE),
+  bordered = c(rep(TRUE, 3), rep(FALSE, 2)),
+  color = c(
+    "primary",
+    "secondary",
+    "danger",
+    "success",
+    "warning"
+  ),
+  fallback = rep(TRUE, 5)
+)
+
+avatar_factory <- function(src, size, disabled, bordered, radius, color, fallback) {
+  avatar(
+    src = src,
+    size = size,
+    isDisabled = disabled,
+    isBordered = bordered,
+    radius = radius,
+    color = color,
+    showFallback = fallback
+  )
+}
+
+avatars <- purrr::pmap(avatar_config, avatar_factory)
+
+ui <- nextui_page(
+  debug_react = TRUE,
+  class = "container mx-auto px-4",
+  p("avatar()"),
+  spacer(y = 1),
+  div(
+    class = "flex gap-3 items-center",
+    avatars
+  ),
+  spacer(y = 2),
+  p("avatar_group()"),
+  spacer(y = 1),
+  div(
+    class = "flex",
+    avatar_group(
+      isBordered = TRUE,
+      max = 3,
+      total = 10,
+      lapply(avatar_config$src, function(link) avatar(src = link))
+    )
+  )
+)
+
+server <- function(input, output, session) {}
+
+if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
+See \url{https://nextui.org/docs/components/avatar}.
+
 See \url{https://nextui.org/docs/components/avatar}.
 }

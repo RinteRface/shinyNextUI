@@ -1,3 +1,5 @@
 .Rproj.user
 js/node_modules
 docs
+
+/.quarto/

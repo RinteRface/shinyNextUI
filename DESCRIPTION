@@ -1,20 +1,24 @@
 Package: shinyNextUI
-Title: NextUI Library for Shiny
-Version: 0.0.0.9000
+Title: HeroUI 'React' Template for 'shiny' apps
+Version: 0.1.0
 Authors@R: 
-    person("David", "Granjon", , "dgranjon@ymail.com", role = c("aut", "cre"))
-Description: A set of UI components to create beautiful Shiny apps with
-    the power of React JS. 
+    c(
+        person("David", "Granjon", , "dgranjon@ymail.com", role = c("aut", "cre")),
+        person(family = "Next UI Inc", role = c("ctb", "cph"), comment = "HeroUI template")
+    )
+Description: A set of UI components to create outstanding 'shiny' apps with
+    the power of 'React' JS. Seamlessly support dark and light themes, customize CSS with
+    'tailwind'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: https://rinterface.github.io/shinyNextUI/
 Imports:
-  htmltools,
-  shiny,
-  shiny.react,
-  jsonlite
+    htmltools,
+    shiny,
+    shiny.react,
+    jsonlite
 Suggests: 
     testthat (>= 3.0.0),
     shinytest2,

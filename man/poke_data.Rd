@@ -8,17 +8,16 @@
 \subsection{\code{poke_data}}{
 
 A nested list with 151 entries. Each sublist contains:
-\describe{
-\item{name}{Char: Pokemon name.}
-\item{description}{Char: Pokemon description.}
-\item{shape}{Char: Pokemon shape.}
-\item{sprites}{List: Front and back sprites (images).}
 \itemize{
-\item{front_default}{Char: front sprite URL}
-\item{shiny_default}{Char: front sprite URL (shiny form)}
+\item name (char): Pokemon name.
+\item description (char): Pokemon description.
+\item shape (char): Pokemon shape.
+\item sprites (list):
+\itemize{
+\item front_default (char): front sprite URL.
+\item shiny_default (char): front sprite URL (shiny form).
 }
-\item{habitat}{Char: Pokemon habitat.}
-...
+\item ...
 }
 }
 }

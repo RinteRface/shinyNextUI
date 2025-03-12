@@ -54,14 +54,14 @@ items <- list(
     list(
       dropdown_item(
         title = "Item 1",
-        shortcut = "⌘N",
+        shortcut = "\u2318N",
         color = "danger",
         description = "Item description",
         startContent = icon("clock")
       ),
       dropdown_item(
         title = "Item 2",
-        shortcut = "⌘N",
+        shortcut = "\u2318N",
         color = "success",
         description = "Item description",
         startContent = icon("home")
@@ -95,14 +95,14 @@ items <- list(
 #items <- list(
 #  dropdown_item(
 #    title = "Item 1",
-#    shortcut = "⌘N",
+#    shortcut = "\u2318N",
 #    color = "danger",
 #    description = "Item description"#,
 #    #startContent = icon("clock")
 #  ),
 #  dropdown_item(
 #    title = "Item 2",
-#    shortcut = "⌘N",
+#    shortcut = "\u2318N",
 #    color = "success",
 #    description = "Item description"#,
 #    #startContent = icon("home")

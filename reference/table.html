@@ -67,12 +67,12 @@
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>See <a href="https://nextui.org/docs/components/table" class="external-link">https://nextui.org/docs/components/table</a> to get the list of
+    <p>See <a href="https://heroui.com/docs/components/table" class="external-link">https://heroui.com/docs/components/table</a> to get the list of
 parameters to pass in <code>...</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/table" class="external-link">https://nextui.org/docs/components/table</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/table" class="external-link">https://heroui.com/docs/components/table</a>.</p></div>
     </div>
 
     <div class="section level2">
@@ -122,7 +122,10 @@ parameters to pass in <code>...</code>.</p>
 <span class="r-in"><span>    defaultSelectedKeys <span class="op">=</span> <span class="fu"><a href="https://appsilon.github.io/shiny.react/reference/JS.html" class="external-link">JS</a></span><span class="op">(</span><span class="st">"['2']"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span>,</span></span>
 <span class="r-in"><span>  <span class="fu"><a href="spacer.html">spacer</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span>class <span class="op">=</span> <span class="st">"font-extrabold text-2xl uppercase my-2"</span>, <span class="st">"Multiple selection table"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    class <span class="op">=</span> <span class="st">"font-extrabold text-2xl uppercase my-2"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Multiple selection table"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
 <span class="r-in"><span>  <span class="fu"><a href="spacer.html">spacer</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  <span class="fu">table</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">iris</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="op">]</span>,</span></span>
@@ -141,13 +144,18 @@ parameters to pass in <code>...</code>.</p>
 <span class="r-in"><span>      class <span class="op">=</span> <span class="st">"flex justify-between"</span>,</span></span>
 <span class="r-in"><span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Top content ..."</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>      <span class="fu"><a href="chip.html">chip</a></span><span class="op">(</span><span class="st">"My chip"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>      <span class="fu"><a href="badge.html">badge</a></span><span class="op">(</span><span class="fu"><a href="button.html">button</a></span><span class="op">(</span><span class="st">"CLick me"</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"success"</span>, placement <span class="op">=</span> <span class="st">"top-right"</span>, content <span class="op">=</span> <span class="st">"New"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="badge.html">badge</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="button.html">button</a></span><span class="op">(</span><span class="st">"CLick me"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>        color <span class="op">=</span> <span class="st">"success"</span>,</span></span>
+<span class="r-in"><span>        placement <span class="op">=</span> <span class="st">"top-right"</span>,</span></span>
+<span class="r-in"><span>        content <span class="op">=</span> <span class="st">"New"</span></span></span>
+<span class="r-in"><span>      <span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span>,</span></span>
 <span class="r-in"><span>    bottomContent <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>      class <span class="op">=</span> <span class="st">"flex justify-between"</span>,</span></span>
 <span class="r-in"><span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span><span class="st">"Bottom content ..."</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>      <span class="fu"><a href="link.html">link</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>        href <span class="op">=</span> <span class="st">"https://nextui.org/docs/components/table"</span>,</span></span>
+<span class="r-in"><span>        href <span class="op">=</span> <span class="st">"https://heroui.com/docs/components/table"</span>,</span></span>
 <span class="r-in"><span>        target <span class="op">=</span> <span class="st">"_blank"</span>,</span></span>
 <span class="r-in"><span>        <span class="st">"To the doc."</span></span></span>
 <span class="r-in"><span>      <span class="op">)</span></span></span>
@@ -155,7 +163,8 @@ parameters to pass in <code>...</code>.</p>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span> <span class="op">||</span> <span class="fu"><a href="is_testing.html">is_testing</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></span>
 </code></pre></div>

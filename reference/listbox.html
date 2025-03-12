@@ -76,73 +76,73 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: NA.</p></li>
-<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: NA.</p></li>
-<li><p><b>variant</b>. Type: <code>solid | bordered | light | flat | faded | shadow</code>. Default: "solid".</p></li>
-<li><p><b>color</b>. Type: <code>default | primary | secondary | success | warning | danger</code>. Default: "default".</p></li>
-<li><p><b>selectionMode</b>. Type: <code>none | single | multiple</code>. Default: NA.</p></li>
-<li><p><b>selectedKeys</b>. Type: <code>React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>disabledKeys</b>. Type: <code>React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>defaultSelectedKeys</b>. Type: <code>all | React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>shouldHighlightOnFocus</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>autoFocus</b>. Type: <code>boolean | first | last</code>. Default: false.</p></li>
-<li><p><b>topContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>bottomContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>emptyContent</b>. Type: <code>ReactNode</code>. Default: "No items.".</p></li>
-<li><p><b>shouldFocusWrap</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>virtualization</b>. Type: <code>Record&lt;"maxListboxHeight" &amp; "itemHeight", number&gt;</code>. Default: NA.</p></li>
-<li><p><b>hideEmptyContent</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" | "list" | "emptyContent", string&gt;&gt;</code>. Default: NA.</p></li>
-<li><p><b>itemClasses</b>. Type: <code>Partial&lt;Record&lt;"base" | "wrapper" | "title" | "description" | "selectedIcon", string&gt;&gt;</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onAction</b>. Type: <code>(key: React.Key) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onSelectionChange</b>. Type: <code>(keys: React.Key[]) =&gt; void</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>children*</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>title</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: NA.</p></li>
-<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>dividerProps</b>. Type: <code>DividerProps</code>. Default: NA.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" | "heading" | "group" | "divider", string&gt;&gt;</code>. Default: NA.</p></li>
-<li><p><b>itemClasses</b>. Type: <code>Partial&lt;Record&lt;"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string&gt;&gt;</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>children*</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>key</b>. Type: <code>React.Key</code>. Default: NA.</p></li>
-<li><p><b>title</b>. Type: <code>string | ReactNode</code>. Default: NA.</p></li>
-<li><p><b>textValue</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>description</b>. Type: <code>string | ReactNode</code>. Default: NA.</p></li>
-<li><p><b>shortcut</b>. Type: <code>string | ReactNode</code>. Default: NA.</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>selectedIcon</b>. Type: <code>ListboxItemSelectedIconProps</code>. Default: NA.</p></li>
-<li><p><b>href</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>target</b>. Type: <code>HTMLAttributeAnchorTarget</code>. Default: NA.</p></li>
-<li><p><b>rel</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>download</b>. Type: <code>boolean | string</code>. Default: NA.</p></li>
-<li><p><b>ping</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>referrerPolicy</b>. Type: <code>HTMLAttributeReferrerPolicy</code>. Default: NA.</p></li>
-<li><p><b>shouldHighlightOnFocus</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isSelected</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string&gt;&gt;</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onAction</b>. Type: <code>() =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPress</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressStart</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressEnd</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressChange</b>. Type: <code>(isPressed: boolean) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressUp</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onClick</b>. Type: <code>MouseEventHandler</code>. Default: NA.</p></li>
+<ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>variant</b>. Type: <code>solid OR bordered OR light OR flat OR faded OR shadow</code>. Default: <code>"solid"</code>.</p></li>
+<li><p><b>color</b>. Type: <code>default OR primary OR secondary OR success OR warning OR danger</code>. Default: <code>"default"</code>.</p></li>
+<li><p><b>selectionMode</b>. Type: <code>none OR single OR multiple</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectedKeys</b>. Type: <code>React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disabledKeys</b>. Type: <code>React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultSelectedKeys</b>. Type: <code>all OR React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>shouldHighlightOnFocus</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>autoFocus</b>. Type: <code>boolean OR first OR last</code>. Default: <code>false</code>.</p></li>
+<li><p><b>topContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>bottomContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>emptyContent</b>. Type: <code>ReactNode</code>. Default: <code>"No items."</code>.</p></li>
+<li><p><b>shouldFocusWrap</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>virtualization</b>. Type: <code>Record&lt;"maxListboxHeight" &amp; "itemHeight", number&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>hideEmptyContent</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" OR "list" OR "emptyContent", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>itemClasses</b>. Type: <code>Partial&lt;Record&lt;"base" OR "wrapper" OR "title" OR "description" OR "selectedIcon", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onAction</b>. Type: <code>(key: React.Key) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onSelectionChange</b>. Type: <code>(keys: React.Key[]) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>children*</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>title</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>dividerProps</b>. Type: <code>DividerProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" OR "heading" OR "group" OR "divider", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>itemClasses</b>. Type: <code>Partial&lt;Record&lt;"base" OR "wrapper" OR "title" OR "description" OR "shortcut" OR "selectedIcon", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>children*</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>key</b>. Type: <code>React.Key</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>title</b>. Type: <code>string OR ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>textValue</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>description</b>. Type: <code>string OR ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>shortcut</b>. Type: <code>string OR ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectedIcon</b>. Type: <code>ListboxItemSelectedIconProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>href</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>target</b>. Type: <code>HTMLAttributeAnchorTarget</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>rel</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>download</b>. Type: <code>boolean OR string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>ping</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>referrerPolicy</b>. Type: <code>HTMLAttributeReferrerPolicy</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>shouldHighlightOnFocus</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideSelectedIcon</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isSelected</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base" OR "wrapper" OR "title" OR "description" OR "shortcut" OR "selectedIcon", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onAction</b>. Type: <code>() =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPress</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressStart</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressEnd</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressChange</b>. Type: <code>(isPressed: boolean) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressUp</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onClick</b>. Type: <code>MouseEventHandler</code>. Default: <code>NA</code>.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/listbox" class="external-link">https://nextui.org/docs/components/listbox</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/listbox" class="external-link">https://heroui.com/docs/components/listbox</a>.</p></div>
     </div>
 
     <div class="section level2">

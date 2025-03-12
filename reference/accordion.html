@@ -74,55 +74,55 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ul><li><p><b>children</b>. Type: <code>ReactNode | ReactNode[]</code>. Default: NA.</p></li>
-<li><p><b>variant</b>. Type: <code>light | shadow | bordered | splitted</code>. Default: "light".</p></li>
-<li><p><b>selectionMode</b>. Type: <code>none | single | multiple</code>. Default: NA.</p></li>
-<li><p><b>selectionBehavior</b>. Type: <code>toggle | replace</code>. Default: "toggle".</p></li>
-<li><p><b>isCompact</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>dividerProps</b>. Type: <code>DividerProps</code>. Default: NA.</p></li>
-<li><p><b>hideIndicator</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableIndicatorAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>keepContentMounted</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>motionProps</b>. Type: <code>MotionProps</code>. Default: NA.</p></li>
-<li><p><b>disabledKeys</b>. Type: <code>React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>itemClasses</b>. Type: <code>AccordionItemClassnames</code>. Default: NA.</p></li>
-<li><p><b>selectedKeys</b>. Type: <code>all | React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>defaultSelectedKeys</b>. Type: <code>all | React.Key[]</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onSelectionChange</b>. Type: <code>(keys: "all" | Set&lt;React.Key&gt;) =&gt; any</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>children</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>title</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>subtitle</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>indicator</b>. Type: <code>IndicatorProps</code>. Default: NA.</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>motionProps</b>. Type: <code>MotionProps</code>. Default: NA.</p></li>
-<li><p><b>isCompact</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>keepContentMounted</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideIndicator</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableIndicatorAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>HeadingComponent</b>. Type: <code>React.ElementType</code>. Default: "h2".</p></li>
-<li><p><b>classNames</b>. Type: <code>AccordionItemClassnames</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onFocus</b>. Type: <code>(e: FocusEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onBlur</b>. Type: <code>(e: FocusEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onFocusChange</b>. Type: <code>(isFocused: boolean) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPress</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressStart</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressEnd</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressChange</b>. Type: <code>(isPressed: boolean) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onPressUp</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onClick</b>. Type: <code>MouseEventHandler</code>. Default: NA.</p></li>
+<ul><li><p><b>children</b>. Type: <code>ReactNode OR ReactNode[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>variant</b>. Type: <code>light OR shadow OR bordered OR splitted</code>. Default: <code>"light"</code>.</p></li>
+<li><p><b>selectionMode</b>. Type: <code>none OR single OR multiple</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectionBehavior</b>. Type: <code>toggle OR replace</code>. Default: <code>"toggle"</code>.</p></li>
+<li><p><b>isCompact</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>showDivider</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>dividerProps</b>. Type: <code>DividerProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>hideIndicator</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableIndicatorAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>keepContentMounted</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>motionProps</b>. Type: <code>MotionProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disabledKeys</b>. Type: <code>React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>itemClasses</b>. Type: <code>AccordionItemClassnames</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectedKeys</b>. Type: <code>all OR React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultSelectedKeys</b>. Type: <code>all OR React.Key[]</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onSelectionChange</b>. Type: <code>(keys: "all" OR Set&lt;React.Key&gt;) =&gt; any</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>children</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>title</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>subtitle</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>indicator</b>. Type: <code>IndicatorProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>motionProps</b>. Type: <code>MotionProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>isCompact</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>keepContentMounted</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideIndicator</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableIndicatorAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>HeadingComponent</b>. Type: <code>React.ElementType</code>. Default: <code>"h2"</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>AccordionItemClassnames</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onFocus</b>. Type: <code>(e: FocusEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onBlur</b>. Type: <code>(e: FocusEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onFocusChange</b>. Type: <code>(isFocused: boolean) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPress</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressStart</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressEnd</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressChange</b>. Type: <code>(isPressed: boolean) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onPressUp</b>. Type: <code>(e: PressEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onClick</b>. Type: <code>MouseEventHandler</code>. Default: <code>NA</code>.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/accordion" class="external-link">https://nextui.org/docs/components/accordion</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/accordion" class="external-link">https://heroui.com/docs/components/accordion</a>.</p></div>
     </div>
 
     <div class="section level2">

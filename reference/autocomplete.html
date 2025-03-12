@@ -76,73 +76,73 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ol><li><p>Autocomplete Props</p><ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: NA.</p></li>
-<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>name</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>variant</b>. Type: <code>flat | bordered | faded | underlined</code>. Default: "flat".</p></li>
-<li><p><b>color</b>. Type: <code>default | primary | secondary | success | warning | danger</code>. Default: "default".</p></li>
-<li><p><b>size</b>. Type: <code>sm | md | lg</code>. Default: "md".</p></li>
-<li><p><b>radius</b>. Type: <code>none | sm | md | lg | full</code>. Default: NA.</p></li>
-<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: NA.</p></li>
-<li><p><b>defaultItems</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: NA.</p></li>
-<li><p><b>inputValue</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>defaultInputValue</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>allowsCustomValue</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>allowsEmptyCollection</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>shouldCloseOnBlur</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>placeholder</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>menuTrigger</b>. Type: <code>focus | input | manual</code>. Default: "focus".</p></li>
-<li><p><b>labelPlacement</b>. Type: <code>inside | outside | outside-left</code>. Default: "inside".</p></li>
-<li><p><b>selectedKey</b>. Type: <code>React.Key</code>. Default: NA.</p></li>
-<li><p><b>defaultSelectedKey</b>. Type: <code>React.Key</code>. Default: NA.</p></li>
-<li><p><b>disabledKeys</b>. Type: <code>all | React.Key[]</code>. Default: NA.</p></li>
-<li><p><b>errorMessage</b>. Type: <code>ReactNode | ((v: ValidationResult) =&gt; ReactNode)</code>. Default: NA.</p></li>
-<li><p><b>validate</b>. Type: <code>(value: { inputValue: string, selectedKey: React.Key }) =&gt; ValidationError | true | null | undefined</code>. Default: NA.</p></li>
-<li><p><b>validationBehavior</b>. Type: <code>native | aria</code>. Default: "native".</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>autoFocus</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>defaultFilter</b>. Type: <code>(textValue: string, inputValue: string) =&gt; boolean</code>. Default: NA.</p></li>
-<li><p><b>filterOptions</b>. Type: <code>Intl.CollatorOptions</code>. Default: " sensitivity: 'base'".</p></li>
-<li><p><b>maxListboxHeight</b>. Type: <code>number</code>. Default: "256".</p></li>
-<li><p><b>itemHeight</b>. Type: <code>number</code>. Default: "32".</p></li>
-<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: "undefined".</p></li>
-<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>selectorIcon</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>clearIcon</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>showScrollIndicators</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>scrollRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>inputProps</b>. Type: <code>InputProps</code>. Default: NA.</p></li>
-<li><p><b>popoverProps</b>. Type: <code>PopoverProps</code>. Default: NA.</p></li>
-<li><p><b>listboxProps</b>. Type: <code>ListboxProps</code>. Default: NA.</p></li>
-<li><p><b>scrollShadowProps</b>. Type: <code>ScrollShadowProps</code>. Default: NA.</p></li>
-<li><p><b>selectorButtonProps</b>. Type: <code>ButtonProps</code>. Default: NA.</p></li>
-<li><p><b>clearButtonProps</b>. Type: <code>ButtonProps</code>. Default: NA.</p></li>
-<li><p><b>isClearable</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>disableClearable</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>disableSelectorIconRotation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;'base' | 'listboxWrapper' | 'listbox' | 'popoverContent' | 'endContentWrapper' | 'clearButton' | 'selectorButton', string&gt;&gt;</code>. Default: NA.</p></li>
+<ol><li><p>Autocomplete Props</p><ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>name</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>variant</b>. Type: <code>flat OR bordered OR faded OR underlined</code>. Default: <code>"flat"</code>.</p></li>
+<li><p><b>color</b>. Type: <code>default OR primary OR secondary OR success OR warning OR danger</code>. Default: <code>"default"</code>.</p></li>
+<li><p><b>size</b>. Type: <code>sm OR md OR lg</code>. Default: <code>"md"</code>.</p></li>
+<li><p><b>radius</b>. Type: <code>none OR sm OR md OR lg OR full</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultItems</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>inputValue</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultInputValue</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>allowsCustomValue</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>allowsEmptyCollection</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>shouldCloseOnBlur</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>placeholder</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>menuTrigger</b>. Type: <code>focus OR input OR manual</code>. Default: <code>"focus"</code>.</p></li>
+<li><p><b>labelPlacement</b>. Type: <code>inside OR outside OR outside-left</code>. Default: <code>"inside"</code>.</p></li>
+<li><p><b>selectedKey</b>. Type: <code>React.Key</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultSelectedKey</b>. Type: <code>React.Key</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disabledKeys</b>. Type: <code>all OR React.Key[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>errorMessage</b>. Type: <code>ReactNode OR ((v: ValidationResult) =&gt; ReactNode)</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>validate</b>. Type: <code>(value: { inputValue: string, selectedKey: React.Key }) =&gt; ValidationError OR true OR null OR undefined</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>validationBehavior</b>. Type: <code>native OR aria</code>. Default: <code>"native"</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>autoFocus</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>defaultFilter</b>. Type: <code>(textValue: string, inputValue: string) =&gt; boolean</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>filterOptions</b>. Type: <code>Intl.CollatorOptions</code>. Default: <code>"{ sensitivity: 'base'}"</code>.</p></li>
+<li><p><b>maxListboxHeight</b>. Type: <code>number</code>. Default: <code>"256"</code>.</p></li>
+<li><p><b>itemHeight</b>. Type: <code>number</code>. Default: <code>"32"</code>.</p></li>
+<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: <code>"undefined"</code>.</p></li>
+<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>selectorIcon</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>clearIcon</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>showScrollIndicators</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>scrollRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>inputProps</b>. Type: <code>InputProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>popoverProps</b>. Type: <code>PopoverProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>listboxProps</b>. Type: <code>ListboxProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>scrollShadowProps</b>. Type: <code>ScrollShadowProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectorButtonProps</b>. Type: <code>ButtonProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>clearButtonProps</b>. Type: <code>ButtonProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>isClearable</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>disableClearable</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>disableSelectorIconRotation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;'base' OR 'listboxWrapper' OR 'listbox' OR 'popoverContent' OR 'endContentWrapper' OR 'clearButton' OR 'selectorButton', string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
 </ul></li>
-<li><p>Autocomplete Events</p><ul><li><p><b>onOpenChange</b>. Type: <code>(isOpen: boolean, menuTrigger?: MenuTriggerAction) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onInputChange</b>. Type: <code>(value: string) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onSelectionChange</b>. Type: <code>(key: React.Key) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onFocus</b>. Type: <code>(e: FocusEvent&lt;HTMLInputElement&gt;) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onBlur</b>. Type: <code>(e: FocusEvent&lt;HTMLInputElement&gt;) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onFocusChange</b>. Type: <code>(isFocused: boolean) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onClose</b>. Type: <code>() =&gt; void</code>. Default: NA.</p></li>
+<li><p>Autocomplete Events</p><ul><li><p><b>onOpenChange</b>. Type: <code>(isOpen: boolean, menuTrigger?: MenuTriggerAction) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onInputChange</b>. Type: <code>(value: string) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onSelectionChange</b>. Type: <code>(key: React.Key) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onFocus</b>. Type: <code>(e: FocusEvent&lt;HTMLInputElement&gt;) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onBlur</b>. Type: <code>(e: FocusEvent&lt;HTMLInputElement&gt;) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onFocusChange</b>. Type: <code>(isFocused: boolean) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyDown</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onKeyUp</b>. Type: <code>(e: KeyboardEvent) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onClose</b>. Type: <code>() =&gt; void</code>. Default: <code>NA</code>.</p></li>
 </ul></li>
 </ol></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/autocomplete" class="external-link">https://nextui.org/docs/components/autocomplete</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/autocomplete" class="external-link">https://heroui.com/docs/components/autocomplete</a>.</p></div>
     </div>
 
     <div class="section level2">

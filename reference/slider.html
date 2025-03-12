@@ -72,42 +72,42 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ul><li><p><b>label</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>name</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>size</b>. Type: <code>sm | md | lg</code>. Default: "md".</p></li>
-<li><p><b>color</b>. Type: <code>foreground | primary | secondary | success | warning | danger</code>. Default: "primary".</p></li>
-<li><p><b>radius</b>. Type: <code>none | sm | md | lg | full</code>. Default: "full".</p></li>
-<li><p><b>step</b>. Type: <code>number</code>. Default: "1".</p></li>
-<li><p><b>value</b>. Type: <code>number</code>. Default: NA.</p></li>
-<li><p><b>defaultValue</b>. Type: <code>number</code>. Default: NA.</p></li>
-<li><p><b>minValue</b>. Type: <code>number</code>. Default: "0".</p></li>
-<li><p><b>maxValue</b>. Type: <code>number</code>. Default: "100".</p></li>
-<li><p><b>orientation</b>. Type: <code>horizontal | vertical</code>. Default: "horizontal".</p></li>
-<li><p><b>fillOffset</b>. Type: <code>number</code>. Default: NA.</p></li>
-<li><p><b>showSteps</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>showTooltip</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>marks</b>. Type: <code>SliderStepMarks</code>. Default: NA.</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>formatOptions</b>. Type: <code>Intl.NumberFormat</code>. Default: NA.</p></li>
-<li><p><b>tooltipValueFormatOptions</b>. Type: <code>Intl.NumberFormat</code>. Default: NA.</p></li>
-<li><p><b>tooltipProps</b>. Type: <code>TooltipProps</code>. Default: NA.</p></li>
-<li><p><b>showOutline</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideValue</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideThumb</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableThumbScale</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-</ul><ul><li><p><b>getValue</b>. Type: <code>(value: SliderValue) =&gt; string</code>. Default: NA.</p></li>
-<li><p><b>renderLabel</b>. Type: <code>(props: DOMAttributes&lt;HTMLLabelElement&gt;) =&gt; ReactNode</code>. Default: NA.</p></li>
-<li><p><b>renderValue</b>. Type: <code>(props: DOMAttributes&lt;HTMLOutputElement&gt;) =&gt; ReactNode</code>. Default: NA.</p></li>
-<li><p><b>renderThumb</b>. Type: <code>(props: DOMAttributes&lt;HTMLDivElement&gt; &amp; {index?: number}) =&gt; ReactNode</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onChange</b>. Type: <code>(value: SliderValue) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onChangeEnd</b>. Type: <code>(value: SliderValue) =&gt; void</code>. Default: NA.</p></li>
+<ul><li><p><b>label</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>name</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>size</b>. Type: <code>sm OR md OR lg</code>. Default: <code>"md"</code>.</p></li>
+<li><p><b>color</b>. Type: <code>foreground OR primary OR secondary OR success OR warning OR danger</code>. Default: <code>"primary"</code>.</p></li>
+<li><p><b>radius</b>. Type: <code>none OR sm OR md OR lg OR full</code>. Default: <code>"full"</code>.</p></li>
+<li><p><b>step</b>. Type: <code>number</code>. Default: <code>"1"</code>.</p></li>
+<li><p><b>value</b>. Type: <code>number</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultValue</b>. Type: <code>number</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>minValue</b>. Type: <code>number</code>. Default: <code>"0"</code>.</p></li>
+<li><p><b>maxValue</b>. Type: <code>number</code>. Default: <code>"100"</code>.</p></li>
+<li><p><b>orientation</b>. Type: <code>horizontal OR vertical</code>. Default: <code>"horizontal"</code>.</p></li>
+<li><p><b>fillOffset</b>. Type: <code>number</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>showSteps</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>showTooltip</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>marks</b>. Type: <code>SliderStepMarks</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>formatOptions</b>. Type: <code>Intl.NumberFormat</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>tooltipValueFormatOptions</b>. Type: <code>Intl.NumberFormat</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>tooltipProps</b>. Type: <code>TooltipProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>showOutline</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideValue</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideThumb</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableThumbScale</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+</ul><ul><li><p><b>getValue</b>. Type: <code>(value: SliderValue) =&gt; string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>renderLabel</b>. Type: <code>(props: DOMAttributes&lt;HTMLLabelElement&gt;) =&gt; ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>renderValue</b>. Type: <code>(props: DOMAttributes&lt;HTMLOutputElement&gt;) =&gt; ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>renderThumb</b>. Type: <code>(props: DOMAttributes&lt;HTMLDivElement&gt; &amp; {index?: number}) =&gt; ReactNode</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onChange</b>. Type: <code>(value: SliderValue) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onChangeEnd</b>. Type: <code>(value: SliderValue) =&gt; void</code>. Default: <code>NA</code>.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/slider" class="external-link">https://nextui.org/docs/components/slider</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/slider" class="external-link">https://heroui.com/docs/components/slider</a>.</p></div>
     </div>
 
     <div class="section level2">

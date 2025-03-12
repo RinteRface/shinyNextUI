@@ -80,42 +80,42 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ul><li><p><b>children</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>variant</b>. Type: <code>flat | bordered | faded | underlined</code>. Default: "flat".</p></li>
-<li><p><b>color</b>. Type: <code>default | primary | secondary | success | warning | danger</code>. Default: "default".</p></li>
-<li><p><b>size</b>. Type: <code>sm | md | lg</code>. Default: "md".</p></li>
-<li><p><b>radius</b>. Type: <code>none | sm | md | lg | full</code>. Default: NA.</p></li>
-<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>value</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>defaultValue</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>placeholder</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>errorMessage</b>. Type: <code>ReactNode | ((v: ValidationResult) =&gt; ReactNode)</code>. Default: NA.</p></li>
-<li><p><b>validate</b>. Type: <code>(value: string) =&gt; ValidationError | true | null | undefined</code>. Default: NA.</p></li>
-<li><p><b>validationBehavior</b>. Type: <code>native | aria</code>. Default: "native".</p></li>
-<li><p><b>minLength</b>. Type: <code>number</code>. Default: NA.</p></li>
-<li><p><b>maxLength</b>. Type: <code>number</code>. Default: NA.</p></li>
-<li><p><b>pattern</b>. Type: <code>string</code>. Default: NA.</p></li>
-<li><p><b>type</b>. Type: <code>text | email | url | password | tel | search | file</code>. Default: "text".</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>labelPlacement</b>. Type: <code>inside | outside | outside-left</code>. Default: "inside".</p></li>
-<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>isClearable</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>baseRef</b>. Type: <code>RefObject&lt;HTMLDivElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;'base' | 'label' | 'inputWrapper' | 'innerWrapper' | 'mainWrapper' | 'input' | 'clearButton' | 'helperWrapper' | 'description' | 'errorMessage', string&gt;&gt;</code>. Default: NA.</p></li>
-</ul><ul><li><p><b>onChange</b>. Type: <code>React.ChangeEvent&lt;HTMLInputElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>onValueChange</b>. Type: <code>(value: string) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onClear</b>. Type: <code>() =&gt; void</code>. Default: NA.</p></li>
+<ul><li><p><b>children</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>variant</b>. Type: <code>flat OR bordered OR faded OR underlined</code>. Default: <code>"flat"</code>.</p></li>
+<li><p><b>color</b>. Type: <code>default OR primary OR secondary OR success OR warning OR danger</code>. Default: <code>"default"</code>.</p></li>
+<li><p><b>size</b>. Type: <code>sm OR md OR lg</code>. Default: <code>"md"</code>.</p></li>
+<li><p><b>radius</b>. Type: <code>none OR sm OR md OR lg OR full</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>value</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultValue</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>placeholder</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>errorMessage</b>. Type: <code>ReactNode OR ((v: ValidationResult) =&gt; ReactNode)</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>validate</b>. Type: <code>(value: string) =&gt; ValidationError OR true OR null OR undefined</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>validationBehavior</b>. Type: <code>native OR aria</code>. Default: <code>"native"</code>.</p></li>
+<li><p><b>minLength</b>. Type: <code>number</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>maxLength</b>. Type: <code>number</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>pattern</b>. Type: <code>string</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>type</b>. Type: <code>text OR email OR url OR password OR tel OR search OR file</code>. Default: <code>"text"</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>labelPlacement</b>. Type: <code>inside OR outside OR outside-left</code>. Default: <code>"inside"</code>.</p></li>
+<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>isClearable</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isReadOnly</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>baseRef</b>. Type: <code>RefObject&lt;HTMLDivElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;'base' OR 'label' OR 'inputWrapper' OR 'innerWrapper' OR 'mainWrapper' OR 'input' OR 'clearButton' OR 'helperWrapper' OR 'description' OR 'errorMessage', string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+</ul><ul><li><p><b>onChange</b>. Type: <code>React.ChangeEvent&lt;HTMLInputElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onValueChange</b>. Type: <code>(value: string) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onClear</b>. Type: <code>() =&gt; void</code>. Default: <code>NA</code>.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/input" class="external-link">https://nextui.org/docs/components/input</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/input" class="external-link">https://heroui.com/docs/components/input</a>.</p></div>
     </div>
 
     <div class="section level2">

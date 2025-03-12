@@ -76,57 +76,57 @@ The update functions return nothing (called for side effects).</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
-<ol><li><p>Select Props</p><ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: NA.</p></li>
-<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: NA.</p></li>
-<li><p><b>selectionMode</b>. Type: <code>single | multiple</code>. Default: NA.</p></li>
-<li><p><b>selectedKeys</b>. Type: <code>all | Iterable&lt;React.Key&gt;</code>. Default: NA.</p></li>
-<li><p><b>disabledKeys</b>. Type: <code>Iterable&lt;React.Key&gt;</code>. Default: NA.</p></li>
-<li><p><b>defaultSelectedKeys</b>. Type: <code>all | Iterable&lt;React.Key&gt;</code>. Default: NA.</p></li>
-<li><p><b>variant</b>. Type: <code>flat | bordered | faded | underlined</code>. Default: "flat".</p></li>
-<li><p><b>color</b>. Type: <code>default | primary | secondary | success | warning | danger</code>. Default: "default".</p></li>
-<li><p><b>size</b>. Type: <code>sm | md | lg</code>. Default: "md".</p></li>
-<li><p><b>radius</b>. Type: <code>none | sm | md | lg | full</code>. Default: NA.</p></li>
-<li><p><b>placeholder</b>. Type: <code>string</code>. Default: "Select an option".</p></li>
-<li><p><b>labelPlacement</b>. Type: <code>inside | outside | outside-left</code>. Default: "inside".</p></li>
-<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>errorMessage</b>. Type: <code>ReactNode | ((v: ValidationResult) =&gt; ReactNode)</code>. Default: NA.</p></li>
-<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>selectorIcon</b>. Type: <code>ReactNode</code>. Default: NA.</p></li>
-<li><p><b>scrollRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>spinnerRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>maxListboxHeight</b>. Type: <code>number</code>. Default: "256".</p></li>
-<li><p><b>itemHeight</b>. Type: <code>number</code>. Default: "32".</p></li>
-<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: "undefined".</p></li>
-<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>isOpen</b>. Type: <code>boolean</code>. Default: NA.</p></li>
-<li><p><b>defaultOpen</b>. Type: <code>boolean</code>. Default: NA.</p></li>
-<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isMultiline</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>validationState</b>. Type: <code>valid | invalid</code>. Default: NA.</p></li>
-<li><p><b>showScrollIndicators</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>autoFocus</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: true.</p></li>
-<li><p><b>disableSelectorIconRotation</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>hideEmptyContent</b>. Type: <code>boolean</code>. Default: false.</p></li>
-<li><p><b>popoverProps</b>. Type: <code>PopoverProps</code>. Default: NA.</p></li>
-<li><p><b>listboxProps</b>. Type: <code>ListboxProps</code>. Default: NA.</p></li>
-<li><p><b>scrollShadowProps</b>. Type: <code>ScrollShadowProps</code>. Default: NA.</p></li>
-<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string&gt;&gt;</code>. Default: NA.</p></li>
-</ul><p>2. Select Events</p><ul><li><p><b>onClose</b>. Type: <code>() =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onOpenChange</b>. Type: <code>(isOpen: boolean) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onSelectionChange</b>. Type: <code>(keys: "all" | Set&lt;React.Key&gt; &amp; {anchorKey?: string; currentKey?: string}) =&gt; void</code>. Default: NA.</p></li>
-<li><p><b>onChange</b>. Type: <code>React.ChangeEvent&lt;HTMLSelectElement&gt;</code>. Default: NA.</p></li>
-<li><p><b>renderValue</b>. Type: <code>RenderValueFunction</code>. Default: NA.</p></li>
+<ol><li><p>Select Props</p><ul><li><p><b>children*</b>. Type: <code>ReactNode[]</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>items</b>. Type: <code>Iterable&lt;T&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectionMode</b>. Type: <code>single OR multiple</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectedKeys</b>. Type: <code>all OR Iterable&lt;React.Key&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>disabledKeys</b>. Type: <code>Iterable&lt;React.Key&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultSelectedKeys</b>. Type: <code>all OR Iterable&lt;React.Key&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>variant</b>. Type: <code>flat OR bordered OR faded OR underlined</code>. Default: <code>"flat"</code>.</p></li>
+<li><p><b>color</b>. Type: <code>default OR primary OR secondary OR success OR warning OR danger</code>. Default: <code>"default"</code>.</p></li>
+<li><p><b>size</b>. Type: <code>sm OR md OR lg</code>. Default: <code>"md"</code>.</p></li>
+<li><p><b>radius</b>. Type: <code>none OR sm OR md OR lg OR full</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>placeholder</b>. Type: <code>string</code>. Default: <code>"Select an option"</code>.</p></li>
+<li><p><b>labelPlacement</b>. Type: <code>inside OR outside OR outside-left</code>. Default: <code>"inside"</code>.</p></li>
+<li><p><b>label</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>description</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>errorMessage</b>. Type: <code>ReactNode OR ((v: ValidationResult) =&gt; ReactNode)</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>startContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>endContent</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>selectorIcon</b>. Type: <code>ReactNode</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>scrollRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>spinnerRef</b>. Type: <code>React.RefObject&lt;HTMLElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>maxListboxHeight</b>. Type: <code>number</code>. Default: <code>"256"</code>.</p></li>
+<li><p><b>itemHeight</b>. Type: <code>number</code>. Default: <code>"32"</code>.</p></li>
+<li><p><b>isVirtualized</b>. Type: <code>boolean</code>. Default: <code>"undefined"</code>.</p></li>
+<li><p><b>fullWidth</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>isOpen</b>. Type: <code>boolean</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>defaultOpen</b>. Type: <code>boolean</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>isRequired</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isDisabled</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isMultiline</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>isInvalid</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>validationState</b>. Type: <code>valid OR invalid</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>showScrollIndicators</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>autoFocus</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disallowEmptySelection</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>disableAnimation</b>. Type: <code>boolean</code>. Default: <code>true</code>.</p></li>
+<li><p><b>disableSelectorIconRotation</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>hideEmptyContent</b>. Type: <code>boolean</code>. Default: <code>false</code>.</p></li>
+<li><p><b>popoverProps</b>. Type: <code>PopoverProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>listboxProps</b>. Type: <code>ListboxProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>scrollShadowProps</b>. Type: <code>ScrollShadowProps</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>classNames</b>. Type: <code>Partial&lt;Record&lt;"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string&gt;&gt;</code>. Default: <code>NA</code>.</p></li>
+</ul><p>2. Select Events</p><ul><li><p><b>onClose</b>. Type: <code>() =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onOpenChange</b>. Type: <code>(isOpen: boolean) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onSelectionChange</b>. Type: <code>(keys: "all" OR Set&lt;React.Key&gt; &amp; {anchorKey?: string; currentKey?: string}) =&gt; void</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>onChange</b>. Type: <code>React.ChangeEvent&lt;HTMLSelectElement&gt;</code>. Default: <code>NA</code>.</p></li>
+<li><p><b>renderValue</b>. Type: <code>RenderValueFunction</code>. Default: <code>NA</code>.</p></li>
 </ul></li>
 </ol></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>See <a href="https://nextui.org/docs/components/select" class="external-link">https://nextui.org/docs/components/select</a>.</p></div>
+    <div class="dont-index"><p>See <a href="https://heroui.com/docs/components/select" class="external-link">https://heroui.com/docs/components/select</a>.</p></div>
     </div>
 
     <div class="section level2">

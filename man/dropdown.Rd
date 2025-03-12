@@ -34,7 +34,7 @@ The update functions return nothing (called for side effects).
 Dropdown menu
 }
 \details{
-See \url{https://nextui.org/docs/components/dropdown}
+See \url{https://heroui.com/docs/components/dropdown}
 to get the list of parameters to pass in \code{...}.
 }
 \note{
@@ -68,7 +68,7 @@ items <- list(
       ),
       dropdown_item(
         title = "External link",
-        href = "https://nextui.org/",
+        href = "https://heroui.com/",
         target = "_blank",
         description = "Go to nextui documentation"
       )
@@ -136,5 +136,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/dropdown}.
+See \url{https://heroui.com/docs/components/dropdown}.
 }

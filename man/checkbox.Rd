@@ -50,7 +50,7 @@ Checkboxes allow users to select multiple items from a list of individual items,
 \item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{validationState}. Type: \code{valid OR invalid}. Default: \code{NA}.
 \item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "wrapper"OR "icon"OR "label", string>>}. Default: \code{NA}.
 }
 \itemize{
 \item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.

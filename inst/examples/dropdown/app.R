@@ -25,7 +25,7 @@ items <- list(
       ),
       dropdown_item(
         title = "External link",
-        href = "https://nextui.org/",
+        href = "https://heroui.com/",
         target = "_blank",
         description = "Go to nextui documentation"
       )

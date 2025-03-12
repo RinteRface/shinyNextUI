@@ -183,7 +183,7 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/button}
+See \url{https://heroui.com/docs/components/button}
 and \link{action_button} to get the list of possible parameters.
 
 See \url{https://heroui.com/docs/components/button}.

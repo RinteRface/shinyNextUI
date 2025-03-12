@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @example inst/examples/button/app.R
-#' @seealso See \url{https://nextui.org/docs/components/button}
+#' @seealso See \url{https://heroui.com/docs/components/button}
 #' and \link{action_button} to get the list of possible parameters.
 #' @rdname button
 actionButton <- function(inputId, label, icon = NULL, width = NULL, ...) {

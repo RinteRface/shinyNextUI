@@ -31,7 +31,7 @@ Badges are used as a small numerical value or status descriptor for UI elements.
 \item \bold{isInvisible}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{isOneChar}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{isDot}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"badge", string>>}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR"badge", string>>}. Default: \code{NA}.
 }
 }
 \examples{

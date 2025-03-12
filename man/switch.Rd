@@ -42,7 +42,7 @@ The Switch component is used as an alternative between checked and not checked s
 \item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{NA}.
 \item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: ZCExHWXcIqjNzVTarqOIIVG5x9vg90pc-27\code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "wrapper"OR "thumb"OR "label" OR "startContent" OR "endContent" OR "thumbIcon" , string>>}. Default: \code{NA}.
 }
 \itemize{
 \item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.

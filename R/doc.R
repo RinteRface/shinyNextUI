@@ -223,7 +223,7 @@ NULL
 #'\item \bold{isInvisible}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{isOneChar}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{isDot}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"badge", string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR"badge", string>>}. Default: \code{NA}.
 #' }
 #' @md
 #' @name badge
@@ -340,7 +340,7 @@ NULL
 #'\item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{validationState}. Type: \code{valid OR invalid}. Default: \code{NA}.
 #'\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "icon"｜ "label", string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "wrapper"OR "icon"OR "label", string>>}. Default: \code{NA}.
 #' }
 #' \itemize{
 #'\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.
@@ -373,7 +373,7 @@ NULL
 #'\item \bold{strokeWidth}. Type: \code{number}. Default: \code{"2"}.
 #'\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<'base'｜'svgWrapper'｜'svg'｜'track'｜'indicator'｜'value'｜'label', string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<'base'OR'svgWrapper'OR'svg'OR'track'OR'indicator'OR'value'OR'label', string>>}. Default: \code{NA}.
 #' }
 #' @md
 #' @name circular-progress
@@ -564,7 +564,7 @@ NULL
 #' link
 #'
 #' @description
-#' Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an <a>
+#' Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an &lt;a&gt;
 #'
 #' @details
 #'
@@ -951,7 +951,7 @@ NULL
 #'\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: \code{NA}.
 #'\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: \code{NA}.
 #'\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: \code{NA}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "label"OR "trigger"OR "mainWrapper" OR "innerWrapper"OR "selectorIcon" OR "value" OR "listboxWrapper"OR "listbox" OR "popoverContent" OR "helperWrapper" OR "description" OR "errorMessage", string>>}. Default: \code{NA}.
 #' }
 #' 2. Select Events
 #' \itemize{
@@ -1092,7 +1092,7 @@ NULL
 #'\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{NA}.
 #'\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "wrapper"OR "thumb"OR "label" OR "startContent" OR "endContent" OR "thumbIcon" , string>>}. Default: \code{NA}.
 #' }
 #' \itemize{
 #'\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.
@@ -1128,7 +1128,7 @@ NULL
 #'\item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel" ｜ "tabWrapper", string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "tabList"OR "tab"OR "tabContent"OR "cursor" OR "panel" OR "tabWrapper", string>>}. Default: \code{NA}.
 #'\item \bold{placement}. Type: \code{top OR bottom OR start OR end}. Default: \code{"top"}.
 #'\item \bold{isVertical}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{destroyInactiveTabPanel}. Type: \code{boolean}. Default: \code{true}.
@@ -1238,7 +1238,7 @@ NULL
 #'\item \bold{updatePositionDeps}. Type: \code{any[]}. Default: \code{"[]"}.
 #'\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 #'\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-#'\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"content", string>>}. Default: \code{NA}.
+#'\item \bold{classNames}. Type: \code{Partial<Record<"base"OR"content", string>>}. Default: \code{NA}.
 #' }
 #' \itemize{
 #'\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.

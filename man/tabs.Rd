@@ -47,7 +47,7 @@ Tabs organize content into multiple sections and allow users to navigate between
 \item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: L091xCgrsw3u5zXqmoHFBYKIgEOF7Zg9-33\code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "tabList"OR "tab"OR "tabContent"OR "cursor" OR "panel" OR "tabWrapper", string>>}. Default: \code{NA}.
 \item \bold{placement}. Type: \code{top OR bottom OR start OR end}. Default: \code{"top"}.
 \item \bold{isVertical}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{destroyInactiveTabPanel}. Type: \code{boolean}. Default: \code{true}.

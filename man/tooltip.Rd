@@ -43,7 +43,7 @@ Tooltips display a brief, informative message that appears when a user interacts
 \item \bold{updatePositionDeps}. Type: \code{any[]}. Default: \code{"[]"}.
 \item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"content", string>>}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR"content", string>>}. Default: \code{NA}.
 }
 \itemize{
 \item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.

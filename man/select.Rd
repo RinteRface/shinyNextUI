@@ -77,9 +77,9 @@ A select displays a collapsible list of options and allows a user to select one 
 \item \bold{popoverProps}. Type: \code{PopoverProps}. Default: \code{NA}.
 \item \bold{listboxProps}. Type: \code{ListboxProps}. Default: \code{NA}.
 \item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: \code{NA}.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"OR "label"OR "trigger"OR "mainWrapper" OR "innerWrapper"OR "selectorIcon" OR "value" OR "listboxWrapper"OR "listbox" OR "popoverContent" OR "helperWrapper" OR "description" OR "errorMessage", string>>}. Default: \code{NA}.
 }
-2. Select Events
+\item Select Events
 \itemize{
 \item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
 \item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.

@@ -30,7 +30,7 @@ update_checkboxgroup_input(
 Checkbox group input
 }
 \details{
-See \url{https://nextui.org/docs/components/checkbox-group}
+See \url{https://heroui.com/docs/components/checkbox-group}
 to get the list of parameters to pass in \code{...}.
 }
 \examples{
@@ -75,5 +75,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/checkbox-group}.
+See \url{https://heroui.com/docs/components/checkbox-group}.
 }

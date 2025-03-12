@@ -26,7 +26,7 @@ generate_details <- function(x) {
           sprintf(
             "#'  \\item \\bold{%s}. Type: \\code{%s}. Default: \\code{%s}.",
             attribute,
-            gsub("\\|", "OR", type),
+            gsub("\uFF5C", "OR", gsub("\\|", "OR", type)),
             default
           )
         },
@@ -177,7 +177,7 @@ get_element_api <- function(el, context) {
 
   list(
     title = el,
-    description = description,
+    description = htmltools::htmlEscape(description),
     #details = details,
     params = params,
     url = url

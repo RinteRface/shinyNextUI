@@ -32,7 +32,7 @@ Circular progress indicators are utilized to indicate an undetermined wait perio
 \item \bold{strokeWidth}. Type: \code{number}. Default: \code{"2"}.
 \item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 \item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
-\item \bold{classNames}. Type: usttXdx93NiU3qkUx6pDOr6wjnT6lwVY-27\code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base'OR'svgWrapper'OR'svg'OR'track'OR'indicator'OR'value'OR'label', string>>}. Default: \code{NA}.
 }
 }
 \examples{

@@ -30,7 +30,7 @@ The current roadmap:
 
 - Provide more aliases to match Shiny's vanilla notations like `selectInput`, ...
 - Refine the navbar template.
-- Allow to dynamically create [themes](https://nextui.org/docs/customization/theme).
+- Allow to dynamically create [themes](https://heroui.com/docs/customization/theme).
 
 `{shinyNextUI}` leverages tailwind css and some [rules](https://github.com/RinteRface/shinyNextUI/blob/main/js/src/output.css) have already been pre-compiled to use in the various [examples](https://github.com/RinteRface/shinyNextUI/tree/main/inst/examples). If you need custom styles, you can use the [`{windy}`](https://github.com/devOpifex/windy) package.
 

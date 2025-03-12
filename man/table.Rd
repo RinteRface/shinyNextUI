@@ -33,7 +33,7 @@ table(data = NULL, ...)
 Table widget
 }
 \details{
-See \url{https://nextui.org/docs/components/table} to get the list of
+See \url{https://heroui.com/docs/components/table} to get the list of
 parameters to pass in \code{...}.
 }
 \examples{
@@ -82,7 +82,10 @@ ui <- nextui_page(
     defaultSelectedKeys = JS("['2']")
   ),
   spacer(y = 5),
-  p(class = "font-extrabold text-2xl uppercase my-2", "Multiple selection table"),
+  p(
+    class = "font-extrabold text-2xl uppercase my-2",
+    "Multiple selection table"
+  ),
   spacer(y = 2),
   table(
     iris[1:5, ],
@@ -101,13 +104,18 @@ ui <- nextui_page(
       class = "flex justify-between",
       p("Top content ..."),
       chip("My chip"),
-      badge(button("CLick me"), color = "success", placement = "top-right", content = "New")
+      badge(
+        button("CLick me"),
+        color = "success",
+        placement = "top-right",
+        content = "New"
+      )
     ),
     bottomContent = div(
       class = "flex justify-between",
       p("Bottom content ..."),
       link(
-        href = "https://nextui.org/docs/components/table",
+        href = "https://heroui.com/docs/components/table",
         target = "_blank",
         "To the doc."
       )
@@ -115,11 +123,12 @@ ui <- nextui_page(
   )
 )
 
-server <- function(input, output, session) {}
+server <- function(input, output, session) {
+}
 
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/table}.
+See \url{https://heroui.com/docs/components/table}.
 }
 \keyword{internal}

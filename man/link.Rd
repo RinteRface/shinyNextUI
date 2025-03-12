@@ -14,7 +14,7 @@ The allowed props are listed below in the \bold{Details} section.}
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
 }
 \description{
-Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an \if{html}{\out{<a>}}
+Links allow users to click their way from page to page. This component is styled to resemble a hyperlink and semantically renders an <a>
 }
 \details{
 \itemize{

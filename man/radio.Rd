@@ -33,7 +33,7 @@ A radio input tag.
 Radio input
 }
 \details{
-See \url{https://nextui.org/docs/components/radio-group}
+See \url{https://heroui.com/docs/components/radio-group}
 to get the list of parameters to pass in \code{...}.
 }
 \examples{
@@ -79,5 +79,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/radio-group}.
+See \url{https://heroui.com/docs/components/radio-group}.
 }

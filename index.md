@@ -21,7 +21,7 @@ The current roadmap:
     `selectInput`, …
 -   Refine the navbar template.
 -   Allow to dynamically create
-    [themes](https://nextui.org/docs/customization/theme).
+    [themes](https://heroui.com/docs/customization/theme).
 
 `{shinyNextUI}` leverages tailwind css and some
 [rules](https://github.com/RinteRface/shinyNextUI/blob/main/js/src/output.css)

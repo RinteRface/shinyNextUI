@@ -19,20 +19,20 @@ Circular progress indicators are utilized to indicate an undetermined wait perio
 }
 \details{
 \itemize{
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
-\item \bold{value}. Type: \code{number}. Default: NA.
-\item \bold{valueLabel}. Type: \code{ReactNode}. Default: NA.
-\item \bold{minValue}. Type: \code{number}. Default: "0".
-\item \bold{maxValue}. Type: \code{number}. Default: "100".
-\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: "{style: 'percent'}".
-\item \bold{isIndeterminate}. Type: \code{boolean}. Default: true.
-\item \bold{showValueLabel}. Type: \code{boolean}. Default: true.
-\item \bold{strokeWidth}. Type: \code{number}. Default: "2".
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base'｜'svgWrapper'｜'svg'｜'track'｜'indicator'｜'value'｜'label', string>>}. Default: NA.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"primary"}.
+\item \bold{value}. Type: \code{number}. Default: \code{NA}.
+\item \bold{valueLabel}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{minValue}. Type: \code{number}. Default: \code{"0"}.
+\item \bold{maxValue}. Type: \code{number}. Default: \code{"100"}.
+\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: \code{"{style: 'percent'}"}.
+\item \bold{isIndeterminate}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{showValueLabel}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{strokeWidth}. Type: \code{number}. Default: \code{"2"}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: usttXdx93NiU3qkUx6pDOr6wjnT6lwVY-27\code{NA}.
 }
 }
 \examples{
@@ -79,5 +79,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/circular-progress}.
+See \url{https://heroui.com/docs/components/circular-progress}.
 }

@@ -36,70 +36,70 @@ An autocomplete combines a text input with a listbox, allowing users to filter a
 \enumerate{
 \item Autocomplete Props
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{name}. Type: \code{string}. Default: NA.
-\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{defaultItems}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{inputValue}. Type: \code{string}. Default: NA.
-\item \bold{defaultInputValue}. Type: \code{string}. Default: NA.
-\item \bold{allowsCustomValue}. Type: \code{boolean}. Default: false.
-\item \bold{allowsEmptyCollection}. Type: \code{boolean}. Default: true.
-\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: true.
-\item \bold{placeholder}. Type: \code{string}. Default: NA.
-\item \bold{description}. Type: \code{ReactNode}. Default: NA.
-\item \bold{menuTrigger}. Type: \code{focus | input | manual}. Default: "focus".
-\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
-\item \bold{selectedKey}. Type: \code{React.Key}. Default: NA.
-\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: NA.
-\item \bold{disabledKeys}. Type: \code{all | React.Key[]}. Default: NA.
-\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
-\item \bold{validate}. Type: \code{(value: { inputValue: string, selectedKey: React.Key }) => ValidationError | true | null | undefined}. Default: NA.
-\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{autoFocus}. Type: \code{boolean}. Default: false.
-\item \bold{defaultFilter}. Type: \code{(textValue: string, inputValue: string) => boolean}. Default: NA.
-\item \bold{filterOptions}. Type: \code{Intl.CollatorOptions}. Default: "{ sensitivity: 'base'}".
-\item \bold{maxListboxHeight}. Type: \code{number}. Default: "256".
-\item \bold{itemHeight}. Type: \code{number}. Default: "32".
-\item \bold{isVirtualized}. Type: \code{boolean}. Default: "undefined".
-\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
-\item \bold{isRequired}. Type: \code{boolean}. Default: false.
-\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
-\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{clearIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: true.
-\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
-\item \bold{inputProps}. Type: \code{InputProps}. Default: NA.
-\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: NA.
-\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: NA.
-\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: NA.
-\item \bold{selectorButtonProps}. Type: \code{ButtonProps}. Default: NA.
-\item \bold{clearButtonProps}. Type: \code{ButtonProps}. Default: NA.
-\item \bold{isClearable}. Type: \code{boolean}. Default: true.
-\item \bold{disableClearable}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: true.
-\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'listboxWrapper' | 'listbox' | 'popoverContent' | 'endContentWrapper' | 'clearButton' | 'selectorButton', string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{name}. Type: \code{string}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{flat OR bordered OR faded OR underlined}. Default: \code{"flat"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{defaultItems}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{inputValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{defaultInputValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{allowsCustomValue}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{allowsEmptyCollection}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{placeholder}. Type: \code{string}. Default: \code{NA}.
+\item \bold{description}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{menuTrigger}. Type: \code{focus OR input OR manual}. Default: \code{"focus"}.
+\item \bold{labelPlacement}. Type: \code{inside OR outside OR outside-left}. Default: \code{"inside"}.
+\item \bold{selectedKey}. Type: \code{React.Key}. Default: \code{NA}.
+\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: \code{NA}.
+\item \bold{disabledKeys}. Type: \code{all OR React.Key[]}. Default: \code{NA}.
+\item \bold{errorMessage}. Type: \code{ReactNode OR ((v: ValidationResult) => ReactNode)}. Default: \code{NA}.
+\item \bold{validate}. Type: \code{(value: { inputValue: string, selectedKey: React.Key }) => ValidationError OR true OR null OR undefined}. Default: \code{NA}.
+\item \bold{validationBehavior}. Type: \code{native OR aria}. Default: \code{"native"}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{autoFocus}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{defaultFilter}. Type: \code{(textValue: string, inputValue: string) => boolean}. Default: \code{NA}.
+\item \bold{filterOptions}. Type: \code{Intl.CollatorOptions}. Default: \code{"{ sensitivity: 'base'}"}.
+\item \bold{maxListboxHeight}. Type: \code{number}. Default: \code{"256"}.
+\item \bold{itemHeight}. Type: \code{number}. Default: \code{"32"}.
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: \code{"undefined"}.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isRequired}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{clearIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: \code{NA}.
+\item \bold{inputProps}. Type: \code{InputProps}. Default: \code{NA}.
+\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: \code{NA}.
+\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: \code{NA}.
+\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: \code{NA}.
+\item \bold{selectorButtonProps}. Type: \code{ButtonProps}. Default: \code{NA}.
+\item \bold{clearButtonProps}. Type: \code{ButtonProps}. Default: \code{NA}.
+\item \bold{isClearable}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{disableClearable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'listboxWrapper' OR 'listbox' OR 'popoverContent' OR 'endContentWrapper' OR 'clearButton' OR 'selectorButton', string>>}. Default: \code{NA}.
 }
 \item Autocomplete Events
 \itemize{
-\item \bold{onOpenChange}. Type: \code{(isOpen: boolean, menuTrigger?: MenuTriggerAction) => void}. Default: NA.
-\item \bold{onInputChange}. Type: \code{(value: string) => void}. Default: NA.
-\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => void}. Default: NA.
-\item \bold{onFocus}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: NA.
-\item \bold{onBlur}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: NA.
-\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: NA.
-\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onClose}. Type: \code{() => void}. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean, menuTrigger?: MenuTriggerAction) => void}. Default: \code{NA}.
+\item \bold{onInputChange}. Type: \code{(value: string) => void}. Default: \code{NA}.
+\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => void}. Default: \code{NA}.
+\item \bold{onFocus}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: \code{NA}.
+\item \bold{onBlur}. Type: \code{(e: FocusEvent<HTMLInputElement>) => void}. Default: \code{NA}.
+\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: \code{NA}.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
 }
 }
 }
@@ -163,5 +163,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/autocomplete}.
+See \url{https://heroui.com/docs/components/autocomplete}.
 }

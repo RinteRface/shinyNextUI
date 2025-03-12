@@ -18,8 +18,8 @@ Spacer is a component used to add space between components.
 }
 \details{
 \itemize{
-\item \bold{x}. Type: \code{Space}. Default: "1".
-\item \bold{y}. Type: \code{Space}. Default: "1".
+\item \bold{x}. Type: \code{Space}. Default: \code{"1"}.
+\item \bold{y}. Type: \code{Space}. Default: \code{"1"}.
 }
 }
 \examples{
@@ -49,5 +49,5 @@ server <- function(input, output, session) {}
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/layout/spacer}.
+See \url{https://heroui.com/docs/layout/spacer}.
 }

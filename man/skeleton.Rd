@@ -18,10 +18,10 @@ Skeleton is a placeholder to show a loading state and the expected shape of a co
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isLoaded}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "content", string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isLoaded}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "content", string>>}. Default: \code{NA}.
 }
 }
 \examples{
@@ -65,5 +65,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/skeleton}.
+See \url{https://heroui.com/docs/components/skeleton}.
 }

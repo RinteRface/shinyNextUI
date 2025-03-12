@@ -18,11 +18,11 @@ Display user information with avatar and name.
 }
 \details{
 \itemize{
-\item \bold{name}. Type: \code{string}. Default: NA.
-\item \bold{description}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isFocusable}. Type: \code{boolean}. Default: false.
-\item \bold{avatarProps}. Type: \code{AvatarProps}. Default: NA.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "wrapper" | "name" | "description", string>>}. Default: NA.
+\item \bold{name}. Type: \code{string}. Default: \code{NA}.
+\item \bold{description}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isFocusable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{avatarProps}. Type: \code{AvatarProps}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "wrapper" OR "name" OR "description", string>>}. Default: \code{NA}.
 }
 }
 \examples{
@@ -48,5 +48,5 @@ server <- function(input, output, session) {}
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/user}.
+See \url{https://heroui.com/docs/components/user}.
 }

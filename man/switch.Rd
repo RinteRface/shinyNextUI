@@ -29,24 +29,24 @@ The Switch component is used as an alternative between checked and not checked s
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{value}. Type: \code{string}. Default: NA.
-\item \bold{name}. Type: \code{string}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "primary".
-\item \bold{thumbIcon}. Type: \code{ThumbIconProps}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isSelected}. Type: \code{boolean}. Default: NA.
-\item \bold{defaultSelected}. Type: \code{boolean}. Default: NA.
-\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "wrapper"｜ "thumb"｜ "label" ｜ "startContent" ｜ "endContent" ｜ "thumbIcon" , string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{value}. Type: \code{string}. Default: \code{NA}.
+\item \bold{name}. Type: \code{string}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"primary"}.
+\item \bold{thumbIcon}. Type: \code{ThumbIconProps}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isSelected}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{defaultSelected}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: ZCExHWXcIqjNzVTarqOIIVG5x9vg90pc-27\code{NA}.
 }
 \itemize{
-\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
-\item \bold{onValueChange}. Type: \code{(isSelected: boolean) => void}. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.
+\item \bold{onValueChange}. Type: \code{(isSelected: boolean) => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -116,5 +116,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/switch}.
+See \url{https://heroui.com/docs/components/switch}.
 }

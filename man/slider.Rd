@@ -29,42 +29,42 @@ A slider allows a user to select one or more values within a range.
 }
 \details{
 \itemize{
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{name}. Type: \code{string}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{foreground | primary | secondary | success | warning | danger}. Default: "primary".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "full".
-\item \bold{step}. Type: \code{number}. Default: "1".
-\item \bold{value}. Type: \code{number}. Default: NA.
-\item \bold{defaultValue}. Type: \code{number}. Default: NA.
-\item \bold{minValue}. Type: \code{number}. Default: "0".
-\item \bold{maxValue}. Type: \code{number}. Default: "100".
-\item \bold{orientation}. Type: \code{horizontal | vertical}. Default: "horizontal".
-\item \bold{fillOffset}. Type: \code{number}. Default: NA.
-\item \bold{showSteps}. Type: \code{boolean}. Default: false.
-\item \bold{showTooltip}. Type: \code{boolean}. Default: false.
-\item \bold{marks}. Type: \code{SliderStepMarks}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: NA.
-\item \bold{tooltipValueFormatOptions}. Type: \code{Intl.NumberFormat}. Default: NA.
-\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: NA.
-\item \bold{showOutline}. Type: \code{boolean}. Default: false.
-\item \bold{hideValue}. Type: \code{boolean}. Default: false.
-\item \bold{hideThumb}. Type: \code{boolean}. Default: false.
-\item \bold{disableThumbScale}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{name}. Type: \code{string}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{foreground OR primary OR secondary OR success OR warning OR danger}. Default: \code{"primary"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"full"}.
+\item \bold{step}. Type: \code{number}. Default: \code{"1"}.
+\item \bold{value}. Type: \code{number}. Default: \code{NA}.
+\item \bold{defaultValue}. Type: \code{number}. Default: \code{NA}.
+\item \bold{minValue}. Type: \code{number}. Default: \code{"0"}.
+\item \bold{maxValue}. Type: \code{number}. Default: \code{"100"}.
+\item \bold{orientation}. Type: \code{horizontal OR vertical}. Default: \code{"horizontal"}.
+\item \bold{fillOffset}. Type: \code{number}. Default: \code{NA}.
+\item \bold{showSteps}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showTooltip}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{marks}. Type: \code{SliderStepMarks}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{formatOptions}. Type: \code{Intl.NumberFormat}. Default: \code{NA}.
+\item \bold{tooltipValueFormatOptions}. Type: \code{Intl.NumberFormat}. Default: \code{NA}.
+\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: \code{NA}.
+\item \bold{showOutline}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideValue}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideThumb}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableThumbScale}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
 }
 \itemize{
-\item \bold{getValue}. Type: \code{(value: SliderValue) => string}. Default: NA.
-\item \bold{renderLabel}. Type: \code{(props: DOMAttributes<HTMLLabelElement>) => ReactNode}. Default: NA.
-\item \bold{renderValue}. Type: \code{(props: DOMAttributes<HTMLOutputElement>) => ReactNode}. Default: NA.
-\item \bold{renderThumb}. Type: \code{(props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode}. Default: NA.
+\item \bold{getValue}. Type: \code{(value: SliderValue) => string}. Default: \code{NA}.
+\item \bold{renderLabel}. Type: \code{(props: DOMAttributes<HTMLLabelElement>) => ReactNode}. Default: \code{NA}.
+\item \bold{renderValue}. Type: \code{(props: DOMAttributes<HTMLOutputElement>) => ReactNode}. Default: \code{NA}.
+\item \bold{renderThumb}. Type: \code{(props: DOMAttributes<HTMLDivElement> & {index?: number}) => ReactNode}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onChange}. Type: \code{(value: SliderValue) => void}. Default: NA.
-\item \bold{onChangeEnd}. Type: \code{(value: SliderValue) => void}. Default: NA.
+\item \bold{onChange}. Type: \code{(value: SliderValue) => void}. Default: \code{NA}.
+\item \bold{onChangeEnd}. Type: \code{(value: SliderValue) => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -195,5 +195,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/slider}.
+See \url{https://heroui.com/docs/components/slider}.
 }

@@ -30,50 +30,50 @@ A responsive navigation header positioned on top side of your page that includes
 }
 \details{
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{height}. Type: \code{string | number}. Default: "4rem (64px)".
-\item \bold{position}. Type: \code{static | sticky}. Default: "sticky".
-\item \bold{maxWidth}. Type: \code{sm | md | lg | xl | 2xl | full}. Default: "lg".
-\item \bold{parentRef}. Type: \code{React.RefObject<HTMLElement>}. Default: "window".
-\item \bold{isBordered}. Type: \code{boolean}. Default: false.
-\item \bold{isBlurred}. Type: \code{boolean}. Default: true.
-\item \bold{isMenuOpen}. Type: \code{boolean}. Default: false.
-\item \bold{isMenuDefaultOpen}. Type: \code{boolean}. Default: false.
-\item \bold{shouldHideOnScroll}. Type: \code{boolean}. Default: false.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{disableScrollHandler}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'wrapper' | 'brand' | 'content' | 'item' | 'toggle' | 'toggleIcon' | 'menu' | 'menuItem', string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{height}. Type: \code{string OR number}. Default: \code{"4rem (64px)"}.
+\item \bold{position}. Type: \code{static OR sticky}. Default: \code{"sticky"}.
+\item \bold{maxWidth}. Type: \code{sm OR md OR lg OR xl OR 2xl OR full}. Default: \code{"lg"}.
+\item \bold{parentRef}. Type: \code{React.RefObject<HTMLElement>}. Default: \code{"window"}.
+\item \bold{isBordered}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isBlurred}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isMenuOpen}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isMenuDefaultOpen}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldHideOnScroll}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{disableScrollHandler}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'wrapper' OR 'brand' OR 'content' OR 'item' OR 'toggle' OR 'toggleIcon' OR 'menu' OR 'menuItem', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onMenuOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
-\item \bold{onScrollPositionChange}. Type: \code{(position: number) => void}. Default: NA.
+\item \bold{onMenuOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
+\item \bold{onScrollPositionChange}. Type: \code{(position: number) => void}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{justify}. Type: \code{start | center | end}. Default: "start".
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{justify}. Type: \code{start OR center OR end}. Default: \code{"start"}.
 }
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isActive}. Type: \code{boolean}. Default: false.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isActive}. Type: \code{boolean}. Default: \code{false}.
 }
 \itemize{
-\item \bold{icon}. Type: \code{ReactNode | ((isOpen: boolean | undefined) => ReactNode)}. Default: NA.
-\item \bold{isSelected}. Type: \code{boolean}. Default: false.
-\item \bold{defaultSelected}. Type: \code{boolean}. Default: false.
-\item \bold{srOnlyText}. Type: \code{string}. Default: "open/close navigation menu".
+\item \bold{icon}. Type: \code{ReactNode OR ((isOpen: boolean OR undefined) => ReactNode)}. Default: \code{NA}.
+\item \bold{isSelected}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{defaultSelected}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{srOnlyText}. Type: \code{string}. Default: \code{"open/close navigation menu"}.
 }
 \itemize{
-\item \bold{onChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
+\item \bold{onChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: \code{"document.body"}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isActive}. Type: \code{boolean}. Default: false.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isActive}. Type: \code{boolean}. Default: \code{false}.
 }
 }
 \examples{
@@ -215,5 +215,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/navbar}.
+See \url{https://heroui.com/docs/components/navbar}.
 }

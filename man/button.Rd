@@ -54,40 +54,40 @@ Buttons allow users to perform actions and choose with a single tap.
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow | ghost}. Default: "solid".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{spinner}. Type: \code{ReactNode}. Default: NA.
-\item \bold{spinnerPlacement}. Type: \code{start | end}. Default: "start".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
-\item \bold{isIconOnly}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isLoading}. Type: \code{boolean}. Default: false.
-\item \bold{disableRipple}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{solid OR bordered OR light OR flat OR faded OR shadow OR ghost}. Default: \code{"solid"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{spinner}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{spinnerPlacement}. Type: \code{start OR end}. Default: \code{"start"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isIconOnly}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isLoading}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableRipple}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
 }
 \itemize{
-\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
-\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: \code{NA}.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
-\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow | ghost}. Default: "solid".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "xl".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
+\item \bold{children}. Type: \code{ReactNode OR ReactNode[]}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{solid OR bordered OR light OR flat OR faded OR shadow OR ghost}. Default: \code{"solid"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"xl"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
 }
 }
 \examples{
@@ -186,5 +186,5 @@ if (interactive() || is_testing()) shinyApp(ui, server)
 See \url{https://nextui.org/docs/components/button}
 and \link{action_button} to get the list of possible parameters.
 
-See \url{https://nextui.org/docs/components/button}.
+See \url{https://heroui.com/docs/components/button}.
 }

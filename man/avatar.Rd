@@ -21,32 +21,32 @@ The Avatar component is used to represent a user, and displays the profile pictu
 }
 \details{
 \itemize{
-\item \bold{src}. Type: \code{string}. Default: NA.
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "full".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{name}. Type: \code{string}. Default: NA.
-\item \bold{icon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{fallback}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isBordered}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isFocusable}. Type: \code{boolean}. Default: false.
-\item \bold{showFallback}. Type: \code{boolean}. Default: false.
-\item \bold{ImgComponent}. Type: \code{React.ElementType}. Default: "img".
-\item \bold{imgProps}. Type: \code{ImgComponentProps}. Default: NA.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "img" | "fallback" | "name" | "icon", string>>}. Default: NA.
+\item \bold{src}. Type: \code{string}. Default: \code{NA}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"full"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{name}. Type: \code{string}. Default: \code{NA}.
+\item \bold{icon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{fallback}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isBordered}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isFocusable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showFallback}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{ImgComponent}. Type: \code{React.ElementType}. Default: \code{"img"}.
+\item \bold{imgProps}. Type: \code{ImgComponentProps}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "img" OR "fallback" OR "name" OR "icon", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{max}. Type: \code{number}. Default: "5".
-\item \bold{total}. Type: \code{number}. Default: NA.
-\item \bold{size}. Type: \code{AvatarProps['size']}. Default: NA.
-\item \bold{color}. Type: \code{AvatarProps['color']}. Default: NA.
-\item \bold{radius}. Type: \code{AvatarProps['radius']}. Default: NA.
-\item \bold{isGrid}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: NA.
-\item \bold{isBordered}. Type: \code{boolean}. Default: NA.
-\item \bold{renderCount}. Type: \code{(count: number) => ReactNode}. Default: NA.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "count", string>>}. Default: NA.
+\item \bold{max}. Type: \code{number}. Default: \code{"5"}.
+\item \bold{total}. Type: \code{number}. Default: \code{NA}.
+\item \bold{size}. Type: \code{AvatarProps['size']}. Default: \code{NA}.
+\item \bold{color}. Type: \code{AvatarProps['color']}. Default: \code{NA}.
+\item \bold{radius}. Type: \code{AvatarProps['radius']}. Default: \code{NA}.
+\item \bold{isGrid}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isBordered}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{renderCount}. Type: \code{(count: number) => ReactNode}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "count", string>>}. Default: \code{NA}.
 }
 }
 \examples{
@@ -117,5 +117,5 @@ server <- function(input, output, session) {}
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/avatar}.
+See \url{https://heroui.com/docs/components/avatar}.
 }

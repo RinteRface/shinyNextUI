@@ -18,20 +18,20 @@ Badges are used as a small numerical value or status descriptor for UI elements.
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{content}. Type: \code{string | number | ReactNode}. Default: NA.
-\item \bold{variant}. Type: \code{solid | flat | faded | shadow}. Default: "solid".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{shape}. Type: \code{circle | rectangle}. Default: "rectangle".
-\item \bold{placement}. Type: \code{top-right | top-left | bottom-right | bottom-left}. Default: "top-right".
-\item \bold{showOutline}. Type: \code{boolean}. Default: true.
-\item \bold{disableOutline}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{isInvisible}. Type: \code{boolean}. Default: false.
-\item \bold{isOneChar}. Type: \code{boolean}. Default: false.
-\item \bold{isDot}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"badge", string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{content}. Type: \code{string OR number OR ReactNode}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{solid OR flat OR faded OR shadow}. Default: \code{"solid"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{shape}. Type: \code{circle OR rectangle}. Default: \code{"rectangle"}.
+\item \bold{placement}. Type: \code{top-right OR top-left OR bottom-right OR bottom-left}. Default: \code{"top-right"}.
+\item \bold{showOutline}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{disableOutline}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isInvisible}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isOneChar}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDot}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"badge", string>>}. Default: \code{NA}.
 }
 }
 \examples{
@@ -122,5 +122,5 @@ server <- function(input, output, session) {}
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/badge}.
+See \url{https://heroui.com/docs/components/badge}.
 }

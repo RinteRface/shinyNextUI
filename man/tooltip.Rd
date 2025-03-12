@@ -18,37 +18,37 @@ Tooltips display a brief, informative message that appears when a user interacts
 }
 \details{
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{content}. Type: \code{ReactNode}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "md".
-\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "sm".
-\item \bold{placement}. Type: \code{TooltipPlacement}. Default: "top".
-\item \bold{delay}. Type: \code{number}. Default: "0".
-\item \bold{closeDelay}. Type: \code{number}. Default: "500".
-\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{offset}. Type: \code{number}. Default: "7".
-\item \bold{containerPadding}. Type: \code{number}. Default: "12".
-\item \bold{crossOffset}. Type: \code{number}. Default: "0".
-\item \bold{showArrow}. Type: \code{boolean}. Default: false.
-\item \bold{shouldFlip}. Type: \code{boolean}. Default: true.
-\item \bold{triggerScaleOnOpen}. Type: \code{boolean}. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isDismissable}. Type: \code{boolean}. Default: false.
-\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: true.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
-\item \bold{updatePositionDeps}. Type: \code{any[]}. Default: "[]".
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"content", string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{content}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"md"}.
+\item \bold{shadow}. Type: \code{none OR sm OR md OR lg}. Default: \code{"sm"}.
+\item \bold{placement}. Type: \code{TooltipPlacement}. Default: \code{"top"}.
+\item \bold{delay}. Type: \code{number}. Default: \code{"0"}.
+\item \bold{closeDelay}. Type: \code{number}. Default: \code{"500"}.
+\item \bold{isOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{offset}. Type: \code{number}. Default: \code{"7"}.
+\item \bold{containerPadding}. Type: \code{number}. Default: \code{"12"}.
+\item \bold{crossOffset}. Type: \code{number}. Default: \code{"0"}.
+\item \bold{showArrow}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldFlip}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{triggerScaleOnOpen}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: \code{"document.body"}.
+\item \bold{updatePositionDeps}. Type: \code{any[]}. Default: \code{"[]"}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜"content", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
-\item \bold{shouldCloseOnInteractOutside}. Type: \code{(e: HTMLElement) => void}. Default: NA.
-\item \bold{onClose}. Type: \code{() => void}. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
+\item \bold{shouldCloseOnInteractOutside}. Type: \code{(e: HTMLElement) => void}. Default: \code{NA}.
+\item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -76,5 +76,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/tooltip}.
+See \url{https://heroui.com/docs/components/tooltip}.
 }

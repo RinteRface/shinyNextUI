@@ -31,42 +31,42 @@ Tabs organize content into multiple sections and allow users to navigate between
 }
 \details{
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode | ((item: T) => ReactElement)}. Default: NA.
-\item \bold{variant}. Type: \code{solid | bordered | light | underlined}. Default: "solid".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
-\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
-\item \bold{selectedKey}. Type: \code{React.Key}. Default: NA.
-\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: NA.
-\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: true.
-\item \bold{keyboardActivation}. Type: \code{automatic | manual}. Default: "automatic".
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "tabList"｜ "tab"｜ "tabContent"｜ "cursor" ｜ "panel" ｜ "tabWrapper", string>>}. Default: NA.
-\item \bold{placement}. Type: \code{top | bottom | start | end}. Default: "top".
-\item \bold{isVertical}. Type: \code{boolean}. Default: false.
-\item \bold{destroyInactiveTabPanel}. Type: \code{boolean}. Default: true.
+\item \bold{children*}. Type: \code{ReactNode OR ((item: T) => ReactElement)}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{solid OR bordered OR light OR underlined}. Default: \code{"solid"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: \code{NA}.
+\item \bold{selectedKey}. Type: \code{React.Key}. Default: \code{NA}.
+\item \bold{defaultSelectedKey}. Type: \code{React.Key}. Default: \code{NA}.
+\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{keyboardActivation}. Type: \code{automatic OR manual}. Default: \code{"automatic"}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{disableCursorAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: L091xCgrsw3u5zXqmoHFBYKIgEOF7Zg9-33\code{NA}.
+\item \bold{placement}. Type: \code{top OR bottom OR start OR end}. Default: \code{"top"}.
+\item \bold{isVertical}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{destroyInactiveTabPanel}. Type: \code{boolean}. Default: \code{true}.
 }
 \itemize{
-\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => any}. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(key: React.Key) => any}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{tabRef}. Type: \code{RefObject<HTMLButtonElement>}. Default: NA.
-\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
-\item \bold{title}. Type: \code{ReactNode}. Default: NA.
-\item \bold{titleValue}. Type: \code{string}. Default: NA.
-\item \bold{href}. Type: \code{string}. Default: NA.
-\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
-\item \bold{rel}. Type: \code{string}. Default: NA.
-\item \bold{download}. Type: \code{boolean | string}. Default: NA.
-\item \bold{ping}. Type: \code{string}. Default: NA.
-\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
-\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: NA.
+\item \bold{tabRef}. Type: \code{RefObject<HTMLButtonElement>}. Default: \code{NA}.
+\item \bold{children*}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{title}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{titleValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{href}. Type: \code{string}. Default: \code{NA}.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: \code{NA}.
+\item \bold{rel}. Type: \code{string}. Default: \code{NA}.
+\item \bold{download}. Type: \code{boolean OR string}. Default: \code{NA}.
+\item \bold{ping}. Type: \code{string}. Default: \code{NA}.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: \code{NA}.
+\item \bold{shouldSelectOnPressUp}. Type: \code{boolean}. Default: \code{NA}.
 }
 }
 \examples{
@@ -182,5 +182,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/tabs}.
+See \url{https://heroui.com/docs/components/tabs}.
 }

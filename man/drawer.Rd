@@ -30,25 +30,25 @@ Displays a panel that slides in from the edge of the screen, containing suppleme
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{size}. Type: \code{xs | sm | md | lg | xl | 2xl | 3xl | 4xl | 5xl | full}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
-\item \bold{placement}. Type: \code{left | right | top | bottom}. Default: "right".
-\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{isDismissable}. Type: \code{boolean}. Default: true.
-\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: true.
-\item \bold{hideCloseButton}. Type: \code{boolean}. Default: false.
-\item \bold{closeButton}. Type: \code{ReactNode}. Default: NA.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'wrapper' | 'base' | 'backdrop' | 'header' | 'body' | 'footer' | 'closeButton', string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{size}. Type: \code{xs OR sm OR md OR lg OR xl OR 2xl OR 3xl OR 4xl OR 5xl OR full}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg}. Default: \code{"lg"}.
+\item \bold{placement}. Type: \code{left OR right OR top OR bottom}. Default: \code{"right"}.
+\item \bold{isOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isDismissable}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{hideCloseButton}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{closeButton}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: \code{"document.body"}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'wrapper' OR 'base' OR 'backdrop' OR 'header' OR 'body' OR 'footer' OR 'closeButton', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
-\item \bold{onClose}. Type: \code{() => void}. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
+\item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -178,5 +178,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/drawer}.
+See \url{https://heroui.com/docs/components/drawer}.
 }

@@ -31,57 +31,57 @@ Accordion display a list of high-level options that can expand/collapse to revea
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
-\item \bold{variant}. Type: \code{light | shadow | bordered | splitted}. Default: "light".
-\item \bold{selectionMode}. Type: \code{none | single | multiple}. Default: NA.
-\item \bold{selectionBehavior}. Type: \code{toggle | replace}. Default: "toggle".
-\item \bold{isCompact}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{showDivider}. Type: \code{boolean}. Default: true.
-\item \bold{dividerProps}. Type: \code{DividerProps}. Default: NA.
-\item \bold{hideIndicator}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
-\item \bold{keepContentMounted}. Type: \code{boolean}. Default: false.
-\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
-\item \bold{itemClasses}. Type: \code{AccordionItemClassnames}. Default: NA.
-\item \bold{selectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
-\item \bold{defaultSelectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode OR ReactNode[]}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{light OR shadow OR bordered OR splitted}. Default: \code{"light"}.
+\item \bold{selectionMode}. Type: \code{none OR single OR multiple}. Default: \code{NA}.
+\item \bold{selectionBehavior}. Type: \code{toggle OR replace}. Default: \code{"toggle"}.
+\item \bold{isCompact}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showDivider}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{dividerProps}. Type: \code{DividerProps}. Default: \code{NA}.
+\item \bold{hideIndicator}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{keepContentMounted}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: \code{NA}.
+\item \bold{itemClasses}. Type: \code{AccordionItemClassnames}. Default: \code{NA}.
+\item \bold{selectedKeys}. Type: \code{all OR React.Key[]}. Default: \code{NA}.
+\item \bold{defaultSelectedKeys}. Type: \code{all OR React.Key[]}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onSelectionChange}. Type: \code{(keys: "all" | Set<React.Key>) => any}. Default: NA.
+\item \bold{onSelectionChange}. Type: \code{(keys: "all" OR Set<React.Key>) => any}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{title}. Type: \code{ReactNode}. Default: NA.
-\item \bold{subtitle}. Type: \code{ReactNode}. Default: NA.
-\item \bold{indicator}. Type: \code{IndicatorProps}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{isCompact}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{keepContentMounted}. Type: \code{boolean}. Default: false.
-\item \bold{hideIndicator}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{HeadingComponent}. Type: \code{React.ElementType}. Default: "h2".
-\item \bold{classNames}. Type: \code{AccordionItemClassnames}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{title}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{subtitle}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{indicator}. Type: \code{IndicatorProps}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{isCompact}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{keepContentMounted}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideIndicator}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableIndicatorAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{HeadingComponent}. Type: \code{React.ElementType}. Default: \code{"h2"}.
+\item \bold{classNames}. Type: \code{AccordionItemClassnames}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onFocus}. Type: \code{(e: FocusEvent) => void}. Default: NA.
-\item \bold{onBlur}. Type: \code{(e: FocusEvent) => void}. Default: NA.
-\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: NA.
-\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
-\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
+\item \bold{onFocus}. Type: \code{(e: FocusEvent) => void}. Default: \code{NA}.
+\item \bold{onBlur}. Type: \code{(e: FocusEvent) => void}. Default: \code{NA}.
+\item \bold{onFocusChange}. Type: \code{(isFocused: boolean) => void}. Default: \code{NA}.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: \code{NA}.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: \code{NA}.
 }
 }
 \examples{
@@ -211,5 +211,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/accordion}.
+See \url{https://heroui.com/docs/components/accordion}.
 }

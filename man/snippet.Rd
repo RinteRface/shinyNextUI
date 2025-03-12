@@ -18,25 +18,25 @@ Snippet is a component that can be used to display inline or multiline code snip
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
-\item \bold{symbol}. Type: \code{string | ReactNode}. Default: "$".
-\item \bold{timeout}. Type: \code{number}. Default: "2000".
-\item \bold{codeString}. Type: \code{string}. Default: NA.
-\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: NA.
-\item \bold{copyIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{checkIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{disableTooltip}. Type: \code{boolean}. Default: false.
-\item \bold{disableCopy}. Type: \code{boolean}. Default: false.
-\item \bold{hideCopyButton}. Type: \code{boolean}. Default: false.
-\item \bold{hideSymbol}. Type: \code{boolean}. Default: false.
-\item \bold{copyButtonProps}. Type: \code{ButtonProps}. Default: NA.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'content' | 'pre' | 'symbol' | 'copyButton' | 'checkIcon', string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode OR ReactNode[]}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg}. Default: \code{"lg"}.
+\item \bold{symbol}. Type: \code{string OR ReactNode}. Default: \code{"$"}.
+\item \bold{timeout}. Type: \code{number}. Default: \code{"2000"}.
+\item \bold{codeString}. Type: \code{string}. Default: \code{NA}.
+\item \bold{tooltipProps}. Type: \code{TooltipProps}. Default: \code{NA}.
+\item \bold{copyIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{checkIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{disableTooltip}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableCopy}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideCopyButton}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideSymbol}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{copyButtonProps}. Type: \code{ButtonProps}. Default: \code{NA}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'content' OR 'pre' OR 'symbol' OR 'copyButton' OR 'checkIcon', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onCopy}. Type: \code{(value: string | string[]) => void}. Default: NA.
+\item \bold{onCopy}. Type: \code{(value: string OR string[]) => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -65,5 +65,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/snippet}.
+See \url{https://heroui.com/docs/components/snippet}.
 }

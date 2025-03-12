@@ -34,77 +34,77 @@ A listbox displays a list of options and allows a user to select one or more of 
 }
 \details{
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{variant}. Type: \code{solid | bordered | light | flat | faded | shadow}. Default: "solid".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{selectionMode}. Type: \code{none | single | multiple}. Default: NA.
-\item \bold{selectedKeys}. Type: \code{React.Key[]}. Default: NA.
-\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: NA.
-\item \bold{defaultSelectedKeys}. Type: \code{all | React.Key[]}. Default: NA.
-\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
-\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: false.
-\item \bold{autoFocus}. Type: \code{boolean | first | last}. Default: false.
-\item \bold{topContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{bottomContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{emptyContent}. Type: \code{ReactNode}. Default: "No items.".
-\item \bold{shouldFocusWrap}. Type: \code{boolean}. Default: false.
-\item \bold{isVirtualized}. Type: \code{boolean}. Default: false.
-\item \bold{virtualization}. Type: \code{Record<"maxListboxHeight" & "itemHeight", number>}. Default: NA.
-\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: false.
-\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "list" | "emptyContent", string>>}. Default: NA.
-\item \bold{itemClasses}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "selectedIcon", string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{solid OR bordered OR light OR flat OR faded OR shadow}. Default: \code{"solid"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{selectionMode}. Type: \code{none OR single OR multiple}. Default: \code{NA}.
+\item \bold{selectedKeys}. Type: \code{React.Key[]}. Default: \code{NA}.
+\item \bold{disabledKeys}. Type: \code{React.Key[]}. Default: \code{NA}.
+\item \bold{defaultSelectedKeys}. Type: \code{all OR React.Key[]}. Default: \code{NA}.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{autoFocus}. Type: \code{boolean OR first OR last}. Default: \code{false}.
+\item \bold{topContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{bottomContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{emptyContent}. Type: \code{ReactNode}. Default: \code{"No items."}.
+\item \bold{shouldFocusWrap}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{virtualization}. Type: \code{Record<"maxListboxHeight" & "itemHeight", number>}. Default: \code{NA}.
+\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "list" OR "emptyContent", string>>}. Default: \code{NA}.
+\item \bold{itemClasses}. Type: \code{Partial<Record<"base" OR "wrapper" OR "title" OR "description" OR "selectedIcon", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onAction}. Type: \code{(key: React.Key) => void}. Default: NA.
-\item \bold{onSelectionChange}. Type: \code{(keys: React.Key[]) => void}. Default: NA.
+\item \bold{onAction}. Type: \code{(key: React.Key) => void}. Default: \code{NA}.
+\item \bold{onSelectionChange}. Type: \code{(keys: React.Key[]) => void}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
-\item \bold{title}. Type: \code{string}. Default: NA.
-\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
-\item \bold{showDivider}. Type: \code{boolean}. Default: false.
-\item \bold{dividerProps}. Type: \code{DividerProps}. Default: NA.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "heading" | "group" | "divider", string>>}. Default: NA.
-\item \bold{itemClasses}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{title}. Type: \code{string}. Default: \code{NA}.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showDivider}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{dividerProps}. Type: \code{DividerProps}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "heading" OR "group" OR "divider", string>>}. Default: \code{NA}.
+\item \bold{itemClasses}. Type: \code{Partial<Record<"base" OR "wrapper" OR "title" OR "description" OR "shortcut" OR "selectedIcon", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
-\item \bold{key}. Type: \code{React.Key}. Default: NA.
-\item \bold{title}. Type: \code{string | ReactNode}. Default: NA.
-\item \bold{textValue}. Type: \code{string}. Default: NA.
-\item \bold{description}. Type: \code{string | ReactNode}. Default: NA.
-\item \bold{shortcut}. Type: \code{string | ReactNode}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{selectedIcon}. Type: \code{ListboxItemSelectedIconProps}. Default: NA.
-\item \bold{href}. Type: \code{string}. Default: NA.
-\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
-\item \bold{rel}. Type: \code{string}. Default: NA.
-\item \bold{download}. Type: \code{boolean | string}. Default: NA.
-\item \bold{ping}. Type: \code{string}. Default: NA.
-\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
-\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: false.
-\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: false.
-\item \bold{showDivider}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isSelected}. Type: \code{boolean}. Default: false.
-\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "wrapper" | "title" | "description" | "shortcut" | "selectedIcon", string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{key}. Type: \code{React.Key}. Default: \code{NA}.
+\item \bold{title}. Type: \code{string OR ReactNode}. Default: \code{NA}.
+\item \bold{textValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{description}. Type: \code{string OR ReactNode}. Default: \code{NA}.
+\item \bold{shortcut}. Type: \code{string OR ReactNode}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{selectedIcon}. Type: \code{ListboxItemSelectedIconProps}. Default: \code{NA}.
+\item \bold{href}. Type: \code{string}. Default: \code{NA}.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: \code{NA}.
+\item \bold{rel}. Type: \code{string}. Default: \code{NA}.
+\item \bold{download}. Type: \code{boolean OR string}. Default: \code{NA}.
+\item \bold{ping}. Type: \code{string}. Default: \code{NA}.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: \code{NA}.
+\item \bold{shouldHighlightOnFocus}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideSelectedIcon}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showDivider}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isSelected}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "wrapper" OR "title" OR "description" OR "shortcut" OR "selectedIcon", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onAction}. Type: \code{() => void}. Default: NA.
-\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
-\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
+\item \bold{onAction}. Type: \code{() => void}. Default: \code{NA}.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: \code{NA}.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: \code{NA}.
 }
 }
 \examples{
@@ -173,5 +173,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/listbox}.
+See \url{https://heroui.com/docs/components/listbox}.
 }

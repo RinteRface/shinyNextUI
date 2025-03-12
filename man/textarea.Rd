@@ -33,41 +33,41 @@ Textarea component is a multi-line Input which allows you to write large texts.
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{minRows}. Type: \code{number}. Default: "3".
-\item \bold{maxRows}. Type: \code{number}. Default: "8".
-\item \bold{cacheMeasurements}. Type: \code{boolean}. Default: false.
-\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{value}. Type: \code{string}. Default: NA.
-\item \bold{defaultValue}. Type: \code{string}. Default: NA.
-\item \bold{placeholder}. Type: \code{string}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{description}. Type: \code{ReactNode}. Default: NA.
-\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
-\item \bold{validate}. Type: \code{(value: string) => ValidationError | true | null | undefined}. Default: NA.
-\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
-\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
-\item \bold{isRequired}. Type: \code{boolean}. Default: false.
-\item \bold{isReadOnly}. Type: \code{boolean}. Default: NA.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isClearable}. Type: \code{boolean}. Default: false.
-\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
-\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
-\item \bold{disableAutosize}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"base" | "label" | "inputWrapper" | "innerWrapper" | "input" | "description" | "errorMessage", string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{minRows}. Type: \code{number}. Default: \code{"3"}.
+\item \bold{maxRows}. Type: \code{number}. Default: \code{"8"}.
+\item \bold{cacheMeasurements}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{variant}. Type: \code{flat OR bordered OR faded OR underlined}. Default: \code{"flat"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{value}. Type: \code{string}. Default: \code{NA}.
+\item \bold{defaultValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{placeholder}. Type: \code{string}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{description}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{errorMessage}. Type: \code{ReactNode OR ((v: ValidationResult) => ReactNode)}. Default: \code{NA}.
+\item \bold{validate}. Type: \code{(value: string) => ValidationError OR true OR null OR undefined}. Default: \code{NA}.
+\item \bold{validationBehavior}. Type: \code{native OR aria}. Default: \code{"native"}.
+\item \bold{labelPlacement}. Type: \code{inside OR outside OR outside-left}. Default: \code{"inside"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isRequired}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isClearable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{validationState}. Type: \code{valid OR invalid}. Default: \code{NA}.
+\item \bold{disableAutosize}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base" OR "label" OR "inputWrapper" OR "innerWrapper" OR "input" OR "description" OR "errorMessage", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
-\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: NA.
-\item \bold{onClear}. Type: \code{() => void}. Default: NA.
-\item \bold{onHeightChange}. Type: \code{(height: number, meta: { rowHeight: number }) => void}. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.
+\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: \code{NA}.
+\item \bold{onClear}. Type: \code{() => void}. Default: \code{NA}.
+\item \bold{onHeightChange}. Type: \code{(height: number, meta: { rowHeight: number }) => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -106,5 +106,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/textarea}.
+See \url{https://heroui.com/docs/components/textarea}.
 }

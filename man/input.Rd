@@ -41,40 +41,40 @@ Input is a component that allows users to enter text. It can be used to get user
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{value}. Type: \code{string}. Default: NA.
-\item \bold{defaultValue}. Type: \code{string}. Default: NA.
-\item \bold{placeholder}. Type: \code{string}. Default: NA.
-\item \bold{description}. Type: \code{ReactNode}. Default: NA.
-\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
-\item \bold{validate}. Type: \code{(value: string) => ValidationError | true | null | undefined}. Default: NA.
-\item \bold{validationBehavior}. Type: \code{native | aria}. Default: "native".
-\item \bold{minLength}. Type: \code{number}. Default: NA.
-\item \bold{maxLength}. Type: \code{number}. Default: NA.
-\item \bold{pattern}. Type: \code{string}. Default: NA.
-\item \bold{type}. Type: \code{text | email | url | password | tel | search | file}. Default: "text".
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
-\item \bold{isClearable}. Type: \code{boolean}. Default: false.
-\item \bold{isRequired}. Type: \code{boolean}. Default: false.
-\item \bold{isReadOnly}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
-\item \bold{baseRef}. Type: \code{RefObject<HTMLDivElement>}. Default: NA.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'label' | 'inputWrapper' | 'innerWrapper' | 'mainWrapper' | 'input' | 'clearButton' | 'helperWrapper' | 'description' | 'errorMessage', string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{flat OR bordered OR faded OR underlined}. Default: \code{"flat"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{value}. Type: \code{string}. Default: \code{NA}.
+\item \bold{defaultValue}. Type: \code{string}. Default: \code{NA}.
+\item \bold{placeholder}. Type: \code{string}. Default: \code{NA}.
+\item \bold{description}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{errorMessage}. Type: \code{ReactNode OR ((v: ValidationResult) => ReactNode)}. Default: \code{NA}.
+\item \bold{validate}. Type: \code{(value: string) => ValidationError OR true OR null OR undefined}. Default: \code{NA}.
+\item \bold{validationBehavior}. Type: \code{native OR aria}. Default: \code{"native"}.
+\item \bold{minLength}. Type: \code{number}. Default: \code{NA}.
+\item \bold{maxLength}. Type: \code{number}. Default: \code{NA}.
+\item \bold{pattern}. Type: \code{string}. Default: \code{NA}.
+\item \bold{type}. Type: \code{text OR email OR url OR password OR tel OR search OR file}. Default: \code{"text"}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{labelPlacement}. Type: \code{inside OR outside OR outside-left}. Default: \code{"inside"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isClearable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isRequired}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isReadOnly}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{baseRef}. Type: \code{RefObject<HTMLDivElement>}. Default: \code{NA}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'label' OR 'inputWrapper' OR 'innerWrapper' OR 'mainWrapper' OR 'input' OR 'clearButton' OR 'helperWrapper' OR 'description' OR 'errorMessage', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: NA.
-\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: NA.
-\item \bold{onClear}. Type: \code{() => void}. Default: NA.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLInputElement>}. Default: \code{NA}.
+\item \bold{onValueChange}. Type: \code{(value: string) => void}. Default: \code{NA}.
+\item \bold{onClear}. Type: \code{() => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -123,5 +123,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/input}.
+See \url{https://heroui.com/docs/components/input}.
 }

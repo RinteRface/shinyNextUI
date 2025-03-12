@@ -18,31 +18,31 @@ Links allow users to click their way from page to page. This component is styled
 }
 \details{
 \itemize{
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{foreground | primary | secondary | success | warning | danger}. Default: "primary".
-\item \bold{underline}. Type: \code{none | hover | always | active | focus}. Default: "none".
-\item \bold{href}. Type: \code{string}. Default: NA.
-\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: NA.
-\item \bold{rel}. Type: \code{string}. Default: NA.
-\item \bold{download}. Type: \code{boolean | string}. Default: NA.
-\item \bold{ping}. Type: \code{string}. Default: NA.
-\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: NA.
-\item \bold{isExternal}. Type: \code{boolean}. Default: false.
-\item \bold{showAnchorIcon}. Type: \code{boolean}. Default: false.
-\item \bold{anchorIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{isBlock}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{foreground OR primary OR secondary OR success OR warning OR danger}. Default: \code{"primary"}.
+\item \bold{underline}. Type: \code{none OR hover OR always OR active OR focus}. Default: \code{"none"}.
+\item \bold{href}. Type: \code{string}. Default: \code{NA}.
+\item \bold{target}. Type: \code{HTMLAttributeAnchorTarget}. Default: \code{NA}.
+\item \bold{rel}. Type: \code{string}. Default: \code{NA}.
+\item \bold{download}. Type: \code{boolean OR string}. Default: \code{NA}.
+\item \bold{ping}. Type: \code{string}. Default: \code{NA}.
+\item \bold{referrerPolicy}. Type: \code{HTMLAttributeReferrerPolicy}. Default: \code{NA}.
+\item \bold{isExternal}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{showAnchorIcon}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{anchorIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{isBlock}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
 }
 \itemize{
-\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
-\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: NA.
-\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: \code{NA}.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyDown}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onKeyUp}. Type: \code{(e: KeyboardEvent) => void}. Default: \code{NA}.
+\item \bold{onClick}. Type: \code{MouseEventHandler}. Default: \code{NA}.
 }
 }
 \examples{
@@ -93,5 +93,5 @@ server <- function(input, output, session) {}
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/link}.
+See \url{https://heroui.com/docs/components/link}.
 }

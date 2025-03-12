@@ -24,42 +24,42 @@ Popover is a non-modal dialog that floats around its disclosure. It's commonly u
 }
 \details{
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "lg".
-\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "lg".
-\item \bold{backdrop}. Type: \code{transparent | opaque | blur}. Default: "transparent".
-\item \bold{placement}. Type: \code{PopoverPlacement}. Default: "bottom".
-\item \bold{state}. Type: \code{OverlayTriggerState}. Default: NA.
-\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{offset}. Type: \code{number}. Default: "7".
-\item \bold{containerPadding}. Type: \code{number}. Default: "12".
-\item \bold{crossOffset}. Type: \code{number}. Default: "0".
-\item \bold{triggerType}. Type: \code{dialog | menu | listbox | tree | grid}. Default: "dialog".
-\item \bold{showArrow}. Type: \code{boolean}. Default: false.
-\item \bold{shouldFlip}. Type: \code{boolean}. Default: true.
-\item \bold{triggerScaleOnOpen}. Type: \code{boolean}. Default: true.
-\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: false.
-\item \bold{shouldCloseOnScroll}. Type: \code{boolean}. Default: false.
-\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: false.
-\item \bold{motionProps}. Type: \code{MotionProps}. Default: NA.
-\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: "document.body".
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'trigger' | 'backdrop' | 'content', string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"lg"}.
+\item \bold{shadow}. Type: \code{none OR sm OR md OR lg}. Default: \code{"lg"}.
+\item \bold{backdrop}. Type: \code{transparent OR opaque OR blur}. Default: \code{"transparent"}.
+\item \bold{placement}. Type: \code{PopoverPlacement}. Default: \code{"bottom"}.
+\item \bold{state}. Type: \code{OverlayTriggerState}. Default: \code{NA}.
+\item \bold{isOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{offset}. Type: \code{number}. Default: \code{"7"}.
+\item \bold{containerPadding}. Type: \code{number}. Default: \code{"12"}.
+\item \bold{crossOffset}. Type: \code{number}. Default: \code{"0"}.
+\item \bold{triggerType}. Type: \code{dialog OR menu OR listbox OR tree OR grid}. Default: \code{"dialog"}.
+\item \bold{showArrow}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldFlip}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{triggerScaleOnOpen}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{shouldBlockScroll}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldCloseOnScroll}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isKeyboardDismissDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{shouldCloseOnBlur}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{motionProps}. Type: \code{MotionProps}. Default: \code{NA}.
+\item \bold{portalContainer}. Type: \code{HTMLElement}. Default: \code{"document.body"}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'trigger' OR 'backdrop' OR 'content', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
-\item \bold{shouldCloseOnInteractOutside}. Type: \code{(e: HTMLElement) => void}. Default: NA.
-\item \bold{onClose}. Type: \code{() => void}. Default: NA.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
+\item \bold{shouldCloseOnInteractOutside}. Type: \code{(e: HTMLElement) => void}. Default: \code{NA}.
+\item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
 }
 }
 \examples{
@@ -92,5 +92,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/popover}.
+See \url{https://heroui.com/docs/components/popover}.
 }

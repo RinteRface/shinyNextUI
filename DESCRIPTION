@@ -6,8 +6,8 @@ Authors@R:
         person("David", "Granjon", , "dgranjon@ymail.com", role = c("aut", "cre")),
         person(family = "Next UI Inc", role = c("ctb", "cph"), comment = "HeroUI template")
     )
-Description: A set of UI components to create outstanding 'shiny' apps with
-    the power of 'React' JS. Seamlessly support dark and light themes, customize CSS with
+Description: A set of user interface components to create outstanding 'shiny' apps with
+    the power of 'React' JavaScript. Seamlessly support dark and light themes, customize CSS with
     'tailwind'.
 License: MIT + file LICENSE
 Encoding: UTF-8

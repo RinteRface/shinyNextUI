@@ -27,26 +27,26 @@ Card is a container for text, photos, and actions in the context of a single sub
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode | ReactNode[]}. Default: NA.
-\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg}. Default: "lg".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: false.
-\item \bold{isHoverable}. Type: \code{boolean}. Default: false.
-\item \bold{isPressable}. Type: \code{boolean}. Default: false.
-\item \bold{isBlurred}. Type: \code{boolean}. Default: false.
-\item \bold{isFooterBlurred}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: false.
-\item \bold{disableRipple}. Type: \code{boolean}. Default: false.
-\item \bold{allowTextSelectionOnPress}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<'base' | 'header' | 'body' | 'footer', string>>}. Default: NA.
+\item \bold{children}. Type: \code{ReactNode OR ReactNode[]}. Default: \code{NA}.
+\item \bold{shadow}. Type: \code{none OR sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg}. Default: \code{"lg"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isHoverable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isPressable}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isBlurred}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isFooterBlurred}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableRipple}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{allowTextSelectionOnPress}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<'base' OR 'header' OR 'body' OR 'footer', string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: NA.
-\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: NA.
-\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: NA.
+\item \bold{onPress}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressStart}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressEnd}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
+\item \bold{onPressChange}. Type: \code{(isPressed: boolean) => void}. Default: \code{NA}.
+\item \bold{onPressUp}. Type: \code{(e: PressEvent) => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -84,5 +84,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/card}.
+See \url{https://heroui.com/docs/components/card}.
 }

@@ -37,55 +37,55 @@ A select displays a collapsible list of options and allows a user to select one 
 \enumerate{
 \item Select Props
 \itemize{
-\item \bold{children*}. Type: \code{ReactNode[]}. Default: NA.
-\item \bold{items}. Type: \code{Iterable<T>}. Default: NA.
-\item \bold{selectionMode}. Type: \code{single | multiple}. Default: NA.
-\item \bold{selectedKeys}. Type: \code{all | Iterable<React.Key>}. Default: NA.
-\item \bold{disabledKeys}. Type: \code{Iterable<React.Key>}. Default: NA.
-\item \bold{defaultSelectedKeys}. Type: \code{all | Iterable<React.Key>}. Default: NA.
-\item \bold{variant}. Type: \code{flat | bordered | faded | underlined}. Default: "flat".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "md".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: NA.
-\item \bold{placeholder}. Type: \code{string}. Default: "Select an option".
-\item \bold{labelPlacement}. Type: \code{inside | outside | outside-left}. Default: "inside".
-\item \bold{label}. Type: \code{ReactNode}. Default: NA.
-\item \bold{description}. Type: \code{ReactNode}. Default: NA.
-\item \bold{errorMessage}. Type: \code{ReactNode | ((v: ValidationResult) => ReactNode)}. Default: NA.
-\item \bold{startContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{endContent}. Type: \code{ReactNode}. Default: NA.
-\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: NA.
-\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
-\item \bold{spinnerRef}. Type: \code{React.RefObject<HTMLElement>}. Default: NA.
-\item \bold{maxListboxHeight}. Type: \code{number}. Default: "256".
-\item \bold{itemHeight}. Type: \code{number}. Default: "32".
-\item \bold{isVirtualized}. Type: \code{boolean}. Default: "undefined".
-\item \bold{fullWidth}. Type: \code{boolean}. Default: true.
-\item \bold{isOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{defaultOpen}. Type: \code{boolean}. Default: NA.
-\item \bold{isRequired}. Type: \code{boolean}. Default: false.
-\item \bold{isDisabled}. Type: \code{boolean}. Default: false.
-\item \bold{isMultiline}. Type: \code{boolean}. Default: false.
-\item \bold{isInvalid}. Type: \code{boolean}. Default: false.
-\item \bold{validationState}. Type: \code{valid | invalid}. Default: NA.
-\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: true.
-\item \bold{autoFocus}. Type: \code{boolean}. Default: false.
-\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: false.
-\item \bold{disableAnimation}. Type: \code{boolean}. Default: true.
-\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: false.
-\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: false.
-\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: NA.
-\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: NA.
-\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: NA.
-\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>}. Default: NA.
+\item \bold{children*}. Type: \code{ReactNode[]}. Default: \code{NA}.
+\item \bold{items}. Type: \code{Iterable<T>}. Default: \code{NA}.
+\item \bold{selectionMode}. Type: \code{single OR multiple}. Default: \code{NA}.
+\item \bold{selectedKeys}. Type: \code{all OR Iterable<React.Key>}. Default: \code{NA}.
+\item \bold{disabledKeys}. Type: \code{Iterable<React.Key>}. Default: \code{NA}.
+\item \bold{defaultSelectedKeys}. Type: \code{all OR Iterable<React.Key>}. Default: \code{NA}.
+\item \bold{variant}. Type: \code{flat OR bordered OR faded OR underlined}. Default: \code{"flat"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"md"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{NA}.
+\item \bold{placeholder}. Type: \code{string}. Default: \code{"Select an option"}.
+\item \bold{labelPlacement}. Type: \code{inside OR outside OR outside-left}. Default: \code{"inside"}.
+\item \bold{label}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{description}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{errorMessage}. Type: \code{ReactNode OR ((v: ValidationResult) => ReactNode)}. Default: \code{NA}.
+\item \bold{startContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{endContent}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{selectorIcon}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{scrollRef}. Type: \code{React.RefObject<HTMLElement>}. Default: \code{NA}.
+\item \bold{spinnerRef}. Type: \code{React.RefObject<HTMLElement>}. Default: \code{NA}.
+\item \bold{maxListboxHeight}. Type: \code{number}. Default: \code{"256"}.
+\item \bold{itemHeight}. Type: \code{number}. Default: \code{"32"}.
+\item \bold{isVirtualized}. Type: \code{boolean}. Default: \code{"undefined"}.
+\item \bold{fullWidth}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{isOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{defaultOpen}. Type: \code{boolean}. Default: \code{NA}.
+\item \bold{isRequired}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isDisabled}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isMultiline}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isInvalid}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{validationState}. Type: \code{valid OR invalid}. Default: \code{NA}.
+\item \bold{showScrollIndicators}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{autoFocus}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disallowEmptySelection}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableAnimation}. Type: \code{boolean}. Default: \code{true}.
+\item \bold{disableSelectorIconRotation}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{hideEmptyContent}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{popoverProps}. Type: \code{PopoverProps}. Default: \code{NA}.
+\item \bold{listboxProps}. Type: \code{ListboxProps}. Default: \code{NA}.
+\item \bold{scrollShadowProps}. Type: \code{ScrollShadowProps}. Default: \code{NA}.
+\item \bold{classNames}. Type: \code{Partial<Record<"base"｜ "label"｜ "trigger"｜ "mainWrapper" ｜ "innerWrapper"｜ "selectorIcon" ｜ "value" ｜ "listboxWrapper"｜ "listbox" ｜ "popoverContent" ｜ "helperWrapper" ｜ "description" ｜ "errorMessage", string>>}. Default: \code{NA}.
 }
 2. Select Events
 \itemize{
-\item \bold{onClose}. Type: \code{() => void}. Default: NA.
-\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: NA.
-\item \bold{onSelectionChange}. Type: \code{(keys: "all" | Set<React.Key> & {anchorKey?: string; currentKey?: string}) => void}. Default: NA.
-\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLSelectElement>}. Default: NA.
-\item \bold{renderValue}. Type: \code{RenderValueFunction}. Default: NA.
+\item \bold{onClose}. Type: \code{() => void}. Default: \code{NA}.
+\item \bold{onOpenChange}. Type: \code{(isOpen: boolean) => void}. Default: \code{NA}.
+\item \bold{onSelectionChange}. Type: \code{(keys: "all" OR Set<React.Key> & {anchorKey?: string; currentKey?: string}) => void}. Default: \code{NA}.
+\item \bold{onChange}. Type: \code{React.ChangeEvent<HTMLSelectElement>}. Default: \code{NA}.
+\item \bold{renderValue}. Type: \code{RenderValueFunction}. Default: \code{NA}.
 }
 }
 }
@@ -205,5 +205,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/select}.
+See \url{https://heroui.com/docs/components/select}.
 }

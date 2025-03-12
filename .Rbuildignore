@@ -6,3 +6,6 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^index\.qmd$
+^index\.md$
+^cran-comments\.md$

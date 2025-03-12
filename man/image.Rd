@@ -18,25 +18,25 @@ The Image component is used to display images with support for fallback.
 }
 \details{
 \itemize{
-\item \bold{src}. Type: \code{string}. Default: NA.
-\item \bold{srcSet}. Type: \code{string}. Default: NA.
-\item \bold{sizes}. Type: \code{string}. Default: NA.
-\item \bold{alt}. Type: \code{string}. Default: NA.
-\item \bold{width}. Type: \code{number}. Default: NA.
-\item \bold{height}. Type: \code{number}. Default: NA.
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "xl".
-\item \bold{shadow}. Type: \code{none | sm | md | lg}. Default: "none".
-\item \bold{loading}. Type: \code{eager | lazy}. Default: NA.
-\item \bold{fallbackSrc}. Type: \code{string}. Default: NA.
-\item \bold{isBlurred}. Type: \code{boolean}. Default: false.
-\item \bold{isZoomed}. Type: \code{boolean}. Default: false.
-\item \bold{removeWrapper}. Type: \code{boolean}. Default: false.
-\item \bold{disableSkeleton}. Type: \code{boolean}. Default: false.
-\item \bold{classNames}. Type: \code{Partial<Record<"img" | "wrapper" | "zoomedWrapper" | "blurredImg", string>>}. Default: NA.
+\item \bold{src}. Type: \code{string}. Default: \code{NA}.
+\item \bold{srcSet}. Type: \code{string}. Default: \code{NA}.
+\item \bold{sizes}. Type: \code{string}. Default: \code{NA}.
+\item \bold{alt}. Type: \code{string}. Default: \code{NA}.
+\item \bold{width}. Type: \code{number}. Default: \code{NA}.
+\item \bold{height}. Type: \code{number}. Default: \code{NA}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"xl"}.
+\item \bold{shadow}. Type: \code{none OR sm OR md OR lg}. Default: \code{"none"}.
+\item \bold{loading}. Type: \code{eager OR lazy}. Default: \code{NA}.
+\item \bold{fallbackSrc}. Type: \code{string}. Default: \code{NA}.
+\item \bold{isBlurred}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{isZoomed}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{removeWrapper}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{disableSkeleton}. Type: \code{boolean}. Default: \code{false}.
+\item \bold{classNames}. Type: \code{Partial<Record<"img" OR "wrapper" OR "zoomedWrapper" OR "blurredImg", string>>}. Default: \code{NA}.
 }
 \itemize{
-\item \bold{onLoad}. Type: \code{ReactEventHandler<HTMLImageElement>}. Default: NA.
-\item \bold{onError}. Type: \code{() => void}. Default: NA.
+\item \bold{onLoad}. Type: \code{ReactEventHandler<HTMLImageElement>}. Default: \code{NA}.
+\item \bold{onError}. Type: \code{() => void}. Default: \code{NA}.
 }
 }
 \examples{
@@ -73,5 +73,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/image}.
+See \url{https://heroui.com/docs/components/image}.
 }

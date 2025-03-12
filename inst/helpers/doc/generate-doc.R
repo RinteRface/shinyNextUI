@@ -24,9 +24,9 @@ generate_details <- function(x) {
           }
 
           sprintf(
-            "#'  \\item \\bold{%s}. Type: \\code{%s}. Default: %s.",
+            "#'  \\item \\bold{%s}. Type: \\code{%s}. Default: \\code{%s}.",
             attribute,
-            type,
+            gsub("\\|", "OR", type),
             default
           )
         },
@@ -126,7 +126,7 @@ items <- list(
 )
 
 get_element_api <- function(el, context) {
-  url <- sprintf("https://nextui.org/docs/%s/%s", context, el)
+  url <- sprintf("https://heroui.com/docs/%s/%s", context, el)
   root <- read_html(url)
 
   # Get parameter values

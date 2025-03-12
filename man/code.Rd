@@ -19,10 +19,10 @@ Code is a component used to display inline code.
 }
 \details{
 \itemize{
-\item \bold{children}. Type: \code{ReactNode}. Default: NA.
-\item \bold{size}. Type: \code{sm | md | lg}. Default: "sm".
-\item \bold{color}. Type: \code{default | primary | secondary | success | warning | danger}. Default: "default".
-\item \bold{radius}. Type: \code{none | sm | md | lg | full}. Default: "sm".
+\item \bold{children}. Type: \code{ReactNode}. Default: \code{NA}.
+\item \bold{size}. Type: \code{sm OR md OR lg}. Default: \code{"sm"}.
+\item \bold{color}. Type: \code{default OR primary OR secondary OR success OR warning OR danger}. Default: \code{"default"}.
+\item \bold{radius}. Type: \code{none OR sm OR md OR lg OR full}. Default: \code{"sm"}.
 }
 }
 \examples{
@@ -49,5 +49,5 @@ server <- function(input, output, session) {
 if (interactive() || is_testing()) shinyApp(ui, server)
 }
 \seealso{
-See \url{https://nextui.org/docs/components/code}.
+See \url{https://heroui.com/docs/components/code}.
 }

@@ -11,7 +11,9 @@ skeleton(...)
 The allowed props are listed below in the \bold{Details} section.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI skeleton component.
 }
 \description{
 Skeleton is a placeholder to show a loading state and the expected shape of a component.

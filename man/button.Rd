@@ -42,6 +42,11 @@ you could also use any other HTML, like an image.}
 }
 \value{
 Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+The update functions return nothing (called for side effects).
+
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI button component.
 }
 \description{
 This is a higher level wrapper of \link{action_button} to match

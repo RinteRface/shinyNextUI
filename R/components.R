@@ -141,6 +141,8 @@ table_cell <- component("TableCell")
 #' parameters to pass in \code{...}.
 #' @example inst/examples/table/app.R
 #' @seealso See \url{https://heroui.com/docs/components/table}.
+#' @return An object of class shiny tag containing the necessary configuration and including
+#' options such as JavaScript dependencies to instantiate a HeroUI Table component.
 table <- function(data = NULL, ...) {
   if (!inherits(data, "list")) {
     cols <- colnames(data)

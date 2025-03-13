@@ -9,3 +9,6 @@
 ^index\.qmd$
 ^index\.md$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
+^inst/helpers/doc$
+^inst/helpers/test$

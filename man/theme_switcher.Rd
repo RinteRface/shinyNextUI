@@ -20,6 +20,9 @@ theme_switcher(
 
 \item{endContent}{Icon when not selected.}
 }
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+}
 \description{
 Change between light and dark mode
 }

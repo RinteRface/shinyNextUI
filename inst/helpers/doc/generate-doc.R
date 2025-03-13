@@ -62,13 +62,17 @@ generate_element_doc <- function(doc) {
     #' @name %s
     #' @example inst/examples/%s/app.R
     #' @seealso See \\url{%s}.
+    #' @return An object of class `shiny.tag` containing the 
+    #' necessary configuration and including options such as JavaScript 
+    #' dependencies to instantiate a HeroUI %s component.
     NULL",
     doc$title,
     doc$description,
     generate_details(doc$params),
     doc$title,
     doc$title,
-    doc$url
+    doc$url,
+    doc$title
   )
   write(gsub("  ", "", el_doc), file = "./R/doc.R", append = TRUE)
 }

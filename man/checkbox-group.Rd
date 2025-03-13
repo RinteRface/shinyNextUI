@@ -26,6 +26,10 @@ update_checkboxgroup_input(
 
 \item{session}{Shiny session.}
 }
+\value{
+Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+The update functions return nothing (called for side effects).
+}
 \description{
 Checkbox group input
 }

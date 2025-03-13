@@ -23,8 +23,9 @@ The allowed props are listed below in the \bold{Details} section.}
 \item{session}{Object passed as the \code{session} argument to Shiny server.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
-The update functions return nothing (called for side effects).
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI accordion component.
 }
 \description{
 Accordion display a list of high-level options that can expand/collapse to reveal more information.

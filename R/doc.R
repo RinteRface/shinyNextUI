@@ -1,3 +1,5 @@
+
+
 #' spacer
 #'
 #' @description
@@ -13,6 +15,9 @@
 #' @name spacer
 #' @example inst/examples/spacer/app.R
 #' @seealso See \url{https://heroui.com/docs/layout/spacer}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI spacer component.
 NULL
 
 #' accordion
@@ -79,6 +84,9 @@ NULL
 #' @name accordion
 #' @example inst/examples/accordion/app.R
 #' @seealso See \url{https://heroui.com/docs/components/accordion}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI accordion component.
 NULL
 
 #' autocomplete
@@ -159,6 +167,9 @@ NULL
 #' @name autocomplete
 #' @example inst/examples/autocomplete/app.R
 #' @seealso See \url{https://heroui.com/docs/components/autocomplete}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI autocomplete component.
 NULL
 
 #' avatar
@@ -200,6 +211,9 @@ NULL
 #' @name avatar
 #' @example inst/examples/avatar/app.R
 #' @seealso See \url{https://heroui.com/docs/components/avatar}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI avatar component.
 NULL
 
 #' badge
@@ -229,6 +243,9 @@ NULL
 #' @name badge
 #' @example inst/examples/badge/app.R
 #' @seealso See \url{https://heroui.com/docs/components/badge}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI badge component.
 NULL
 
 #' button
@@ -278,6 +295,9 @@ NULL
 #' @name button
 #' @example inst/examples/button/app.R
 #' @seealso See \url{https://heroui.com/docs/components/button}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI button component.
 NULL
 
 #' card
@@ -313,6 +333,9 @@ NULL
 #' @name card
 #' @example inst/examples/card/app.R
 #' @seealso See \url{https://heroui.com/docs/components/card}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI card component.
 NULL
 
 #' checkbox
@@ -350,6 +373,9 @@ NULL
 #' @name checkbox
 #' @example inst/examples/checkbox/app.R
 #' @seealso See \url{https://heroui.com/docs/components/checkbox}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI checkbox component.
 NULL
 
 #' circular-progress
@@ -379,6 +405,9 @@ NULL
 #' @name circular-progress
 #' @example inst/examples/circular-progress/app.R
 #' @seealso See \url{https://heroui.com/docs/components/circular-progress}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI circular-progress component.
 NULL
 
 #' chip
@@ -407,6 +436,9 @@ NULL
 #' @name chip
 #' @example inst/examples/chip/app.R
 #' @seealso See \url{https://heroui.com/docs/components/chip}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI chip component.
 NULL
 
 #' code
@@ -426,6 +458,9 @@ NULL
 #' @name code
 #' @example inst/examples/code/app.R
 #' @seealso See \url{https://heroui.com/docs/components/code}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI code component.
 NULL
 
 #' divider
@@ -442,6 +477,9 @@ NULL
 #' @name divider
 #' @example inst/examples/divider/app.R
 #' @seealso See \url{https://heroui.com/docs/components/divider}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI divider component.
 NULL
 
 #' drawer
@@ -476,6 +514,9 @@ NULL
 #' @name drawer
 #' @example inst/examples/drawer/app.R
 #' @seealso See \url{https://heroui.com/docs/components/drawer}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI drawer component.
 NULL
 
 #' image
@@ -510,6 +551,9 @@ NULL
 #' @name image
 #' @example inst/examples/image/app.R
 #' @seealso See \url{https://heroui.com/docs/components/image}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI image component.
 NULL
 
 #' input
@@ -559,6 +603,9 @@ NULL
 #' @name input
 #' @example inst/examples/input/app.R
 #' @seealso See \url{https://heroui.com/docs/components/input}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI input component.
 NULL
 
 #' link
@@ -599,6 +646,9 @@ NULL
 #' @name link
 #' @example inst/examples/link/app.R
 #' @seealso See \url{https://heroui.com/docs/components/link}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI link component.
 NULL
 
 #' listbox
@@ -685,6 +735,9 @@ NULL
 #' @name listbox
 #' @example inst/examples/listbox/app.R
 #' @seealso See \url{https://heroui.com/docs/components/listbox}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI listbox component.
 NULL
 
 #' modal
@@ -722,6 +775,9 @@ NULL
 #' @name modal
 #' @example inst/examples/modal/app.R
 #' @seealso See \url{https://heroui.com/docs/components/modal}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI modal component.
 NULL
 
 #' navbar
@@ -781,6 +837,9 @@ NULL
 #' @name navbar
 #' @example inst/examples/navbar/app.R
 #' @seealso See \url{https://heroui.com/docs/components/navbar}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI navbar component.
 NULL
 
 #' pagination
@@ -819,6 +878,9 @@ NULL
 #' @name pagination
 #' @example inst/examples/pagination/app.R
 #' @seealso See \url{https://heroui.com/docs/components/pagination}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI pagination component.
 NULL
 
 #' popover
@@ -870,6 +932,9 @@ NULL
 #' @name popover
 #' @example inst/examples/popover/app.R
 #' @seealso See \url{https://heroui.com/docs/components/popover}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI popover component.
 NULL
 
 #' progress
@@ -900,6 +965,9 @@ NULL
 #' @name progress
 #' @example inst/examples/progress/app.R
 #' @seealso See \url{https://heroui.com/docs/components/progress}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI progress component.
 NULL
 
 #' select
@@ -965,6 +1033,9 @@ NULL
 #' @name select
 #' @example inst/examples/select/app.R
 #' @seealso See \url{https://heroui.com/docs/components/select}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI select component.
 NULL
 
 #' skeleton
@@ -984,6 +1055,9 @@ NULL
 #' @name skeleton
 #' @example inst/examples/skeleton/app.R
 #' @seealso See \url{https://heroui.com/docs/components/skeleton}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI skeleton component.
 NULL
 
 #' slider
@@ -1035,6 +1109,9 @@ NULL
 #' @name slider
 #' @example inst/examples/slider/app.R
 #' @seealso See \url{https://heroui.com/docs/components/slider}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI slider component.
 NULL
 
 #' snippet
@@ -1069,6 +1146,9 @@ NULL
 #' @name snippet
 #' @example inst/examples/snippet/app.R
 #' @seealso See \url{https://heroui.com/docs/components/snippet}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI snippet component.
 NULL
 
 #' switch
@@ -1102,6 +1182,9 @@ NULL
 #' @name switch
 #' @example inst/examples/switch/app.R
 #' @seealso See \url{https://heroui.com/docs/components/switch}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI switch component.
 NULL
 
 #' tabs
@@ -1153,6 +1236,9 @@ NULL
 #' @name tabs
 #' @example inst/examples/tabs/app.R
 #' @seealso See \url{https://heroui.com/docs/components/tabs}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI tabs component.
 NULL
 
 #' textarea
@@ -1203,6 +1289,9 @@ NULL
 #' @name textarea
 #' @example inst/examples/textarea/app.R
 #' @seealso See \url{https://heroui.com/docs/components/textarea}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI textarea component.
 NULL
 
 #' tooltip
@@ -1249,6 +1338,9 @@ NULL
 #' @name tooltip
 #' @example inst/examples/tooltip/app.R
 #' @seealso See \url{https://heroui.com/docs/components/tooltip}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI tooltip component.
 NULL
 
 #' user
@@ -1269,4 +1361,7 @@ NULL
 #' @name user
 #' @example inst/examples/user/app.R
 #' @seealso See \url{https://heroui.com/docs/components/user}.
+#' @return An object of class `shiny.tag` containing the 
+#' necessary configuration and including options such as JavaScript 
+#' dependencies to instantiate a HeroUI user component.
 NULL

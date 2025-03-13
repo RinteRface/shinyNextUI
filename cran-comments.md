@@ -6,16 +6,12 @@
 
 ## Check Win devel issues
 
-I see error message like:
+Thanks for reviewing the package:
 
-* Found the following (possibly) invalid URLs:
-  URL: <https://heroui.com/docs/components/accordion>
-    From: man/accordion.Rd
-    Status: Error
-    Message: SSL connect error [heroui.com]: schannel: failed to receive handshake, SSL/TLS connection failed
-  URL: <https://webpack.js.org/>
-    From: README.md
-    Status: Error
-    Message: SSL connect error [webpack.js.org]: schannel: failed to receive handshake, SSL/TLS connection failed
-
-Unfortunately I can't reproduce locally, all the url exist.
+* Added `@return` to all roxygen2 documented functions.
+* Reduced size of JS assets.
+* Added `inst/helpers/doc` and `inst/helpers/test` to `.Rbuildignore` as they are not needed
+by end-users in the package.
+* Quoted 'JavaScript' in the DESCRIPTION.
+* Add more links in the DESCRIPTION. There wasn't ISBN or DOI reference for HeroUI so I added
+the website link.

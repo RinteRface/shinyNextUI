@@ -12,7 +12,9 @@ circular_progress(...)
 The allowed props are listed below in the \bold{Details} section.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI circular-progress component.
 }
 \description{
 Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.

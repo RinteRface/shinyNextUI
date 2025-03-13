@@ -29,6 +29,10 @@ table(data = NULL, ...)
 
 \item{data}{Data to render.}
 }
+\value{
+An object of class shiny tag containing the necessary configuration and including
+options such as JavaScript dependencies to instantiate a HeroUI Table component.
+}
 \description{
 Table widget
 }

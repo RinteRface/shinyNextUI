@@ -11,6 +11,9 @@
 #' @seealso See \url{https://heroui.com/docs/components/button}
 #' and \link{action_button} to get the list of possible parameters.
 #' @rdname button
+#' @return
+#' Object with `shiny.tag` class suitable for use in the UI of a Shiny app.
+#' The update functions return nothing (called for side effects).
 actionButton <- function(inputId, label, icon = NULL, width = NULL, ...) {
   action_button(
     inputId,

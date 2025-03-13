@@ -26,8 +26,9 @@ The allowed props are listed below in the \bold{Details} section.}
 \item{session}{Object passed as the \code{session} argument to Shiny server.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
-The update functions return nothing (called for side effects).
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI autocomplete component.
 }
 \description{
 An autocomplete combines a text input with a listbox, allowing users to filter a list of options to items matching a query.

@@ -169,7 +169,9 @@ create_group_input <- function(
 #' @param choices Radio choices.
 #' @param selected Default selected value.
 #'
-#' @return A radio input tag.
+#' @return
+#' Object with `shiny.tag` class suitable for use in the UI of a Shiny app.
+#' The update functions return nothing (called for side effects).
 #' @rdname radio
 #' @export
 #' @details
@@ -239,6 +241,9 @@ update_radio_input <- function(
 #' to get the list of parameters to pass in \code{...}.
 #' @example inst/examples/checkbox-group/app.R
 #' @seealso See \url{https://heroui.com/docs/components/checkbox-group}.
+#' @return
+#' Object with `shiny.tag` class suitable for use in the UI of a Shiny app.
+#' The update functions return nothing (called for side effects).
 checkboxgroup_input <- function(inputId, ..., choices, selected = NULL) {
   create_group_input(
     inputId = inputId,

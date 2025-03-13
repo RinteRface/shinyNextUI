@@ -11,7 +11,9 @@ image(...)
 The allowed props are listed below in the \bold{Details} section.}
 }
 \value{
-Object with \code{shiny.tag} class suitable for use in the UI of a Shiny app.
+An object of class \code{shiny.tag} containing the
+necessary configuration and including options such as JavaScript
+dependencies to instantiate a HeroUI image component.
 }
 \description{
 The Image component is used to display images with support for fallback.

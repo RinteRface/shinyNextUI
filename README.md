@@ -3,7 +3,8 @@
 
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/RinteRface/shinyNextUI/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RinteRface/shinyNextUI/actions/workflows/R-CMD-check.yaml)
-  <!-- badges: end -->
+[![CRAN status](https://www.r-pkg.org/badges/version/shinyNextUI)](https://CRAN.R-project.org/package=shinyNextUI)
+<!-- badges: end -->
 
 The goal of `{shinyNextUI}` is to provide a wrapper around the
 HeroUI React [library](https://www.heroui.com/).

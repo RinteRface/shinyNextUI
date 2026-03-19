@@ -1,0 +1,38 @@
+# Pokemon API data
+
+Extract of some data from the 151 first Pokemons.
+
+## Usage
+
+``` r
+poke_data
+```
+
+## Format
+
+### `poke_data`
+
+A nested list with 151 entries. Each sublist contains:
+
+- name (char): Pokemon name.
+
+- description (char): Pokemon description.
+
+- shape (char): Pokemon shape.
+
+- sprites (list):
+
+  - front_default (char): front sprite URL.
+
+  - shiny_default (char): front sprite URL (shiny form).
+
+- ...
+
+## Source
+
+<https://pokeapi.co/docs/v2>
+
+## Note
+
+Have a look to inst/app-doc/data-doc.html to get an interactive
+overview.

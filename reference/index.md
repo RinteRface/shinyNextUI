@@ -1,0 +1,142 @@
+# Package index
+
+## All functions
+
+- [`accordion()`](https://rinterface.github.io/shinyNextUI/reference/accordion.md)
+  [`accordion_item()`](https://rinterface.github.io/shinyNextUI/reference/accordion.md)
+  [`update_accordion()`](https://rinterface.github.io/shinyNextUI/reference/accordion.md)
+  : accordion
+- [`autocomplete()`](https://rinterface.github.io/shinyNextUI/reference/autocomplete.md)
+  [`autocomplete_section()`](https://rinterface.github.io/shinyNextUI/reference/autocomplete.md)
+  [`autocomplete_item()`](https://rinterface.github.io/shinyNextUI/reference/autocomplete.md)
+  [`update_autocomplete()`](https://rinterface.github.io/shinyNextUI/reference/autocomplete.md)
+  : autocomplete
+- [`avatar()`](https://rinterface.github.io/shinyNextUI/reference/avatar.md)
+  [`avatar_group()`](https://rinterface.github.io/shinyNextUI/reference/avatar.md)
+  : avatar
+- [`badge()`](https://rinterface.github.io/shinyNextUI/reference/badge.md)
+  : badge
+- [`actionButton()`](https://rinterface.github.io/shinyNextUI/reference/button.md)
+  [`updateActionButton()`](https://rinterface.github.io/shinyNextUI/reference/button.md)
+  [`button()`](https://rinterface.github.io/shinyNextUI/reference/button.md)
+  [`action_button()`](https://rinterface.github.io/shinyNextUI/reference/button.md)
+  [`update_action_button()`](https://rinterface.github.io/shinyNextUI/reference/button.md)
+  : Action button
+- [`card()`](https://rinterface.github.io/shinyNextUI/reference/card.md)
+  [`card_body()`](https://rinterface.github.io/shinyNextUI/reference/card.md)
+  [`card_header()`](https://rinterface.github.io/shinyNextUI/reference/card.md)
+  [`card_footer()`](https://rinterface.github.io/shinyNextUI/reference/card.md)
+  : card
+- [`checkboxgroup_input()`](https://rinterface.github.io/shinyNextUI/reference/checkbox-group.md)
+  [`update_checkboxgroup_input()`](https://rinterface.github.io/shinyNextUI/reference/checkbox-group.md)
+  : Checkbox group input
+- [`checkbox_input()`](https://rinterface.github.io/shinyNextUI/reference/checkbox.md)
+  [`update_checkbox_input()`](https://rinterface.github.io/shinyNextUI/reference/checkbox.md)
+  : checkbox
+- [`chip()`](https://rinterface.github.io/shinyNextUI/reference/chip.md)
+  : chip
+- [`circular_progress()`](https://rinterface.github.io/shinyNextUI/reference/circular-progress.md)
+  : circular-progress
+- [`code_block()`](https://rinterface.github.io/shinyNextUI/reference/code.md)
+  : code
+- [`createReactShinyInput()`](https://rinterface.github.io/shinyNextUI/reference/createReactShinyInput.md)
+  : Create a reactR shiny input element
+- [`divider()`](https://rinterface.github.io/shinyNextUI/reference/divider.md)
+  : divider
+- [`drawer()`](https://rinterface.github.io/shinyNextUI/reference/drawer.md)
+  [`drawer_content()`](https://rinterface.github.io/shinyNextUI/reference/drawer.md)
+  [`drawer_header()`](https://rinterface.github.io/shinyNextUI/reference/drawer.md)
+  [`drawer_body()`](https://rinterface.github.io/shinyNextUI/reference/drawer.md)
+  [`drawer_footer()`](https://rinterface.github.io/shinyNextUI/reference/drawer.md)
+  : drawer
+- [`dropdow_menu()`](https://rinterface.github.io/shinyNextUI/reference/dropdown.md)
+  [`dropdown_item()`](https://rinterface.github.io/shinyNextUI/reference/dropdown.md)
+  [`dropdown_section()`](https://rinterface.github.io/shinyNextUI/reference/dropdown.md)
+  [`update_dropdown()`](https://rinterface.github.io/shinyNextUI/reference/dropdown.md)
+  : Dropdown menu
+- [`get_examples()`](https://rinterface.github.io/shinyNextUI/reference/get_examples.md)
+  : Get all available Shiny app examples
+- [`image()`](https://rinterface.github.io/shinyNextUI/reference/image.md)
+  : image
+- [`text_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  [`update_text_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  [`numeric_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  [`update_numeric_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  [`date_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  [`update_date_input()`](https://rinterface.github.io/shinyNextUI/reference/input.md)
+  : input
+- [`is_testing()`](https://rinterface.github.io/shinyNextUI/reference/is_testing.md)
+  : Indicates whether testthat is running
+- [`link()`](https://rinterface.github.io/shinyNextUI/reference/link.md)
+  : link
+- [`listbox()`](https://rinterface.github.io/shinyNextUI/reference/listbox.md)
+  [`listbox_section()`](https://rinterface.github.io/shinyNextUI/reference/listbox.md)
+  [`listbox_item()`](https://rinterface.github.io/shinyNextUI/reference/listbox.md)
+  [`update_listbox()`](https://rinterface.github.io/shinyNextUI/reference/listbox.md)
+  : listbox
+- [`modal()`](https://rinterface.github.io/shinyNextUI/reference/modal.md)
+  [`modal_content()`](https://rinterface.github.io/shinyNextUI/reference/modal.md)
+  [`modal_header()`](https://rinterface.github.io/shinyNextUI/reference/modal.md)
+  [`modal_body()`](https://rinterface.github.io/shinyNextUI/reference/modal.md)
+  [`modal_footer()`](https://rinterface.github.io/shinyNextUI/reference/modal.md)
+  : modal
+- [`navbar()`](https://rinterface.github.io/shinyNextUI/reference/navbar.md)
+  [`navbar_brand()`](https://rinterface.github.io/shinyNextUI/reference/navbar.md)
+  [`navbar_content()`](https://rinterface.github.io/shinyNextUI/reference/navbar.md)
+  [`navbar_item()`](https://rinterface.github.io/shinyNextUI/reference/navbar.md)
+  [`navbar_toggle()`](https://rinterface.github.io/shinyNextUI/reference/navbar.md)
+  : navbar
+- [`sizes`](https://rinterface.github.io/shinyNextUI/reference/nextui-defaults.md)
+  [`colors`](https://rinterface.github.io/shinyNextUI/reference/nextui-defaults.md)
+  [`radiuses`](https://rinterface.github.io/shinyNextUI/reference/nextui-defaults.md)
+  [`tabs_variants`](https://rinterface.github.io/shinyNextUI/reference/nextui-defaults.md)
+  [`select_variants`](https://rinterface.github.io/shinyNextUI/reference/nextui-defaults.md)
+  : Available sizes
+- [`nextui_page()`](https://rinterface.github.io/shinyNextUI/reference/nextui_page.md)
+  : NextUI page wrapper
+- [`pagination()`](https://rinterface.github.io/shinyNextUI/reference/pagination.md)
+  [`update_pagination()`](https://rinterface.github.io/shinyNextUI/reference/pagination.md)
+  : pagination
+- [`poke_data`](https://rinterface.github.io/shinyNextUI/reference/poke_data.md)
+  : Pokemon API data
+- [`popover()`](https://rinterface.github.io/shinyNextUI/reference/popover.md)
+  [`popover_trigger()`](https://rinterface.github.io/shinyNextUI/reference/popover.md)
+  [`popover_content()`](https://rinterface.github.io/shinyNextUI/reference/popover.md)
+  : popover
+- [`progress()`](https://rinterface.github.io/shinyNextUI/reference/progress.md)
+  : progress
+- [`radio_input()`](https://rinterface.github.io/shinyNextUI/reference/radio.md)
+  [`update_radio_input()`](https://rinterface.github.io/shinyNextUI/reference/radio.md)
+  : Radio input
+- [`run_example()`](https://rinterface.github.io/shinyNextUI/reference/run_example.md)
+  : Run shinyNextUI example
+- [`select_input()`](https://rinterface.github.io/shinyNextUI/reference/select.md)
+  [`select_section()`](https://rinterface.github.io/shinyNextUI/reference/select.md)
+  [`select_item()`](https://rinterface.github.io/shinyNextUI/reference/select.md)
+  [`update_select_input()`](https://rinterface.github.io/shinyNextUI/reference/select.md)
+  : select
+- [`skeleton()`](https://rinterface.github.io/shinyNextUI/reference/skeleton.md)
+  : skeleton
+- [`slider_input()`](https://rinterface.github.io/shinyNextUI/reference/slider.md)
+  [`update_slider_input()`](https://rinterface.github.io/shinyNextUI/reference/slider.md)
+  : slider
+- [`snippet()`](https://rinterface.github.io/shinyNextUI/reference/snippet.md)
+  : snippet
+- [`spacer()`](https://rinterface.github.io/shinyNextUI/reference/spacer.md)
+  : spacer
+- [`switch_input()`](https://rinterface.github.io/shinyNextUI/reference/switch.md)
+  [`update_switch_input()`](https://rinterface.github.io/shinyNextUI/reference/switch.md)
+  : switch
+- [`tabs()`](https://rinterface.github.io/shinyNextUI/reference/tabs.md)
+  [`update_tabs()`](https://rinterface.github.io/shinyNextUI/reference/tabs.md)
+  [`tab()`](https://rinterface.github.io/shinyNextUI/reference/tabs.md)
+  : tabs
+- [`textarea_input()`](https://rinterface.github.io/shinyNextUI/reference/textarea.md)
+  [`update_textarea_input()`](https://rinterface.github.io/shinyNextUI/reference/textarea.md)
+  : textarea
+- [`theme_switcher()`](https://rinterface.github.io/shinyNextUI/reference/theme_switcher.md)
+  : Theme switcher helper
+- [`tooltip()`](https://rinterface.github.io/shinyNextUI/reference/tooltip.md)
+  : tooltip
+- [`user()`](https://rinterface.github.io/shinyNextUI/reference/user.md)
+  : user
